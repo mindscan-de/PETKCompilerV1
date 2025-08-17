@@ -22,3 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+*.xtendbin
+*.java._trace
+
+/de.mindscan.ai.aidsl/bin
+/de.mindscan.ai.aidsl.ide/bin
+/de.mindscan.ai.aidsl.tests/test-bin
+/de.mindscan.ai.aidsl.ui/bin
+/de.mindscan.ai.aidsl.ui.tests/test-bin
