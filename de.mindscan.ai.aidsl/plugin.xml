@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.mindscan.de/ai/aidsl/AiDsl"
+			class = "de.mindscan.ai.aidsl.aiDsl.AiDslPackage"
+			genModel = "model/generated/AiDsl.genmodel" />
+	</extension>
+</plugin>

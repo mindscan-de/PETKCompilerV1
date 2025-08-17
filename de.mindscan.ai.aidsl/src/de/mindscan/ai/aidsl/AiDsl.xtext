@@ -1,0 +1,9 @@
+grammar de.mindscan.ai.aidsl.AiDsl with org.eclipse.xtext.common.Terminals
+
+generate aiDsl "http://www.mindscan.de/ai/aidsl/AiDsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
