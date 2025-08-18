@@ -81,9 +81,14 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseWorkflowDefinition(WorkflowDefinition object)
       {
-        return createGreetingAdapter();
+        return createWorkflowDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseLlmTaskDefinition(LlmTaskDefinition object)
+      {
+        return createLlmTaskDefinitionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +128,31 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.Greeting
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createWorkflowDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition <em>Llm Task Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition
+   * @generated
+   */
+  public Adapter createLlmTaskDefinitionAdapter()
   {
     return null;
   }

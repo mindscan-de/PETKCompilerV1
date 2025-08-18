@@ -3,7 +3,17 @@ grammar de.mindscan.ai.aidsl.AiDsl with org.eclipse.xtext.common.Terminals
 generate aiDsl "http://www.mindscan.de/ai/aidsl/AiDsl"
 
 Model:
-	greetings+=Greeting*;
+	definitions += (WorkflowDefinition|LlmTaskDefinition)*
+;
+
 	
-Greeting:
-	'Hello' name=ID '!';
+WorkflowDefinition:
+	'workflow' name=ID '(' ')' '{'
+	
+	'}'
+;
+
+LlmTaskDefinition:
+	'llmtask' name=ID '(' ')' '{'
+	'}' 
+;

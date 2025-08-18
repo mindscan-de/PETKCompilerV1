@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.Greeting}.
+   * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' containment reference list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Greetings()
+   * @return the value of the '<em>Definitions</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Definitions()
    * @model containment="true"
    * @generated
    */
-  EList<Greeting> getGreetings();
+  EList<EObject> getDefinitions();
 
 } // Model

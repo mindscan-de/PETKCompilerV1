@@ -66,7 +66,8 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
     switch (eClass.getClassifierID())
     {
       case AiDslPackage.MODEL: return createModel();
-      case AiDslPackage.GREETING: return createGreeting();
+      case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
+      case AiDslPackage.LLM_TASK_DEFINITION: return createLlmTaskDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -90,10 +91,22 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public WorkflowDefinition createWorkflowDefinition()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    WorkflowDefinitionImpl workflowDefinition = new WorkflowDefinitionImpl();
+    return workflowDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LlmTaskDefinition createLlmTaskDefinition()
+  {
+    LlmTaskDefinitionImpl llmTaskDefinition = new LlmTaskDefinitionImpl();
+    return llmTaskDefinition;
   }
 
   /**

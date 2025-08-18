@@ -4,7 +4,6 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
-import de.mindscan.ai.aidsl.aiDsl.Greeting;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 
 import java.util.Collection;
@@ -14,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getDefinitions()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<EObject> definitions;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Greeting> getGreetings()
+  public EList<EObject> getDefinitions()
   {
-    if (greetings == null)
+    if (definitions == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, AiDslPackage.MODEL__GREETINGS);
+      definitions = new EObjectContainmentEList<EObject>(EObject.class, this, AiDslPackage.MODEL__DEFINITIONS);
     }
-    return greetings;
+    return definitions;
   }
 
   /**
@@ -92,8 +92,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case AiDslPackage.MODEL__DEFINITIONS:
+        return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case AiDslPackage.MODEL__DEFINITIONS:
+        return getDefinitions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case AiDslPackage.MODEL__DEFINITIONS:
+        getDefinitions().clear();
+        getDefinitions().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case AiDslPackage.MODEL__DEFINITIONS:
+        getDefinitions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case AiDslPackage.MODEL__DEFINITIONS:
+        return definitions != null && !definitions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

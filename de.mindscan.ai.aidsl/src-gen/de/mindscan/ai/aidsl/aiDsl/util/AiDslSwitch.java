@@ -80,10 +80,17 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.GREETING:
+      case AiDslPackage.WORKFLOW_DEFINITION:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        WorkflowDefinition workflowDefinition = (WorkflowDefinition)theEObject;
+        T result = caseWorkflowDefinition(workflowDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.LLM_TASK_DEFINITION:
+      {
+        LlmTaskDefinition llmTaskDefinition = (LlmTaskDefinition)theEObject;
+        T result = caseLlmTaskDefinition(llmTaskDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,17 +115,33 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseWorkflowDefinition(WorkflowDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Llm Task Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Llm Task Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLlmTaskDefinition(LlmTaskDefinition object)
   {
     return null;
   }

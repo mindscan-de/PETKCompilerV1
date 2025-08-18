@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -23,36 +24,51 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cDefinitionsAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cDefinitionsAlternatives_0 = (Alternatives)cDefinitionsAssignment.eContents().get(0);
+		private final RuleCall cDefinitionsWorkflowDefinitionParserRuleCall_0_0 = (RuleCall)cDefinitionsAlternatives_0.eContents().get(0);
+		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_0_1 = (RuleCall)cDefinitionsAlternatives_0.eContents().get(1);
 		
 		//Model:
-		//    greetings+=Greeting*;
+		//    definitions += (WorkflowDefinition|LlmTaskDefinition)*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//definitions += (WorkflowDefinition|LlmTaskDefinition)*
+		public Assignment getDefinitionsAssignment() { return cDefinitionsAssignment; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//(WorkflowDefinition|LlmTaskDefinition)
+		public Alternatives getDefinitionsAlternatives_0() { return cDefinitionsAlternatives_0; }
+		
+		//WorkflowDefinition
+		public RuleCall getDefinitionsWorkflowDefinitionParserRuleCall_0_0() { return cDefinitionsWorkflowDefinitionParserRuleCall_0_0; }
+		
+		//LlmTaskDefinition
+		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_0_1() { return cDefinitionsLlmTaskDefinitionParserRuleCall_0_1; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.Greeting");
+	public class WorkflowDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cWorkflowKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Greeting:
-		//    'Hello' name=ID '!';
+		//WorkflowDefinition:
+		//    'workflow' name=ID '(' ')' '{'
+		//    '}'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//'workflow' name=ID '(' ')' '{'
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//'workflow'
+		public Keyword getWorkflowKeyword_0() { return cWorkflowKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -60,13 +76,65 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class LlmTaskDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLlmtaskKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//LlmTaskDefinition:
+		//    'llmtask' name=ID '(' ')' '{'
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'llmtask' name=ID '(' ')' '{'
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'llmtask'
+		public Keyword getLlmtaskKeyword_0() { return cLlmtaskKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final WorkflowDefinitionElements pWorkflowDefinition;
+	private final LlmTaskDefinitionElements pLlmTaskDefinition;
 	
 	private final Grammar grammar;
 	
@@ -78,7 +146,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pWorkflowDefinition = new WorkflowDefinitionElements();
+		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -109,7 +178,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 
 	
 	//Model:
-	//    greetings+=Greeting*;
+	//    definitions += (WorkflowDefinition|LlmTaskDefinition)*
+	//;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -118,14 +188,28 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getModelAccess().getRule();
 	}
 	
-	//Greeting:
-	//    'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//WorkflowDefinition:
+	//    'workflow' name=ID '(' ')' '{'
+	//    '}'
+	//;
+	public WorkflowDefinitionElements getWorkflowDefinitionAccess() {
+		return pWorkflowDefinition;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getWorkflowDefinitionRule() {
+		return getWorkflowDefinitionAccess().getRule();
+	}
+	
+	//LlmTaskDefinition:
+	//    'llmtask' name=ID '(' ')' '{'
+	//    '}'
+	//;
+	public LlmTaskDefinitionElements getLlmTaskDefinitionAccess() {
+		return pLlmTaskDefinition;
+	}
+	
+	public ParserRule getLlmTaskDefinitionRule() {
+		return getLlmTaskDefinitionAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

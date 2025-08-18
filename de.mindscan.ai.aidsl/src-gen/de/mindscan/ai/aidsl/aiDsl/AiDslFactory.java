@@ -33,13 +33,22 @@ public interface AiDslFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Workflow Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Workflow Definition</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  WorkflowDefinition createWorkflowDefinition();
+
+  /**
+   * Returns a new object of class '<em>Llm Task Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Llm Task Definition</em>'.
+   * @generated
+   */
+  LlmTaskDefinition createLlmTaskDefinition();
 
   /**
    * Returns the package supported by this factory.

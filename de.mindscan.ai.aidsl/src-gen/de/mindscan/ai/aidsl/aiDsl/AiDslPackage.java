@@ -68,13 +68,13 @@ public interface AiDslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__DEFINITIONS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +86,14 @@ public interface AiDslPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.GreetingImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getGreeting()
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int GREETING = 1;
+  int WORKFLOW_DEFINITION = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +102,44 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int WORKFLOW_DEFINITION__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The number of structural features of the '<em>Workflow Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int WORKFLOW_DEFINITION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
+   * @generated
+   */
+  int LLM_TASK_DEFINITION = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_TASK_DEFINITION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Llm Task Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_TASK_DEFINITION_FEATURE_COUNT = 1;
 
 
   /**
@@ -125,36 +153,57 @@ public interface AiDslPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions <em>Definitions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Definitions</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Definitions();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.Greeting
+   * @return the meta object for class '<em>Workflow Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
    * @generated
    */
-  EClass getGreeting();
+  EClass getWorkflowDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.Greeting#getName()
-   * @see #getGreeting()
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName()
+   * @see #getWorkflowDefinition()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getWorkflowDefinition_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition <em>Llm Task Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Llm Task Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition
+   * @generated
+   */
+  EClass getLlmTaskDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getName()
+   * @see #getLlmTaskDefinition()
+   * @generated
+   */
+  EAttribute getLlmTaskDefinition_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,22 +239,22 @@ public interface AiDslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__DEFINITIONS = eINSTANCE.getModel_Definitions();
 
     /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.GreetingImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getGreeting()
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass WORKFLOW_DEFINITION = eINSTANCE.getWorkflowDefinition();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +262,25 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
+     * @generated
+     */
+    EClass LLM_TASK_DEFINITION = eINSTANCE.getLlmTaskDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LLM_TASK_DEFINITION__NAME = eINSTANCE.getLlmTaskDefinition_Name();
 
   }
 

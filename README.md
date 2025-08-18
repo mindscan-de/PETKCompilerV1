@@ -23,8 +23,8 @@ void main() {
 	(task5.task, task5.result) = invokeLLM translationRating();
 }
 
-@LLM_QA_withPretext{"#### Task 1 - 1st shot translation"}
-define firstshotTranslation() {
+@QA_withPretext{"#### Task 1 - 1st shot translation"}
+llmtask firstshotTranslation() {
 	extra_stopwords := ["```", "\n\n", "\u3000\u3000\u3000","==="]
 	
 	system_prompt :=

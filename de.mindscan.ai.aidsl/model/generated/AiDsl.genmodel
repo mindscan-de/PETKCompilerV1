@@ -7,10 +7,13 @@
   <genPackages prefix="AiDsl" basePackage="de.mindscan.ai.aidsl" disposableProviderFactory="true"
       fileExtensions="aidsl" ecorePackage="AiDsl.ecore#/">
     <genClasses ecoreClass="AiDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/definitions"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
