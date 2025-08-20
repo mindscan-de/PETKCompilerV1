@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 import de.mindscan.ai.aidsl.aiDsl.AiDslFactory;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
+import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 
@@ -44,6 +45,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass llmTaskDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass llmVariableAssignmentEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -180,6 +188,50 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EReference getLlmTaskDefinition_Assignment()
+  {
+    return (EReference)llmTaskDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLlmVariableAssignment()
+  {
+    return llmVariableAssignmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLlmVariableAssignment_Variablename()
+  {
+    return (EAttribute)llmVariableAssignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLlmVariableAssignment_Template()
+  {
+    return (EAttribute)llmVariableAssignmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -213,6 +265,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     llmTaskDefinitionEClass = createEClass(LLM_TASK_DEFINITION);
     createEAttribute(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__NAME);
+    createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ASSIGNMENT);
+
+    llmVariableAssignmentEClass = createEClass(LLM_VARIABLE_ASSIGNMENT);
+    createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__VARIABLENAME);
+    createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__TEMPLATE);
   }
 
   /**
@@ -254,6 +311,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(llmTaskDefinitionEClass, LlmTaskDefinition.class, "LlmTaskDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmTaskDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmTaskDefinition_Assignment(), this.getLlmVariableAssignment(), null, "assignment", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(llmVariableAssignmentEClass, LlmVariableAssignment.class, "LlmVariableAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLlmVariableAssignment_Variablename(), ecorePackage.getEString(), "variablename", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLlmVariableAssignment_Template(), ecorePackage.getEString(), "template", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -14,6 +14,11 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/assignment"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//LlmVariableAssignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/variablename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/template"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

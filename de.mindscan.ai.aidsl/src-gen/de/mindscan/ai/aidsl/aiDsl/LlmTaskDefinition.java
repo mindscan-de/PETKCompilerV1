@@ -3,6 +3,8 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment <em>Assignment</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmTaskDefinition()
@@ -44,5 +47,17 @@ public interface LlmTaskDefinition extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Assignment</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assignment</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmTaskDefinition_Assignment()
+   * @model containment="true"
+   * @generated
+   */
+  EList<LlmVariableAssignment> getAssignment();
 
 } // LlmTaskDefinition

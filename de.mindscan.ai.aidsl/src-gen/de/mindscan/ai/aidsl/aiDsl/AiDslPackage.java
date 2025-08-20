@@ -133,13 +133,59 @@ public interface AiDslPackage extends EPackage
   int LLM_TASK_DEFINITION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Assignment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_TASK_DEFINITION__ASSIGNMENT = 1;
+
+  /**
    * The number of structural features of the '<em>Llm Task Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LLM_TASK_DEFINITION_FEATURE_COUNT = 1;
+  int LLM_TASK_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl <em>Llm Variable Assignment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
+   * @generated
+   */
+  int LLM_VARIABLE_ASSIGNMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Variablename</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_VARIABLE_ASSIGNMENT__VARIABLENAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Template</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_VARIABLE_ASSIGNMENT__TEMPLATE = 1;
+
+  /**
+   * The number of structural features of the '<em>Llm Variable Assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_VARIABLE_ASSIGNMENT_FEATURE_COUNT = 2;
 
 
   /**
@@ -204,6 +250,49 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getLlmTaskDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment <em>Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Assignment</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment()
+   * @see #getLlmTaskDefinition()
+   * @generated
+   */
+  EReference getLlmTaskDefinition_Assignment();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment <em>Llm Variable Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Llm Variable Assignment</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment
+   * @generated
+   */
+  EClass getLlmVariableAssignment();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getVariablename <em>Variablename</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Variablename</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getVariablename()
+   * @see #getLlmVariableAssignment()
+   * @generated
+   */
+  EAttribute getLlmVariableAssignment_Variablename();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate <em>Template</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Template</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate()
+   * @see #getLlmVariableAssignment()
+   * @generated
+   */
+  EAttribute getLlmVariableAssignment_Template();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -281,6 +370,40 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute LLM_TASK_DEFINITION__NAME = eINSTANCE.getLlmTaskDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LLM_TASK_DEFINITION__ASSIGNMENT = eINSTANCE.getLlmTaskDefinition_Assignment();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl <em>Llm Variable Assignment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
+     * @generated
+     */
+    EClass LLM_VARIABLE_ASSIGNMENT = eINSTANCE.getLlmVariableAssignment();
+
+    /**
+     * The meta object literal for the '<em><b>Variablename</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LLM_VARIABLE_ASSIGNMENT__VARIABLENAME = eINSTANCE.getLlmVariableAssignment_Variablename();
+
+    /**
+     * The meta object literal for the '<em><b>Template</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LLM_VARIABLE_ASSIGNMENT__TEMPLATE = eINSTANCE.getLlmVariableAssignment_Template();
 
   }
 

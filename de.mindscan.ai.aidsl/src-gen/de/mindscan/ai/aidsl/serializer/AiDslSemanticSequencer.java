@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.serializer;
 import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
+import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
@@ -37,6 +38,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.LLM_TASK_DEFINITION:
 				sequence_LlmTaskDefinition(context, (LlmTaskDefinition) semanticObject); 
 				return; 
+			case AiDslPackage.LLM_VARIABLE_ASSIGNMENT:
+				sequence_LlmVariableAssignment(context, (LlmVariableAssignment) semanticObject); 
+				return; 
 			case AiDslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -54,16 +58,33 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LlmTaskDefinition returns LlmTaskDefinition
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID assignment+=LlmVariableAssignment*)
 	 * </pre>
 	 */
 	protected void sequence_LlmTaskDefinition(ISerializationContext context, LlmTaskDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LlmVariableAssignment returns LlmVariableAssignment
+	 *
+	 * Constraint:
+	 *     (variablename=ID template=ML_TEMPLATE_STRING)
+	 * </pre>
+	 */
+	protected void sequence_LlmVariableAssignment(ISerializationContext context, LlmVariableAssignment semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.LLM_TASK_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.LLM_TASK_DEFINITION__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.LLM_VARIABLE_ASSIGNMENT__VARIABLENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.LLM_VARIABLE_ASSIGNMENT__VARIABLENAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.LLM_VARIABLE_ASSIGNMENT__TEMPLATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.LLM_VARIABLE_ASSIGNMENT__TEMPLATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLlmTaskDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameIDTerminalRuleCall_0_0(), semanticObject.getVariablename());
+		feeder.accept(grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0(), semanticObject.getTemplate());
 		feeder.finish();
 	}
 	

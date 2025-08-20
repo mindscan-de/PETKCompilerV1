@@ -97,15 +97,19 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAssignmentAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAssignmentLlmVariableAssignmentParserRuleCall_5_0 = (RuleCall)cAssignmentAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//LlmTaskDefinition:
 		//    'llmtask' name=ID '(' ')' '{'
+		//        assignment+=LlmVariableAssignment*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'llmtask' name=ID '(' ')' '{'
+		//    assignment+=LlmVariableAssignment*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -127,14 +131,54 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
+		//assignment+=LlmVariableAssignment*
+		public Assignment getAssignmentAssignment_5() { return cAssignmentAssignment_5; }
+		
+		//LlmVariableAssignment
+		public RuleCall getAssignmentLlmVariableAssignmentParserRuleCall_5_0() { return cAssignmentLlmVariableAssignmentParserRuleCall_5_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class LlmVariableAssignmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.LlmVariableAssignment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariablenameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVariablenameIDTerminalRuleCall_0_0 = (RuleCall)cVariablenameAssignment_0.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTemplateAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0 = (RuleCall)cTemplateAssignment_2.eContents().get(0);
+		
+		//LlmVariableAssignment:
+		//    variablename=ID ':=' template=ML_TEMPLATE_STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//variablename=ID ':=' template=ML_TEMPLATE_STRING
+		public Group getGroup() { return cGroup; }
+		
+		//variablename=ID
+		public Assignment getVariablenameAssignment_0() { return cVariablenameAssignment_0; }
+		
+		//ID
+		public RuleCall getVariablenameIDTerminalRuleCall_0_0() { return cVariablenameIDTerminalRuleCall_0_0; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
+		
+		//template=ML_TEMPLATE_STRING
+		public Assignment getTemplateAssignment_2() { return cTemplateAssignment_2; }
+		
+		//ML_TEMPLATE_STRING
+		public RuleCall getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0() { return cTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0; }
 	}
 	
 	
 	private final ModelElements pModel;
 	private final WorkflowDefinitionElements pWorkflowDefinition;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
+	private final LlmVariableAssignmentElements pLlmVariableAssignment;
+	private final TerminalRule tML_TEMPLATE_STRING;
 	
 	private final Grammar grammar;
 	
@@ -148,6 +192,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pModel = new ModelElements();
 		this.pWorkflowDefinition = new WorkflowDefinitionElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
+		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
+		this.tML_TEMPLATE_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ML_TEMPLATE_STRING");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -202,6 +248,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//LlmTaskDefinition:
 	//    'llmtask' name=ID '(' ')' '{'
+	//        assignment+=LlmVariableAssignment*
 	//    '}'
 	//;
 	public LlmTaskDefinitionElements getLlmTaskDefinitionAccess() {
@@ -210,6 +257,22 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getLlmTaskDefinitionRule() {
 		return getLlmTaskDefinitionAccess().getRule();
+	}
+	
+	//LlmVariableAssignment:
+	//    variablename=ID ':=' template=ML_TEMPLATE_STRING
+	//;
+	public LlmVariableAssignmentElements getLlmVariableAssignmentAccess() {
+		return pLlmVariableAssignment;
+	}
+	
+	public ParserRule getLlmVariableAssignmentRule() {
+		return getLlmVariableAssignmentAccess().getRule();
+	}
+	
+	//terminal ML_TEMPLATE_STRING: "'''"  -> "'''";
+	public TerminalRule getML_TEMPLATE_STRINGRule() {
+		return tML_TEMPLATE_STRING;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

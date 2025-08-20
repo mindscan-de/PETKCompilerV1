@@ -221,12 +221,92 @@ ruleLlmTaskDefinition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getLlmTaskDefinitionAccess().getLeftCurlyBracketKeyword_4());
 		}
-		otherlv_5='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_5_0());
+				}
+				lv_assignment_5_0=ruleLlmVariableAssignment
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLlmTaskDefinitionRule());
+					}
+					add(
+						$current,
+						"assignment",
+						lv_assignment_5_0,
+						"de.mindscan.ai.aidsl.AiDsl.LlmVariableAssignment");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
+
+// Entry rule entryRuleLlmVariableAssignment
+entryRuleLlmVariableAssignment returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLlmVariableAssignmentRule()); }
+	iv_ruleLlmVariableAssignment=ruleLlmVariableAssignment
+	{ $current=$iv_ruleLlmVariableAssignment.current; }
+	EOF;
+
+// Rule LlmVariableAssignment
+ruleLlmVariableAssignment returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_variablename_0_0=RULE_ID
+				{
+					newLeafNode(lv_variablename_0_0, grammarAccess.getLlmVariableAssignmentAccess().getVariablenameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLlmVariableAssignmentRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"variablename",
+						lv_variablename_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_1=':='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLlmVariableAssignmentAccess().getColonEqualsSignKeyword_1());
+		}
+		(
+			(
+				lv_template_2_0=RULE_ML_TEMPLATE_STRING
+				{
+					newLeafNode(lv_template_2_0, grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLlmVariableAssignmentRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"template",
+						lv_template_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ML_TEMPLATE_STRING");
+				}
+			)
+		)
+	)
+;
+
+RULE_ML_TEMPLATE_STRING : '\'\'\'' ( options {greedy=false;} : . )*'\'\'\'';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

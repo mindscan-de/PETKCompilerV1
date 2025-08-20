@@ -5,13 +5,23 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
+import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAssignment <em>Assignment</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +58,16 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAssignment() <em>Assignment</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssignment()
+   * @generated
+   * @ordered
+   */
+  protected EList<LlmVariableAssignment> assignment;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,45 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
+  public EList<LlmVariableAssignment> getAssignment()
+  {
+    if (assignment == null)
+    {
+      assignment = new EObjectContainmentEList<LlmVariableAssignment>(LlmVariableAssignment.class, this, AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT);
+    }
+    return assignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
+        return ((InternalEList<?>)getAssignment()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         return getName();
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
+        return getAssignment();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +169,7 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +177,10 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
+        getAssignment().clear();
+        getAssignment().addAll((Collection<? extends LlmVariableAssignment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +199,9 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
+        getAssignment().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +218,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
+        return assignment != null && !assignment.isEmpty();
     }
     return super.eIsSet(featureID);
   }

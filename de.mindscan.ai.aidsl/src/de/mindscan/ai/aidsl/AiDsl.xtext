@@ -15,5 +15,12 @@ WorkflowDefinition:
 
 LlmTaskDefinition:
 	'llmtask' name=ID '(' ')' '{'
+		assignment+=LlmVariableAssignment*
 	'}' 
 ;
+
+LlmVariableAssignment:
+	variablename=ID ':=' template=ML_TEMPLATE_STRING
+;
+
+terminal ML_TEMPLATE_STRING: "'''"  -> "'''";

@@ -91,6 +91,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createLlmTaskDefinitionAdapter();
       }
       @Override
+      public Adapter caseLlmVariableAssignment(LlmVariableAssignment object)
+      {
+        return createLlmVariableAssignmentAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -153,6 +158,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLlmTaskDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment <em>Llm Variable Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment
+   * @generated
+   */
+  public Adapter createLlmVariableAssignmentAdapter()
   {
     return null;
   }
