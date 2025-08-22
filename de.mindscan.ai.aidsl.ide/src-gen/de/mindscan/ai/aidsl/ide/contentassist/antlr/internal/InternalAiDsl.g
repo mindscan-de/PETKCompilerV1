@@ -683,22 +683,20 @@ rule__LlmVariableAssignment__TemplateAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0()); }
-		RULE_ML_TEMPLATE_STRING
-		{ after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-RULE_ML_TEMPLATE_STRING : '\'\'\'' ( options {greedy=false;} : . )*'\'\'\'';
-
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\''|'\'\'\'' ( options {greedy=false;} : . )*'\'\'\'');
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 

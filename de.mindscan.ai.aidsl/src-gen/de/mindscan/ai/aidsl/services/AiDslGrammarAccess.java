@@ -15,7 +15,6 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -147,14 +146,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cVariablenameIDTerminalRuleCall_0_0 = (RuleCall)cVariablenameAssignment_0.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTemplateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0 = (RuleCall)cTemplateAssignment_2.eContents().get(0);
+		private final RuleCall cTemplateSTRINGTerminalRuleCall_2_0 = (RuleCall)cTemplateAssignment_2.eContents().get(0);
 		
 		//LlmVariableAssignment:
-		//    variablename=ID ':=' template=ML_TEMPLATE_STRING
+		//    variablename=ID ':=' template=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//variablename=ID ':=' template=ML_TEMPLATE_STRING
+		//variablename=ID ':=' template=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//variablename=ID
@@ -166,11 +165,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':='
 		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
 		
-		//template=ML_TEMPLATE_STRING
+		//template=STRING
 		public Assignment getTemplateAssignment_2() { return cTemplateAssignment_2; }
 		
-		//ML_TEMPLATE_STRING
-		public RuleCall getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0() { return cTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0; }
+		//STRING
+		public RuleCall getTemplateSTRINGTerminalRuleCall_2_0() { return cTemplateSTRINGTerminalRuleCall_2_0; }
 	}
 	
 	
@@ -178,22 +177,30 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDefinitionElements pWorkflowDefinition;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
 	private final LlmVariableAssignmentElements pLlmVariableAssignment;
-	private final TerminalRule tML_TEMPLATE_STRING;
+	private final TerminalRule tID;
+	private final TerminalRule tINT;
+	private final TerminalRule tSTRING;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
-	
-	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
-	public AiDslGrammarAccess(GrammarProvider grammarProvider,
-			TerminalsGrammarAccess gaTerminals) {
+	public AiDslGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pWorkflowDefinition = new WorkflowDefinitionElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
 		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
-		this.tML_TEMPLATE_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ML_TEMPLATE_STRING");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ID");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.INT");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.STRING");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ANY_OTHER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -217,10 +224,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return grammar;
 	}
 	
-	
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//Model:
@@ -260,7 +263,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//LlmVariableAssignment:
-	//    variablename=ID ':=' template=ML_TEMPLATE_STRING
+	//    variablename=ID ':=' template=STRING
 	//;
 	public LlmVariableAssignmentElements getLlmVariableAssignmentAccess() {
 		return pLlmVariableAssignment;
@@ -270,46 +273,42 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getLlmVariableAssignmentAccess().getRule();
 	}
 	
-	//terminal ML_TEMPLATE_STRING: "'''"  -> "'''";
-	public TerminalRule getML_TEMPLATE_STRINGRule() {
-		return tML_TEMPLATE_STRING;
-	}
-	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return tID;
 	}
 	
 	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
+		return tINT;
 	}
 	
 	//terminal STRING:
 	//            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
-	//            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'" |
+	//            "'''"  -> "'''"
 	//        ;
 	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
+		return tSTRING;
 	}
 	
 	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return tML_COMMENT;
 	}
 	
 	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return tSL_COMMENT;
 	}
 	
 	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return tWS;
 	}
 	
 	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return tANY_OTHER;
 	}
 }

@@ -1,4 +1,6 @@
-grammar de.mindscan.ai.aidsl.AiDsl with org.eclipse.xtext.common.Terminals
+grammar de.mindscan.ai.aidsl.AiDsl hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate aiDsl "http://www.mindscan.de/ai/aidsl/AiDsl"
 
@@ -9,7 +11,6 @@ Model:
 	
 WorkflowDefinition:
 	'workflow' name=ID '(' ')' '{'
-	
 	'}'
 ;
 
@@ -20,7 +21,19 @@ LlmTaskDefinition:
 ;
 
 LlmVariableAssignment:
-	variablename=ID ':=' template=ML_TEMPLATE_STRING
+	variablename=ID ':=' template=STRING
 ;
 
-terminal ML_TEMPLATE_STRING: "'''"  -> "'''";
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING:
+			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'" |
+			"'''"  -> "'''"
+		;
+terminal ML_COMMENT : '/*' -> '*/';
+terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS         : (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;

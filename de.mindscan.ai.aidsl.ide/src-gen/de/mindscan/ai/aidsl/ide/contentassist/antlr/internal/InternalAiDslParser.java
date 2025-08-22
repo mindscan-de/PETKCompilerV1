@@ -22,20 +22,19 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ML_TEMPLATE_STRING", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'workflow'", "'('", "')'", "'{'", "'}'", "'llmtask'", "':='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'workflow'", "'('", "')'", "'{'", "'}'", "'llmtask'", "':='"
     };
     public static final int RULE_ID=4;
-    public static final int RULE_WS=10;
-    public static final int RULE_STRING=7;
-    public static final int RULE_ANY_OTHER=11;
-    public static final int RULE_ML_TEMPLATE_STRING=5;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_WS=9;
+    public static final int RULE_STRING=5;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int RULE_INT=6;
-    public static final int T__18=18;
-    public static final int RULE_ML_COMMENT=8;
+    public static final int T__11=11;
+    public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -126,7 +125,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||LA1_0==17) ) {
+                if ( (LA1_0==11||LA1_0==16) ) {
                     alt1=1;
                 }
 
@@ -413,10 +412,10 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==12) ) {
+            if ( (LA2_0==11) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==17) ) {
+            else if ( (LA2_0==16) ) {
                 alt2=2;
             }
             else {
@@ -533,7 +532,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:191:2: 'workflow'
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getWorkflowKeyword_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getWorkflowDefinitionAccess().getWorkflowKeyword_0()); 
 
             }
@@ -693,7 +692,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:245:2: '('
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getLeftParenthesisKeyword_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getWorkflowDefinitionAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -768,7 +767,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:272:2: ')'
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_3()); 
-            match(input,14,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -843,7 +842,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:299:2: '{'
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,15,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -913,7 +912,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:325:2: '}'
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,16,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -988,7 +987,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:353:2: 'llmtask'
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getLlmtaskKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getLlmTaskDefinitionAccess().getLlmtaskKeyword_0()); 
 
             }
@@ -1148,7 +1147,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:407:2: '('
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getLeftParenthesisKeyword_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getLlmTaskDefinitionAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -1223,7 +1222,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:434:2: ')'
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getRightParenthesisKeyword_3()); 
-            match(input,14,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getLlmTaskDefinitionAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -1298,7 +1297,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:461:2: '{'
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,15,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getLlmTaskDefinitionAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -1471,7 +1470,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:514:2: '}'
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -1631,7 +1630,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:569:2: ':='
             {
              before(grammarAccess.getLlmVariableAssignmentAccess().getColonEqualsSignKeyword_1()); 
-            match(input,18,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getLlmVariableAssignmentAccess().getColonEqualsSignKeyword_1()); 
 
             }
@@ -1934,21 +1933,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__TemplateAssignment_2"
-    // InternalAiDsl.g:680:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_ML_TEMPLATE_STRING ) ;
+    // InternalAiDsl.g:680:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
     public final void rule__LlmVariableAssignment__TemplateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:684:1: ( ( RULE_ML_TEMPLATE_STRING ) )
-            // InternalAiDsl.g:685:2: ( RULE_ML_TEMPLATE_STRING )
+            // InternalAiDsl.g:684:1: ( ( RULE_STRING ) )
+            // InternalAiDsl.g:685:2: ( RULE_STRING )
             {
-            // InternalAiDsl.g:685:2: ( RULE_ML_TEMPLATE_STRING )
-            // InternalAiDsl.g:686:3: RULE_ML_TEMPLATE_STRING
+            // InternalAiDsl.g:685:2: ( RULE_STRING )
+            // InternalAiDsl.g:686:3: RULE_STRING
             {
-             before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_ML_TEMPLATE_STRING,FOLLOW_2); 
-             after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -1976,15 +1975,15 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000021002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000010802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008010L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
 
 }

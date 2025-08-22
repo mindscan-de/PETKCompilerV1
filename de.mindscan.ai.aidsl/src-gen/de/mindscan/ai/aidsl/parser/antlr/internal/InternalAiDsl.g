@@ -148,7 +148,7 @@ ruleWorkflowDefinition returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)
 		)
@@ -205,7 +205,7 @@ ruleLlmTaskDefinition returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)
 		)
@@ -277,7 +277,7 @@ ruleLlmVariableAssignment returns [EObject current=null]
 						$current,
 						"variablename",
 						lv_variablename_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)
 		)
@@ -287,9 +287,9 @@ ruleLlmVariableAssignment returns [EObject current=null]
 		}
 		(
 			(
-				lv_template_2_0=RULE_ML_TEMPLATE_STRING
+				lv_template_2_0=RULE_STRING
 				{
-					newLeafNode(lv_template_2_0, grammarAccess.getLlmVariableAssignmentAccess().getTemplateML_TEMPLATE_STRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_template_2_0, grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -299,20 +299,18 @@ ruleLlmVariableAssignment returns [EObject current=null]
 						$current,
 						"template",
 						lv_template_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.ML_TEMPLATE_STRING");
+						"de.mindscan.ai.aidsl.AiDsl.STRING");
 				}
 			)
 		)
 	)
 ;
 
-RULE_ML_TEMPLATE_STRING : '\'\'\'' ( options {greedy=false;} : . )*'\'\'\'';
-
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\''|'\'\'\'' ( options {greedy=false;} : . )*'\'\'\'');
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
