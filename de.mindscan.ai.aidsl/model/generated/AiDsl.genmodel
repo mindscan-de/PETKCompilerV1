@@ -7,11 +7,15 @@
   <genPackages prefix="AiDsl" basePackage="de.mindscan.ai.aidsl" disposableProviderFactory="true"
       fileExtensions="aidsl" ecorePackage="AiDsl.ecore#/">
     <genClasses ecoreClass="AiDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/packagedeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/package_declaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/import_declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/definitions"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//PackageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//PackageDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//ImportDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>

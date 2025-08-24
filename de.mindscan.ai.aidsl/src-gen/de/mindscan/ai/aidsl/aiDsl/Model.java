@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration <em>Packagedeclaration</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackage_declaration <em>Package declaration</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getImport_declarations <em>Import declarations</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
@@ -27,26 +28,38 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Packagedeclaration</b></em>' containment reference.
+   * Returns the value of the '<em><b>Package declaration</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Packagedeclaration</em>' containment reference.
-   * @see #setPackagedeclaration(PackageDeclaration)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Packagedeclaration()
+   * @return the value of the '<em>Package declaration</em>' containment reference.
+   * @see #setPackage_declaration(PackageDeclaration)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Package_declaration()
    * @model containment="true"
    * @generated
    */
-  PackageDeclaration getPackagedeclaration();
+  PackageDeclaration getPackage_declaration();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration <em>Packagedeclaration</em>}' containment reference.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackage_declaration <em>Package declaration</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Packagedeclaration</em>' containment reference.
-   * @see #getPackagedeclaration()
+   * @param value the new value of the '<em>Package declaration</em>' containment reference.
+   * @see #getPackage_declaration()
    * @generated
    */
-  void setPackagedeclaration(PackageDeclaration value);
+  void setPackage_declaration(PackageDeclaration value);
+
+  /**
+   * Returns the value of the '<em><b>Import declarations</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.ImportDeclaration}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Import declarations</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Import_declarations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ImportDeclaration> getImport_declarations();
 
   /**
    * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.

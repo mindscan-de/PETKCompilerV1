@@ -5,7 +5,10 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate aiDsl "http://www.mindscan.de/ai/aidsl/AiDsl"
 
 Model:
-	(packagedeclaration=PackageDeclaration)?
+	(package_declaration=PackageDeclaration)?
+	
+	(import_declarations+=ImportDeclaration)*
+	
 	definitions += (WorkflowDefinition|LlmTaskDefinition)*
 ;
 
@@ -13,10 +16,16 @@ PackageDeclaration:
 	'package' name=QualifiedName
 ;
 
+ImportDeclaration:
+	'import' importedNamespace=QualifiedNameWithWildcard
+;
+
 QualifiedName:
 	ID ('.'ID)*
 ;
-
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
 
 	
 WorkflowDefinition:
@@ -25,7 +34,6 @@ WorkflowDefinition:
 ;
 
 LlmTaskDefinition:
-	// TODO a comma separated list of AnnotatedInterfaceReferences
 	'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
 		assignment+=LlmVariableAssignment*
 	'}' 

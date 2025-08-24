@@ -67,6 +67,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
     {
       case AiDslPackage.MODEL: return createModel();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
+      case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
       case AiDslPackage.LLM_TASK_DEFINITION: return createLlmTaskDefinition();
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
@@ -98,6 +99,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
     return packageDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ImportDeclaration createImportDeclaration()
+  {
+    ImportDeclarationImpl importDeclaration = new ImportDeclarationImpl();
+    return importDeclaration;
   }
 
   /**

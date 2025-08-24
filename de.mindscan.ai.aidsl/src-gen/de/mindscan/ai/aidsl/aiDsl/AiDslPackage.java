@@ -68,13 +68,22 @@ public interface AiDslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Packagedeclaration</b></em>' containment reference.
+   * The feature id for the '<em><b>Package declaration</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__PACKAGEDECLARATION = 0;
+  int MODEL__PACKAGE_DECLARATION = 0;
+
+  /**
+   * The feature id for the '<em><b>Import declarations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__IMPORT_DECLARATIONS = 1;
 
   /**
    * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
@@ -83,7 +92,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__DEFINITIONS = 1;
+  int MODEL__DEFINITIONS = 2;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -92,7 +101,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -123,6 +132,34 @@ public interface AiDslPackage extends EPackage
   int PACKAGE_DECLARATION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.ImportDeclarationImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getImportDeclaration()
+   * @generated
+   */
+  int IMPORT_DECLARATION = 2;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_DECLARATION__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The number of structural features of the '<em>Import Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_DECLARATION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,7 +167,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 2;
+  int WORKFLOW_DEFINITION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,7 +195,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 3;
+  int LLM_TASK_DEFINITION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,7 +241,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 4;
+  int ANNOTATION_INTERFACE_REFERENCE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,7 +269,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 5;
+  int LLM_VARIABLE_ASSIGNMENT = 6;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -273,15 +310,26 @@ public interface AiDslPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration <em>Packagedeclaration</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackage_declaration <em>Package declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Packagedeclaration</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration()
+   * @return the meta object for the containment reference '<em>Package declaration</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.Model#getPackage_declaration()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Packagedeclaration();
+  EReference getModel_Package_declaration();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.Model#getImport_declarations <em>Import declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Import declarations</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.Model#getImport_declarations()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Import_declarations();
 
   /**
    * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions <em>Definitions</em>}'.
@@ -314,6 +362,27 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getPackageDeclaration_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.ImportDeclaration <em>Import Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Declaration</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.ImportDeclaration
+   * @generated
+   */
+  EClass getImportDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.ImportDeclaration#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.ImportDeclaration#getImportedNamespace()
+   * @see #getImportDeclaration()
+   * @generated
+   */
+  EAttribute getImportDeclaration_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
@@ -466,12 +535,20 @@ public interface AiDslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Packagedeclaration</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Package declaration</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__PACKAGEDECLARATION = eINSTANCE.getModel_Packagedeclaration();
+    EReference MODEL__PACKAGE_DECLARATION = eINSTANCE.getModel_Package_declaration();
+
+    /**
+     * The meta object literal for the '<em><b>Import declarations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__IMPORT_DECLARATIONS = eINSTANCE.getModel_Import_declarations();
 
     /**
      * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
@@ -498,6 +575,24 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute PACKAGE_DECLARATION__NAME = eINSTANCE.getPackageDeclaration_Name();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.ImportDeclarationImpl <em>Import Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.ImportDeclarationImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getImportDeclaration()
+     * @generated
+     */
+    EClass IMPORT_DECLARATION = eINSTANCE.getImportDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_DECLARATION__IMPORTED_NAMESPACE = eINSTANCE.getImportDeclaration_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.

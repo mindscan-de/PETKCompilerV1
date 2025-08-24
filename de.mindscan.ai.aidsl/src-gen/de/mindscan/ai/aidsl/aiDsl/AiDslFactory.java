@@ -42,6 +42,15 @@ public interface AiDslFactory extends EFactory
   PackageDeclaration createPackageDeclaration();
 
   /**
+   * Returns a new object of class '<em>Import Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Declaration</em>'.
+   * @generated
+   */
+  ImportDeclaration createImportDeclaration();
+
+  /**
    * Returns a new object of class '<em>Workflow Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

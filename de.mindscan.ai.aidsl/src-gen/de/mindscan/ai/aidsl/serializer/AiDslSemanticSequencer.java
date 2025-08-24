@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.serializer;
 import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
+import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
@@ -39,6 +40,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE:
 				sequence_AnnotationInterfaceReference(context, (AnnotationInterfaceReference) semanticObject); 
+				return; 
+			case AiDslPackage.IMPORT_DECLARATION:
+				sequence_ImportDeclaration(context, (ImportDeclaration) semanticObject); 
 				return; 
 			case AiDslPackage.LLM_TASK_DEFINITION:
 				sequence_LlmTaskDefinition(context, (LlmTaskDefinition) semanticObject); 
@@ -76,6 +80,26 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ImportDeclaration returns ImportDeclaration
+	 *
+	 * Constraint:
+	 *     importedNamespace=QualifiedNameWithWildcard
+	 * </pre>
+	 */
+	protected void sequence_ImportDeclaration(ISerializationContext context, ImportDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.IMPORT_DECLARATION__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.IMPORT_DECLARATION__IMPORTED_NAMESPACE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportDeclarationAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
@@ -128,8 +152,11 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         packagedeclaration=PackageDeclaration | 
-	 *         (packagedeclaration=PackageDeclaration (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+)
+	 *         (
+	 *             ((package_declaration=PackageDeclaration import_declarations+=ImportDeclaration+) | import_declarations+=ImportDeclaration+)? 
+	 *             (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+
+	 *         ) | 
+	 *         (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+
 	 *     )?
 	 * </pre>
 	 */

@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
 
@@ -32,7 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getPackagedeclaration <em>Packagedeclaration</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getPackage_declaration <em>Package declaration</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getImport_declarations <em>Import declarations</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
@@ -41,14 +43,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getPackagedeclaration() <em>Packagedeclaration</em>}' containment reference.
+   * The cached value of the '{@link #getPackage_declaration() <em>Package declaration</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackagedeclaration()
+   * @see #getPackage_declaration()
    * @generated
    * @ordered
    */
-  protected PackageDeclaration packagedeclaration;
+  protected PackageDeclaration package_declaration;
+
+  /**
+   * The cached value of the '{@link #getImport_declarations() <em>Import declarations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImport_declarations()
+   * @generated
+   * @ordered
+   */
+  protected EList<ImportDeclaration> import_declarations;
 
   /**
    * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
@@ -87,9 +99,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public PackageDeclaration getPackagedeclaration()
+  public PackageDeclaration getPackage_declaration()
   {
-    return packagedeclaration;
+    return package_declaration;
   }
 
   /**
@@ -97,13 +109,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPackagedeclaration(PackageDeclaration newPackagedeclaration, NotificationChain msgs)
+  public NotificationChain basicSetPackage_declaration(PackageDeclaration newPackage_declaration, NotificationChain msgs)
   {
-    PackageDeclaration oldPackagedeclaration = packagedeclaration;
-    packagedeclaration = newPackagedeclaration;
+    PackageDeclaration oldPackage_declaration = package_declaration;
+    package_declaration = newPackage_declaration;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGEDECLARATION, oldPackagedeclaration, newPackagedeclaration);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGE_DECLARATION, oldPackage_declaration, newPackage_declaration);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -115,20 +127,35 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public void setPackagedeclaration(PackageDeclaration newPackagedeclaration)
+  public void setPackage_declaration(PackageDeclaration newPackage_declaration)
   {
-    if (newPackagedeclaration != packagedeclaration)
+    if (newPackage_declaration != package_declaration)
     {
       NotificationChain msgs = null;
-      if (packagedeclaration != null)
-        msgs = ((InternalEObject)packagedeclaration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGEDECLARATION, null, msgs);
-      if (newPackagedeclaration != null)
-        msgs = ((InternalEObject)newPackagedeclaration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGEDECLARATION, null, msgs);
-      msgs = basicSetPackagedeclaration(newPackagedeclaration, msgs);
+      if (package_declaration != null)
+        msgs = ((InternalEObject)package_declaration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGE_DECLARATION, null, msgs);
+      if (newPackage_declaration != null)
+        msgs = ((InternalEObject)newPackage_declaration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGE_DECLARATION, null, msgs);
+      msgs = basicSetPackage_declaration(newPackage_declaration, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGEDECLARATION, newPackagedeclaration, newPackagedeclaration));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGE_DECLARATION, newPackage_declaration, newPackage_declaration));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ImportDeclaration> getImport_declarations()
+  {
+    if (import_declarations == null)
+    {
+      import_declarations = new EObjectContainmentEList<ImportDeclaration>(ImportDeclaration.class, this, AiDslPackage.MODEL__IMPORT_DECLARATIONS);
+    }
+    return import_declarations;
   }
 
   /**
@@ -156,8 +183,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__PACKAGEDECLARATION:
-        return basicSetPackagedeclaration(null, msgs);
+      case AiDslPackage.MODEL__PACKAGE_DECLARATION:
+        return basicSetPackage_declaration(null, msgs);
+      case AiDslPackage.MODEL__IMPORT_DECLARATIONS:
+        return ((InternalEList<?>)getImport_declarations()).basicRemove(otherEnd, msgs);
       case AiDslPackage.MODEL__DEFINITIONS:
         return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
     }
@@ -174,8 +203,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__PACKAGEDECLARATION:
-        return getPackagedeclaration();
+      case AiDslPackage.MODEL__PACKAGE_DECLARATION:
+        return getPackage_declaration();
+      case AiDslPackage.MODEL__IMPORT_DECLARATIONS:
+        return getImport_declarations();
       case AiDslPackage.MODEL__DEFINITIONS:
         return getDefinitions();
     }
@@ -193,8 +224,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__PACKAGEDECLARATION:
-        setPackagedeclaration((PackageDeclaration)newValue);
+      case AiDslPackage.MODEL__PACKAGE_DECLARATION:
+        setPackage_declaration((PackageDeclaration)newValue);
+        return;
+      case AiDslPackage.MODEL__IMPORT_DECLARATIONS:
+        getImport_declarations().clear();
+        getImport_declarations().addAll((Collection<? extends ImportDeclaration>)newValue);
         return;
       case AiDslPackage.MODEL__DEFINITIONS:
         getDefinitions().clear();
@@ -214,8 +249,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__PACKAGEDECLARATION:
-        setPackagedeclaration((PackageDeclaration)null);
+      case AiDslPackage.MODEL__PACKAGE_DECLARATION:
+        setPackage_declaration((PackageDeclaration)null);
+        return;
+      case AiDslPackage.MODEL__IMPORT_DECLARATIONS:
+        getImport_declarations().clear();
         return;
       case AiDslPackage.MODEL__DEFINITIONS:
         getDefinitions().clear();
@@ -234,8 +272,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AiDslPackage.MODEL__PACKAGEDECLARATION:
-        return packagedeclaration != null;
+      case AiDslPackage.MODEL__PACKAGE_DECLARATION:
+        return package_declaration != null;
+      case AiDslPackage.MODEL__IMPORT_DECLARATIONS:
+        return import_declarations != null && !import_declarations.isEmpty();
       case AiDslPackage.MODEL__DEFINITIONS:
         return definitions != null && !definitions.isEmpty();
     }

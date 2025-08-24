@@ -31,20 +31,24 @@ public class AiDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AiDslGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_1_0(), "rule__Model__DefinitionsAlternatives_1_0");
+			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_2_0(), "rule__Model__DefinitionsAlternatives_2_0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
+			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getGroup(), "rule__WorkflowDefinition__Group__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup(), "rule__LlmTaskDefinition__Group__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4(), "rule__LlmTaskDefinition__Group_4__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4_2(), "rule__LlmTaskDefinition__Group_4_2__0");
 			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getGroup(), "rule__AnnotationInterfaceReference__Group__0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getGroup(), "rule__LlmVariableAssignment__Group__0");
-			builder.put(grammarAccess.getModelAccess().getPackagedeclarationAssignment_0(), "rule__Model__PackagedeclarationAssignment_0");
-			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_1(), "rule__Model__DefinitionsAssignment_1");
+			builder.put(grammarAccess.getModelAccess().getPackage_declarationAssignment_0(), "rule__Model__Package_declarationAssignment_0");
+			builder.put(grammarAccess.getModelAccess().getImport_declarationsAssignment_1(), "rule__Model__Import_declarationsAssignment_1");
+			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getNameAssignment_1(), "rule__LlmTaskDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1");
