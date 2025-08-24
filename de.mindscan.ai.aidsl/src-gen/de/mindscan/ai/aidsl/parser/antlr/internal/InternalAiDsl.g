@@ -79,39 +79,142 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowDefinitionParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getModelAccess().getPackagedeclarationPackageDeclarationParserRuleCall_0_0());
 				}
-				lv_definitions_0_1=ruleWorkflowDefinition
+				lv_packagedeclaration_0_0=rulePackageDeclaration
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
 					}
-					add(
+					set(
 						$current,
-						"definitions",
-						lv_definitions_0_1,
-						"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinition");
+						"packagedeclaration",
+						lv_packagedeclaration_0_0,
+						"de.mindscan.ai.aidsl.AiDsl.PackageDeclaration");
 					afterParserOrEnumRuleCall();
 				}
-				    |
+			)
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowDefinitionParserRuleCall_1_0_0());
+					}
+					lv_definitions_1_1=ruleWorkflowDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"definitions",
+							lv_definitions_1_1,
+							"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinition");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsLlmTaskDefinitionParserRuleCall_1_0_1());
+					}
+					lv_definitions_1_2=ruleLlmTaskDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"definitions",
+							lv_definitions_1_2,
+							"de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRulePackageDeclaration
+entryRulePackageDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPackageDeclarationRule()); }
+	iv_rulePackageDeclaration=rulePackageDeclaration
+	{ $current=$iv_rulePackageDeclaration.current; }
+	EOF;
+
+// Rule PackageDeclaration
+rulePackageDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='package'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPackageDeclarationAccess().getPackageKeyword_0());
+		}
+		(
+			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getDefinitionsLlmTaskDefinitionParserRuleCall_0_1());
+					newCompositeNode(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_definitions_0_2=ruleLlmTaskDefinition
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getPackageDeclarationRule());
 					}
-					add(
+					set(
 						$current,
-						"definitions",
-						lv_definitions_0_2,
-						"de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-	)*
+	)
+;
+
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current.getText(); }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
+	)
 ;
 
 // Entry rule entryRuleWorkflowDefinition
@@ -241,17 +344,42 @@ ruleLlmTaskDefinition returns [EObject current=null]
 					}
 				)
 			)
+			(
+				otherlv_6=','
+				{
+					newLeafNode(otherlv_6, grammarAccess.getLlmTaskDefinitionAccess().getCommaKeyword_4_2_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0());
+						}
+						lv_annotation_interfaces_7_0=ruleAnnotationInterfaceReference
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getLlmTaskDefinitionRule());
+							}
+							add(
+								$current,
+								"annotation_interfaces",
+								lv_annotation_interfaces_7_0,
+								"de.mindscan.ai.aidsl.AiDsl.AnnotationInterfaceReference");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
 		)?
-		otherlv_6='{'
+		otherlv_8='{'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getLlmTaskDefinitionAccess().getLeftCurlyBracketKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getLlmTaskDefinitionAccess().getLeftCurlyBracketKeyword_5());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0());
 				}
-				lv_assignment_7_0=ruleLlmVariableAssignment
+				lv_assignment_9_0=ruleLlmVariableAssignment
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLlmTaskDefinitionRule());
@@ -259,15 +387,15 @@ ruleLlmTaskDefinition returns [EObject current=null]
 					add(
 						$current,
 						"assignment",
-						lv_assignment_7_0,
+						lv_assignment_9_0,
 						"de.mindscan.ai.aidsl.AiDsl.LlmVariableAssignment");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_8='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_10, grammarAccess.getLlmTaskDefinitionAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

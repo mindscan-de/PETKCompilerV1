@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration <em>Packagedeclaration</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.Model#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Model extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Packagedeclaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Packagedeclaration</em>' containment reference.
+   * @see #setPackagedeclaration(PackageDeclaration)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getModel_Packagedeclaration()
+   * @model containment="true"
+   * @generated
+   */
+  PackageDeclaration getPackagedeclaration();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.Model#getPackagedeclaration <em>Packagedeclaration</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Packagedeclaration</em>' containment reference.
+   * @see #getPackagedeclaration()
+   * @generated
+   */
+  void setPackagedeclaration(PackageDeclaration value);
+
   /**
    * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.

@@ -66,6 +66,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
     switch (eClass.getClassifierID())
     {
       case AiDslPackage.MODEL: return createModel();
+      case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
       case AiDslPackage.LLM_TASK_DEFINITION: return createLlmTaskDefinition();
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
@@ -85,6 +86,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PackageDeclaration createPackageDeclaration()
+  {
+    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
+    return packageDeclaration;
   }
 
   /**

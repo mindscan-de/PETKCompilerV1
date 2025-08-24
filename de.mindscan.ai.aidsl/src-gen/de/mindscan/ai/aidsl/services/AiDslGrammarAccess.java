@@ -23,27 +23,93 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.Model");
-		private final Assignment cDefinitionsAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cDefinitionsAlternatives_0 = (Alternatives)cDefinitionsAssignment.eContents().get(0);
-		private final RuleCall cDefinitionsWorkflowDefinitionParserRuleCall_0_0 = (RuleCall)cDefinitionsAlternatives_0.eContents().get(0);
-		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_0_1 = (RuleCall)cDefinitionsAlternatives_0.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPackagedeclarationAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPackagedeclarationPackageDeclarationParserRuleCall_0_0 = (RuleCall)cPackagedeclarationAssignment_0.eContents().get(0);
+		private final Assignment cDefinitionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cDefinitionsAlternatives_1_0 = (Alternatives)cDefinitionsAssignment_1.eContents().get(0);
+		private final RuleCall cDefinitionsWorkflowDefinitionParserRuleCall_1_0_0 = (RuleCall)cDefinitionsAlternatives_1_0.eContents().get(0);
+		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_1_0_1 = (RuleCall)cDefinitionsAlternatives_1_0.eContents().get(1);
 		
 		//Model:
+		//    (packagedeclaration=PackageDeclaration)?
 		//    definitions += (WorkflowDefinition|LlmTaskDefinition)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//(packagedeclaration=PackageDeclaration)?
 		//definitions += (WorkflowDefinition|LlmTaskDefinition)*
-		public Assignment getDefinitionsAssignment() { return cDefinitionsAssignment; }
+		public Group getGroup() { return cGroup; }
+		
+		//(packagedeclaration=PackageDeclaration)?
+		public Assignment getPackagedeclarationAssignment_0() { return cPackagedeclarationAssignment_0; }
+		
+		//PackageDeclaration
+		public RuleCall getPackagedeclarationPackageDeclarationParserRuleCall_0_0() { return cPackagedeclarationPackageDeclarationParserRuleCall_0_0; }
+		
+		//definitions += (WorkflowDefinition|LlmTaskDefinition)*
+		public Assignment getDefinitionsAssignment_1() { return cDefinitionsAssignment_1; }
 		
 		//(WorkflowDefinition|LlmTaskDefinition)
-		public Alternatives getDefinitionsAlternatives_0() { return cDefinitionsAlternatives_0; }
+		public Alternatives getDefinitionsAlternatives_1_0() { return cDefinitionsAlternatives_1_0; }
 		
 		//WorkflowDefinition
-		public RuleCall getDefinitionsWorkflowDefinitionParserRuleCall_0_0() { return cDefinitionsWorkflowDefinitionParserRuleCall_0_0; }
+		public RuleCall getDefinitionsWorkflowDefinitionParserRuleCall_1_0_0() { return cDefinitionsWorkflowDefinitionParserRuleCall_1_0_0; }
 		
 		//LlmTaskDefinition
-		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_0_1() { return cDefinitionsLlmTaskDefinitionParserRuleCall_0_1; }
+		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_1_0_1() { return cDefinitionsLlmTaskDefinitionParserRuleCall_1_0_1; }
+	}
+	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.PackageDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//PackageDeclaration:
+		//    'package' name=QualifiedName
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'package' name=QualifiedName
+		public Group getGroup() { return cGroup; }
+		
+		//'package'
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//    ID ('.'ID)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('.'ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.'ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	public class WorkflowDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinition");
@@ -99,6 +165,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cImplementsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cAnnotation_interfacesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_1_0 = (RuleCall)cAnnotation_interfacesAssignment_4_1.eContents().get(0);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cAnnotation_interfacesAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0 = (RuleCall)cAnnotation_interfacesAssignment_4_2_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cAssignmentAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cAssignmentLlmVariableAssignmentParserRuleCall_6_0 = (RuleCall)cAssignmentAssignment_6.eContents().get(0);
@@ -106,14 +176,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//LlmTaskDefinition:
 		//    // TODO a comma separated list of AnnotatedInterfaceReferences
-		//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference )? '{'
+		//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
 		//        assignment+=LlmVariableAssignment*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// TODO a comma separated list of AnnotatedInterfaceReferences
-		//'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference )? '{'
+		//'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
 		//    assignment+=LlmVariableAssignment*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -134,7 +204,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 		
-		//('implements' annotation_interfaces+=AnnotationInterfaceReference )?
+		//('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'implements'
@@ -145,6 +215,18 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//AnnotationInterfaceReference
 		public RuleCall getAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_1_0() { return cAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_1_0; }
+		
+		//(',' annotation_interfaces+=AnnotationInterfaceReference)*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+		
+		//','
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
+		
+		//annotation_interfaces+=AnnotationInterfaceReference
+		public Assignment getAnnotation_interfacesAssignment_4_2_1() { return cAnnotation_interfacesAssignment_4_2_1; }
+		
+		//AnnotationInterfaceReference
+		public RuleCall getAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0() { return cAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -220,6 +302,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	
 	private final ModelElements pModel;
+	private final PackageDeclarationElements pPackageDeclaration;
+	private final QualifiedNameElements pQualifiedName;
 	private final WorkflowDefinitionElements pWorkflowDefinition;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
 	private final AnnotationInterfaceReferenceElements pAnnotationInterfaceReference;
@@ -238,6 +322,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public AiDslGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.pModel = new ModelElements();
+		this.pPackageDeclaration = new PackageDeclarationElements();
+		this.pQualifiedName = new QualifiedNameElements();
 		this.pWorkflowDefinition = new WorkflowDefinitionElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
 		this.pAnnotationInterfaceReference = new AnnotationInterfaceReferenceElements();
@@ -275,6 +361,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 
 	
 	//Model:
+	//    (packagedeclaration=PackageDeclaration)?
 	//    definitions += (WorkflowDefinition|LlmTaskDefinition)*
 	//;
 	public ModelElements getModelAccess() {
@@ -283,6 +370,28 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//PackageDeclaration:
+	//    'package' name=QualifiedName
+	//;
+	public PackageDeclarationElements getPackageDeclarationAccess() {
+		return pPackageDeclaration;
+	}
+	
+	public ParserRule getPackageDeclarationRule() {
+		return getPackageDeclarationAccess().getRule();
+	}
+	
+	//QualifiedName:
+	//    ID ('.'ID)*
+	//;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
 	}
 	
 	//WorkflowDefinition:
@@ -299,7 +408,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//LlmTaskDefinition:
 	//    // TODO a comma separated list of AnnotatedInterfaceReferences
-	//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference )? '{'
+	//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
 	//        assignment+=LlmVariableAssignment*
 	//    '}'
 	//;

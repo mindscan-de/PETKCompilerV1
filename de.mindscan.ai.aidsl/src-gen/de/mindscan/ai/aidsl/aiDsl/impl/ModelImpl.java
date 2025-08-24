@@ -5,9 +5,11 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.Model;
+import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getPackagedeclaration <em>Packagedeclaration</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.ModelImpl#getDefinitions <em>Definitions</em>}</li>
  * </ul>
  *
@@ -36,6 +40,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
+  /**
+   * The cached value of the '{@link #getPackagedeclaration() <em>Packagedeclaration</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPackagedeclaration()
+   * @generated
+   * @ordered
+   */
+  protected PackageDeclaration packagedeclaration;
+
   /**
    * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -73,6 +87,56 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public PackageDeclaration getPackagedeclaration()
+  {
+    return packagedeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPackagedeclaration(PackageDeclaration newPackagedeclaration, NotificationChain msgs)
+  {
+    PackageDeclaration oldPackagedeclaration = packagedeclaration;
+    packagedeclaration = newPackagedeclaration;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGEDECLARATION, oldPackagedeclaration, newPackagedeclaration);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPackagedeclaration(PackageDeclaration newPackagedeclaration)
+  {
+    if (newPackagedeclaration != packagedeclaration)
+    {
+      NotificationChain msgs = null;
+      if (packagedeclaration != null)
+        msgs = ((InternalEObject)packagedeclaration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGEDECLARATION, null, msgs);
+      if (newPackagedeclaration != null)
+        msgs = ((InternalEObject)newPackagedeclaration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.MODEL__PACKAGEDECLARATION, null, msgs);
+      msgs = basicSetPackagedeclaration(newPackagedeclaration, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.MODEL__PACKAGEDECLARATION, newPackagedeclaration, newPackagedeclaration));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<EObject> getDefinitions()
   {
     if (definitions == null)
@@ -92,6 +156,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case AiDslPackage.MODEL__PACKAGEDECLARATION:
+        return basicSetPackagedeclaration(null, msgs);
       case AiDslPackage.MODEL__DEFINITIONS:
         return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
     }
@@ -108,6 +174,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case AiDslPackage.MODEL__PACKAGEDECLARATION:
+        return getPackagedeclaration();
       case AiDslPackage.MODEL__DEFINITIONS:
         return getDefinitions();
     }
@@ -125,6 +193,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case AiDslPackage.MODEL__PACKAGEDECLARATION:
+        setPackagedeclaration((PackageDeclaration)newValue);
+        return;
       case AiDslPackage.MODEL__DEFINITIONS:
         getDefinitions().clear();
         getDefinitions().addAll((Collection<? extends EObject>)newValue);
@@ -143,6 +214,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case AiDslPackage.MODEL__PACKAGEDECLARATION:
+        setPackagedeclaration((PackageDeclaration)null);
+        return;
       case AiDslPackage.MODEL__DEFINITIONS:
         getDefinitions().clear();
         return;
@@ -160,6 +234,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case AiDslPackage.MODEL__PACKAGEDECLARATION:
+        return packagedeclaration != null;
       case AiDslPackage.MODEL__DEFINITIONS:
         return definitions != null && !definitions.isEmpty();
     }

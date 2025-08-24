@@ -9,6 +9,7 @@ import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
+import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
@@ -48,6 +49,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case AiDslPackage.PACKAGE_DECLARATION:
+				sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
+				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
 				return; 
@@ -82,7 +86,11 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LlmTaskDefinition returns LlmTaskDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID annotation_interfaces+=AnnotationInterfaceReference? assignment+=LlmVariableAssignment*)
+	 *     (
+	 *         name=ID 
+	 *         (annotation_interfaces+=AnnotationInterfaceReference annotation_interfaces+=AnnotationInterfaceReference*)? 
+	 *         assignment+=LlmVariableAssignment*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_LlmTaskDefinition(ISerializationContext context, LlmTaskDefinition semanticObject) {
@@ -119,11 +127,34 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+
+	 *     (
+	 *         packagedeclaration=PackageDeclaration | 
+	 *         (packagedeclaration=PackageDeclaration (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+)
+	 *     )?
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageDeclaration returns PackageDeclaration
+	 *
+	 * Constraint:
+	 *     name=QualifiedName
+	 * </pre>
+	 */
+	protected void sequence_PackageDeclaration(ISerializationContext context, PackageDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.PACKAGE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.PACKAGE_DECLARATION__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

@@ -33,6 +33,15 @@ public interface AiDslFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Package Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Package Declaration</em>'.
+   * @generated
+   */
+  PackageDeclaration createPackageDeclaration();
+
+  /**
    * Returns a new object of class '<em>Workflow Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
