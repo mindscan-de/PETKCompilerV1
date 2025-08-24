@@ -5,6 +5,7 @@ package de.mindscan.ai.aidsl.serializer;
 
 import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
@@ -35,6 +36,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AiDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE:
+				sequence_AnnotationInterfaceReference(context, (AnnotationInterfaceReference) semanticObject); 
+				return; 
 			case AiDslPackage.LLM_TASK_DEFINITION:
 				sequence_LlmTaskDefinition(context, (LlmTaskDefinition) semanticObject); 
 				return; 
@@ -55,10 +59,30 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     AnnotationInterfaceReference returns AnnotationInterfaceReference
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_AnnotationInterfaceReference(ISerializationContext context, AnnotationInterfaceReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     LlmTaskDefinition returns LlmTaskDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID assignment+=LlmVariableAssignment*)
+	 *     (name=ID annotation_interfaces+=AnnotationInterfaceReference? assignment+=LlmVariableAssignment*)
 	 * </pre>
 	 */
 	protected void sequence_LlmTaskDefinition(ISerializationContext context, LlmTaskDefinition semanticObject) {

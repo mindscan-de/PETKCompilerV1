@@ -133,13 +133,22 @@ public interface AiDslPackage extends EPackage
   int LLM_TASK_DEFINITION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Annotation interfaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LLM_TASK_DEFINITION__ANNOTATION_INTERFACES = 1;
+
+  /**
    * The feature id for the '<em><b>Assignment</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LLM_TASK_DEFINITION__ASSIGNMENT = 1;
+  int LLM_TASK_DEFINITION__ASSIGNMENT = 2;
 
   /**
    * The number of structural features of the '<em>Llm Task Definition</em>' class.
@@ -148,7 +157,35 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LLM_TASK_DEFINITION_FEATURE_COUNT = 2;
+  int LLM_TASK_DEFINITION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.AnnotationInterfaceReferenceImpl <em>Annotation Interface Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AnnotationInterfaceReferenceImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
+   * @generated
+   */
+  int ANNOTATION_INTERFACE_REFERENCE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_INTERFACE_REFERENCE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Annotation Interface Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATION_INTERFACE_REFERENCE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl <em>Llm Variable Assignment</em>}' class.
@@ -158,7 +195,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 3;
+  int LLM_VARIABLE_ASSIGNMENT = 4;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -252,6 +289,17 @@ public interface AiDslPackage extends EPackage
   EAttribute getLlmTaskDefinition_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAnnotation_interfaces <em>Annotation interfaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Annotation interfaces</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAnnotation_interfaces()
+   * @see #getLlmTaskDefinition()
+   * @generated
+   */
+  EReference getLlmTaskDefinition_Annotation_interfaces();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment <em>Assignment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -261,6 +309,27 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getLlmTaskDefinition_Assignment();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference <em>Annotation Interface Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotation Interface Reference</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference
+   * @generated
+   */
+  EClass getAnnotationInterfaceReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName()
+   * @see #getAnnotationInterfaceReference()
+   * @generated
+   */
+  EAttribute getAnnotationInterfaceReference_Name();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment <em>Llm Variable Assignment</em>}'.
@@ -372,12 +441,38 @@ public interface AiDslPackage extends EPackage
     EAttribute LLM_TASK_DEFINITION__NAME = eINSTANCE.getLlmTaskDefinition_Name();
 
     /**
+     * The meta object literal for the '<em><b>Annotation interfaces</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LLM_TASK_DEFINITION__ANNOTATION_INTERFACES = eINSTANCE.getLlmTaskDefinition_Annotation_interfaces();
+
+    /**
      * The meta object literal for the '<em><b>Assignment</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference LLM_TASK_DEFINITION__ASSIGNMENT = eINSTANCE.getLlmTaskDefinition_Assignment();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.AnnotationInterfaceReferenceImpl <em>Annotation Interface Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AnnotationInterfaceReferenceImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
+     * @generated
+     */
+    EClass ANNOTATION_INTERFACE_REFERENCE = eINSTANCE.getAnnotationInterfaceReference();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANNOTATION_INTERFACE_REFERENCE__NAME = eINSTANCE.getAnnotationInterfaceReference_Name();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl <em>Llm Variable Assignment</em>}' class.

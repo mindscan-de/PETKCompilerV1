@@ -15,9 +15,15 @@ WorkflowDefinition:
 ;
 
 LlmTaskDefinition:
-	'llmtask' name=ID '(' ')' '{'
+	// TODO a comma separated list of AnnotatedInterfaceReferences
+	'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference )? '{'
 		assignment+=LlmVariableAssignment*
 	'}' 
+;
+
+AnnotationInterfaceReference:
+	// TODO nowhitespace
+	'@'name=ID
 ;
 
 LlmVariableAssignment:

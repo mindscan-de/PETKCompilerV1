@@ -94,6 +94,13 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE:
+      {
+        AnnotationInterfaceReference annotationInterfaceReference = (AnnotationInterfaceReference)theEObject;
+        T result = caseAnnotationInterfaceReference(annotationInterfaceReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT:
       {
         LlmVariableAssignment llmVariableAssignment = (LlmVariableAssignment)theEObject;
@@ -149,6 +156,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLlmTaskDefinition(LlmTaskDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Interface Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Interface Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationInterfaceReference(AnnotationInterfaceReference object)
   {
     return null;
   }

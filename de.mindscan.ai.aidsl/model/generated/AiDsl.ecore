@@ -10,8 +10,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LlmTaskDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation_interfaces"
+        upperBound="-1" eType="#//AnnotationInterfaceReference" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assignment" upperBound="-1"
         eType="#//LlmVariableAssignment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationInterfaceReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LlmVariableAssignment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variablename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

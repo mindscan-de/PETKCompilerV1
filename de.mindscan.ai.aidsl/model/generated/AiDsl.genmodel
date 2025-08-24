@@ -14,7 +14,11 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/annotation_interfaces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/assignment"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//AnnotationInterfaceReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//AnnotationInterfaceReference/name"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmVariableAssignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/variablename"/>

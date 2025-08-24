@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAnnotation_interfaces <em>Annotation interfaces</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAssignment <em>Assignment</em>}</li>
  * </ul>
  *
@@ -58,6 +60,16 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotation_interfaces() <em>Annotation interfaces</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotation_interfaces()
+   * @generated
+   * @ordered
+   */
+  protected EList<AnnotationInterfaceReference> annotation_interfaces;
 
   /**
    * The cached value of the '{@link #getAssignment() <em>Assignment</em>}' containment reference list.
@@ -121,6 +133,21 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
+  public EList<AnnotationInterfaceReference> getAnnotation_interfaces()
+  {
+    if (annotation_interfaces == null)
+    {
+      annotation_interfaces = new EObjectContainmentEList<AnnotationInterfaceReference>(AnnotationInterfaceReference.class, this, AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES);
+    }
+    return annotation_interfaces;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<LlmVariableAssignment> getAssignment()
   {
     if (assignment == null)
@@ -140,6 +167,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
+        return ((InternalEList<?>)getAnnotation_interfaces()).basicRemove(otherEnd, msgs);
       case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
         return ((InternalEList<?>)getAssignment()).basicRemove(otherEnd, msgs);
     }
@@ -158,6 +187,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         return getName();
+      case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
+        return getAnnotation_interfaces();
       case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
         return getAssignment();
     }
@@ -177,6 +208,10 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
+        getAnnotation_interfaces().clear();
+        getAnnotation_interfaces().addAll((Collection<? extends AnnotationInterfaceReference>)newValue);
         return;
       case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
         getAssignment().clear();
@@ -199,6 +234,9 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
+        getAnnotation_interfaces().clear();
+        return;
       case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
         getAssignment().clear();
         return;
@@ -218,6 +256,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
+        return annotation_interfaces != null && !annotation_interfaces.isEmpty();
       case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
         return assignment != null && !assignment.isEmpty();
     }

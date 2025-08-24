@@ -5,6 +5,7 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslFactory;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
@@ -45,6 +46,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass llmTaskDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotationInterfaceReferenceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,9 +196,42 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EReference getLlmTaskDefinition_Assignment()
+  public EReference getLlmTaskDefinition_Annotation_interfaces()
   {
     return (EReference)llmTaskDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLlmTaskDefinition_Assignment()
+  {
+    return (EReference)llmTaskDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAnnotationInterfaceReference()
+  {
+    return annotationInterfaceReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAnnotationInterfaceReference_Name()
+  {
+    return (EAttribute)annotationInterfaceReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -265,7 +306,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     llmTaskDefinitionEClass = createEClass(LLM_TASK_DEFINITION);
     createEAttribute(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__NAME);
+    createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ANNOTATION_INTERFACES);
     createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ASSIGNMENT);
+
+    annotationInterfaceReferenceEClass = createEClass(ANNOTATION_INTERFACE_REFERENCE);
+    createEAttribute(annotationInterfaceReferenceEClass, ANNOTATION_INTERFACE_REFERENCE__NAME);
 
     llmVariableAssignmentEClass = createEClass(LLM_VARIABLE_ASSIGNMENT);
     createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__VARIABLENAME);
@@ -311,7 +356,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(llmTaskDefinitionEClass, LlmTaskDefinition.class, "LlmTaskDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmTaskDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmTaskDefinition_Annotation_interfaces(), this.getAnnotationInterfaceReference(), null, "annotation_interfaces", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLlmTaskDefinition_Assignment(), this.getLlmVariableAssignment(), null, "assignment", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(annotationInterfaceReferenceEClass, AnnotationInterfaceReference.class, "AnnotationInterfaceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAnnotationInterfaceReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, AnnotationInterfaceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(llmVariableAssignmentEClass, LlmVariableAssignment.class, "LlmVariableAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmVariableAssignment_Variablename(), ecorePackage.getEString(), "variablename", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

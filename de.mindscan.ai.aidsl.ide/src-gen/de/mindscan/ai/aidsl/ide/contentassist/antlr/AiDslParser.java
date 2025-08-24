@@ -34,11 +34,15 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_0(), "rule__Model__DefinitionsAlternatives_0");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getGroup(), "rule__WorkflowDefinition__Group__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup(), "rule__LlmTaskDefinition__Group__0");
+			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4(), "rule__LlmTaskDefinition__Group_4__0");
+			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getGroup(), "rule__AnnotationInterfaceReference__Group__0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getGroup(), "rule__LlmVariableAssignment__Group__0");
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getNameAssignment_1(), "rule__LlmTaskDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_5(), "rule__LlmTaskDefinition__AssignmentAssignment_5");
+			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1");
+			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6(), "rule__LlmTaskDefinition__AssignmentAssignment_6");
+			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameAssignment_1(), "rule__AnnotationInterfaceReference__NameAssignment_1");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameAssignment_0(), "rule__LlmVariableAssignment__VariablenameAssignment_0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getTemplateAssignment_2(), "rule__LlmVariableAssignment__TemplateAssignment_2");
 		}

@@ -91,6 +91,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createLlmTaskDefinitionAdapter();
       }
       @Override
+      public Adapter caseAnnotationInterfaceReference(AnnotationInterfaceReference object)
+      {
+        return createAnnotationInterfaceReferenceAdapter();
+      }
+      @Override
       public Adapter caseLlmVariableAssignment(LlmVariableAssignment object)
       {
         return createLlmVariableAssignmentAdapter();
@@ -158,6 +163,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLlmTaskDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference <em>Annotation Interface Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference
+   * @generated
+   */
+  public Adapter createAnnotationInterfaceReferenceAdapter()
   {
     return null;
   }

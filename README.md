@@ -13,9 +13,9 @@ Whenever we change the JSON structure of the LLM Workflow Engine, we can just ad
 Also the strings quoted in ''' ''' are special, because they are processed by a template engine. Maybe I want to also support syntax highlighting a template DSL in a DSL. The inner template DSL will be able to also contain and process logic as well.
 
 ```java
-@Workflow
+
 @EntryPoint
-void main() {
+workflow  main() {
 	(task1.task, task1.result) = invokeLLM firstshotTranslation();
 	(task2.task, task2.result) = invokeLLM firstShotRefiner();
 	(task3.task, task3.result) = invokeLLM bestAnswerAndJsonExtractor();

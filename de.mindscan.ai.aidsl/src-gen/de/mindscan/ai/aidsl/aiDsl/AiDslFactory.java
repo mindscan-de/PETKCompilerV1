@@ -51,6 +51,15 @@ public interface AiDslFactory extends EFactory
   LlmTaskDefinition createLlmTaskDefinition();
 
   /**
+   * Returns a new object of class '<em>Annotation Interface Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Interface Reference</em>'.
+   * @generated
+   */
+  AnnotationInterfaceReference createAnnotationInterfaceReference();
+
+  /**
    * Returns a new object of class '<em>Llm Variable Assignment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
