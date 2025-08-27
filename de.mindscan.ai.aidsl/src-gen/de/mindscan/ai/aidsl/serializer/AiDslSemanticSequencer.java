@@ -15,6 +15,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
+import de.mindscan.ai.aidsl.aiDsl.VMOverrideElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
@@ -71,6 +72,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.VM_NODE_OUT_ELEMENT:
 				sequence_VMNodeOutElement(context, (VMNodeOutElement) semanticObject); 
+				return; 
+			case AiDslPackage.VM_OVERRIDE_ELEMENT:
+				sequence_VMOverrideElement(context, (VMOverrideElement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
@@ -271,6 +275,36 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_3_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMOverrideElement
+	 *     VMOverrideElement returns VMOverrideElement
+	 *
+	 * Constraint:
+	 *     (policy='override' type=ID name=ID defaultvalue=STRING)
+	 * </pre>
+	 */
+	protected void sequence_VMOverrideElement(ISerializationContext context, VMOverrideElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__POLICY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__POLICY));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__TYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__DEFAULTVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__DEFAULTVALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0(), semanticObject.getPolicy());
+		feeder.accept(grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0(), semanticObject.getDefaultvalue());
 		feeder.finish();
 	}
 	

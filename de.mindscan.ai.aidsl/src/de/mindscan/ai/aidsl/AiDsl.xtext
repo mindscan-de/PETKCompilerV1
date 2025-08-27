@@ -35,7 +35,7 @@ VMNodeDefinition:
 ;
 
 VMNodeEleemnts:
-	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement)
+	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
 ;
 
 
@@ -49,6 +49,10 @@ VMNodeOutElement:
 
 VMNodeElement:
 	policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+;
+
+VMOverrideElement:
+	policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
 ;
 
 

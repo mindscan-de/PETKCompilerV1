@@ -44,6 +44,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVMNodeOutElementAccess().getGroup(), "rule__VMNodeOutElement__Group__0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getGroup(), "rule__VMNodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getGroup_3(), "rule__VMNodeElement__Group_3__0");
+			builder.put(grammarAccess.getVMOverrideElementAccess().getGroup(), "rule__VMOverrideElement__Group__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup(), "rule__LlmTaskDefinition__Group__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4(), "rule__LlmTaskDefinition__Group_4__0");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4_2(), "rule__LlmTaskDefinition__Group_4_2__0");
@@ -68,6 +69,10 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVMNodeElementAccess().getTypeAssignment_1(), "rule__VMNodeElement__TypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeElementAccess().getNameAssignment_2(), "rule__VMNodeElement__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeElementAccess().getDefaultvalueAssignment_3_1(), "rule__VMNodeElement__DefaultvalueAssignment_3_1");
+			builder.put(grammarAccess.getVMOverrideElementAccess().getPolicyAssignment_0(), "rule__VMOverrideElement__PolicyAssignment_0");
+			builder.put(grammarAccess.getVMOverrideElementAccess().getTypeAssignment_1(), "rule__VMOverrideElement__TypeAssignment_1");
+			builder.put(grammarAccess.getVMOverrideElementAccess().getNameAssignment_2(), "rule__VMOverrideElement__NameAssignment_2");
+			builder.put(grammarAccess.getVMOverrideElementAccess().getDefaultvalueAssignment_4(), "rule__VMOverrideElement__DefaultvalueAssignment_4");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getNameAssignment_1(), "rule__LlmTaskDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_2_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1");

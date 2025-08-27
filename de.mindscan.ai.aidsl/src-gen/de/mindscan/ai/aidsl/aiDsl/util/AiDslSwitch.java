@@ -139,6 +139,14 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.VM_OVERRIDE_ELEMENT:
+      {
+        VMOverrideElement vmOverrideElement = (VMOverrideElement)theEObject;
+        T result = caseVMOverrideElement(vmOverrideElement);
+        if (result == null) result = caseVMNodeEleemnts(vmOverrideElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.LLM_TASK_DEFINITION:
       {
         LlmTaskDefinition llmTaskDefinition = (LlmTaskDefinition)theEObject;
@@ -304,6 +312,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVMNodeElement(VMNodeElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Override Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Override Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMOverrideElement(VMOverrideElement object)
   {
     return null;
   }

@@ -121,6 +121,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createVMNodeElementAdapter();
       }
       @Override
+      public Adapter caseVMOverrideElement(VMOverrideElement object)
+      {
+        return createVMOverrideElementAdapter();
+      }
+      @Override
       public Adapter caseLlmTaskDefinition(LlmTaskDefinition object)
       {
         return createLlmTaskDefinitionAdapter();
@@ -288,6 +293,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVMNodeElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement <em>VM Override Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement
+   * @generated
+   */
+  public Adapter createVMOverrideElementAdapter()
   {
     return null;
   }

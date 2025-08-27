@@ -274,6 +274,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleVMOverrideElement
+entryRuleVMOverrideElement
+:
+{ before(grammarAccess.getVMOverrideElementRule()); }
+	 ruleVMOverrideElement
+{ after(grammarAccess.getVMOverrideElementRule()); } 
+	 EOF 
+;
+
+// Rule VMOverrideElement
+ruleVMOverrideElement 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getVMOverrideElementAccess().getGroup()); }
+		(rule__VMOverrideElement__Group__0)
+		{ after(grammarAccess.getVMOverrideElementAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleLlmTaskDefinition
 entryRuleLlmTaskDefinition
 :
@@ -468,6 +493,12 @@ rule__VMNodeEleemnts__Alternatives
 		{ before(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_2()); }
 		ruleVMNodeElement
 		{ after(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_3()); }
+		ruleVMOverrideElement
+		{ after(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_3()); }
 	)
 ;
 finally {
@@ -1325,6 +1356,141 @@ rule__VMNodeElement__Group_3__1__Impl
 	{ before(grammarAccess.getVMNodeElementAccess().getDefaultvalueAssignment_3_1()); }
 	(rule__VMNodeElement__DefaultvalueAssignment_3_1)
 	{ after(grammarAccess.getVMNodeElementAccess().getDefaultvalueAssignment_3_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__VMOverrideElement__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__VMOverrideElement__Group__0__Impl
+	rule__VMOverrideElement__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getVMOverrideElementAccess().getPolicyAssignment_0()); }
+	(rule__VMOverrideElement__PolicyAssignment_0)
+	{ after(grammarAccess.getVMOverrideElementAccess().getPolicyAssignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__VMOverrideElement__Group__1__Impl
+	rule__VMOverrideElement__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getVMOverrideElementAccess().getTypeAssignment_1()); }
+	(rule__VMOverrideElement__TypeAssignment_1)
+	{ after(grammarAccess.getVMOverrideElementAccess().getTypeAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__VMOverrideElement__Group__2__Impl
+	rule__VMOverrideElement__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getVMOverrideElementAccess().getNameAssignment_2()); }
+	(rule__VMOverrideElement__NameAssignment_2)
+	{ after(grammarAccess.getVMOverrideElementAccess().getNameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__VMOverrideElement__Group__3__Impl
+	rule__VMOverrideElement__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getVMOverrideElementAccess().getColonEqualsSignKeyword_3()); }
+	':='
+	{ after(grammarAccess.getVMOverrideElementAccess().getColonEqualsSignKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__VMOverrideElement__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getVMOverrideElementAccess().getDefaultvalueAssignment_4()); }
+	(rule__VMOverrideElement__DefaultvalueAssignment_4)
+	{ after(grammarAccess.getVMOverrideElementAccess().getDefaultvalueAssignment_4()); }
 )
 ;
 finally {
@@ -2214,6 +2380,70 @@ rule__VMNodeElement__DefaultvalueAssignment_3_1
 		{ before(grammarAccess.getVMNodeElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); }
 		RULE_STRING
 		{ after(grammarAccess.getVMNodeElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__PolicyAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0()); }
+		(
+			{ before(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0()); }
+			'override'
+			{ after(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0()); }
+		)
+		{ after(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__TypeAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0()); }
+		RULE_ID
+		{ after(grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__NameAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0()); }
+		RULE_ID
+		{ after(grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__VMOverrideElement__DefaultvalueAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0()); }
 	)
 ;
 finally {

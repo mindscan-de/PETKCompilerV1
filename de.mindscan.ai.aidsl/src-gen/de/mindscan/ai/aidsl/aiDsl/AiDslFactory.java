@@ -105,6 +105,15 @@ public interface AiDslFactory extends EFactory
   VMNodeElement createVMNodeElement();
 
   /**
+   * Returns a new object of class '<em>VM Override Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Override Element</em>'.
+   * @generated
+   */
+  VMOverrideElement createVMOverrideElement();
+
+  /**
    * Returns a new object of class '<em>Llm Task Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

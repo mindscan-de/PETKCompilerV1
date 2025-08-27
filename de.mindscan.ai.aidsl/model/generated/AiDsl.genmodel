@@ -39,6 +39,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/defaultvalue"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMOverrideElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/defaultvalue"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/annotation_interfaces"/>

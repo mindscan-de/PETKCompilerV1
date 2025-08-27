@@ -74,6 +74,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
       case AiDslPackage.VM_NODE_OUT_ELEMENT: return createVMNodeOutElement();
       case AiDslPackage.VM_NODE_ELEMENT: return createVMNodeElement();
+      case AiDslPackage.VM_OVERRIDE_ELEMENT: return createVMOverrideElement();
       case AiDslPackage.LLM_TASK_DEFINITION: return createLlmTaskDefinition();
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT: return createLlmVariableAssignment();
@@ -188,6 +189,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     VMNodeElementImpl vmNodeElement = new VMNodeElementImpl();
     return vmNodeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMOverrideElement createVMOverrideElement()
+  {
+    VMOverrideElementImpl vmOverrideElement = new VMOverrideElementImpl();
+    return vmOverrideElement;
   }
 
   /**

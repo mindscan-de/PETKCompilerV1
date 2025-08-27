@@ -230,13 +230,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cVMNodeOpCodeElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVMNodeOutElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVMNodeElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cVMOverrideElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//VMNodeEleemnts:
-		//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement)
+		//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement)
+		//(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//VMNodeOpCodeElement
@@ -247,6 +248,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//VMNodeElement
 		public RuleCall getVMNodeElementParserRuleCall_2() { return cVMNodeElementParserRuleCall_2; }
+		
+		//VMOverrideElement
+		public RuleCall getVMOverrideElementParserRuleCall_3() { return cVMOverrideElementParserRuleCall_3; }
 	}
 	public class VMNodeOpCodeElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeOpCodeElement");
@@ -367,6 +371,54 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//(STRING)
 		public RuleCall getDefaultvalueSTRINGTerminalRuleCall_3_1_0() { return cDefaultvalueSTRINGTerminalRuleCall_3_1_0; }
+	}
+	public class VMOverrideElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMOverrideElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPolicyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cPolicyOverrideKeyword_0_0 = (Keyword)cPolicyAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDefaultvalueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefaultvalueAssignment_4.eContents().get(0);
+		
+		//VMOverrideElement:
+		//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+		public Group getGroup() { return cGroup; }
+		
+		//policy=('override')
+		public Assignment getPolicyAssignment_0() { return cPolicyAssignment_0; }
+		
+		//('override')
+		public Keyword getPolicyOverrideKeyword_0_0() { return cPolicyOverrideKeyword_0_0; }
+		
+		//type=ID
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		
+		//ID
+		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_3() { return cColonEqualsSignKeyword_3; }
+		
+		//defaultvalue=(STRING)
+		public Assignment getDefaultvalueAssignment_4() { return cDefaultvalueAssignment_4; }
+		
+		//(STRING)
+		public RuleCall getDefaultvalueSTRINGTerminalRuleCall_4_0() { return cDefaultvalueSTRINGTerminalRuleCall_4_0; }
 	}
 	public class LlmTaskDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
@@ -571,6 +623,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
 	private final VMNodeOutElementElements pVMNodeOutElement;
 	private final VMNodeElementElements pVMNodeElement;
+	private final VMOverrideElementElements pVMOverrideElement;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
 	private final AnnotationInterfaceReferenceElements pAnnotationInterfaceReference;
 	private final LlmVariableAssignmentElements pLlmVariableAssignment;
@@ -598,6 +651,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
 		this.pVMNodeOutElement = new VMNodeOutElementElements();
 		this.pVMNodeElement = new VMNodeElementElements();
+		this.pVMOverrideElement = new VMOverrideElementElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
 		this.pAnnotationInterfaceReference = new AnnotationInterfaceReferenceElements();
 		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
@@ -697,7 +751,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeEleemnts:
-	//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement)
+	//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
 	//;
 	public VMNodeEleemntsElements getVMNodeEleemntsAccess() {
 		return pVMNodeEleemnts;
@@ -738,6 +792,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getVMNodeElementRule() {
 		return getVMNodeElementAccess().getRule();
+	}
+	
+	//VMOverrideElement:
+	//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+	//;
+	public VMOverrideElementElements getVMOverrideElementAccess() {
+		return pVMOverrideElement;
+	}
+	
+	public ParserRule getVMOverrideElementRule() {
+		return getVMOverrideElementAccess().getRule();
 	}
 	
 	//// LLM Task definition

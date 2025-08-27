@@ -448,6 +448,15 @@ ruleVMNodeEleemnts returns [EObject current=null]
 			$current = $this_VMNodeElement_2.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_3());
+		}
+		this_VMOverrideElement_3=ruleVMOverrideElement
+		{
+			$current = $this_VMOverrideElement_3.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -659,6 +668,97 @@ ruleVMNodeElement returns [EObject current=null]
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleVMOverrideElement
+entryRuleVMOverrideElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMOverrideElementRule()); }
+	iv_ruleVMOverrideElement=ruleVMOverrideElement
+	{ $current=$iv_ruleVMOverrideElement.current; }
+	EOF;
+
+// Rule VMOverrideElement
+ruleVMOverrideElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_policy_0_0='override'
+				{
+					newLeafNode(lv_policy_0_0, grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+					}
+					setWithLastConsumed($current, "policy", lv_policy_0_0, "override");
+				}
+			)
+		)
+		(
+			(
+				lv_type_1_0=RULE_ID
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_3=':='
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVMOverrideElementAccess().getColonEqualsSignKeyword_3());
+		}
+		(
+			(
+				lv_defaultvalue_4_0=RULE_STRING
+				{
+					newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"defaultvalue",
+						lv_defaultvalue_4_0,
+						"de.mindscan.ai.aidsl.AiDsl.STRING");
+				}
+			)
+		)
 	)
 ;
 

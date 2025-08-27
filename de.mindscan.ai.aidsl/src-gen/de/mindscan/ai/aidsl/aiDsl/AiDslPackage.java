@@ -373,6 +373,61 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl <em>VM Override Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideElement()
+   * @generated
+   */
+  int VM_OVERRIDE_ELEMENT = 9;
+
+  /**
+   * The feature id for the '<em><b>Policy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_OVERRIDE_ELEMENT__POLICY = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_OVERRIDE_ELEMENT__TYPE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_OVERRIDE_ELEMENT__NAME = VM_NODE_ELEEMNTS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Defaultvalue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_OVERRIDE_ELEMENT__DEFAULTVALUE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>VM Override Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_OVERRIDE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 4;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -380,7 +435,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 9;
+  int LLM_TASK_DEFINITION = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -426,7 +481,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 10;
+  int ANNOTATION_INTERFACE_REFERENCE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -454,7 +509,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 11;
+  int LLM_VARIABLE_ASSIGNMENT = 12;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -749,6 +804,60 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getVMNodeElement_Defaultvalue();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement <em>VM Override Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Override Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement
+   * @generated
+   */
+  EClass getVMOverrideElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getPolicy <em>Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Policy</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getPolicy()
+   * @see #getVMOverrideElement()
+   * @generated
+   */
+  EAttribute getVMOverrideElement_Policy();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getType()
+   * @see #getVMOverrideElement()
+   * @generated
+   */
+  EAttribute getVMOverrideElement_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getName()
+   * @see #getVMOverrideElement()
+   * @generated
+   */
+  EAttribute getVMOverrideElement_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getDefaultvalue <em>Defaultvalue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Defaultvalue</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getDefaultvalue()
+   * @see #getVMOverrideElement()
+   * @generated
+   */
+  EAttribute getVMOverrideElement_Defaultvalue();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition <em>Llm Task Definition</em>}'.
@@ -1086,6 +1195,48 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute VM_NODE_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMNodeElement_Defaultvalue();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl <em>VM Override Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideElement()
+     * @generated
+     */
+    EClass VM_OVERRIDE_ELEMENT = eINSTANCE.getVMOverrideElement();
+
+    /**
+     * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_OVERRIDE_ELEMENT__POLICY = eINSTANCE.getVMOverrideElement_Policy();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_OVERRIDE_ELEMENT__TYPE = eINSTANCE.getVMOverrideElement_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_OVERRIDE_ELEMENT__NAME = eINSTANCE.getVMOverrideElement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Defaultvalue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_OVERRIDE_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMOverrideElement_Defaultvalue();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
