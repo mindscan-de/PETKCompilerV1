@@ -910,19 +910,14 @@ ruleAnnotationInterfaceReference returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAnnotationInterfaceReferenceRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0());
 				}
 			)
 		)

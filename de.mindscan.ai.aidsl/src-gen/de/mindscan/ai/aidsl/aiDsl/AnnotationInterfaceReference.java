@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface AnnotationInterfaceReference extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(VMNodeDefinition)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getAnnotationInterfaceReference_Name()
    * @model
    * @generated
    */
-  String getName();
+  VMNodeDefinition getName();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
+   * @param value the new value of the '<em>Name</em>' reference.
    * @see #getName()
    * @generated
    */
-  void setName(String value);
+  void setName(VMNodeDefinition value);
 
 } // AnnotationInterfaceReference

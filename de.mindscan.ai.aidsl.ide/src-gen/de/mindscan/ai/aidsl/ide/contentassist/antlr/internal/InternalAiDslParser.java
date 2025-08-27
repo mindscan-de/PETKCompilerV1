@@ -7484,21 +7484,29 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnnotationInterfaceReference__NameAssignment_1"
-    // InternalAiDsl.g:2513:1: rule__AnnotationInterfaceReference__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAiDsl.g:2513:1: rule__AnnotationInterfaceReference__NameAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__AnnotationInterfaceReference__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:2517:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:2518:2: ( RULE_ID )
+            // InternalAiDsl.g:2517:1: ( ( ( RULE_ID ) ) )
+            // InternalAiDsl.g:2518:2: ( ( RULE_ID ) )
             {
-            // InternalAiDsl.g:2518:2: ( RULE_ID )
-            // InternalAiDsl.g:2519:3: RULE_ID
+            // InternalAiDsl.g:2518:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:2519:3: ( RULE_ID )
             {
-             before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0()); 
+            // InternalAiDsl.g:2520:3: ( RULE_ID )
+            // InternalAiDsl.g:2521:4: RULE_ID
+            {
+             before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0()); 
 
             }
 
@@ -7521,17 +7529,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__VariablenameAssignment_0"
-    // InternalAiDsl.g:2528:1: rule__LlmVariableAssignment__VariablenameAssignment_0 : ( RULE_ID ) ;
+    // InternalAiDsl.g:2532:1: rule__LlmVariableAssignment__VariablenameAssignment_0 : ( RULE_ID ) ;
     public final void rule__LlmVariableAssignment__VariablenameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:2532:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:2533:2: ( RULE_ID )
+            // InternalAiDsl.g:2536:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:2537:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:2533:2: ( RULE_ID )
-            // InternalAiDsl.g:2534:3: RULE_ID
+            // InternalAiDsl.g:2537:2: ( RULE_ID )
+            // InternalAiDsl.g:2538:3: RULE_ID
             {
              before(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7558,17 +7566,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__TemplateAssignment_2"
-    // InternalAiDsl.g:2543:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:2547:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
     public final void rule__LlmVariableAssignment__TemplateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:2547:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:2548:2: ( RULE_STRING )
+            // InternalAiDsl.g:2551:1: ( ( RULE_STRING ) )
+            // InternalAiDsl.g:2552:2: ( RULE_STRING )
             {
-            // InternalAiDsl.g:2548:2: ( RULE_STRING )
-            // InternalAiDsl.g:2549:3: RULE_STRING
+            // InternalAiDsl.g:2552:2: ( RULE_STRING )
+            // InternalAiDsl.g:2553:3: RULE_STRING
             {
              before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 

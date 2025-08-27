@@ -8,6 +8,7 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -510,27 +511,31 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final CrossReference cNameVMNodeDefinitionCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameVMNodeDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cNameVMNodeDefinitionCrossReference_1_0.eContents().get(1);
 		
 		//AnnotationInterfaceReference:
 		//    // TODO nowhitespace
-		//    '@'name=ID
+		//    '@'name=[VMNodeDefinition]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// TODO nowhitespace
-		//'@'name=ID
+		//'@'name=[VMNodeDefinition]
 		public Group getGroup() { return cGroup; }
 		
 		//// TODO nowhitespace
 		//'@'
 		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
 		
-		//name=ID
+		//name=[VMNodeDefinition]
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
+		//[VMNodeDefinition]
+		public CrossReference getNameVMNodeDefinitionCrossReference_1_0() { return cNameVMNodeDefinitionCrossReference_1_0; }
+		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1() { return cNameVMNodeDefinitionIDTerminalRuleCall_1_0_1; }
 	}
 	public class LlmVariableAssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.LlmVariableAssignment");
@@ -821,7 +826,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//AnnotationInterfaceReference:
 	//    // TODO nowhitespace
-	//    '@'name=ID
+	//    '@'name=[VMNodeDefinition]
 	//;
 	public AnnotationInterfaceReferenceElements getAnnotationInterfaceReferenceAccess() {
 		return pAnnotationInterfaceReference;

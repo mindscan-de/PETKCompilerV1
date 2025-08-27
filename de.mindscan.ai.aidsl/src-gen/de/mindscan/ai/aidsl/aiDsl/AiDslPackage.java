@@ -484,7 +484,7 @@ public interface AiDslPackage extends EPackage
   int ANNOTATION_INTERFACE_REFERENCE = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -913,15 +913,15 @@ public interface AiDslPackage extends EPackage
   EClass getAnnotationInterfaceReference();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the reference '<em>Name</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference#getName()
    * @see #getAnnotationInterfaceReference()
    * @generated
    */
-  EAttribute getAnnotationInterfaceReference_Name();
+  EReference getAnnotationInterfaceReference_Name();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment <em>Llm Variable Assignment</em>}'.
@@ -1283,12 +1283,12 @@ public interface AiDslPackage extends EPackage
     EClass ANNOTATION_INTERFACE_REFERENCE = eINSTANCE.getAnnotationInterfaceReference();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANNOTATION_INTERFACE_REFERENCE__NAME = eINSTANCE.getAnnotationInterfaceReference_Name();
+    EReference ANNOTATION_INTERFACE_REFERENCE__NAME = eINSTANCE.getAnnotationInterfaceReference_Name();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmVariableAssignmentImpl <em>Llm Variable Assignment</em>}' class.

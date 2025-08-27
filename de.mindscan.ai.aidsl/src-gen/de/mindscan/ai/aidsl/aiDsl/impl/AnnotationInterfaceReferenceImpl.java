@@ -5,10 +5,12 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -29,24 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Container implements AnnotationInterfaceReference
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected VMNodeDefinition name;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +67,27 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
    * @generated
    */
   @Override
-  public String getName()
+  public VMNodeDefinition getName()
+  {
+    if (name != null && name.eIsProxy())
+    {
+      InternalEObject oldName = (InternalEObject)name;
+      name = (VMNodeDefinition)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME, oldName, name));
+      }
+    }
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VMNodeDefinition basicGetName()
   {
     return name;
   }
@@ -86,9 +98,9 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setName(VMNodeDefinition newName)
   {
-    String oldName = name;
+    VMNodeDefinition oldName = name;
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME, oldName, name));
@@ -105,7 +117,8 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
     switch (featureID)
     {
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME:
-        return getName();
+        if (resolve) return getName();
+        return basicGetName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,7 +134,7 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
     switch (featureID)
     {
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME:
-        setName((String)newValue);
+        setName((VMNodeDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +151,7 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
     switch (featureID)
     {
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME:
-        setName(NAME_EDEFAULT);
+        setName((VMNodeDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +168,9 @@ public class AnnotationInterfaceReferenceImpl extends MinimalEObjectImpl.Contain
     switch (featureID)
     {
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //AnnotationInterfaceReferenceImpl

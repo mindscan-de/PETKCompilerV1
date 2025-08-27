@@ -579,9 +579,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAnnotationInterfaceReference_Name()
+  public EReference getAnnotationInterfaceReference_Name()
   {
-    return (EAttribute)annotationInterfaceReferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)annotationInterfaceReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -694,7 +694,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ASSIGNMENT);
 
     annotationInterfaceReferenceEClass = createEClass(ANNOTATION_INTERFACE_REFERENCE);
-    createEAttribute(annotationInterfaceReferenceEClass, ANNOTATION_INTERFACE_REFERENCE__NAME);
+    createEReference(annotationInterfaceReferenceEClass, ANNOTATION_INTERFACE_REFERENCE__NAME);
 
     llmVariableAssignmentEClass = createEClass(LLM_VARIABLE_ASSIGNMENT);
     createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__VARIABLENAME);
@@ -782,7 +782,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getLlmTaskDefinition_Assignment(), this.getLlmVariableAssignment(), null, "assignment", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationInterfaceReferenceEClass, AnnotationInterfaceReference.class, "AnnotationInterfaceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAnnotationInterfaceReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, AnnotationInterfaceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnnotationInterfaceReference_Name(), this.getVMNodeDefinition(), null, "name", null, 0, 1, AnnotationInterfaceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(llmVariableAssignmentEClass, LlmVariableAssignment.class, "LlmVariableAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmVariableAssignment_Variablename(), ecorePackage.getEString(), "variablename", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

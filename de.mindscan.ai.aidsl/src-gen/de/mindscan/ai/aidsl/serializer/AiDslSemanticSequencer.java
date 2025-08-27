@@ -90,7 +90,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AnnotationInterfaceReference returns AnnotationInterfaceReference
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name=[VMNodeDefinition|ID]
 	 * </pre>
 	 */
 	protected void sequence_AnnotationInterfaceReference(ISerializationContext context, AnnotationInterfaceReference semanticObject) {
@@ -99,7 +99,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME, false));
 		feeder.finish();
 	}
 	

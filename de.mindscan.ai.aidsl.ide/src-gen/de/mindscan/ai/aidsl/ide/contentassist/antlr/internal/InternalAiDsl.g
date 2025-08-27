@@ -2516,9 +2516,13 @@ rule__AnnotationInterfaceReference__NameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0()); }
 	)
 ;
 finally {
