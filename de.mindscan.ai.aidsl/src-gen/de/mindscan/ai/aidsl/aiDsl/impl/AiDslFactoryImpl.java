@@ -69,6 +69,11 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
+      case AiDslPackage.VM_NODE_DEFINITION: return createVMNodeDefinition();
+      case AiDslPackage.VM_NODE_ELEEMNTS: return createVMNodeEleemnts();
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
+      case AiDslPackage.VM_NODE_OUT_ELEMENT: return createVMNodeOutElement();
+      case AiDslPackage.VM_NODE_ELEMENT: return createVMNodeElement();
       case AiDslPackage.LLM_TASK_DEFINITION: return createLlmTaskDefinition();
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT: return createLlmVariableAssignment();
@@ -123,6 +128,66 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     WorkflowDefinitionImpl workflowDefinition = new WorkflowDefinitionImpl();
     return workflowDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeDefinition createVMNodeDefinition()
+  {
+    VMNodeDefinitionImpl vmNodeDefinition = new VMNodeDefinitionImpl();
+    return vmNodeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeEleemnts createVMNodeEleemnts()
+  {
+    VMNodeEleemntsImpl vmNodeEleemnts = new VMNodeEleemntsImpl();
+    return vmNodeEleemnts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeOpCodeElement createVMNodeOpCodeElement()
+  {
+    VMNodeOpCodeElementImpl vmNodeOpCodeElement = new VMNodeOpCodeElementImpl();
+    return vmNodeOpCodeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeOutElement createVMNodeOutElement()
+  {
+    VMNodeOutElementImpl vmNodeOutElement = new VMNodeOutElementImpl();
+    return vmNodeOutElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeElement createVMNodeElement()
+  {
+    VMNodeElementImpl vmNodeElement = new VMNodeElementImpl();
+    return vmNodeElement;
   }
 
   /**

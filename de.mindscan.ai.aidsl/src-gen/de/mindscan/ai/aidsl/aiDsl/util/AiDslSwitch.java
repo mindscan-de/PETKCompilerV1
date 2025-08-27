@@ -101,6 +101,44 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.VM_NODE_DEFINITION:
+      {
+        VMNodeDefinition vmNodeDefinition = (VMNodeDefinition)theEObject;
+        T result = caseVMNodeDefinition(vmNodeDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_ELEEMNTS:
+      {
+        VMNodeEleemnts vmNodeEleemnts = (VMNodeEleemnts)theEObject;
+        T result = caseVMNodeEleemnts(vmNodeEleemnts);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT:
+      {
+        VMNodeOpCodeElement vmNodeOpCodeElement = (VMNodeOpCodeElement)theEObject;
+        T result = caseVMNodeOpCodeElement(vmNodeOpCodeElement);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeOpCodeElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_OUT_ELEMENT:
+      {
+        VMNodeOutElement vmNodeOutElement = (VMNodeOutElement)theEObject;
+        T result = caseVMNodeOutElement(vmNodeOutElement);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeOutElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_ELEMENT:
+      {
+        VMNodeElement vmNodeElement = (VMNodeElement)theEObject;
+        T result = caseVMNodeElement(vmNodeElement);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.LLM_TASK_DEFINITION:
       {
         LlmTaskDefinition llmTaskDefinition = (LlmTaskDefinition)theEObject;
@@ -186,6 +224,86 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWorkflowDefinition(WorkflowDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeDefinition(VMNodeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Eleemnts</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Eleemnts</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeEleemnts(VMNodeEleemnts object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Op Code Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Op Code Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeOpCodeElement(VMNodeOpCodeElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeOutElement(VMNodeOutElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeElement(VMNodeElement object)
   {
     return null;
   }

@@ -188,6 +188,191 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
+   * @generated
+   */
+  int VM_NODE_DEFINITION = 4;
+
+  /**
+   * The feature id for the '<em><b>Nodetype</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_DEFINITION__NODETYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_DEFINITION__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_DEFINITION__ELEMENTS = 2;
+
+  /**
+   * The number of structural features of the '<em>VM Node Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_DEFINITION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeEleemntsImpl <em>VM Node Eleemnts</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeEleemntsImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
+   * @generated
+   */
+  int VM_NODE_ELEEMNTS = 5;
+
+  /**
+   * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEEMNTS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl <em>VM Node Op Code Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
+   * @generated
+   */
+  int VM_NODE_OP_CODE_ELEMENT = 6;
+
+  /**
+   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_OP_CODE_ELEMENT__CODE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>VM Node Op Code Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_OP_CODE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl <em>VM Node Out Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
+   * @generated
+   */
+  int VM_NODE_OUT_ELEMENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_OUT_ELEMENT__NAME = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_OUT_ELEMENT__TYPE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>VM Node Out Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_OUT_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl <em>VM Node Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeElement()
+   * @generated
+   */
+  int VM_NODE_ELEMENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Policy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEMENT__POLICY = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEMENT__TYPE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEMENT__NAME = VM_NODE_ELEEMNTS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Defaultvalue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEMENT__DEFAULTVALUE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>VM Node Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 4;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -195,7 +380,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 4;
+  int LLM_TASK_DEFINITION = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -241,7 +426,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 5;
+  int ANNOTATION_INTERFACE_REFERENCE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,7 +454,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 6;
+  int LLM_VARIABLE_ASSIGNMENT = 11;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -404,6 +589,166 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getWorkflowDefinition_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition <em>VM Node Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
+   * @generated
+   */
+  EClass getVMNodeDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getNodetype <em>Nodetype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nodetype</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getNodetype()
+   * @see #getVMNodeDefinition()
+   * @generated
+   */
+  EAttribute getVMNodeDefinition_Nodetype();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getName()
+   * @see #getVMNodeDefinition()
+   * @generated
+   */
+  EAttribute getVMNodeDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition#getElements()
+   * @see #getVMNodeDefinition()
+   * @generated
+   */
+  EReference getVMNodeDefinition_Elements();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeEleemnts <em>VM Node Eleemnts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Eleemnts</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeEleemnts
+   * @generated
+   */
+  EClass getVMNodeEleemnts();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement <em>VM Node Op Code Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Op Code Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
+   * @generated
+   */
+  EClass getVMNodeOpCodeElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Code</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode()
+   * @see #getVMNodeOpCodeElement()
+   * @generated
+   */
+  EAttribute getVMNodeOpCodeElement_Code();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement <em>VM Node Out Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Out Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement
+   * @generated
+   */
+  EClass getVMNodeOutElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getName()
+   * @see #getVMNodeOutElement()
+   * @generated
+   */
+  EAttribute getVMNodeOutElement_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType()
+   * @see #getVMNodeOutElement()
+   * @generated
+   */
+  EAttribute getVMNodeOutElement_Type();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement <em>VM Node Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement
+   * @generated
+   */
+  EClass getVMNodeElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy <em>Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Policy</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy()
+   * @see #getVMNodeElement()
+   * @generated
+   */
+  EAttribute getVMNodeElement_Policy();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType()
+   * @see #getVMNodeElement()
+   * @generated
+   */
+  EAttribute getVMNodeElement_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName()
+   * @see #getVMNodeElement()
+   * @generated
+   */
+  EAttribute getVMNodeElement_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue <em>Defaultvalue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Defaultvalue</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue()
+   * @see #getVMNodeElement()
+   * @generated
+   */
+  EAttribute getVMNodeElement_Defaultvalue();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition <em>Llm Task Definition</em>}'.
@@ -611,6 +956,136 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
+     * @generated
+     */
+    EClass VM_NODE_DEFINITION = eINSTANCE.getVMNodeDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Nodetype</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_DEFINITION__NODETYPE = eINSTANCE.getVMNodeDefinition_Nodetype();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_DEFINITION__NAME = eINSTANCE.getVMNodeDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VM_NODE_DEFINITION__ELEMENTS = eINSTANCE.getVMNodeDefinition_Elements();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeEleemntsImpl <em>VM Node Eleemnts</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeEleemntsImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
+     * @generated
+     */
+    EClass VM_NODE_ELEEMNTS = eINSTANCE.getVMNodeEleemnts();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl <em>VM Node Op Code Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
+     * @generated
+     */
+    EClass VM_NODE_OP_CODE_ELEMENT = eINSTANCE.getVMNodeOpCodeElement();
+
+    /**
+     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_OP_CODE_ELEMENT__CODE = eINSTANCE.getVMNodeOpCodeElement_Code();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl <em>VM Node Out Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
+     * @generated
+     */
+    EClass VM_NODE_OUT_ELEMENT = eINSTANCE.getVMNodeOutElement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_OUT_ELEMENT__NAME = eINSTANCE.getVMNodeOutElement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_OUT_ELEMENT__TYPE = eINSTANCE.getVMNodeOutElement_Type();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl <em>VM Node Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeElement()
+     * @generated
+     */
+    EClass VM_NODE_ELEMENT = eINSTANCE.getVMNodeElement();
+
+    /**
+     * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_ELEMENT__POLICY = eINSTANCE.getVMNodeElement_Policy();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_ELEMENT__TYPE = eINSTANCE.getVMNodeElement_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_ELEMENT__NAME = eINSTANCE.getVMNodeElement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Defaultvalue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VM_NODE_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMNodeElement_Defaultvalue();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.

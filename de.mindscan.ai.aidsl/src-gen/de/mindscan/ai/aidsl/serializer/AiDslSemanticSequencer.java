@@ -11,6 +11,10 @@ import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
@@ -55,6 +59,18 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.PACKAGE_DECLARATION:
 				sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_DEFINITION:
+				sequence_VMNodeDefinition(context, (VMNodeDefinition) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_ELEMENT:
+				sequence_VMNodeElement(context, (VMNodeElement) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_OP_CODE_ELEMENT:
+				sequence_VMNodeOpCodeElement(context, (VMNodeOpCodeElement) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_OUT_ELEMENT:
+				sequence_VMNodeOutElement(context, (VMNodeOutElement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
@@ -154,9 +170,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         (
 	 *             ((package_declaration=PackageDeclaration import_declarations+=ImportDeclaration+) | import_declarations+=ImportDeclaration+)? 
-	 *             (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+
+	 *             (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
 	 *         ) | 
-	 *         (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition)+
+	 *         (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
 	 *     )?
 	 * </pre>
 	 */
@@ -181,6 +197,80 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeDefinition returns VMNodeDefinition
+	 *
+	 * Constraint:
+	 *     ((nodetype='super' | nodetype='overlay')? name=ID elements+=VMNodeEleemnts*)
+	 * </pre>
+	 */
+	protected void sequence_VMNodeDefinition(ISerializationContext context, VMNodeDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeElement
+	 *     VMNodeElement returns VMNodeElement
+	 *
+	 * Constraint:
+	 *     ((policy='require' | policy='optional') type=ID name=ID defaultvalue=STRING?)
+	 * </pre>
+	 */
+	protected void sequence_VMNodeElement(ISerializationContext context, VMNodeElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeOpCodeElement
+	 *     VMNodeOpCodeElement returns VMNodeOpCodeElement
+	 *
+	 * Constraint:
+	 *     code=STRING
+	 * </pre>
+	 */
+	protected void sequence_VMNodeOpCodeElement(ISerializationContext context, VMNodeOpCodeElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVMNodeOpCodeElementAccess().getCodeSTRINGTerminalRuleCall_1_0(), semanticObject.getCode());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeOutElement
+	 *     VMNodeOutElement returns VMNodeOutElement
+	 *
+	 * Constraint:
+	 *     (name=QualifiedName type=ID)
+	 * </pre>
+	 */
+	protected void sequence_VMNodeOutElement(ISerializationContext context, VMNodeOutElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_3_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

@@ -9,7 +9,7 @@ Model:
 	
 	(import_declarations+=ImportDeclaration)*
 	
-	definitions += (WorkflowDefinition|LlmTaskDefinition)*
+	definitions += (WorkflowDefinition|LlmTaskDefinition|VMNodeDefinition)*
 ;
 
 PackageDeclaration:
@@ -20,22 +20,43 @@ ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildcard
 ;
 
-QualifiedName:
-	ID ('.'ID)*
-;
-QualifiedNameWithWildcard:
-	QualifiedName '.*'?
-;
-
-	
 WorkflowDefinition:
 	'workflow' name=ID '(' ')' '{'
 	'}'
 ;
 
+
+// VMNode stuff
+
+VMNodeDefinition:
+	'vmnode' (nodetype=('super'|'overlay'))? name=ID '{'
+		(elements+=VMNodeEleemnts)*
+	'}'
+;
+
+VMNodeEleemnts:
+	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement)
+;
+
+
+VMNodeOpCodeElement:
+	'opcode' code=STRING
+;
+
+VMNodeOutElement:
+	'out' name=QualifiedName 'as' type=ID
+;
+
+VMNodeElement:
+	policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+;
+
+
+// LLM Task definition
+
 LlmTaskDefinition:
 	'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
-		assignment+=LlmVariableAssignment*
+		(assignment+=LlmVariableAssignment)*
 	'}' 
 ;
 
@@ -47,6 +68,16 @@ AnnotationInterfaceReference:
 LlmVariableAssignment:
 	variablename=ID ':=' template=STRING
 ;
+
+
+QualifiedName:
+	ID ('.'ID)*
+;
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
+
+
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal INT returns ecore::EInt: ('0'..'9')+;

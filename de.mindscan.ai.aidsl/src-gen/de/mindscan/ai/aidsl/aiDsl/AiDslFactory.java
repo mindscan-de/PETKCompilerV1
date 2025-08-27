@@ -60,6 +60,51 @@ public interface AiDslFactory extends EFactory
   WorkflowDefinition createWorkflowDefinition();
 
   /**
+   * Returns a new object of class '<em>VM Node Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Definition</em>'.
+   * @generated
+   */
+  VMNodeDefinition createVMNodeDefinition();
+
+  /**
+   * Returns a new object of class '<em>VM Node Eleemnts</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Eleemnts</em>'.
+   * @generated
+   */
+  VMNodeEleemnts createVMNodeEleemnts();
+
+  /**
+   * Returns a new object of class '<em>VM Node Op Code Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Op Code Element</em>'.
+   * @generated
+   */
+  VMNodeOpCodeElement createVMNodeOpCodeElement();
+
+  /**
+   * Returns a new object of class '<em>VM Node Out Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Out Element</em>'.
+   * @generated
+   */
+  VMNodeOutElement createVMNodeOutElement();
+
+  /**
+   * Returns a new object of class '<em>VM Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Element</em>'.
+   * @generated
+   */
+  VMNodeElement createVMNodeElement();
+
+  /**
    * Returns a new object of class '<em>Llm Task Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

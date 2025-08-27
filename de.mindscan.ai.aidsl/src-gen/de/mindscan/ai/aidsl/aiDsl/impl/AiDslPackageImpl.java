@@ -11,6 +11,11 @@ import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeEleemnts;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -55,6 +60,41 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass workflowDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vmNodeDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vmNodeEleemntsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vmNodeOpCodeElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vmNodeOutElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vmNodeElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -256,6 +296,171 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getVMNodeDefinition()
+  {
+    return vmNodeDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeDefinition_Nodetype()
+  {
+    return (EAttribute)vmNodeDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeDefinition_Name()
+  {
+    return (EAttribute)vmNodeDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVMNodeDefinition_Elements()
+  {
+    return (EReference)vmNodeDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVMNodeEleemnts()
+  {
+    return vmNodeEleemntsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVMNodeOpCodeElement()
+  {
+    return vmNodeOpCodeElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeOpCodeElement_Code()
+  {
+    return (EAttribute)vmNodeOpCodeElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVMNodeOutElement()
+  {
+    return vmNodeOutElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeOutElement_Name()
+  {
+    return (EAttribute)vmNodeOutElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeOutElement_Type()
+  {
+    return (EAttribute)vmNodeOutElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVMNodeElement()
+  {
+    return vmNodeElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeElement_Policy()
+  {
+    return (EAttribute)vmNodeElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeElement_Type()
+  {
+    return (EAttribute)vmNodeElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeElement_Name()
+  {
+    return (EAttribute)vmNodeElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVMNodeElement_Defaultvalue()
+  {
+    return (EAttribute)vmNodeElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getLlmTaskDefinition()
   {
     return llmTaskDefinitionEClass;
@@ -394,6 +599,26 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
     createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
 
+    vmNodeDefinitionEClass = createEClass(VM_NODE_DEFINITION);
+    createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NODETYPE);
+    createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NAME);
+    createEReference(vmNodeDefinitionEClass, VM_NODE_DEFINITION__ELEMENTS);
+
+    vmNodeEleemntsEClass = createEClass(VM_NODE_ELEEMNTS);
+
+    vmNodeOpCodeElementEClass = createEClass(VM_NODE_OP_CODE_ELEMENT);
+    createEAttribute(vmNodeOpCodeElementEClass, VM_NODE_OP_CODE_ELEMENT__CODE);
+
+    vmNodeOutElementEClass = createEClass(VM_NODE_OUT_ELEMENT);
+    createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__NAME);
+    createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__TYPE);
+
+    vmNodeElementEClass = createEClass(VM_NODE_ELEMENT);
+    createEAttribute(vmNodeElementEClass, VM_NODE_ELEMENT__POLICY);
+    createEAttribute(vmNodeElementEClass, VM_NODE_ELEMENT__TYPE);
+    createEAttribute(vmNodeElementEClass, VM_NODE_ELEMENT__NAME);
+    createEAttribute(vmNodeElementEClass, VM_NODE_ELEMENT__DEFAULTVALUE);
+
     llmTaskDefinitionEClass = createEClass(LLM_TASK_DEFINITION);
     createEAttribute(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__NAME);
     createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ANNOTATION_INTERFACES);
@@ -436,6 +661,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    vmNodeOpCodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
+    vmNodeOutElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
+    vmNodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -451,6 +679,26 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vmNodeDefinitionEClass, VMNodeDefinition.class, "VMNodeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVMNodeDefinition_Nodetype(), ecorePackage.getEString(), "nodetype", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVMNodeDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVMNodeDefinition_Elements(), this.getVMNodeEleemnts(), null, "elements", null, 0, -1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vmNodeEleemntsEClass, VMNodeEleemnts.class, "VMNodeEleemnts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(vmNodeOpCodeElementEClass, VMNodeOpCodeElement.class, "VMNodeOpCodeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVMNodeOpCodeElement_Code(), ecorePackage.getEString(), "code", null, 0, 1, VMNodeOpCodeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vmNodeOutElementEClass, VMNodeOutElement.class, "VMNodeOutElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVMNodeOutElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVMNodeOutElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vmNodeElementEClass, VMNodeElement.class, "VMNodeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVMNodeElement_Policy(), ecorePackage.getEString(), "policy", null, 0, 1, VMNodeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVMNodeElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, VMNodeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVMNodeElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMNodeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVMNodeElement_Defaultvalue(), ecorePackage.getEString(), "defaultvalue", null, 0, 1, VMNodeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(llmTaskDefinitionEClass, LlmTaskDefinition.class, "LlmTaskDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmTaskDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

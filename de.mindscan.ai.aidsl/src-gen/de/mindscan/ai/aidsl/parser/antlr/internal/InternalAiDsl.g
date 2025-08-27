@@ -148,6 +148,22 @@ ruleModel returns [EObject current=null]
 							"de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
 						afterParserOrEnumRuleCall();
 					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsVMNodeDefinitionParserRuleCall_2_0_2());
+					}
+					lv_definitions_2_3=ruleVMNodeDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"definitions",
+							lv_definitions_2_3,
+							"de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
@@ -238,82 +254,6 @@ ruleImportDeclaration returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleQualifiedName
-entryRuleQualifiedName returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
-	iv_ruleQualifiedName=ruleQualifiedName
-	{ $current=$iv_ruleQualifiedName.current.getText(); }
-	EOF;
-
-// Rule QualifiedName
-ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_ID_0=RULE_ID
-		{
-			$current.merge(this_ID_0);
-		}
-		{
-			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
-		}
-		(
-			kw='.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
-			}
-			this_ID_2=RULE_ID
-			{
-				$current.merge(this_ID_2);
-			}
-			{
-				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
-			}
-		)*
-	)
-;
-
-// Entry rule entryRuleQualifiedNameWithWildcard
-entryRuleQualifiedNameWithWildcard returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); }
-	iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard
-	{ $current=$iv_ruleQualifiedNameWithWildcard.current.getText(); }
-	EOF;
-
-// Rule QualifiedNameWithWildcard
-ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0());
-		}
-		this_QualifiedName_0=ruleQualifiedName
-		{
-			$current.merge(this_QualifiedName_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		(
-			kw='.*'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1());
-			}
-		)?
-	)
-;
-
 // Entry rule entryRuleWorkflowDefinition
 entryRuleWorkflowDefinition returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getWorkflowDefinitionRule()); }
@@ -368,6 +308,357 @@ ruleWorkflowDefinition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5());
 		}
+	)
+;
+
+// Entry rule entryRuleVMNodeDefinition
+entryRuleVMNodeDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeDefinitionRule()); }
+	iv_ruleVMNodeDefinition=ruleVMNodeDefinition
+	{ $current=$iv_ruleVMNodeDefinition.current; }
+	EOF;
+
+// Rule VMNodeDefinition
+ruleVMNodeDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='vmnode'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVMNodeDefinitionAccess().getVmnodeKeyword_0());
+		}
+		(
+			(
+				(
+					lv_nodetype_1_1='super'
+					{
+						newLeafNode(lv_nodetype_1_1, grammarAccess.getVMNodeDefinitionAccess().getNodetypeSuperKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeDefinitionRule());
+						}
+						setWithLastConsumed($current, "nodetype", lv_nodetype_1_1, null);
+					}
+					    |
+					lv_nodetype_1_2='overlay'
+					{
+						newLeafNode(lv_nodetype_1_2, grammarAccess.getVMNodeDefinitionAccess().getNodetypeOverlayKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeDefinitionRule());
+						}
+						setWithLastConsumed($current, "nodetype", lv_nodetype_1_2, null);
+					}
+				)
+			)
+		)?
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getVMNodeDefinitionAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMNodeDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVMNodeDefinitionAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeDefinitionAccess().getElementsVMNodeEleemntsParserRuleCall_4_0());
+				}
+				lv_elements_4_0=ruleVMNodeEleemnts
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeDefinitionRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_4_0,
+						"de.mindscan.ai.aidsl.AiDsl.VMNodeEleemnts");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getVMNodeDefinitionAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleVMNodeEleemnts
+entryRuleVMNodeEleemnts returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeEleemntsRule()); }
+	iv_ruleVMNodeEleemnts=ruleVMNodeEleemnts
+	{ $current=$iv_ruleVMNodeEleemnts.current; }
+	EOF;
+
+// Rule VMNodeEleemnts
+ruleVMNodeEleemnts returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeOpCodeElementParserRuleCall_0());
+		}
+		this_VMNodeOpCodeElement_0=ruleVMNodeOpCodeElement
+		{
+			$current = $this_VMNodeOpCodeElement_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeOutElementParserRuleCall_1());
+		}
+		this_VMNodeOutElement_1=ruleVMNodeOutElement
+		{
+			$current = $this_VMNodeOutElement_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_2());
+		}
+		this_VMNodeElement_2=ruleVMNodeElement
+		{
+			$current = $this_VMNodeElement_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleVMNodeOpCodeElement
+entryRuleVMNodeOpCodeElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeOpCodeElementRule()); }
+	iv_ruleVMNodeOpCodeElement=ruleVMNodeOpCodeElement
+	{ $current=$iv_ruleVMNodeOpCodeElement.current; }
+	EOF;
+
+// Rule VMNodeOpCodeElement
+ruleVMNodeOpCodeElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='opcode'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVMNodeOpCodeElementAccess().getOpcodeKeyword_0());
+		}
+		(
+			(
+				lv_code_1_0=RULE_STRING
+				{
+					newLeafNode(lv_code_1_0, grammarAccess.getVMNodeOpCodeElementAccess().getCodeSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMNodeOpCodeElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"code",
+						lv_code_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleVMNodeOutElement
+entryRuleVMNodeOutElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeOutElementRule()); }
+	iv_ruleVMNodeOutElement=ruleVMNodeOutElement
+	{ $current=$iv_ruleVMNodeOutElement.current; }
+	EOF;
+
+// Rule VMNodeOutElement
+ruleVMNodeOutElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='out'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVMNodeOutElementAccess().getOutKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeOutElementRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='as'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVMNodeOutElementAccess().getAsKeyword_2());
+		}
+		(
+			(
+				lv_type_3_0=RULE_ID
+				{
+					newLeafNode(lv_type_3_0, grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMNodeOutElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleVMNodeElement
+entryRuleVMNodeElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeElementRule()); }
+	iv_ruleVMNodeElement=ruleVMNodeElement
+	{ $current=$iv_ruleVMNodeElement.current; }
+	EOF;
+
+// Rule VMNodeElement
+ruleVMNodeElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				(
+					lv_policy_0_1='require'
+					{
+						newLeafNode(lv_policy_0_1, grammarAccess.getVMNodeElementAccess().getPolicyRequireKeyword_0_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+						}
+						setWithLastConsumed($current, "policy", lv_policy_0_1, null);
+					}
+					    |
+					lv_policy_0_2='optional'
+					{
+						newLeafNode(lv_policy_0_2, grammarAccess.getVMNodeElementAccess().getPolicyOptionalKeyword_0_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+						}
+						setWithLastConsumed($current, "policy", lv_policy_0_2, null);
+					}
+				)
+			)
+		)
+		(
+			(
+				lv_type_1_0=RULE_ID
+				{
+					newLeafNode(lv_type_1_0, grammarAccess.getVMNodeElementAccess().getTypeIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMNodeElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"type",
+						lv_type_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getVMNodeElementAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVMNodeElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		(
+			otherlv_3='default'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getVMNodeElementAccess().getDefaultKeyword_3_0());
+			}
+			(
+				(
+					lv_defaultvalue_4_0=RULE_STRING
+					{
+						newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMNodeElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"defaultvalue",
+							lv_defaultvalue_4_0,
+							"de.mindscan.ai.aidsl.AiDsl.STRING");
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -594,6 +885,82 @@ ruleLlmVariableAssignment returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current.getText(); }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
+	)
+;
+
+// Entry rule entryRuleQualifiedNameWithWildcard
+entryRuleQualifiedNameWithWildcard returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); }
+	iv_ruleQualifiedNameWithWildcard=ruleQualifiedNameWithWildcard
+	{ $current=$iv_ruleQualifiedNameWithWildcard.current.getText(); }
+	EOF;
+
+// Rule QualifiedNameWithWildcard
+ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0());
+		}
+		this_QualifiedName_0=ruleQualifiedName
+		{
+			$current.merge(this_QualifiedName_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		(
+			kw='.*'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1());
+			}
+		)?
 	)
 ;
 
