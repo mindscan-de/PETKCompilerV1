@@ -326,16 +326,23 @@ finally {
 
 // Entry rule entryRuleAnnotationInterfaceReference
 entryRuleAnnotationInterfaceReference
+@init { 
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
 :
 { before(grammarAccess.getAnnotationInterfaceReferenceRule()); }
 	 ruleAnnotationInterfaceReference
 { after(grammarAccess.getAnnotationInterfaceReferenceRule()); } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule AnnotationInterfaceReference
 ruleAnnotationInterfaceReference 
 	@init {
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 		int stackSize = keepStackSize();
 	}
 	:
@@ -347,6 +354,7 @@ ruleAnnotationInterfaceReference
 ;
 finally {
 	restoreStackSize(stackSize);
+	myHiddenTokenState.restore();
 }
 
 // Entry rule entryRuleLlmVariableAssignment

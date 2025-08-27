@@ -514,7 +514,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final CrossReference cNameVMNodeDefinitionCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cNameVMNodeDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cNameVMNodeDefinitionCrossReference_1_0.eContents().get(1);
 		
-		//AnnotationInterfaceReference:
+		//AnnotationInterfaceReference hidden ():
 		//    // TODO nowhitespace
 		//    '@'name=[VMNodeDefinition]
 		//;
@@ -824,7 +824,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getLlmTaskDefinitionAccess().getRule();
 	}
 	
-	//AnnotationInterfaceReference:
+	//AnnotationInterfaceReference hidden ():
 	//    // TODO nowhitespace
 	//    '@'name=[VMNodeDefinition]
 	//;

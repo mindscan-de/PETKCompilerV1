@@ -889,16 +889,22 @@ ruleLlmTaskDefinition returns [EObject current=null]
 ;
 
 // Entry rule entryRuleAnnotationInterfaceReference
-entryRuleAnnotationInterfaceReference returns [EObject current=null]:
+entryRuleAnnotationInterfaceReference returns [EObject current=null]@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}:
 	{ newCompositeNode(grammarAccess.getAnnotationInterfaceReferenceRule()); }
 	iv_ruleAnnotationInterfaceReference=ruleAnnotationInterfaceReference
 	{ $current=$iv_ruleAnnotationInterfaceReference.current; }
 	EOF;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule AnnotationInterfaceReference
 ruleAnnotationInterfaceReference returns [EObject current=null]
 @init {
 	enterRule();
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 }
 @after {
 	leaveRule();
@@ -923,6 +929,9 @@ ruleAnnotationInterfaceReference returns [EObject current=null]
 		)
 	)
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Entry rule entryRuleLlmVariableAssignment
 entryRuleLlmVariableAssignment returns [EObject current=null]:

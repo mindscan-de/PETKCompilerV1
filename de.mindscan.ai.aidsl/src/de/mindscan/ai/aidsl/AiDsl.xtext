@@ -64,8 +64,8 @@ LlmTaskDefinition:
 	'}' 
 ;
 
-AnnotationInterfaceReference:
-	// TODO nowhitespace
+// the hidden () will forbid a whitespace between the @ and the referenced definition
+AnnotationInterfaceReference hidden ():
 	'@'name=[VMNodeDefinition]
 ;
 
