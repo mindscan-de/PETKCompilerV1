@@ -26,8 +26,10 @@ replay_pid*
 *.xtendbin
 *.java._trace
 
-/de.mindscan.ai.aidsl/bin
-/de.mindscan.ai.aidsl.ide/bin
-/de.mindscan.ai.aidsl.tests/test-bin
-/de.mindscan.ai.aidsl.ui/bin
-/de.mindscan.ai.aidsl.ui.tests/test-bin
+
+# folders, which should not be committed
+# actually src-gen should also be ignored
+
+bin
+test-bin
+xtend-gen
