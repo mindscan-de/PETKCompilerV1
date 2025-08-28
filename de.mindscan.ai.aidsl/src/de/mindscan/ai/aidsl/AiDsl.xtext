@@ -35,7 +35,7 @@ VMNodeDefinition:
 ;
 
 VMNodeEleemnts:
-	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
+	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeInElement|VMNodeElement|VMOverrideElement)
 ;
 
 
@@ -45,6 +45,10 @@ VMNodeOpCodeElement:
 
 VMNodeOutElement:
 	'out' name=QualifiedName 'as' type=ID
+;
+
+VMNodeInElement:
+	'in' (policy=('require'|'optional'))? name=QualifiedName
 ;
 
 VMNodeElement:

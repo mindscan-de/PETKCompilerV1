@@ -33,6 +33,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/type"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeInElement/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeInElement/name"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/policy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/type"/>

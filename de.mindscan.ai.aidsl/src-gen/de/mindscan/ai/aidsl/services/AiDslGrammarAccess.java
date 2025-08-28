@@ -230,15 +230,16 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cVMNodeOpCodeElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVMNodeOutElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cVMNodeElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cVMOverrideElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cVMNodeInElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cVMNodeElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cVMOverrideElementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//VMNodeEleemnts:
-		//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
+		//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeInElement|VMNodeElement|VMOverrideElement)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
+		//(VMNodeOpCodeElement|VMNodeOutElement|VMNodeInElement|VMNodeElement|VMOverrideElement)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//VMNodeOpCodeElement
@@ -247,11 +248,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//VMNodeOutElement
 		public RuleCall getVMNodeOutElementParserRuleCall_1() { return cVMNodeOutElementParserRuleCall_1; }
 		
+		//VMNodeInElement
+		public RuleCall getVMNodeInElementParserRuleCall_2() { return cVMNodeInElementParserRuleCall_2; }
+		
 		//VMNodeElement
-		public RuleCall getVMNodeElementParserRuleCall_2() { return cVMNodeElementParserRuleCall_2; }
+		public RuleCall getVMNodeElementParserRuleCall_3() { return cVMNodeElementParserRuleCall_3; }
 		
 		//VMOverrideElement
-		public RuleCall getVMOverrideElementParserRuleCall_3() { return cVMOverrideElementParserRuleCall_3; }
+		public RuleCall getVMOverrideElementParserRuleCall_4() { return cVMOverrideElementParserRuleCall_4; }
 	}
 	public class VMNodeOpCodeElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeOpCodeElement");
@@ -312,6 +316,46 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//ID
 		public RuleCall getTypeIDTerminalRuleCall_3_0() { return cTypeIDTerminalRuleCall_3_0; }
+	}
+	public class VMNodeInElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cInKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPolicyAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cPolicyAlternatives_1_0 = (Alternatives)cPolicyAssignment_1.eContents().get(0);
+		private final Keyword cPolicyRequireKeyword_1_0_0 = (Keyword)cPolicyAlternatives_1_0.eContents().get(0);
+		private final Keyword cPolicyOptionalKeyword_1_0_1 = (Keyword)cPolicyAlternatives_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//VMNodeInElement:
+		//    'in' (policy=('require'|'optional'))? name=QualifiedName
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'in' (policy=('require'|'optional'))? name=QualifiedName
+		public Group getGroup() { return cGroup; }
+		
+		//'in'
+		public Keyword getInKeyword_0() { return cInKeyword_0; }
+		
+		//(policy=('require'|'optional'))?
+		public Assignment getPolicyAssignment_1() { return cPolicyAssignment_1; }
+		
+		//('require'|'optional')
+		public Alternatives getPolicyAlternatives_1_0() { return cPolicyAlternatives_1_0; }
+		
+		//'require'
+		public Keyword getPolicyRequireKeyword_1_0_0() { return cPolicyRequireKeyword_1_0_0; }
+		
+		//'optional'
+		public Keyword getPolicyOptionalKeyword_1_0_1() { return cPolicyOptionalKeyword_1_0_1; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 	}
 	public class VMNodeElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeElement");
@@ -514,17 +558,15 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final CrossReference cNameVMNodeDefinitionCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cNameVMNodeDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cNameVMNodeDefinitionCrossReference_1_0.eContents().get(1);
 		
+		//// the hidden () will forbid a whitespace between the @ and the referenced definition
 		//AnnotationInterfaceReference hidden ():
-		//    // TODO nowhitespace
 		//    '@'name=[VMNodeDefinition]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// TODO nowhitespace
 		//'@'name=[VMNodeDefinition]
 		public Group getGroup() { return cGroup; }
 		
-		//// TODO nowhitespace
 		//'@'
 		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
 		
@@ -627,6 +669,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
 	private final VMNodeOutElementElements pVMNodeOutElement;
+	private final VMNodeInElementElements pVMNodeInElement;
 	private final VMNodeElementElements pVMNodeElement;
 	private final VMOverrideElementElements pVMOverrideElement;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
@@ -655,6 +698,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
 		this.pVMNodeOutElement = new VMNodeOutElementElements();
+		this.pVMNodeInElement = new VMNodeInElementElements();
 		this.pVMNodeElement = new VMNodeElementElements();
 		this.pVMOverrideElement = new VMOverrideElementElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
@@ -756,7 +800,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeEleemnts:
-	//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeElement|VMOverrideElement)
+	//    (VMNodeOpCodeElement|VMNodeOutElement|VMNodeInElement|VMNodeElement|VMOverrideElement)
 	//;
 	public VMNodeEleemntsElements getVMNodeEleemntsAccess() {
 		return pVMNodeEleemnts;
@@ -786,6 +830,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getVMNodeOutElementRule() {
 		return getVMNodeOutElementAccess().getRule();
+	}
+	
+	//VMNodeInElement:
+	//    'in' (policy=('require'|'optional'))? name=QualifiedName
+	//;
+	public VMNodeInElementElements getVMNodeInElementAccess() {
+		return pVMNodeInElement;
+	}
+	
+	public ParserRule getVMNodeInElementRule() {
+		return getVMNodeInElementAccess().getRule();
 	}
 	
 	//VMNodeElement:
@@ -824,8 +879,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getLlmTaskDefinitionAccess().getRule();
 	}
 	
+	//// the hidden () will forbid a whitespace between the @ and the referenced definition
 	//AnnotationInterfaceReference hidden ():
-	//    // TODO nowhitespace
 	//    '@'name=[VMNodeDefinition]
 	//;
 	public AnnotationInterfaceReferenceElements getAnnotationInterfaceReferenceAccess() {

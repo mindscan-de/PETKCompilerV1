@@ -34,6 +34,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_2_0(), "rule__Model__DefinitionsAlternatives_2_0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAlternatives_1_0(), "rule__VMNodeDefinition__NodetypeAlternatives_1_0");
 			builder.put(grammarAccess.getVMNodeEleemntsAccess().getAlternatives(), "rule__VMNodeEleemnts__Alternatives");
+			builder.put(grammarAccess.getVMNodeInElementAccess().getPolicyAlternatives_1_0(), "rule__VMNodeInElement__PolicyAlternatives_1_0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getPolicyAlternatives_0_0(), "rule__VMNodeElement__PolicyAlternatives_0_0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
@@ -42,6 +43,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getGroup(), "rule__VMNodeDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getGroup(), "rule__VMNodeOpCodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeOutElementAccess().getGroup(), "rule__VMNodeOutElement__Group__0");
+			builder.put(grammarAccess.getVMNodeInElementAccess().getGroup(), "rule__VMNodeInElement__Group__0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getGroup(), "rule__VMNodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getGroup_3(), "rule__VMNodeElement__Group_3__0");
 			builder.put(grammarAccess.getVMOverrideElementAccess().getGroup(), "rule__VMOverrideElement__Group__0");
@@ -65,6 +67,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getCodeAssignment_1(), "rule__VMNodeOpCodeElement__CodeAssignment_1");
 			builder.put(grammarAccess.getVMNodeOutElementAccess().getNameAssignment_1(), "rule__VMNodeOutElement__NameAssignment_1");
 			builder.put(grammarAccess.getVMNodeOutElementAccess().getTypeAssignment_3(), "rule__VMNodeOutElement__TypeAssignment_3");
+			builder.put(grammarAccess.getVMNodeInElementAccess().getPolicyAssignment_1(), "rule__VMNodeInElement__PolicyAssignment_1");
+			builder.put(grammarAccess.getVMNodeInElementAccess().getNameAssignment_2(), "rule__VMNodeInElement__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeElementAccess().getPolicyAssignment_0(), "rule__VMNodeElement__PolicyAssignment_0");
 			builder.put(grammarAccess.getVMNodeElementAccess().getTypeAssignment_1(), "rule__VMNodeElement__TypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeElementAccess().getNameAssignment_2(), "rule__VMNodeElement__NameAssignment_2");

@@ -441,20 +441,29 @@ ruleVMNodeEleemnts returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_2());
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeInElementParserRuleCall_2());
 		}
-		this_VMNodeElement_2=ruleVMNodeElement
+		this_VMNodeInElement_2=ruleVMNodeInElement
 		{
-			$current = $this_VMNodeElement_2.current;
+			$current = $this_VMNodeInElement_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_3());
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_3());
 		}
-		this_VMOverrideElement_3=ruleVMOverrideElement
+		this_VMNodeElement_3=ruleVMNodeElement
 		{
-			$current = $this_VMOverrideElement_3.current;
+			$current = $this_VMNodeElement_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_4());
+		}
+		this_VMOverrideElement_4=ruleVMOverrideElement
+		{
+			$current = $this_VMOverrideElement_4.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -559,6 +568,75 @@ ruleVMNodeOutElement returns [EObject current=null]
 						"type",
 						lv_type_3_0,
 						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleVMNodeInElement
+entryRuleVMNodeInElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeInElementRule()); }
+	iv_ruleVMNodeInElement=ruleVMNodeInElement
+	{ $current=$iv_ruleVMNodeInElement.current; }
+	EOF;
+
+// Rule VMNodeInElement
+ruleVMNodeInElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='in'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVMNodeInElementAccess().getInKeyword_0());
+		}
+		(
+			(
+				(
+					lv_policy_1_1='require'
+					{
+						newLeafNode(lv_policy_1_1, grammarAccess.getVMNodeInElementAccess().getPolicyRequireKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeInElementRule());
+						}
+						setWithLastConsumed($current, "policy", lv_policy_1_1, null);
+					}
+					    |
+					lv_policy_1_2='optional'
+					{
+						newLeafNode(lv_policy_1_2, grammarAccess.getVMNodeInElementAccess().getPolicyOptionalKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeInElementRule());
+						}
+						setWithLastConsumed($current, "policy", lv_policy_1_2, null);
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeInElementAccess().getNameQualifiedNameParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeInElementRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

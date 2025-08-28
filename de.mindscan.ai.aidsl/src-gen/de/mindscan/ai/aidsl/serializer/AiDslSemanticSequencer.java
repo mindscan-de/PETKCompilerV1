@@ -13,6 +13,7 @@ import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeInElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideElement;
@@ -66,6 +67,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.VM_NODE_ELEMENT:
 				sequence_VMNodeElement(context, (VMNodeElement) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_IN_ELEMENT:
+				sequence_VMNodeInElement(context, (VMNodeInElement) semanticObject); 
 				return; 
 			case AiDslPackage.VM_NODE_OP_CODE_ELEMENT:
 				sequence_VMNodeOpCodeElement(context, (VMNodeOpCodeElement) semanticObject); 
@@ -230,6 +234,21 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_VMNodeElement(ISerializationContext context, VMNodeElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeInElement
+	 *     VMNodeInElement returns VMNodeInElement
+	 *
+	 * Constraint:
+	 *     ((policy='require' | policy='optional')? name=QualifiedName)
+	 * </pre>
+	 */
+	protected void sequence_VMNodeInElement(ISerializationContext context, VMNodeInElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
