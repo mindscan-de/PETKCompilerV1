@@ -9,7 +9,11 @@ Model:
 	
 	(import_declarations+=ImportDeclaration)*
 	
-	definitions += (WorkflowDefinition|LlmTaskDefinition|VMNodeDefinition)*
+	definitions += (
+		WorkflowDefinition|
+		LlmTaskDefinition|
+		VMNodeDefinition
+	)*
 ;
 
 PackageDeclaration:
@@ -20,13 +24,12 @@ ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildcard
 ;
 
-WorkflowDefinition:
-	'workflow' name=ID '(' ')' '{'
-	'}'
-;
 
-
+// ---------------------------------------
 // VMNode stuff
+// ---------------------------------------
+//  
+// ---------------------------------------
 
 VMNodeDefinition:
 	'vmnode' (nodetype=('super'|'overlay'))? name=ID '{'
@@ -71,8 +74,11 @@ VMOverrideElement:
 	policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
 ;
 
-
+// ---------------------------------------
 // LLM Task definition
+// ---------------------------------------
+// 
+// ---------------------------------------
 
 LlmTaskDefinition:
 	'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
@@ -88,6 +94,22 @@ AnnotationInterfaceReference hidden ():
 LlmVariableAssignment:
 	variablename=ID ':=' template=STRING
 ;
+
+
+
+// ---------------------------------------
+// workflows
+// ---------------------------------------
+
+WorkflowDefinition:
+	'workflow' name=ID '(' ')' '{'
+	'}'
+;
+
+
+// ---------------------------------------
+// Common stuff
+// ---------------------------------------
 
 
 QualifiedName:

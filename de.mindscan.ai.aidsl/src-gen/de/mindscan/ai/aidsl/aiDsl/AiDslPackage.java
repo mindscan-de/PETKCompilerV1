@@ -160,34 +160,6 @@ public interface AiDslPackage extends EPackage
   int IMPORT_DECLARATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
-   * @generated
-   */
-  int WORKFLOW_DEFINITION = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DEFINITION__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Workflow Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DEFINITION_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -195,7 +167,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 4;
+  int VM_NODE_DEFINITION = 3;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -241,7 +213,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 5;
+  int VM_NODE_ELEEMNTS = 4;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -260,7 +232,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 6;
+  int VM_NODE_OP_CODE_ELEMENT = 5;
 
   /**
    * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -288,7 +260,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 7;
+  int VM_NODE_OUT_ELEMENTS = 6;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -316,7 +288,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 8;
+  int VM_NODE_OUT_ELEMENT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -371,7 +343,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 9;
+  int VM_NODE_IN_ELEMENTS = 8;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -399,7 +371,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 10;
+  int VM_NODE_IN_ELEMENT = 9;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -436,7 +408,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeElement()
    * @generated
    */
-  int VM_NODE_ELEMENT = 11;
+  int VM_NODE_ELEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -491,7 +463,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideElement()
    * @generated
    */
-  int VM_OVERRIDE_ELEMENT = 12;
+  int VM_OVERRIDE_ELEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -546,7 +518,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 13;
+  int LLM_TASK_DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -592,7 +564,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 14;
+  int ANNOTATION_INTERFACE_REFERENCE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -620,7 +592,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 15;
+  int LLM_VARIABLE_ASSIGNMENT = 14;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -648,6 +620,34 @@ public interface AiDslPackage extends EPackage
    * @ordered
    */
   int LLM_VARIABLE_ASSIGNMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
+   * @generated
+   */
+  int WORKFLOW_DEFINITION = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Workflow Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_FEATURE_COUNT = 1;
 
 
   /**
@@ -734,27 +734,6 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getImportDeclaration_ImportedNamespace();
-
-  /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Workflow Definition</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
-   * @generated
-   */
-  EClass getWorkflowDefinition();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName()
-   * @see #getWorkflowDefinition()
-   * @generated
-   */
-  EAttribute getWorkflowDefinition_Name();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition <em>VM Node Definition</em>}'.
@@ -1163,6 +1142,27 @@ public interface AiDslPackage extends EPackage
   EAttribute getLlmVariableAssignment_Template();
 
   /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
+   * @generated
+   */
+  EClass getWorkflowDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName()
+   * @see #getWorkflowDefinition()
+   * @generated
+   */
+  EAttribute getWorkflowDefinition_Name();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1254,24 +1254,6 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute IMPORT_DECLARATION__IMPORTED_NAMESPACE = eINSTANCE.getImportDeclaration_ImportedNamespace();
-
-    /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
-     * @generated
-     */
-    EClass WORKFLOW_DEFINITION = eINSTANCE.getWorkflowDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -1600,6 +1582,24 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute LLM_VARIABLE_ASSIGNMENT__TEMPLATE = eINSTANCE.getLlmVariableAssignment_Template();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
+     * @generated
+     */
+    EClass WORKFLOW_DEFINITION = eINSTANCE.getWorkflowDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
 
   }
 

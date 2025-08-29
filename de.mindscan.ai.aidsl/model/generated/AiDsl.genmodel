@@ -17,9 +17,6 @@
     <genClasses ecoreClass="AiDsl.ecore#//ImportDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>
-    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/nodetype"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/name"/>
@@ -68,6 +65,9 @@
     <genClasses ecoreClass="AiDsl.ecore#//LlmVariableAssignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/variablename"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/template"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

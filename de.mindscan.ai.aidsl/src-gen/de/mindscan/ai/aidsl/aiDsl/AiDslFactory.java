@@ -51,15 +51,6 @@ public interface AiDslFactory extends EFactory
   ImportDeclaration createImportDeclaration();
 
   /**
-   * Returns a new object of class '<em>Workflow Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Workflow Definition</em>'.
-   * @generated
-   */
-  WorkflowDefinition createWorkflowDefinition();
-
-  /**
    * Returns a new object of class '<em>VM Node Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -166,6 +157,15 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   LlmVariableAssignment createLlmVariableAssignment();
+
+  /**
+   * Returns a new object of class '<em>Workflow Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Definition</em>'.
+   * @generated
+   */
+  WorkflowDefinition createWorkflowDefinition();
 
   /**
    * Returns the package supported by this factory.

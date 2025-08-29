@@ -254,63 +254,6 @@ ruleImportDeclaration returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleWorkflowDefinition
-entryRuleWorkflowDefinition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getWorkflowDefinitionRule()); }
-	iv_ruleWorkflowDefinition=ruleWorkflowDefinition
-	{ $current=$iv_ruleWorkflowDefinition.current; }
-	EOF;
-
-// Rule WorkflowDefinition
-ruleWorkflowDefinition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='workflow'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getWorkflowDefinitionAccess().getWorkflowKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getWorkflowDefinitionAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkflowDefinitionRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
-				}
-			)
-		)
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getWorkflowDefinitionAccess().getLeftParenthesisKeyword_2());
-		}
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_3());
-		}
-		otherlv_4='{'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4());
-		}
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
 // Entry rule entryRuleVMNodeDefinition
 entryRuleVMNodeDefinition returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVMNodeDefinitionRule()); }
@@ -1208,6 +1151,63 @@ ruleLlmVariableAssignment returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleWorkflowDefinition
+entryRuleWorkflowDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowDefinitionRule()); }
+	iv_ruleWorkflowDefinition=ruleWorkflowDefinition
+	{ $current=$iv_ruleWorkflowDefinition.current; }
+	EOF;
+
+// Rule WorkflowDefinition
+ruleWorkflowDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='workflow'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowDefinitionAccess().getWorkflowKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getWorkflowDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowDefinitionAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_3());
+		}
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4());
+		}
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 

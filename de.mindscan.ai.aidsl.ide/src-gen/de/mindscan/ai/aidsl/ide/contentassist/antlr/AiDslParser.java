@@ -39,7 +39,6 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
-			builder.put(grammarAccess.getWorkflowDefinitionAccess().getGroup(), "rule__WorkflowDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getGroup(), "rule__VMNodeDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getGroup(), "rule__VMNodeOpCodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeOutElementsAccess().getGroup(), "rule__VMNodeOutElements__Group__0");
@@ -55,6 +54,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4_2(), "rule__LlmTaskDefinition__Group_4_2__0");
 			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getGroup(), "rule__AnnotationInterfaceReference__Group__0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getGroup(), "rule__LlmVariableAssignment__Group__0");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getGroup(), "rule__WorkflowDefinition__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
@@ -63,7 +63,6 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1(), "rule__VMNodeDefinition__NodetypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNameAssignment_2(), "rule__VMNodeDefinition__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getElementsAssignment_4(), "rule__VMNodeDefinition__ElementsAssignment_4");
@@ -91,6 +90,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameAssignment_1(), "rule__AnnotationInterfaceReference__NameAssignment_1");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameAssignment_0(), "rule__LlmVariableAssignment__VariablenameAssignment_0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getTemplateAssignment_2(), "rule__LlmVariableAssignment__TemplateAssignment_2");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 		}
 	}
 	

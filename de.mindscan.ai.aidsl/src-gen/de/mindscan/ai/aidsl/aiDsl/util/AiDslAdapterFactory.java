@@ -91,11 +91,6 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createImportDeclarationAdapter();
       }
       @Override
-      public Adapter caseWorkflowDefinition(WorkflowDefinition object)
-      {
-        return createWorkflowDefinitionAdapter();
-      }
-      @Override
       public Adapter caseVMNodeDefinition(VMNodeDefinition object)
       {
         return createVMNodeDefinitionAdapter();
@@ -154,6 +149,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseLlmVariableAssignment(LlmVariableAssignment object)
       {
         return createLlmVariableAssignmentAdapter();
+      }
+      @Override
+      public Adapter caseWorkflowDefinition(WorkflowDefinition object)
+      {
+        return createWorkflowDefinitionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -218,21 +218,6 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImportDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
-   * @generated
-   */
-  public Adapter createWorkflowDefinitionAdapter()
   {
     return null;
   }
@@ -413,6 +398,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLlmVariableAssignmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
+   * @generated
+   */
+  public Adapter createWorkflowDefinitionAdapter()
   {
     return null;
   }

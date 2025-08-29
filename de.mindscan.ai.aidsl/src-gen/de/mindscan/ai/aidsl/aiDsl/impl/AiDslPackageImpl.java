@@ -63,13 +63,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass workflowDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass vmNodeDefinitionEClass = null;
 
   /**
@@ -148,6 +141,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass llmVariableAssignmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowDefinitionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -298,28 +298,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EAttribute getImportDeclaration_ImportedNamespace()
   {
     return (EAttribute)importDeclarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getWorkflowDefinition()
-  {
-    return workflowDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getWorkflowDefinition_Name()
-  {
-    return (EAttribute)workflowDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -746,6 +724,28 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getWorkflowDefinition()
+  {
+    return workflowDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowDefinition_Name()
+  {
+    return (EAttribute)workflowDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -781,9 +781,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     importDeclarationEClass = createEClass(IMPORT_DECLARATION);
     createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__IMPORTED_NAMESPACE);
-
-    workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
-    createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
 
     vmNodeDefinitionEClass = createEClass(VM_NODE_DEFINITION);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NODETYPE);
@@ -834,6 +831,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     llmVariableAssignmentEClass = createEClass(LLM_VARIABLE_ASSIGNMENT);
     createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__VARIABLENAME);
     createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__TEMPLATE);
+
+    workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
+    createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
   }
 
   /**
@@ -882,9 +882,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(importDeclarationEClass, ImportDeclaration.class, "ImportDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImportDeclaration_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vmNodeDefinitionEClass, VMNodeDefinition.class, "VMNodeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeDefinition_Nodetype(), ecorePackage.getEString(), "nodetype", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -935,6 +932,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(llmVariableAssignmentEClass, LlmVariableAssignment.class, "LlmVariableAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmVariableAssignment_Variablename(), ecorePackage.getEString(), "variablename", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLlmVariableAssignment_Template(), ecorePackage.getEString(), "template", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

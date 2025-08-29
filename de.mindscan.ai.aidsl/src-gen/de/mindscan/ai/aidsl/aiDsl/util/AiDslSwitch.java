@@ -94,13 +94,6 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.WORKFLOW_DEFINITION:
-      {
-        WorkflowDefinition workflowDefinition = (WorkflowDefinition)theEObject;
-        T result = caseWorkflowDefinition(workflowDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AiDslPackage.VM_NODE_DEFINITION:
       {
         VMNodeDefinition vmNodeDefinition = (VMNodeDefinition)theEObject;
@@ -190,6 +183,13 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_DEFINITION:
+      {
+        WorkflowDefinition workflowDefinition = (WorkflowDefinition)theEObject;
+        T result = caseWorkflowDefinition(workflowDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -238,22 +238,6 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseImportDeclaration(ImportDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseWorkflowDefinition(WorkflowDefinition object)
   {
     return null;
   }
@@ -446,6 +430,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLlmVariableAssignment(LlmVariableAssignment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowDefinition(WorkflowDefinition object)
   {
     return null;
   }
