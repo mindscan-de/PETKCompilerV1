@@ -87,15 +87,6 @@ public interface AiDslFactory extends EFactory
   VMNodeOutElements createVMNodeOutElements();
 
   /**
-   * Returns a new object of class '<em>VM Node Out Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>VM Node Out Element</em>'.
-   * @generated
-   */
-  VMNodeOutElement createVMNodeOutElement();
-
-  /**
    * Returns a new object of class '<em>VM Node In Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +94,24 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   VMNodeInElements createVMNodeInElements();
+
+  /**
+   * Returns a new object of class '<em>VM Node Field Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Field Elements</em>'.
+   * @generated
+   */
+  VMNodeFieldElements createVMNodeFieldElements();
+
+  /**
+   * Returns a new object of class '<em>VM Node Out Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Out Element</em>'.
+   * @generated
+   */
+  VMNodeOutElement createVMNodeOutElement();
 
   /**
    * Returns a new object of class '<em>VM Node In Element</em>'.
@@ -114,22 +123,22 @@ public interface AiDslFactory extends EFactory
   VMNodeInElement createVMNodeInElement();
 
   /**
-   * Returns a new object of class '<em>VM Node Element</em>'.
+   * Returns a new object of class '<em>VM Field Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>VM Node Element</em>'.
+   * @return a new object of class '<em>VM Field Element</em>'.
    * @generated
    */
-  VMNodeElement createVMNodeElement();
+  VMFieldElement createVMFieldElement();
 
   /**
-   * Returns a new object of class '<em>VM Override Element</em>'.
+   * Returns a new object of class '<em>VM Override Field Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>VM Override Element</em>'.
+   * @return a new object of class '<em>VM Override Field Element</em>'.
    * @generated
    */
-  VMOverrideElement createVMOverrideElement();
+  VMOverrideFieldElement createVMOverrideFieldElement();
 
   /**
    * Returns a new object of class '<em>Llm Task Definition</em>'.

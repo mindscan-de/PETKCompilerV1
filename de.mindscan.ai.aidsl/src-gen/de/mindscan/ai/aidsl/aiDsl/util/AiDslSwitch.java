@@ -124,18 +124,26 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.VM_NODE_OUT_ELEMENT:
-      {
-        VMNodeOutElement vmNodeOutElement = (VMNodeOutElement)theEObject;
-        T result = caseVMNodeOutElement(vmNodeOutElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AiDslPackage.VM_NODE_IN_ELEMENTS:
       {
         VMNodeInElements vmNodeInElements = (VMNodeInElements)theEObject;
         T result = caseVMNodeInElements(vmNodeInElements);
         if (result == null) result = caseVMNodeEleemnts(vmNodeInElements);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_FIELD_ELEMENTS:
+      {
+        VMNodeFieldElements vmNodeFieldElements = (VMNodeFieldElements)theEObject;
+        T result = caseVMNodeFieldElements(vmNodeFieldElements);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeFieldElements);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_OUT_ELEMENT:
+      {
+        VMNodeOutElement vmNodeOutElement = (VMNodeOutElement)theEObject;
+        T result = caseVMNodeOutElement(vmNodeOutElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -146,19 +154,17 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.VM_NODE_ELEMENT:
+      case AiDslPackage.VM_FIELD_ELEMENT:
       {
-        VMNodeElement vmNodeElement = (VMNodeElement)theEObject;
-        T result = caseVMNodeElement(vmNodeElement);
-        if (result == null) result = caseVMNodeEleemnts(vmNodeElement);
+        VMFieldElement vmFieldElement = (VMFieldElement)theEObject;
+        T result = caseVMFieldElement(vmFieldElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.VM_OVERRIDE_ELEMENT:
+      case AiDslPackage.VM_OVERRIDE_FIELD_ELEMENT:
       {
-        VMOverrideElement vmOverrideElement = (VMOverrideElement)theEObject;
-        T result = caseVMOverrideElement(vmOverrideElement);
-        if (result == null) result = caseVMNodeEleemnts(vmOverrideElement);
+        VMOverrideFieldElement vmOverrideFieldElement = (VMOverrideFieldElement)theEObject;
+        T result = caseVMOverrideFieldElement(vmOverrideFieldElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -307,22 +313,6 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVMNodeOutElement(VMNodeOutElement object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>VM Node In Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -334,6 +324,38 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVMNodeInElements(VMNodeInElements object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Field Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Field Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeFieldElements(VMNodeFieldElements object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeOutElement(VMNodeOutElement object)
   {
     return null;
   }
@@ -355,33 +377,33 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>VM Node Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>VM Field Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>VM Node Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>VM Field Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVMNodeElement(VMNodeElement object)
+  public T caseVMFieldElement(VMFieldElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>VM Override Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>VM Override Field Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>VM Override Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>VM Override Field Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVMOverrideElement(VMOverrideElement object)
+  public T caseVMOverrideFieldElement(VMOverrideFieldElement object)
   {
     return null;
   }

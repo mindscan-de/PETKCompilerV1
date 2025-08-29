@@ -393,20 +393,11 @@ ruleVMNodeEleemnts returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeElementParserRuleCall_3());
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeFieldElementsParserRuleCall_3());
 		}
-		this_VMNodeElement_3=ruleVMNodeElement
+		this_VMNodeFieldElements_3=ruleVMNodeFieldElements
 		{
-			$current = $this_VMNodeElement_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMOverrideElementParserRuleCall_4());
-		}
-		this_VMOverrideElement_4=ruleVMOverrideElement
-		{
-			$current = $this_VMOverrideElement_4.current;
+			$current = $this_VMNodeFieldElements_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -434,9 +425,9 @@ ruleVMNodeOpCodeElement returns [EObject current=null]
 		}
 		(
 			(
-				lv_code_1_0=RULE_STRING
+				lv_opcode_1_0=RULE_STRING
 				{
-					newLeafNode(lv_code_1_0, grammarAccess.getVMNodeOpCodeElementAccess().getCodeSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_opcode_1_0, grammarAccess.getVMNodeOpCodeElementAccess().getOpcodeSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -444,8 +435,8 @@ ruleVMNodeOpCodeElement returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"code",
-						lv_code_1_0,
+						"opcode",
+						lv_opcode_1_0,
 						"de.mindscan.ai.aidsl.AiDsl.STRING");
 				}
 			)
@@ -506,6 +497,138 @@ ruleVMNodeOutElements returns [EObject current=null]
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getVMNodeOutElementsAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleVMNodeInElements
+entryRuleVMNodeInElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeInElementsRule()); }
+	iv_ruleVMNodeInElements=ruleVMNodeInElements
+	{ $current=$iv_ruleVMNodeInElements.current; }
+	EOF;
+
+// Rule VMNodeInElements
+ruleVMNodeInElements returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVMNodeInElementsAccess().getVMNodeInElementsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='in'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVMNodeInElementsAccess().getInKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVMNodeInElementsAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeInElementsAccess().getInElementsVMNodeInElementParserRuleCall_3_0());
+				}
+				lv_inElements_3_0=ruleVMNodeInElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeInElementsRule());
+					}
+					add(
+						$current,
+						"inElements",
+						lv_inElements_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getVMNodeInElementsAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleVMNodeFieldElements
+entryRuleVMNodeFieldElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeFieldElementsRule()); }
+	iv_ruleVMNodeFieldElements=ruleVMNodeFieldElements
+	{ $current=$iv_ruleVMNodeFieldElements.current; }
+	EOF;
+
+// Rule VMNodeFieldElements
+ruleVMNodeFieldElements returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVMNodeFieldElementsAccess().getVMNodeFieldElementsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='fields'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVMNodeFieldElementsAccess().getFieldsKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVMNodeFieldElementsAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsVMFieldElementParserRuleCall_3_0_0());
+					}
+					lv_fieldELements_3_1=ruleVMFieldElement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVMNodeFieldElementsRule());
+						}
+						add(
+							$current,
+							"fieldELements",
+							lv_fieldELements_3_1,
+							"de.mindscan.ai.aidsl.AiDsl.VMFieldElement");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsVMOverrideFieldElementParserRuleCall_3_0_1());
+					}
+					lv_fieldELements_3_2=ruleVMOverrideFieldElement
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVMNodeFieldElementsRule());
+						}
+						add(
+							$current,
+							"fieldELements",
+							lv_fieldELements_3_2,
+							"de.mindscan.ai.aidsl.AiDsl.VMOverrideFieldElement");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getVMNodeFieldElementsAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -605,63 +728,6 @@ ruleVMNodeOutElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleVMNodeInElements
-entryRuleVMNodeInElements returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVMNodeInElementsRule()); }
-	iv_ruleVMNodeInElements=ruleVMNodeInElements
-	{ $current=$iv_ruleVMNodeInElements.current; }
-	EOF;
-
-// Rule VMNodeInElements
-ruleVMNodeInElements returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getVMNodeInElementsAccess().getVMNodeInElementsAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='in'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getVMNodeInElementsAccess().getInKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getVMNodeInElementsAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVMNodeInElementsAccess().getInElementsVMNodeInElementParserRuleCall_3_0());
-				}
-				lv_inElements_3_0=ruleVMNodeInElement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVMNodeInElementsRule());
-					}
-					add(
-						$current,
-						"inElements",
-						lv_inElements_3_0,
-						"de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getVMNodeInElementsAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
 // Entry rule entryRuleVMNodeInElement
 entryRuleVMNodeInElement returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVMNodeInElementRule()); }
@@ -727,15 +793,15 @@ ruleVMNodeInElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleVMNodeElement
-entryRuleVMNodeElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVMNodeElementRule()); }
-	iv_ruleVMNodeElement=ruleVMNodeElement
-	{ $current=$iv_ruleVMNodeElement.current; }
+// Entry rule entryRuleVMFieldElement
+entryRuleVMFieldElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMFieldElementRule()); }
+	iv_ruleVMFieldElement=ruleVMFieldElement
+	{ $current=$iv_ruleVMFieldElement.current; }
 	EOF;
 
-// Rule VMNodeElement
-ruleVMNodeElement returns [EObject current=null]
+// Rule VMFieldElement
+ruleVMFieldElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -748,22 +814,22 @@ ruleVMNodeElement returns [EObject current=null]
 				(
 					lv_policy_0_1='require'
 					{
-						newLeafNode(lv_policy_0_1, grammarAccess.getVMNodeElementAccess().getPolicyRequireKeyword_0_0_0());
+						newLeafNode(lv_policy_0_1, grammarAccess.getVMFieldElementAccess().getPolicyRequireKeyword_0_0_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+							$current = createModelElement(grammarAccess.getVMFieldElementRule());
 						}
 						setWithLastConsumed($current, "policy", lv_policy_0_1, null);
 					}
 					    |
 					lv_policy_0_2='optional'
 					{
-						newLeafNode(lv_policy_0_2, grammarAccess.getVMNodeElementAccess().getPolicyOptionalKeyword_0_0_1());
+						newLeafNode(lv_policy_0_2, grammarAccess.getVMFieldElementAccess().getPolicyOptionalKeyword_0_0_1());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+							$current = createModelElement(grammarAccess.getVMFieldElementRule());
 						}
 						setWithLastConsumed($current, "policy", lv_policy_0_2, null);
 					}
@@ -774,11 +840,11 @@ ruleVMNodeElement returns [EObject current=null]
 			(
 				lv_type_1_0=RULE_ID
 				{
-					newLeafNode(lv_type_1_0, grammarAccess.getVMNodeElementAccess().getTypeIDTerminalRuleCall_1_0());
+					newLeafNode(lv_type_1_0, grammarAccess.getVMFieldElementAccess().getTypeIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMNodeElementRule());
+						$current = createModelElement(grammarAccess.getVMFieldElementRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -792,11 +858,11 @@ ruleVMNodeElement returns [EObject current=null]
 			(
 				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getVMNodeElementAccess().getNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getVMFieldElementAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMNodeElementRule());
+						$current = createModelElement(grammarAccess.getVMFieldElementRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -809,17 +875,17 @@ ruleVMNodeElement returns [EObject current=null]
 		(
 			otherlv_3='default'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getVMNodeElementAccess().getDefaultKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getVMFieldElementAccess().getDefaultKeyword_3_0());
 			}
 			(
 				(
 					lv_defaultvalue_4_0=RULE_STRING
 					{
-						newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMNodeElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0());
+						newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVMNodeElementRule());
+							$current = createModelElement(grammarAccess.getVMFieldElementRule());
 						}
 						setWithLastConsumed(
 							$current,
@@ -833,15 +899,15 @@ ruleVMNodeElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleVMOverrideElement
-entryRuleVMOverrideElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVMOverrideElementRule()); }
-	iv_ruleVMOverrideElement=ruleVMOverrideElement
-	{ $current=$iv_ruleVMOverrideElement.current; }
+// Entry rule entryRuleVMOverrideFieldElement
+entryRuleVMOverrideFieldElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMOverrideFieldElementRule()); }
+	iv_ruleVMOverrideFieldElement=ruleVMOverrideFieldElement
+	{ $current=$iv_ruleVMOverrideFieldElement.current; }
 	EOF;
 
-// Rule VMOverrideElement
-ruleVMOverrideElement returns [EObject current=null]
+// Rule VMOverrideFieldElement
+ruleVMOverrideFieldElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -853,11 +919,11 @@ ruleVMOverrideElement returns [EObject current=null]
 			(
 				lv_policy_0_0='override'
 				{
-					newLeafNode(lv_policy_0_0, grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0());
+					newLeafNode(lv_policy_0_0, grammarAccess.getVMOverrideFieldElementAccess().getPolicyOverrideKeyword_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+						$current = createModelElement(grammarAccess.getVMOverrideFieldElementRule());
 					}
 					setWithLastConsumed($current, "policy", lv_policy_0_0, "override");
 				}
@@ -867,11 +933,11 @@ ruleVMOverrideElement returns [EObject current=null]
 			(
 				lv_type_1_0=RULE_ID
 				{
-					newLeafNode(lv_type_1_0, grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0());
+					newLeafNode(lv_type_1_0, grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+						$current = createModelElement(grammarAccess.getVMOverrideFieldElementRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -885,11 +951,11 @@ ruleVMOverrideElement returns [EObject current=null]
 			(
 				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getVMOverrideFieldElementAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+						$current = createModelElement(grammarAccess.getVMOverrideFieldElementRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -901,17 +967,17 @@ ruleVMOverrideElement returns [EObject current=null]
 		)
 		otherlv_3=':='
 		{
-			newLeafNode(otherlv_3, grammarAccess.getVMOverrideElementAccess().getColonEqualsSignKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getVMOverrideFieldElementAccess().getColonEqualsSignKeyword_3());
 		}
 		(
 			(
 				lv_defaultvalue_4_0=RULE_STRING
 				{
-					newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMOverrideFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMOverrideElementRule());
+						$current = createModelElement(grammarAccess.getVMOverrideFieldElementRule());
 					}
 					setWithLastConsumed(
 						$current,

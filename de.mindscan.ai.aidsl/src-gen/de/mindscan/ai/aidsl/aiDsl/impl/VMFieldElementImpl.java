@@ -4,31 +4,32 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
-import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>VM Node Element</b></em>'.
+ * An implementation of the model object '<em><b>VM Field Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl#getPolicy <em>Policy</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl#getPolicy <em>Policy</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl#getDefaultvalue <em>Defaultvalue</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeElement
+public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements VMFieldElement
 {
   /**
    * The default value of the '{@link #getPolicy() <em>Policy</em>}' attribute.
@@ -115,7 +116,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VMNodeElementImpl()
+  protected VMFieldElementImpl()
   {
     super();
   }
@@ -128,7 +129,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
   @Override
   protected EClass eStaticClass()
   {
-    return AiDslPackage.Literals.VM_NODE_ELEMENT;
+    return AiDslPackage.Literals.VM_FIELD_ELEMENT;
   }
 
   /**
@@ -153,7 +154,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
     String oldPolicy = policy;
     policy = newPolicy;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_ELEMENT__POLICY, oldPolicy, policy));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__POLICY, oldPolicy, policy));
   }
 
   /**
@@ -178,7 +179,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
     String oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_ELEMENT__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__TYPE, oldType, type));
   }
 
   /**
@@ -203,7 +204,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_ELEMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -228,7 +229,7 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
     String oldDefaultvalue = defaultvalue;
     defaultvalue = newDefaultvalue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_ELEMENT__DEFAULTVALUE, oldDefaultvalue, defaultvalue));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, oldDefaultvalue, defaultvalue));
   }
 
   /**
@@ -241,13 +242,13 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_ELEMENT__POLICY:
+      case AiDslPackage.VM_FIELD_ELEMENT__POLICY:
         return getPolicy();
-      case AiDslPackage.VM_NODE_ELEMENT__TYPE:
+      case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
         return getType();
-      case AiDslPackage.VM_NODE_ELEMENT__NAME:
+      case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         return getName();
-      case AiDslPackage.VM_NODE_ELEMENT__DEFAULTVALUE:
+      case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
         return getDefaultvalue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -263,16 +264,16 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_ELEMENT__POLICY:
+      case AiDslPackage.VM_FIELD_ELEMENT__POLICY:
         setPolicy((String)newValue);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__TYPE:
+      case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
         setType((String)newValue);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__NAME:
+      case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         setName((String)newValue);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__DEFAULTVALUE:
+      case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
         setDefaultvalue((String)newValue);
         return;
     }
@@ -289,16 +290,16 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_ELEMENT__POLICY:
+      case AiDslPackage.VM_FIELD_ELEMENT__POLICY:
         setPolicy(POLICY_EDEFAULT);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__TYPE:
+      case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__NAME:
+      case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AiDslPackage.VM_NODE_ELEMENT__DEFAULTVALUE:
+      case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
         setDefaultvalue(DEFAULTVALUE_EDEFAULT);
         return;
     }
@@ -315,13 +316,13 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_ELEMENT__POLICY:
+      case AiDslPackage.VM_FIELD_ELEMENT__POLICY:
         return POLICY_EDEFAULT == null ? policy != null : !POLICY_EDEFAULT.equals(policy);
-      case AiDslPackage.VM_NODE_ELEMENT__TYPE:
+      case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case AiDslPackage.VM_NODE_ELEMENT__NAME:
+      case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AiDslPackage.VM_NODE_ELEMENT__DEFAULTVALUE:
+      case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
         return DEFAULTVALUE_EDEFAULT == null ? defaultvalue != null : !DEFAULTVALUE_EDEFAULT.equals(defaultvalue);
     }
     return super.eIsSet(featureID);
@@ -350,4 +351,4 @@ public class VMNodeElementImpl extends VMNodeEleemntsImpl implements VMNodeEleme
     return result.toString();
   }
 
-} //VMNodeElementImpl
+} //VMFieldElementImpl

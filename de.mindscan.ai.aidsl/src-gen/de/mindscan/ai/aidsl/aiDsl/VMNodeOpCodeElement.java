@@ -13,7 +13,7 @@ package de.mindscan.ai.aidsl.aiDsl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode <em>Code</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getOpcode <em>Opcode</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOpCodeElement()
@@ -23,25 +23,25 @@ package de.mindscan.ai.aidsl.aiDsl;
 public interface VMNodeOpCodeElement extends VMNodeEleemnts
 {
   /**
-   * Returns the value of the '<em><b>Code</b></em>' attribute.
+   * Returns the value of the '<em><b>Opcode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Code</em>' attribute.
-   * @see #setCode(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOpCodeElement_Code()
+   * @return the value of the '<em>Opcode</em>' attribute.
+   * @see #setOpcode(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOpCodeElement_Opcode()
    * @model
    * @generated
    */
-  String getCode();
+  String getOpcode();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode <em>Code</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getOpcode <em>Opcode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Code</em>' attribute.
-   * @see #getCode()
+   * @param value the new value of the '<em>Opcode</em>' attribute.
+   * @see #getOpcode()
    * @generated
    */
-  void setCode(String value);
+  void setOpcode(String value);
 
 } // VMNodeOpCodeElement

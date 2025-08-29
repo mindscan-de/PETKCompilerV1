@@ -210,15 +210,24 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cVMNodeOpCodeElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVMNodeOutElementsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVMNodeInElementsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cVMNodeElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cVMOverrideElementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVMNodeFieldElementsParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//VMNodeEleemnts:
-		//    (VMNodeOpCodeElement|VMNodeOutElements|VMNodeInElements|VMNodeElement|VMOverrideElement)
+		//    (
+		//        VMNodeOpCodeElement|
+		//        VMNodeOutElements|
+		//        VMNodeInElements|
+		//        VMNodeFieldElements
+		//    )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(VMNodeOpCodeElement|VMNodeOutElements|VMNodeInElements|VMNodeElement|VMOverrideElement)
+		//(
+		//    VMNodeOpCodeElement|
+		//    VMNodeOutElements|
+		//    VMNodeInElements|
+		//    VMNodeFieldElements
+		//)
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//VMNodeOpCodeElement
@@ -230,35 +239,32 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//VMNodeInElements
 		public RuleCall getVMNodeInElementsParserRuleCall_2() { return cVMNodeInElementsParserRuleCall_2; }
 		
-		//VMNodeElement
-		public RuleCall getVMNodeElementParserRuleCall_3() { return cVMNodeElementParserRuleCall_3; }
-		
-		//VMOverrideElement
-		public RuleCall getVMOverrideElementParserRuleCall_4() { return cVMOverrideElementParserRuleCall_4; }
+		//VMNodeFieldElements
+		public RuleCall getVMNodeFieldElementsParserRuleCall_3() { return cVMNodeFieldElementsParserRuleCall_3; }
 	}
 	public class VMNodeOpCodeElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeOpCodeElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cOpcodeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCodeSTRINGTerminalRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
+		private final Assignment cOpcodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOpcodeSTRINGTerminalRuleCall_1_0 = (RuleCall)cOpcodeAssignment_1.eContents().get(0);
 		
 		//VMNodeOpCodeElement:
-		//    'opcode' code=STRING
+		//    'opcode' opcode=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'opcode' code=STRING
+		//'opcode' opcode=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'opcode'
 		public Keyword getOpcodeKeyword_0() { return cOpcodeKeyword_0; }
 		
-		//code=STRING
-		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
+		//opcode=STRING
+		public Assignment getOpcodeAssignment_1() { return cOpcodeAssignment_1; }
 		
 		//STRING
-		public RuleCall getCodeSTRINGTerminalRuleCall_1_0() { return cCodeSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getOpcodeSTRINGTerminalRuleCall_1_0() { return cOpcodeSTRINGTerminalRuleCall_1_0; }
 	}
 	public class VMNodeOutElementsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeOutElements");
@@ -296,6 +302,94 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//VMNodeOutElement
 		public RuleCall getOutElementsVMNodeOutElementParserRuleCall_3_0() { return cOutElementsVMNodeOutElementParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class VMNodeInElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeInElements");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cVMNodeInElementsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cInKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cInElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInElementsVMNodeInElementParserRuleCall_3_0 = (RuleCall)cInElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//VMNodeInElements:
+		//    {VMNodeInElements} 'in' '{'
+		//        (inElements+=VMNodeInElement)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{VMNodeInElements} 'in' '{'
+		//    (inElements+=VMNodeInElement)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{VMNodeInElements}
+		public Action getVMNodeInElementsAction_0() { return cVMNodeInElementsAction_0; }
+		
+		//'in'
+		public Keyword getInKeyword_1() { return cInKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(inElements+=VMNodeInElement)*
+		public Assignment getInElementsAssignment_3() { return cInElementsAssignment_3; }
+		
+		//VMNodeInElement
+		public RuleCall getInElementsVMNodeInElementParserRuleCall_3_0() { return cInElementsVMNodeInElementParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class VMNodeFieldElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeFieldElements");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cVMNodeFieldElementsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFieldsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFieldELementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cFieldELementsAlternatives_3_0 = (Alternatives)cFieldELementsAssignment_3.eContents().get(0);
+		private final RuleCall cFieldELementsVMFieldElementParserRuleCall_3_0_0 = (RuleCall)cFieldELementsAlternatives_3_0.eContents().get(0);
+		private final RuleCall cFieldELementsVMOverrideFieldElementParserRuleCall_3_0_1 = (RuleCall)cFieldELementsAlternatives_3_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//VMNodeFieldElements:
+		//    {VMNodeFieldElements} 'fields' '{'
+		//        (fieldELements+=(VMFieldElement|VMOverrideFieldElement))*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{VMNodeFieldElements} 'fields' '{'
+		//    (fieldELements+=(VMFieldElement|VMOverrideFieldElement))*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{VMNodeFieldElements}
+		public Action getVMNodeFieldElementsAction_0() { return cVMNodeFieldElementsAction_0; }
+		
+		//'fields'
+		public Keyword getFieldsKeyword_1() { return cFieldsKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(fieldELements+=(VMFieldElement|VMOverrideFieldElement))*
+		public Assignment getFieldELementsAssignment_3() { return cFieldELementsAssignment_3; }
+		
+		//(VMFieldElement|VMOverrideFieldElement)
+		public Alternatives getFieldELementsAlternatives_3_0() { return cFieldELementsAlternatives_3_0; }
+		
+		//VMFieldElement
+		public RuleCall getFieldELementsVMFieldElementParserRuleCall_3_0_0() { return cFieldELementsVMFieldElementParserRuleCall_3_0_0; }
+		
+		//VMOverrideFieldElement
+		public RuleCall getFieldELementsVMOverrideFieldElementParserRuleCall_3_0_1() { return cFieldELementsVMOverrideFieldElementParserRuleCall_3_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -352,46 +446,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getInputreferenceQualifiedNameParserRuleCall_3_1_0() { return cInputreferenceQualifiedNameParserRuleCall_3_1_0; }
 	}
-	public class VMNodeInElementsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeInElements");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cVMNodeInElementsAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cInKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cInElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cInElementsVMNodeInElementParserRuleCall_3_0 = (RuleCall)cInElementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//VMNodeInElements:
-		//    {VMNodeInElements} 'in' '{'
-		//        (inElements+=VMNodeInElement)*
-		//    '}'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{VMNodeInElements} 'in' '{'
-		//    (inElements+=VMNodeInElement)*
-		//'}'
-		public Group getGroup() { return cGroup; }
-		
-		//{VMNodeInElements}
-		public Action getVMNodeInElementsAction_0() { return cVMNodeInElementsAction_0; }
-		
-		//'in'
-		public Keyword getInKeyword_1() { return cInKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//(inElements+=VMNodeInElement)*
-		public Assignment getInElementsAssignment_3() { return cInElementsAssignment_3; }
-		
-		//VMNodeInElement
-		public RuleCall getInElementsVMNodeInElementParserRuleCall_3_0() { return cInElementsVMNodeInElementParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
 	public class VMNodeInElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -428,8 +482,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
-	public class VMNodeElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeElement");
+	public class VMFieldElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMFieldElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPolicyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Alternatives cPolicyAlternatives_0_0 = (Alternatives)cPolicyAssignment_0.eContents().get(0);
@@ -444,7 +498,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cDefaultvalueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDefaultvalueAssignment_3_1.eContents().get(0);
 		
-		//VMNodeElement:
+		//VMFieldElement:
 		//    policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -488,8 +542,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(STRING)
 		public RuleCall getDefaultvalueSTRINGTerminalRuleCall_3_1_0() { return cDefaultvalueSTRINGTerminalRuleCall_3_1_0; }
 	}
-	public class VMOverrideElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMOverrideElement");
+	public class VMOverrideFieldElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMOverrideFieldElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPolicyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cPolicyOverrideKeyword_0_0 = (Keyword)cPolicyAssignment_0.eContents().get(0);
@@ -501,7 +555,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cDefaultvalueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefaultvalueAssignment_4.eContents().get(0);
 		
-		//VMOverrideElement:
+		//VMOverrideFieldElement:
 		//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -791,11 +845,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
 	private final VMNodeOutElementsElements pVMNodeOutElements;
-	private final VMNodeOutElementElements pVMNodeOutElement;
 	private final VMNodeInElementsElements pVMNodeInElements;
+	private final VMNodeFieldElementsElements pVMNodeFieldElements;
+	private final VMNodeOutElementElements pVMNodeOutElement;
 	private final VMNodeInElementElements pVMNodeInElement;
-	private final VMNodeElementElements pVMNodeElement;
-	private final VMOverrideElementElements pVMOverrideElement;
+	private final VMFieldElementElements pVMFieldElement;
+	private final VMOverrideFieldElementElements pVMOverrideFieldElement;
 	private final LlmTaskDefinitionElements pLlmTaskDefinition;
 	private final AnnotationInterfaceReferenceElements pAnnotationInterfaceReference;
 	private final LlmVariableAssignmentElements pLlmVariableAssignment;
@@ -822,11 +877,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
 		this.pVMNodeOutElements = new VMNodeOutElementsElements();
-		this.pVMNodeOutElement = new VMNodeOutElementElements();
 		this.pVMNodeInElements = new VMNodeInElementsElements();
+		this.pVMNodeFieldElements = new VMNodeFieldElementsElements();
+		this.pVMNodeOutElement = new VMNodeOutElementElements();
 		this.pVMNodeInElement = new VMNodeInElementElements();
-		this.pVMNodeElement = new VMNodeElementElements();
-		this.pVMOverrideElement = new VMOverrideElementElements();
+		this.pVMFieldElement = new VMFieldElementElements();
+		this.pVMOverrideFieldElement = new VMOverrideFieldElementElements();
 		this.pLlmTaskDefinition = new LlmTaskDefinitionElements();
 		this.pAnnotationInterfaceReference = new AnnotationInterfaceReferenceElements();
 		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
@@ -923,7 +979,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeEleemnts:
-	//    (VMNodeOpCodeElement|VMNodeOutElements|VMNodeInElements|VMNodeElement|VMOverrideElement)
+	//    (
+	//        VMNodeOpCodeElement|
+	//        VMNodeOutElements|
+	//        VMNodeInElements|
+	//        VMNodeFieldElements
+	//    )
 	//;
 	public VMNodeEleemntsElements getVMNodeEleemntsAccess() {
 		return pVMNodeEleemnts;
@@ -934,7 +995,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeOpCodeElement:
-	//    'opcode' code=STRING
+	//    'opcode' opcode=STRING
 	//;
 	public VMNodeOpCodeElementElements getVMNodeOpCodeElementAccess() {
 		return pVMNodeOpCodeElement;
@@ -957,17 +1018,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getVMNodeOutElementsAccess().getRule();
 	}
 	
-	//VMNodeOutElement:
-	//    name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
-	//;
-	public VMNodeOutElementElements getVMNodeOutElementAccess() {
-		return pVMNodeOutElement;
-	}
-	
-	public ParserRule getVMNodeOutElementRule() {
-		return getVMNodeOutElementAccess().getRule();
-	}
-	
 	//VMNodeInElements:
 	//    {VMNodeInElements} 'in' '{'
 	//        (inElements+=VMNodeInElement)*
@@ -981,6 +1031,30 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getVMNodeInElementsAccess().getRule();
 	}
 	
+	//VMNodeFieldElements:
+	//    {VMNodeFieldElements} 'fields' '{'
+	//        (fieldELements+=(VMFieldElement|VMOverrideFieldElement))*
+	//    '}'
+	//;
+	public VMNodeFieldElementsElements getVMNodeFieldElementsAccess() {
+		return pVMNodeFieldElements;
+	}
+	
+	public ParserRule getVMNodeFieldElementsRule() {
+		return getVMNodeFieldElementsAccess().getRule();
+	}
+	
+	//VMNodeOutElement:
+	//    name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+	//;
+	public VMNodeOutElementElements getVMNodeOutElementAccess() {
+		return pVMNodeOutElement;
+	}
+	
+	public ParserRule getVMNodeOutElementRule() {
+		return getVMNodeOutElementAccess().getRule();
+	}
+	
 	//VMNodeInElement:
 	//    (policy=('require'|'optional'))? name=QualifiedName
 	//;
@@ -992,26 +1066,26 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getVMNodeInElementAccess().getRule();
 	}
 	
-	//VMNodeElement:
+	//VMFieldElement:
 	//    policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
 	//;
-	public VMNodeElementElements getVMNodeElementAccess() {
-		return pVMNodeElement;
+	public VMFieldElementElements getVMFieldElementAccess() {
+		return pVMFieldElement;
 	}
 	
-	public ParserRule getVMNodeElementRule() {
-		return getVMNodeElementAccess().getRule();
+	public ParserRule getVMFieldElementRule() {
+		return getVMFieldElementAccess().getRule();
 	}
 	
-	//VMOverrideElement:
+	//VMOverrideFieldElement:
 	//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
 	//;
-	public VMOverrideElementElements getVMOverrideElementAccess() {
-		return pVMOverrideElement;
+	public VMOverrideFieldElementElements getVMOverrideFieldElementAccess() {
+		return pVMOverrideFieldElement;
 	}
 	
-	public ParserRule getVMOverrideElementRule() {
-		return getVMOverrideElementAccess().getRule();
+	public ParserRule getVMOverrideFieldElementRule() {
+		return getVMOverrideFieldElementAccess().getRule();
 	}
 	
 	//// ---------------------------------------

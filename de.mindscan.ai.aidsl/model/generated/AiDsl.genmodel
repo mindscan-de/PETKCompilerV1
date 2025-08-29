@@ -24,10 +24,16 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeEleemnts"/>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOpCodeElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOpCodeElement/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOpCodeElement/opcode"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOutElements">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeOutElements/outElements"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeInElements/inElements"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMNodeFieldElements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeFieldElements/fieldELements"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOutElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/name"/>
@@ -35,24 +41,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/hasrequire"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/inputreference"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElements">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeInElements/inElements"/>
-    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeInElement/policy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeInElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//VMNodeElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/policy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeElement/defaultvalue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//VMFieldElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/defaultvalue"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//VMOverrideElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/policy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideElement/defaultvalue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//VMOverrideFieldElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/defaultvalue"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>

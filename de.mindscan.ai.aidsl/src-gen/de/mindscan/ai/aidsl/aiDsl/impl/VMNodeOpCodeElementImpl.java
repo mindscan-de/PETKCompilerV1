@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOpCodeElementImpl#getOpcode <em>Opcode</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNodeOpCodeElement
 {
   /**
-   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * The default value of the '{@link #getOpcode() <em>Opcode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
+   * @see #getOpcode()
    * @generated
    * @ordered
    */
-  protected static final String CODE_EDEFAULT = null;
+  protected static final String OPCODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * The cached value of the '{@link #getOpcode() <em>Opcode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
+   * @see #getOpcode()
    * @generated
    * @ordered
    */
-  protected String code = CODE_EDEFAULT;
+  protected String opcode = OPCODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
    * @generated
    */
   @Override
-  public String getCode()
+  public String getOpcode()
   {
-    return code;
+    return opcode;
   }
 
   /**
@@ -85,12 +85,12 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
    * @generated
    */
   @Override
-  public void setCode(String newCode)
+  public void setOpcode(String newOpcode)
   {
-    String oldCode = code;
-    code = newCode;
+    String oldOpcode = opcode;
+    opcode = newOpcode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_OP_CODE_ELEMENT__CODE, oldCode, code));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_OP_CODE_ELEMENT__OPCODE, oldOpcode, opcode));
   }
 
   /**
@@ -103,8 +103,8 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__CODE:
-        return getCode();
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__OPCODE:
+        return getOpcode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__CODE:
-        setCode((String)newValue);
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__OPCODE:
+        setOpcode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__CODE:
-        setCode(CODE_EDEFAULT);
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__OPCODE:
+        setOpcode(OPCODE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
   {
     switch (featureID)
     {
-      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__CODE:
-        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+      case AiDslPackage.VM_NODE_OP_CODE_ELEMENT__OPCODE:
+        return OPCODE_EDEFAULT == null ? opcode != null : !OPCODE_EDEFAULT.equals(opcode);
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class VMNodeOpCodeElementImpl extends VMNodeEleemntsImpl implements VMNod
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (code: ");
-    result.append(code);
+    result.append(" (opcode: ");
+    result.append(opcode);
     result.append(')');
     return result.toString();
   }

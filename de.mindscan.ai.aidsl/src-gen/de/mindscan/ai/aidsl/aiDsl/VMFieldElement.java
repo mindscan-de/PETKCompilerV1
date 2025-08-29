@@ -3,27 +3,28 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>VM Node Element</b></em>'.
+ * A representation of the model object '<em><b>VM Field Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy <em>Policy</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType <em>Type</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue <em>Defaultvalue</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getPolicy <em>Policy</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType <em>Type</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}</li>
  * </ul>
  *
- * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeElement()
+ * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement()
  * @model
  * @generated
  */
-public interface VMNodeElement extends VMNodeEleemnts
+public interface VMFieldElement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Policy</b></em>' attribute.
@@ -31,14 +32,14 @@ public interface VMNodeElement extends VMNodeEleemnts
    * <!-- end-user-doc -->
    * @return the value of the '<em>Policy</em>' attribute.
    * @see #setPolicy(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeElement_Policy()
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement_Policy()
    * @model
    * @generated
    */
   String getPolicy();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy <em>Policy</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getPolicy <em>Policy</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Policy</em>' attribute.
@@ -53,14 +54,14 @@ public interface VMNodeElement extends VMNodeEleemnts
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
    * @see #setType(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeElement_Type()
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement_Type()
    * @model
    * @generated
    */
   String getType();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
@@ -75,14 +76,14 @@ public interface VMNodeElement extends VMNodeEleemnts
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeElement_Name()
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -97,14 +98,14 @@ public interface VMNodeElement extends VMNodeEleemnts
    * <!-- end-user-doc -->
    * @return the value of the '<em>Defaultvalue</em>' attribute.
    * @see #setDefaultvalue(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeElement_Defaultvalue()
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement_Defaultvalue()
    * @model
    * @generated
    */
   String getDefaultvalue();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue <em>Defaultvalue</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Defaultvalue</em>' attribute.
@@ -113,4 +114,4 @@ public interface VMNodeElement extends VMNodeEleemnts
    */
   void setDefaultvalue(String value);
 
-} // VMNodeElement
+} // VMFieldElement

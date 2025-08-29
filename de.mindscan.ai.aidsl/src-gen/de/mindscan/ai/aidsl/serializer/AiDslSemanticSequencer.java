@@ -11,14 +11,15 @@ import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
-import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeInElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeInElements;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
-import de.mindscan.ai.aidsl.aiDsl.VMOverrideElement;
+import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
@@ -64,11 +65,14 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.PACKAGE_DECLARATION:
 				sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
 				return; 
+			case AiDslPackage.VM_FIELD_ELEMENT:
+				sequence_VMFieldElement(context, (VMFieldElement) semanticObject); 
+				return; 
 			case AiDslPackage.VM_NODE_DEFINITION:
 				sequence_VMNodeDefinition(context, (VMNodeDefinition) semanticObject); 
 				return; 
-			case AiDslPackage.VM_NODE_ELEMENT:
-				sequence_VMNodeElement(context, (VMNodeElement) semanticObject); 
+			case AiDslPackage.VM_NODE_FIELD_ELEMENTS:
+				sequence_VMNodeFieldElements(context, (VMNodeFieldElements) semanticObject); 
 				return; 
 			case AiDslPackage.VM_NODE_IN_ELEMENT:
 				sequence_VMNodeInElement(context, (VMNodeInElement) semanticObject); 
@@ -85,8 +89,8 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.VM_NODE_OUT_ELEMENTS:
 				sequence_VMNodeOutElements(context, (VMNodeOutElements) semanticObject); 
 				return; 
-			case AiDslPackage.VM_OVERRIDE_ELEMENT:
-				sequence_VMOverrideElement(context, (VMOverrideElement) semanticObject); 
+			case AiDslPackage.VM_OVERRIDE_FIELD_ELEMENT:
+				sequence_VMOverrideFieldElement(context, (VMOverrideFieldElement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
@@ -220,6 +224,20 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     VMFieldElement returns VMFieldElement
+	 *
+	 * Constraint:
+	 *     ((policy='require' | policy='optional') type=ID name=ID defaultvalue=STRING?)
+	 * </pre>
+	 */
+	protected void sequence_VMFieldElement(ISerializationContext context, VMFieldElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     VMNodeDefinition returns VMNodeDefinition
 	 *
 	 * Constraint:
@@ -234,14 +252,14 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     VMNodeEleemnts returns VMNodeElement
-	 *     VMNodeElement returns VMNodeElement
+	 *     VMNodeEleemnts returns VMNodeFieldElements
+	 *     VMNodeFieldElements returns VMNodeFieldElements
 	 *
 	 * Constraint:
-	 *     ((policy='require' | policy='optional') type=ID name=ID defaultvalue=STRING?)
+	 *     (fieldELements+=VMFieldElement | fieldELements+=VMOverrideFieldElement)*
 	 * </pre>
 	 */
-	protected void sequence_VMNodeElement(ISerializationContext context, VMNodeElement semanticObject) {
+	protected void sequence_VMNodeFieldElements(ISerializationContext context, VMNodeFieldElements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -282,16 +300,16 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMNodeOpCodeElement returns VMNodeOpCodeElement
 	 *
 	 * Constraint:
-	 *     code=STRING
+	 *     opcode=STRING
 	 * </pre>
 	 */
 	protected void sequence_VMNodeOpCodeElement(ISerializationContext context, VMNodeOpCodeElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__CODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__CODE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__OPCODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OP_CODE_ELEMENT__OPCODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVMNodeOpCodeElementAccess().getCodeSTRINGTerminalRuleCall_1_0(), semanticObject.getCode());
+		feeder.accept(grammarAccess.getVMNodeOpCodeElementAccess().getOpcodeSTRINGTerminalRuleCall_1_0(), semanticObject.getOpcode());
 		feeder.finish();
 	}
 	
@@ -328,29 +346,28 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     VMNodeEleemnts returns VMOverrideElement
-	 *     VMOverrideElement returns VMOverrideElement
+	 *     VMOverrideFieldElement returns VMOverrideFieldElement
 	 *
 	 * Constraint:
 	 *     (policy='override' type=ID name=ID defaultvalue=STRING)
 	 * </pre>
 	 */
-	protected void sequence_VMOverrideElement(ISerializationContext context, VMOverrideElement semanticObject) {
+	protected void sequence_VMOverrideFieldElement(ISerializationContext context, VMOverrideFieldElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__POLICY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__POLICY));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__TYPE));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__DEFAULTVALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_ELEMENT__DEFAULTVALUE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__POLICY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__POLICY));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__TYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__DEFAULTVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_OVERRIDE_FIELD_ELEMENT__DEFAULTVALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVMOverrideElementAccess().getPolicyOverrideKeyword_0_0(), semanticObject.getPolicy());
-		feeder.accept(grammarAccess.getVMOverrideElementAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getVMOverrideElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVMOverrideElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0(), semanticObject.getDefaultvalue());
+		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getPolicyOverrideKeyword_0_0(), semanticObject.getPolicy());
+		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0(), semanticObject.getDefaultvalue());
 		feeder.finish();
 	}
 	

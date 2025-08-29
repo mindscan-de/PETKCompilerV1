@@ -235,13 +235,13 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_OP_CODE_ELEMENT = 5;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Opcode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VM_NODE_OP_CODE_ELEMENT__CODE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+  int VM_NODE_OP_CODE_ELEMENT__OPCODE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>VM Node Op Code Element</em>' class.
@@ -281,6 +281,62 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_OUT_ELEMENTS_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl <em>VM Node In Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
+   * @generated
+   */
+  int VM_NODE_IN_ELEMENTS = 7;
+
+  /**
+   * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_IN_ELEMENTS__IN_ELEMENTS = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>VM Node In Elements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_IN_ELEMENTS_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeFieldElementsImpl <em>VM Node Field Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeFieldElementsImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
+   * @generated
+   */
+  int VM_NODE_FIELD_ELEMENTS = 8;
+
+  /**
+   * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_FIELD_ELEMENTS__FIELD_ELEMENTS = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>VM Node Field Elements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_NODE_FIELD_ELEMENTS_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl <em>VM Node Out Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -288,7 +344,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 7;
+  int VM_NODE_OUT_ELEMENT = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -336,34 +392,6 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_OUT_ELEMENT_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl <em>VM Node In Elements</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
-   * @generated
-   */
-  int VM_NODE_IN_ELEMENTS = 8;
-
-  /**
-   * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VM_NODE_IN_ELEMENTS__IN_ELEMENTS = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>VM Node In Elements</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VM_NODE_IN_ELEMENTS_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementImpl <em>VM Node In Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -371,7 +399,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 9;
+  int VM_NODE_IN_ELEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -401,14 +429,14 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_IN_ELEMENT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl <em>VM Node Element</em>}' class.
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl <em>VM Field Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_NODE_ELEMENT = 10;
+  int VM_FIELD_ELEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -417,7 +445,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_NODE_ELEMENT__POLICY = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+  int VM_FIELD_ELEMENT__POLICY = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -426,7 +454,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_NODE_ELEMENT__TYPE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+  int VM_FIELD_ELEMENT__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -435,7 +463,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_NODE_ELEMENT__NAME = VM_NODE_ELEEMNTS_FEATURE_COUNT + 2;
+  int VM_FIELD_ELEMENT__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Defaultvalue</b></em>' attribute.
@@ -444,26 +472,26 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_NODE_ELEMENT__DEFAULTVALUE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 3;
+  int VM_FIELD_ELEMENT__DEFAULTVALUE = 3;
 
   /**
-   * The number of structural features of the '<em>VM Node Element</em>' class.
+   * The number of structural features of the '<em>VM Field Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VM_NODE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 4;
+  int VM_FIELD_ELEMENT_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl <em>VM Override Element</em>}' class.
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideFieldElementImpl <em>VM Override Field Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideFieldElementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_ELEMENT = 11;
+  int VM_OVERRIDE_FIELD_ELEMENT = 12;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -472,7 +500,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_OVERRIDE_ELEMENT__POLICY = VM_NODE_ELEEMNTS_FEATURE_COUNT + 0;
+  int VM_OVERRIDE_FIELD_ELEMENT__POLICY = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -481,7 +509,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_OVERRIDE_ELEMENT__TYPE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 1;
+  int VM_OVERRIDE_FIELD_ELEMENT__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -490,7 +518,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_OVERRIDE_ELEMENT__NAME = VM_NODE_ELEEMNTS_FEATURE_COUNT + 2;
+  int VM_OVERRIDE_FIELD_ELEMENT__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Defaultvalue</b></em>' attribute.
@@ -499,16 +527,16 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VM_OVERRIDE_ELEMENT__DEFAULTVALUE = VM_NODE_ELEEMNTS_FEATURE_COUNT + 3;
+  int VM_OVERRIDE_FIELD_ELEMENT__DEFAULTVALUE = 3;
 
   /**
-   * The number of structural features of the '<em>VM Override Element</em>' class.
+   * The number of structural features of the '<em>VM Override Field Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VM_OVERRIDE_ELEMENT_FEATURE_COUNT = VM_NODE_ELEEMNTS_FEATURE_COUNT + 4;
+  int VM_OVERRIDE_FIELD_ELEMENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.
@@ -518,7 +546,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 12;
+  int LLM_TASK_DEFINITION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -564,7 +592,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 13;
+  int ANNOTATION_INTERFACE_REFERENCE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -592,7 +620,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 14;
+  int LLM_VARIABLE_ASSIGNMENT = 15;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -629,7 +657,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 15;
+  int WORKFLOW_DEFINITION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -799,15 +827,15 @@ public interface AiDslPackage extends EPackage
   EClass getVMNodeOpCodeElement();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode <em>Code</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getOpcode <em>Opcode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getCode()
+   * @return the meta object for the attribute '<em>Opcode</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement#getOpcode()
    * @see #getVMNodeOpCodeElement()
    * @generated
    */
-  EAttribute getVMNodeOpCodeElement_Code();
+  EAttribute getVMNodeOpCodeElement_Opcode();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements <em>VM Node Out Elements</em>}'.
@@ -829,6 +857,48 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getVMNodeOutElements_OutElements();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElements <em>VM Node In Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node In Elements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeInElements
+   * @generated
+   */
+  EClass getVMNodeInElements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElements#getInElements <em>In Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>In Elements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeInElements#getInElements()
+   * @see #getVMNodeInElements()
+   * @generated
+   */
+  EReference getVMNodeInElements_InElements();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements <em>VM Node Field Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VM Node Field Elements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+   * @generated
+   */
+  EClass getVMNodeFieldElements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements#getFieldELements <em>Field ELements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Field ELements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements#getFieldELements()
+   * @see #getVMNodeFieldElements()
+   * @generated
+   */
+  EReference getVMNodeFieldElements_FieldELements();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement <em>VM Node Out Element</em>}'.
@@ -885,27 +955,6 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMNodeOutElement_Inputreference();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElements <em>VM Node In Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>VM Node In Elements</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeInElements
-   * @generated
-   */
-  EClass getVMNodeInElements();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElements#getInElements <em>In Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>In Elements</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeInElements#getInElements()
-   * @see #getVMNodeInElements()
-   * @generated
-   */
-  EReference getVMNodeInElements_InElements();
-
-  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElement <em>VM Node In Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -938,112 +987,112 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMNodeInElement_Name();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement <em>VM Node Element</em>}'.
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement <em>VM Field Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>VM Node Element</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement
+   * @return the meta object for class '<em>VM Field Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement
    * @generated
    */
-  EClass getVMNodeElement();
+  EClass getVMFieldElement();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy <em>Policy</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getPolicy <em>Policy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Policy</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getPolicy()
-   * @see #getVMNodeElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getPolicy()
+   * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMNodeElement_Policy();
+  EAttribute getVMFieldElement_Policy();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getType()
-   * @see #getVMNodeElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType()
+   * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMNodeElement_Type();
+  EAttribute getVMFieldElement_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getName()
-   * @see #getVMNodeElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getName()
+   * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMNodeElement_Name();
+  EAttribute getVMFieldElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue <em>Defaultvalue</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Defaultvalue</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement#getDefaultvalue()
-   * @see #getVMNodeElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue()
+   * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMNodeElement_Defaultvalue();
+  EAttribute getVMFieldElement_Defaultvalue();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement <em>VM Override Element</em>}'.
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement <em>VM Override Field Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>VM Override Element</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement
+   * @return the meta object for class '<em>VM Override Field Element</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
    * @generated
    */
-  EClass getVMOverrideElement();
+  EClass getVMOverrideFieldElement();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getPolicy <em>Policy</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getPolicy <em>Policy</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Policy</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getPolicy()
-   * @see #getVMOverrideElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getPolicy()
+   * @see #getVMOverrideFieldElement()
    * @generated
    */
-  EAttribute getVMOverrideElement_Policy();
+  EAttribute getVMOverrideFieldElement_Policy();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getType()
-   * @see #getVMOverrideElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getType()
+   * @see #getVMOverrideFieldElement()
    * @generated
    */
-  EAttribute getVMOverrideElement_Type();
+  EAttribute getVMOverrideFieldElement_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getName()
-   * @see #getVMOverrideElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getName()
+   * @see #getVMOverrideFieldElement()
    * @generated
    */
-  EAttribute getVMOverrideElement_Name();
+  EAttribute getVMOverrideFieldElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getDefaultvalue <em>Defaultvalue</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getDefaultvalue <em>Defaultvalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Defaultvalue</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement#getDefaultvalue()
-   * @see #getVMOverrideElement()
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getDefaultvalue()
+   * @see #getVMOverrideFieldElement()
    * @generated
    */
-  EAttribute getVMOverrideElement_Defaultvalue();
+  EAttribute getVMOverrideFieldElement_Defaultvalue();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition <em>Llm Task Definition</em>}'.
@@ -1310,12 +1359,12 @@ public interface AiDslPackage extends EPackage
     EClass VM_NODE_OP_CODE_ELEMENT = eINSTANCE.getVMNodeOpCodeElement();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Opcode</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_OP_CODE_ELEMENT__CODE = eINSTANCE.getVMNodeOpCodeElement_Code();
+    EAttribute VM_NODE_OP_CODE_ELEMENT__OPCODE = eINSTANCE.getVMNodeOpCodeElement_Opcode();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementsImpl <em>VM Node Out Elements</em>}' class.
@@ -1334,6 +1383,42 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference VM_NODE_OUT_ELEMENTS__OUT_ELEMENTS = eINSTANCE.getVMNodeOutElements_OutElements();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl <em>VM Node In Elements</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
+     * @generated
+     */
+    EClass VM_NODE_IN_ELEMENTS = eINSTANCE.getVMNodeInElements();
+
+    /**
+     * The meta object literal for the '<em><b>In Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VM_NODE_IN_ELEMENTS__IN_ELEMENTS = eINSTANCE.getVMNodeInElements_InElements();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeFieldElementsImpl <em>VM Node Field Elements</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeFieldElementsImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
+     * @generated
+     */
+    EClass VM_NODE_FIELD_ELEMENTS = eINSTANCE.getVMNodeFieldElements();
+
+    /**
+     * The meta object literal for the '<em><b>Field ELements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VM_NODE_FIELD_ELEMENTS__FIELD_ELEMENTS = eINSTANCE.getVMNodeFieldElements_FieldELements();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl <em>VM Node Out Element</em>}' class.
@@ -1378,24 +1463,6 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_NODE_OUT_ELEMENT__INPUTREFERENCE = eINSTANCE.getVMNodeOutElement_Inputreference();
 
     /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl <em>VM Node In Elements</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementsImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
-     * @generated
-     */
-    EClass VM_NODE_IN_ELEMENTS = eINSTANCE.getVMNodeInElements();
-
-    /**
-     * The meta object literal for the '<em><b>In Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VM_NODE_IN_ELEMENTS__IN_ELEMENTS = eINSTANCE.getVMNodeInElements_InElements();
-
-    /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementImpl <em>VM Node In Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1422,14 +1489,14 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_NODE_IN_ELEMENT__NAME = eINSTANCE.getVMNodeInElement_Name();
 
     /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl <em>VM Node Element</em>}' class.
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl <em>VM Field Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMNodeElementImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeElement()
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMFieldElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
      * @generated
      */
-    EClass VM_NODE_ELEMENT = eINSTANCE.getVMNodeElement();
+    EClass VM_FIELD_ELEMENT = eINSTANCE.getVMFieldElement();
 
     /**
      * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
@@ -1437,7 +1504,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_ELEMENT__POLICY = eINSTANCE.getVMNodeElement_Policy();
+    EAttribute VM_FIELD_ELEMENT__POLICY = eINSTANCE.getVMFieldElement_Policy();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1445,7 +1512,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_ELEMENT__TYPE = eINSTANCE.getVMNodeElement_Type();
+    EAttribute VM_FIELD_ELEMENT__TYPE = eINSTANCE.getVMFieldElement_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1453,7 +1520,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_ELEMENT__NAME = eINSTANCE.getVMNodeElement_Name();
+    EAttribute VM_FIELD_ELEMENT__NAME = eINSTANCE.getVMFieldElement_Name();
 
     /**
      * The meta object literal for the '<em><b>Defaultvalue</b></em>' attribute feature.
@@ -1461,17 +1528,17 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMNodeElement_Defaultvalue();
+    EAttribute VM_FIELD_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMFieldElement_Defaultvalue();
 
     /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl <em>VM Override Element</em>}' class.
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideFieldElementImpl <em>VM Override Field Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideElementImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideElement()
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideFieldElementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
      * @generated
      */
-    EClass VM_OVERRIDE_ELEMENT = eINSTANCE.getVMOverrideElement();
+    EClass VM_OVERRIDE_FIELD_ELEMENT = eINSTANCE.getVMOverrideFieldElement();
 
     /**
      * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
@@ -1479,7 +1546,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_OVERRIDE_ELEMENT__POLICY = eINSTANCE.getVMOverrideElement_Policy();
+    EAttribute VM_OVERRIDE_FIELD_ELEMENT__POLICY = eINSTANCE.getVMOverrideFieldElement_Policy();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1487,7 +1554,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_OVERRIDE_ELEMENT__TYPE = eINSTANCE.getVMOverrideElement_Type();
+    EAttribute VM_OVERRIDE_FIELD_ELEMENT__TYPE = eINSTANCE.getVMOverrideFieldElement_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1495,7 +1562,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_OVERRIDE_ELEMENT__NAME = eINSTANCE.getVMOverrideElement_Name();
+    EAttribute VM_OVERRIDE_FIELD_ELEMENT__NAME = eINSTANCE.getVMOverrideFieldElement_Name();
 
     /**
      * The meta object literal for the '<em><b>Defaultvalue</b></em>' attribute feature.
@@ -1503,7 +1570,7 @@ public interface AiDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_OVERRIDE_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMOverrideElement_Defaultvalue();
+    EAttribute VM_OVERRIDE_FIELD_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMOverrideFieldElement_Defaultvalue();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl <em>Llm Task Definition</em>}' class.

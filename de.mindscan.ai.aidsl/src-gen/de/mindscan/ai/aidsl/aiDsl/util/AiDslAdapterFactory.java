@@ -111,14 +111,19 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createVMNodeOutElementsAdapter();
       }
       @Override
-      public Adapter caseVMNodeOutElement(VMNodeOutElement object)
-      {
-        return createVMNodeOutElementAdapter();
-      }
-      @Override
       public Adapter caseVMNodeInElements(VMNodeInElements object)
       {
         return createVMNodeInElementsAdapter();
+      }
+      @Override
+      public Adapter caseVMNodeFieldElements(VMNodeFieldElements object)
+      {
+        return createVMNodeFieldElementsAdapter();
+      }
+      @Override
+      public Adapter caseVMNodeOutElement(VMNodeOutElement object)
+      {
+        return createVMNodeOutElementAdapter();
       }
       @Override
       public Adapter caseVMNodeInElement(VMNodeInElement object)
@@ -126,14 +131,14 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createVMNodeInElementAdapter();
       }
       @Override
-      public Adapter caseVMNodeElement(VMNodeElement object)
+      public Adapter caseVMFieldElement(VMFieldElement object)
       {
-        return createVMNodeElementAdapter();
+        return createVMFieldElementAdapter();
       }
       @Override
-      public Adapter caseVMOverrideElement(VMOverrideElement object)
+      public Adapter caseVMOverrideFieldElement(VMOverrideFieldElement object)
       {
-        return createVMOverrideElementAdapter();
+        return createVMOverrideFieldElementAdapter();
       }
       @Override
       public Adapter caseLlmTaskDefinition(LlmTaskDefinition object)
@@ -283,21 +288,6 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement <em>VM Node Out Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement
-   * @generated
-   */
-  public Adapter createVMNodeOutElementAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElements <em>VM Node In Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -308,6 +298,36 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVMNodeInElementsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements <em>VM Node Field Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+   * @generated
+   */
+  public Adapter createVMNodeFieldElementsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement <em>VM Node Out Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement
+   * @generated
+   */
+  public Adapter createVMNodeOutElementAdapter()
   {
     return null;
   }
@@ -328,31 +348,31 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeElement <em>VM Node Element</em>}'.
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement <em>VM Field Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMNodeElement
+   * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement
    * @generated
    */
-  public Adapter createVMNodeElementAdapter()
+  public Adapter createVMFieldElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideElement <em>VM Override Element</em>}'.
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement <em>VM Override Field Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideElement
+   * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
    * @generated
    */
-  public Adapter createVMOverrideElementAdapter()
+  public Adapter createVMOverrideFieldElementAdapter()
   {
     return null;
   }

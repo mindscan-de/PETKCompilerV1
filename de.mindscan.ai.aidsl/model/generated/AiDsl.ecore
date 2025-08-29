@@ -23,11 +23,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeEleemnts"/>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeOpCodeElement" eSuperTypes="#//VMNodeEleemnts">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeOutElements" eSuperTypes="#//VMNodeEleemnts">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outElements" upperBound="-1"
         eType="#//VMNodeOutElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VMNodeInElements" eSuperTypes="#//VMNodeEleemnts">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inElements" upperBound="-1"
+        eType="#//VMNodeInElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VMNodeFieldElements" eSuperTypes="#//VMNodeEleemnts">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldELements" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeOutElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -35,21 +43,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasrequire" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputreference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VMNodeInElements" eSuperTypes="#//VMNodeEleemnts">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inElements" upperBound="-1"
-        eType="#//VMNodeInElement" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeInElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VMNodeElement" eSuperTypes="#//VMNodeEleemnts">
+  <eClassifiers xsi:type="ecore:EClass" name="VMFieldElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VMOverrideElement" eSuperTypes="#//VMNodeEleemnts">
+  <eClassifiers xsi:type="ecore:EClass" name="VMOverrideFieldElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
