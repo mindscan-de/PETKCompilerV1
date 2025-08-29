@@ -9,7 +9,7 @@
 'default'=27
 'implements'=31
 'import'=12
-'in'=24
+'in'=25
 'llmtask'=30
 'opcode'=21
 'optional'=26
@@ -17,7 +17,7 @@
 'overlay'=20
 'override'=28
 'package'=11
-'require'=25
+'require'=24
 'super'=19
 'vmnode'=18
 'workflow'=13

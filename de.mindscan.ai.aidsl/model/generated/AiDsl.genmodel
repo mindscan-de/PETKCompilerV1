@@ -29,9 +29,17 @@
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOpCodeElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOpCodeElement/code"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMNodeOutElements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeOutElements/outElements"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOutElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/hasrequire"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/inputreference"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeInElements/inElements"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeInElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeInElement/policy"/>

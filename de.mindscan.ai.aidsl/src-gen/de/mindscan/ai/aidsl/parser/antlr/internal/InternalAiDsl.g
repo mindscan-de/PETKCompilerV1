@@ -432,20 +432,20 @@ ruleVMNodeEleemnts returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeOutElementParserRuleCall_1());
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeOutElementsParserRuleCall_1());
 		}
-		this_VMNodeOutElement_1=ruleVMNodeOutElement
+		this_VMNodeOutElements_1=ruleVMNodeOutElements
 		{
-			$current = $this_VMNodeOutElement_1.current;
+			$current = $this_VMNodeOutElements_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeInElementParserRuleCall_2());
+			newCompositeNode(grammarAccess.getVMNodeEleemntsAccess().getVMNodeInElementsParserRuleCall_2());
 		}
-		this_VMNodeInElement_2=ruleVMNodeInElement
+		this_VMNodeInElements_2=ruleVMNodeInElements
 		{
-			$current = $this_VMNodeInElement_2.current;
+			$current = $this_VMNodeInElements_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -510,6 +510,63 @@ ruleVMNodeOpCodeElement returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleVMNodeOutElements
+entryRuleVMNodeOutElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeOutElementsRule()); }
+	iv_ruleVMNodeOutElements=ruleVMNodeOutElements
+	{ $current=$iv_ruleVMNodeOutElements.current; }
+	EOF;
+
+// Rule VMNodeOutElements
+ruleVMNodeOutElements returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVMNodeOutElementsAccess().getVMNodeOutElementsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='out'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVMNodeOutElementsAccess().getOutKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVMNodeOutElementsAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeOutElementsAccess().getOutElementsVMNodeOutElementParserRuleCall_3_0());
+				}
+				lv_outElements_3_0=ruleVMNodeOutElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeOutElementsRule());
+					}
+					add(
+						$current,
+						"outElements",
+						lv_outElements_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.VMNodeOutElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getVMNodeOutElementsAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
 // Entry rule entryRuleVMNodeOutElement
 entryRuleVMNodeOutElement returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVMNodeOutElementRule()); }
@@ -526,16 +583,12 @@ ruleVMNodeOutElement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='out'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getVMNodeOutElementAccess().getOutKeyword_0());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_0_0());
 				}
-				lv_name_1_0=ruleQualifiedName
+				lv_name_0_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVMNodeOutElementRule());
@@ -543,21 +596,21 @@ ruleVMNodeOutElement returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_0_0,
 						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2='as'
+		otherlv_1='as'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getVMNodeOutElementAccess().getAsKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getVMNodeOutElementAccess().getAsKeyword_1());
 		}
 		(
 			(
-				lv_type_3_0=RULE_ID
+				lv_type_2_0=RULE_ID
 				{
-					newLeafNode(lv_type_3_0, grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_3_0());
+					newLeafNode(lv_type_2_0, grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -566,11 +619,103 @@ ruleVMNodeOutElement returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"type",
-						lv_type_3_0,
+						lv_type_2_0,
 						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)
 		)
+		(
+			(
+				(
+					lv_hasrequire_3_0='require'
+					{
+						newLeafNode(lv_hasrequire_3_0, grammarAccess.getVMNodeOutElementAccess().getHasrequireRequireKeyword_3_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getVMNodeOutElementRule());
+						}
+						setWithLastConsumed($current, "hasrequire", lv_hasrequire_3_0 != null, "require");
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0());
+					}
+					lv_inputreference_4_0=ruleQualifiedName
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVMNodeOutElementRule());
+						}
+						set(
+							$current,
+							"inputreference",
+							lv_inputreference_4_0,
+							"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleVMNodeInElements
+entryRuleVMNodeInElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVMNodeInElementsRule()); }
+	iv_ruleVMNodeInElements=ruleVMNodeInElements
+	{ $current=$iv_ruleVMNodeInElements.current; }
+	EOF;
+
+// Rule VMNodeInElements
+ruleVMNodeInElements returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getVMNodeInElementsAccess().getVMNodeInElementsAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='in'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVMNodeInElementsAccess().getInKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVMNodeInElementsAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVMNodeInElementsAccess().getInElementsVMNodeInElementParserRuleCall_3_0());
+				}
+				lv_inElements_3_0=ruleVMNodeInElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVMNodeInElementsRule());
+					}
+					add(
+						$current,
+						"inElements",
+						lv_inElements_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getVMNodeInElementsAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 
@@ -590,33 +735,29 @@ ruleVMNodeInElement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='in'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getVMNodeInElementAccess().getInKeyword_0());
-		}
 		(
 			(
 				(
-					lv_policy_1_1='require'
+					lv_policy_0_1='require'
 					{
-						newLeafNode(lv_policy_1_1, grammarAccess.getVMNodeInElementAccess().getPolicyRequireKeyword_1_0_0());
+						newLeafNode(lv_policy_0_1, grammarAccess.getVMNodeInElementAccess().getPolicyRequireKeyword_0_0_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getVMNodeInElementRule());
 						}
-						setWithLastConsumed($current, "policy", lv_policy_1_1, null);
+						setWithLastConsumed($current, "policy", lv_policy_0_1, null);
 					}
 					    |
-					lv_policy_1_2='optional'
+					lv_policy_0_2='optional'
 					{
-						newLeafNode(lv_policy_1_2, grammarAccess.getVMNodeInElementAccess().getPolicyOptionalKeyword_1_0_1());
+						newLeafNode(lv_policy_0_2, grammarAccess.getVMNodeInElementAccess().getPolicyOptionalKeyword_0_0_1());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getVMNodeInElementRule());
 						}
-						setWithLastConsumed($current, "policy", lv_policy_1_2, null);
+						setWithLastConsumed($current, "policy", lv_policy_0_2, null);
 					}
 				)
 			)
@@ -624,9 +765,9 @@ ruleVMNodeInElement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVMNodeInElementAccess().getNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getVMNodeInElementAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_name_2_0=ruleQualifiedName
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVMNodeInElementRule());
@@ -634,7 +775,7 @@ ruleVMNodeInElement returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
 						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}

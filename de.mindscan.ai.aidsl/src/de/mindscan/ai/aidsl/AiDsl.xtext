@@ -35,7 +35,7 @@ VMNodeDefinition:
 ;
 
 VMNodeEleemnts:
-	(VMNodeOpCodeElement|VMNodeOutElement|VMNodeInElement|VMNodeElement|VMOverrideElement)
+	(VMNodeOpCodeElement|VMNodeOutElements|VMNodeInElements|VMNodeElement|VMOverrideElement)
 ;
 
 
@@ -43,12 +43,24 @@ VMNodeOpCodeElement:
 	'opcode' code=STRING
 ;
 
+VMNodeOutElements:
+	{VMNodeOutElements} 'out' '{'
+		(outElements+=VMNodeOutElement)* 
+	'}'
+;
+
 VMNodeOutElement:
-	'out' name=QualifiedName 'as' type=ID
+	name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+;
+
+VMNodeInElements:
+	{VMNodeInElements} 'in' '{'
+		(inElements+=VMNodeInElement)*
+	'}'
 ;
 
 VMNodeInElement:
-	'in' (policy=('require'|'optional'))? name=QualifiedName
+	(policy=('require'|'optional'))? name=QualifiedName
 ;
 
 VMNodeElement:

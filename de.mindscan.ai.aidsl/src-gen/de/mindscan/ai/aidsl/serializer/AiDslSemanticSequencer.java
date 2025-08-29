@@ -14,8 +14,10 @@ import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeInElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeInElements;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
@@ -71,11 +73,17 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.VM_NODE_IN_ELEMENT:
 				sequence_VMNodeInElement(context, (VMNodeInElement) semanticObject); 
 				return; 
+			case AiDslPackage.VM_NODE_IN_ELEMENTS:
+				sequence_VMNodeInElements(context, (VMNodeInElements) semanticObject); 
+				return; 
 			case AiDslPackage.VM_NODE_OP_CODE_ELEMENT:
 				sequence_VMNodeOpCodeElement(context, (VMNodeOpCodeElement) semanticObject); 
 				return; 
 			case AiDslPackage.VM_NODE_OUT_ELEMENT:
 				sequence_VMNodeOutElement(context, (VMNodeOutElement) semanticObject); 
+				return; 
+			case AiDslPackage.VM_NODE_OUT_ELEMENTS:
+				sequence_VMNodeOutElements(context, (VMNodeOutElements) semanticObject); 
 				return; 
 			case AiDslPackage.VM_OVERRIDE_ELEMENT:
 				sequence_VMOverrideElement(context, (VMOverrideElement) semanticObject); 
@@ -241,7 +249,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     VMNodeEleemnts returns VMNodeInElement
 	 *     VMNodeInElement returns VMNodeInElement
 	 *
 	 * Constraint:
@@ -249,6 +256,21 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_VMNodeInElement(ISerializationContext context, VMNodeInElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeInElements
+	 *     VMNodeInElements returns VMNodeInElements
+	 *
+	 * Constraint:
+	 *     inElements+=VMNodeInElement*
+	 * </pre>
+	 */
+	protected void sequence_VMNodeInElements(ISerializationContext context, VMNodeInElements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -277,24 +299,29 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     VMNodeEleemnts returns VMNodeOutElement
 	 *     VMNodeOutElement returns VMNodeOutElement
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName type=ID)
+	 *     (name=QualifiedName type=ID (hasrequire?='require' inputreference=QualifiedName)?)
 	 * </pre>
 	 */
 	protected void sequence_VMNodeOutElement(ISerializationContext context, VMNodeOutElement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.VM_NODE_OUT_ELEMENT__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_3_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VMNodeEleemnts returns VMNodeOutElements
+	 *     VMNodeOutElements returns VMNodeOutElements
+	 *
+	 * Constraint:
+	 *     outElements+=VMNodeOutElement*
+	 * </pre>
+	 */
+	protected void sequence_VMNodeOutElements(ISerializationContext context, VMNodeOutElements semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -72,7 +72,9 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.VM_NODE_DEFINITION: return createVMNodeDefinition();
       case AiDslPackage.VM_NODE_ELEEMNTS: return createVMNodeEleemnts();
       case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
+      case AiDslPackage.VM_NODE_OUT_ELEMENTS: return createVMNodeOutElements();
       case AiDslPackage.VM_NODE_OUT_ELEMENT: return createVMNodeOutElement();
+      case AiDslPackage.VM_NODE_IN_ELEMENTS: return createVMNodeInElements();
       case AiDslPackage.VM_NODE_IN_ELEMENT: return createVMNodeInElement();
       case AiDslPackage.VM_NODE_ELEMENT: return createVMNodeElement();
       case AiDslPackage.VM_OVERRIDE_ELEMENT: return createVMOverrideElement();
@@ -174,10 +176,34 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
    * @generated
    */
   @Override
+  public VMNodeOutElements createVMNodeOutElements()
+  {
+    VMNodeOutElementsImpl vmNodeOutElements = new VMNodeOutElementsImpl();
+    return vmNodeOutElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public VMNodeOutElement createVMNodeOutElement()
   {
     VMNodeOutElementImpl vmNodeOutElement = new VMNodeOutElementImpl();
     return vmNodeOutElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VMNodeInElements createVMNodeInElements()
+  {
+    VMNodeInElementsImpl vmNodeInElements = new VMNodeInElementsImpl();
+    return vmNodeInElements;
   }
 
   /**

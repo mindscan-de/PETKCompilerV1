@@ -87,6 +87,15 @@ public interface AiDslFactory extends EFactory
   VMNodeOpCodeElement createVMNodeOpCodeElement();
 
   /**
+   * Returns a new object of class '<em>VM Node Out Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node Out Elements</em>'.
+   * @generated
+   */
+  VMNodeOutElements createVMNodeOutElements();
+
+  /**
    * Returns a new object of class '<em>VM Node Out Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +103,15 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   VMNodeOutElement createVMNodeOutElement();
+
+  /**
+   * Returns a new object of class '<em>VM Node In Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VM Node In Elements</em>'.
+   * @generated
+   */
+  VMNodeInElements createVMNodeInElements();
 
   /**
    * Returns a new object of class '<em>VM Node In Element</em>'.

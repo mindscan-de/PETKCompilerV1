@@ -123,11 +123,26 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.VM_NODE_OUT_ELEMENTS:
+      {
+        VMNodeOutElements vmNodeOutElements = (VMNodeOutElements)theEObject;
+        T result = caseVMNodeOutElements(vmNodeOutElements);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeOutElements);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.VM_NODE_OUT_ELEMENT:
       {
         VMNodeOutElement vmNodeOutElement = (VMNodeOutElement)theEObject;
         T result = caseVMNodeOutElement(vmNodeOutElement);
-        if (result == null) result = caseVMNodeEleemnts(vmNodeOutElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.VM_NODE_IN_ELEMENTS:
+      {
+        VMNodeInElements vmNodeInElements = (VMNodeInElements)theEObject;
+        T result = caseVMNodeInElements(vmNodeInElements);
+        if (result == null) result = caseVMNodeEleemnts(vmNodeInElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -135,7 +150,6 @@ public class AiDslSwitch<T> extends Switch<T>
       {
         VMNodeInElement vmNodeInElement = (VMNodeInElement)theEObject;
         T result = caseVMNodeInElement(vmNodeInElement);
-        if (result == null) result = caseVMNodeEleemnts(vmNodeInElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -293,6 +307,22 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node Out Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node Out Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeOutElements(VMNodeOutElements object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>VM Node Out Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -304,6 +334,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVMNodeOutElement(VMNodeOutElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VM Node In Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VM Node In Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVMNodeInElements(VMNodeInElements object)
   {
     return null;
   }

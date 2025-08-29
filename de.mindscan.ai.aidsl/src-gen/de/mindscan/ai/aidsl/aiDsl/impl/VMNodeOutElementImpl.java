@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,11 +23,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl#isHasrequire <em>Hasrequire</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeOutElementImpl#getInputreference <em>Inputreference</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOutElement
+public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implements VMNodeOutElement
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -67,6 +70,46 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
    * @ordered
    */
   protected String type = TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isHasrequire() <em>Hasrequire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHasrequire()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HASREQUIRE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHasrequire() <em>Hasrequire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHasrequire()
+   * @generated
+   * @ordered
+   */
+  protected boolean hasrequire = HASREQUIRE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getInputreference() <em>Inputreference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInputreference()
+   * @generated
+   * @ordered
+   */
+  protected static final String INPUTREFERENCE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getInputreference() <em>Inputreference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInputreference()
+   * @generated
+   * @ordered
+   */
+  protected String inputreference = INPUTREFERENCE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -145,6 +188,56 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
    * @generated
    */
   @Override
+  public boolean isHasrequire()
+  {
+    return hasrequire;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setHasrequire(boolean newHasrequire)
+  {
+    boolean oldHasrequire = hasrequire;
+    hasrequire = newHasrequire;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE, oldHasrequire, hasrequire));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getInputreference()
+  {
+    return inputreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setInputreference(String newInputreference)
+  {
+    String oldInputreference = inputreference;
+    inputreference = newInputreference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE, oldInputreference, inputreference));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -153,6 +246,10 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
         return getName();
       case AiDslPackage.VM_NODE_OUT_ELEMENT__TYPE:
         return getType();
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
+        return isHasrequire();
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
+        return getInputreference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,6 +269,12 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
         return;
       case AiDslPackage.VM_NODE_OUT_ELEMENT__TYPE:
         setType((String)newValue);
+        return;
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
+        setHasrequire((Boolean)newValue);
+        return;
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
+        setInputreference((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -193,6 +296,12 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
       case AiDslPackage.VM_NODE_OUT_ELEMENT__TYPE:
         setType(TYPE_EDEFAULT);
         return;
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
+        setHasrequire(HASREQUIRE_EDEFAULT);
+        return;
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
+        setInputreference(INPUTREFERENCE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -211,6 +320,10 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.VM_NODE_OUT_ELEMENT__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
+        return hasrequire != HASREQUIRE_EDEFAULT;
+      case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
+        return INPUTREFERENCE_EDEFAULT == null ? inputreference != null : !INPUTREFERENCE_EDEFAULT.equals(inputreference);
     }
     return super.eIsSet(featureID);
   }
@@ -230,6 +343,10 @@ public class VMNodeOutElementImpl extends VMNodeEleemntsImpl implements VMNodeOu
     result.append(name);
     result.append(", type: ");
     result.append(type);
+    result.append(", hasrequire: ");
+    result.append(hasrequire);
+    result.append(", inputreference: ");
+    result.append(inputreference);
     result.append(')');
     return result.toString();
   }

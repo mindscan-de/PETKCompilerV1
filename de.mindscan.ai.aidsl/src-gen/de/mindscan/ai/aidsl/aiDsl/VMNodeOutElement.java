@@ -3,6 +3,7 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,13 +16,15 @@ package de.mindscan.ai.aidsl.aiDsl;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#isHasrequire <em>Hasrequire</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOutElement()
  * @model
  * @generated
  */
-public interface VMNodeOutElement extends VMNodeEleemnts
+public interface VMNodeOutElement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -66,5 +69,49 @@ public interface VMNodeOutElement extends VMNodeEleemnts
    * @generated
    */
   void setType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Hasrequire</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Hasrequire</em>' attribute.
+   * @see #setHasrequire(boolean)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOutElement_Hasrequire()
+   * @model
+   * @generated
+   */
+  boolean isHasrequire();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#isHasrequire <em>Hasrequire</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Hasrequire</em>' attribute.
+   * @see #isHasrequire()
+   * @generated
+   */
+  void setHasrequire(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Inputreference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Inputreference</em>' attribute.
+   * @see #setInputreference(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOutElement_Inputreference()
+   * @model
+   * @generated
+   */
+  String getInputreference();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Inputreference</em>' attribute.
+   * @see #getInputreference()
+   * @generated
+   */
+  void setInputreference(String value);
 
 } // VMNodeOutElement

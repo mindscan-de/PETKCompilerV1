@@ -3,6 +3,7 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package de.mindscan.ai.aidsl.aiDsl;
  * @model
  * @generated
  */
-public interface VMNodeInElement extends VMNodeEleemnts
+public interface VMNodeInElement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Policy</b></em>' attribute.
