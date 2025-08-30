@@ -17,9 +17,7 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 class AiDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-
-		// TODO: take the Workflow compile the workflow and
-		
+		// simply compile the workflows
 		for(workflow : resource.allContents.toIterable.filter(WorkflowDefinition)) {
 			fsa.generateFile(
 				"workflows/" + workflow.name + ".json.workflow", workflow.compile(resource)
@@ -29,12 +27,52 @@ class AiDslGenerator extends AbstractGenerator {
 	
 	def CharSequence compile(WorkflowDefinition workflowDefinition, Resource resource) {
 		
+		// shortcut...
+		// compile metadata
+		val metadataMap = newHashMap( 
+			'name' -> workflowDefinition.name, 
+			'short_description' -> "", 
+			'version' -> "1.0.0", 
+			'__description'-> ""  )
+			
+		// compile entrypoint
+		// compile inputfields
+		val executionMap = newHashMap(
+			// TODO calculate the entry point
+			'entry'-> '',
+			// TODO calculate the input field definitions
+			'inputfields' -> newHashMap() )
+
+		// compile nodedata_nodes
+		val nodedataMap = newHashMap(
+			'__comment'->"all the nodes", 
+			'nodes'-> newArrayList()
+		)
+		
+		// compile edgedata
+		val edgedataMap = newHashMap(
+			'__comment' -> "all the edges",
+			'connections' -> newHashMap()
+		)
+		
+		// compile json_data_dictionary
+		val datadictionaryMap = newHashMap()
+		
+		
+		
+		
+		
+		// MAYBE LATER?
 		// TODO: 
 		// * implement the outer workflow definition
 		// * then compile each statements
 		// ---
-		// fullyCompiledWorkflow = M2MTransformer.compileAndTransfrmWorkflowToFullAST(workflowDefinitin)
-		
+		// fullyAnnotatedWorkflow = M2MTransformer.compileAndTransfrmWorkflowToFullAST(workflowDefinitin)
+		//
+		// build a DAG from the fully annotated workflow
+		//
+		// optimize the DAG
+		//
 		// then build the data structure and write it to json file.
 		// ---
 		// return CompiledWorkflowSerializer.serialize(fullyCompiledWorkflow)
