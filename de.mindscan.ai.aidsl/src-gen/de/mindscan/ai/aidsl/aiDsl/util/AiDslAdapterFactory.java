@@ -161,6 +161,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createWorkflowDefinitionAdapter();
       }
       @Override
+      public Adapter caseWorkflowDefinitionApplyLLMTaskStatement(WorkflowDefinitionApplyLLMTaskStatement object)
+      {
+        return createWorkflowDefinitionApplyLLMTaskStatementAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -433,6 +438,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWorkflowDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement <em>Workflow Definition Apply LLM Task Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
+   * @generated
+   */
+  public Adapter createWorkflowDefinitionApplyLLMTaskStatementAdapter()
   {
     return null;
   }

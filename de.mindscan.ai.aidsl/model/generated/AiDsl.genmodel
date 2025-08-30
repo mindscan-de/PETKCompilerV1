@@ -71,6 +71,10 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinition/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement/llmtask"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

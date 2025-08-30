@@ -22,6 +22,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -156,6 +157,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass workflowDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowDefinitionApplyLLMTaskStatementEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -776,6 +784,39 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EReference getWorkflowDefinition_Statements()
+  {
+    return (EReference)workflowDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWorkflowDefinitionApplyLLMTaskStatement()
+  {
+    return workflowDefinitionApplyLLMTaskStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowDefinitionApplyLLMTaskStatement_Llmtask()
+  {
+    return (EReference)workflowDefinitionApplyLLMTaskStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -867,6 +908,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
     createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
+    createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__STATEMENTS);
+
+    workflowDefinitionApplyLLMTaskStatementEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT);
+    createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK);
   }
 
   /**
@@ -970,6 +1015,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowDefinition_Statements(), this.getWorkflowDefinitionApplyLLMTaskStatement(), null, "statements", null, 0, -1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowDefinitionApplyLLMTaskStatementEClass, WorkflowDefinitionApplyLLMTaskStatement.class, "WorkflowDefinitionApplyLLMTaskStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Llmtask(), this.getLlmTaskDefinition(), null, "llmtask", null, 0, 1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

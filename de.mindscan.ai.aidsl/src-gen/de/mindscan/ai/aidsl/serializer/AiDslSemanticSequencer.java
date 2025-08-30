@@ -21,6 +21,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -94,6 +95,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
+				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -375,20 +379,34 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     WorkflowDefinitionApplyLLMTaskStatement returns WorkflowDefinitionApplyLLMTaskStatement
+	 *
+	 * Constraint:
+	 *     llmtask=[LlmTaskDefinition|ID]
+	 * </pre>
+	 */
+	protected void sequence_WorkflowDefinitionApplyLLMTaskStatement(ISerializationContext context, WorkflowDefinitionApplyLLMTaskStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskLlmTaskDefinitionIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     WorkflowDefinition returns WorkflowDefinition
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID statements+=WorkflowDefinitionApplyLLMTaskStatement*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinition(ISerializationContext context, WorkflowDefinition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWorkflowDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

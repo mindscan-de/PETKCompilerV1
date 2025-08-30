@@ -177,6 +177,15 @@ public interface AiDslFactory extends EFactory
   WorkflowDefinition createWorkflowDefinition();
 
   /**
+   * Returns a new object of class '<em>Workflow Definition Apply LLM Task Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Definition Apply LLM Task Statement</em>'.
+   * @generated
+   */
+  WorkflowDefinitionApplyLLMTaskStatement createWorkflowDefinitionApplyLLMTaskStatement();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

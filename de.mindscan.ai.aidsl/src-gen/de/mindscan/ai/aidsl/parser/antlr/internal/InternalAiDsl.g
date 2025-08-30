@@ -1270,9 +1270,72 @@ ruleWorkflowDefinition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4());
 		}
-		otherlv_5='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_5_0());
+				}
+				lv_statements_5_0=ruleWorkflowDefinitionApplyLLMTaskStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_5_0,
+						"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleWorkflowDefinitionApplyLLMTaskStatement
+entryRuleWorkflowDefinitionApplyLLMTaskStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementRule()); }
+	iv_ruleWorkflowDefinitionApplyLLMTaskStatement=ruleWorkflowDefinitionApplyLLMTaskStatement
+	{ $current=$iv_ruleWorkflowDefinitionApplyLLMTaskStatement.current; }
+	EOF;
+
+// Rule WorkflowDefinitionApplyLLMTaskStatement
+ruleWorkflowDefinitionApplyLLMTaskStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskLlmTaskDefinitionCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLeftParenthesisKeyword_1());
+		}
+		otherlv_2=')'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getRightParenthesisKeyword_2());
+		}
+		otherlv_3=';'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getSemicolonKeyword_3());
 		}
 	)
 ;

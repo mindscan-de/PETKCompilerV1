@@ -669,13 +669,50 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION__STATEMENTS = 1;
+
+  /**
    * The number of structural features of the '<em>Workflow Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION_FEATURE_COUNT = 1;
+  int WORKFLOW_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
+   * @generated
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Llmtask</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK = 0;
+
+  /**
+   * The number of structural features of the '<em>Workflow Definition Apply LLM Task Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT_FEATURE_COUNT = 1;
 
 
   /**
@@ -1212,6 +1249,38 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowDefinition_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements()
+   * @see #getWorkflowDefinition()
+   * @generated
+   */
+  EReference getWorkflowDefinition_Statements();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement <em>Workflow Definition Apply LLM Task Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Definition Apply LLM Task Statement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
+   * @generated
+   */
+  EClass getWorkflowDefinitionApplyLLMTaskStatement();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement#getLlmtask <em>Llmtask</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Llmtask</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement#getLlmtask()
+   * @see #getWorkflowDefinitionApplyLLMTaskStatement()
+   * @generated
+   */
+  EReference getWorkflowDefinitionApplyLLMTaskStatement_Llmtask();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1667,6 +1736,32 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_DEFINITION__STATEMENTS = eINSTANCE.getWorkflowDefinition_Statements();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
+     * @generated
+     */
+    EClass WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = eINSTANCE.getWorkflowDefinitionApplyLLMTaskStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Llmtask</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK = eINSTANCE.getWorkflowDefinitionApplyLLMTaskStatement_Llmtask();
 
   }
 

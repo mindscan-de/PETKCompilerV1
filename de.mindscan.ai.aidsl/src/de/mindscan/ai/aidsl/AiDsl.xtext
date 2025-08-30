@@ -114,7 +114,12 @@ LlmVariableAssignment:
 
 WorkflowDefinition:
 	'workflow' name=ID '(' ')' '{'
+		(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	'}'
+;
+
+WorkflowDefinitionApplyLLMTaskStatement:
+	llmtask=[LlmTaskDefinition] '(' ')' ';'
 ;
 
 

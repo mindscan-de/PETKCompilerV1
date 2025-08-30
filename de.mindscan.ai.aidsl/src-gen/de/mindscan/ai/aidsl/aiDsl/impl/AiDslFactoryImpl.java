@@ -82,6 +82,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT: return createLlmVariableAssignment();
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT: return createWorkflowDefinitionApplyLLMTaskStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -289,6 +290,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     WorkflowDefinitionImpl workflowDefinition = new WorkflowDefinitionImpl();
     return workflowDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowDefinitionApplyLLMTaskStatement createWorkflowDefinitionApplyLLMTaskStatement()
+  {
+    WorkflowDefinitionApplyLLMTaskStatementImpl workflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementImpl();
+    return workflowDefinitionApplyLLMTaskStatement;
   }
 
   /**

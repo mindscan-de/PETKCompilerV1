@@ -196,6 +196,13 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
+      {
+        WorkflowDefinitionApplyLLMTaskStatement workflowDefinitionApplyLLMTaskStatement = (WorkflowDefinitionApplyLLMTaskStatement)theEObject;
+        T result = caseWorkflowDefinitionApplyLLMTaskStatement(workflowDefinitionApplyLLMTaskStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -468,6 +475,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWorkflowDefinition(WorkflowDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Definition Apply LLM Task Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Definition Apply LLM Task Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowDefinitionApplyLLMTaskStatement(WorkflowDefinitionApplyLLMTaskStatement object)
   {
     return null;
   }

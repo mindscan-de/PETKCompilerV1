@@ -5,13 +5,23 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +58,16 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<WorkflowDefinitionApplyLLMTaskStatement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,45 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
+  public EList<WorkflowDefinitionApplyLLMTaskStatement> getStatements()
+  {
+    if (statements == null)
+    {
+      statements = new EObjectContainmentEList<WorkflowDefinitionApplyLLMTaskStatement>(WorkflowDefinitionApplyLLMTaskStatement.class, this, AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS);
+    }
+    return statements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         return getName();
+      case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +169,7 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +177,10 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends WorkflowDefinitionApplyLLMTaskStatement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +199,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
+        getStatements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +218,8 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
