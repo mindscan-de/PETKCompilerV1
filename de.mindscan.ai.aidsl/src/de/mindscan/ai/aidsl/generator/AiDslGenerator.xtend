@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +17,29 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class AiDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+
+		// TODO: take the Workflow compile the workflow and
+		
+		for(workflow : resource.allContents.toIterable.filter(WorkflowDefinition)) {
+			fsa.generateFile(
+				"workflows/" + workflow.name + ".json.workflow", workflow.compile(resource)
+			)
+		}
 	}
+	
+	def CharSequence compile(WorkflowDefinition workflowDefinition, Resource resource) {
+		
+		// TODO: 
+		// * implement the outer workflow definition
+		// * then compile each statements
+		// ---
+		// fullyCompiledWorkflow = M2MTransformer.compileAndTransfrmWorkflowToFullAST(workflowDefinitin)
+		
+		// then build the data structure and write it to json file.
+		// ---
+		// return CompiledWorkflowSerializer.serialize(fullyCompiledWorkflow)
+		
+		'''Hello world'''
+	}
+	
 }
