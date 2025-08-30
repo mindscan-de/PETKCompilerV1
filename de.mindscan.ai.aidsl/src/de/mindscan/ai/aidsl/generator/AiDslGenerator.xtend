@@ -59,7 +59,17 @@ class AiDslGenerator extends AbstractGenerator {
 		val datadictionaryMap = newHashMap()
 		
 		
+		val fullyCompiledWorkflowMap = newLinkedHashMap(
+			'__metadata' -> metadataMap,
+			'execute' -> executionMap,
+			'nodedata' -> nodedataMap,
+			'edgedata' -> edgedataMap,
+			'json_data_dictionary' -> datadictionaryMap			
+		)
 		
+		// 
+		// return a json version of this map
+		// return 
 		
 		
 		// MAYBE LATER?
