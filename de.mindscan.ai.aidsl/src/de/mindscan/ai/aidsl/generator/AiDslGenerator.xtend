@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 
 /**
  * Generates code from your model files on save.
@@ -27,6 +28,7 @@ class AiDslGenerator extends AbstractGenerator {
 	}
 	
 	def CharSequence compile(WorkflowDefinition workflowDefinition, Resource resource) {
+		// TODO: 
 		
 		// shortcut...
 		// compile metadata
@@ -35,12 +37,18 @@ class AiDslGenerator extends AbstractGenerator {
 			'short_description' -> "", 
 			'version' -> "1.0.0", 
 			'__description'-> ""  )
-			
+		
+		// shortcut...
+		// calculate entry point
+		// this must be done on the compiled DAG
+		val statement = workflowDefinition.statements.toArray()
+		val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
+		val entrypointname = firststatement.llmtask.name
+		
 		// compile entrypoint
 		// compile inputfields
 		val executionMap = newHashMap(
-			// TODO calculate the entry point
-			'entry'-> '',
+			'entry'-> entrypointname,
 			// TODO: calculate the input field definitions 
 			// TODO: extend the DSL
 			'inputfields' -> newHashMap() )
@@ -63,6 +71,7 @@ class AiDslGenerator extends AbstractGenerator {
 		val datadictionaryMap = newHashMap()
 		
 		
+		// build final workflow definition
 		val fullyCompiledWorkflowMap = newLinkedHashMap(
 			'__metadata' -> metadataMap,
 			'execute' -> executionMap,
@@ -71,12 +80,8 @@ class AiDslGenerator extends AbstractGenerator {
 			'json_data_dictionary' -> datadictionaryMap			
 		)
 		
-		// 
-		// return a json version of this map
-		val exporter = new ExportToJson()
-		return exporter.asJsonString( fullyCompiledWorkflowMap);
-		// return 
-		
+		val export = new ExportToJson()
+		return export.asJsonString( fullyCompiledWorkflowMap);
 		
 		// MAYBE LATER?
 		// TODO: 
