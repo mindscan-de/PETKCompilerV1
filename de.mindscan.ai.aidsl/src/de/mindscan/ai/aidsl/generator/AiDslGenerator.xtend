@@ -3,11 +3,12 @@
  */
 package de.mindscan.ai.aidsl.generator
 
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
+import de.mindscan.json.ExportToJson
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 
 /**
  * Generates code from your model files on save.
@@ -44,6 +45,8 @@ class AiDslGenerator extends AbstractGenerator {
 			'inputfields' -> newHashMap() )
 
 		// compile nodedata_nodes
+		// basically we can compile each note individually
+		// but maybe there are synthetic nodes in between
 		val nodedataMap = newHashMap(
 			'__comment'->"all the nodes", 
 			'nodes'-> newArrayList()
@@ -69,6 +72,8 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		// 
 		// return a json version of this map
+		val exporter = new ExportToJson()
+		return exporter.asJsonString( fullyCompiledWorkflowMap);
 		// return 
 		
 		
@@ -87,7 +92,7 @@ class AiDslGenerator extends AbstractGenerator {
 		// ---
 		// return CompiledWorkflowSerializer.serialize(fullyCompiledWorkflow)
 		
-		'''Hello world'''
+		// '''Hello world'''
 	}
 	
 }
