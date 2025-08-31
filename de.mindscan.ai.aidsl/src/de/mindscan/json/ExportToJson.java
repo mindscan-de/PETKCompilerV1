@@ -60,7 +60,7 @@ public class ExportToJson {
 					} else if(value instanceof Number) {
 						sb.append(((Number)value).toString());
 					} else if(value instanceof String) {
-						writeStringValue(sb, (String)value);
+						writeStringValueUTF8(sb, (String)value);
 					} else if(value instanceof Map) {
 						writeMapToJson(sb, (Map<String,Object>)value);
 					} else if(value instanceof List) {
@@ -104,7 +104,7 @@ public class ExportToJson {
 					} else if(value instanceof Number) {
 						sb.append(((Number)value).toString());
 					} else if(value instanceof String) {
-						writeStringValue(sb, (String)value);
+						writeStringValueUTF8(sb, (String)value);
 					} else if(value instanceof Map) {
 						writeMapToJson(sb, (Map<String,Object>)value);
 					} else if(value instanceof List) {
@@ -152,7 +152,7 @@ public class ExportToJson {
 			
 			if(c == '\\' || c=='"') {
 				builder.append('\\');
-				builder.append(c);
+				builder.append((char)c);
 			} else if(c>=0 && c<=0x1f) {
 				builder.append('\\');
 				switch(c) {
@@ -178,7 +178,7 @@ public class ExportToJson {
 					break;
 				}
 			} else if(c>=0x0020 && c<=0x7F) {
-				builder.append(c);
+				builder.append((char)c);
 			} else {
 				builder.append("\\u");
 				builder.append(toHEX[(c>>12)&0xf]);
