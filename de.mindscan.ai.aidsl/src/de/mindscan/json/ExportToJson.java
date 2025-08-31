@@ -26,6 +26,7 @@ public class ExportToJson {
 
 	
 	// weired xtend sh*t what i don't want do deal with right now
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String asJsonString(LinkedHashMap<String, HashMap<String, ? extends Serializable>> map) {
 		StringBuilder sb = new StringBuilder();
 
@@ -185,58 +186,6 @@ public class ExportToJson {
 				builder.append(toHEX[(c>>8)&0xf]);
 				builder.append(toHEX[(c>>4)&0xf]);
 				builder.append(toHEX[(c)&0xf]);
-			}			
-			
-		}
-		
-		builder.append('"');
-	}
-	
-	
-	private void writeStringValue(StringBuilder builder, String valueToEscape) {
-		builder.append('"');
-		
-		char[] chars = valueToEscape.toCharArray();
-		for (int i = 0; i < chars.length; i++) {
-			char c = chars[i];
-			
-			// TODO: output each char and escape the ones we must escape.
-			
-			if(c == '\\' || c=='"') {
-				builder.append('\\');
-				builder.append(c);
-			} else if(c>=0 && c<=0x1f) {
-				builder.append('\\');
-				switch(c) {
-				case '\n':
-					builder.append('n');
-					break;
-				case '\r':
-					builder.append('r');
-					break;
-				case '\t':
-					builder.append('t');
-					break;
-				case '\f':
-					builder.append('f');
-					break;
-				case '\b':
-					builder.append('b');
-					break;
-				default:
-					builder.append("u00");
-					builder.append(toHEX[(c>>4)&0x1]);
-					builder.append(toHEX[(c)&0xF]);
-					break;
-				}
-			} else if(c>=0x0080 && c<=0xFFFF) {
-				builder.append("\\u");
-				builder.append(toHEX[(c>>12)&0xf]);
-				builder.append(toHEX[(c>>8)&0xf]);
-				builder.append(toHEX[(c>>4)&0xf]);
-				builder.append(toHEX[(c)&0xf]);
-			} else {
-				builder.append(c);
 			}			
 			
 		}

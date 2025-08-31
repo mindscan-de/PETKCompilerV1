@@ -41,7 +41,8 @@ class AiDslGenerator extends AbstractGenerator {
 		val executionMap = newHashMap(
 			// TODO calculate the entry point
 			'entry'-> '',
-			// TODO calculate the input field definitions
+			// TODO: calculate the input field definitions 
+			// TODO: extend the DSL
 			'inputfields' -> newHashMap() )
 
 		// compile nodedata_nodes
@@ -89,10 +90,6 @@ class AiDslGenerator extends AbstractGenerator {
 		// optimize the DAG
 		//
 		// then build the data structure and write it to json file.
-		// ---
-		// return CompiledWorkflowSerializer.serialize(fullyCompiledWorkflow)
-		
-		// '''Hello world'''
 	}
 	
 }
