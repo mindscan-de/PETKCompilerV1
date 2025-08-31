@@ -1,21 +1,36 @@
 package de.mindscan.json;
 
+import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ExportToJson {
 	
-	private static final String BEGIN_ARRAY = "[\n";
+	private static final String BEGIN_ARRAY = "[ ";
 	private static final String BEGIN_OBJECT = "{\n";
-	private static final String END_ARRAY = "]\n";
-	private static final String END_OBJECT = "}\n";
+	private static final String END_ARRAY = "]";
+	private static final String END_OBJECT = "}";
 	private static final String NAME_SEPARATOR = " : ";
-	private static final String VALUE_SEPARATOR = ", \n";
+	private static final String VALUE_SEPARATOR = ",\n";
+	private static final String VALUE_SEPARATOR_NNL = ",";
+	
+	private static char toHEX[] = {
+			'0','1','2','3', //
+			'4','5','6','7', //
+			'8','9','A','B', //
+			'C','D','E','F' };
+	
 
-	public String asJsonString(Map<String, Object> map) {
+	
+	// weired xtend sh*t what i don't want do deal with right now
+	public String asJsonString(LinkedHashMap<String, HashMap<String, ? extends Serializable>> map) {
 		StringBuilder sb = new StringBuilder();
 
-		writeMapToJson(sb, map);
+		HashMap untypedHashMap = new LinkedHashMap(map);
+		writeMapToJson(sb, untypedHashMap);
 		
 		return sb.toString();
 	}
@@ -47,7 +62,6 @@ public class ExportToJson {
 					} else if(value instanceof String) {
 						writeStringValue(sb, (String)value);
 					} else if(value instanceof Map) {
-						sb.append("\n");
 						writeMapToJson(sb, (Map<String,Object>)value);
 					} else if(value instanceof List) {
 						writeListToJson(sb, (List<Object>)value);
@@ -62,8 +76,6 @@ public class ExportToJson {
 				} else {
 					sb.append("null");
 				}
-				
-				sb.append("\n");
 			}
 			sb.append("\n");
 		}
@@ -82,7 +94,7 @@ public class ExportToJson {
 			for (Object value : list) {
 				
 				if(!isFirst) {
-					sb.append(VALUE_SEPARATOR);
+					sb.append(VALUE_SEPARATOR_NNL);
 				}
 				isFirst = false;
 				
@@ -94,7 +106,6 @@ public class ExportToJson {
 					} else if(value instanceof String) {
 						writeStringValue(sb, (String)value);
 					} else if(value instanceof Map) {
-						sb.append("\n");
 						writeMapToJson(sb, (Map<String,Object>)value);
 					} else if(value instanceof List) {
 						writeListToJson(sb, (List<Object>)value);
@@ -111,7 +122,6 @@ public class ExportToJson {
 					sb.append("null");
 				}
 			}
-			sb.append("\n");
 		}
 		
 		sb.append(END_ARRAY);
@@ -132,19 +142,106 @@ public class ExportToJson {
 		sb.append('"');
 	}
 	
-	private void writeStringValue(StringBuilder sb, String value) {
-		sb.append('"');
+	private void writeStringValueUTF8(StringBuilder builder, String valueToEscape) {
+		builder.append('"');
 		
-		char[] chars = value.toCharArray();
+		byte[] bytes = valueToEscape.getBytes(StandardCharsets.UTF_8);
+				
+		for (int i = 0; i < bytes.length; i++) {
+			byte c = bytes[i];
+			
+			if(c == '\\' || c=='"') {
+				builder.append('\\');
+				builder.append(c);
+			} else if(c>=0 && c<=0x1f) {
+				builder.append('\\');
+				switch(c) {
+				case '\n':
+					builder.append('n');
+					break;
+				case '\r':
+					builder.append('r');
+					break;
+				case '\t':
+					builder.append('t');
+					break;
+				case '\f':
+					builder.append('f');
+					break;
+				case '\b':
+					builder.append('b');
+					break;
+				default:
+					builder.append("u00");
+					builder.append(toHEX[(c>>4)&0x1]);
+					builder.append(toHEX[(c)&0xF]);
+					break;
+				}
+			} else if(c>=0x0020 && c<=0x7F) {
+				builder.append(c);
+			} else {
+				builder.append("\\u");
+				builder.append(toHEX[(c>>12)&0xf]);
+				builder.append(toHEX[(c>>8)&0xf]);
+				builder.append(toHEX[(c>>4)&0xf]);
+				builder.append(toHEX[(c)&0xf]);
+			}			
+			
+		}
+		
+		builder.append('"');
+	}
+	
+	
+	private void writeStringValue(StringBuilder builder, String valueToEscape) {
+		builder.append('"');
+		
+		char[] chars = valueToEscape.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
 			char c = chars[i];
 			
 			// TODO: output each char and escape the ones we must escape.
 			
+			if(c == '\\' || c=='"') {
+				builder.append('\\');
+				builder.append(c);
+			} else if(c>=0 && c<=0x1f) {
+				builder.append('\\');
+				switch(c) {
+				case '\n':
+					builder.append('n');
+					break;
+				case '\r':
+					builder.append('r');
+					break;
+				case '\t':
+					builder.append('t');
+					break;
+				case '\f':
+					builder.append('f');
+					break;
+				case '\b':
+					builder.append('b');
+					break;
+				default:
+					builder.append("u00");
+					builder.append(toHEX[(c>>4)&0x1]);
+					builder.append(toHEX[(c)&0xF]);
+					break;
+				}
+			} else if(c>=0x0080 && c<=0xFFFF) {
+				builder.append("\\u");
+				builder.append(toHEX[(c>>12)&0xf]);
+				builder.append(toHEX[(c>>8)&0xf]);
+				builder.append(toHEX[(c>>4)&0xf]);
+				builder.append(toHEX[(c)&0xf]);
+			} else {
+				builder.append(c);
+			}			
 			
 		}
 		
-		sb.append('"');
+		builder.append('"');
 	}
 	
 }
