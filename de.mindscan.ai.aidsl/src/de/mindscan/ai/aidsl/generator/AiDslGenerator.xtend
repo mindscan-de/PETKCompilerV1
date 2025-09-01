@@ -4,12 +4,14 @@
 package de.mindscan.ai.aidsl.generator
 
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
+import java.io.Serializable
+import java.util.HashMap
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 
 /**
  * Generates code from your model files on save.
@@ -30,28 +32,8 @@ class AiDslGenerator extends AbstractGenerator {
 	def CharSequence compile(WorkflowDefinition workflowDefinition, Resource resource) {
 		// TODO: 
 		
-		// shortcut...
-		// compile metadata
-		val metadataMap = newHashMap( 
-			'name' -> workflowDefinition.name, 
-			'short_description' -> "", 
-			'version' -> "1.0.0", 
-			'__description'-> ""  )
-		
-		// shortcut...
-		// calculate entry point
-		// this must be done on the compiled DAG
-		val statement = workflowDefinition.statements.toArray()
-		val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
-		val entrypointname = firststatement.llmtask.name
-		
-		// compile entrypoint
-		// compile inputfields
-		val executionMap = newHashMap(
-			'entry'-> entrypointname,
-			// TODO: calculate the input field definitions 
-			// TODO: extend the DSL
-			'inputfields' -> newHashMap() )
+		val metadataMap = getCompiledMetadataMap(workflowDefinition)
+		val executionMap = getCompiledExecutionInfoMap(workflowDefinition)
 
 		// compile nodedata_nodes
 		// basically we can compile each note individually
@@ -95,6 +77,36 @@ class AiDslGenerator extends AbstractGenerator {
 		// optimize the DAG
 		//
 		// then build the data structure and write it to json file.
+	}
+	
+	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
+		// shortcut...
+		// calculate entry point
+		// this must be done on the compiled DAG
+		
+		val statement = workflowDefinition.statements.toArray()
+		val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
+		val entrypointname = firststatement.llmtask.name
+		
+		// compile entrypoint
+		// compile inputfields
+		val executionMap = newHashMap(
+			'entry'-> entrypointname,
+			// TODO: calculate the input field definitions 
+			// TODO: extend the DSL
+			'inputfields' -> newHashMap() )
+		return executionMap
+	}
+	
+	protected def HashMap<String, String> getCompiledMetadataMap(WorkflowDefinition workflowDefinition) {
+		// shortcut...
+		// compile metadata
+		
+		return newHashMap( 
+			'name' -> workflowDefinition.name, 
+			'short_description' -> "", 
+			'version' -> "1.0.0", 
+			'__description'-> ""  )
 	}
 	
 }
