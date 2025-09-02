@@ -34,26 +34,11 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		val metadataMap = getCompiledMetadataMap(workflowDefinition)
 		val executionMap = getCompiledExecutionInfoMap(workflowDefinition)
+		val nodedataMap = getCompiledNodedataMap(workflowDefinition)
+		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
+		val datadictionaryMap = getCompiledDataDictionaryMap(workflowDefinition)
 
-		// compile nodedata_nodes
-		// basically we can compile each note individually
-		// but maybe there are synthetic nodes in between
-		val nodedataMap = newHashMap(
-			'__comment'->"all the nodes", 
-			'nodes'-> newArrayList()
-		)
-		
-		// compile edgedata
-		val edgedataMap = newHashMap(
-			'__comment' -> "all the edges",
-			'connections' -> newHashMap()
-		)
-		
-		// compile json_data_dictionary
-		val datadictionaryMap = newHashMap()
-		
-		
-		// build final workflow definition
+		// build workflow definition
 		val fullyCompiledWorkflowMap = newLinkedHashMap(
 			'__metadata' -> metadataMap,
 			'execute' -> executionMap,
@@ -62,6 +47,7 @@ class AiDslGenerator extends AbstractGenerator {
 			'json_data_dictionary' -> datadictionaryMap			
 		)
 		
+		// export workflow definition
 		val export = new ExportToJson()
 		return export.asJsonString( fullyCompiledWorkflowMap);
 		
@@ -77,6 +63,31 @@ class AiDslGenerator extends AbstractGenerator {
 		// optimize the DAG
 		//
 		// then build the data structure and write it to json file.
+	}
+	
+	protected def HashMap<String, String> getCompiledDataDictionaryMap(WorkflowDefinition workflowDefinition) {
+		
+		// compile json_data_dictionary
+		return newHashMap()
+	}
+	
+	protected def HashMap<String, Serializable> getCompiledEdgeDataMap(WorkflowDefinition workflowDefinition) {
+		// compile edgedata
+		newHashMap(
+			'__comment' -> "all the edges",
+			'connections' -> newHashMap()
+		)
+	}
+	
+	protected def HashMap<String, Serializable> getCompiledNodedataMap(WorkflowDefinition workflowDefinition) {
+		// compile nodedata_nodes
+		// basically we can compile each note individually
+		// but maybe there are synthetic nodes in between
+		
+		newHashMap(
+			'__comment'->"all the nodes", 
+			'nodes'-> newArrayList()
+		)
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
