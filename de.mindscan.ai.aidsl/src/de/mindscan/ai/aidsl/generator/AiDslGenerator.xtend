@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import java.util.Map
 
 /**
  * Generates code from your model files on save.
@@ -80,14 +81,27 @@ class AiDslGenerator extends AbstractGenerator {
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledNodedataMap(WorkflowDefinition workflowDefinition) {
+		// for now we use the workflow, usually we should focus on those where the name of the resource matches the workflow name
+		val workflowstatements = workflowDefinition.statements
+		
+		val compiledNodes = newArrayList()
+		
 		// compile nodedata_nodes
-		// basically we can compile each note individually
-		// but maybe there are synthetic nodes in between
+		// compile all statements
+		for(workflowstatement : workflowstatements) {
+			// basically we can compile each note individually
+			// but maybe there are synthetic nodes in between
+			compiledNodes.add(workflowDefinition.getCompiledStatement(workflowstatement ))
+		}
 		
 		newHashMap(
 			'__comment'->"all the nodes", 
-			'nodes'-> newArrayList()
+			'nodes'-> compiledNodes
 		)
+	}
+	
+	def Map getCompiledStatement(WorkflowDefinition definition, WorkflowDefinitionApplyLLMTaskStatement statement) {
+		return newLinkedHashMap()
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
