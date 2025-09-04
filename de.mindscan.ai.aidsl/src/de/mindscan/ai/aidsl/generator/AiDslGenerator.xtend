@@ -101,7 +101,29 @@ class AiDslGenerator extends AbstractGenerator {
 	}
 	
 	def Map getCompiledStatement(WorkflowDefinition definition, WorkflowDefinitionApplyLLMTaskStatement statement) {
-		return newLinkedHashMap()
+		
+		val compiledStatementMap = newLinkedHashMap()
+		
+		// TODO find the extended super node dictionaries
+		val taskdefinition = statement.llmtask
+		
+		val annotation_interfaces = taskdefinition.annotation_interfaces
+		
+		// do them in order,
+		// first the super, then the overrides 
+		for (annotationinterface : annotation_interfaces) {
+			
+		}
+
+		// this is the final override.		
+		// build map and then merge map - currently we do this 
+		// Override each of the dictionary elements, by the assignments of the task definitions
+		for(variableAssigment : taskdefinition.assignment) {
+			// TODO, preprocess the template string.
+			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
+		}
+		
+		return compiledStatementMap
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
