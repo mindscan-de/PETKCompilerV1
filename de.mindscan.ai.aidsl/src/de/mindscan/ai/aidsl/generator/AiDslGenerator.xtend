@@ -115,10 +115,11 @@ class AiDslGenerator extends AbstractGenerator {
 			
 		}
 
+		// This is the LlmTaskDefinition
 		// this is the final override.		
 		// build map and then merge map - currently we do this 
 		// Override each of the dictionary elements, by the assignments of the task definitions
-		for(variableAssigment : taskdefinition.assignment) {
+		for(variableAssigment : taskdefinition.assignments) {
 			// TODO, preprocess the template string.
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}

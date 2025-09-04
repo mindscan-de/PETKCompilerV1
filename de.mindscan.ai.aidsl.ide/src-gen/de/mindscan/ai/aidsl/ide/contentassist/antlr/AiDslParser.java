@@ -90,7 +90,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getNameAssignment_1(), "rule__LlmTaskDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1");
 			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAssignment_4_2_1(), "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1");
-			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6(), "rule__LlmTaskDefinition__AssignmentAssignment_6");
+			builder.put(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6(), "rule__LlmTaskDefinition__AssignmentsAssignment_6");
 			builder.put(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameAssignment_1(), "rule__AnnotationInterfaceReference__NameAssignment_1");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameAssignment_0(), "rule__LlmVariableAssignment__VariablenameAssignment_0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getTemplateAssignment_2(), "rule__LlmVariableAssignment__TemplateAssignment_2");

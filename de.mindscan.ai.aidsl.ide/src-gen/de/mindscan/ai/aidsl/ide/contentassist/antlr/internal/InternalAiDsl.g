@@ -2204,9 +2204,9 @@ rule__LlmTaskDefinition__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6()); }
-	(rule__LlmTaskDefinition__AssignmentAssignment_6)*
-	{ after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6()); }
+	{ before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6()); }
+	(rule__LlmTaskDefinition__AssignmentsAssignment_6)*
+	{ after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6()); }
 )
 ;
 finally {
@@ -3412,15 +3412,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__LlmTaskDefinition__AssignmentAssignment_6
+rule__LlmTaskDefinition__AssignmentsAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0()); }
+		{ before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0()); }
 		ruleLlmVariableAssignment
-		{ after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0()); }
+		{ after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0()); }
 	)
 ;
 finally {

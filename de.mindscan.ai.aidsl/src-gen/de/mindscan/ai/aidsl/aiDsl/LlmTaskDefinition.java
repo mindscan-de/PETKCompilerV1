@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAnnotation_interfaces <em>Annotation interfaces</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment <em>Assignment</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignments <em>Assignments</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmTaskDefinition()
@@ -62,15 +62,15 @@ public interface LlmTaskDefinition extends EObject
   EList<AnnotationInterfaceReference> getAnnotation_interfaces();
 
   /**
-   * Returns the value of the '<em><b>Assignment</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Assignments</b></em>' containment reference list.
    * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Assignment</em>' containment reference list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmTaskDefinition_Assignment()
+   * @return the value of the '<em>Assignments</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmTaskDefinition_Assignments()
    * @model containment="true"
    * @generated
    */
-  EList<LlmVariableAssignment> getAssignment();
+  EList<LlmVariableAssignment> getAssignments();
 
 } // LlmTaskDefinition

@@ -607,8 +607,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cAnnotation_interfacesAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
 		private final RuleCall cAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0 = (RuleCall)cAnnotation_interfacesAssignment_4_2_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAssignmentAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cAssignmentLlmVariableAssignmentParserRuleCall_6_0 = (RuleCall)cAssignmentAssignment_6.eContents().get(0);
+		private final Assignment cAssignmentsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAssignmentsLlmVariableAssignmentParserRuleCall_6_0 = (RuleCall)cAssignmentsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//// ---------------------------------------
@@ -618,13 +618,13 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//// ---------------------------------------
 		//LlmTaskDefinition:
 		//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
-		//        (assignment+=LlmVariableAssignment)*
+		//        (assignments+=LlmVariableAssignment)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
-		//    (assignment+=LlmVariableAssignment)*
+		//    (assignments+=LlmVariableAssignment)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -670,11 +670,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
-		//(assignment+=LlmVariableAssignment)*
-		public Assignment getAssignmentAssignment_6() { return cAssignmentAssignment_6; }
+		//(assignments+=LlmVariableAssignment)*
+		public Assignment getAssignmentsAssignment_6() { return cAssignmentsAssignment_6; }
 		
 		//LlmVariableAssignment
-		public RuleCall getAssignmentLlmVariableAssignmentParserRuleCall_6_0() { return cAssignmentLlmVariableAssignmentParserRuleCall_6_0; }
+		public RuleCall getAssignmentsLlmVariableAssignmentParserRuleCall_6_0() { return cAssignmentsLlmVariableAssignmentParserRuleCall_6_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -1143,7 +1143,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// ---------------------------------------
 	//LlmTaskDefinition:
 	//    'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
-	//        (assignment+=LlmVariableAssignment)*
+	//        (assignments+=LlmVariableAssignment)*
 	//    '}'
 	//;
 	public LlmTaskDefinitionElements getLlmTaskDefinitionAccess() {

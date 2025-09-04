@@ -93,7 +93,7 @@ VMOverrideFieldElement:
 
 LlmTaskDefinition:
 	'llmtask' name=ID '(' ')' ('implements' annotation_interfaces+=AnnotationInterfaceReference (',' annotation_interfaces+=AnnotationInterfaceReference)* )? '{'
-		(assignment+=LlmVariableAssignment)*
+		(assignments+=LlmVariableAssignment)*
 	'}' 
 ;
 

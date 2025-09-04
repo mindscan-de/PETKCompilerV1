@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAnnotation_interfaces <em>Annotation interfaces</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAssignment <em>Assignment</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.LlmTaskDefinitionImpl#getAssignments <em>Assignments</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +72,14 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
   protected EList<AnnotationInterfaceReference> annotation_interfaces;
 
   /**
-   * The cached value of the '{@link #getAssignment() <em>Assignment</em>}' containment reference list.
+   * The cached value of the '{@link #getAssignments() <em>Assignments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssignment()
+   * @see #getAssignments()
    * @generated
    * @ordered
    */
-  protected EList<LlmVariableAssignment> assignment;
+  protected EList<LlmVariableAssignment> assignments;
 
   /**
    * <!-- begin-user-doc -->
@@ -148,13 +148,13 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<LlmVariableAssignment> getAssignment()
+  public EList<LlmVariableAssignment> getAssignments()
   {
-    if (assignment == null)
+    if (assignments == null)
     {
-      assignment = new EObjectContainmentEList<LlmVariableAssignment>(LlmVariableAssignment.class, this, AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT);
+      assignments = new EObjectContainmentEList<LlmVariableAssignment>(LlmVariableAssignment.class, this, AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS);
     }
-    return assignment;
+    return assignments;
   }
 
   /**
@@ -169,8 +169,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
     {
       case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
         return ((InternalEList<?>)getAnnotation_interfaces()).basicRemove(otherEnd, msgs);
-      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
-        return ((InternalEList<?>)getAssignment()).basicRemove(otherEnd, msgs);
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS:
+        return ((InternalEList<?>)getAssignments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -189,8 +189,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
         return getName();
       case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
         return getAnnotation_interfaces();
-      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
-        return getAssignment();
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS:
+        return getAssignments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -213,9 +213,9 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
         getAnnotation_interfaces().clear();
         getAnnotation_interfaces().addAll((Collection<? extends AnnotationInterfaceReference>)newValue);
         return;
-      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
-        getAssignment().clear();
-        getAssignment().addAll((Collection<? extends LlmVariableAssignment>)newValue);
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS:
+        getAssignments().clear();
+        getAssignments().addAll((Collection<? extends LlmVariableAssignment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,8 +237,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
       case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
         getAnnotation_interfaces().clear();
         return;
-      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
-        getAssignment().clear();
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS:
+        getAssignments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +258,8 @@ public class LlmTaskDefinitionImpl extends MinimalEObjectImpl.Container implemen
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.LLM_TASK_DEFINITION__ANNOTATION_INTERFACES:
         return annotation_interfaces != null && !annotation_interfaces.isEmpty();
-      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENT:
-        return assignment != null && !assignment.isEmpty();
+      case AiDslPackage.LLM_TASK_DEFINITION__ASSIGNMENTS:
+        return assignments != null && !assignments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

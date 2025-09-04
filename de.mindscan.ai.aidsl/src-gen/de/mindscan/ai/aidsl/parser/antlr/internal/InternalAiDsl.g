@@ -1093,17 +1093,17 @@ ruleLlmTaskDefinition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0());
 				}
-				lv_assignment_9_0=ruleLlmVariableAssignment
+				lv_assignments_9_0=ruleLlmVariableAssignment
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLlmTaskDefinitionRule());
 					}
 					add(
 						$current,
-						"assignment",
-						lv_assignment_9_0,
+						"assignments",
+						lv_assignments_9_0,
 						"de.mindscan.ai.aidsl.AiDsl.LlmVariableAssignment");
 					afterParserOrEnumRuleCall();
 				}

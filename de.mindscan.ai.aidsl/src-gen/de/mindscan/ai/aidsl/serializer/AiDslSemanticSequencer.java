@@ -153,7 +153,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         (annotation_interfaces+=AnnotationInterfaceReference annotation_interfaces+=AnnotationInterfaceReference*)? 
-	 *         assignment+=LlmVariableAssignment*
+	 *         assignments+=LlmVariableAssignment*
 	 *     )
 	 * </pre>
 	 */

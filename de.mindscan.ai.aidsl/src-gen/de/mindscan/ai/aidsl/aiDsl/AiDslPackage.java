@@ -567,13 +567,13 @@ public interface AiDslPackage extends EPackage
   int LLM_TASK_DEFINITION__ANNOTATION_INTERFACES = 1;
 
   /**
-   * The feature id for the '<em><b>Assignment</b></em>' containment reference list.
+   * The feature id for the '<em><b>Assignments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LLM_TASK_DEFINITION__ASSIGNMENT = 2;
+  int LLM_TASK_DEFINITION__ASSIGNMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Llm Task Definition</em>' class.
@@ -1164,15 +1164,15 @@ public interface AiDslPackage extends EPackage
   EReference getLlmTaskDefinition_Annotation_interfaces();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment <em>Assignment</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignments <em>Assignments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Assignment</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignment()
+   * @return the meta object for the containment reference list '<em>Assignments</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition#getAssignments()
    * @see #getLlmTaskDefinition()
    * @generated
    */
-  EReference getLlmTaskDefinition_Assignment();
+  EReference getLlmTaskDefinition_Assignments();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference <em>Annotation Interface Reference</em>}'.
@@ -1668,12 +1668,12 @@ public interface AiDslPackage extends EPackage
     EReference LLM_TASK_DEFINITION__ANNOTATION_INTERFACES = eINSTANCE.getLlmTaskDefinition_Annotation_interfaces();
 
     /**
-     * The meta object literal for the '<em><b>Assignment</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Assignments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LLM_TASK_DEFINITION__ASSIGNMENT = eINSTANCE.getLlmTaskDefinition_Assignment();
+    EReference LLM_TASK_DEFINITION__ASSIGNMENTS = eINSTANCE.getLlmTaskDefinition_Assignments();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.AnnotationInterfaceReferenceImpl <em>Annotation Interface Reference</em>}' class.

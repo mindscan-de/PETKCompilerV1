@@ -6741,20 +6741,20 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmTaskDefinition__Group__6__Impl"
-    // InternalAiDsl.g:2201:1: rule__LlmTaskDefinition__Group__6__Impl : ( ( rule__LlmTaskDefinition__AssignmentAssignment_6 )* ) ;
+    // InternalAiDsl.g:2201:1: rule__LlmTaskDefinition__Group__6__Impl : ( ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )* ) ;
     public final void rule__LlmTaskDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:2205:1: ( ( ( rule__LlmTaskDefinition__AssignmentAssignment_6 )* ) )
-            // InternalAiDsl.g:2206:1: ( ( rule__LlmTaskDefinition__AssignmentAssignment_6 )* )
+            // InternalAiDsl.g:2205:1: ( ( ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )* ) )
+            // InternalAiDsl.g:2206:1: ( ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )* )
             {
-            // InternalAiDsl.g:2206:1: ( ( rule__LlmTaskDefinition__AssignmentAssignment_6 )* )
-            // InternalAiDsl.g:2207:2: ( rule__LlmTaskDefinition__AssignmentAssignment_6 )*
+            // InternalAiDsl.g:2206:1: ( ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )* )
+            // InternalAiDsl.g:2207:2: ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )*
             {
-             before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6()); 
-            // InternalAiDsl.g:2208:2: ( rule__LlmTaskDefinition__AssignmentAssignment_6 )*
+             before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6()); 
+            // InternalAiDsl.g:2208:2: ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )*
             loop19:
             do {
                 int alt19=2;
@@ -6767,10 +6767,10 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalAiDsl.g:2208:3: rule__LlmTaskDefinition__AssignmentAssignment_6
+            	    // InternalAiDsl.g:2208:3: rule__LlmTaskDefinition__AssignmentsAssignment_6
             	    {
             	    pushFollow(FOLLOW_14);
-            	    rule__LlmTaskDefinition__AssignmentAssignment_6();
+            	    rule__LlmTaskDefinition__AssignmentsAssignment_6();
 
             	    state._fsp--;
 
@@ -6783,7 +6783,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentAssignment_6()); 
+             after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6()); 
 
             }
 
@@ -10217,9 +10217,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1"
 
 
-    // $ANTLR start "rule__LlmTaskDefinition__AssignmentAssignment_6"
-    // InternalAiDsl.g:3415:1: rule__LlmTaskDefinition__AssignmentAssignment_6 : ( ruleLlmVariableAssignment ) ;
-    public final void rule__LlmTaskDefinition__AssignmentAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__LlmTaskDefinition__AssignmentsAssignment_6"
+    // InternalAiDsl.g:3415:1: rule__LlmTaskDefinition__AssignmentsAssignment_6 : ( ruleLlmVariableAssignment ) ;
+    public final void rule__LlmTaskDefinition__AssignmentsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -10230,13 +10230,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3420:2: ( ruleLlmVariableAssignment )
             // InternalAiDsl.g:3421:3: ruleLlmVariableAssignment
             {
-             before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0()); 
+             before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
             ruleLlmVariableAssignment();
 
             state._fsp--;
 
-             after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentLlmVariableAssignmentParserRuleCall_6_0()); 
+             after(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0()); 
 
             }
 
@@ -10255,7 +10255,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LlmTaskDefinition__AssignmentAssignment_6"
+    // $ANTLR end "rule__LlmTaskDefinition__AssignmentsAssignment_6"
 
 
     // $ANTLR start "rule__AnnotationInterfaceReference__NameAssignment_1"

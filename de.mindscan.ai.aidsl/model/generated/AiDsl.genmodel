@@ -60,7 +60,7 @@
     <genClasses ecoreClass="AiDsl.ecore#//LlmTaskDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmTaskDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/annotation_interfaces"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/assignment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmTaskDefinition/assignments"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//AnnotationInterfaceReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//AnnotationInterfaceReference/name"/>

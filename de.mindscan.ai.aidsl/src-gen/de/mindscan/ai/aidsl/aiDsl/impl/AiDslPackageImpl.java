@@ -696,7 +696,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EReference getLlmTaskDefinition_Assignment()
+  public EReference getLlmTaskDefinition_Assignments()
   {
     return (EReference)llmTaskDefinitionEClass.getEStructuralFeatures().get(2);
   }
@@ -897,7 +897,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     llmTaskDefinitionEClass = createEClass(LLM_TASK_DEFINITION);
     createEAttribute(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__NAME);
     createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ANNOTATION_INTERFACES);
-    createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ASSIGNMENT);
+    createEReference(llmTaskDefinitionEClass, LLM_TASK_DEFINITION__ASSIGNMENTS);
 
     annotationInterfaceReferenceEClass = createEClass(ANNOTATION_INTERFACE_REFERENCE);
     createEReference(annotationInterfaceReferenceEClass, ANNOTATION_INTERFACE_REFERENCE__NAME);
@@ -1004,7 +1004,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(llmTaskDefinitionEClass, LlmTaskDefinition.class, "LlmTaskDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmTaskDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLlmTaskDefinition_Annotation_interfaces(), this.getAnnotationInterfaceReference(), null, "annotation_interfaces", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLlmTaskDefinition_Assignment(), this.getLlmVariableAssignment(), null, "assignment", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmTaskDefinition_Assignments(), this.getLlmVariableAssignment(), null, "assignments", null, 0, -1, LlmTaskDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(annotationInterfaceReferenceEClass, AnnotationInterfaceReference.class, "AnnotationInterfaceReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAnnotationInterfaceReference_Name(), this.getVMNodeDefinition(), null, "name", null, 0, 1, AnnotationInterfaceReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
