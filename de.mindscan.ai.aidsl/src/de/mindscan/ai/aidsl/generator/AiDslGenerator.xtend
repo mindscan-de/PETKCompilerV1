@@ -121,6 +121,7 @@ class AiDslGenerator extends AbstractGenerator {
 		// Override each of the dictionary elements, by the assignments of the task definitions
 		for(variableAssigment : taskdefinition.assignments) {
 			// TODO, preprocess the template string.
+			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as \n 
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}
 		
