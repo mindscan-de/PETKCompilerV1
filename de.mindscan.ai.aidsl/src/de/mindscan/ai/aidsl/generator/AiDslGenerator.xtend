@@ -13,6 +13,12 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import java.util.Map
+import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
+import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+import de.mindscan.ai.aidsl.aiDsl.VMNodeInElements
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements
 
 /**
  * Generates code from your model files on save.
@@ -112,8 +118,14 @@ class AiDslGenerator extends AbstractGenerator {
 		// do them in order,
 		// first the super, then the overrides 
 		for (annotationinterface : annotation_interfaces) {
-			
+			val vmNodeDefinition = annotationinterface.name
+			val precompiledInterfaceMap = getPrecompiledInterface(vmNodeDefinition)
+			// integrate the precompiledInterfaceMap
+			compiledStatementMap.putAll(precompiledInterfaceMap)
 		}
+		
+		// combine the pre-compield annotation interfaces in correct order
+		
 
 		// This is the LlmTaskDefinition
 		// this is the final override.		
@@ -121,11 +133,29 @@ class AiDslGenerator extends AbstractGenerator {
 		// Override each of the dictionary elements, by the assignments of the task definitions
 		for(variableAssigment : taskdefinition.assignments) {
 			// TODO, preprocess the template string.
-			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as \n 
+			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as "\n", such that the  
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}
 		
 		return compiledStatementMap
+	}
+	
+	def Map getPrecompiledInterface(VMNodeDefinition definition) {
+		val result = newLinkedHashMap()
+		// find the opcode if present
+		for(fieldElement : definition.elements) {
+			switch fieldElement {
+				VMNodeOpCodeElement : result.put("type", fieldElement.opcode)
+				//VMNodeFieldElements : result.put()
+				//VMNodeInElements : ;
+				//VMNodeOutElements : ;
+				//default: break; 
+			}
+		}
+		
+		// find all 
+		
+		return result 
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
