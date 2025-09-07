@@ -3,22 +3,21 @@
  */
 package de.mindscan.ai.aidsl.generator
 
+import de.mindscan.ai.aidsl.aiDsl.VMFieldElement
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
+import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
+import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
 import java.io.Serializable
 import java.util.HashMap
+import java.util.Map
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import java.util.Map
-import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference
-import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
-import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
-import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
-import de.mindscan.ai.aidsl.aiDsl.VMNodeInElements
-import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements
 
 /**
  * Generates code from your model files on save.
@@ -146,7 +145,7 @@ class AiDslGenerator extends AbstractGenerator {
 		for(fieldElement : definition.elements) {
 			switch fieldElement {
 				VMNodeOpCodeElement : result.put("type", fieldElement.opcode)
-				//VMNodeFieldElements : result.put()
+				VMNodeFieldElements : result.putAll(getPrecompiledInterfaceFieldEleements(fieldElement))
 				//VMNodeInElements : ;
 				//VMNodeOutElements : ;
 				//default: break; 
@@ -156,6 +155,19 @@ class AiDslGenerator extends AbstractGenerator {
 		// find all 
 		
 		return result 
+	}
+	
+	def Map getPrecompiledInterfaceFieldEleements(VMNodeFieldElements elements) {
+		val result = newLinkedHashMap()
+		
+		for(fieldElement : elements.fieldELements) {
+			switch fieldElement {
+				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
+				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
+			}
+		}
+		
+		return result
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledExecutionInfoMap(WorkflowDefinition workflowDefinition) {
