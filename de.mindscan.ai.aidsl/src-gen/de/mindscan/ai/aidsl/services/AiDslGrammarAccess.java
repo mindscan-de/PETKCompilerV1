@@ -33,14 +33,16 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cDefinitionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final Alternatives cDefinitionsAlternatives_2_0 = (Alternatives)cDefinitionsAssignment_2.eContents().get(0);
 		private final RuleCall cDefinitionsWorkflowDefinitionParserRuleCall_2_0_0 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(0);
-		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_1 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(1);
-		private final RuleCall cDefinitionsVMNodeDefinitionParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
+		private final RuleCall cDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(1);
+		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
+		private final RuleCall cDefinitionsVMNodeDefinitionParserRuleCall_2_0_3 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(3);
 		
 		//Model:
 		//    (package_declaration=PackageDeclaration)?
 		//    (import_declarations+=ImportDeclaration)*
 		//    definitions += (
 		//        WorkflowDefinition|
+		//        WorkflowDataDictionaryDefinition|
 		//        LlmTaskDefinition|
 		//        VMNodeDefinition
 		//    )*
@@ -51,6 +53,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(import_declarations+=ImportDeclaration)*
 		//definitions += (
 		//    WorkflowDefinition|
+		//    WorkflowDataDictionaryDefinition|
 		//    LlmTaskDefinition|
 		//    VMNodeDefinition
 		//)*
@@ -70,6 +73,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//definitions += (
 		//    WorkflowDefinition|
+		//    WorkflowDataDictionaryDefinition|
 		//    LlmTaskDefinition|
 		//    VMNodeDefinition
 		//)*
@@ -77,6 +81,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//(
 		//       WorkflowDefinition|
+		//       WorkflowDataDictionaryDefinition|
 		//       LlmTaskDefinition|
 		//       VMNodeDefinition
 		//   )
@@ -85,11 +90,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//WorkflowDefinition
 		public RuleCall getDefinitionsWorkflowDefinitionParserRuleCall_2_0_0() { return cDefinitionsWorkflowDefinitionParserRuleCall_2_0_0; }
 		
+		//WorkflowDataDictionaryDefinition
+		public RuleCall getDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1() { return cDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1; }
+		
 		//LlmTaskDefinition
-		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_2_0_1() { return cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_1; }
+		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_2_0_2() { return cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_2; }
 		
 		//VMNodeDefinition
-		public RuleCall getDefinitionsVMNodeDefinitionParserRuleCall_2_0_2() { return cDefinitionsVMNodeDefinitionParserRuleCall_2_0_2; }
+		public RuleCall getDefinitionsVMNodeDefinitionParserRuleCall_2_0_3() { return cDefinitionsVMNodeDefinitionParserRuleCall_2_0_3; }
 	}
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.PackageDeclaration");
@@ -138,6 +146,48 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//QualifiedNameWithWildcard
 		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
+	}
+	public class WorkflowDataDictionaryDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDatadictionaryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDictionaryElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDictionaryElementsIDTerminalRuleCall_2_0 = (RuleCall)cDictionaryElementsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// ---------------------------------------
+		//// Workflow Data Defitinion /
+		//// Workflow Data Dictionary
+		//// ---------------------------------------
+		////
+		//// ---------------------------------------
+		//WorkflowDataDictionaryDefinition:
+		//    'datadictionary' '{'
+		//        (dictionaryElements+=ID)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'datadictionary' '{'
+		//    (dictionaryElements+=ID)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'datadictionary'
+		public Keyword getDatadictionaryKeyword_0() { return cDatadictionaryKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//(dictionaryElements+=ID)*
+		public Assignment getDictionaryElementsAssignment_2() { return cDictionaryElementsAssignment_2; }
+		
+		//ID
+		public RuleCall getDictionaryElementsIDTerminalRuleCall_2_0() { return cDictionaryElementsIDTerminalRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -887,6 +937,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final ModelElements pModel;
 	private final PackageDeclarationElements pPackageDeclaration;
 	private final ImportDeclarationElements pImportDeclaration;
+	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
 	private final VMNodeDefinitionElements pVMNodeDefinition;
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
@@ -920,6 +971,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pModel = new ModelElements();
 		this.pPackageDeclaration = new PackageDeclarationElements();
 		this.pImportDeclaration = new ImportDeclarationElements();
+		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
 		this.pVMNodeDefinition = new VMNodeDefinitionElements();
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
@@ -974,6 +1026,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    (import_declarations+=ImportDeclaration)*
 	//    definitions += (
 	//        WorkflowDefinition|
+	//        WorkflowDataDictionaryDefinition|
 	//        LlmTaskDefinition|
 	//        VMNodeDefinition
 	//    )*
@@ -1006,6 +1059,25 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getImportDeclarationRule() {
 		return getImportDeclarationAccess().getRule();
+	}
+	
+	//// ---------------------------------------
+	//// Workflow Data Defitinion /
+	//// Workflow Data Dictionary
+	//// ---------------------------------------
+	////
+	//// ---------------------------------------
+	//WorkflowDataDictionaryDefinition:
+	//    'datadictionary' '{'
+	//        (dictionaryElements+=ID)*
+	//    '}'
+	//;
+	public WorkflowDataDictionaryDefinitionElements getWorkflowDataDictionaryDefinitionAccess() {
+		return pWorkflowDataDictionaryDefinition;
+	}
+	
+	public ParserRule getWorkflowDataDictionaryDefinitionRule() {
+		return getWorkflowDataDictionaryDefinitionAccess().getRule();
 	}
 	
 	//// ---------------------------------------

@@ -20,6 +20,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
@@ -92,6 +93,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.VM_OVERRIDE_FIELD_ELEMENT:
 				sequence_VMOverrideFieldElement(context, (VMOverrideFieldElement) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION:
+				sequence_WorkflowDataDictionaryDefinition(context, (WorkflowDataDictionaryDefinition) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
@@ -194,9 +198,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         (
 	 *             ((package_declaration=PackageDeclaration import_declarations+=ImportDeclaration+) | import_declarations+=ImportDeclaration+)? 
-	 *             (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
+	 *             (definitions+=WorkflowDefinition | definitions+=WorkflowDataDictionaryDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
 	 *         ) | 
-	 *         (definitions+=WorkflowDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
+	 *         (definitions+=WorkflowDefinition | definitions+=WorkflowDataDictionaryDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
 	 *     )?
 	 * </pre>
 	 */
@@ -373,6 +377,20 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0(), semanticObject.getDefaultvalue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowDataDictionaryDefinition returns WorkflowDataDictionaryDefinition
+	 *
+	 * Constraint:
+	 *     dictionaryElements+=ID+
+	 * </pre>
+	 */
+	protected void sequence_WorkflowDataDictionaryDefinition(ISerializationContext context, WorkflowDataDictionaryDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

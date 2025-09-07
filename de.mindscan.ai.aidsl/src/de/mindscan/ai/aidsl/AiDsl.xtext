@@ -11,6 +11,7 @@ Model:
 	
 	definitions += (
 		WorkflowDefinition|
+		WorkflowDataDictionaryDefinition|
 		LlmTaskDefinition|
 		VMNodeDefinition
 	)*
@@ -23,6 +24,21 @@ PackageDeclaration:
 ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildcard
 ;
+
+
+// ---------------------------------------
+// Workflow Data Defitinion / 
+// Workflow Data Dictionary
+// ---------------------------------------
+//
+// ---------------------------------------
+
+WorkflowDataDictionaryDefinition:
+	'datadictionary' '{'
+		(dictionaryElements+=ID)*
+	'}'
+;
+
 
 
 // ---------------------------------------

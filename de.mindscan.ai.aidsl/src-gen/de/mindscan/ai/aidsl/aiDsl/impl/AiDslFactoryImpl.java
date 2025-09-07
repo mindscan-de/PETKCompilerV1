@@ -68,6 +68,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.MODEL: return createModel();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION: return createWorkflowDataDictionaryDefinition();
       case AiDslPackage.VM_NODE_DEFINITION: return createVMNodeDefinition();
       case AiDslPackage.VM_NODE_ELEEMNTS: return createVMNodeEleemnts();
       case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
@@ -122,6 +123,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     ImportDeclarationImpl importDeclaration = new ImportDeclarationImpl();
     return importDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowDataDictionaryDefinition createWorkflowDataDictionaryDefinition()
+  {
+    WorkflowDataDictionaryDefinitionImpl workflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionImpl();
+    return workflowDataDictionaryDefinition;
   }
 
   /**

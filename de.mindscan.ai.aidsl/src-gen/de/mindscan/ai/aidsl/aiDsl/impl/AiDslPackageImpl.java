@@ -21,6 +21,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 
@@ -59,6 +60,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass importDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowDataDictionaryDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -314,6 +322,28 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EAttribute getImportDeclaration_ImportedNamespace()
   {
     return (EAttribute)importDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWorkflowDataDictionaryDefinition()
+  {
+    return workflowDataDictionaryDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowDataDictionaryDefinition_DictionaryElements()
+  {
+    return (EAttribute)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -853,6 +883,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     importDeclarationEClass = createEClass(IMPORT_DECLARATION);
     createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__IMPORTED_NAMESPACE);
 
+    workflowDataDictionaryDefinitionEClass = createEClass(WORKFLOW_DATA_DICTIONARY_DEFINITION);
+    createEAttribute(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__DICTIONARY_ELEMENTS);
+
     vmNodeDefinitionEClass = createEClass(VM_NODE_DEFINITION);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NODETYPE);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NAME);
@@ -959,6 +992,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(importDeclarationEClass, ImportDeclaration.class, "ImportDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImportDeclaration_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowDataDictionaryDefinitionEClass, WorkflowDataDictionaryDefinition.class, "WorkflowDataDictionaryDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowDataDictionaryDefinition_DictionaryElements(), ecorePackage.getEString(), "dictionaryElements", null, 0, -1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vmNodeDefinitionEClass, VMNodeDefinition.class, "VMNodeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeDefinition_Nodetype(), ecorePackage.getEString(), "nodetype", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

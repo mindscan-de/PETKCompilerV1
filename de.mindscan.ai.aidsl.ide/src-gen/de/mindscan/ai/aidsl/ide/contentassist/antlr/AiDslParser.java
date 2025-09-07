@@ -40,6 +40,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
+			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getGroup(), "rule__VMNodeDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getGroup(), "rule__VMNodeOpCodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeOutElementsAccess().getGroup(), "rule__VMNodeOutElements__Group__0");
@@ -66,6 +67,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
+			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsAssignment_2(), "rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1(), "rule__VMNodeDefinition__NodetypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNameAssignment_2(), "rule__VMNodeDefinition__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getElementsAssignment_4(), "rule__VMNodeDefinition__ElementsAssignment_4");

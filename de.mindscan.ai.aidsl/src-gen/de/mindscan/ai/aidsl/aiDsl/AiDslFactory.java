@@ -51,6 +51,15 @@ public interface AiDslFactory extends EFactory
   ImportDeclaration createImportDeclaration();
 
   /**
+   * Returns a new object of class '<em>Workflow Data Dictionary Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Data Dictionary Definition</em>'.
+   * @generated
+   */
+  WorkflowDataDictionaryDefinition createWorkflowDataDictionaryDefinition();
+
+  /**
    * Returns a new object of class '<em>VM Node Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

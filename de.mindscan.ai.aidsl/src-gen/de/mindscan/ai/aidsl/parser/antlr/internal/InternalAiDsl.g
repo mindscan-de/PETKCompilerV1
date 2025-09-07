@@ -134,9 +134,9 @@ ruleModel returns [EObject current=null]
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsLlmTaskDefinitionParserRuleCall_2_0_1());
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1());
 					}
-					lv_definitions_2_2=ruleLlmTaskDefinition
+					lv_definitions_2_2=ruleWorkflowDataDictionaryDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -145,14 +145,14 @@ ruleModel returns [EObject current=null]
 							$current,
 							"definitions",
 							lv_definitions_2_2,
-							"de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
+							"de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsVMNodeDefinitionParserRuleCall_2_0_2());
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsLlmTaskDefinitionParserRuleCall_2_0_2());
 					}
-					lv_definitions_2_3=ruleVMNodeDefinition
+					lv_definitions_2_3=ruleLlmTaskDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -161,6 +161,22 @@ ruleModel returns [EObject current=null]
 							$current,
 							"definitions",
 							lv_definitions_2_3,
+							"de.mindscan.ai.aidsl.AiDsl.LlmTaskDefinition");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsVMNodeDefinitionParserRuleCall_2_0_3());
+					}
+					lv_definitions_2_4=ruleVMNodeDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"definitions",
+							lv_definitions_2_4,
 							"de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
 						afterParserOrEnumRuleCall();
 					}
@@ -251,6 +267,55 @@ ruleImportDeclaration returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleWorkflowDataDictionaryDefinition
+entryRuleWorkflowDataDictionaryDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowDataDictionaryDefinitionRule()); }
+	iv_ruleWorkflowDataDictionaryDefinition=ruleWorkflowDataDictionaryDefinition
+	{ $current=$iv_ruleWorkflowDataDictionaryDefinition.current; }
+	EOF;
+
+// Rule WorkflowDataDictionaryDefinition
+ruleWorkflowDataDictionaryDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='datadictionary'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDatadictionaryKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				lv_dictionaryElements_2_0=RULE_ID
+				{
+					newLeafNode(lv_dictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDataDictionaryDefinitionRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"dictionaryElements",
+						lv_dictionaryElements_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getRightCurlyBracketKeyword_3());
+		}
 	)
 ;
 
