@@ -152,8 +152,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDatadictionaryKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cDictionaryElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDictionaryElementsIDTerminalRuleCall_2_0 = (RuleCall)cDictionaryElementsAssignment_2.eContents().get(0);
+		private final Assignment cDataDictionaryElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataDictionaryElementsIDTerminalRuleCall_2_0 = (RuleCall)cDataDictionaryElementsAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//// ---------------------------------------
@@ -164,13 +164,13 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//// ---------------------------------------
 		//WorkflowDataDictionaryDefinition:
 		//    'datadictionary' '{'
-		//        (dictionaryElements+=ID)*
+		//        (dataDictionaryElements+=ID)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'datadictionary' '{'
-		//    (dictionaryElements+=ID)*
+		//    (dataDictionaryElements+=ID)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -180,11 +180,48 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//(dictionaryElements+=ID)*
-		public Assignment getDictionaryElementsAssignment_2() { return cDictionaryElementsAssignment_2; }
+		//(dataDictionaryElements+=ID)*
+		public Assignment getDataDictionaryElementsAssignment_2() { return cDataDictionaryElementsAssignment_2; }
 		
 		//ID
-		public RuleCall getDictionaryElementsIDTerminalRuleCall_2_0() { return cDictionaryElementsIDTerminalRuleCall_2_0; }
+		public RuleCall getDataDictionaryElementsIDTerminalRuleCall_2_0() { return cDataDictionaryElementsIDTerminalRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class WorkflowDataDictionaryElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryElement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//WorkflowDataDictionaryElement:
+		//    "data" name=ID
+		//        // can be a map or a list or a direct value
+		//        '{' '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"data" name=ID
+		//    // can be a map or a list or a direct value
+		//    '{' '}'
+		public Group getGroup() { return cGroup; }
+		
+		//"data"
+		public Keyword getDataKeyword_0() { return cDataKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//// can be a map or a list or a direct value
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
@@ -938,6 +975,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final PackageDeclarationElements pPackageDeclaration;
 	private final ImportDeclarationElements pImportDeclaration;
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
+	private final WorkflowDataDictionaryElementElements pWorkflowDataDictionaryElement;
 	private final VMNodeDefinitionElements pVMNodeDefinition;
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
@@ -972,6 +1010,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pPackageDeclaration = new PackageDeclarationElements();
 		this.pImportDeclaration = new ImportDeclarationElements();
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
+		this.pWorkflowDataDictionaryElement = new WorkflowDataDictionaryElementElements();
 		this.pVMNodeDefinition = new VMNodeDefinitionElements();
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
@@ -1069,7 +1108,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// ---------------------------------------
 	//WorkflowDataDictionaryDefinition:
 	//    'datadictionary' '{'
-	//        (dictionaryElements+=ID)*
+	//        (dataDictionaryElements+=ID)*
 	//    '}'
 	//;
 	public WorkflowDataDictionaryDefinitionElements getWorkflowDataDictionaryDefinitionAccess() {
@@ -1078,6 +1117,19 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getWorkflowDataDictionaryDefinitionRule() {
 		return getWorkflowDataDictionaryDefinitionAccess().getRule();
+	}
+	
+	//WorkflowDataDictionaryElement:
+	//    "data" name=ID
+	//        // can be a map or a list or a direct value
+	//        '{' '}'
+	//;
+	public WorkflowDataDictionaryElementElements getWorkflowDataDictionaryElementAccess() {
+		return pWorkflowDataDictionaryElement;
+	}
+	
+	public ParserRule getWorkflowDataDictionaryElementRule() {
+		return getWorkflowDataDictionaryElementAccess().getRule();
 	}
 	
 	//// ---------------------------------------

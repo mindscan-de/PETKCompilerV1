@@ -296,9 +296,9 @@ ruleWorkflowDataDictionaryDefinition returns [EObject current=null]
 		}
 		(
 			(
-				lv_dictionaryElements_2_0=RULE_ID
+				lv_dataDictionaryElements_2_0=RULE_ID
 				{
-					newLeafNode(lv_dictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsIDTerminalRuleCall_2_0());
+					newLeafNode(lv_dataDictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -306,8 +306,8 @@ ruleWorkflowDataDictionaryDefinition returns [EObject current=null]
 					}
 					addWithLastConsumed(
 						$current,
-						"dictionaryElements",
-						lv_dictionaryElements_2_0,
+						"dataDictionaryElements",
+						lv_dataDictionaryElements_2_0,
 						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)

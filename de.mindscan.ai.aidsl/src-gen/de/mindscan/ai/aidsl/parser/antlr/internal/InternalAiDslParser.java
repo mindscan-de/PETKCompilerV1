@@ -701,24 +701,24 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWorkflowDataDictionaryDefinition"
-    // InternalAiDsl.g:281:1: ruleWorkflowDataDictionaryDefinition returns [EObject current=null] : (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' ) ;
+    // InternalAiDsl.g:281:1: ruleWorkflowDataDictionaryDefinition returns [EObject current=null] : (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dataDictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' ) ;
     public final EObject ruleWorkflowDataDictionaryDefinition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_dictionaryElements_2_0=null;
+        Token lv_dataDictionaryElements_2_0=null;
         Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalAiDsl.g:287:2: ( (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' ) )
-            // InternalAiDsl.g:288:2: (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' )
+            // InternalAiDsl.g:287:2: ( (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dataDictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' ) )
+            // InternalAiDsl.g:288:2: (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dataDictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' )
             {
-            // InternalAiDsl.g:288:2: (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' )
-            // InternalAiDsl.g:289:3: otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}'
+            // InternalAiDsl.g:288:2: (otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dataDictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}' )
+            // InternalAiDsl.g:289:3: otherlv_0= 'datadictionary' otherlv_1= '{' ( (lv_dataDictionaryElements_2_0= RULE_ID ) )* otherlv_3= '}'
             {
             otherlv_0=(Token)match(input,13,FOLLOW_6); 
 
@@ -728,7 +728,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalAiDsl.g:297:3: ( (lv_dictionaryElements_2_0= RULE_ID ) )*
+            // InternalAiDsl.g:297:3: ( (lv_dataDictionaryElements_2_0= RULE_ID ) )*
             loop5:
             do {
                 int alt5=2;
@@ -741,14 +741,14 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalAiDsl.g:298:4: (lv_dictionaryElements_2_0= RULE_ID )
+            	    // InternalAiDsl.g:298:4: (lv_dataDictionaryElements_2_0= RULE_ID )
             	    {
-            	    // InternalAiDsl.g:298:4: (lv_dictionaryElements_2_0= RULE_ID )
-            	    // InternalAiDsl.g:299:5: lv_dictionaryElements_2_0= RULE_ID
+            	    // InternalAiDsl.g:298:4: (lv_dataDictionaryElements_2_0= RULE_ID )
+            	    // InternalAiDsl.g:299:5: lv_dataDictionaryElements_2_0= RULE_ID
             	    {
-            	    lv_dictionaryElements_2_0=(Token)match(input,RULE_ID,FOLLOW_7); 
+            	    lv_dataDictionaryElements_2_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
-            	    					newLeafNode(lv_dictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsIDTerminalRuleCall_2_0());
+            	    					newLeafNode(lv_dataDictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsIDTerminalRuleCall_2_0());
             	    				
 
             	    					if (current==null) {
@@ -756,8 +756,8 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
             	    					}
             	    					addWithLastConsumed(
             	    						current,
-            	    						"dictionaryElements",
-            	    						lv_dictionaryElements_2_0,
+            	    						"dataDictionaryElements",
+            	    						lv_dataDictionaryElements_2_0,
             	    						"de.mindscan.ai.aidsl.AiDsl.ID");
             	    				
 

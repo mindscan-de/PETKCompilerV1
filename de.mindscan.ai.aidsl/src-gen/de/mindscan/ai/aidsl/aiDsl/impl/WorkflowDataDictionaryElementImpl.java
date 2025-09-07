@@ -4,49 +4,56 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Workflow Data Dictionary Definition</b></em>'.
+ * An implementation of the model object '<em><b>Workflow Data Dictionary Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl#getDataDictionaryElements <em>Data Dictionary Elements</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Container implements WorkflowDataDictionaryDefinition
+public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Container implements WorkflowDataDictionaryElement
 {
   /**
-   * The cached value of the '{@link #getDataDictionaryElements() <em>Data Dictionary Elements</em>}' attribute list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDataDictionaryElements()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> dataDictionaryElements;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected WorkflowDataDictionaryDefinitionImpl()
+  protected WorkflowDataDictionaryElementImpl()
   {
     super();
   }
@@ -59,7 +66,7 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   @Override
   protected EClass eStaticClass()
   {
-    return AiDslPackage.Literals.WORKFLOW_DATA_DICTIONARY_DEFINITION;
+    return AiDslPackage.Literals.WORKFLOW_DATA_DICTIONARY_ELEMENT;
   }
 
   /**
@@ -68,13 +75,23 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
    * @generated
    */
   @Override
-  public EList<String> getDataDictionaryElements()
+  public String getName()
   {
-    if (dataDictionaryElements == null)
-    {
-      dataDictionaryElements = new EDataTypeEList<String>(String.class, this, AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS);
-    }
-    return dataDictionaryElements;
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -87,8 +104,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        return getDataDictionaryElements();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +115,13 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        getDataDictionaryElements().clear();
-        getDataDictionaryElements().addAll((Collection<? extends String>)newValue);
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +137,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        getDataDictionaryElements().clear();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +154,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        return dataDictionaryElements != null && !dataDictionaryElements.isEmpty();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -156,10 +171,10 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (dataDictionaryElements: ");
-    result.append(dataDictionaryElements);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //WorkflowDataDictionaryDefinitionImpl
+} //WorkflowDataDictionaryElementImpl

@@ -35,8 +35,14 @@ ImportDeclaration:
 
 WorkflowDataDictionaryDefinition:
 	'datadictionary' '{'
-		(dictionaryElements+=ID)*
+		(dataDictionaryElements+=ID)*
 	'}'
+;
+
+WorkflowDataDictionaryElement:
+	"data" name=ID
+		// can be a map or a list or a direct value 
+		'{' '}'
 ;
 
 

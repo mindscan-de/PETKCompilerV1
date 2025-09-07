@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDictionaryElements <em>Dictionary Elements</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements <em>Data Dictionary Elements</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface WorkflowDataDictionaryDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Dictionary Elements</b></em>' attribute list.
+   * Returns the value of the '<em><b>Data Dictionary Elements</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dictionary Elements</em>' attribute list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition_DictionaryElements()
+   * @return the value of the '<em>Data Dictionary Elements</em>' attribute list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition_DataDictionaryElements()
    * @model unique="false"
    * @generated
    */
-  EList<String> getDictionaryElements();
+  EList<String> getDataDictionaryElements();
 
 } // WorkflowDataDictionaryDefinition

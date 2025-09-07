@@ -3071,20 +3071,20 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDataDictionaryDefinition__Group__2__Impl"
-    // InternalAiDsl.g:990:1: rule__WorkflowDataDictionaryDefinition__Group__2__Impl : ( ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )* ) ;
+    // InternalAiDsl.g:990:1: rule__WorkflowDataDictionaryDefinition__Group__2__Impl : ( ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )* ) ;
     public final void rule__WorkflowDataDictionaryDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:994:1: ( ( ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )* ) )
-            // InternalAiDsl.g:995:1: ( ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )* )
+            // InternalAiDsl.g:994:1: ( ( ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )* ) )
+            // InternalAiDsl.g:995:1: ( ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )* )
             {
-            // InternalAiDsl.g:995:1: ( ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )* )
-            // InternalAiDsl.g:996:2: ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )*
+            // InternalAiDsl.g:995:1: ( ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )* )
+            // InternalAiDsl.g:996:2: ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )*
             {
-             before(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsAssignment_2()); 
-            // InternalAiDsl.g:997:2: ( rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 )*
+             before(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_2()); 
+            // InternalAiDsl.g:997:2: ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 )*
             loop10:
             do {
                 int alt10=2;
@@ -3097,10 +3097,10 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalAiDsl.g:997:3: rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2
+            	    // InternalAiDsl.g:997:3: rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2
             	    {
             	    pushFollow(FOLLOW_9);
-            	    rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2();
+            	    rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2();
 
             	    state._fsp--;
 
@@ -3113,7 +3113,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsAssignment_2()); 
+             after(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_2()); 
 
             }
 
@@ -9666,9 +9666,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ImportDeclaration__ImportedNamespaceAssignment_1"
 
 
-    // $ANTLR start "rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2"
-    // InternalAiDsl.g:3186:1: rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2 : ( RULE_ID ) ;
-    public final void rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2"
+    // InternalAiDsl.g:3186:1: rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2 : ( RULE_ID ) ;
+    public final void rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -9679,9 +9679,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3191:2: ( RULE_ID )
             // InternalAiDsl.g:3192:3: RULE_ID
             {
-             before(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDictionaryElementsIDTerminalRuleCall_2_0()); 
+             after(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -9700,7 +9700,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowDataDictionaryDefinition__DictionaryElementsAssignment_2"
+    // $ANTLR end "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2"
 
 
     // $ANTLR start "rule__VMNodeDefinition__NodetypeAssignment_1"
