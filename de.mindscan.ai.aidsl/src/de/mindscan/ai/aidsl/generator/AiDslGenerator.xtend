@@ -40,9 +40,13 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		val metadataMap = getCompiledMetadataMap(workflowDefinition)
 		val executionMap = getCompiledExecutionInfoMap(workflowDefinition)
+		// TODO: extend the input and output maps
 		val nodedataMap = getCompiledNodedataMap(workflowDefinition)
+		// TODO: implement this
 		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
+		// TODO: implement this
 		val datadictionaryMap = getCompiledDataDictionaryMap(workflowDefinition)
+		
 
 		// build workflow definition
 		val fullyCompiledWorkflowMap = newLinkedHashMap(
@@ -137,13 +141,13 @@ class AiDslGenerator extends AbstractGenerator {
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}
 		
-		// extra_stopwords
+		// TODO: extra_stopwords
 		compiledStatementMap.put("extra_stopwords", newLinkedList)
 		
-		// inputs
+		// TODO: inputs
 		compiledStatementMap.put("inputs", newLinkedList)
 		
-		// outputs
+		// TODO: outputs
 		compiledStatementMap.put("outputs", newLinkedList)
 
 		
