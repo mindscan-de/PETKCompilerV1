@@ -109,8 +109,9 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		val compiledStatementMap = newLinkedHashMap()
 		
-		// TODO find the extended super node dictionaries
 		val taskdefinition = statement.llmtask
+		// this must be a unique name, in case the task is used multiple times, otherwise the followelements can't be properly calculated
+		compiledStatementMap.put("taskname", taskdefinition.name)
 		
 		val annotation_interfaces = taskdefinition.annotation_interfaces
 		
@@ -135,6 +136,16 @@ class AiDslGenerator extends AbstractGenerator {
 			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as "\n", such that the  
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}
+		
+		// extra_stopwords
+		compiledStatementMap.put("extra_stopwords", newLinkedList)
+		
+		// inputs
+		compiledStatementMap.put("inputs", newLinkedList)
+		
+		// outputs
+		compiledStatementMap.put("outputs", newLinkedList)
+
 		
 		return compiledStatementMap
 	}
