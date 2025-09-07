@@ -286,35 +286,92 @@ ruleWorkflowDataDictionaryDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='datadictionary'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getWorkflowDataDictionaryDefinitionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='datadictionary'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDatadictionaryKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDatadictionaryKeyword_1());
 		}
-		otherlv_1='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
-				lv_dataDictionaryElements_2_0=RULE_ID
 				{
-					newLeafNode(lv_dataDictionaryElements_2_0, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0());
 				}
+				lv_dataDictionaryElements_3_0=ruleWorkflowDataDictionaryElement
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkflowDataDictionaryDefinitionRule());
+						$current = createModelElementForParent(grammarAccess.getWorkflowDataDictionaryDefinitionRule());
 					}
-					addWithLastConsumed(
+					add(
 						$current,
 						"dataDictionaryElements",
-						lv_dataDictionaryElements_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+						lv_dataDictionaryElements_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryElement");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleWorkflowDataDictionaryElement
+entryRuleWorkflowDataDictionaryElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowDataDictionaryElementRule()); }
+	iv_ruleWorkflowDataDictionaryElement=ruleWorkflowDataDictionaryElement
+	{ $current=$iv_ruleWorkflowDataDictionaryElement.current; }
+	EOF;
+
+// Rule WorkflowDataDictionaryElement
+ruleWorkflowDataDictionaryElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='data'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getDataKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDataDictionaryElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowDataDictionaryElementAccess().getLeftCurlyBracketKeyword_2());
+		}
 		otherlv_3='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getWorkflowDataDictionaryElementAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;

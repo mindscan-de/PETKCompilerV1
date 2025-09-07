@@ -170,7 +170,7 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DATA_DICTIONARY_DEFINITION = 3;
 
   /**
-   * The feature id for the '<em><b>Data Dictionary Elements</b></em>' attribute list.
+   * The feature id for the '<em><b>Data Dictionary Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -867,15 +867,15 @@ public interface AiDslPackage extends EPackage
   EClass getWorkflowDataDictionaryDefinition();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements <em>Data Dictionary Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements <em>Data Dictionary Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Data Dictionary Elements</em>'.
+   * @return the meta object for the containment reference list '<em>Data Dictionary Elements</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements()
    * @see #getWorkflowDataDictionaryDefinition()
    * @generated
    */
-  EAttribute getWorkflowDataDictionaryDefinition_DataDictionaryElements();
+  EReference getWorkflowDataDictionaryDefinition_DataDictionaryElements();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement <em>Workflow Data Dictionary Element</em>}'.
@@ -1482,12 +1482,12 @@ public interface AiDslPackage extends EPackage
     EClass WORKFLOW_DATA_DICTIONARY_DEFINITION = eINSTANCE.getWorkflowDataDictionaryDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Data Dictionary Elements</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Data Dictionary Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS = eINSTANCE.getWorkflowDataDictionaryDefinition_DataDictionaryElements();
+    EReference WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS = eINSTANCE.getWorkflowDataDictionaryDefinition_DataDictionaryElements();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl <em>Workflow Data Dictionary Element</em>}' class.

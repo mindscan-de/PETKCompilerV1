@@ -68,7 +68,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_2(), "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_2");
+			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryElement__NameAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1(), "rule__VMNodeDefinition__NodetypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNameAssignment_2(), "rule__VMNodeDefinition__NameAssignment_2");

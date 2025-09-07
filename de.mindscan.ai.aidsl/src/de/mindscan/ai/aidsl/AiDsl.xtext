@@ -34,8 +34,8 @@ ImportDeclaration:
 // ---------------------------------------
 
 WorkflowDataDictionaryDefinition:
-	'datadictionary' '{'
-		(dataDictionaryElements+=ID)*
+	{WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+		(dataDictionaryElements+=WorkflowDataDictionaryElement)*
 	'}'
 ;
 

@@ -150,11 +150,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class WorkflowDataDictionaryDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDatadictionaryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cDataDictionaryElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDataDictionaryElementsIDTerminalRuleCall_2_0 = (RuleCall)cDataDictionaryElementsAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Action cWorkflowDataDictionaryDefinitionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDatadictionaryKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDataDictionaryElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0 = (RuleCall)cDataDictionaryElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//// ---------------------------------------
 		//// Workflow Data Defitinion /
@@ -163,31 +164,34 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		////
 		//// ---------------------------------------
 		//WorkflowDataDictionaryDefinition:
-		//    'datadictionary' '{'
-		//        (dataDictionaryElements+=ID)*
+		//    {WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+		//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'datadictionary' '{'
-		//    (dataDictionaryElements+=ID)*
+		//{WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+		//    (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
+		//{WorkflowDataDictionaryDefinition}
+		public Action getWorkflowDataDictionaryDefinitionAction_0() { return cWorkflowDataDictionaryDefinitionAction_0; }
+		
 		//'datadictionary'
-		public Keyword getDatadictionaryKeyword_0() { return cDatadictionaryKeyword_0; }
+		public Keyword getDatadictionaryKeyword_1() { return cDatadictionaryKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(dataDictionaryElements+=ID)*
-		public Assignment getDataDictionaryElementsAssignment_2() { return cDataDictionaryElementsAssignment_2; }
+		//(dataDictionaryElements+=WorkflowDataDictionaryElement)*
+		public Assignment getDataDictionaryElementsAssignment_3() { return cDataDictionaryElementsAssignment_3; }
 		
-		//ID
-		public RuleCall getDataDictionaryElementsIDTerminalRuleCall_2_0() { return cDataDictionaryElementsIDTerminalRuleCall_2_0; }
+		//WorkflowDataDictionaryElement
+		public RuleCall getDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0() { return cDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class WorkflowDataDictionaryElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryElement");
@@ -1107,8 +1111,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	////
 	//// ---------------------------------------
 	//WorkflowDataDictionaryDefinition:
-	//    'datadictionary' '{'
-	//        (dataDictionaryElements+=ID)*
+	//    {WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+	//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 	//    '}'
 	//;
 	public WorkflowDataDictionaryDefinitionElements getWorkflowDataDictionaryDefinitionAccess() {

@@ -390,7 +390,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDataDictionaryDefinition returns WorkflowDataDictionaryDefinition
 	 *
 	 * Constraint:
-	 *     dataDictionaryElements+=ID+
+	 *     dataDictionaryElements+=WorkflowDataDictionaryElement*
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryDefinition(ISerializationContext context, WorkflowDataDictionaryDefinition semanticObject) {

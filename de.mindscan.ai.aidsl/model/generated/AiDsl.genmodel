@@ -18,7 +18,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryDefinition/dataDictionaryElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryDefinition/dataDictionaryElements"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/name"/>

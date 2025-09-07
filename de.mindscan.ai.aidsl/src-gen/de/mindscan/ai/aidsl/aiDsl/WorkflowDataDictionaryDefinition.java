@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface WorkflowDataDictionaryDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Data Dictionary Elements</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Data Dictionary Elements</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Data Dictionary Elements</em>' attribute list.
+   * @return the value of the '<em>Data Dictionary Elements</em>' containment reference list.
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition_DataDictionaryElements()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getDataDictionaryElements();
+  EList<WorkflowDataDictionaryElement> getDataDictionaryElements();
 
 } // WorkflowDataDictionaryDefinition
