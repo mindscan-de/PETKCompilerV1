@@ -404,7 +404,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDataDictionaryElement returns WorkflowDataDictionaryElement
 	 *
 	 * Constraint:
-	 *     (name=ID (fields+=ID value=STRING)*)
+	 *     (name=ID extends=[WorkflowDataDictionaryElement|ID]? (key+=ID value=STRING)*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryElement(ISerializationContext context, WorkflowDataDictionaryElement semanticObject) {

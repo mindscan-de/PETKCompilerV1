@@ -22,7 +22,8 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryElement/extends"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/value"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeDefinition">

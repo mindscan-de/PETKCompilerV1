@@ -365,16 +365,35 @@ ruleWorkflowDataDictionaryElement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='{'
+		(
+			otherlv_2='extends'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getWorkflowDataDictionaryElementAccess().getExtendsKeyword_2_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWorkflowDataDictionaryElementRule());
+						}
+					}
+					otherlv_3=RULE_ID
+					{
+						newLeafNode(otherlv_3, grammarAccess.getWorkflowDataDictionaryElementAccess().getExtendsWorkflowDataDictionaryElementCrossReference_2_1_0());
+					}
+				)
+			)
+		)?
+		otherlv_4='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getWorkflowDataDictionaryElementAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowDataDictionaryElementAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				(
-					lv_fields_3_0=RULE_ID
+					lv_key_5_0=RULE_ID
 					{
-						newLeafNode(lv_fields_3_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getFieldsIDTerminalRuleCall_3_0_0());
+						newLeafNode(lv_key_5_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getKeyIDTerminalRuleCall_4_0_0());
 					}
 					{
 						if ($current==null) {
@@ -382,21 +401,21 @@ ruleWorkflowDataDictionaryElement returns [EObject current=null]
 						}
 						addWithLastConsumed(
 							$current,
-							"fields",
-							lv_fields_3_0,
+							"key",
+							lv_key_5_0,
 							"de.mindscan.ai.aidsl.AiDsl.ID");
 					}
 				)
 			)
-			otherlv_4=':'
+			otherlv_6=':'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getWorkflowDataDictionaryElementAccess().getColonKeyword_3_1());
+				newLeafNode(otherlv_6, grammarAccess.getWorkflowDataDictionaryElementAccess().getColonKeyword_4_1());
 			}
 			(
 				(
-					lv_value_5_0=RULE_STRING
+					lv_value_7_0=RULE_STRING
 					{
-						newLeafNode(lv_value_5_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getValueSTRINGTerminalRuleCall_3_2_0());
+						newLeafNode(lv_value_7_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getValueSTRINGTerminalRuleCall_4_2_0());
 					}
 					{
 						if ($current==null) {
@@ -405,15 +424,15 @@ ruleWorkflowDataDictionaryElement returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_5_0,
+							lv_value_7_0,
 							"de.mindscan.ai.aidsl.AiDsl.STRING");
 					}
 				)
 			)
 		)*
-		otherlv_6='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getWorkflowDataDictionaryElementAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getWorkflowDataDictionaryElementAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;

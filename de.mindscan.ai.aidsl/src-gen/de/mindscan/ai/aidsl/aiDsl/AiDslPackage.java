@@ -207,13 +207,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' attribute list.
+   * The feature id for the '<em><b>Extends</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS = 1;
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT__EXTENDS = 1;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY = 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -222,7 +231,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE = 2;
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE = 3;
 
   /**
    * The number of structural features of the '<em>Workflow Data Dictionary Element</em>' class.
@@ -231,7 +240,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT_FEATURE_COUNT = 3;
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -917,15 +926,26 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowDataDictionaryElement_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getFields <em>Fields</em>}'.
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends <em>Extends</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Fields</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getFields()
+   * @return the meta object for the reference '<em>Extends</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends()
    * @see #getWorkflowDataDictionaryElement()
    * @generated
    */
-  EAttribute getWorkflowDataDictionaryElement_Fields();
+  EReference getWorkflowDataDictionaryElement_Extends();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Key</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKey()
+   * @see #getWorkflowDataDictionaryElement()
+   * @generated
+   */
+  EAttribute getWorkflowDataDictionaryElement_Key();
 
   /**
    * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue <em>Value</em>}'.
@@ -1548,12 +1568,20 @@ public interface AiDslPackage extends EPackage
     EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = eINSTANCE.getWorkflowDataDictionaryElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Extends</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS = eINSTANCE.getWorkflowDataDictionaryElement_Fields();
+    EReference WORKFLOW_DATA_DICTIONARY_ELEMENT__EXTENDS = eINSTANCE.getWorkflowDataDictionaryElement_Extends();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY = eINSTANCE.getWorkflowDataDictionaryElement_Key();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

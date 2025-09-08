@@ -40,10 +40,11 @@ WorkflowDataDictionaryDefinition:
 ;
 
 WorkflowDataDictionaryElement:
-	"data" name=ID
+	"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		// can be a map or a list or a direct value 
 		'{' 
-			(fields+=ID ':' value=STRING)*
+			// basically key value stuff.
+			(key+=ID ':' value=STRING)*
 		'}'
 ;
 

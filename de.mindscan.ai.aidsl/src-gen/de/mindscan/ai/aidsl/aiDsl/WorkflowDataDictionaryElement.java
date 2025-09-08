@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends <em>Extends</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKey <em>Key</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -50,16 +51,38 @@ public interface WorkflowDataDictionaryElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Fields</b></em>' attribute list.
+   * Returns the value of the '<em><b>Extends</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Extends</em>' reference.
+   * @see #setExtends(WorkflowDataDictionaryElement)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_Extends()
+   * @model
+   * @generated
+   */
+  WorkflowDataDictionaryElement getExtends();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends <em>Extends</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Extends</em>' reference.
+   * @see #getExtends()
+   * @generated
+   */
+  void setExtends(WorkflowDataDictionaryElement value);
+
+  /**
+   * Returns the value of the '<em><b>Key</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' attribute list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_Fields()
+   * @return the value of the '<em>Key</em>' attribute list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_Key()
    * @model unique="false"
    * @generated
    */
-  EList<String> getFields();
+  EList<String> getKey();
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

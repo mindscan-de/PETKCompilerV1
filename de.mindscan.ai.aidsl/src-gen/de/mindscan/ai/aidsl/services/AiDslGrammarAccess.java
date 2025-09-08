@@ -199,28 +199,35 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cDataKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cFieldsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cFieldsIDTerminalRuleCall_3_0_0 = (RuleCall)cFieldsAssignment_3_0.eContents().get(0);
-		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cValueAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cValueAssignment_3_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExtendsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0 = (CrossReference)cExtendsAssignment_2_1.eContents().get(0);
+		private final RuleCall cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1 = (RuleCall)cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cKeyAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_4_0_0 = (RuleCall)cKeyAssignment_4_0.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//WorkflowDataDictionaryElement:
-		//    "data" name=ID
+		//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		//        // can be a map or a list or a direct value
 		//        '{'
-		//            (fields+=ID ':' value=STRING)*
+		//            // basically key value stuff.
+		//            (key+=ID ':' value=STRING)*
 		//        '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"data" name=ID
+		//"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		//    // can be a map or a list or a direct value
 		//    '{'
-		//        (fields+=ID ':' value=STRING)*
+		//        // basically key value stuff.
+		//        (key+=ID ':' value=STRING)*
 		//    '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -233,30 +240,46 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//// can be a map or a list or a direct value
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//('extends' extends=[WorkflowDataDictionaryElement])?
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//(fields+=ID ':' value=STRING)*
-		public Group getGroup_3() { return cGroup_3; }
+		//'extends'
+		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 		
-		//fields+=ID
-		public Assignment getFieldsAssignment_3_0() { return cFieldsAssignment_3_0; }
+		//extends=[WorkflowDataDictionaryElement]
+		public Assignment getExtendsAssignment_2_1() { return cExtendsAssignment_2_1; }
+		
+		//[WorkflowDataDictionaryElement]
+		public CrossReference getExtendsWorkflowDataDictionaryElementCrossReference_2_1_0() { return cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0; }
 		
 		//ID
-		public RuleCall getFieldsIDTerminalRuleCall_3_0_0() { return cFieldsIDTerminalRuleCall_3_0_0; }
+		public RuleCall getExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1() { return cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1; }
+		
+		//// can be a map or a list or a direct value
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//// basically key value stuff.
+		//(key+=ID ':' value=STRING)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//key+=ID
+		public Assignment getKeyAssignment_4_0() { return cKeyAssignment_4_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_4_0_0() { return cKeyIDTerminalRuleCall_4_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 		
 		//value=STRING
-		public Assignment getValueAssignment_3_2() { return cValueAssignment_3_2; }
+		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_3_2_0() { return cValueSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_4_2_0() { return cValueSTRINGTerminalRuleCall_4_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -1152,10 +1175,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WorkflowDataDictionaryElement:
-	//    "data" name=ID
+	//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 	//        // can be a map or a list or a direct value
 	//        '{'
-	//            (fields+=ID ':' value=STRING)*
+	//            // basically key value stuff.
+	//            (key+=ID ':' value=STRING)*
 	//        '}'
 	//;
 	public WorkflowDataDictionaryElementElements getWorkflowDataDictionaryElementAccess() {
