@@ -369,9 +369,51 @@ ruleWorkflowDataDictionaryElement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWorkflowDataDictionaryElementAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_3='}'
+		(
+			(
+				(
+					lv_fields_3_0=RULE_ID
+					{
+						newLeafNode(lv_fields_3_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getFieldsIDTerminalRuleCall_3_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWorkflowDataDictionaryElementRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"fields",
+							lv_fields_3_0,
+							"de.mindscan.ai.aidsl.AiDsl.ID");
+					}
+				)
+			)
+			otherlv_4=':'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getWorkflowDataDictionaryElementAccess().getColonKeyword_3_1());
+			}
+			(
+				(
+					lv_value_5_0=RULE_STRING
+					{
+						newLeafNode(lv_value_5_0, grammarAccess.getWorkflowDataDictionaryElementAccess().getValueSTRINGTerminalRuleCall_3_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWorkflowDataDictionaryElementRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_5_0,
+							"de.mindscan.ai.aidsl.AiDsl.STRING");
+					}
+				)
+			)
+		)*
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowDataDictionaryElementAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getWorkflowDataDictionaryElementAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

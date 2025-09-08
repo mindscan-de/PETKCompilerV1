@@ -42,6 +42,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup(), "rule__WorkflowDataDictionaryElement__Group__0");
+			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup_3(), "rule__WorkflowDataDictionaryElement__Group_3__0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getGroup(), "rule__VMNodeDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getGroup(), "rule__VMNodeOpCodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeOutElementsAccess().getGroup(), "rule__VMNodeOutElements__Group__0");
@@ -70,6 +71,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryElement__NameAssignment_1");
+			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getFieldsAssignment_3_0(), "rule__WorkflowDataDictionaryElement__FieldsAssignment_3_0");
+			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getValueAssignment_3_2(), "rule__WorkflowDataDictionaryElement__ValueAssignment_3_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1(), "rule__VMNodeDefinition__NodetypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNameAssignment_2(), "rule__VMNodeDefinition__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getElementsAssignment_4(), "rule__VMNodeDefinition__ElementsAssignment_4");

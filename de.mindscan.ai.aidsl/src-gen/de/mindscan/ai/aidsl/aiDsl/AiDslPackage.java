@@ -207,13 +207,31 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Fields</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS = 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE = 2;
+
+  /**
    * The number of structural features of the '<em>Workflow Data Dictionary Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT_FEATURE_COUNT = 1;
+  int WORKFLOW_DATA_DICTIONARY_ELEMENT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -899,6 +917,28 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowDataDictionaryElement_Name();
 
   /**
+   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getFields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Fields</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getFields()
+   * @see #getWorkflowDataDictionaryElement()
+   * @generated
+   */
+  EAttribute getWorkflowDataDictionaryElement_Fields();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue()
+   * @see #getWorkflowDataDictionaryElement()
+   * @generated
+   */
+  EAttribute getWorkflowDataDictionaryElement_Value();
+
+  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition <em>VM Node Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1506,6 +1546,22 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = eINSTANCE.getWorkflowDataDictionaryElement_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Fields</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS = eINSTANCE.getWorkflowDataDictionaryElement_Fields();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE = eINSTANCE.getWorkflowDataDictionaryElement_Value();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.

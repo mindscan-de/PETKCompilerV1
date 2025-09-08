@@ -6,12 +6,18 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +28,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +55,36 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFields() <em>Fields</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFields()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> fields;
+
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +138,56 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
    * @generated
    */
   @Override
+  public EList<String> getFields()
+  {
+    if (fields == null)
+    {
+      fields = new EDataTypeEList<String>(String.class, this, AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS);
+    }
+    return fields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
         return getName();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS:
+        return getFields();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +197,7 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +205,13 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
     {
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
         setName((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS:
+        getFields().clear();
+        getFields().addAll((Collection<? extends String>)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +230,12 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS:
+        getFields().clear();
+        return;
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +252,10 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
     {
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__FIELDS:
+        return fields != null && !fields.isEmpty();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -173,6 +273,10 @@ public class WorkflowDataDictionaryElementImpl extends MinimalEObjectImpl.Contai
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", fields: ");
+    result.append(fields);
+    result.append(", value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

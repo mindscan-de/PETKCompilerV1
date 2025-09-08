@@ -404,17 +404,11 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDataDictionaryElement returns WorkflowDataDictionaryElement
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID (fields+=ID value=STRING)*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryElement(ISerializationContext context, WorkflowDataDictionaryElement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
