@@ -8,6 +8,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
@@ -45,7 +46,7 @@ class AiDslGenerator extends AbstractGenerator {
 		// TODO: implement this
 		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
 		// TODO: implement this
-		val datadictionaryMap = getCompiledDataDictionaryMap(workflowDefinition)
+		val datadictionaryMap = resource.getCompiledDataDictionaryMap(workflowDefinition)
 		
 
 		// build workflow definition
@@ -75,10 +76,19 @@ class AiDslGenerator extends AbstractGenerator {
 		// then build the data structure and write it to json file.
 	}
 	
-	protected def HashMap<String, String> getCompiledDataDictionaryMap(WorkflowDefinition workflowDefinition) {
+	protected def HashMap<String, Serializable> getCompiledDataDictionaryMap(Resource resource, WorkflowDefinition workflowDefinition) {
+		val result = newLinkedHashMap()
+		
+		val alldatadictionary = resource.allContents.toIterable.filter(WorkflowDataDictionaryDefinition)
+		
+		for(datadictionary:alldatadictionary) {
+			for(datadictionaryelement : datadictionary.dataDictionaryElements) {
+				result.put(datadictionaryelement.name, newHashMap())				
+			}
+		}
 		
 		// compile json_data_dictionary
-		return newHashMap()
+		return result
 	}
 	
 	protected def HashMap<String, Serializable> getCompiledEdgeDataMap(WorkflowDefinition workflowDefinition) {
