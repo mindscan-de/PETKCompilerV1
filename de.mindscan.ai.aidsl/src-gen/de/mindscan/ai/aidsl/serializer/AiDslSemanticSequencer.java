@@ -142,7 +142,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     DatadictionaryKeyValuePair returns DatadictionaryKeyValuePair
 	 *
 	 * Constraint:
-	 *     (key=ID (value=STRING | value=BOOLEAN | value=NONE))
+	 *     (key=ID (value=DataDictionaryBooleanValue | value=DataDictionaryStringValue | value=DataDictionaryNullValue))
 	 * </pre>
 	 */
 	protected void sequence_DatadictionaryKeyValuePair(ISerializationContext context, DatadictionaryKeyValuePair semanticObject) {

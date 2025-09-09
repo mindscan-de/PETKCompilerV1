@@ -47,12 +47,28 @@ WorkflowDataDictionaryElement:
 		'}'
 ;
 
-// TODO: we want itegers, maps, lists and strings
+// TODO: we want alsoo integers, maps, lists
 
 DatadictionaryKeyValuePair:
 	// basically key value stuff.
-	key=ID ':' value=(STRING|BOOLEAN|NONE)
+	key=ID ':' value=(
+		DataDictionaryBooleanValue|
+		DataDictionaryStringValue|
+		DataDictionaryNullValue
+	)
 ;
+
+DataDictionaryBooleanValue:
+	'true'|'false'
+;
+DataDictionaryStringValue:
+	STRING
+;
+DataDictionaryNullValue:
+	'null'
+;
+
+
 
 // ---------------------------------------
 // VMNode stuff
@@ -163,9 +179,6 @@ QualifiedName:
 QualifiedNameWithWildcard:
 	QualifiedName '.*'?
 ;
-
-terminal BOOLEAN: 'true'|'false';
-terminal NONE: 'null';
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal INT returns ecore::EInt: ('0'..'9')+;

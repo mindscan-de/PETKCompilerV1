@@ -270,19 +270,27 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
-		private final RuleCall cValueBOOLEANTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
-		private final RuleCall cValueNONETerminalRuleCall_2_0_2 = (RuleCall)cValueAlternatives_2_0.eContents().get(2);
+		private final RuleCall cValueDataDictionaryBooleanValueParserRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueDataDictionaryStringValueParserRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		private final RuleCall cValueDataDictionaryNullValueParserRuleCall_2_0_2 = (RuleCall)cValueAlternatives_2_0.eContents().get(2);
 		
-		//// TODO: we want itegers, maps, lists and strings
+		//// TODO: we want alsoo integers, maps, lists
 		//DatadictionaryKeyValuePair:
 		//    // basically key value stuff.
-		//    key=ID ':' value=(STRING|BOOLEAN|NONE)
+		//    key=ID ':' value=(
+		//        DataDictionaryBooleanValue|
+		//        DataDictionaryStringValue|
+		//        DataDictionaryNullValue
+		//    )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// basically key value stuff.
-		//key=ID ':' value=(STRING|BOOLEAN|NONE)
+		//key=ID ':' value=(
+		//    DataDictionaryBooleanValue|
+		//    DataDictionaryStringValue|
+		//    DataDictionaryNullValue
+		//)
 		public Group getGroup() { return cGroup; }
 		
 		//// basically key value stuff.
@@ -295,20 +303,72 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//value=(STRING|BOOLEAN|NONE)
+		//value=(
+		//       DataDictionaryBooleanValue|
+		//       DataDictionaryStringValue|
+		//       DataDictionaryNullValue
+		//   )
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//(STRING|BOOLEAN|NONE)
+		//(
+		//        DataDictionaryBooleanValue|
+		//        DataDictionaryStringValue|
+		//        DataDictionaryNullValue
+		//    )
 		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
 		
+		//DataDictionaryBooleanValue
+		public RuleCall getValueDataDictionaryBooleanValueParserRuleCall_2_0_0() { return cValueDataDictionaryBooleanValueParserRuleCall_2_0_0; }
+		
+		//DataDictionaryStringValue
+		public RuleCall getValueDataDictionaryStringValueParserRuleCall_2_0_1() { return cValueDataDictionaryStringValueParserRuleCall_2_0_1; }
+		
+		//DataDictionaryNullValue
+		public RuleCall getValueDataDictionaryNullValueParserRuleCall_2_0_2() { return cValueDataDictionaryNullValueParserRuleCall_2_0_2; }
+	}
+	public class DataDictionaryBooleanValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryBooleanValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//DataDictionaryBooleanValue:
+		//    'true'|'false'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'true'|'false'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'true'
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		
+		//'false'
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
+	public class DataDictionaryStringValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryStringValue");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//DataDictionaryStringValue:
+		//    STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+	}
+	public class DataDictionaryNullValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryNullValue");
+		private final Keyword cNullKeyword = (Keyword)rule.eContents().get(1);
 		
-		//BOOLEAN
-		public RuleCall getValueBOOLEANTerminalRuleCall_2_0_1() { return cValueBOOLEANTerminalRuleCall_2_0_1; }
+		//DataDictionaryNullValue:
+		//    'null'
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//NONE
-		public RuleCall getValueNONETerminalRuleCall_2_0_2() { return cValueNONETerminalRuleCall_2_0_2; }
+		//'null'
+		public Keyword getNullKeyword() { return cNullKeyword; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -1061,6 +1121,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
 	private final WorkflowDataDictionaryElementElements pWorkflowDataDictionaryElement;
 	private final DatadictionaryKeyValuePairElements pDatadictionaryKeyValuePair;
+	private final DataDictionaryBooleanValueElements pDataDictionaryBooleanValue;
+	private final DataDictionaryStringValueElements pDataDictionaryStringValue;
+	private final DataDictionaryNullValueElements pDataDictionaryNullValue;
 	private final VMNodeDefinitionElements pVMNodeDefinition;
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
@@ -1078,8 +1141,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDefinitionApplyLLMTaskStatementElements pWorkflowDefinitionApplyLLMTaskStatement;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
-	private final TerminalRule tBOOLEAN;
-	private final TerminalRule tNONE;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
@@ -1099,6 +1160,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
 		this.pWorkflowDataDictionaryElement = new WorkflowDataDictionaryElementElements();
 		this.pDatadictionaryKeyValuePair = new DatadictionaryKeyValuePairElements();
+		this.pDataDictionaryBooleanValue = new DataDictionaryBooleanValueElements();
+		this.pDataDictionaryStringValue = new DataDictionaryStringValueElements();
+		this.pDataDictionaryNullValue = new DataDictionaryNullValueElements();
 		this.pVMNodeDefinition = new VMNodeDefinitionElements();
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
@@ -1116,8 +1180,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
-		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.BOOLEAN");
-		this.tNONE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.NONE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.STRING");
@@ -1224,10 +1286,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getWorkflowDataDictionaryElementAccess().getRule();
 	}
 	
-	//// TODO: we want itegers, maps, lists and strings
+	//// TODO: we want alsoo integers, maps, lists
 	//DatadictionaryKeyValuePair:
 	//    // basically key value stuff.
-	//    key=ID ':' value=(STRING|BOOLEAN|NONE)
+	//    key=ID ':' value=(
+	//        DataDictionaryBooleanValue|
+	//        DataDictionaryStringValue|
+	//        DataDictionaryNullValue
+	//    )
 	//;
 	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
 		return pDatadictionaryKeyValuePair;
@@ -1235,6 +1301,39 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getDatadictionaryKeyValuePairRule() {
 		return getDatadictionaryKeyValuePairAccess().getRule();
+	}
+	
+	//DataDictionaryBooleanValue:
+	//    'true'|'false'
+	//;
+	public DataDictionaryBooleanValueElements getDataDictionaryBooleanValueAccess() {
+		return pDataDictionaryBooleanValue;
+	}
+	
+	public ParserRule getDataDictionaryBooleanValueRule() {
+		return getDataDictionaryBooleanValueAccess().getRule();
+	}
+	
+	//DataDictionaryStringValue:
+	//    STRING
+	//;
+	public DataDictionaryStringValueElements getDataDictionaryStringValueAccess() {
+		return pDataDictionaryStringValue;
+	}
+	
+	public ParserRule getDataDictionaryStringValueRule() {
+		return getDataDictionaryStringValueAccess().getRule();
+	}
+	
+	//DataDictionaryNullValue:
+	//    'null'
+	//;
+	public DataDictionaryNullValueElements getDataDictionaryNullValueAccess() {
+		return pDataDictionaryNullValue;
+	}
+	
+	public ParserRule getDataDictionaryNullValueRule() {
+		return getDataDictionaryNullValueAccess().getRule();
 	}
 	
 	//// ---------------------------------------
@@ -1456,16 +1555,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getQualifiedNameWithWildcardRule() {
 		return getQualifiedNameWithWildcardAccess().getRule();
-	}
-	
-	//terminal BOOLEAN: 'true'|'false';
-	public TerminalRule getBOOLEANRule() {
-		return tBOOLEAN;
-	}
-	
-	//terminal NONE: 'null';
-	public TerminalRule getNONERule() {
-		return tNONE;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

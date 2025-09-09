@@ -199,6 +199,81 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleDataDictionaryBooleanValue
+entryRuleDataDictionaryBooleanValue
+:
+{ before(grammarAccess.getDataDictionaryBooleanValueRule()); }
+	 ruleDataDictionaryBooleanValue
+{ after(grammarAccess.getDataDictionaryBooleanValueRule()); } 
+	 EOF 
+;
+
+// Rule DataDictionaryBooleanValue
+ruleDataDictionaryBooleanValue 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getAlternatives()); }
+		(rule__DataDictionaryBooleanValue__Alternatives)
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleDataDictionaryStringValue
+entryRuleDataDictionaryStringValue
+:
+{ before(grammarAccess.getDataDictionaryStringValueRule()); }
+	 ruleDataDictionaryStringValue
+{ after(grammarAccess.getDataDictionaryStringValueRule()); } 
+	 EOF 
+;
+
+// Rule DataDictionaryStringValue
+ruleDataDictionaryStringValue 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getDataDictionaryStringValueAccess().getSTRINGTerminalRuleCall()); }
+		RULE_STRING
+		{ after(grammarAccess.getDataDictionaryStringValueAccess().getSTRINGTerminalRuleCall()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleDataDictionaryNullValue
+entryRuleDataDictionaryNullValue
+:
+{ before(grammarAccess.getDataDictionaryNullValueRule()); }
+	 ruleDataDictionaryNullValue
+{ after(grammarAccess.getDataDictionaryNullValueRule()); } 
+	 EOF 
+;
+
+// Rule DataDictionaryNullValue
+ruleDataDictionaryNullValue 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getDataDictionaryNullValueAccess().getNullKeyword()); }
+		'null'
+		{ after(grammarAccess.getDataDictionaryNullValueAccess().getNullKeyword()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleVMNodeDefinition
 entryRuleVMNodeDefinition
 :
@@ -671,21 +746,42 @@ rule__DatadictionaryKeyValuePair__ValueAlternatives_2_0
 	}
 :
 	(
-		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryBooleanValueParserRuleCall_2_0_0()); }
+		ruleDataDictionaryBooleanValue
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryBooleanValueParserRuleCall_2_0_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueBOOLEANTerminalRuleCall_2_0_1()); }
-		RULE_BOOLEAN
-		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueBOOLEANTerminalRuleCall_2_0_1()); }
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryStringValueParserRuleCall_2_0_1()); }
+		ruleDataDictionaryStringValue
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryStringValueParserRuleCall_2_0_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueNONETerminalRuleCall_2_0_2()); }
-		RULE_NONE
-		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueNONETerminalRuleCall_2_0_2()); }
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryNullValueParserRuleCall_2_0_2()); }
+		ruleDataDictionaryNullValue
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueDataDictionaryNullValueParserRuleCall_2_0_2()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryBooleanValue__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getTrueKeyword_0()); }
+		'true'
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getTrueKeyword_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1()); }
+		'false'
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1()); }
 	)
 ;
 finally {
@@ -4158,10 +4254,6 @@ rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0
 finally {
 	restoreStackSize(stackSize);
 }
-
-RULE_BOOLEAN : ('true'|'false');
-
-RULE_NONE : 'null';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
