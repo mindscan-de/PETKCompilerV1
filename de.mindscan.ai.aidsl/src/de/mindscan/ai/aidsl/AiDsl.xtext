@@ -47,6 +47,8 @@ WorkflowDataDictionaryElement:
 		'}'
 ;
 
+// TODO: we want itegers, Null, booleans, maps, lists and strings
+
 DatadictionaryKeyValuePair:
 	// basically key value stuff.
 	key=ID ':' value=STRING
