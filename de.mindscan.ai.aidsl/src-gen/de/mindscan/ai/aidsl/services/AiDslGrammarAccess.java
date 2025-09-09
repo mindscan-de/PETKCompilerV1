@@ -269,16 +269,20 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
+		private final RuleCall cValueBOOLEANTerminalRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
+		private final RuleCall cValueNONETerminalRuleCall_2_0_2 = (RuleCall)cValueAlternatives_2_0.eContents().get(2);
 		
+		//// TODO: we want itegers, maps, lists and strings
 		//DatadictionaryKeyValuePair:
 		//    // basically key value stuff.
-		//    key=ID ':' value=STRING
+		//    key=ID ':' value=(STRING|BOOLEAN|NONE)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// basically key value stuff.
-		//key=ID ':' value=STRING
+		//key=ID ':' value=(STRING|BOOLEAN|NONE)
 		public Group getGroup() { return cGroup; }
 		
 		//// basically key value stuff.
@@ -291,11 +295,20 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//value=STRING
+		//value=(STRING|BOOLEAN|NONE)
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
+		//(STRING|BOOLEAN|NONE)
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+		
+		//BOOLEAN
+		public RuleCall getValueBOOLEANTerminalRuleCall_2_0_1() { return cValueBOOLEANTerminalRuleCall_2_0_1; }
+		
+		//NONE
+		public RuleCall getValueNONETerminalRuleCall_2_0_2() { return cValueNONETerminalRuleCall_2_0_2; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -1065,6 +1078,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDefinitionApplyLLMTaskStatementElements pWorkflowDefinitionApplyLLMTaskStatement;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
+	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tNONE;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
@@ -1101,6 +1116,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.BOOLEAN");
+		this.tNONE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.NONE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.STRING");
@@ -1207,9 +1224,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getWorkflowDataDictionaryElementAccess().getRule();
 	}
 	
+	//// TODO: we want itegers, maps, lists and strings
 	//DatadictionaryKeyValuePair:
 	//    // basically key value stuff.
-	//    key=ID ':' value=STRING
+	//    key=ID ':' value=(STRING|BOOLEAN|NONE)
 	//;
 	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
 		return pDatadictionaryKeyValuePair;
@@ -1438,6 +1456,16 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getQualifiedNameWithWildcardRule() {
 		return getQualifiedNameWithWildcardAccess().getRule();
+	}
+	
+	//terminal BOOLEAN: 'true'|'false';
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	}
+	
+	//terminal NONE: 'null';
+	public TerminalRule getNONERule() {
+		return tNONE;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

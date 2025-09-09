@@ -32,6 +32,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AiDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_2_0(), "rule__Model__DefinitionsAlternatives_2_0");
+			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueAlternatives_2_0(), "rule__DatadictionaryKeyValuePair__ValueAlternatives_2_0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAlternatives_1_0(), "rule__VMNodeDefinition__NodetypeAlternatives_1_0");
 			builder.put(grammarAccess.getVMNodeEleemntsAccess().getAlternatives(), "rule__VMNodeEleemnts__Alternatives");
 			builder.put(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsAlternatives_3_0(), "rule__VMNodeFieldElements__FieldELementsAlternatives_3_0");

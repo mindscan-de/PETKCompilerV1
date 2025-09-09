@@ -142,20 +142,11 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     DatadictionaryKeyValuePair returns DatadictionaryKeyValuePair
 	 *
 	 * Constraint:
-	 *     (key=ID value=STRING)
+	 *     (key=ID (value=STRING | value=BOOLEAN | value=NONE))
 	 * </pre>
 	 */
 	protected void sequence_DatadictionaryKeyValuePair(ISerializationContext context, DatadictionaryKeyValuePair semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__KEY));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDatadictionaryKeyValuePairAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

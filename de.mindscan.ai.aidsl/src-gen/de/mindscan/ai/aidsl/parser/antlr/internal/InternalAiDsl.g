@@ -454,20 +454,52 @@ ruleDatadictionaryKeyValuePair returns [EObject current=null]
 		}
 		(
 			(
-				lv_value_2_0=RULE_STRING
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDatadictionaryKeyValuePairRule());
+				(
+					lv_value_2_1=RULE_STRING
+					{
+						newLeafNode(lv_value_2_1, grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.STRING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDatadictionaryKeyValuePairRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_2_1,
+							"de.mindscan.ai.aidsl.AiDsl.STRING");
+					}
+					    |
+					lv_value_2_2=RULE_BOOLEAN
+					{
+						newLeafNode(lv_value_2_2, grammarAccess.getDatadictionaryKeyValuePairAccess().getValueBOOLEANTerminalRuleCall_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDatadictionaryKeyValuePairRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_2_2,
+							"de.mindscan.ai.aidsl.AiDsl.BOOLEAN");
+					}
+					    |
+					lv_value_2_3=RULE_NONE
+					{
+						newLeafNode(lv_value_2_3, grammarAccess.getDatadictionaryKeyValuePairAccess().getValueNONETerminalRuleCall_2_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDatadictionaryKeyValuePairRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_2_3,
+							"de.mindscan.ai.aidsl.AiDsl.NONE");
+					}
+				)
 			)
 		)
 	)
@@ -1634,6 +1666,10 @@ ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrD
 		)?
 	)
 ;
+
+RULE_BOOLEAN : ('true'|'false');
+
+RULE_NONE : 'null';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -665,6 +665,33 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__DatadictionaryKeyValuePair__ValueAlternatives_2_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueBOOLEANTerminalRuleCall_2_0_1()); }
+		RULE_BOOLEAN
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueBOOLEANTerminalRuleCall_2_0_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueNONETerminalRuleCall_2_0_2()); }
+		RULE_NONE
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueNONETerminalRuleCall_2_0_2()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__VMNodeDefinition__NodetypeAlternatives_1_0
 	@init {
 		int stackSize = keepStackSize();
@@ -3642,9 +3669,9 @@ rule__DatadictionaryKeyValuePair__ValueAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueAlternatives_2_0()); }
+		(rule__DatadictionaryKeyValuePair__ValueAlternatives_2_0)
+		{ after(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueAlternatives_2_0()); }
 	)
 ;
 finally {
@@ -4131,6 +4158,10 @@ rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0
 finally {
 	restoreStackSize(stackSize);
 }
+
+RULE_BOOLEAN : ('true'|'false');
+
+RULE_NONE : 'null';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
