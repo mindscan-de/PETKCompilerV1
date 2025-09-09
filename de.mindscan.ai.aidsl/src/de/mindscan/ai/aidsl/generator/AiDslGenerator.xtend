@@ -83,13 +83,22 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		for(datadictionary:alldatadictionary) {
 			for(datadictionaryelement : datadictionary.dataDictionaryElements) {
-				result.put(datadictionaryelement.name, newHashMap())				
+				val map=newHashMap()
+				
+				for(keyvaluepair:datadictionaryelement.keyValuePairs) {
+					map.put(keyvaluepair.key, keyvaluepair.value)
+				}
+				
+				result.put(datadictionaryelement.name, map)				
 			}
 		}
 		
 		// compile json_data_dictionary
 		return result
 	}
+	
+	
+	
 	
 	protected def HashMap<String, Serializable> getCompiledEdgeDataMap(WorkflowDefinition workflowDefinition) {
 		// compile edgedata

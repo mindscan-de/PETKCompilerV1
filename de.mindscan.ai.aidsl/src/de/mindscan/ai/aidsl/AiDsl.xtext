@@ -43,12 +43,14 @@ WorkflowDataDictionaryElement:
 	"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		// can be a map or a list or a direct value 
 		'{' 
-			// basically key value stuff.
-			(key+=ID ':' value=STRING)*
+			(keyValuePairs+=DatadictionaryKeyValuePair)*
 		'}'
 ;
 
-
+DatadictionaryKeyValuePair:
+	// basically key value stuff.
+	key=ID ':' value=STRING
+;
 
 // ---------------------------------------
 // VMNode stuff

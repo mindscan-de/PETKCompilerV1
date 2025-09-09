@@ -108,6 +108,13 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR:
+      {
+        DatadictionaryKeyValuePair datadictionaryKeyValuePair = (DatadictionaryKeyValuePair)theEObject;
+        T result = caseDatadictionaryKeyValuePair(datadictionaryKeyValuePair);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.VM_NODE_DEFINITION:
       {
         VMNodeDefinition vmNodeDefinition = (VMNodeDefinition)theEObject;
@@ -297,6 +304,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWorkflowDataDictionaryElement(WorkflowDataDictionaryElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Datadictionary Key Value Pair</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Datadictionary Key Value Pair</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDatadictionaryKeyValuePair(DatadictionaryKeyValuePair object)
   {
     return null;
   }

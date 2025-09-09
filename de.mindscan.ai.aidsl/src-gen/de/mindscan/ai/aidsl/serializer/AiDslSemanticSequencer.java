@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.serializer;
 import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
+import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
@@ -52,6 +53,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE:
 				sequence_AnnotationInterfaceReference(context, (AnnotationInterfaceReference) semanticObject); 
+				return; 
+			case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR:
+				sequence_DatadictionaryKeyValuePair(context, (DatadictionaryKeyValuePair) semanticObject); 
 				return; 
 			case AiDslPackage.IMPORT_DECLARATION:
 				sequence_ImportDeclaration(context, (ImportDeclaration) semanticObject); 
@@ -128,6 +132,29 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DatadictionaryKeyValuePair returns DatadictionaryKeyValuePair
+	 *
+	 * Constraint:
+	 *     (key=ID value=STRING)
+	 * </pre>
+	 */
+	protected void sequence_DatadictionaryKeyValuePair(ISerializationContext context, DatadictionaryKeyValuePair semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__KEY));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATADICTIONARY_KEY_VALUE_PAIR__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDatadictionaryKeyValuePairAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -404,7 +431,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDataDictionaryElement returns WorkflowDataDictionaryElement
 	 *
 	 * Constraint:
-	 *     (name=ID extends=[WorkflowDataDictionaryElement|ID]? (key+=ID value=STRING)*)
+	 *     (name=ID extends=[WorkflowDataDictionaryElement|ID]? keyValuePairs+=DatadictionaryKeyValuePair*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryElement(ISerializationContext context, WorkflowDataDictionaryElement semanticObject) {

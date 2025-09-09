@@ -18,8 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends <em>Extends</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKey <em>Key</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue <em>Value</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKeyValuePairs <em>Key Value Pairs</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement()
@@ -73,37 +72,15 @@ public interface WorkflowDataDictionaryElement extends EObject
   void setExtends(WorkflowDataDictionaryElement value);
 
   /**
-   * Returns the value of the '<em><b>Key</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Key Value Pairs</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' attribute list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_Key()
-   * @model unique="false"
+   * @return the value of the '<em>Key Value Pairs</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_KeyValuePairs()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getKey();
-
-  /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryElement_Value()
-   * @model
-   * @generated
-   */
-  String getValue();
-
-  /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getValue <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
-   * @generated
-   */
-  void setValue(String value);
+  EList<DatadictionaryKeyValuePair> getKeyValuePairs();
 
 } // WorkflowDataDictionaryElement

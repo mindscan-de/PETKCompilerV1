@@ -205,20 +205,15 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final CrossReference cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0 = (CrossReference)cExtendsAssignment_2_1.eContents().get(0);
 		private final RuleCall cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1 = (RuleCall)cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cKeyAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_4_0_0 = (RuleCall)cKeyAssignment_4_0.eContents().get(0);
-		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final Assignment cKeyValuePairsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0 = (RuleCall)cKeyValuePairsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//WorkflowDataDictionaryElement:
 		//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		//        // can be a map or a list or a direct value
 		//        '{'
-		//            // basically key value stuff.
-		//            (key+=ID ':' value=STRING)*
+		//            (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//        '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -226,8 +221,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		//    // can be a map or a list or a direct value
 		//    '{'
-		//        // basically key value stuff.
-		//        (key+=ID ':' value=STRING)*
+		//        (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//    '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -259,27 +253,49 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//// basically key value stuff.
-		//(key+=ID ':' value=STRING)*
-		public Group getGroup_4() { return cGroup_4; }
+		//(keyValuePairs+=DatadictionaryKeyValuePair)*
+		public Assignment getKeyValuePairsAssignment_4() { return cKeyValuePairsAssignment_4; }
 		
-		//key+=ID
-		public Assignment getKeyAssignment_4_0() { return cKeyAssignment_4_0; }
-		
-		//ID
-		public RuleCall getKeyIDTerminalRuleCall_4_0_0() { return cKeyIDTerminalRuleCall_4_0_0; }
-		
-		//':'
-		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
-		
-		//value=STRING
-		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_4_2_0() { return cValueSTRINGTerminalRuleCall_4_2_0; }
+		//DatadictionaryKeyValuePair
+		public RuleCall getKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0() { return cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class DatadictionaryKeyValuePairElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DatadictionaryKeyValuePair");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//DatadictionaryKeyValuePair:
+		//    // basically key value stuff.
+		//    key=ID ':' value=STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//// basically key value stuff.
+		//key=ID ':' value=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//// basically key value stuff.
+		//key=ID
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -1031,6 +1047,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final ImportDeclarationElements pImportDeclaration;
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
 	private final WorkflowDataDictionaryElementElements pWorkflowDataDictionaryElement;
+	private final DatadictionaryKeyValuePairElements pDatadictionaryKeyValuePair;
 	private final VMNodeDefinitionElements pVMNodeDefinition;
 	private final VMNodeEleemntsElements pVMNodeEleemnts;
 	private final VMNodeOpCodeElementElements pVMNodeOpCodeElement;
@@ -1066,6 +1083,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pImportDeclaration = new ImportDeclarationElements();
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
 		this.pWorkflowDataDictionaryElement = new WorkflowDataDictionaryElementElements();
+		this.pDatadictionaryKeyValuePair = new DatadictionaryKeyValuePairElements();
 		this.pVMNodeDefinition = new VMNodeDefinitionElements();
 		this.pVMNodeEleemnts = new VMNodeEleemntsElements();
 		this.pVMNodeOpCodeElement = new VMNodeOpCodeElementElements();
@@ -1178,8 +1196,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 	//        // can be a map or a list or a direct value
 	//        '{'
-	//            // basically key value stuff.
-	//            (key+=ID ':' value=STRING)*
+	//            (keyValuePairs+=DatadictionaryKeyValuePair)*
 	//        '}'
 	//;
 	public WorkflowDataDictionaryElementElements getWorkflowDataDictionaryElementAccess() {
@@ -1188,6 +1205,18 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getWorkflowDataDictionaryElementRule() {
 		return getWorkflowDataDictionaryElementAccess().getRule();
+	}
+	
+	//DatadictionaryKeyValuePair:
+	//    // basically key value stuff.
+	//    key=ID ':' value=STRING
+	//;
+	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
+		return pDatadictionaryKeyValuePair;
+	}
+	
+	public ParserRule getDatadictionaryKeyValuePairRule() {
+		return getDatadictionaryKeyValuePairAccess().getRule();
 	}
 	
 	//// ---------------------------------------
