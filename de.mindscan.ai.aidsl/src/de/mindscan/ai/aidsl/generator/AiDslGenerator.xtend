@@ -9,6 +9,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
@@ -83,11 +84,7 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		for(datadictionary:alldatadictionary) {
 			for(datadictionaryelement : datadictionary.dataDictionaryElements) {
-				val map=newHashMap()
-				
-				for(keyvaluepair:datadictionaryelement.keyValuePairs) {
-					map.put(keyvaluepair.key, keyvaluepair.value)
-				}
+				val map = comileDataDictionaryElement(datadictionaryelement)
 				
 				result.put(datadictionaryelement.name, map)				
 			}
@@ -95,6 +92,19 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		// compile json_data_dictionary
 		return result
+	}
+	
+	protected def HashMap<String, String> comileDataDictionaryElement(WorkflowDataDictionaryElement datadictionaryelement) {
+		var map=newHashMap()
+		
+		if(datadictionaryelement.extends !== null) {
+			map = comileDataDictionaryElement(datadictionaryelement.extends)
+		}
+		
+		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
+			map.put(keyvaluepair.key, keyvaluepair.value)
+		}
+		return map
 	}
 	
 	
