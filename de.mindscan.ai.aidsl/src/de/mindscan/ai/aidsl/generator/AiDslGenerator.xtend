@@ -101,13 +101,12 @@ class AiDslGenerator extends AbstractGenerator {
 			map = comileDataDictionaryElement(datadictionaryelement.extends)
 		}
 		
+		// TODO: extract the string values, because the string includes the leading and tailing values
 		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
 			map.put(keyvaluepair.key, keyvaluepair.value)
 		}
 		return map
 	}
-	
-	
 	
 	
 	protected def HashMap<String, Serializable> getCompiledEdgeDataMap(WorkflowDefinition workflowDefinition) {
@@ -167,6 +166,7 @@ class AiDslGenerator extends AbstractGenerator {
 		for(variableAssigment : taskdefinition.assignments) {
 			// TODO, preprocess the template string.
 			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as "\n", such that the  
+			// TODO: extract the string values, because the string includes the leading and tailing values
 			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
 		}
 		
@@ -206,7 +206,9 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		for(fieldElement : elements.fieldELements) {
 			switch fieldElement {
+				// TODO: extract the string values, because the string includes the leading and tailing values
 				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
+				// TODO: extract the string values, because the string includes the leading and tailing values
 				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
 			}
 		}
