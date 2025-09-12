@@ -29,6 +29,8 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class AiDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		
+		// Ifwe iterate over Model, we get each single file, but do we know the name of the file?
 		// simply compile the workflows
 		for(workflow : resource.allContents.toIterable.filter(WorkflowDefinition)) {
 			fsa.generateFile(
@@ -90,7 +92,6 @@ class AiDslGenerator extends AbstractGenerator {
 			}
 		}
 		
-		// compile json_data_dictionary
 		return result
 	}
 	
