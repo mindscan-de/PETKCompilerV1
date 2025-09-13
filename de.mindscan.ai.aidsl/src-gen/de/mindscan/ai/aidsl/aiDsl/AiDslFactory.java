@@ -213,6 +213,15 @@ public interface AiDslFactory extends EFactory
   WorkflowDefinitionApplyLLMTaskStatement createWorkflowDefinitionApplyLLMTaskStatement();
 
   /**
+   * Returns a new object of class '<em>Workflow Definition Apply LLM Node Result Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Definition Apply LLM Node Result Assignment</em>'.
+   * @generated
+   */
+  WorkflowDefinitionApplyLLMNodeResultAssignment createWorkflowDefinitionApplyLLMNodeResultAssignment();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

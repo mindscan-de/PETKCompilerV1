@@ -5,15 +5,24 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl#getLlmtask <em>Llmtask</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl#getNoderesultassigments <em>Noderesultassigments</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +49,16 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
    * @ordered
    */
   protected LlmTaskDefinition llmtask;
+
+  /**
+   * The cached value of the '{@link #getNoderesultassigments() <em>Noderesultassigments</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNoderesultassigments()
+   * @generated
+   * @ordered
+   */
+  protected EList<WorkflowDefinitionApplyLLMNodeResultAssignment> noderesultassigments;
 
   /**
    * <!-- begin-user-doc -->
@@ -112,6 +132,37 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
    * @generated
    */
   @Override
+  public EList<WorkflowDefinitionApplyLLMNodeResultAssignment> getNoderesultassigments()
+  {
+    if (noderesultassigments == null)
+    {
+      noderesultassigments = new EObjectContainmentEList<WorkflowDefinitionApplyLLMNodeResultAssignment>(WorkflowDefinitionApplyLLMNodeResultAssignment.class, this, AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS);
+    }
+    return noderesultassigments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS:
+        return ((InternalEList<?>)getNoderesultassigments()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -119,6 +170,8 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK:
         if (resolve) return getLlmtask();
         return basicGetLlmtask();
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS:
+        return getNoderesultassigments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -128,6 +181,7 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -135,6 +189,10 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
     {
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK:
         setLlmtask((LlmTaskDefinition)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS:
+        getNoderesultassigments().clear();
+        getNoderesultassigments().addAll((Collection<? extends WorkflowDefinitionApplyLLMNodeResultAssignment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -153,6 +211,9 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK:
         setLlmtask((LlmTaskDefinition)null);
         return;
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS:
+        getNoderesultassigments().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -169,6 +230,8 @@ public class WorkflowDefinitionApplyLLMTaskStatementImpl extends MinimalEObjectI
     {
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK:
         return llmtask != null;
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS:
+        return noderesultassigments != null && !noderesultassigments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -24,6 +24,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
@@ -107,6 +108,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT:
+				sequence_WorkflowDefinitionApplyLLMNodeResultAssignment(context, (WorkflowDefinitionApplyLLMNodeResultAssignment) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
 				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
@@ -433,20 +437,37 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     WorkflowDefinitionApplyLLMNodeResultAssignment returns WorkflowDefinitionApplyLLMNodeResultAssignment
+	 *
+	 * Constraint:
+	 *     (noderesultname=QualifiedName environmentresultname=QualifiedName)
+	 * </pre>
+	 */
+	protected void sequence_WorkflowDefinitionApplyLLMNodeResultAssignment(ISerializationContext context, WorkflowDefinitionApplyLLMNodeResultAssignment semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0(), semanticObject.getNoderesultname());
+		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0(), semanticObject.getEnvironmentresultname());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     WorkflowDefinitionApplyLLMTaskStatement returns WorkflowDefinitionApplyLLMTaskStatement
 	 *
 	 * Constraint:
-	 *     llmtask=[LlmTaskDefinition|ID]
+	 *     (llmtask=[LlmTaskDefinition|ID] noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinitionApplyLLMTaskStatement(ISerializationContext context, WorkflowDefinitionApplyLLMTaskStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskLlmTaskDefinitionIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

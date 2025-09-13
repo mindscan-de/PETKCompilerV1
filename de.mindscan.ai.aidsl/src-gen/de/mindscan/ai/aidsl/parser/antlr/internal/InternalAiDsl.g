@@ -1663,10 +1663,104 @@ ruleWorkflowDefinitionApplyLLMTaskStatement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getRightParenthesisKeyword_2());
 		}
-		otherlv_3=';'
+		(
+			otherlv_3='=>'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getEqualsSignGreaterThanSignKeyword_3_0());
+			}
+			otherlv_4='{'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLeftCurlyBracketKeyword_3_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsWorkflowDefinitionApplyLLMNodeResultAssignmentParserRuleCall_3_2_0());
+					}
+					lv_noderesultassigments_5_0=ruleWorkflowDefinitionApplyLLMNodeResultAssignment
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementRule());
+						}
+						add(
+							$current,
+							"noderesultassigments",
+							lv_noderesultassigments_5_0,
+							"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getRightCurlyBracketKeyword_3_3());
+			}
+		)?
+		otherlv_7=';'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getSemicolonKeyword_3());
+			newLeafNode(otherlv_7, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getSemicolonKeyword_4());
 		}
+	)
+;
+
+// Entry rule entryRuleWorkflowDefinitionApplyLLMNodeResultAssignment
+entryRuleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentRule()); }
+	iv_ruleWorkflowDefinitionApplyLLMNodeResultAssignment=ruleWorkflowDefinitionApplyLLMNodeResultAssignment
+	{ $current=$iv_ruleWorkflowDefinitionApplyLLMNodeResultAssignment.current; }
+	EOF;
+
+// Rule WorkflowDefinitionApplyLLMNodeResultAssignment
+ruleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0());
+				}
+				lv_noderesultname_0_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentRule());
+					}
+					set(
+						$current,
+						"noderesultname",
+						lv_noderesultname_0_0,
+						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0());
+				}
+				lv_environmentresultname_2_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentRule());
+					}
+					set(
+						$current,
+						"environmentresultname",
+						lv_environmentresultname_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

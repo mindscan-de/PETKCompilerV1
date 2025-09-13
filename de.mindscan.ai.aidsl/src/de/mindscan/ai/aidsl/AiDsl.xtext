@@ -164,9 +164,18 @@ WorkflowDefinition:
 ;
 
 WorkflowDefinitionApplyLLMTaskStatement:
-	llmtask=[LlmTaskDefinition] '(' ')' ';'
+	llmtask=[LlmTaskDefinition] '(' ')' 
+	( '=>' 
+		'{'
+			(noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+		'}'  
+	)?
+	';'
 ;
 
+WorkflowDefinitionApplyLLMNodeResultAssignment:
+	noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+;
 
 // ---------------------------------------
 // Common stuff

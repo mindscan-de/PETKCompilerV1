@@ -817,13 +817,59 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK = 0;
 
   /**
+   * The feature id for the '<em><b>Noderesultassigments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS = 1;
+
+  /**
    * The number of structural features of the '<em>Workflow Definition Apply LLM Task Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT_FEATURE_COUNT = 1;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl <em>Workflow Definition Apply LLM Node Result Assignment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
+   * @generated
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 21;
+
+  /**
+   * The feature id for the '<em><b>Noderesultname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow Definition Apply LLM Node Result Assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT_FEATURE_COUNT = 2;
 
 
   /**
@@ -1488,6 +1534,49 @@ public interface AiDslPackage extends EPackage
   EReference getWorkflowDefinitionApplyLLMTaskStatement_Llmtask();
 
   /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement#getNoderesultassigments <em>Noderesultassigments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Noderesultassigments</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement#getNoderesultassigments()
+   * @see #getWorkflowDefinitionApplyLLMTaskStatement()
+   * @generated
+   */
+  EReference getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment <em>Workflow Definition Apply LLM Node Result Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Definition Apply LLM Node Result Assignment</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment
+   * @generated
+   */
+  EClass getWorkflowDefinitionApplyLLMNodeResultAssignment();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname <em>Noderesultname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Noderesultname</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname()
+   * @see #getWorkflowDefinitionApplyLLMNodeResultAssignment()
+   * @generated
+   */
+  EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getEnvironmentresultname <em>Environmentresultname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Environmentresultname</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getEnvironmentresultname()
+   * @see #getWorkflowDefinitionApplyLLMNodeResultAssignment()
+   * @generated
+   */
+  EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2047,6 +2136,40 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK = eINSTANCE.getWorkflowDefinitionApplyLLMTaskStatement_Llmtask();
+
+    /**
+     * The meta object literal for the '<em><b>Noderesultassigments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS = eINSTANCE.getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl <em>Workflow Definition Apply LLM Node Result Assignment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
+     * @generated
+     */
+    EClass WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = eINSTANCE.getWorkflowDefinitionApplyLLMNodeResultAssignment();
+
+    /**
+     * The meta object literal for the '<em><b>Noderesultname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME = eINSTANCE.getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
+
+    /**
+     * The meta object literal for the '<em><b>Environmentresultname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME = eINSTANCE.getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname();
 
   }
 

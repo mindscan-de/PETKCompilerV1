@@ -25,6 +25,7 @@ import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -188,6 +189,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass workflowDefinitionApplyLLMTaskStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowDefinitionApplyLLMNodeResultAssignmentEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -940,6 +948,50 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EReference getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments()
+  {
+    return (EReference)workflowDefinitionApplyLLMTaskStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWorkflowDefinitionApplyLLMNodeResultAssignment()
+  {
+    return workflowDefinitionApplyLLMNodeResultAssignmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname()
+  {
+    return (EAttribute)workflowDefinitionApplyLLMNodeResultAssignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname()
+  {
+    return (EAttribute)workflowDefinitionApplyLLMNodeResultAssignmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -1047,6 +1099,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     workflowDefinitionApplyLLMTaskStatementEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT);
     createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK);
+    createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS);
+
+    workflowDefinitionApplyLLMNodeResultAssignmentEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT);
+    createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME);
+    createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME);
   }
 
   /**
@@ -1166,6 +1223,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowDefinitionApplyLLMTaskStatementEClass, WorkflowDefinitionApplyLLMTaskStatement.class, "WorkflowDefinitionApplyLLMTaskStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Llmtask(), this.getLlmTaskDefinition(), null, "llmtask", null, 0, 1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments(), this.getWorkflowDefinitionApplyLLMNodeResultAssignment(), null, "noderesultassigments", null, 0, -1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WorkflowDefinitionApplyLLMNodeResultAssignment.class, "WorkflowDefinitionApplyLLMNodeResultAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname(), ecorePackage.getEString(), "noderesultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname(), ecorePackage.getEString(), "environmentresultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

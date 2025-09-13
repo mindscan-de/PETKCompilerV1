@@ -1034,14 +1034,32 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cLlmtaskLlmTaskDefinitionIDTerminalRuleCall_0_0_1 = (RuleCall)cLlmtaskLlmTaskDefinitionCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cEqualsSignGreaterThanSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cNoderesultassigmentsAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cNoderesultassigmentsWorkflowDefinitionApplyLLMNodeResultAssignmentParserRuleCall_3_2_0 = (RuleCall)cNoderesultassigmentsAssignment_3_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//WorkflowDefinitionApplyLLMTaskStatement:
-		//    llmtask=[LlmTaskDefinition] '(' ')' ';'
+		//    llmtask=[LlmTaskDefinition] '(' ')'
+		//    ( '=>'
+		//        '{'
+		//            (noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+		//        '}'
+		//    )?
+		//    ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//llmtask=[LlmTaskDefinition] '(' ')' ';'
+		//llmtask=[LlmTaskDefinition] '(' ')'
+		//( '=>'
+		//    '{'
+		//        (noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+		//    '}'
+		//)?
+		//';'
 		public Group getGroup() { return cGroup; }
 		
 		//llmtask=[LlmTaskDefinition]
@@ -1059,8 +1077,62 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//')'
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
 		
+		//( '=>'
+		//    '{'
+		//        (noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+		//    '}'
+		//)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'=>'
+		public Keyword getEqualsSignGreaterThanSignKeyword_3_0() { return cEqualsSignGreaterThanSignKeyword_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		
+		//(noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+		public Assignment getNoderesultassigmentsAssignment_3_2() { return cNoderesultassigmentsAssignment_3_2; }
+		
+		//WorkflowDefinitionApplyLLMNodeResultAssignment
+		public RuleCall getNoderesultassigmentsWorkflowDefinitionApplyLLMNodeResultAssignmentParserRuleCall_3_2_0() { return cNoderesultassigmentsWorkflowDefinitionApplyLLMNodeResultAssignmentParserRuleCall_3_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
+		
 		//';'
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+	}
+	public class WorkflowDefinitionApplyLLMNodeResultAssignmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNoderesultnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNoderesultnameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNoderesultnameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cEnvironmentresultnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cEnvironmentresultnameQualifiedNameParserRuleCall_2_0 = (RuleCall)cEnvironmentresultnameAssignment_2.eContents().get(0);
+		
+		//WorkflowDefinitionApplyLLMNodeResultAssignment:
+		//    noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+		public Group getGroup() { return cGroup; }
+		
+		//noderesultname=QualifiedName
+		public Assignment getNoderesultnameAssignment_0() { return cNoderesultnameAssignment_0; }
+		
+		//QualifiedName
+		public RuleCall getNoderesultnameQualifiedNameParserRuleCall_0_0() { return cNoderesultnameQualifiedNameParserRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//environmentresultname=QualifiedName
+		public Assignment getEnvironmentresultnameAssignment_2() { return cEnvironmentresultnameAssignment_2; }
+		
+		//QualifiedName
+		public RuleCall getEnvironmentresultnameQualifiedNameParserRuleCall_2_0() { return cEnvironmentresultnameQualifiedNameParserRuleCall_2_0; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.QualifiedName");
@@ -1139,6 +1211,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final LlmVariableAssignmentElements pLlmVariableAssignment;
 	private final WorkflowDefinitionElements pWorkflowDefinition;
 	private final WorkflowDefinitionApplyLLMTaskStatementElements pWorkflowDefinitionApplyLLMTaskStatement;
+	private final WorkflowDefinitionApplyLLMNodeResultAssignmentElements pWorkflowDefinitionApplyLLMNodeResultAssignment;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private final TerminalRule tID;
@@ -1178,6 +1251,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
 		this.pWorkflowDefinition = new WorkflowDefinitionElements();
 		this.pWorkflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementElements();
+		this.pWorkflowDefinitionApplyLLMNodeResultAssignment = new WorkflowDefinitionApplyLLMNodeResultAssignmentElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ID");
@@ -1522,7 +1596,13 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WorkflowDefinitionApplyLLMTaskStatement:
-	//    llmtask=[LlmTaskDefinition] '(' ')' ';'
+	//    llmtask=[LlmTaskDefinition] '(' ')'
+	//    ( '=>'
+	//        '{'
+	//            (noderesultassigments+=WorkflowDefinitionApplyLLMNodeResultAssignment)*
+	//        '}'
+	//    )?
+	//    ';'
 	//;
 	public WorkflowDefinitionApplyLLMTaskStatementElements getWorkflowDefinitionApplyLLMTaskStatementAccess() {
 		return pWorkflowDefinitionApplyLLMTaskStatement;
@@ -1530,6 +1610,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getWorkflowDefinitionApplyLLMTaskStatementRule() {
 		return getWorkflowDefinitionApplyLLMTaskStatementAccess().getRule();
+	}
+	
+	//WorkflowDefinitionApplyLLMNodeResultAssignment:
+	//    noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+	//;
+	public WorkflowDefinitionApplyLLMNodeResultAssignmentElements getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess() {
+		return pWorkflowDefinitionApplyLLMNodeResultAssignment;
+	}
+	
+	public ParserRule getWorkflowDefinitionApplyLLMNodeResultAssignmentRule() {
+		return getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getRule();
 	}
 	
 	//// ---------------------------------------

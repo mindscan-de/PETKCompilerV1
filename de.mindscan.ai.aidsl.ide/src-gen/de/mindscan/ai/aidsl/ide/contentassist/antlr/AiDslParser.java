@@ -64,6 +64,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getGroup(), "rule__LlmVariableAssignment__Group__0");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getGroup(), "rule__WorkflowDefinition__Group__0");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getGroup(), "rule__WorkflowDefinitionApplyLLMTaskStatement__Group__0");
+			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getGroup_3(), "rule__WorkflowDefinitionApplyLLMTaskStatement__Group_3__0");
+			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getGroup(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
@@ -109,6 +111,9 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_5(), "rule__WorkflowDefinition__StatementsAssignment_5");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskAssignment_0(), "rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0");
+			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsAssignment_3_2(), "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2");
+			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_0(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0");
+			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_2(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2");
 		}
 	}
 	
