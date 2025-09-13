@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.mindscan.ai.aidsl.aiDsl.Model
 
 /**
  * Generates code from your model files on save.
@@ -56,7 +55,6 @@ class AiDslGenerator extends AbstractGenerator {
 		val nodedataMap = getCompiledNodedataMap(workflowDefinition)
 		// TODO: implement this
 		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
-		// TODO: implement this
 		val datadictionaryMap = resource.getCompiledDataDictionaryMap(workflowDefinition)
 		
 
@@ -112,9 +110,30 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		// TODO: extract the string values, because the string includes the leading and tailing values
 		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
-			map.put(keyvaluepair.key, keyvaluepair.value)
+			
+			map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
 		}
 		return map
+	}
+	
+	protected def String prepareStringForExport(String stringValue) {
+		if(stringValue === null) {
+			return stringValue
+		}
+		
+		// multiline string
+		if(stringValue.startsWith("''") && stringValue.endsWith("''") && stringValue.length()>=4)  {
+			// this is a multiline comment, we need to transform this and remove the leading whitespaces, at the beginning of the line
+			
+			return stringValue.substring("''".length(), stringValue.length()-"''".length());
+		}
+		
+		// single line string
+		if(stringValue.startsWith('"') && stringValue.endsWith('"') && stringValue.length()>=2)  {
+			return stringValue.substring('"'.length(), stringValue.length()-'"'.length());
+		}
+		
+		return stringValue
 	}
 	
 	
@@ -176,7 +195,7 @@ class AiDslGenerator extends AbstractGenerator {
 			// TODO, preprocess the template string.
 			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as "\n", such that the  
 			// TODO: extract the string values, because the string includes the leading and tailing values
-			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template)
+			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template.prepareStringForExport)
 		}
 		
 		// TODO: extra_stopwords
@@ -216,9 +235,9 @@ class AiDslGenerator extends AbstractGenerator {
 		for(fieldElement : elements.fieldELements) {
 			switch fieldElement {
 				// TODO: extract the string values, because the string includes the leading and tailing values
-				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
+				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
 				// TODO: extract the string values, because the string includes the leading and tailing values
-				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue )
+				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
 			}
 		}
 		
