@@ -30,7 +30,7 @@ class AiDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
-		// Ifwe iterate over Model, we get each single file, but do we know the name of the file?
+		// If we iterate over Model, we get each single file, but do we know the name of the file?
 		// simply compile the workflows
 		// for(model : resource.allContents.toIterable.filter(Model)) {
 			// actually iwant to iterate over the model definiionts and extract the workflows.
@@ -138,10 +138,21 @@ class AiDslGenerator extends AbstractGenerator {
 	
 	
 	protected def HashMap<String, Serializable> getCompiledEdgeDataMap(WorkflowDefinition workflowDefinition) {
-		// compile edgedata
+		val connections = newLinkedHashMap()
+
+		val statementList = workflowDefinition.statements.toList
+		for(var i=0;i<statementList.length - 1;i++) {
+			val currentStatement = statementList.get(i)
+			val follownodeMap = newLinkedHashMap()
+			
+			// depending on the type of node, we have to fill the followNodeMap
+			
+			connections.put(currentStatement.llmtask.name , follownodeMap)
+		}		
+		
 		newHashMap(
 			'__comment' -> "all the edges",
-			'connections' -> newHashMap()
+			'connections' -> connections
 		)
 	}
 	
