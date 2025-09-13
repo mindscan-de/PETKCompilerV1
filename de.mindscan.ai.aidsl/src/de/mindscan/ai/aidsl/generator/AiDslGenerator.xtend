@@ -145,7 +145,11 @@ class AiDslGenerator extends AbstractGenerator {
 			val currentStatement = statementList.get(i)
 			val follownodeMap = newLinkedHashMap()
 			
-			// depending on the type of node, we have to fill the followNodeMap
+			// depending on the type of the current node, we have to fill the followNodeMap
+			val nextStatement = statementList.get(i+1)
+			val nextElementList = newArrayList()
+			nextElementList.add(nextStatement.llmtask.name)
+			follownodeMap.put("next", nextElementList)
 			
 			connections.put(currentStatement.llmtask.name , follownodeMap)
 		}		
