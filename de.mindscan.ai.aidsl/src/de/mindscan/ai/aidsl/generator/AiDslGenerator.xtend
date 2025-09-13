@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.mindscan.ai.aidsl.aiDsl.Model
 
 /**
  * Generates code from your model files on save.
@@ -32,11 +33,18 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		// Ifwe iterate over Model, we get each single file, but do we know the name of the file?
 		// simply compile the workflows
-		for(workflow : resource.allContents.toIterable.filter(WorkflowDefinition)) {
-			fsa.generateFile(
-				"workflows/" + workflow.name + ".json.workflow", workflow.compile(resource)
-			)
-		}
+		// for(model : resource.allContents.toIterable.filter(Model)) {
+			// actually iwant to iterate over the model definiionts and extract the workflows.
+			
+			//  
+			for(workflow : resource.allContents.toIterable.filter(WorkflowDefinition)) {
+				fsa.generateFile(
+					"workflows/" + workflow.name + ".json.workflow", workflow.compile(resource)
+				)
+			}
+			
+		// }
+		
 	}
 	
 	def CharSequence compile(WorkflowDefinition workflowDefinition, Resource resource) {
