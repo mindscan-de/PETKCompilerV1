@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname <em>Noderesultname</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getEnvironmentresultname <em>Environmentresultname</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname <em>Noderesultname</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDefinitionApplyLLMNodeResultAssignment()
@@ -24,28 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface WorkflowDefinitionApplyLLMNodeResultAssignment extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Noderesultname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Noderesultname</em>' attribute.
-   * @see #setNoderesultname(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname()
-   * @model
-   * @generated
-   */
-  String getNoderesultname();
-
-  /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname <em>Noderesultname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Noderesultname</em>' attribute.
-   * @see #getNoderesultname()
-   * @generated
-   */
-  void setNoderesultname(String value);
-
   /**
    * Returns the value of the '<em><b>Environmentresultname</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -67,5 +45,27 @@ public interface WorkflowDefinitionApplyLLMNodeResultAssignment extends EObject
    * @generated
    */
   void setEnvironmentresultname(String value);
+
+  /**
+   * Returns the value of the '<em><b>Noderesultname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Noderesultname</em>' attribute.
+   * @see #setNoderesultname(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname()
+   * @model
+   * @generated
+   */
+  String getNoderesultname();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment#getNoderesultname <em>Noderesultname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Noderesultname</em>' attribute.
+   * @see #getNoderesultname()
+   * @generated
+   */
+  void setNoderesultname(String value);
 
 } // WorkflowDefinitionApplyLLMNodeResultAssignment

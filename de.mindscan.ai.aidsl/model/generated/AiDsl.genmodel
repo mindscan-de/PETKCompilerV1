@@ -90,8 +90,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement/noderesultassigments"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/noderesultname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/environmentresultname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/noderesultname"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

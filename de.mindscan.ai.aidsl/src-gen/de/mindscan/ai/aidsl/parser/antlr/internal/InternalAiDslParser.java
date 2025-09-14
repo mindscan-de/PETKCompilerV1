@@ -4329,37 +4329,37 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWorkflowDefinitionApplyLLMNodeResultAssignment"
-    // InternalAiDsl.g:1714:1: ruleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null] : ( ( (lv_noderesultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_environmentresultname_2_0= ruleQualifiedName ) ) ) ;
+    // InternalAiDsl.g:1714:1: ruleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null] : ( ( (lv_environmentresultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_noderesultname_2_0= ruleQualifiedName ) ) ) ;
     public final EObject ruleWorkflowDefinitionApplyLLMNodeResultAssignment() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        AntlrDatatypeRuleToken lv_noderesultname_0_0 = null;
+        AntlrDatatypeRuleToken lv_environmentresultname_0_0 = null;
 
-        AntlrDatatypeRuleToken lv_environmentresultname_2_0 = null;
+        AntlrDatatypeRuleToken lv_noderesultname_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAiDsl.g:1720:2: ( ( ( (lv_noderesultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_environmentresultname_2_0= ruleQualifiedName ) ) ) )
-            // InternalAiDsl.g:1721:2: ( ( (lv_noderesultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_environmentresultname_2_0= ruleQualifiedName ) ) )
+            // InternalAiDsl.g:1720:2: ( ( ( (lv_environmentresultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_noderesultname_2_0= ruleQualifiedName ) ) ) )
+            // InternalAiDsl.g:1721:2: ( ( (lv_environmentresultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_noderesultname_2_0= ruleQualifiedName ) ) )
             {
-            // InternalAiDsl.g:1721:2: ( ( (lv_noderesultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_environmentresultname_2_0= ruleQualifiedName ) ) )
-            // InternalAiDsl.g:1722:3: ( (lv_noderesultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_environmentresultname_2_0= ruleQualifiedName ) )
+            // InternalAiDsl.g:1721:2: ( ( (lv_environmentresultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_noderesultname_2_0= ruleQualifiedName ) ) )
+            // InternalAiDsl.g:1722:3: ( (lv_environmentresultname_0_0= ruleQualifiedName ) ) otherlv_1= ':' ( (lv_noderesultname_2_0= ruleQualifiedName ) )
             {
-            // InternalAiDsl.g:1722:3: ( (lv_noderesultname_0_0= ruleQualifiedName ) )
-            // InternalAiDsl.g:1723:4: (lv_noderesultname_0_0= ruleQualifiedName )
+            // InternalAiDsl.g:1722:3: ( (lv_environmentresultname_0_0= ruleQualifiedName ) )
+            // InternalAiDsl.g:1723:4: (lv_environmentresultname_0_0= ruleQualifiedName )
             {
-            // InternalAiDsl.g:1723:4: (lv_noderesultname_0_0= ruleQualifiedName )
-            // InternalAiDsl.g:1724:5: lv_noderesultname_0_0= ruleQualifiedName
+            // InternalAiDsl.g:1723:4: (lv_environmentresultname_0_0= ruleQualifiedName )
+            // InternalAiDsl.g:1724:5: lv_environmentresultname_0_0= ruleQualifiedName
             {
 
-            					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0());
             				
             pushFollow(FOLLOW_10);
-            lv_noderesultname_0_0=ruleQualifiedName();
+            lv_environmentresultname_0_0=ruleQualifiedName();
 
             state._fsp--;
 
@@ -4369,8 +4369,8 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"noderesultname",
-            						lv_noderesultname_0_0,
+            						"environmentresultname",
+            						lv_environmentresultname_0_0,
             						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
             					afterParserOrEnumRuleCall();
             				
@@ -4384,17 +4384,17 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getColonKeyword_1());
             		
-            // InternalAiDsl.g:1745:3: ( (lv_environmentresultname_2_0= ruleQualifiedName ) )
-            // InternalAiDsl.g:1746:4: (lv_environmentresultname_2_0= ruleQualifiedName )
+            // InternalAiDsl.g:1745:3: ( (lv_noderesultname_2_0= ruleQualifiedName ) )
+            // InternalAiDsl.g:1746:4: (lv_noderesultname_2_0= ruleQualifiedName )
             {
-            // InternalAiDsl.g:1746:4: (lv_environmentresultname_2_0= ruleQualifiedName )
-            // InternalAiDsl.g:1747:5: lv_environmentresultname_2_0= ruleQualifiedName
+            // InternalAiDsl.g:1746:4: (lv_noderesultname_2_0= ruleQualifiedName )
+            // InternalAiDsl.g:1747:5: lv_noderesultname_2_0= ruleQualifiedName
             {
 
-            					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
-            lv_environmentresultname_2_0=ruleQualifiedName();
+            lv_noderesultname_2_0=ruleQualifiedName();
 
             state._fsp--;
 
@@ -4404,8 +4404,8 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"environmentresultname",
-            						lv_environmentresultname_2_0,
+            						"noderesultname",
+            						lv_noderesultname_2_0,
             						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
             					afterParserOrEnumRuleCall();
             				

@@ -174,7 +174,8 @@ WorkflowDefinitionApplyLLMTaskStatement:
 ;
 
 WorkflowDefinitionApplyLLMNodeResultAssignment:
-	noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+	// TODO: this should be a reference and the applicable parserrule is Qualified name
+	environmentresultname=QualifiedName ':' noderesultname=QualifiedName 
 ;
 
 // ---------------------------------------

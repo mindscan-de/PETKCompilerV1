@@ -21,34 +21,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl#getNoderesultname <em>Noderesultname</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl#getEnvironmentresultname <em>Environmentresultname</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMNodeResultAssignmentImpl#getNoderesultname <em>Noderesultname</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalEObjectImpl.Container implements WorkflowDefinitionApplyLLMNodeResultAssignment
 {
-  /**
-   * The default value of the '{@link #getNoderesultname() <em>Noderesultname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNoderesultname()
-   * @generated
-   * @ordered
-   */
-  protected static final String NODERESULTNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNoderesultname() <em>Noderesultname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNoderesultname()
-   * @generated
-   * @ordered
-   */
-  protected String noderesultname = NODERESULTNAME_EDEFAULT;
-
   /**
    * The default value of the '{@link #getEnvironmentresultname() <em>Environmentresultname</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,6 +50,26 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
   protected String environmentresultname = ENVIRONMENTRESULTNAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getNoderesultname() <em>Noderesultname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNoderesultname()
+   * @generated
+   * @ordered
+   */
+  protected static final String NODERESULTNAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNoderesultname() <em>Noderesultname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNoderesultname()
+   * @generated
+   * @ordered
+   */
+  protected String noderesultname = NODERESULTNAME_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -88,31 +88,6 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
   protected EClass eStaticClass()
   {
     return AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getNoderesultname()
-  {
-    return noderesultname;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setNoderesultname(String newNoderesultname)
-  {
-    String oldNoderesultname = noderesultname;
-    noderesultname = newNoderesultname;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME, oldNoderesultname, noderesultname));
   }
 
   /**
@@ -146,14 +121,39 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
    * @generated
    */
   @Override
+  public String getNoderesultname()
+  {
+    return noderesultname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNoderesultname(String newNoderesultname)
+  {
+    String oldNoderesultname = noderesultname;
+    noderesultname = newNoderesultname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME, oldNoderesultname, noderesultname));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
-        return getNoderesultname();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME:
         return getEnvironmentresultname();
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
+        return getNoderesultname();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +168,11 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
-        setNoderesultname((String)newValue);
-        return;
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME:
         setEnvironmentresultname((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
+        setNoderesultname((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
-        setNoderesultname(NODERESULTNAME_EDEFAULT);
-        return;
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME:
         setEnvironmentresultname(ENVIRONMENTRESULTNAME_EDEFAULT);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
+        setNoderesultname(NODERESULTNAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
-        return NODERESULTNAME_EDEFAULT == null ? noderesultname != null : !NODERESULTNAME_EDEFAULT.equals(noderesultname);
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME:
         return ENVIRONMENTRESULTNAME_EDEFAULT == null ? environmentresultname != null : !ENVIRONMENTRESULTNAME_EDEFAULT.equals(environmentresultname);
+      case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME:
+        return NODERESULTNAME_EDEFAULT == null ? noderesultname != null : !NODERESULTNAME_EDEFAULT.equals(noderesultname);
     }
     return super.eIsSet(featureID);
   }
@@ -227,10 +227,10 @@ public class WorkflowDefinitionApplyLLMNodeResultAssignmentImpl extends MinimalE
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (noderesultname: ");
-    result.append(noderesultname);
-    result.append(", environmentresultname: ");
+    result.append(" (environmentresultname: ");
     result.append(environmentresultname);
+    result.append(", noderesultname: ");
+    result.append(noderesultname);
     result.append(')');
     return result.toString();
   }

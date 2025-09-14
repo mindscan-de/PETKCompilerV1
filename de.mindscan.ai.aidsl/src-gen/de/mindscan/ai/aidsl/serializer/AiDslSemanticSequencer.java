@@ -440,19 +440,19 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDefinitionApplyLLMNodeResultAssignment returns WorkflowDefinitionApplyLLMNodeResultAssignment
 	 *
 	 * Constraint:
-	 *     (noderesultname=QualifiedName environmentresultname=QualifiedName)
+	 *     (environmentresultname=QualifiedName noderesultname=QualifiedName)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinitionApplyLLMNodeResultAssignment(ISerializationContext context, WorkflowDefinitionApplyLLMNodeResultAssignment semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME));
 			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0(), semanticObject.getNoderesultname());
-		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0(), semanticObject.getEnvironmentresultname());
+		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0(), semanticObject.getEnvironmentresultname());
+		feeder.accept(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0(), semanticObject.getNoderesultname());
 		feeder.finish();
 	}
 	

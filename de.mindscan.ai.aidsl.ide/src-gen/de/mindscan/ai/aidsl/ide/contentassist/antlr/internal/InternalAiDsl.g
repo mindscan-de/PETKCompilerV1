@@ -3621,9 +3621,9 @@ rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_0()); }
-	(rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0)
-	{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_0()); }
+	{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0()); }
+	(rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0)
+	{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0()); }
 )
 ;
 finally {
@@ -3674,9 +3674,9 @@ rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_2()); }
-	(rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2)
-	{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_2()); }
+	{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_2()); }
+	(rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2)
+	{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_2()); }
 )
 ;
 finally {
@@ -4511,30 +4511,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0
+rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0()); }
+		{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0()); }
 		ruleQualifiedName
-		{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0()); }
+		{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2
+rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0()); }
+		{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); }
 		ruleQualifiedName
-		{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0()); }
+		{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); }
 	)
 ;
 finally {

@@ -98,8 +98,8 @@
         eType="#//WorkflowDefinitionApplyLLMNodeResultAssignment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowDefinitionApplyLLMNodeResultAssignment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noderesultname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="environmentresultname"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noderesultname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

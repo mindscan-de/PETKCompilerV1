@@ -1105,34 +1105,37 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class WorkflowDefinitionApplyLLMNodeResultAssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNoderesultnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNoderesultnameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNoderesultnameAssignment_0.eContents().get(0);
+		private final Assignment cEnvironmentresultnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cEnvironmentresultnameQualifiedNameParserRuleCall_0_0 = (RuleCall)cEnvironmentresultnameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cEnvironmentresultnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cEnvironmentresultnameQualifiedNameParserRuleCall_2_0 = (RuleCall)cEnvironmentresultnameAssignment_2.eContents().get(0);
+		private final Assignment cNoderesultnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNoderesultnameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNoderesultnameAssignment_2.eContents().get(0);
 		
 		//WorkflowDefinitionApplyLLMNodeResultAssignment:
-		//    noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+		//    // TODO: this should be a reference and the applicable parserrule is Qualified name
+		//    environmentresultname=QualifiedName ':' noderesultname=QualifiedName
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+		//// TODO: this should be a reference and the applicable parserrule is Qualified name
+		//environmentresultname=QualifiedName ':' noderesultname=QualifiedName
 		public Group getGroup() { return cGroup; }
 		
-		//noderesultname=QualifiedName
-		public Assignment getNoderesultnameAssignment_0() { return cNoderesultnameAssignment_0; }
+		//// TODO: this should be a reference and the applicable parserrule is Qualified name
+		//environmentresultname=QualifiedName
+		public Assignment getEnvironmentresultnameAssignment_0() { return cEnvironmentresultnameAssignment_0; }
 		
 		//QualifiedName
-		public RuleCall getNoderesultnameQualifiedNameParserRuleCall_0_0() { return cNoderesultnameQualifiedNameParserRuleCall_0_0; }
+		public RuleCall getEnvironmentresultnameQualifiedNameParserRuleCall_0_0() { return cEnvironmentresultnameQualifiedNameParserRuleCall_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//environmentresultname=QualifiedName
-		public Assignment getEnvironmentresultnameAssignment_2() { return cEnvironmentresultnameAssignment_2; }
+		//noderesultname=QualifiedName
+		public Assignment getNoderesultnameAssignment_2() { return cNoderesultnameAssignment_2; }
 		
 		//QualifiedName
-		public RuleCall getEnvironmentresultnameQualifiedNameParserRuleCall_2_0() { return cEnvironmentresultnameQualifiedNameParserRuleCall_2_0; }
+		public RuleCall getNoderesultnameQualifiedNameParserRuleCall_2_0() { return cNoderesultnameQualifiedNameParserRuleCall_2_0; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.QualifiedName");
@@ -1613,7 +1616,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WorkflowDefinitionApplyLLMNodeResultAssignment:
-	//    noderesultname=QualifiedName ':' environmentresultname=QualifiedName
+	//    // TODO: this should be a reference and the applicable parserrule is Qualified name
+	//    environmentresultname=QualifiedName ':' noderesultname=QualifiedName
 	//;
 	public WorkflowDefinitionApplyLLMNodeResultAssignmentElements getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess() {
 		return pWorkflowDefinitionApplyLLMNodeResultAssignment;

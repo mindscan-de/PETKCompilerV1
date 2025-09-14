@@ -1722,17 +1722,17 @@ ruleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0());
 				}
-				lv_noderesultname_0_0=ruleQualifiedName
+				lv_environmentresultname_0_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentRule());
 					}
 					set(
 						$current,
-						"noderesultname",
-						lv_noderesultname_0_0,
+						"environmentresultname",
+						lv_environmentresultname_0_0,
 						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1745,17 +1745,17 @@ ruleWorkflowDefinitionApplyLLMNodeResultAssignment returns [EObject current=null
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_environmentresultname_2_0=ruleQualifiedName
+				lv_noderesultname_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentRule());
 					}
 					set(
 						$current,
-						"environmentresultname",
-						lv_environmentresultname_2_0,
+						"noderesultname",
+						lv_noderesultname_2_0,
 						"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}

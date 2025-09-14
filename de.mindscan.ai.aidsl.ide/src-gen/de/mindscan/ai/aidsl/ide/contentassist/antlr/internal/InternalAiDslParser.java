@@ -11031,31 +11031,31 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0__Impl"
-    // InternalAiDsl.g:3618:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0__Impl : ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 ) ) ;
+    // InternalAiDsl.g:3618:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0__Impl : ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 ) ) ;
     public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:3622:1: ( ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 ) ) )
-            // InternalAiDsl.g:3623:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 ) )
+            // InternalAiDsl.g:3622:1: ( ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 ) ) )
+            // InternalAiDsl.g:3623:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 ) )
             {
-            // InternalAiDsl.g:3623:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 ) )
-            // InternalAiDsl.g:3624:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 )
+            // InternalAiDsl.g:3623:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 ) )
+            // InternalAiDsl.g:3624:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 )
             {
-             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_0()); 
-            // InternalAiDsl.g:3625:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 )
-            // InternalAiDsl.g:3625:3: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0
+             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0()); 
+            // InternalAiDsl.g:3625:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 )
+            // InternalAiDsl.g:3625:3: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0
             {
             pushFollow(FOLLOW_2);
-            rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0();
+            rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_0()); 
+             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0()); 
 
             }
 
@@ -11186,31 +11186,31 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__2__Impl"
-    // InternalAiDsl.g:3671:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__2__Impl : ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 ) ) ;
+    // InternalAiDsl.g:3671:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__2__Impl : ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 ) ) ;
     public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:3675:1: ( ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 ) ) )
-            // InternalAiDsl.g:3676:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 ) )
+            // InternalAiDsl.g:3675:1: ( ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 ) ) )
+            // InternalAiDsl.g:3676:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 ) )
             {
-            // InternalAiDsl.g:3676:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 ) )
-            // InternalAiDsl.g:3677:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 )
+            // InternalAiDsl.g:3676:1: ( ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 ) )
+            // InternalAiDsl.g:3677:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 )
             {
-             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_2()); 
-            // InternalAiDsl.g:3678:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 )
-            // InternalAiDsl.g:3678:3: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2
+             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_2()); 
+            // InternalAiDsl.g:3678:2: ( rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 )
+            // InternalAiDsl.g:3678:3: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2();
+            rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_2()); 
+             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_2()); 
 
             }
 
@@ -13475,9 +13475,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2"
 
 
-    // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0"
-    // InternalAiDsl.g:4514:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0 : ( ruleQualifiedName ) ;
-    public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0"
+    // InternalAiDsl.g:4514:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 : ( ruleQualifiedName ) ;
+    public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13488,13 +13488,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:4519:2: ( ruleQualifiedName )
             // InternalAiDsl.g:4520:3: ruleQualifiedName
             {
-             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0()); 
+             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_0_0()); 
+             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0()); 
 
             }
 
@@ -13513,12 +13513,12 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_0"
+    // $ANTLR end "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0"
 
 
-    // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2"
-    // InternalAiDsl.g:4529:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2 : ( ruleQualifiedName ) ;
-    public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2"
+    // InternalAiDsl.g:4529:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 : ( ruleQualifiedName ) ;
+    public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13529,13 +13529,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:4534:2: ( ruleQualifiedName )
             // InternalAiDsl.g:4535:3: ruleQualifiedName
             {
-             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_2_0()); 
+             after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); 
 
             }
 
@@ -13554,7 +13554,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_2"
+    // $ANTLR end "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2"
 
     // Delegated rules
 

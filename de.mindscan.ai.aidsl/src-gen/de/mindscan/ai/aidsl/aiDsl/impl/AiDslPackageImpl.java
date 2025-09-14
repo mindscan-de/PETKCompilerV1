@@ -970,7 +970,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname()
+  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname()
   {
     return (EAttribute)workflowDefinitionApplyLLMNodeResultAssignmentEClass.getEStructuralFeatures().get(0);
   }
@@ -981,7 +981,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname()
+  public EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname()
   {
     return (EAttribute)workflowDefinitionApplyLLMNodeResultAssignmentEClass.getEStructuralFeatures().get(1);
   }
@@ -1102,8 +1102,8 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS);
 
     workflowDefinitionApplyLLMNodeResultAssignmentEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT);
-    createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME);
     createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME);
+    createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME);
   }
 
   /**
@@ -1226,8 +1226,8 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments(), this.getWorkflowDefinitionApplyLLMNodeResultAssignment(), null, "noderesultassigments", null, 0, -1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WorkflowDefinitionApplyLLMNodeResultAssignment.class, "WorkflowDefinitionApplyLLMNodeResultAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname(), ecorePackage.getEString(), "noderesultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname(), ecorePackage.getEString(), "environmentresultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname(), ecorePackage.getEString(), "noderesultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
