@@ -219,8 +219,23 @@ class AiDslGenerator extends AbstractGenerator {
 		// TODO: inputs
 		compiledStatementMap.put("inputs", newLinkedList)
 		
-		// TODO: outputs
-		compiledStatementMap.put("outputs", newLinkedList)
+		// TODO: calculate output type (also handle type overrides)
+		val outputnodelist = newLinkedList()
+		for (noderesultassignment : statement.noderesultassigments.toList()) {
+			val source = noderesultassignment.noderesultname
+			val target = noderesultassignment.environmentresultname
+			// TODO: this type must be correctly determined	
+			val type = "string"
+			
+			val noderesultmapping = newLinkedHashMap()
+			noderesultmapping.put('target', target)
+			noderesultmapping.put('source', source)
+			noderesultmapping.put('__datatype', type)
+			
+			outputnodelist.add(noderesultmapping)
+		}
+		
+		compiledStatementMap.put("outputs", outputnodelist)
 
 		
 		return compiledStatementMap
