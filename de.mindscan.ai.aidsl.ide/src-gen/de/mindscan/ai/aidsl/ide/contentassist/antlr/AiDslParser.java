@@ -78,8 +78,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getNameAssignment_2(), "rule__WorkflowInputDefinition__NameAssignment_2");
-			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsAssignment_4(), "rule__WorkflowInputDefinition__UiElementsAssignment_4");
+			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getNameAssignment_1(), "rule__WorkflowInputDefinition__NameAssignment_1");
+			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsAssignment_3(), "rule__WorkflowInputDefinition__UiElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getNameAssignment_0(), "rule__WorkflowUIElement__NameAssignment_0");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2(), "rule__WorkflowUIElement__DatatypeAssignment_2");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3(), "rule__WorkflowUIElement__UielementAssignment_3");

@@ -158,51 +158,47 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class WorkflowInputDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowInputDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cWorkflowInputDefinitionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDatainputKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cUiElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cUiElementsWorkflowUIElementParserRuleCall_4_0 = (RuleCall)cUiElementsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cDatainputKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cUiElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cUiElementsWorkflowUIElementParserRuleCall_3_0 = (RuleCall)cUiElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//// should we reference the workflow or the oher way around?
 		//WorkflowInputDefinition:
-		//    {WorkflowInputDefinition} 'datainput' name=ID '{'
+		//    'datainput' name=ID '{'
 		//        (uiElements+=WorkflowUIElement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WorkflowInputDefinition} 'datainput' name=ID '{'
+		//'datainput' name=ID '{'
 		//    (uiElements+=WorkflowUIElement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{WorkflowInputDefinition}
-		public Action getWorkflowInputDefinitionAction_0() { return cWorkflowInputDefinitionAction_0; }
-		
 		//'datainput'
-		public Keyword getDatainputKeyword_1() { return cDatainputKeyword_1; }
+		public Keyword getDatainputKeyword_0() { return cDatainputKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(uiElements+=WorkflowUIElement)*
-		public Assignment getUiElementsAssignment_4() { return cUiElementsAssignment_4; }
+		public Assignment getUiElementsAssignment_3() { return cUiElementsAssignment_3; }
 		
 		//WorkflowUIElement
-		public RuleCall getUiElementsWorkflowUIElementParserRuleCall_4_0() { return cUiElementsWorkflowUIElementParserRuleCall_4_0; }
+		public RuleCall getUiElementsWorkflowUIElementParserRuleCall_3_0() { return cUiElementsWorkflowUIElementParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class WorkflowUIElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowUIElement");
@@ -1548,7 +1544,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//// should we reference the workflow or the oher way around?
 	//WorkflowInputDefinition:
-	//    {WorkflowInputDefinition} 'datainput' name=ID '{'
+	//    'datainput' name=ID '{'
 	//        (uiElements+=WorkflowUIElement)*
 	//    '}'
 	//;

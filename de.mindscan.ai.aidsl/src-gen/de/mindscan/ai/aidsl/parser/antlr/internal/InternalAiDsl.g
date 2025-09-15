@@ -302,22 +302,15 @@ ruleWorkflowInputDefinition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='datainput'
+		otherlv_0='datainput'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getWorkflowInputDefinitionAccess().getDatainputKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowInputDefinitionAccess().getDatainputKeyword_0());
 		}
 		(
 			(
-				lv_name_2_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getWorkflowInputDefinitionAccess().getNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getWorkflowInputDefinitionAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -326,21 +319,21 @@ ruleWorkflowInputDefinition returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
 						"de.mindscan.ai.aidsl.AiDsl.ID");
 				}
 			)
 		)
-		otherlv_3='{'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowInputDefinitionAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowInputDefinitionAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsWorkflowUIElementParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsWorkflowUIElementParserRuleCall_3_0());
 				}
-				lv_uiElements_4_0=ruleWorkflowUIElement
+				lv_uiElements_3_0=ruleWorkflowUIElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowInputDefinitionRule());
@@ -348,15 +341,15 @@ ruleWorkflowInputDefinition returns [EObject current=null]
 					add(
 						$current,
 						"uiElements",
-						lv_uiElements_4_0,
+						lv_uiElements_3_0,
 						"de.mindscan.ai.aidsl.AiDsl.WorkflowUIElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_5='}'
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getWorkflowInputDefinitionAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowInputDefinitionAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
