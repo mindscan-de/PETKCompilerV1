@@ -252,6 +252,21 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.ELEMENTTYPE:
+      {
+        ELEMENTTYPE elementtype = (ELEMENTTYPE)theEObject;
+        T result = caseELEMENTTYPE(elementtype);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.BASICTYPE:
+      {
+        BASICTYPE basictype = (BASICTYPE)theEObject;
+        T result = caseBASICTYPE(basictype);
+        if (result == null) result = caseELEMENTTYPE(basictype);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.WORKFLOW_UI_DEFINITION:
       {
         WorkflowUIDefinition workflowUIDefinition = (WorkflowUIDefinition)theEObject;
@@ -660,6 +675,38 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWorkflowDefinitionApplyLLMNodeResultAssignment(WorkflowDefinitionApplyLLMNodeResultAssignment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ELEMENTTYPE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ELEMENTTYPE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseELEMENTTYPE(ELEMENTTYPE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>BASICTYPE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>BASICTYPE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBASICTYPE(BASICTYPE object)
   {
     return null;
   }

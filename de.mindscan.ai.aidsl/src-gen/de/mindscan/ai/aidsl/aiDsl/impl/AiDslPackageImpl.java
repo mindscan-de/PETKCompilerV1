@@ -227,6 +227,20 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass elementtypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basictypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass workflowUIDefinitionEClass = null;
 
   /**
@@ -419,9 +433,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getWorkflowUIElement_Datatype()
+  public EReference getWorkflowUIElement_Datatype()
   {
-    return (EAttribute)workflowUIElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)workflowUIElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -738,9 +752,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getVMNodeOutElement_Type()
+  public EReference getVMNodeOutElement_Type()
   {
-    return (EAttribute)vmNodeOutElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)vmNodeOutElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -826,9 +840,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getVMFieldElement_Type()
+  public EReference getVMFieldElement_Type()
   {
-    return (EAttribute)vmFieldElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)vmFieldElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1123,6 +1137,39 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getELEMENTTYPE()
+  {
+    return elementtypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBASICTYPE()
+  {
+    return basictypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBASICTYPE_Typename()
+  {
+    return (EAttribute)basictypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getWorkflowUIDefinition()
   {
     return workflowUIDefinitionEClass;
@@ -1196,7 +1243,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     workflowUIElementEClass = createEClass(WORKFLOW_UI_ELEMENT);
     createEAttribute(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__NAME);
-    createEAttribute(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__DATATYPE);
+    createEReference(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__DATATYPE);
     createEReference(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__UIELEMENT);
 
     workflowUIElementMapEClass = createEClass(WORKFLOW_UI_ELEMENT_MAP);
@@ -1236,7 +1283,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     vmNodeOutElementEClass = createEClass(VM_NODE_OUT_ELEMENT);
     createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__NAME);
-    createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__TYPE);
+    createEReference(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__TYPE);
     createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__HASREQUIRE);
     createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__INPUTREFERENCE);
 
@@ -1246,7 +1293,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     vmFieldElementEClass = createEClass(VM_FIELD_ELEMENT);
     createEAttribute(vmFieldElementEClass, VM_FIELD_ELEMENT__POLICY);
-    createEAttribute(vmFieldElementEClass, VM_FIELD_ELEMENT__TYPE);
+    createEReference(vmFieldElementEClass, VM_FIELD_ELEMENT__TYPE);
     createEAttribute(vmFieldElementEClass, VM_FIELD_ELEMENT__NAME);
     createEAttribute(vmFieldElementEClass, VM_FIELD_ELEMENT__DEFAULTVALUE);
 
@@ -1280,6 +1327,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     workflowDefinitionApplyLLMNodeResultAssignmentEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT);
     createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME);
     createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME);
+
+    elementtypeEClass = createEClass(ELEMENTTYPE);
+
+    basictypeEClass = createEClass(BASICTYPE);
+    createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
 
     workflowUIDefinitionEClass = createEClass(WORKFLOW_UI_DEFINITION);
     createEAttribute(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__NAME);
@@ -1319,6 +1371,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
+    basictypeEClass.getESuperTypes().add(this.getELEMENTTYPE());
     workflowUIDefinitionEClass.getESuperTypes().add(this.getWorkflowInputDefinition());
 
     // Initialize classes and features; add operations and parameters
@@ -1337,7 +1390,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowUIElementEClass, WorkflowUIElement.class, "WorkflowUIElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowUIElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWorkflowUIElement_Datatype(), ecorePackage.getEString(), "datatype", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowUIElement_Datatype(), this.getELEMENTTYPE(), null, "datatype", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowUIElement_Uielement(), this.getWorkflowUIElementMap(), null, "uielement", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowUIElementMapEClass, WorkflowUIElementMap.class, "WorkflowUIElementMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1377,7 +1430,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(vmNodeOutElementEClass, VMNodeOutElement.class, "VMNodeOutElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeOutElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVMNodeOutElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVMNodeOutElement_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMNodeOutElement_Hasrequire(), ecorePackage.getEBoolean(), "hasrequire", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMNodeOutElement_Inputreference(), ecorePackage.getEString(), "inputreference", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1387,7 +1440,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(vmFieldElementEClass, VMFieldElement.class, "VMFieldElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMFieldElement_Policy(), ecorePackage.getEString(), "policy", null, 0, 1, VMFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVMFieldElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, VMFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVMFieldElement_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, VMFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMFieldElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMFieldElement_Defaultvalue(), ecorePackage.getEString(), "defaultvalue", null, 0, 1, VMFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1421,6 +1474,11 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WorkflowDefinitionApplyLLMNodeResultAssignment.class, "WorkflowDefinitionApplyLLMNodeResultAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname(), ecorePackage.getEString(), "environmentresultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname(), ecorePackage.getEString(), "noderesultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementtypeEClass, de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE.class, "ELEMENTTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowUIDefinitionEClass, WorkflowUIDefinition.class, "WorkflowUIDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowUIDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

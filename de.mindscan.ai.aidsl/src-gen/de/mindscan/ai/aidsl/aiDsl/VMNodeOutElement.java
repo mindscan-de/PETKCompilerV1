@@ -49,26 +49,26 @@ public interface VMNodeOutElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(ELEMENTTYPE)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOutElement_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getType();
+  ELEMENTTYPE getType();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(String value);
+  void setType(ELEMENTTYPE value);
 
   /**
    * Returns the value of the '<em><b>Hasrequire</b></em>' attribute.

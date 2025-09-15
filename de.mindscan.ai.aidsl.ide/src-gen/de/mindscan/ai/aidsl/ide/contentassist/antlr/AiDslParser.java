@@ -39,6 +39,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsAlternatives_3_0(), "rule__VMNodeFieldElements__FieldELementsAlternatives_3_0");
 			builder.put(grammarAccess.getVMNodeInElementAccess().getPolicyAlternatives_0_0(), "rule__VMNodeInElement__PolicyAlternatives_0_0");
 			builder.put(grammarAccess.getVMFieldElementAccess().getPolicyAlternatives_0_0(), "rule__VMFieldElement__PolicyAlternatives_0_0");
+			builder.put(grammarAccess.getBASICTYPEAccess().getTypenameAlternatives_0(), "rule__BASICTYPE__TypenameAlternatives_0");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
@@ -125,6 +126,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsAssignment_3_2(), "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameAssignment_2(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2");
+			builder.put(grammarAccess.getBASICTYPEAccess().getTypenameAssignment(), "rule__BASICTYPE__TypenameAssignment");
 		}
 	}
 	

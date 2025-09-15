@@ -807,6 +807,56 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleELEMENTTYPE
+entryRuleELEMENTTYPE
+:
+{ before(grammarAccess.getELEMENTTYPERule()); }
+	 ruleELEMENTTYPE
+{ after(grammarAccess.getELEMENTTYPERule()); } 
+	 EOF 
+;
+
+// Rule ELEMENTTYPE
+ruleELEMENTTYPE 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall()); }
+		ruleBASICTYPE
+		{ after(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleBASICTYPE
+entryRuleBASICTYPE
+:
+{ before(grammarAccess.getBASICTYPERule()); }
+	 ruleBASICTYPE
+{ after(grammarAccess.getBASICTYPERule()); } 
+	 EOF 
+;
+
+// Rule BASICTYPE
+ruleBASICTYPE 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameAssignment()); }
+		(rule__BASICTYPE__TypenameAssignment)
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameAssignment()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Model__DefinitionsAlternatives_2_0
 	@init {
 		int stackSize = keepStackSize();
@@ -1005,6 +1055,33 @@ rule__VMFieldElement__PolicyAlternatives_0_0
 		{ before(grammarAccess.getVMFieldElementAccess().getPolicyOptionalKeyword_0_0_1()); }
 		'optional'
 		{ after(grammarAccess.getVMFieldElementAccess().getPolicyOptionalKeyword_0_0_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BASICTYPE__TypenameAlternatives_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameStringKeyword_0_0()); }
+		'string'
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameStringKeyword_0_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameIntKeyword_0_1()); }
+		'int'
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameIntKeyword_0_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameBooleanKeyword_0_2()); }
+		'boolean'
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameBooleanKeyword_0_2()); }
 	)
 ;
 finally {
@@ -4539,9 +4616,9 @@ rule__WorkflowUIElement__DatatypeAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); }
-		RULE_ID
-		{ after(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getWorkflowUIElementAccess().getDatatypeELEMENTTYPEParserRuleCall_2_0()); }
+		ruleELEMENTTYPE
+		{ after(grammarAccess.getWorkflowUIElementAccess().getDatatypeELEMENTTYPEParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -4813,9 +4890,9 @@ rule__VMNodeOutElement__TypeAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_2_0()); }
-		RULE_ID
-		{ after(grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getVMNodeOutElementAccess().getTypeELEMENTTYPEParserRuleCall_2_0()); }
+		ruleELEMENTTYPE
+		{ after(grammarAccess.getVMNodeOutElementAccess().getTypeELEMENTTYPEParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -4907,9 +4984,9 @@ rule__VMFieldElement__TypeAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getVMFieldElementAccess().getTypeIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getVMFieldElementAccess().getTypeIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getVMFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); }
+		ruleELEMENTTYPE
+		{ after(grammarAccess.getVMFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -5226,6 +5303,21 @@ rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2
 		{ before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); }
 		ruleQualifiedName
 		{ after(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BASICTYPE__TypenameAssignment
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameAlternatives_0()); }
+		(rule__BASICTYPE__TypenameAlternatives_0)
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameAlternatives_0()); }
 	)
 ;
 finally {

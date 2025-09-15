@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
 
@@ -54,24 +55,14 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
+   * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDatatype()
    * @generated
    * @ordered
    */
-  protected static final String DATATYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatatype()
-   * @generated
-   * @ordered
-   */
-  protected String datatype = DATATYPE_EDEFAULT;
+  protected ELEMENTTYPE datatype;
 
   /**
    * The cached value of the '{@link #getUielement() <em>Uielement</em>}' containment reference.
@@ -135,7 +126,7 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public String getDatatype()
+  public ELEMENTTYPE getDatatype()
   {
     return datatype;
   }
@@ -145,13 +136,38 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDatatype(String newDatatype)
+  public NotificationChain basicSetDatatype(ELEMENTTYPE newDatatype, NotificationChain msgs)
   {
-    String oldDatatype = datatype;
+    ELEMENTTYPE oldDatatype = datatype;
     datatype = newDatatype;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE, oldDatatype, datatype));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE, oldDatatype, newDatatype);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDatatype(ELEMENTTYPE newDatatype)
+  {
+    if (newDatatype != datatype)
+    {
+      NotificationChain msgs = null;
+      if (datatype != null)
+        msgs = ((InternalEObject)datatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE, null, msgs);
+      if (newDatatype != null)
+        msgs = ((InternalEObject)newDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE, null, msgs);
+      msgs = basicSetDatatype(newDatatype, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE, newDatatype, newDatatype));
   }
 
   /**
@@ -214,6 +230,8 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
+      case AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE:
+        return basicSetDatatype(null, msgs);
       case AiDslPackage.WORKFLOW_UI_ELEMENT__UIELEMENT:
         return basicSetUielement(null, msgs);
     }
@@ -254,7 +272,7 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
         setName((String)newValue);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE:
-        setDatatype((String)newValue);
+        setDatatype((ELEMENTTYPE)newValue);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT__UIELEMENT:
         setUielement((WorkflowUIElementMap)newValue);
@@ -277,7 +295,7 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
         setName(NAME_EDEFAULT);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE:
-        setDatatype(DATATYPE_EDEFAULT);
+        setDatatype((ELEMENTTYPE)null);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT__UIELEMENT:
         setUielement((WorkflowUIElementMap)null);
@@ -299,7 +317,7 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
       case AiDslPackage.WORKFLOW_UI_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.WORKFLOW_UI_ELEMENT__DATATYPE:
-        return DATATYPE_EDEFAULT == null ? datatype != null : !DATATYPE_EDEFAULT.equals(datatype);
+        return datatype != null;
       case AiDslPackage.WORKFLOW_UI_ELEMENT__UIELEMENT:
         return uielement != null;
     }
@@ -319,8 +337,6 @@ public class WorkflowUIElementImpl extends MinimalEObjectImpl.Container implemen
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", datatype: ");
-    result.append(datatype);
     result.append(')');
     return result.toString();
   }

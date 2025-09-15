@@ -48,26 +48,26 @@ public interface WorkflowUIElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Datatype</b></em>' attribute.
+   * Returns the value of the '<em><b>Datatype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Datatype</em>' attribute.
-   * @see #setDatatype(String)
+   * @return the value of the '<em>Datatype</em>' containment reference.
+   * @see #setDatatype(ELEMENTTYPE)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElement_Datatype()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDatatype();
+  ELEMENTTYPE getDatatype();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Datatype</em>' attribute.
+   * @param value the new value of the '<em>Datatype</em>' containment reference.
    * @see #getDatatype()
    * @generated
    */
-  void setDatatype(String value);
+  void setDatatype(ELEMENTTYPE value);
 
   /**
    * Returns the value of the '<em><b>Uielement</b></em>' containment reference.

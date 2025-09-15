@@ -34,7 +34,7 @@ WorkflowInputDefinition:
 ;
 
 WorkflowUIElement:
-	name=QualifiedName ':' datatype=ID (uielement=WorkflowUIElementMap)? 
+	name=QualifiedName ':' datatype=ELEMENTTYPE (uielement=WorkflowUIElementMap)? 
 ;
 
 WorkflowUIElementMap:
@@ -133,7 +133,7 @@ VMNodeFieldElements:
 ;
 
 VMNodeOutElement:
-	name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+	name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
 ;
 
 VMNodeInElement:
@@ -141,7 +141,7 @@ VMNodeInElement:
 ;
 
 VMFieldElement:
-	policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+	policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
 ;
 
 VMOverrideFieldElement:
@@ -205,6 +205,16 @@ QualifiedName:
 ;
 QualifiedNameWithWildcard:
 	QualifiedName '.*'?
+;
+
+
+
+ELEMENTTYPE:
+	BASICTYPE
+;
+
+BASICTYPE:
+	typename=('string'|'int'|'boolean')
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

@@ -211,16 +211,16 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cDatatypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDatatypeIDTerminalRuleCall_2_0 = (RuleCall)cDatatypeAssignment_2.eContents().get(0);
+		private final RuleCall cDatatypeELEMENTTYPEParserRuleCall_2_0 = (RuleCall)cDatatypeAssignment_2.eContents().get(0);
 		private final Assignment cUielementAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cUielementWorkflowUIElementMapParserRuleCall_3_0 = (RuleCall)cUielementAssignment_3.eContents().get(0);
 		
 		//WorkflowUIElement:
-		//    name=QualifiedName ':' datatype=ID (uielement=WorkflowUIElementMap)?
+		//    name=QualifiedName ':' datatype=ELEMENTTYPE (uielement=WorkflowUIElementMap)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=QualifiedName ':' datatype=ID (uielement=WorkflowUIElementMap)?
+		//name=QualifiedName ':' datatype=ELEMENTTYPE (uielement=WorkflowUIElementMap)?
 		public Group getGroup() { return cGroup; }
 		
 		//name=QualifiedName
@@ -232,11 +232,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//datatype=ID
+		//datatype=ELEMENTTYPE
 		public Assignment getDatatypeAssignment_2() { return cDatatypeAssignment_2; }
 		
-		//ID
-		public RuleCall getDatatypeIDTerminalRuleCall_2_0() { return cDatatypeIDTerminalRuleCall_2_0; }
+		//ELEMENTTYPE
+		public RuleCall getDatatypeELEMENTTYPEParserRuleCall_2_0() { return cDatatypeELEMENTTYPEParserRuleCall_2_0; }
 		
 		//(uielement=WorkflowUIElementMap)?
 		public Assignment getUielementAssignment_3() { return cUielementAssignment_3; }
@@ -783,7 +783,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cAsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeIDTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeELEMENTTYPEParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cHasrequireAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final Keyword cHasrequireRequireKeyword_3_0_0 = (Keyword)cHasrequireAssignment_3_0.eContents().get(0);
@@ -791,11 +791,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cInputreferenceQualifiedNameParserRuleCall_3_1_0 = (RuleCall)cInputreferenceAssignment_3_1.eContents().get(0);
 		
 		//VMNodeOutElement:
-		//    name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+		//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+		//name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
 		public Group getGroup() { return cGroup; }
 		
 		//name=QualifiedName
@@ -807,11 +807,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'as'
 		public Keyword getAsKeyword_1() { return cAsKeyword_1; }
 		
-		//type=ID
+		//type=ELEMENTTYPE
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
-		//ID
-		public RuleCall getTypeIDTerminalRuleCall_2_0() { return cTypeIDTerminalRuleCall_2_0; }
+		//ELEMENTTYPE
+		public RuleCall getTypeELEMENTTYPEParserRuleCall_2_0() { return cTypeELEMENTTYPEParserRuleCall_2_0; }
 		
 		//(hasrequire?='require' inputreference=QualifiedName)?
 		public Group getGroup_3() { return cGroup_3; }
@@ -872,7 +872,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cPolicyRequireKeyword_0_0_0 = (Keyword)cPolicyAlternatives_0_0.eContents().get(0);
 		private final Keyword cPolicyOptionalKeyword_0_0_1 = (Keyword)cPolicyAlternatives_0_0.eContents().get(1);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final RuleCall cTypeELEMENTTYPEParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -881,11 +881,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDefaultvalueAssignment_3_1.eContents().get(0);
 		
 		//VMFieldElement:
-		//    policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+		//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+		//policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
 		public Group getGroup() { return cGroup; }
 		
 		//policy=('require'|'optional')
@@ -900,11 +900,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'optional'
 		public Keyword getPolicyOptionalKeyword_0_0_1() { return cPolicyOptionalKeyword_0_0_1; }
 		
-		//type=ID
+		//type=ELEMENTTYPE
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//ID
-		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
+		//ELEMENTTYPE
+		public RuleCall getTypeELEMENTTYPEParserRuleCall_1_0() { return cTypeELEMENTTYPEParserRuleCall_1_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -1350,6 +1350,46 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'.*'?
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
+	public class ELEMENTTYPEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+		private final RuleCall cBASICTYPEParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ELEMENTTYPE:
+		//    BASICTYPE
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BASICTYPE
+		public RuleCall getBASICTYPEParserRuleCall() { return cBASICTYPEParserRuleCall; }
+	}
+	public class BASICTYPEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.BASICTYPE");
+		private final Assignment cTypenameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypenameAlternatives_0 = (Alternatives)cTypenameAssignment.eContents().get(0);
+		private final Keyword cTypenameStringKeyword_0_0 = (Keyword)cTypenameAlternatives_0.eContents().get(0);
+		private final Keyword cTypenameIntKeyword_0_1 = (Keyword)cTypenameAlternatives_0.eContents().get(1);
+		private final Keyword cTypenameBooleanKeyword_0_2 = (Keyword)cTypenameAlternatives_0.eContents().get(2);
+		
+		//BASICTYPE:
+		//    typename=('string'|'int'|'boolean')
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//typename=('string'|'int'|'boolean')
+		public Assignment getTypenameAssignment() { return cTypenameAssignment; }
+		
+		//('string'|'int'|'boolean')
+		public Alternatives getTypenameAlternatives_0() { return cTypenameAlternatives_0; }
+		
+		//'string'
+		public Keyword getTypenameStringKeyword_0_0() { return cTypenameStringKeyword_0_0; }
+		
+		//'int'
+		public Keyword getTypenameIntKeyword_0_1() { return cTypenameIntKeyword_0_1; }
+		
+		//'boolean'
+		public Keyword getTypenameBooleanKeyword_0_2() { return cTypenameBooleanKeyword_0_2; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1382,6 +1422,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDefinitionApplyLLMNodeResultAssignmentElements pWorkflowDefinitionApplyLLMNodeResultAssignment;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
+	private final ELEMENTTYPEElements pELEMENTTYPE;
+	private final BASICTYPEElements pBASICTYPE;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
@@ -1425,6 +1467,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowDefinitionApplyLLMNodeResultAssignment = new WorkflowDefinitionApplyLLMNodeResultAssignmentElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
+		this.pELEMENTTYPE = new ELEMENTTYPEElements();
+		this.pBASICTYPE = new BASICTYPEElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.STRING");
@@ -1513,7 +1557,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//WorkflowUIElement:
-	//    name=QualifiedName ':' datatype=ID (uielement=WorkflowUIElementMap)?
+	//    name=QualifiedName ':' datatype=ELEMENTTYPE (uielement=WorkflowUIElementMap)?
 	//;
 	public WorkflowUIElementElements getWorkflowUIElementAccess() {
 		return pWorkflowUIElement;
@@ -1706,7 +1750,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeOutElement:
-	//    name=QualifiedName 'as' type=ID (hasrequire?='require' inputreference=QualifiedName)?
+	//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
 	//;
 	public VMNodeOutElementElements getVMNodeOutElementAccess() {
 		return pVMNodeOutElement;
@@ -1728,7 +1772,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMFieldElement:
-	//    policy=('require'|'optional') type=ID name=ID ('default' defaultvalue=(STRING))?
+	//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
 	//;
 	public VMFieldElementElements getVMFieldElementAccess() {
 		return pVMFieldElement;
@@ -1857,6 +1901,28 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getQualifiedNameWithWildcardRule() {
 		return getQualifiedNameWithWildcardAccess().getRule();
+	}
+	
+	//ELEMENTTYPE:
+	//    BASICTYPE
+	//;
+	public ELEMENTTYPEElements getELEMENTTYPEAccess() {
+		return pELEMENTTYPE;
+	}
+	
+	public ParserRule getELEMENTTYPERule() {
+		return getELEMENTTYPEAccess().getRule();
+	}
+	
+	//BASICTYPE:
+	//    typename=('string'|'int'|'boolean')
+	//;
+	public BASICTYPEElements getBASICTYPEAccess() {
+		return pBASICTYPE;
+	}
+	
+	public ParserRule getBASICTYPERule() {
+		return getBASICTYPEAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

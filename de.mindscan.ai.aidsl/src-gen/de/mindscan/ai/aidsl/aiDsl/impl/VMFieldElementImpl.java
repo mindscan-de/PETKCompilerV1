@@ -4,11 +4,14 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -52,24 +55,14 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
   protected String policy = POLICY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
+  protected ELEMENTTYPE type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -163,7 +156,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getType()
+  public ELEMENTTYPE getType()
   {
     return type;
   }
@@ -173,13 +166,38 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setType(String newType)
+  public NotificationChain basicSetType(ELEMENTTYPE newType, NotificationChain msgs)
   {
-    String oldType = type;
+    ELEMENTTYPE oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setType(ELEMENTTYPE newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.VM_FIELD_ELEMENT__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.VM_FIELD_ELEMENT__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__TYPE, newType, newType));
   }
 
   /**
@@ -238,6 +256,22 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -268,7 +302,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
         setPolicy((String)newValue);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
-        setType((String)newValue);
+        setType((ELEMENTTYPE)newValue);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         setName((String)newValue);
@@ -294,7 +328,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
         setPolicy(POLICY_EDEFAULT);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((ELEMENTTYPE)null);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
@@ -319,7 +353,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
       case AiDslPackage.VM_FIELD_ELEMENT__POLICY:
         return POLICY_EDEFAULT == null ? policy != null : !POLICY_EDEFAULT.equals(policy);
       case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+        return type != null;
       case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
@@ -341,8 +375,6 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (policy: ");
     result.append(policy);
-    result.append(", type: ");
-    result.append(type);
     result.append(", name: ");
     result.append(name);
     result.append(", defaultvalue: ");

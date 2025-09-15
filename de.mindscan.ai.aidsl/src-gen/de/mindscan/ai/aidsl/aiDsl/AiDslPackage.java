@@ -198,7 +198,7 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Datatype</b></em>' attribute.
+   * The feature id for the '<em><b>Datatype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -569,7 +569,7 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_OUT_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -661,7 +661,7 @@ public interface AiDslPackage extends EPackage
   int VM_FIELD_ELEMENT__POLICY = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -983,6 +983,53 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.ELEMENTTYPEImpl <em>ELEMENTTYPE</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.ELEMENTTYPEImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
+   * @generated
+   */
+  int ELEMENTTYPE = 25;
+
+  /**
+   * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENTTYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl <em>BASICTYPE</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
+   * @generated
+   */
+  int BASICTYPE = 26;
+
+  /**
+   * The feature id for the '<em><b>Typename</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASICTYPE__TYPENAME = ELEMENTTYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>BASICTYPE</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -990,7 +1037,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIDefinition()
    * @generated
    */
-  int WORKFLOW_UI_DEFINITION = 25;
+  int WORKFLOW_UI_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1137,15 +1184,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowUIElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Datatype</em>'.
+   * @return the meta object for the containment reference '<em>Datatype</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype()
    * @see #getWorkflowUIElement()
    * @generated
    */
-  EAttribute getWorkflowUIElement_Datatype();
+  EReference getWorkflowUIElement_Datatype();
 
   /**
    * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getUielement <em>Uielement</em>}'.
@@ -1445,15 +1492,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMNodeOutElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getType()
    * @see #getVMNodeOutElement()
    * @generated
    */
-  EAttribute getVMNodeOutElement_Type();
+  EReference getVMNodeOutElement_Type();
 
   /**
    * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#isHasrequire <em>Hasrequire</em>}'.
@@ -1531,15 +1578,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMFieldElement_Policy();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getType()
    * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMFieldElement_Type();
+  EReference getVMFieldElement_Type();
 
   /**
    * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getName <em>Name</em>}'.
@@ -1821,6 +1868,37 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
 
   /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE <em>ELEMENTTYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ELEMENTTYPE</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE
+   * @generated
+   */
+  EClass getELEMENTTYPE();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE <em>BASICTYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>BASICTYPE</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.BASICTYPE
+   * @generated
+   */
+  EClass getBASICTYPE();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#getTypename <em>Typename</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Typename</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.BASICTYPE#getTypename()
+   * @see #getBASICTYPE()
+   * @generated
+   */
+  EAttribute getBASICTYPE_Typename();
+
+  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition <em>Workflow UI Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1974,12 +2052,12 @@ public interface AiDslPackage extends EPackage
     EAttribute WORKFLOW_UI_ELEMENT__NAME = eINSTANCE.getWorkflowUIElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Datatype</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Datatype</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORKFLOW_UI_ELEMENT__DATATYPE = eINSTANCE.getWorkflowUIElement_Datatype();
+    EReference WORKFLOW_UI_ELEMENT__DATATYPE = eINSTANCE.getWorkflowUIElement_Datatype();
 
     /**
      * The meta object literal for the '<em><b>Uielement</b></em>' containment reference feature.
@@ -2228,12 +2306,12 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_NODE_OUT_ELEMENT__NAME = eINSTANCE.getVMNodeOutElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_OUT_ELEMENT__TYPE = eINSTANCE.getVMNodeOutElement_Type();
+    EReference VM_NODE_OUT_ELEMENT__TYPE = eINSTANCE.getVMNodeOutElement_Type();
 
     /**
      * The meta object literal for the '<em><b>Hasrequire</b></em>' attribute feature.
@@ -2296,12 +2374,12 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_FIELD_ELEMENT__POLICY = eINSTANCE.getVMFieldElement_Policy();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_FIELD_ELEMENT__TYPE = eINSTANCE.getVMFieldElement_Type();
+    EReference VM_FIELD_ELEMENT__TYPE = eINSTANCE.getVMFieldElement_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2524,6 +2602,34 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME = eINSTANCE.getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.ELEMENTTYPEImpl <em>ELEMENTTYPE</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.ELEMENTTYPEImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
+     * @generated
+     */
+    EClass ELEMENTTYPE = eINSTANCE.getELEMENTTYPE();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl <em>BASICTYPE</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
+     * @generated
+     */
+    EClass BASICTYPE = eINSTANCE.getBASICTYPE();
+
+    /**
+     * The meta object literal for the '<em><b>Typename</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASICTYPE__TYPENAME = eINSTANCE.getBASICTYPE_Typename();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.

@@ -201,6 +201,16 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createWorkflowDefinitionApplyLLMNodeResultAssignmentAdapter();
       }
       @Override
+      public Adapter caseELEMENTTYPE(ELEMENTTYPE object)
+      {
+        return createELEMENTTYPEAdapter();
+      }
+      @Override
+      public Adapter caseBASICTYPE(BASICTYPE object)
+      {
+        return createBASICTYPEAdapter();
+      }
+      @Override
       public Adapter caseWorkflowUIDefinition(WorkflowUIDefinition object)
       {
         return createWorkflowUIDefinitionAdapter();
@@ -598,6 +608,36 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWorkflowDefinitionApplyLLMNodeResultAssignmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE <em>ELEMENTTYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE
+   * @generated
+   */
+  public Adapter createELEMENTTYPEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE <em>BASICTYPE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.BASICTYPE
+   * @generated
+   */
+  public Adapter createBASICTYPEAdapter()
   {
     return null;
   }

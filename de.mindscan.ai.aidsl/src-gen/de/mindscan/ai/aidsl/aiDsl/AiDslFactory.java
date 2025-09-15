@@ -249,6 +249,24 @@ public interface AiDslFactory extends EFactory
   WorkflowDefinitionApplyLLMNodeResultAssignment createWorkflowDefinitionApplyLLMNodeResultAssignment();
 
   /**
+   * Returns a new object of class '<em>ELEMENTTYPE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ELEMENTTYPE</em>'.
+   * @generated
+   */
+  ELEMENTTYPE createELEMENTTYPE();
+
+  /**
+   * Returns a new object of class '<em>BASICTYPE</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>BASICTYPE</em>'.
+   * @generated
+   */
+  BASICTYPE createBASICTYPE();
+
+  /**
    * Returns a new object of class '<em>Workflow UI Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

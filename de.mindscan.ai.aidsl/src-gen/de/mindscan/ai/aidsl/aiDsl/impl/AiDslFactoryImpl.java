@@ -90,6 +90,8 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT: return createWorkflowDefinitionApplyLLMTaskStatement();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
+      case AiDslPackage.ELEMENTTYPE: return createELEMENTTYPE();
+      case AiDslPackage.BASICTYPE: return createBASICTYPE();
       case AiDslPackage.WORKFLOW_UI_DEFINITION: return createWorkflowUIDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -394,6 +396,30 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     WorkflowDefinitionApplyLLMNodeResultAssignmentImpl workflowDefinitionApplyLLMNodeResultAssignment = new WorkflowDefinitionApplyLLMNodeResultAssignmentImpl();
     return workflowDefinitionApplyLLMNodeResultAssignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ELEMENTTYPE createELEMENTTYPE()
+  {
+    ELEMENTTYPEImpl elementtype = new ELEMENTTYPEImpl();
+    return elementtype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BASICTYPE createBASICTYPE()
+  {
+    BASICTYPEImpl basictype = new BASICTYPEImpl();
+    return basictype;
   }
 
   /**

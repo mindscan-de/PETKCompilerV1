@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.serializer;
 import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
+import de.mindscan.ai.aidsl.aiDsl.BASICTYPE;
 import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
@@ -57,6 +58,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE:
 				sequence_AnnotationInterfaceReference(context, (AnnotationInterfaceReference) semanticObject); 
+				return; 
+			case AiDslPackage.BASICTYPE:
+				sequence_BASICTYPE(context, (BASICTYPE) semanticObject); 
 				return; 
 			case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR:
 				sequence_DatadictionaryKeyValuePair(context, (DatadictionaryKeyValuePair) semanticObject); 
@@ -149,6 +153,21 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(AiDslPackage.Literals.ANNOTATION_INTERFACE_REFERENCE__NAME, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ELEMENTTYPE returns BASICTYPE
+	 *     BASICTYPE returns BASICTYPE
+	 *
+	 * Constraint:
+	 *     (typename='string' | typename='int' | typename='boolean')
+	 * </pre>
+	 */
+	protected void sequence_BASICTYPE(ISerializationContext context, BASICTYPE semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -280,7 +299,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMFieldElement returns VMFieldElement
 	 *
 	 * Constraint:
-	 *     ((policy='require' | policy='optional') type=ID name=ID defaultvalue=STRING?)
+	 *     ((policy='require' | policy='optional') type=ELEMENTTYPE name=ID defaultvalue=STRING?)
 	 * </pre>
 	 */
 	protected void sequence_VMFieldElement(ISerializationContext context, VMFieldElement semanticObject) {
@@ -373,7 +392,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMNodeOutElement returns VMNodeOutElement
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName type=ID (hasrequire?='require' inputreference=QualifiedName)?)
+	 *     (name=QualifiedName type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?)
 	 * </pre>
 	 */
 	protected void sequence_VMNodeOutElement(ISerializationContext context, VMNodeOutElement semanticObject) {
@@ -547,7 +566,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowUIElement returns WorkflowUIElement
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName datatype=ID uielement=WorkflowUIElementMap?)
+	 *     (name=QualifiedName datatype=ELEMENTTYPE uielement=WorkflowUIElementMap?)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowUIElement(ISerializationContext context, WorkflowUIElement semanticObject) {

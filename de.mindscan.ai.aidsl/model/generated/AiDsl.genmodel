@@ -20,7 +20,7 @@
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowInputDefinition"/>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/datatype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIElement/datatype"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIElement/uielement"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElementMap">
@@ -59,7 +59,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeOutElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMNodeOutElement/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/hasrequire"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeOutElement/inputreference"/>
     </genClasses>
@@ -69,7 +69,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMFieldElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/policy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMFieldElement/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/defaultvalue"/>
     </genClasses>
@@ -103,6 +103,10 @@
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/environmentresultname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/noderesultname"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//ELEMENTTYPE"/>
+    <genClasses ecoreClass="AiDsl.ecore#//BASICTYPE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIDefinition/name"/>

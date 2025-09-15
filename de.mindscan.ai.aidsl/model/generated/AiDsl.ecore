@@ -18,7 +18,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowInputDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowUIElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datatype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uielement" eType="#//WorkflowUIElementMap"
         containment="true"/>
   </eClassifiers>
@@ -64,7 +65,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeOutElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasrequire" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputreference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -74,7 +76,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMFieldElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -113,6 +116,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="environmentresultname"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noderesultname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ELEMENTTYPE"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BASICTYPE" eSuperTypes="#//ELEMENTTYPE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowUIDefinition" eSuperTypes="#//WorkflowInputDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

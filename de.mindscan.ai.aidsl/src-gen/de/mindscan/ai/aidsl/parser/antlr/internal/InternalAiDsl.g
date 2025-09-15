@@ -402,19 +402,20 @@ ruleWorkflowUIElement returns [EObject current=null]
 		}
 		(
 			(
-				lv_datatype_2_0=RULE_ID
 				{
-					newLeafNode(lv_datatype_2_0, grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getWorkflowUIElementAccess().getDatatypeELEMENTTYPEParserRuleCall_2_0());
 				}
+				lv_datatype_2_0=ruleELEMENTTYPE
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkflowUIElementRule());
+						$current = createModelElementForParent(grammarAccess.getWorkflowUIElementRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"datatype",
 						lv_datatype_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1249,19 +1250,20 @@ ruleVMNodeOutElement returns [EObject current=null]
 		}
 		(
 			(
-				lv_type_2_0=RULE_ID
 				{
-					newLeafNode(lv_type_2_0, grammarAccess.getVMNodeOutElementAccess().getTypeIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getTypeELEMENTTYPEParserRuleCall_2_0());
 				}
+				lv_type_2_0=ruleELEMENTTYPE
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMNodeOutElementRule());
+						$current = createModelElementForParent(grammarAccess.getVMNodeOutElementRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"type",
 						lv_type_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1413,19 +1415,20 @@ ruleVMFieldElement returns [EObject current=null]
 		)
 		(
 			(
-				lv_type_1_0=RULE_ID
 				{
-					newLeafNode(lv_type_1_0, grammarAccess.getVMFieldElementAccess().getTypeIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getVMFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0());
 				}
+				lv_type_1_0=ruleELEMENTTYPE
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMFieldElementRule());
+						$current = createModelElementForParent(grammarAccess.getVMFieldElementRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"type",
 						lv_type_1_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2095,6 +2098,86 @@ ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrD
 				newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1());
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleELEMENTTYPE
+entryRuleELEMENTTYPE returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getELEMENTTYPERule()); }
+	iv_ruleELEMENTTYPE=ruleELEMENTTYPE
+	{ $current=$iv_ruleELEMENTTYPE.current; }
+	EOF;
+
+// Rule ELEMENTTYPE
+ruleELEMENTTYPE returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall());
+	}
+	this_BASICTYPE_0=ruleBASICTYPE
+	{
+		$current = $this_BASICTYPE_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleBASICTYPE
+entryRuleBASICTYPE returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBASICTYPERule()); }
+	iv_ruleBASICTYPE=ruleBASICTYPE
+	{ $current=$iv_ruleBASICTYPE.current; }
+	EOF;
+
+// Rule BASICTYPE
+ruleBASICTYPE returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_typename_0_1='string'
+				{
+					newLeafNode(lv_typename_0_1, grammarAccess.getBASICTYPEAccess().getTypenameStringKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBASICTYPERule());
+					}
+					setWithLastConsumed($current, "typename", lv_typename_0_1, null);
+				}
+				    |
+				lv_typename_0_2='int'
+				{
+					newLeafNode(lv_typename_0_2, grammarAccess.getBASICTYPEAccess().getTypenameIntKeyword_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBASICTYPERule());
+					}
+					setWithLastConsumed($current, "typename", lv_typename_0_2, null);
+				}
+				    |
+				lv_typename_0_3='boolean'
+				{
+					newLeafNode(lv_typename_0_3, grammarAccess.getBASICTYPEAccess().getTypenameBooleanKeyword_0_2());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBASICTYPERule());
+					}
+					setWithLastConsumed($current, "typename", lv_typename_0_3, null);
+				}
+			)
+		)
 	)
 ;
 
