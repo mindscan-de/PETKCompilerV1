@@ -27,20 +27,19 @@ ImportDeclaration:
 ;
 
 WorkflowUIDefinition:
-	{WorkflowUIDefinition} 'ui' '{'
+	{WorkflowUIDefinition} 'datainput' '{'
 		(uiElements+=WorkflowUIElement)*
 	'}'
 ;
 
 WorkflowUIElement:
-	name=QualifiedName ':' element=WorkflowUIElementMap 
+	name=QualifiedName ':' datatype=ID (uielement=WorkflowUIElementMap)? 
 ;
 
 WorkflowUIElementMap:
-	'{'
+	'ui' '{'
 		'label' label=STRING
 		'uitype' uitype=STRING
-		'datatype' datatype=STRING
 	'}'
 ;
 

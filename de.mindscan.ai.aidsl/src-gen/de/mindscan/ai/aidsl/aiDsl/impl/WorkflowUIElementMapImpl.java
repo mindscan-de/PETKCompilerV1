@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getUitype <em>Uitype</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getDatatype <em>Datatype</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,26 +68,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String uitype = UITYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatatype()
-   * @generated
-   * @ordered
-   */
-  protected static final String DATATYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDatatype()
-   * @generated
-   * @ordered
-   */
-  protected String datatype = DATATYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,31 +146,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public String getDatatype()
-  {
-    return datatype;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDatatype(String newDatatype)
-  {
-    String oldDatatype = datatype;
-    datatype = newDatatype;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DATATYPE, oldDatatype, datatype));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -200,8 +154,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return getLabel();
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         return getUitype();
-      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DATATYPE:
-        return getDatatype();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -221,9 +173,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         setUitype((String)newValue);
-        return;
-      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DATATYPE:
-        setDatatype((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -245,9 +194,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         setUitype(UITYPE_EDEFAULT);
         return;
-      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DATATYPE:
-        setDatatype(DATATYPE_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -266,8 +212,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         return UITYPE_EDEFAULT == null ? uitype != null : !UITYPE_EDEFAULT.equals(uitype);
-      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DATATYPE:
-        return DATATYPE_EDEFAULT == null ? datatype != null : !DATATYPE_EDEFAULT.equals(datatype);
     }
     return super.eIsSet(featureID);
   }
@@ -287,8 +231,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
     result.append(label);
     result.append(", uitype: ");
     result.append(uitype);
-    result.append(", datatype: ");
-    result.append(datatype);
     result.append(')');
     return result.toString();
   }

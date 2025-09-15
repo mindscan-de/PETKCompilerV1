@@ -79,10 +79,10 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getWorkflowUIDefinitionAccess().getUiElementsAssignment_3(), "rule__WorkflowUIDefinition__UiElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getNameAssignment_0(), "rule__WorkflowUIElement__NameAssignment_0");
-			builder.put(grammarAccess.getWorkflowUIElementAccess().getElementAssignment_2(), "rule__WorkflowUIElement__ElementAssignment_2");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_2(), "rule__WorkflowUIElementMap__LabelAssignment_2");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_4(), "rule__WorkflowUIElementMap__UitypeAssignment_4");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeAssignment_6(), "rule__WorkflowUIElementMap__DatatypeAssignment_6");
+			builder.put(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2(), "rule__WorkflowUIElement__DatatypeAssignment_2");
+			builder.put(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3(), "rule__WorkflowUIElement__UielementAssignment_3");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3(), "rule__WorkflowUIElementMap__LabelAssignment_3");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5(), "rule__WorkflowUIElementMap__UitypeAssignment_5");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryElement__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getExtendsAssignment_2_1(), "rule__WorkflowDataDictionaryElement__ExtendsAssignment_2_1");

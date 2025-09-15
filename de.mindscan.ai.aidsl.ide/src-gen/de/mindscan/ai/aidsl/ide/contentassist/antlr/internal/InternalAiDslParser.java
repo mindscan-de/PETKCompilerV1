@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'null'", "'true'", "'false'", "'super'", "'overlay'", "'require'", "'optional'", "'package'", "'import'", "'ui'", "'{'", "'}'", "':'", "'label'", "'uitype'", "'datatype'", "'datadictionary'", "'data'", "'extends'", "'vmnode'", "'opcode'", "'out'", "'in'", "'fields'", "'as'", "'default'", "':='", "'llmtask'", "'('", "')'", "'implements'", "','", "'@'", "'workflow'", "';'", "'=>'", "'.'", "'.*'", "'override'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'null'", "'true'", "'false'", "'super'", "'overlay'", "'require'", "'optional'", "'package'", "'import'", "'datainput'", "'{'", "'}'", "':'", "'ui'", "'label'", "'uitype'", "'datadictionary'", "'data'", "'extends'", "'vmnode'", "'opcode'", "'out'", "'in'", "'fields'", "'as'", "'default'", "':='", "'llmtask'", "'('", "')'", "'implements'", "','", "'@'", "'workflow'", "';'", "'=>'", "'.'", "'.*'", "'override'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -3883,21 +3883,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIDefinition__Group__1__Impl"
-    // InternalAiDsl.g:1242:1: rule__WorkflowUIDefinition__Group__1__Impl : ( 'ui' ) ;
+    // InternalAiDsl.g:1242:1: rule__WorkflowUIDefinition__Group__1__Impl : ( 'datainput' ) ;
     public final void rule__WorkflowUIDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1246:1: ( ( 'ui' ) )
-            // InternalAiDsl.g:1247:1: ( 'ui' )
+            // InternalAiDsl.g:1246:1: ( ( 'datainput' ) )
+            // InternalAiDsl.g:1247:1: ( 'datainput' )
             {
-            // InternalAiDsl.g:1247:1: ( 'ui' )
-            // InternalAiDsl.g:1248:2: 'ui'
+            // InternalAiDsl.g:1247:1: ( 'datainput' )
+            // InternalAiDsl.g:1248:2: 'datainput'
             {
-             before(grammarAccess.getWorkflowUIDefinitionAccess().getUiKeyword_1()); 
+             before(grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIDefinitionAccess().getUiKeyword_1()); 
+             after(grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1()); 
 
             }
 
@@ -4262,7 +4262,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:1369:1: ( rule__WorkflowUIElement__Group__1__Impl rule__WorkflowUIElement__Group__2 )
             // InternalAiDsl.g:1370:2: rule__WorkflowUIElement__Group__1__Impl rule__WorkflowUIElement__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_6);
             rule__WorkflowUIElement__Group__1__Impl();
 
             state._fsp--;
@@ -4328,17 +4328,22 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElement__Group__2"
-    // InternalAiDsl.g:1392:1: rule__WorkflowUIElement__Group__2 : rule__WorkflowUIElement__Group__2__Impl ;
+    // InternalAiDsl.g:1392:1: rule__WorkflowUIElement__Group__2 : rule__WorkflowUIElement__Group__2__Impl rule__WorkflowUIElement__Group__3 ;
     public final void rule__WorkflowUIElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1396:1: ( rule__WorkflowUIElement__Group__2__Impl )
-            // InternalAiDsl.g:1397:2: rule__WorkflowUIElement__Group__2__Impl
+            // InternalAiDsl.g:1396:1: ( rule__WorkflowUIElement__Group__2__Impl rule__WorkflowUIElement__Group__3 )
+            // InternalAiDsl.g:1397:2: rule__WorkflowUIElement__Group__2__Impl rule__WorkflowUIElement__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_12);
             rule__WorkflowUIElement__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__WorkflowUIElement__Group__3();
 
             state._fsp--;
 
@@ -4361,31 +4366,31 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElement__Group__2__Impl"
-    // InternalAiDsl.g:1403:1: rule__WorkflowUIElement__Group__2__Impl : ( ( rule__WorkflowUIElement__ElementAssignment_2 ) ) ;
+    // InternalAiDsl.g:1404:1: rule__WorkflowUIElement__Group__2__Impl : ( ( rule__WorkflowUIElement__DatatypeAssignment_2 ) ) ;
     public final void rule__WorkflowUIElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1407:1: ( ( ( rule__WorkflowUIElement__ElementAssignment_2 ) ) )
-            // InternalAiDsl.g:1408:1: ( ( rule__WorkflowUIElement__ElementAssignment_2 ) )
+            // InternalAiDsl.g:1408:1: ( ( ( rule__WorkflowUIElement__DatatypeAssignment_2 ) ) )
+            // InternalAiDsl.g:1409:1: ( ( rule__WorkflowUIElement__DatatypeAssignment_2 ) )
             {
-            // InternalAiDsl.g:1408:1: ( ( rule__WorkflowUIElement__ElementAssignment_2 ) )
-            // InternalAiDsl.g:1409:2: ( rule__WorkflowUIElement__ElementAssignment_2 )
+            // InternalAiDsl.g:1409:1: ( ( rule__WorkflowUIElement__DatatypeAssignment_2 ) )
+            // InternalAiDsl.g:1410:2: ( rule__WorkflowUIElement__DatatypeAssignment_2 )
             {
-             before(grammarAccess.getWorkflowUIElementAccess().getElementAssignment_2()); 
-            // InternalAiDsl.g:1410:2: ( rule__WorkflowUIElement__ElementAssignment_2 )
-            // InternalAiDsl.g:1410:3: rule__WorkflowUIElement__ElementAssignment_2
+             before(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2()); 
+            // InternalAiDsl.g:1411:2: ( rule__WorkflowUIElement__DatatypeAssignment_2 )
+            // InternalAiDsl.g:1411:3: rule__WorkflowUIElement__DatatypeAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__WorkflowUIElement__ElementAssignment_2();
+            rule__WorkflowUIElement__DatatypeAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWorkflowUIElementAccess().getElementAssignment_2()); 
+             after(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2()); 
 
             }
 
@@ -4407,17 +4412,108 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WorkflowUIElement__Group__2__Impl"
 
 
+    // $ANTLR start "rule__WorkflowUIElement__Group__3"
+    // InternalAiDsl.g:1419:1: rule__WorkflowUIElement__Group__3 : rule__WorkflowUIElement__Group__3__Impl ;
+    public final void rule__WorkflowUIElement__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAiDsl.g:1423:1: ( rule__WorkflowUIElement__Group__3__Impl )
+            // InternalAiDsl.g:1424:2: rule__WorkflowUIElement__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__WorkflowUIElement__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__WorkflowUIElement__Group__3"
+
+
+    // $ANTLR start "rule__WorkflowUIElement__Group__3__Impl"
+    // InternalAiDsl.g:1430:1: rule__WorkflowUIElement__Group__3__Impl : ( ( rule__WorkflowUIElement__UielementAssignment_3 )? ) ;
+    public final void rule__WorkflowUIElement__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAiDsl.g:1434:1: ( ( ( rule__WorkflowUIElement__UielementAssignment_3 )? ) )
+            // InternalAiDsl.g:1435:1: ( ( rule__WorkflowUIElement__UielementAssignment_3 )? )
+            {
+            // InternalAiDsl.g:1435:1: ( ( rule__WorkflowUIElement__UielementAssignment_3 )? )
+            // InternalAiDsl.g:1436:2: ( rule__WorkflowUIElement__UielementAssignment_3 )?
+            {
+             before(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3()); 
+            // InternalAiDsl.g:1437:2: ( rule__WorkflowUIElement__UielementAssignment_3 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==24) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalAiDsl.g:1437:3: rule__WorkflowUIElement__UielementAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__WorkflowUIElement__UielementAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__WorkflowUIElement__Group__3__Impl"
+
+
     // $ANTLR start "rule__WorkflowUIElementMap__Group__0"
-    // InternalAiDsl.g:1419:1: rule__WorkflowUIElementMap__Group__0 : rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1 ;
+    // InternalAiDsl.g:1446:1: rule__WorkflowUIElementMap__Group__0 : rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1 ;
     public final void rule__WorkflowUIElementMap__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1423:1: ( rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1 )
-            // InternalAiDsl.g:1424:2: rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1
+            // InternalAiDsl.g:1450:1: ( rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1 )
+            // InternalAiDsl.g:1451:2: rule__WorkflowUIElementMap__Group__0__Impl rule__WorkflowUIElementMap__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_8);
             rule__WorkflowUIElementMap__Group__0__Impl();
 
             state._fsp--;
@@ -4446,21 +4542,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__0__Impl"
-    // InternalAiDsl.g:1431:1: rule__WorkflowUIElementMap__Group__0__Impl : ( '{' ) ;
+    // InternalAiDsl.g:1458:1: rule__WorkflowUIElementMap__Group__0__Impl : ( 'ui' ) ;
     public final void rule__WorkflowUIElementMap__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1435:1: ( ( '{' ) )
-            // InternalAiDsl.g:1436:1: ( '{' )
+            // InternalAiDsl.g:1462:1: ( ( 'ui' ) )
+            // InternalAiDsl.g:1463:1: ( 'ui' )
             {
-            // InternalAiDsl.g:1436:1: ( '{' )
-            // InternalAiDsl.g:1437:2: '{'
+            // InternalAiDsl.g:1463:1: ( 'ui' )
+            // InternalAiDsl.g:1464:2: 'ui'
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_0()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getUiKeyword_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getUiKeyword_0()); 
 
             }
 
@@ -4483,14 +4579,14 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__1"
-    // InternalAiDsl.g:1446:1: rule__WorkflowUIElementMap__Group__1 : rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2 ;
+    // InternalAiDsl.g:1473:1: rule__WorkflowUIElementMap__Group__1 : rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2 ;
     public final void rule__WorkflowUIElementMap__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1450:1: ( rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2 )
-            // InternalAiDsl.g:1451:2: rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2
+            // InternalAiDsl.g:1477:1: ( rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2 )
+            // InternalAiDsl.g:1478:2: rule__WorkflowUIElementMap__Group__1__Impl rule__WorkflowUIElementMap__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__WorkflowUIElementMap__Group__1__Impl();
@@ -4521,21 +4617,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__1__Impl"
-    // InternalAiDsl.g:1458:1: rule__WorkflowUIElementMap__Group__1__Impl : ( 'label' ) ;
+    // InternalAiDsl.g:1485:1: rule__WorkflowUIElementMap__Group__1__Impl : ( '{' ) ;
     public final void rule__WorkflowUIElementMap__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1462:1: ( ( 'label' ) )
-            // InternalAiDsl.g:1463:1: ( 'label' )
+            // InternalAiDsl.g:1489:1: ( ( '{' ) )
+            // InternalAiDsl.g:1490:1: ( '{' )
             {
-            // InternalAiDsl.g:1463:1: ( 'label' )
-            // InternalAiDsl.g:1464:2: 'label'
+            // InternalAiDsl.g:1490:1: ( '{' )
+            // InternalAiDsl.g:1491:2: '{'
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_1()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_1()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_1()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
 
@@ -4558,14 +4654,14 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__2"
-    // InternalAiDsl.g:1473:1: rule__WorkflowUIElementMap__Group__2 : rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3 ;
+    // InternalAiDsl.g:1500:1: rule__WorkflowUIElementMap__Group__2 : rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3 ;
     public final void rule__WorkflowUIElementMap__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1477:1: ( rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3 )
-            // InternalAiDsl.g:1478:2: rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3
+            // InternalAiDsl.g:1504:1: ( rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3 )
+            // InternalAiDsl.g:1505:2: rule__WorkflowUIElementMap__Group__2__Impl rule__WorkflowUIElementMap__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__WorkflowUIElementMap__Group__2__Impl();
@@ -4596,31 +4692,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__2__Impl"
-    // InternalAiDsl.g:1485:1: rule__WorkflowUIElementMap__Group__2__Impl : ( ( rule__WorkflowUIElementMap__LabelAssignment_2 ) ) ;
+    // InternalAiDsl.g:1512:1: rule__WorkflowUIElementMap__Group__2__Impl : ( 'label' ) ;
     public final void rule__WorkflowUIElementMap__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1489:1: ( ( ( rule__WorkflowUIElementMap__LabelAssignment_2 ) ) )
-            // InternalAiDsl.g:1490:1: ( ( rule__WorkflowUIElementMap__LabelAssignment_2 ) )
+            // InternalAiDsl.g:1516:1: ( ( 'label' ) )
+            // InternalAiDsl.g:1517:1: ( 'label' )
             {
-            // InternalAiDsl.g:1490:1: ( ( rule__WorkflowUIElementMap__LabelAssignment_2 ) )
-            // InternalAiDsl.g:1491:2: ( rule__WorkflowUIElementMap__LabelAssignment_2 )
+            // InternalAiDsl.g:1517:1: ( 'label' )
+            // InternalAiDsl.g:1518:2: 'label'
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_2()); 
-            // InternalAiDsl.g:1492:2: ( rule__WorkflowUIElementMap__LabelAssignment_2 )
-            // InternalAiDsl.g:1492:3: rule__WorkflowUIElementMap__LabelAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__WorkflowUIElementMap__LabelAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_2()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_2()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_2()); 
 
             }
 
@@ -4643,16 +4729,16 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__3"
-    // InternalAiDsl.g:1500:1: rule__WorkflowUIElementMap__Group__3 : rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4 ;
+    // InternalAiDsl.g:1527:1: rule__WorkflowUIElementMap__Group__3 : rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4 ;
     public final void rule__WorkflowUIElementMap__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1504:1: ( rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4 )
-            // InternalAiDsl.g:1505:2: rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4
+            // InternalAiDsl.g:1531:1: ( rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4 )
+            // InternalAiDsl.g:1532:2: rule__WorkflowUIElementMap__Group__3__Impl rule__WorkflowUIElementMap__Group__4
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__WorkflowUIElementMap__Group__3__Impl();
 
             state._fsp--;
@@ -4681,21 +4767,31 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__3__Impl"
-    // InternalAiDsl.g:1512:1: rule__WorkflowUIElementMap__Group__3__Impl : ( 'uitype' ) ;
+    // InternalAiDsl.g:1539:1: rule__WorkflowUIElementMap__Group__3__Impl : ( ( rule__WorkflowUIElementMap__LabelAssignment_3 ) ) ;
     public final void rule__WorkflowUIElementMap__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1516:1: ( ( 'uitype' ) )
-            // InternalAiDsl.g:1517:1: ( 'uitype' )
+            // InternalAiDsl.g:1543:1: ( ( ( rule__WorkflowUIElementMap__LabelAssignment_3 ) ) )
+            // InternalAiDsl.g:1544:1: ( ( rule__WorkflowUIElementMap__LabelAssignment_3 ) )
             {
-            // InternalAiDsl.g:1517:1: ( 'uitype' )
-            // InternalAiDsl.g:1518:2: 'uitype'
+            // InternalAiDsl.g:1544:1: ( ( rule__WorkflowUIElementMap__LabelAssignment_3 ) )
+            // InternalAiDsl.g:1545:2: ( rule__WorkflowUIElementMap__LabelAssignment_3 )
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_3()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_3()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3()); 
+            // InternalAiDsl.g:1546:2: ( rule__WorkflowUIElementMap__LabelAssignment_3 )
+            // InternalAiDsl.g:1546:3: rule__WorkflowUIElementMap__LabelAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__WorkflowUIElementMap__LabelAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3()); 
 
             }
 
@@ -4718,16 +4814,16 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__4"
-    // InternalAiDsl.g:1527:1: rule__WorkflowUIElementMap__Group__4 : rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5 ;
+    // InternalAiDsl.g:1554:1: rule__WorkflowUIElementMap__Group__4 : rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5 ;
     public final void rule__WorkflowUIElementMap__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1531:1: ( rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5 )
-            // InternalAiDsl.g:1532:2: rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5
+            // InternalAiDsl.g:1558:1: ( rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5 )
+            // InternalAiDsl.g:1559:2: rule__WorkflowUIElementMap__Group__4__Impl rule__WorkflowUIElementMap__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__WorkflowUIElementMap__Group__4__Impl();
 
             state._fsp--;
@@ -4756,31 +4852,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__4__Impl"
-    // InternalAiDsl.g:1539:1: rule__WorkflowUIElementMap__Group__4__Impl : ( ( rule__WorkflowUIElementMap__UitypeAssignment_4 ) ) ;
+    // InternalAiDsl.g:1566:1: rule__WorkflowUIElementMap__Group__4__Impl : ( 'uitype' ) ;
     public final void rule__WorkflowUIElementMap__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1543:1: ( ( ( rule__WorkflowUIElementMap__UitypeAssignment_4 ) ) )
-            // InternalAiDsl.g:1544:1: ( ( rule__WorkflowUIElementMap__UitypeAssignment_4 ) )
+            // InternalAiDsl.g:1570:1: ( ( 'uitype' ) )
+            // InternalAiDsl.g:1571:1: ( 'uitype' )
             {
-            // InternalAiDsl.g:1544:1: ( ( rule__WorkflowUIElementMap__UitypeAssignment_4 ) )
-            // InternalAiDsl.g:1545:2: ( rule__WorkflowUIElementMap__UitypeAssignment_4 )
+            // InternalAiDsl.g:1571:1: ( 'uitype' )
+            // InternalAiDsl.g:1572:2: 'uitype'
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_4()); 
-            // InternalAiDsl.g:1546:2: ( rule__WorkflowUIElementMap__UitypeAssignment_4 )
-            // InternalAiDsl.g:1546:3: rule__WorkflowUIElementMap__UitypeAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__WorkflowUIElementMap__UitypeAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_4()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_4()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_4()); 
 
             }
 
@@ -4803,16 +4889,16 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__5"
-    // InternalAiDsl.g:1554:1: rule__WorkflowUIElementMap__Group__5 : rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6 ;
+    // InternalAiDsl.g:1581:1: rule__WorkflowUIElementMap__Group__5 : rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6 ;
     public final void rule__WorkflowUIElementMap__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1558:1: ( rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6 )
-            // InternalAiDsl.g:1559:2: rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6
+            // InternalAiDsl.g:1585:1: ( rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6 )
+            // InternalAiDsl.g:1586:2: rule__WorkflowUIElementMap__Group__5__Impl rule__WorkflowUIElementMap__Group__6
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_16);
             rule__WorkflowUIElementMap__Group__5__Impl();
 
             state._fsp--;
@@ -4841,21 +4927,31 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__5__Impl"
-    // InternalAiDsl.g:1566:1: rule__WorkflowUIElementMap__Group__5__Impl : ( 'datatype' ) ;
+    // InternalAiDsl.g:1593:1: rule__WorkflowUIElementMap__Group__5__Impl : ( ( rule__WorkflowUIElementMap__UitypeAssignment_5 ) ) ;
     public final void rule__WorkflowUIElementMap__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1570:1: ( ( 'datatype' ) )
-            // InternalAiDsl.g:1571:1: ( 'datatype' )
+            // InternalAiDsl.g:1597:1: ( ( ( rule__WorkflowUIElementMap__UitypeAssignment_5 ) ) )
+            // InternalAiDsl.g:1598:1: ( ( rule__WorkflowUIElementMap__UitypeAssignment_5 ) )
             {
-            // InternalAiDsl.g:1571:1: ( 'datatype' )
-            // InternalAiDsl.g:1572:2: 'datatype'
+            // InternalAiDsl.g:1598:1: ( ( rule__WorkflowUIElementMap__UitypeAssignment_5 ) )
+            // InternalAiDsl.g:1599:2: ( rule__WorkflowUIElementMap__UitypeAssignment_5 )
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeKeyword_5()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeKeyword_5()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5()); 
+            // InternalAiDsl.g:1600:2: ( rule__WorkflowUIElementMap__UitypeAssignment_5 )
+            // InternalAiDsl.g:1600:3: rule__WorkflowUIElementMap__UitypeAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__WorkflowUIElementMap__UitypeAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5()); 
 
             }
 
@@ -4878,22 +4974,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__6"
-    // InternalAiDsl.g:1581:1: rule__WorkflowUIElementMap__Group__6 : rule__WorkflowUIElementMap__Group__6__Impl rule__WorkflowUIElementMap__Group__7 ;
+    // InternalAiDsl.g:1608:1: rule__WorkflowUIElementMap__Group__6 : rule__WorkflowUIElementMap__Group__6__Impl ;
     public final void rule__WorkflowUIElementMap__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1585:1: ( rule__WorkflowUIElementMap__Group__6__Impl rule__WorkflowUIElementMap__Group__7 )
-            // InternalAiDsl.g:1586:2: rule__WorkflowUIElementMap__Group__6__Impl rule__WorkflowUIElementMap__Group__7
+            // InternalAiDsl.g:1612:1: ( rule__WorkflowUIElementMap__Group__6__Impl )
+            // InternalAiDsl.g:1613:2: rule__WorkflowUIElementMap__Group__6__Impl
             {
-            pushFollow(FOLLOW_16);
-            rule__WorkflowUIElementMap__Group__6__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__WorkflowUIElementMap__Group__7();
+            rule__WorkflowUIElementMap__Group__6__Impl();
 
             state._fsp--;
 
@@ -4916,31 +5007,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowUIElementMap__Group__6__Impl"
-    // InternalAiDsl.g:1593:1: rule__WorkflowUIElementMap__Group__6__Impl : ( ( rule__WorkflowUIElementMap__DatatypeAssignment_6 ) ) ;
+    // InternalAiDsl.g:1619:1: rule__WorkflowUIElementMap__Group__6__Impl : ( '}' ) ;
     public final void rule__WorkflowUIElementMap__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:1597:1: ( ( ( rule__WorkflowUIElementMap__DatatypeAssignment_6 ) ) )
-            // InternalAiDsl.g:1598:1: ( ( rule__WorkflowUIElementMap__DatatypeAssignment_6 ) )
+            // InternalAiDsl.g:1623:1: ( ( '}' ) )
+            // InternalAiDsl.g:1624:1: ( '}' )
             {
-            // InternalAiDsl.g:1598:1: ( ( rule__WorkflowUIElementMap__DatatypeAssignment_6 ) )
-            // InternalAiDsl.g:1599:2: ( rule__WorkflowUIElementMap__DatatypeAssignment_6 )
+            // InternalAiDsl.g:1624:1: ( '}' )
+            // InternalAiDsl.g:1625:2: '}'
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeAssignment_6()); 
-            // InternalAiDsl.g:1600:2: ( rule__WorkflowUIElementMap__DatatypeAssignment_6 )
-            // InternalAiDsl.g:1600:3: rule__WorkflowUIElementMap__DatatypeAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__WorkflowUIElementMap__DatatypeAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeAssignment_6()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); 
 
             }
 
@@ -4960,76 +5041,6 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__WorkflowUIElementMap__Group__6__Impl"
-
-
-    // $ANTLR start "rule__WorkflowUIElementMap__Group__7"
-    // InternalAiDsl.g:1608:1: rule__WorkflowUIElementMap__Group__7 : rule__WorkflowUIElementMap__Group__7__Impl ;
-    public final void rule__WorkflowUIElementMap__Group__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAiDsl.g:1612:1: ( rule__WorkflowUIElementMap__Group__7__Impl )
-            // InternalAiDsl.g:1613:2: rule__WorkflowUIElementMap__Group__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__WorkflowUIElementMap__Group__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__WorkflowUIElementMap__Group__7"
-
-
-    // $ANTLR start "rule__WorkflowUIElementMap__Group__7__Impl"
-    // InternalAiDsl.g:1619:1: rule__WorkflowUIElementMap__Group__7__Impl : ( '}' ) ;
-    public final void rule__WorkflowUIElementMap__Group__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAiDsl.g:1623:1: ( ( '}' ) )
-            // InternalAiDsl.g:1624:1: ( '}' )
-            {
-            // InternalAiDsl.g:1624:1: ( '}' )
-            // InternalAiDsl.g:1625:2: '}'
-            {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__WorkflowUIElementMap__Group__7__Impl"
 
 
     // $ANTLR start "rule__WorkflowDataDictionaryDefinition__Group__0"
@@ -5310,17 +5321,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_3()); 
             // InternalAiDsl.g:1735:2: ( rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3 )*
-            loop13:
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==28) ) {
-                    alt13=1;
+                if ( (LA14_0==28) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
             	    // InternalAiDsl.g:1735:3: rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3
             	    {
@@ -5334,7 +5345,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -5643,13 +5654,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup_2()); 
             // InternalAiDsl.g:1843:2: ( rule__WorkflowDataDictionaryElement__Group_2__0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==29) ) {
-                alt14=1;
+            if ( (LA15_0==29) ) {
+                alt15=1;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
                     // InternalAiDsl.g:1843:3: rule__WorkflowDataDictionaryElement__Group_2__0
                     {
@@ -5814,17 +5825,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDataDictionaryElementAccess().getKeyValuePairsAssignment_4()); 
             // InternalAiDsl.g:1897:2: ( rule__WorkflowDataDictionaryElement__KeyValuePairsAssignment_4 )*
-            loop15:
+            loop16:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_ID) ) {
-                    alt15=1;
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt16) {
             	case 1 :
             	    // InternalAiDsl.g:1897:3: rule__WorkflowDataDictionaryElement__KeyValuePairsAssignment_4
             	    {
@@ -5838,7 +5849,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop16;
                 }
             } while (true);
 
@@ -6457,13 +6468,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1()); 
             // InternalAiDsl.g:2113:2: ( rule__VMNodeDefinition__NodetypeAssignment_1 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( ((LA16_0>=14 && LA16_0<=15)) ) {
-                alt16=1;
+            if ( ((LA17_0>=14 && LA17_0<=15)) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
                     // InternalAiDsl.g:2113:3: rule__VMNodeDefinition__NodetypeAssignment_1
                     {
@@ -6713,17 +6724,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeDefinitionAccess().getElementsAssignment_4()); 
             // InternalAiDsl.g:2194:2: ( rule__VMNodeDefinition__ElementsAssignment_4 )*
-            loop17:
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( ((LA17_0>=31 && LA17_0<=34)) ) {
-                    alt17=1;
+                if ( ((LA18_0>=31 && LA18_0<=34)) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
             	    // InternalAiDsl.g:2194:3: rule__VMNodeDefinition__ElementsAssignment_4
             	    {
@@ -6737,7 +6748,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -6843,7 +6854,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:2233:1: ( rule__VMNodeOpCodeElement__Group__0__Impl rule__VMNodeOpCodeElement__Group__1 )
             // InternalAiDsl.g:2234:2: rule__VMNodeOpCodeElement__Group__0__Impl rule__VMNodeOpCodeElement__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__VMNodeOpCodeElement__Group__0__Impl();
 
             state._fsp--;
@@ -7266,17 +7277,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeOutElementsAccess().getOutElementsAssignment_3()); 
             // InternalAiDsl.g:2383:2: ( rule__VMNodeOutElements__OutElementsAssignment_3 )*
-            loop18:
+            loop19:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA18_0==RULE_ID) ) {
-                    alt18=1;
+                if ( (LA19_0==RULE_ID) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt19) {
             	case 1 :
             	    // InternalAiDsl.g:2383:3: rule__VMNodeOutElements__OutElementsAssignment_3
             	    {
@@ -7290,7 +7301,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop19;
                 }
             } while (true);
 
@@ -7664,17 +7675,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeInElementsAccess().getInElementsAssignment_3()); 
             // InternalAiDsl.g:2518:2: ( rule__VMNodeInElements__InElementsAssignment_3 )*
-            loop19:
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA19_0==RULE_ID||(LA19_0>=16 && LA19_0<=17)) ) {
-                    alt19=1;
+                if ( (LA20_0==RULE_ID||(LA20_0>=16 && LA20_0<=17)) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
             	    // InternalAiDsl.g:2518:3: rule__VMNodeInElements__InElementsAssignment_3
             	    {
@@ -7688,7 +7699,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -8062,17 +8073,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsAssignment_3()); 
             // InternalAiDsl.g:2653:2: ( rule__VMNodeFieldElements__FieldELementsAssignment_3 )*
-            loop20:
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( ((LA20_0>=16 && LA20_0<=17)||LA20_0==49) ) {
-                    alt20=1;
+                if ( ((LA21_0>=16 && LA21_0<=17)||LA21_0==49) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
             	    // InternalAiDsl.g:2653:3: rule__VMNodeFieldElements__FieldELementsAssignment_3
             	    {
@@ -8086,7 +8097,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
@@ -8475,13 +8486,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeOutElementAccess().getGroup_3()); 
             // InternalAiDsl.g:2787:2: ( rule__VMNodeOutElement__Group_3__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==16) ) {
-                alt21=1;
+            if ( (LA22_0==16) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // InternalAiDsl.g:2787:3: rule__VMNodeOutElement__Group_3__0
                     {
@@ -8736,13 +8747,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMNodeInElementAccess().getPolicyAssignment_0()); 
             // InternalAiDsl.g:2869:2: ( rule__VMNodeInElement__PolicyAssignment_0 )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( ((LA22_0>=16 && LA22_0<=17)) ) {
-                alt22=1;
+            if ( ((LA23_0>=16 && LA23_0<=17)) ) {
+                alt23=1;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // InternalAiDsl.g:2869:3: rule__VMNodeInElement__PolicyAssignment_0
                     {
@@ -9162,13 +9173,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getVMFieldElementAccess().getGroup_3()); 
             // InternalAiDsl.g:3003:2: ( rule__VMFieldElement__Group_3__0 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==36) ) {
-                alt23=1;
+            if ( (LA24_0==36) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
                     // InternalAiDsl.g:3003:3: rule__VMFieldElement__Group_3__0
                     {
@@ -9215,7 +9226,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3016:1: ( rule__VMFieldElement__Group_3__0__Impl rule__VMFieldElement__Group_3__1 )
             // InternalAiDsl.g:3017:2: rule__VMFieldElement__Group_3__0__Impl rule__VMFieldElement__Group_3__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__VMFieldElement__Group_3__0__Impl();
 
             state._fsp--;
@@ -9625,7 +9636,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3151:1: ( rule__VMOverrideFieldElement__Group__3__Impl rule__VMOverrideFieldElement__Group__4 )
             // InternalAiDsl.g:3152:2: rule__VMOverrideFieldElement__Group__3__Impl rule__VMOverrideFieldElement__Group__4
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__VMOverrideFieldElement__Group__3__Impl();
 
             state._fsp--;
@@ -10133,13 +10144,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4()); 
             // InternalAiDsl.g:3328:2: ( rule__LlmTaskDefinition__Group_4__0 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==41) ) {
-                alt24=1;
+            if ( (LA25_0==41) ) {
+                alt25=1;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
                     // InternalAiDsl.g:3328:3: rule__LlmTaskDefinition__Group_4__0
                     {
@@ -10304,17 +10315,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsAssignment_6()); 
             // InternalAiDsl.g:3382:2: ( rule__LlmTaskDefinition__AssignmentsAssignment_6 )*
-            loop25:
+            loop26:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA25_0==RULE_ID) ) {
-                    alt25=1;
+                if ( (LA26_0==RULE_ID) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt26) {
             	case 1 :
             	    // InternalAiDsl.g:3382:3: rule__LlmTaskDefinition__AssignmentsAssignment_6
             	    {
@@ -10328,7 +10339,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop26;
                 }
             } while (true);
 
@@ -10632,17 +10643,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getGroup_4_2()); 
             // InternalAiDsl.g:3489:2: ( rule__LlmTaskDefinition__Group_4_2__0 )*
-            loop26:
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA26_0==42) ) {
-                    alt26=1;
+                if ( (LA27_0==42) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
             	    // InternalAiDsl.g:3489:3: rule__LlmTaskDefinition__Group_4_2__0
             	    {
@@ -10656,7 +10667,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop27;
                 }
             } while (true);
 
@@ -11087,7 +11098,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3637:1: ( rule__LlmVariableAssignment__Group__1__Impl rule__LlmVariableAssignment__Group__2 )
             // InternalAiDsl.g:3638:2: rule__LlmVariableAssignment__Group__1__Impl rule__LlmVariableAssignment__Group__2
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__LlmVariableAssignment__Group__1__Impl();
 
             state._fsp--;
@@ -11670,17 +11681,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_5()); 
             // InternalAiDsl.g:3841:2: ( rule__WorkflowDefinition__StatementsAssignment_5 )*
-            loop27:
+            loop28:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA27_0==RULE_ID) ) {
-                    alt27=1;
+                if ( (LA28_0==RULE_ID) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt28) {
             	case 1 :
             	    // InternalAiDsl.g:3841:3: rule__WorkflowDefinition__StatementsAssignment_5
             	    {
@@ -11694,7 +11705,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop28;
                 }
             } while (true);
 
@@ -12078,13 +12089,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getGroup_3()); 
             // InternalAiDsl.g:3976:2: ( rule__WorkflowDefinitionApplyLLMTaskStatement__Group_3__0 )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA28_0==46) ) {
-                alt28=1;
+            if ( (LA29_0==46) ) {
+                alt29=1;
             }
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
                     // InternalAiDsl.g:3976:3: rule__WorkflowDefinitionApplyLLMTaskStatement__Group_3__0
                     {
@@ -12394,17 +12405,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsAssignment_3_2()); 
             // InternalAiDsl.g:4084:2: ( rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2 )*
-            loop29:
+            loop30:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA29_0==RULE_ID) ) {
-                    alt29=1;
+                if ( (LA30_0==RULE_ID) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt30) {
             	case 1 :
             	    // InternalAiDsl.g:4084:3: rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2
             	    {
@@ -12418,7 +12429,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop30;
                 }
             } while (true);
 
@@ -12877,17 +12888,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
             // InternalAiDsl.g:4245:2: ( rule__QualifiedName__Group_1__0 )*
-            loop30:
+            loop31:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA30_0==47) ) {
-                    alt30=1;
+                if ( (LA31_0==47) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt31) {
             	case 1 :
             	    // InternalAiDsl.g:4245:3: rule__QualifiedName__Group_1__0
             	    {
@@ -12901,7 +12912,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop31;
                 }
             } while (true);
 
@@ -13199,13 +13210,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
             // InternalAiDsl.g:4353:2: ( '.*' )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==48) ) {
-                alt31=1;
+            if ( (LA32_0==48) ) {
+                alt32=1;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
                     // InternalAiDsl.g:4353:3: '.*'
                     {
@@ -13531,26 +13542,63 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WorkflowUIElement__NameAssignment_0"
 
 
-    // $ANTLR start "rule__WorkflowUIElement__ElementAssignment_2"
-    // InternalAiDsl.g:4467:1: rule__WorkflowUIElement__ElementAssignment_2 : ( ruleWorkflowUIElementMap ) ;
-    public final void rule__WorkflowUIElement__ElementAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowUIElement__DatatypeAssignment_2"
+    // InternalAiDsl.g:4467:1: rule__WorkflowUIElement__DatatypeAssignment_2 : ( RULE_ID ) ;
+    public final void rule__WorkflowUIElement__DatatypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:4471:1: ( ( ruleWorkflowUIElementMap ) )
-            // InternalAiDsl.g:4472:2: ( ruleWorkflowUIElementMap )
+            // InternalAiDsl.g:4471:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:4472:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:4472:2: ( ruleWorkflowUIElementMap )
-            // InternalAiDsl.g:4473:3: ruleWorkflowUIElementMap
+            // InternalAiDsl.g:4472:2: ( RULE_ID )
+            // InternalAiDsl.g:4473:3: RULE_ID
             {
-             before(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0()); 
+             before(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__WorkflowUIElement__DatatypeAssignment_2"
+
+
+    // $ANTLR start "rule__WorkflowUIElement__UielementAssignment_3"
+    // InternalAiDsl.g:4482:1: rule__WorkflowUIElement__UielementAssignment_3 : ( ruleWorkflowUIElementMap ) ;
+    public final void rule__WorkflowUIElement__UielementAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAiDsl.g:4486:1: ( ( ruleWorkflowUIElementMap ) )
+            // InternalAiDsl.g:4487:2: ( ruleWorkflowUIElementMap )
+            {
+            // InternalAiDsl.g:4487:2: ( ruleWorkflowUIElementMap )
+            // InternalAiDsl.g:4488:3: ruleWorkflowUIElementMap
+            {
+             before(grammarAccess.getWorkflowUIElementAccess().getUielementWorkflowUIElementMapParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleWorkflowUIElementMap();
 
             state._fsp--;
 
-             after(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0()); 
+             after(grammarAccess.getWorkflowUIElementAccess().getUielementWorkflowUIElementMapParserRuleCall_3_0()); 
 
             }
 
@@ -13569,49 +13617,12 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowUIElement__ElementAssignment_2"
+    // $ANTLR end "rule__WorkflowUIElement__UielementAssignment_3"
 
 
-    // $ANTLR start "rule__WorkflowUIElementMap__LabelAssignment_2"
-    // InternalAiDsl.g:4482:1: rule__WorkflowUIElementMap__LabelAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__WorkflowUIElementMap__LabelAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAiDsl.g:4486:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:4487:2: ( RULE_STRING )
-            {
-            // InternalAiDsl.g:4487:2: ( RULE_STRING )
-            // InternalAiDsl.g:4488:3: RULE_STRING
-            {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__WorkflowUIElementMap__LabelAssignment_2"
-
-
-    // $ANTLR start "rule__WorkflowUIElementMap__UitypeAssignment_4"
-    // InternalAiDsl.g:4497:1: rule__WorkflowUIElementMap__UitypeAssignment_4 : ( RULE_STRING ) ;
-    public final void rule__WorkflowUIElementMap__UitypeAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowUIElementMap__LabelAssignment_3"
+    // InternalAiDsl.g:4497:1: rule__WorkflowUIElementMap__LabelAssignment_3 : ( RULE_STRING ) ;
+    public final void rule__WorkflowUIElementMap__LabelAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13622,9 +13633,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:4502:2: ( RULE_STRING )
             // InternalAiDsl.g:4503:3: RULE_STRING
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0()); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0()); 
 
             }
 
@@ -13643,12 +13654,12 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowUIElementMap__UitypeAssignment_4"
+    // $ANTLR end "rule__WorkflowUIElementMap__LabelAssignment_3"
 
 
-    // $ANTLR start "rule__WorkflowUIElementMap__DatatypeAssignment_6"
-    // InternalAiDsl.g:4512:1: rule__WorkflowUIElementMap__DatatypeAssignment_6 : ( RULE_STRING ) ;
-    public final void rule__WorkflowUIElementMap__DatatypeAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__WorkflowUIElementMap__UitypeAssignment_5"
+    // InternalAiDsl.g:4512:1: rule__WorkflowUIElementMap__UitypeAssignment_5 : ( RULE_STRING ) ;
+    public final void rule__WorkflowUIElementMap__UitypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13659,9 +13670,9 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:4517:2: ( RULE_STRING )
             // InternalAiDsl.g:4518:3: RULE_STRING
             {
-             before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0()); 
+             before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0()); 
+             after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); 
 
             }
 
@@ -13680,7 +13691,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__WorkflowUIElementMap__DatatypeAssignment_6"
+    // $ANTLR end "rule__WorkflowUIElementMap__UitypeAssignment_5"
 
 
     // $ANTLR start "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3"
@@ -15329,8 +15340,8 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000000L});

@@ -1245,9 +1245,9 @@ rule__WorkflowUIDefinition__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIDefinitionAccess().getUiKeyword_1()); }
-	'ui'
-	{ after(grammarAccess.getWorkflowUIDefinitionAccess().getUiKeyword_1()); }
+	{ before(grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1()); }
+	'datainput'
+	{ after(grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1()); }
 )
 ;
 finally {
@@ -1395,6 +1395,7 @@ rule__WorkflowUIElement__Group__2
 	}
 :
 	rule__WorkflowUIElement__Group__2__Impl
+	rule__WorkflowUIElement__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1406,9 +1407,35 @@ rule__WorkflowUIElement__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementAccess().getElementAssignment_2()); }
-	(rule__WorkflowUIElement__ElementAssignment_2)
-	{ after(grammarAccess.getWorkflowUIElementAccess().getElementAssignment_2()); }
+	{ before(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2()); }
+	(rule__WorkflowUIElement__DatatypeAssignment_2)
+	{ after(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElement__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__WorkflowUIElement__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElement__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3()); }
+	(rule__WorkflowUIElement__UielementAssignment_3)?
+	{ after(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3()); }
 )
 ;
 finally {
@@ -1434,9 +1461,9 @@ rule__WorkflowUIElementMap__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_0()); }
-	'{'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_0()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getUiKeyword_0()); }
+	'ui'
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getUiKeyword_0()); }
 )
 ;
 finally {
@@ -1461,9 +1488,9 @@ rule__WorkflowUIElementMap__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_1()); }
-	'label'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_1()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_1()); }
+	'{'
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_1()); }
 )
 ;
 finally {
@@ -1488,9 +1515,9 @@ rule__WorkflowUIElementMap__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_2()); }
-	(rule__WorkflowUIElementMap__LabelAssignment_2)
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_2()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_2()); }
+	'label'
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_2()); }
 )
 ;
 finally {
@@ -1515,9 +1542,9 @@ rule__WorkflowUIElementMap__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_3()); }
-	'uitype'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_3()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3()); }
+	(rule__WorkflowUIElementMap__LabelAssignment_3)
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3()); }
 )
 ;
 finally {
@@ -1542,9 +1569,9 @@ rule__WorkflowUIElementMap__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_4()); }
-	(rule__WorkflowUIElementMap__UitypeAssignment_4)
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_4()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_4()); }
+	'uitype'
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_4()); }
 )
 ;
 finally {
@@ -1569,9 +1596,9 @@ rule__WorkflowUIElementMap__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeKeyword_5()); }
-	'datatype'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeKeyword_5()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5()); }
+	(rule__WorkflowUIElementMap__UitypeAssignment_5)
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5()); }
 )
 ;
 finally {
@@ -1584,7 +1611,6 @@ rule__WorkflowUIElementMap__Group__6
 	}
 :
 	rule__WorkflowUIElementMap__Group__6__Impl
-	rule__WorkflowUIElementMap__Group__7
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1596,35 +1622,9 @@ rule__WorkflowUIElementMap__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeAssignment_6()); }
-	(rule__WorkflowUIElementMap__DatatypeAssignment_6)
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeAssignment_6()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__WorkflowUIElementMap__Group__7
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__WorkflowUIElementMap__Group__7__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__WorkflowUIElementMap__Group__7__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); }
 	'}'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); }
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); }
 )
 ;
 finally {
@@ -4464,60 +4464,60 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowUIElement__ElementAssignment_2
+rule__WorkflowUIElement__DatatypeAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0()); }
+		{ before(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); }
+		RULE_ID
+		{ after(grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElement__UielementAssignment_3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getWorkflowUIElementAccess().getUielementWorkflowUIElementMapParserRuleCall_3_0()); }
 		ruleWorkflowUIElementMap
-		{ after(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0()); }
+		{ after(grammarAccess.getWorkflowUIElementAccess().getUielementWorkflowUIElementMapParserRuleCall_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowUIElementMap__LabelAssignment_2
+rule__WorkflowUIElementMap__LabelAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WorkflowUIElementMap__UitypeAssignment_4
+rule__WorkflowUIElementMap__UitypeAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0()); }
+		{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__WorkflowUIElementMap__DatatypeAssignment_6
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0()); }
+		{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); }
 	)
 ;
 finally {

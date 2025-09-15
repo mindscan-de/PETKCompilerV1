@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getElement <em>Element</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getUielement <em>Uielement</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElement()
@@ -47,25 +48,47 @@ public interface WorkflowUIElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Element</b></em>' containment reference.
+   * Returns the value of the '<em><b>Datatype</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' containment reference.
-   * @see #setElement(WorkflowUIElementMap)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElement_Element()
+   * @return the value of the '<em>Datatype</em>' attribute.
+   * @see #setDatatype(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElement_Datatype()
+   * @model
+   * @generated
+   */
+  String getDatatype();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Datatype</em>' attribute.
+   * @see #getDatatype()
+   * @generated
+   */
+  void setDatatype(String value);
+
+  /**
+   * Returns the value of the '<em><b>Uielement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Uielement</em>' containment reference.
+   * @see #setUielement(WorkflowUIElementMap)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElement_Uielement()
    * @model containment="true"
    * @generated
    */
-  WorkflowUIElementMap getElement();
+  WorkflowUIElementMap getUielement();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getElement <em>Element</em>}' containment reference.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getUielement <em>Uielement</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' containment reference.
-   * @see #getElement()
+   * @param value the new value of the '<em>Uielement</em>' containment reference.
+   * @see #getUielement()
    * @generated
    */
-  void setElement(WorkflowUIElementMap value);
+  void setUielement(WorkflowUIElementMap value);
 
 } // WorkflowUIElement

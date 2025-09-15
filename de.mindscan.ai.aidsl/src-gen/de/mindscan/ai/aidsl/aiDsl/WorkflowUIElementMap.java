@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getLabel <em>Label</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getUitype <em>Uitype</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDatatype <em>Datatype</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElementMap()
@@ -68,27 +67,5 @@ public interface WorkflowUIElementMap extends EObject
    * @generated
    */
   void setUitype(String value);
-
-  /**
-   * Returns the value of the '<em><b>Datatype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Datatype</em>' attribute.
-   * @see #setDatatype(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElementMap_Datatype()
-   * @model
-   * @generated
-   */
-  String getDatatype();
-
-  /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDatatype <em>Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Datatype</em>' attribute.
-   * @see #getDatatype()
-   * @generated
-   */
-  void setDatatype(String value);
 
 } // WorkflowUIElementMap

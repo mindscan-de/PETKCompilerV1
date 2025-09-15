@@ -207,13 +207,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' containment reference.
+   * The feature id for the '<em><b>Datatype</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT__ELEMENT = 1;
+  int WORKFLOW_UI_ELEMENT__DATATYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Uielement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_ELEMENT__UIELEMENT = 2;
 
   /**
    * The number of structural features of the '<em>Workflow UI Element</em>' class.
@@ -222,7 +231,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT_FEATURE_COUNT = 2;
+  int WORKFLOW_UI_ELEMENT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl <em>Workflow UI Element Map</em>}' class.
@@ -253,22 +262,13 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT_MAP__UITYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Datatype</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_UI_ELEMENT_MAP__DATATYPE = 2;
-
-  /**
    * The number of structural features of the '<em>Workflow UI Element Map</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 3;
+  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.
@@ -1111,15 +1111,26 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowUIElement_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getElement <em>Element</em>}'.
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype <em>Datatype</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Element</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getElement()
+   * @return the meta object for the attribute '<em>Datatype</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getDatatype()
    * @see #getWorkflowUIElement()
    * @generated
    */
-  EReference getWorkflowUIElement_Element();
+  EAttribute getWorkflowUIElement_Datatype();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getUielement <em>Uielement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Uielement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement#getUielement()
+   * @see #getWorkflowUIElement()
+   * @generated
+   */
+  EReference getWorkflowUIElement_Uielement();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap <em>Workflow UI Element Map</em>}'.
@@ -1152,17 +1163,6 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getWorkflowUIElementMap_Uitype();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDatatype <em>Datatype</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Datatype</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDatatype()
-   * @see #getWorkflowUIElementMap()
-   * @generated
-   */
-  EAttribute getWorkflowUIElementMap_Datatype();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition <em>Workflow Data Dictionary Definition</em>}'.
@@ -1913,12 +1913,20 @@ public interface AiDslPackage extends EPackage
     EAttribute WORKFLOW_UI_ELEMENT__NAME = eINSTANCE.getWorkflowUIElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Datatype</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WORKFLOW_UI_ELEMENT__ELEMENT = eINSTANCE.getWorkflowUIElement_Element();
+    EAttribute WORKFLOW_UI_ELEMENT__DATATYPE = eINSTANCE.getWorkflowUIElement_Datatype();
+
+    /**
+     * The meta object literal for the '<em><b>Uielement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_UI_ELEMENT__UIELEMENT = eINSTANCE.getWorkflowUIElement_Uielement();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl <em>Workflow UI Element Map</em>}' class.
@@ -1945,14 +1953,6 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_UI_ELEMENT_MAP__UITYPE = eINSTANCE.getWorkflowUIElementMap_Uitype();
-
-    /**
-     * The meta object literal for the '<em><b>Datatype</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORKFLOW_UI_ELEMENT_MAP__DATATYPE = eINSTANCE.getWorkflowUIElementMap_Datatype();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.

@@ -309,9 +309,9 @@ ruleWorkflowUIDefinition returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='ui'
+		otherlv_1='datainput'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getWorkflowUIDefinitionAccess().getUiKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1());
 		}
 		otherlv_2='{'
 		{
@@ -384,23 +384,41 @@ ruleWorkflowUIElement returns [EObject current=null]
 		}
 		(
 			(
+				lv_datatype_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0());
+					newLeafNode(lv_datatype_2_0, grammarAccess.getWorkflowUIElementAccess().getDatatypeIDTerminalRuleCall_2_0());
 				}
-				lv_element_2_0=ruleWorkflowUIElementMap
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowUIElementRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"datatype",
+						lv_datatype_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowUIElementAccess().getUielementWorkflowUIElementMapParserRuleCall_3_0());
+				}
+				lv_uielement_3_0=ruleWorkflowUIElementMap
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowUIElementRule());
 					}
 					set(
 						$current,
-						"element",
-						lv_element_2_0,
+						"uielement",
+						lv_uielement_3_0,
 						"de.mindscan.ai.aidsl.AiDsl.WorkflowUIElementMap");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -420,19 +438,23 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='{'
+		otherlv_0='ui'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowUIElementMapAccess().getUiKeyword_0());
 		}
-		otherlv_1='label'
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowUIElementMapAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='label'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowUIElementMapAccess().getLabelKeyword_2());
 		}
 		(
 			(
-				lv_label_2_0=RULE_STRING
+				lv_label_3_0=RULE_STRING
 				{
-					newLeafNode(lv_label_2_0, grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_label_3_0, grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -441,20 +463,20 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"label",
-						lv_label_2_0,
+						lv_label_3_0,
 						"de.mindscan.ai.aidsl.AiDsl.STRING");
 				}
 			)
 		)
-		otherlv_3='uitype'
+		otherlv_4='uitype'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowUIElementMapAccess().getUitypeKeyword_4());
 		}
 		(
 			(
-				lv_uitype_4_0=RULE_STRING
+				lv_uitype_5_0=RULE_STRING
 				{
-					newLeafNode(lv_uitype_4_0, grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_uitype_5_0, grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -463,36 +485,14 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"uitype",
-						lv_uitype_4_0,
+						lv_uitype_5_0,
 						"de.mindscan.ai.aidsl.AiDsl.STRING");
 				}
 			)
 		)
-		otherlv_5='datatype'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getWorkflowUIElementMapAccess().getDatatypeKeyword_5());
-		}
-		(
-			(
-				lv_datatype_6_0=RULE_STRING
-				{
-					newLeafNode(lv_datatype_6_0, grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"datatype",
-						lv_datatype_6_0,
-						"de.mindscan.ai.aidsl.AiDsl.STRING");
-				}
-			)
-		)
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

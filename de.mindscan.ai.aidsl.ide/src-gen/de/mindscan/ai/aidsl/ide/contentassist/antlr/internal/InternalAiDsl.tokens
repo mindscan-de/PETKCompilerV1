@@ -11,7 +11,7 @@
 'as'=35
 'data'=28
 'datadictionary'=27
-'datatype'=26
+'datainput'=20
 'default'=36
 'extends'=29
 'false'=13
@@ -19,7 +19,7 @@
 'implements'=41
 'import'=19
 'in'=33
-'label'=24
+'label'=25
 'llmtask'=38
 'null'=11
 'opcode'=31
@@ -31,8 +31,8 @@
 'require'=16
 'super'=14
 'true'=12
-'ui'=20
-'uitype'=25
+'ui'=24
+'uitype'=26
 'vmnode'=30
 'workflow'=44
 '{'=21
