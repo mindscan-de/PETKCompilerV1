@@ -3,6 +3,7 @@
  */
 package de.mindscan.ai.aidsl.generator
 
+import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition
 
 /**
  * Generates code from your model files on save.
@@ -285,10 +285,23 @@ class AiDslGenerator extends AbstractGenerator {
 		val entrypointname = firststatement.llmtask.name
 		
 		// compile inputfields
-		val workflowinputdefinition = workflowDefinition.input as WorkflowInputDefinition
+		val workflowinputdefinition = workflowDefinition.input
 		val inputfields = newHashMap()
-		// TODO: calculate the input field definitions 
-		// TODO: extend the DSL
+		for(inputelement : workflowinputdefinition.uiElements) {
+			// TODO build each inputelement
+			val inputfieldname = inputelement.name
+			val inputfielddatatype = inputelement.datatype as BASICTYPE
+			val uilabel = inputelement.uielement.label
+			val uitype = inputelement.uielement.uitype
+			
+			val inputinfo = newLinkedHashMap(
+				'__uitype'->uitype, 
+				'__datatype'->inputfielddatatype.typename,
+				'label'->uilabel
+			)
+			
+			inputfields.put(inputfieldname, inputinfo)
+		}
 		
 		
 		val executionMap = newHashMap(
