@@ -12,6 +12,7 @@ Model:
 	definitions += (
 		WorkflowDefinition|
 		WorkflowDataDictionaryDefinition|
+		WorkflowUIDefinition|
 		LlmTaskDefinition|
 		VMNodeDefinition
 	)*
@@ -25,6 +26,23 @@ ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildcard
 ;
 
+WorkflowUIDefinition:
+	{WorkflowUIDefinition} 'ui' '{'
+		(uiElements+=WorkflowUIElement)*
+	'}'
+;
+
+WorkflowUIElement:
+	name=QualifiedName ':' element=WorkflowUIElementMap 
+;
+
+WorkflowUIElementMap:
+	'{'
+		'label' label=STRING
+		'uitype' uitype=STRING
+		'datatype' datatype=STRING
+	'}'
+;
 
 // ---------------------------------------
 // Workflow Data Defitinion / 
@@ -175,8 +193,7 @@ WorkflowDefinitionApplyLLMTaskStatement:
 
 WorkflowDefinitionApplyLLMNodeResultAssignment:
 	// TODO: this should be a reference and the applicable parserrule is Qualified name
-	environmentresultname=QualifiedName ':' noderesultname=QualifiedName 
-;
+	environmentresultname=QualifiedName ':' noderesultname=QualifiedName;
 
 // ---------------------------------------
 // Common stuff

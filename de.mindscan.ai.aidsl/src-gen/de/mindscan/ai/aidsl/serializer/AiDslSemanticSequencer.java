@@ -26,6 +26,9 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -114,6 +117,15 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
 				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_UI_DEFINITION:
+				sequence_WorkflowUIDefinition(context, (WorkflowUIDefinition) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_UI_ELEMENT:
+				sequence_WorkflowUIElement(context, (WorkflowUIElement) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP:
+				sequence_WorkflowUIElementMap(context, (WorkflowUIElementMap) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -222,11 +234,18 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
+	 *         (package_declaration=PackageDeclaration import_declarations+=ImportDeclaration+) | 
 	 *         (
 	 *             ((package_declaration=PackageDeclaration import_declarations+=ImportDeclaration+) | import_declarations+=ImportDeclaration+)? 
-	 *             (definitions+=WorkflowDefinition | definitions+=WorkflowDataDictionaryDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
+	 *             (
+	 *                 definitions+=WorkflowDefinition | 
+	 *                 definitions+=WorkflowDataDictionaryDefinition | 
+	 *                 definitions+=WorkflowUIDefinition | 
+	 *                 definitions+=LlmTaskDefinition | 
+	 *                 definitions+=VMNodeDefinition
+	 *             )+
 	 *         ) | 
-	 *         (definitions+=WorkflowDefinition | definitions+=WorkflowDataDictionaryDefinition | definitions+=LlmTaskDefinition | definitions+=VMNodeDefinition)+
+	 *         import_declarations+=ImportDeclaration+
 	 *     )?
 	 * </pre>
 	 */
@@ -482,6 +501,69 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_WorkflowDefinition(ISerializationContext context, WorkflowDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowUIDefinition returns WorkflowUIDefinition
+	 *
+	 * Constraint:
+	 *     uiElements+=WorkflowUIElement*
+	 * </pre>
+	 */
+	protected void sequence_WorkflowUIDefinition(ISerializationContext context, WorkflowUIDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowUIElementMap returns WorkflowUIElementMap
+	 *
+	 * Constraint:
+	 *     (label=STRING uitype=STRING datatype=STRING)
+	 * </pre>
+	 */
+	protected void sequence_WorkflowUIElementMap(ISerializationContext context, WorkflowUIElementMap semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__LABEL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__LABEL));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__UITYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__UITYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__DATATYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__DATATYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_2_0(), semanticObject.getLabel());
+		feeder.accept(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_4_0(), semanticObject.getUitype());
+		feeder.accept(grammarAccess.getWorkflowUIElementMapAccess().getDatatypeSTRINGTerminalRuleCall_6_0(), semanticObject.getDatatype());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowUIElement returns WorkflowUIElement
+	 *
+	 * Constraint:
+	 *     (name=QualifiedName element=WorkflowUIElementMap)
+	 * </pre>
+	 */
+	protected void sequence_WorkflowUIElement(ISerializationContext context, WorkflowUIElement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT__ELEMENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWorkflowUIElementAccess().getNameQualifiedNameParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWorkflowUIElementAccess().getElementWorkflowUIElementMapParserRuleCall_2_0(), semanticObject.getElement());
+		feeder.finish();
 	}
 	
 	

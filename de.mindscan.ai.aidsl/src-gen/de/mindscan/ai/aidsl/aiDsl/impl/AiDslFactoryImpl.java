@@ -68,6 +68,9 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.MODEL: return createModel();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
+      case AiDslPackage.WORKFLOW_UI_DEFINITION: return createWorkflowUIDefinition();
+      case AiDslPackage.WORKFLOW_UI_ELEMENT: return createWorkflowUIElement();
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP: return createWorkflowUIElementMap();
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION: return createWorkflowDataDictionaryDefinition();
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT: return createWorkflowDataDictionaryElement();
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR: return createDatadictionaryKeyValuePair();
@@ -126,6 +129,42 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     ImportDeclarationImpl importDeclaration = new ImportDeclarationImpl();
     return importDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowUIDefinition createWorkflowUIDefinition()
+  {
+    WorkflowUIDefinitionImpl workflowUIDefinition = new WorkflowUIDefinitionImpl();
+    return workflowUIDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowUIElement createWorkflowUIElement()
+  {
+    WorkflowUIElementImpl workflowUIElement = new WorkflowUIElementImpl();
+    return workflowUIElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowUIElementMap createWorkflowUIElementMap()
+  {
+    WorkflowUIElementMapImpl workflowUIElementMap = new WorkflowUIElementMapImpl();
+    return workflowUIElementMap;
   }
 
   /**

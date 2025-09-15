@@ -51,6 +51,33 @@ public interface AiDslFactory extends EFactory
   ImportDeclaration createImportDeclaration();
 
   /**
+   * Returns a new object of class '<em>Workflow UI Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow UI Definition</em>'.
+   * @generated
+   */
+  WorkflowUIDefinition createWorkflowUIDefinition();
+
+  /**
+   * Returns a new object of class '<em>Workflow UI Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow UI Element</em>'.
+   * @generated
+   */
+  WorkflowUIElement createWorkflowUIElement();
+
+  /**
+   * Returns a new object of class '<em>Workflow UI Element Map</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow UI Element Map</em>'.
+   * @generated
+   */
+  WorkflowUIElementMap createWorkflowUIElementMap();
+
+  /**
    * Returns a new object of class '<em>Workflow Data Dictionary Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

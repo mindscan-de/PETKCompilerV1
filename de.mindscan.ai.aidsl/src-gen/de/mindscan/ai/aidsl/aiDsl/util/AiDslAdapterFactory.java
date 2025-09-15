@@ -91,6 +91,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createImportDeclarationAdapter();
       }
       @Override
+      public Adapter caseWorkflowUIDefinition(WorkflowUIDefinition object)
+      {
+        return createWorkflowUIDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseWorkflowUIElement(WorkflowUIElement object)
+      {
+        return createWorkflowUIElementAdapter();
+      }
+      @Override
+      public Adapter caseWorkflowUIElementMap(WorkflowUIElementMap object)
+      {
+        return createWorkflowUIElementMapAdapter();
+      }
+      @Override
       public Adapter caseWorkflowDataDictionaryDefinition(WorkflowDataDictionaryDefinition object)
       {
         return createWorkflowDataDictionaryDefinitionAdapter();
@@ -248,6 +263,51 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createImportDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition <em>Workflow UI Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition
+   * @generated
+   */
+  public Adapter createWorkflowUIDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement <em>Workflow UI Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement
+   * @generated
+   */
+  public Adapter createWorkflowUIElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap <em>Workflow UI Element Map</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap
+   * @generated
+   */
+  public Adapter createWorkflowUIElementMapAdapter()
   {
     return null;
   }

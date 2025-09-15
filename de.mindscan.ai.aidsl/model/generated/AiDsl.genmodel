@@ -17,6 +17,18 @@
     <genClasses ecoreClass="AiDsl.ecore#//ImportDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIDefinition/uiElements"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIElement/element"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElementMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElementMap/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElementMap/uitype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElementMap/datatype"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryDefinition/dataDictionaryElements"/>
     </genClasses>

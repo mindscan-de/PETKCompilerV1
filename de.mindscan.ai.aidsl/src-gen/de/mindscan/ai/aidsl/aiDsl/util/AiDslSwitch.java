@@ -94,6 +94,27 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_UI_DEFINITION:
+      {
+        WorkflowUIDefinition workflowUIDefinition = (WorkflowUIDefinition)theEObject;
+        T result = caseWorkflowUIDefinition(workflowUIDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.WORKFLOW_UI_ELEMENT:
+      {
+        WorkflowUIElement workflowUIElement = (WorkflowUIElement)theEObject;
+        T result = caseWorkflowUIElement(workflowUIElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP:
+      {
+        WorkflowUIElementMap workflowUIElementMap = (WorkflowUIElementMap)theEObject;
+        T result = caseWorkflowUIElementMap(workflowUIElementMap);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION:
       {
         WorkflowDataDictionaryDefinition workflowDataDictionaryDefinition = (WorkflowDataDictionaryDefinition)theEObject;
@@ -279,6 +300,54 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseImportDeclaration(ImportDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowUIDefinition(WorkflowUIDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow UI Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow UI Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowUIElement(WorkflowUIElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow UI Element Map</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow UI Element Map</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowUIElementMap(WorkflowUIElementMap object)
   {
     return null;
   }
