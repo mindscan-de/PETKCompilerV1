@@ -52,7 +52,6 @@ class AiDslGenerator extends AbstractGenerator {
 		val metadataMap = getCompiledMetadataMap(workflowDefinition)
 		val executionMap = getCompiledExecutionInfoMap(workflowDefinition)
 		// TODO: extend the input maps
-		// TODO: extend the output maps
 		val nodedataMap = getCompiledNodedataMap(workflowDefinition)
 		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
 		val datadictionaryMap = resource.getCompiledDataDictionaryMap(workflowDefinition)
