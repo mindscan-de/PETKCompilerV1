@@ -6,6 +6,7 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
 
 import java.util.Collection;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getInput <em>Input</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -58,6 +60,16 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getInput() <em>Input</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInput()
+   * @generated
+   * @ordered
+   */
+  protected WorkflowInputDefinition input;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -121,6 +133,51 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
+  public WorkflowInputDefinition getInput()
+  {
+    if (input != null && input.eIsProxy())
+    {
+      InternalEObject oldInput = (InternalEObject)input;
+      input = (WorkflowInputDefinition)eResolveProxy(oldInput);
+      if (input != oldInput)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.WORKFLOW_DEFINITION__INPUT, oldInput, input));
+      }
+    }
+    return input;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowInputDefinition basicGetInput()
+  {
+    return input;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setInput(WorkflowInputDefinition newInput)
+  {
+    WorkflowInputDefinition oldInput = input;
+    input = newInput;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DEFINITION__INPUT, oldInput, input));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<WorkflowDefinitionApplyLLMTaskStatement> getStatements()
   {
     if (statements == null)
@@ -158,6 +215,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         return getName();
+      case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
+        if (resolve) return getInput();
+        return basicGetInput();
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         return getStatements();
     }
@@ -177,6 +237,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         setName((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
+        setInput((WorkflowInputDefinition)newValue);
         return;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         getStatements().clear();
@@ -199,6 +262,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
+        setInput((WorkflowInputDefinition)null);
+        return;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         getStatements().clear();
         return;
@@ -218,6 +284,8 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
     {
       case AiDslPackage.WORKFLOW_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
+        return input != null;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }

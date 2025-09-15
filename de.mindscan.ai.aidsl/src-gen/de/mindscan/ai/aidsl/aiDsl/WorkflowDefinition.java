@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getInput <em>Input</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -47,6 +48,28 @@ public interface WorkflowDefinition extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Input</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Input</em>' reference.
+   * @see #setInput(WorkflowInputDefinition)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDefinition_Input()
+   * @model
+   * @generated
+   */
+  WorkflowInputDefinition getInput();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getInput <em>Input</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Input</em>' reference.
+   * @see #getInput()
+   * @generated
+   */
+  void setInput(WorkflowInputDefinition value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

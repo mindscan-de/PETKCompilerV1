@@ -94,10 +94,10 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AiDslPackage.WORKFLOW_UI_DEFINITION:
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION:
       {
-        WorkflowUIDefinition workflowUIDefinition = (WorkflowUIDefinition)theEObject;
-        T result = caseWorkflowUIDefinition(workflowUIDefinition);
+        WorkflowInputDefinition workflowInputDefinition = (WorkflowInputDefinition)theEObject;
+        T result = caseWorkflowInputDefinition(workflowInputDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -252,6 +252,14 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_UI_DEFINITION:
+      {
+        WorkflowUIDefinition workflowUIDefinition = (WorkflowUIDefinition)theEObject;
+        T result = caseWorkflowUIDefinition(workflowUIDefinition);
+        if (result == null) result = caseWorkflowInputDefinition(workflowUIDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -305,17 +313,17 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Input Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Input Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWorkflowUIDefinition(WorkflowUIDefinition object)
+  public T caseWorkflowInputDefinition(WorkflowInputDefinition object)
   {
     return null;
   }
@@ -652,6 +660,22 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWorkflowDefinitionApplyLLMNodeResultAssignment(WorkflowDefinitionApplyLLMNodeResultAssignment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow UI Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowUIDefinition(WorkflowUIDefinition object)
   {
     return null;
   }

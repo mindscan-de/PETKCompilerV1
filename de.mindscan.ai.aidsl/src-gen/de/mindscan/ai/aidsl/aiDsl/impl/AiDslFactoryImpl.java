@@ -68,7 +68,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.MODEL: return createModel();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
-      case AiDslPackage.WORKFLOW_UI_DEFINITION: return createWorkflowUIDefinition();
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION: return createWorkflowInputDefinition();
       case AiDslPackage.WORKFLOW_UI_ELEMENT: return createWorkflowUIElement();
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP: return createWorkflowUIElementMap();
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION: return createWorkflowDataDictionaryDefinition();
@@ -90,6 +90,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT: return createWorkflowDefinitionApplyLLMTaskStatement();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
+      case AiDslPackage.WORKFLOW_UI_DEFINITION: return createWorkflowUIDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -137,10 +138,10 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
    * @generated
    */
   @Override
-  public WorkflowUIDefinition createWorkflowUIDefinition()
+  public WorkflowInputDefinition createWorkflowInputDefinition()
   {
-    WorkflowUIDefinitionImpl workflowUIDefinition = new WorkflowUIDefinitionImpl();
-    return workflowUIDefinition;
+    WorkflowInputDefinitionImpl workflowInputDefinition = new WorkflowInputDefinitionImpl();
+    return workflowInputDefinition;
   }
 
   /**
@@ -393,6 +394,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     WorkflowDefinitionApplyLLMNodeResultAssignmentImpl workflowDefinitionApplyLLMNodeResultAssignment = new WorkflowDefinitionApplyLLMNodeResultAssignmentImpl();
     return workflowDefinitionApplyLLMNodeResultAssignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowUIDefinition createWorkflowUIDefinition()
+  {
+    WorkflowUIDefinitionImpl workflowUIDefinition = new WorkflowUIDefinitionImpl();
+    return workflowUIDefinition;
   }
 
   /**

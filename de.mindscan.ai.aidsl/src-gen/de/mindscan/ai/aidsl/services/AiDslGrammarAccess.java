@@ -34,7 +34,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Alternatives cDefinitionsAlternatives_2_0 = (Alternatives)cDefinitionsAssignment_2.eContents().get(0);
 		private final RuleCall cDefinitionsWorkflowDefinitionParserRuleCall_2_0_0 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(0);
 		private final RuleCall cDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(1);
-		private final RuleCall cDefinitionsWorkflowUIDefinitionParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
+		private final RuleCall cDefinitionsWorkflowInputDefinitionParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
 		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_3 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(3);
 		private final RuleCall cDefinitionsVMNodeDefinitionParserRuleCall_2_0_4 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(4);
 		
@@ -44,7 +44,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    definitions += (
 		//        WorkflowDefinition|
 		//        WorkflowDataDictionaryDefinition|
-		//        WorkflowUIDefinition|
+		//        WorkflowInputDefinition|
 		//        LlmTaskDefinition|
 		//        VMNodeDefinition
 		//    )*
@@ -56,7 +56,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//definitions += (
 		//    WorkflowDefinition|
 		//    WorkflowDataDictionaryDefinition|
-		//    WorkflowUIDefinition|
+		//    WorkflowInputDefinition|
 		//    LlmTaskDefinition|
 		//    VMNodeDefinition
 		//)*
@@ -77,7 +77,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//definitions += (
 		//    WorkflowDefinition|
 		//    WorkflowDataDictionaryDefinition|
-		//    WorkflowUIDefinition|
+		//    WorkflowInputDefinition|
 		//    LlmTaskDefinition|
 		//    VMNodeDefinition
 		//)*
@@ -86,7 +86,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(
 		//       WorkflowDefinition|
 		//       WorkflowDataDictionaryDefinition|
-		//       WorkflowUIDefinition|
+		//       WorkflowInputDefinition|
 		//       LlmTaskDefinition|
 		//       VMNodeDefinition
 		//   )
@@ -98,8 +98,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//WorkflowDataDictionaryDefinition
 		public RuleCall getDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1() { return cDefinitionsWorkflowDataDictionaryDefinitionParserRuleCall_2_0_1; }
 		
-		//WorkflowUIDefinition
-		public RuleCall getDefinitionsWorkflowUIDefinitionParserRuleCall_2_0_2() { return cDefinitionsWorkflowUIDefinitionParserRuleCall_2_0_2; }
+		//WorkflowInputDefinition
+		public RuleCall getDefinitionsWorkflowInputDefinitionParserRuleCall_2_0_2() { return cDefinitionsWorkflowInputDefinitionParserRuleCall_2_0_2; }
 		
 		//LlmTaskDefinition
 		public RuleCall getDefinitionsLlmTaskDefinitionParserRuleCall_2_0_3() { return cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_3; }
@@ -155,24 +155,27 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//QualifiedNameWithWildcard
 		public RuleCall getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0; }
 	}
-	public class WorkflowUIDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowUIDefinition");
+	public class WorkflowInputDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowInputDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cWorkflowUIDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDatainputKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cUiElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cUiElementsWorkflowUIElementParserRuleCall_3_0 = (RuleCall)cUiElementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cUiElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cUiElementsWorkflowUIElementParserRuleCall_4_0 = (RuleCall)cUiElementsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//WorkflowUIDefinition:
-		//    {WorkflowUIDefinition} 'datainput' '{'
+		//// should we reference the workflow or the oher way around?
+		//WorkflowInputDefinition:
+		//    {WorkflowUIDefinition} 'datainput' name=ID '{'
 		//        (uiElements+=WorkflowUIElement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WorkflowUIDefinition} 'datainput' '{'
+		//{WorkflowUIDefinition} 'datainput' name=ID '{'
 		//    (uiElements+=WorkflowUIElement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -183,17 +186,23 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'datainput'
 		public Keyword getDatainputKeyword_1() { return cDatainputKeyword_1; }
 		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//(uiElements+=WorkflowUIElement)*
-		public Assignment getUiElementsAssignment_3() { return cUiElementsAssignment_3; }
+		public Assignment getUiElementsAssignment_4() { return cUiElementsAssignment_4; }
 		
 		//WorkflowUIElement
-		public RuleCall getUiElementsWorkflowUIElementParserRuleCall_3_0() { return cUiElementsWorkflowUIElementParserRuleCall_3_0; }
+		public RuleCall getUiElementsWorkflowUIElementParserRuleCall_4_0() { return cUiElementsWorkflowUIElementParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class WorkflowUIElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowUIElement");
@@ -1120,23 +1129,26 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cStatementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_5_0 = (RuleCall)cStatementsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cInputAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cInputWorkflowInputDefinitionCrossReference_3_0 = (CrossReference)cInputAssignment_3.eContents().get(0);
+		private final RuleCall cInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1 = (RuleCall)cInputWorkflowInputDefinitionCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStatementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0 = (RuleCall)cStatementsAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//// ---------------------------------------
 		//// workflows
 		//// ---------------------------------------
 		//WorkflowDefinition:
-		//    'workflow' name=ID '(' ')' '{'
+		//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
 		//        (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'workflow' name=ID '(' ')' '{'
+		//'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
 		//    (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -1153,20 +1165,29 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
+		//input=[WorkflowInputDefinition]
+		public Assignment getInputAssignment_3() { return cInputAssignment_3; }
+		
+		//[WorkflowInputDefinition]
+		public CrossReference getInputWorkflowInputDefinitionCrossReference_3_0() { return cInputWorkflowInputDefinitionCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1() { return cInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1; }
+		
 		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
 		//(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
-		public Assignment getStatementsAssignment_5() { return cStatementsAssignment_5; }
+		public Assignment getStatementsAssignment_6() { return cStatementsAssignment_6; }
 		
 		//WorkflowDefinitionApplyLLMTaskStatement
-		public RuleCall getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_5_0() { return cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_5_0; }
+		public RuleCall getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0() { return cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class WorkflowDefinitionApplyLLMTaskStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
@@ -1334,7 +1355,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final ModelElements pModel;
 	private final PackageDeclarationElements pPackageDeclaration;
 	private final ImportDeclarationElements pImportDeclaration;
-	private final WorkflowUIDefinitionElements pWorkflowUIDefinition;
+	private final WorkflowInputDefinitionElements pWorkflowInputDefinition;
 	private final WorkflowUIElementElements pWorkflowUIElement;
 	private final WorkflowUIElementMapElements pWorkflowUIElementMap;
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
@@ -1377,7 +1398,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pModel = new ModelElements();
 		this.pPackageDeclaration = new PackageDeclarationElements();
 		this.pImportDeclaration = new ImportDeclarationElements();
-		this.pWorkflowUIDefinition = new WorkflowUIDefinitionElements();
+		this.pWorkflowInputDefinition = new WorkflowInputDefinitionElements();
 		this.pWorkflowUIElement = new WorkflowUIElementElements();
 		this.pWorkflowUIElementMap = new WorkflowUIElementMapElements();
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
@@ -1442,7 +1463,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    definitions += (
 	//        WorkflowDefinition|
 	//        WorkflowDataDictionaryDefinition|
-	//        WorkflowUIDefinition|
+	//        WorkflowInputDefinition|
 	//        LlmTaskDefinition|
 	//        VMNodeDefinition
 	//    )*
@@ -1477,17 +1498,18 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getImportDeclarationAccess().getRule();
 	}
 	
-	//WorkflowUIDefinition:
-	//    {WorkflowUIDefinition} 'datainput' '{'
+	//// should we reference the workflow or the oher way around?
+	//WorkflowInputDefinition:
+	//    {WorkflowUIDefinition} 'datainput' name=ID '{'
 	//        (uiElements+=WorkflowUIElement)*
 	//    '}'
 	//;
-	public WorkflowUIDefinitionElements getWorkflowUIDefinitionAccess() {
-		return pWorkflowUIDefinition;
+	public WorkflowInputDefinitionElements getWorkflowInputDefinitionAccess() {
+		return pWorkflowInputDefinition;
 	}
 	
-	public ParserRule getWorkflowUIDefinitionRule() {
-		return getWorkflowUIDefinitionAccess().getRule();
+	public ParserRule getWorkflowInputDefinitionRule() {
+		return getWorkflowInputDefinitionAccess().getRule();
 	}
 	
 	//WorkflowUIElement:
@@ -1772,7 +1794,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// workflows
 	//// ---------------------------------------
 	//WorkflowDefinition:
-	//    'workflow' name=ID '(' ')' '{'
+	//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
 	//        (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	//    '}'
 	//;

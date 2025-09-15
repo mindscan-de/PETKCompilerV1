@@ -119,7 +119,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_UI_DEFINITION:
-				sequence_WorkflowUIDefinition(context, (WorkflowUIDefinition) semanticObject); 
+				sequence_WorkflowInputDefinition(context, (WorkflowUIDefinition) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_UI_ELEMENT:
 				sequence_WorkflowUIElement(context, (WorkflowUIElement) semanticObject); 
@@ -240,7 +240,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             (
 	 *                 definitions+=WorkflowDefinition | 
 	 *                 definitions+=WorkflowDataDictionaryDefinition | 
-	 *                 definitions+=WorkflowUIDefinition | 
+	 *                 definitions+=WorkflowInputDefinition | 
 	 *                 definitions+=LlmTaskDefinition | 
 	 *                 definitions+=VMNodeDefinition
 	 *             )+
@@ -496,7 +496,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDefinition returns WorkflowDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID statements+=WorkflowDefinitionApplyLLMTaskStatement*)
+	 *     (name=ID input=[WorkflowInputDefinition|ID] statements+=WorkflowDefinitionApplyLLMTaskStatement*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinition(ISerializationContext context, WorkflowDefinition semanticObject) {
@@ -507,13 +507,13 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     WorkflowUIDefinition returns WorkflowUIDefinition
+	 *     WorkflowInputDefinition returns WorkflowUIDefinition
 	 *
 	 * Constraint:
-	 *     uiElements+=WorkflowUIElement*
+	 *     (name=ID uiElements+=WorkflowUIElement*)
 	 * </pre>
 	 */
-	protected void sequence_WorkflowUIDefinition(ISerializationContext context, WorkflowUIDefinition semanticObject) {
+	protected void sequence_WorkflowInputDefinition(ISerializationContext context, WorkflowUIDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

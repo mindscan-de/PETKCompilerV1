@@ -150,9 +150,9 @@ ruleModel returns [EObject current=null]
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowUIDefinitionParserRuleCall_2_0_2());
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowInputDefinitionParserRuleCall_2_0_2());
 					}
-					lv_definitions_2_3=ruleWorkflowUIDefinition
+					lv_definitions_2_3=ruleWorkflowInputDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -161,7 +161,7 @@ ruleModel returns [EObject current=null]
 							$current,
 							"definitions",
 							lv_definitions_2_3,
-							"de.mindscan.ai.aidsl.AiDsl.WorkflowUIDefinition");
+							"de.mindscan.ai.aidsl.AiDsl.WorkflowInputDefinition");
 						afterParserOrEnumRuleCall();
 					}
 					    |
@@ -286,15 +286,15 @@ ruleImportDeclaration returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleWorkflowUIDefinition
-entryRuleWorkflowUIDefinition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getWorkflowUIDefinitionRule()); }
-	iv_ruleWorkflowUIDefinition=ruleWorkflowUIDefinition
-	{ $current=$iv_ruleWorkflowUIDefinition.current; }
+// Entry rule entryRuleWorkflowInputDefinition
+entryRuleWorkflowInputDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowInputDefinitionRule()); }
+	iv_ruleWorkflowInputDefinition=ruleWorkflowInputDefinition
+	{ $current=$iv_ruleWorkflowInputDefinition.current; }
 	EOF;
 
-// Rule WorkflowUIDefinition
-ruleWorkflowUIDefinition returns [EObject current=null]
+// Rule WorkflowInputDefinition
+ruleWorkflowInputDefinition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -305,40 +305,58 @@ ruleWorkflowUIDefinition returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getWorkflowUIDefinitionAccess().getWorkflowUIDefinitionAction_0(),
+					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='datainput'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getWorkflowUIDefinitionAccess().getDatainputKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getWorkflowInputDefinitionAccess().getDatainputKeyword_1());
 		}
-		otherlv_2='{'
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getWorkflowInputDefinitionAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowInputDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getWorkflowUIDefinitionAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getWorkflowInputDefinitionAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowUIDefinitionAccess().getUiElementsWorkflowUIElementParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsWorkflowUIElementParserRuleCall_4_0());
 				}
-				lv_uiElements_3_0=ruleWorkflowUIElement
+				lv_uiElements_4_0=ruleWorkflowUIElement
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getWorkflowUIDefinitionRule());
+						$current = createModelElementForParent(grammarAccess.getWorkflowInputDefinitionRule());
 					}
 					add(
 						$current,
 						"uiElements",
-						lv_uiElements_3_0,
+						lv_uiElements_4_0,
 						"de.mindscan.ai.aidsl.AiDsl.WorkflowUIElement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_4='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getWorkflowUIDefinitionAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getWorkflowInputDefinitionAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -1819,20 +1837,33 @@ ruleWorkflowDefinition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getWorkflowDefinitionAccess().getLeftParenthesisKeyword_2());
 		}
-		otherlv_3=')'
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDefinitionRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionAccess().getInputWorkflowInputDefinitionCrossReference_3_0());
+				}
+			)
+		)
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_4());
 		}
-		otherlv_4='{'
+		otherlv_5='{'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0());
 				}
-				lv_statements_5_0=ruleWorkflowDefinitionApplyLLMTaskStatement
+				lv_statements_6_0=ruleWorkflowDefinitionApplyLLMTaskStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionRule());
@@ -1840,15 +1871,15 @@ ruleWorkflowDefinition returns [EObject current=null]
 					add(
 						$current,
 						"statements",
-						lv_statements_5_0,
+						lv_statements_6_0,
 						"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_6='}'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

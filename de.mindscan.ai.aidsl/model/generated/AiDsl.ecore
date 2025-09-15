@@ -15,10 +15,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImportDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkflowUIDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uiElements" upperBound="-1"
-        eType="#//WorkflowUIElement" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowInputDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowUIElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="datatype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -103,6 +100,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//WorkflowInputDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//WorkflowDefinitionApplyLLMTaskStatement" containment="true"/>
   </eClassifiers>
@@ -115,5 +113,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="environmentresultname"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noderesultname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowUIDefinition" eSuperTypes="#//WorkflowInputDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uiElements" upperBound="-1"
+        eType="#//WorkflowUIElement" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

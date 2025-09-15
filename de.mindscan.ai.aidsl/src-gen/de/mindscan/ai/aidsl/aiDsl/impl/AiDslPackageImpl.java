@@ -27,6 +27,7 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
@@ -72,7 +73,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass workflowUIDefinitionEClass = null;
+  private EClass workflowInputDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -220,6 +221,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass workflowDefinitionApplyLLMNodeResultAssignmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowUIDefinitionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -378,20 +386,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EClass getWorkflowUIDefinition()
+  public EClass getWorkflowInputDefinition()
   {
-    return workflowUIDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getWorkflowUIDefinition_UiElements()
-  {
-    return (EReference)workflowUIDefinitionEClass.getEStructuralFeatures().get(0);
+    return workflowInputDefinitionEClass;
   }
 
   /**
@@ -1038,9 +1035,20 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EReference getWorkflowDefinition_Statements()
+  public EReference getWorkflowDefinition_Input()
   {
     return (EReference)workflowDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowDefinition_Statements()
+  {
+    return (EReference)workflowDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1115,6 +1123,39 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getWorkflowUIDefinition()
+  {
+    return workflowUIDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowUIDefinition_Name()
+  {
+    return (EAttribute)workflowUIDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowUIDefinition_UiElements()
+  {
+    return (EReference)workflowUIDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -1151,8 +1192,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     importDeclarationEClass = createEClass(IMPORT_DECLARATION);
     createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__IMPORTED_NAMESPACE);
 
-    workflowUIDefinitionEClass = createEClass(WORKFLOW_UI_DEFINITION);
-    createEReference(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__UI_ELEMENTS);
+    workflowInputDefinitionEClass = createEClass(WORKFLOW_INPUT_DEFINITION);
 
     workflowUIElementEClass = createEClass(WORKFLOW_UI_ELEMENT);
     createEAttribute(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__NAME);
@@ -1230,6 +1270,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
     createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
+    createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__INPUT);
     createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__STATEMENTS);
 
     workflowDefinitionApplyLLMTaskStatementEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT);
@@ -1239,6 +1280,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     workflowDefinitionApplyLLMNodeResultAssignmentEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT);
     createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__ENVIRONMENTRESULTNAME);
     createEAttribute(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME);
+
+    workflowUIDefinitionEClass = createEClass(WORKFLOW_UI_DEFINITION);
+    createEAttribute(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__NAME);
+    createEReference(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__UI_ELEMENTS);
   }
 
   /**
@@ -1274,6 +1319,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
+    workflowUIDefinitionEClass.getESuperTypes().add(this.getWorkflowInputDefinition());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1287,8 +1333,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(importDeclarationEClass, ImportDeclaration.class, "ImportDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImportDeclaration_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(workflowUIDefinitionEClass, WorkflowUIDefinition.class, "WorkflowUIDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWorkflowUIDefinition_UiElements(), this.getWorkflowUIElement(), null, "uiElements", null, 0, -1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(workflowInputDefinitionEClass, WorkflowInputDefinition.class, "WorkflowInputDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(workflowUIElementEClass, WorkflowUIElement.class, "WorkflowUIElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowUIElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1366,6 +1411,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowDefinition_Input(), this.getWorkflowInputDefinition(), null, "input", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDefinition_Statements(), this.getWorkflowDefinitionApplyLLMTaskStatement(), null, "statements", null, 0, -1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDefinitionApplyLLMTaskStatementEClass, WorkflowDefinitionApplyLLMTaskStatement.class, "WorkflowDefinitionApplyLLMTaskStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1375,6 +1421,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(workflowDefinitionApplyLLMNodeResultAssignmentEClass, WorkflowDefinitionApplyLLMNodeResultAssignment.class, "WorkflowDefinitionApplyLLMNodeResultAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Environmentresultname(), ecorePackage.getEString(), "environmentresultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname(), ecorePackage.getEString(), "noderesultname", null, 0, 1, WorkflowDefinitionApplyLLMNodeResultAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowUIDefinitionEClass, WorkflowUIDefinition.class, "WorkflowUIDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowUIDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowUIDefinition_UiElements(), this.getWorkflowUIElement(), null, "uiElements", null, 0, -1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

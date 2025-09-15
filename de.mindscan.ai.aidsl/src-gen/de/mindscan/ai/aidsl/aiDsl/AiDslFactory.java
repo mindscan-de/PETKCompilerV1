@@ -51,13 +51,13 @@ public interface AiDslFactory extends EFactory
   ImportDeclaration createImportDeclaration();
 
   /**
-   * Returns a new object of class '<em>Workflow UI Definition</em>'.
+   * Returns a new object of class '<em>Workflow Input Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Workflow UI Definition</em>'.
+   * @return a new object of class '<em>Workflow Input Definition</em>'.
    * @generated
    */
-  WorkflowUIDefinition createWorkflowUIDefinition();
+  WorkflowInputDefinition createWorkflowInputDefinition();
 
   /**
    * Returns a new object of class '<em>Workflow UI Element</em>'.
@@ -247,6 +247,15 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   WorkflowDefinitionApplyLLMNodeResultAssignment createWorkflowDefinitionApplyLLMNodeResultAssignment();
+
+  /**
+   * Returns a new object of class '<em>Workflow UI Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow UI Definition</em>'.
+   * @generated
+   */
+  WorkflowUIDefinition createWorkflowUIDefinition();
 
   /**
    * Returns the package supported by this factory.

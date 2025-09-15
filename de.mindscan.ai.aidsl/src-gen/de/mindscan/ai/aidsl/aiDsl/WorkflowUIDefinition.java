@@ -5,8 +5,6 @@ package de.mindscan.ai.aidsl.aiDsl;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Workflow UI Definition</b></em>'.
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getUiElements <em>Ui Elements</em>}</li>
  * </ul>
  *
@@ -23,8 +22,30 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface WorkflowUIDefinition extends EObject
+public interface WorkflowUIDefinition extends WorkflowInputDefinition
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIDefinition_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Ui Elements</b></em>' containment reference list.
    * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement}.

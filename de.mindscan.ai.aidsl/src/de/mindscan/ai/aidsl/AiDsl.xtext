@@ -12,7 +12,7 @@ Model:
 	definitions += (
 		WorkflowDefinition|
 		WorkflowDataDictionaryDefinition|
-		WorkflowUIDefinition|
+		WorkflowInputDefinition|
 		LlmTaskDefinition|
 		VMNodeDefinition
 	)*
@@ -26,8 +26,9 @@ ImportDeclaration:
 	'import' importedNamespace=QualifiedNameWithWildcard
 ;
 
-WorkflowUIDefinition:
-	{WorkflowUIDefinition} 'datainput' '{'
+// should we reference the workflow or the oher way around?
+WorkflowInputDefinition:
+	{WorkflowUIDefinition} 'datainput' name=ID '{'
 		(uiElements+=WorkflowUIElement)*
 	'}'
 ;
@@ -175,7 +176,7 @@ LlmVariableAssignment:
 // ---------------------------------------
 
 WorkflowDefinition:
-	'workflow' name=ID '(' ')' '{'
+	'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
 		(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	'}'
 ;

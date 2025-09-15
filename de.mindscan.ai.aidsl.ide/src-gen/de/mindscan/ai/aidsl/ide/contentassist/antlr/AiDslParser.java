@@ -42,7 +42,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 			builder.put(grammarAccess.getImportDeclarationAccess().getGroup(), "rule__ImportDeclaration__Group__0");
-			builder.put(grammarAccess.getWorkflowUIDefinitionAccess().getGroup(), "rule__WorkflowUIDefinition__Group__0");
+			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getGroup(), "rule__WorkflowInputDefinition__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getGroup(), "rule__WorkflowUIElement__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup(), "rule__WorkflowUIElementMap__Group__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
@@ -77,7 +77,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAssignment_2(), "rule__Model__DefinitionsAssignment_2");
 			builder.put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getImportDeclarationAccess().getImportedNamespaceAssignment_1(), "rule__ImportDeclaration__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getWorkflowUIDefinitionAccess().getUiElementsAssignment_3(), "rule__WorkflowUIDefinition__UiElementsAssignment_3");
+			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getNameAssignment_2(), "rule__WorkflowInputDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getWorkflowInputDefinitionAccess().getUiElementsAssignment_4(), "rule__WorkflowInputDefinition__UiElementsAssignment_4");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getNameAssignment_0(), "rule__WorkflowUIElement__NameAssignment_0");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getDatatypeAssignment_2(), "rule__WorkflowUIElement__DatatypeAssignment_2");
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3(), "rule__WorkflowUIElement__UielementAssignment_3");
@@ -118,7 +119,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameAssignment_0(), "rule__LlmVariableAssignment__VariablenameAssignment_0");
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getTemplateAssignment_2(), "rule__LlmVariableAssignment__TemplateAssignment_2");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
-			builder.put(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_5(), "rule__WorkflowDefinition__StatementsAssignment_5");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getInputAssignment_3(), "rule__WorkflowDefinition__InputAssignment_3");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_6(), "rule__WorkflowDefinition__StatementsAssignment_6");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskAssignment_0(), "rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsAssignment_3_2(), "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0");

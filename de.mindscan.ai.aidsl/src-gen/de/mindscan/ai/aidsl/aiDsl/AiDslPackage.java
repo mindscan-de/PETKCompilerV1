@@ -160,32 +160,23 @@ public interface AiDslPackage extends EPackage
   int IMPORT_DECLARATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl <em>Workflow Input Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIDefinition()
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowInputDefinition()
    * @generated
    */
-  int WORKFLOW_UI_DEFINITION = 3;
+  int WORKFLOW_INPUT_DEFINITION = 3;
 
   /**
-   * The feature id for the '<em><b>Ui Elements</b></em>' containment reference list.
+   * The number of structural features of the '<em>Workflow Input Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_DEFINITION__UI_ELEMENTS = 0;
-
-  /**
-   * The number of structural features of the '<em>Workflow UI Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_UI_DEFINITION_FEATURE_COUNT = 1;
+  int WORKFLOW_INPUT_DEFINITION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementImpl <em>Workflow UI Element</em>}' class.
@@ -891,13 +882,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Input</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION__INPUT = 1;
+
+  /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION__STATEMENTS = 1;
+  int WORKFLOW_DEFINITION__STATEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Workflow Definition</em>' class.
@@ -906,7 +906,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION_FEATURE_COUNT = 2;
+  int WORKFLOW_DEFINITION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
@@ -981,6 +981,43 @@ public interface AiDslPackage extends EPackage
    * @ordered
    */
   int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIDefinition()
+   * @generated
+   */
+  int WORKFLOW_UI_DEFINITION = 25;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_DEFINITION__NAME = WORKFLOW_INPUT_DEFINITION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Ui Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_DEFINITION__UI_ELEMENTS = WORKFLOW_INPUT_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow UI Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_DEFINITION_FEATURE_COUNT = WORKFLOW_INPUT_DEFINITION_FEATURE_COUNT + 2;
 
 
   /**
@@ -1069,25 +1106,14 @@ public interface AiDslPackage extends EPackage
   EAttribute getImportDeclaration_ImportedNamespace();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition <em>Workflow UI Definition</em>}'.
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition <em>Workflow Input Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Workflow UI Definition</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition
+   * @return the meta object for class '<em>Workflow Input Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition
    * @generated
    */
-  EClass getWorkflowUIDefinition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getUiElements <em>Ui Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Ui Elements</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getUiElements()
-   * @see #getWorkflowUIDefinition()
-   * @generated
-   */
-  EReference getWorkflowUIDefinition_UiElements();
+  EClass getWorkflowInputDefinition();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement <em>Workflow UI Element</em>}'.
@@ -1709,6 +1735,17 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowDefinition_Name();
 
   /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getInput <em>Input</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Input</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getInput()
+   * @see #getWorkflowDefinition()
+   * @generated
+   */
+  EReference getWorkflowDefinition_Input();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements <em>Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1782,6 +1819,38 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition <em>Workflow UI Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow UI Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition
+   * @generated
+   */
+  EClass getWorkflowUIDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getName()
+   * @see #getWorkflowUIDefinition()
+   * @generated
+   */
+  EAttribute getWorkflowUIDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getUiElements <em>Ui Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ui Elements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition#getUiElements()
+   * @see #getWorkflowUIDefinition()
+   * @generated
+   */
+  EReference getWorkflowUIDefinition_UiElements();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1877,22 +1946,14 @@ public interface AiDslPackage extends EPackage
     EAttribute IMPORT_DECLARATION__IMPORTED_NAMESPACE = eINSTANCE.getImportDeclaration_ImportedNamespace();
 
     /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl <em>Workflow Input Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIDefinition()
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowInputDefinition()
      * @generated
      */
-    EClass WORKFLOW_UI_DEFINITION = eINSTANCE.getWorkflowUIDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Ui Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WORKFLOW_UI_DEFINITION__UI_ELEMENTS = eINSTANCE.getWorkflowUIDefinition_UiElements();
+    EClass WORKFLOW_INPUT_DEFINITION = eINSTANCE.getWorkflowInputDefinition();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementImpl <em>Workflow UI Element</em>}' class.
@@ -2397,6 +2458,14 @@ public interface AiDslPackage extends EPackage
     EAttribute WORKFLOW_DEFINITION__NAME = eINSTANCE.getWorkflowDefinition_Name();
 
     /**
+     * The meta object literal for the '<em><b>Input</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_DEFINITION__INPUT = eINSTANCE.getWorkflowDefinition_Input();
+
+    /**
      * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2455,6 +2524,32 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT__NODERESULTNAME = eINSTANCE.getWorkflowDefinitionApplyLLMNodeResultAssignment_Noderesultname();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl <em>Workflow UI Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIDefinition()
+     * @generated
+     */
+    EClass WORKFLOW_UI_DEFINITION = eINSTANCE.getWorkflowUIDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_UI_DEFINITION__NAME = eINSTANCE.getWorkflowUIDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Ui Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_UI_DEFINITION__UI_ELEMENTS = eINSTANCE.getWorkflowUIDefinition_UiElements();
 
   }
 

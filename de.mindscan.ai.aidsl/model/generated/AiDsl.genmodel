@@ -17,9 +17,7 @@
     <genClasses ecoreClass="AiDsl.ecore#//ImportDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIDefinition/uiElements"/>
-    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowInputDefinition"/>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/datatype"/>
@@ -95,6 +93,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinition/input"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinition/statements"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement">
@@ -104,6 +103,10 @@
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/environmentresultname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinitionApplyLLMNodeResultAssignment/noderesultname"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIDefinition/uiElements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
