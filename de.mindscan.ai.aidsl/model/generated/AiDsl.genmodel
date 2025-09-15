@@ -75,7 +75,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMOverrideFieldElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/policy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMOverrideFieldElement/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/defaultvalue"/>
     </genClasses>

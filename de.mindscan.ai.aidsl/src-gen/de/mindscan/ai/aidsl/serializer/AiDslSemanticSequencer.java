@@ -163,7 +163,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     BASICTYPE returns BASICTYPE
 	 *
 	 * Constraint:
-	 *     (typename='string' | typename='int' | typename='boolean')
+	 *     (typename='string' | typename='int' | typename='boolean' | typename='jsonstring')
 	 * </pre>
 	 */
 	protected void sequence_BASICTYPE(ISerializationContext context, BASICTYPE semanticObject) {
@@ -421,7 +421,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMOverrideFieldElement returns VMOverrideFieldElement
 	 *
 	 * Constraint:
-	 *     (policy='override' type=ID name=ID defaultvalue=STRING)
+	 *     (policy='override' type=ELEMENTTYPE name=ID defaultvalue=STRING)
 	 * </pre>
 	 */
 	protected void sequence_VMOverrideFieldElement(ISerializationContext context, VMOverrideFieldElement semanticObject) {
@@ -437,7 +437,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getPolicyOverrideKeyword_0_0(), semanticObject.getPolicy());
-		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVMOverrideFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0(), semanticObject.getDefaultvalue());
 		feeder.finish();

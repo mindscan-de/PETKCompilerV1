@@ -1509,19 +1509,20 @@ ruleVMOverrideFieldElement returns [EObject current=null]
 		)
 		(
 			(
-				lv_type_1_0=RULE_ID
 				{
-					newLeafNode(lv_type_1_0, grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getVMOverrideFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0());
 				}
+				lv_type_1_0=ruleELEMENTTYPE
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVMOverrideFieldElementRule());
+						$current = createModelElementForParent(grammarAccess.getVMOverrideFieldElementRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"type",
 						lv_type_1_0,
-						"de.mindscan.ai.aidsl.AiDsl.ID");
+						"de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -2175,6 +2176,17 @@ ruleBASICTYPE returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getBASICTYPERule());
 					}
 					setWithLastConsumed($current, "typename", lv_typename_0_3, null);
+				}
+				    |
+				lv_typename_0_4='jsonstring'
+				{
+					newLeafNode(lv_typename_0_4, grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_3());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBASICTYPERule());
+					}
+					setWithLastConsumed($current, "typename", lv_typename_0_4, null);
 				}
 			)
 		)

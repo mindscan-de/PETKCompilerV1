@@ -716,7 +716,7 @@ public interface AiDslPackage extends EPackage
   int VM_OVERRIDE_FIELD_ELEMENT__POLICY = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1632,15 +1632,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMOverrideFieldElement_Policy();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getType()
    * @see #getVMOverrideFieldElement()
    * @generated
    */
-  EAttribute getVMOverrideFieldElement_Type();
+  EReference getVMOverrideFieldElement_Type();
 
   /**
    * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement#getName <em>Name</em>}'.
@@ -2416,12 +2416,12 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_OVERRIDE_FIELD_ELEMENT__POLICY = eINSTANCE.getVMOverrideFieldElement_Policy();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_OVERRIDE_FIELD_ELEMENT__TYPE = eINSTANCE.getVMOverrideFieldElement_Type();
+    EReference VM_OVERRIDE_FIELD_ELEMENT__TYPE = eINSTANCE.getVMOverrideFieldElement_Type();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

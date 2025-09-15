@@ -895,9 +895,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getVMOverrideFieldElement_Type()
+  public EReference getVMOverrideFieldElement_Type()
   {
-    return (EAttribute)vmOverrideFieldElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)vmOverrideFieldElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1299,7 +1299,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     vmOverrideFieldElementEClass = createEClass(VM_OVERRIDE_FIELD_ELEMENT);
     createEAttribute(vmOverrideFieldElementEClass, VM_OVERRIDE_FIELD_ELEMENT__POLICY);
-    createEAttribute(vmOverrideFieldElementEClass, VM_OVERRIDE_FIELD_ELEMENT__TYPE);
+    createEReference(vmOverrideFieldElementEClass, VM_OVERRIDE_FIELD_ELEMENT__TYPE);
     createEAttribute(vmOverrideFieldElementEClass, VM_OVERRIDE_FIELD_ELEMENT__NAME);
     createEAttribute(vmOverrideFieldElementEClass, VM_OVERRIDE_FIELD_ELEMENT__DEFAULTVALUE);
 
@@ -1446,7 +1446,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(vmOverrideFieldElementEClass, VMOverrideFieldElement.class, "VMOverrideFieldElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMOverrideFieldElement_Policy(), ecorePackage.getEString(), "policy", null, 0, 1, VMOverrideFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVMOverrideFieldElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, VMOverrideFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVMOverrideFieldElement_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, VMOverrideFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMOverrideFieldElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMOverrideFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMOverrideFieldElement_Defaultvalue(), ecorePackage.getEString(), "defaultvalue", null, 0, 1, VMOverrideFieldElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

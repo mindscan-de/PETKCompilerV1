@@ -1083,6 +1083,12 @@ rule__BASICTYPE__TypenameAlternatives_0
 		'boolean'
 		{ after(grammarAccess.getBASICTYPEAccess().getTypenameBooleanKeyword_0_2()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_3()); }
+		'jsonstring'
+		{ after(grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_3()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5048,9 +5054,9 @@ rule__VMOverrideFieldElement__TypeAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getVMOverrideFieldElementAccess().getTypeIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getVMOverrideFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); }
+		ruleELEMENTTYPE
+		{ after(grammarAccess.getVMOverrideFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); }
 	)
 ;
 finally {

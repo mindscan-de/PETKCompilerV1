@@ -145,7 +145,7 @@ VMFieldElement:
 ;
 
 VMOverrideFieldElement:
-	policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+	policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
 ;
 
 // ---------------------------------------
@@ -214,7 +214,7 @@ ELEMENTTYPE:
 ;
 
 BASICTYPE:
-	typename=('string'|'int'|'boolean')
+	typename=('string'|'int'|'boolean'|'jsonstring')
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

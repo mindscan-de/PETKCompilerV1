@@ -930,7 +930,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cPolicyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cPolicyOverrideKeyword_0_0 = (Keyword)cPolicyAssignment_0.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeIDTerminalRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final RuleCall cTypeELEMENTTYPEParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -938,11 +938,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefaultvalueAssignment_4.eContents().get(0);
 		
 		//VMOverrideFieldElement:
-		//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+		//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+		//policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
 		public Group getGroup() { return cGroup; }
 		
 		//policy=('override')
@@ -951,11 +951,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//('override')
 		public Keyword getPolicyOverrideKeyword_0_0() { return cPolicyOverrideKeyword_0_0; }
 		
-		//type=ID
+		//type=ELEMENTTYPE
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//ID
-		public RuleCall getTypeIDTerminalRuleCall_1_0() { return cTypeIDTerminalRuleCall_1_0; }
+		//ELEMENTTYPE
+		public RuleCall getTypeELEMENTTYPEParserRuleCall_1_0() { return cTypeELEMENTTYPEParserRuleCall_1_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -1369,16 +1369,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cTypenameStringKeyword_0_0 = (Keyword)cTypenameAlternatives_0.eContents().get(0);
 		private final Keyword cTypenameIntKeyword_0_1 = (Keyword)cTypenameAlternatives_0.eContents().get(1);
 		private final Keyword cTypenameBooleanKeyword_0_2 = (Keyword)cTypenameAlternatives_0.eContents().get(2);
+		private final Keyword cTypenameJsonstringKeyword_0_3 = (Keyword)cTypenameAlternatives_0.eContents().get(3);
 		
 		//BASICTYPE:
-		//    typename=('string'|'int'|'boolean')
+		//    typename=('string'|'int'|'boolean'|'jsonstring')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//typename=('string'|'int'|'boolean')
+		//typename=('string'|'int'|'boolean'|'jsonstring')
 		public Assignment getTypenameAssignment() { return cTypenameAssignment; }
 		
-		//('string'|'int'|'boolean')
+		//('string'|'int'|'boolean'|'jsonstring')
 		public Alternatives getTypenameAlternatives_0() { return cTypenameAlternatives_0; }
 		
 		//'string'
@@ -1389,6 +1390,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//'boolean'
 		public Keyword getTypenameBooleanKeyword_0_2() { return cTypenameBooleanKeyword_0_2; }
+		
+		//'jsonstring'
+		public Keyword getTypenameJsonstringKeyword_0_3() { return cTypenameJsonstringKeyword_0_3; }
 	}
 	
 	
@@ -1783,7 +1787,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMOverrideFieldElement:
-	//    policy=('override') type=ID name=ID ':=' defaultvalue=(STRING)
+	//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
 	//;
 	public VMOverrideFieldElementElements getVMOverrideFieldElementAccess() {
 		return pVMOverrideFieldElement;
@@ -1915,7 +1919,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//BASICTYPE:
-	//    typename=('string'|'int'|'boolean')
+	//    typename=('string'|'int'|'boolean'|'jsonstring')
 	//;
 	public BASICTYPEElements getBASICTYPEAccess() {
 		return pBASICTYPE;
