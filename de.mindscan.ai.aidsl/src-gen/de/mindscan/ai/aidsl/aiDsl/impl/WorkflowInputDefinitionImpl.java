@@ -5,20 +5,70 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Workflow Input Definition</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowInputDefinitionImpl#getUiElements <em>Ui Elements</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class WorkflowInputDefinitionImpl extends MinimalEObjectImpl.Container implements WorkflowInputDefinition
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUiElements() <em>Ui Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUiElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<WorkflowUIElement> uiElements;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +88,157 @@ public class WorkflowInputDefinitionImpl extends MinimalEObjectImpl.Container im
   protected EClass eStaticClass()
   {
     return AiDslPackage.Literals.WORKFLOW_INPUT_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_INPUT_DEFINITION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<WorkflowUIElement> getUiElements()
+  {
+    if (uiElements == null)
+    {
+      uiElements = new EObjectContainmentEList<WorkflowUIElement>(WorkflowUIElement.class, this, AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS);
+    }
+    return uiElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS:
+        return ((InternalEList<?>)getUiElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__NAME:
+        return getName();
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS:
+        return getUiElements();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__NAME:
+        setName((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS:
+        getUiElements().clear();
+        getUiElements().addAll((Collection<? extends WorkflowUIElement>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS:
+        getUiElements().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS:
+        return uiElements != null && !uiElements.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //WorkflowInputDefinitionImpl

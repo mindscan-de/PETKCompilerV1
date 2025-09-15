@@ -3,6 +3,8 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,6 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Workflow Input Definition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition#getUiElements <em>Ui Elements</em>}</li>
+ * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowInputDefinition()
  * @model
@@ -17,4 +26,38 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface WorkflowInputDefinition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowInputDefinition_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ui Elements</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ui Elements</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowInputDefinition_UiElements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<WorkflowUIElement> getUiElements();
+
 } // WorkflowInputDefinition

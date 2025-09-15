@@ -92,7 +92,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
       case AiDslPackage.ELEMENTTYPE: return createELEMENTTYPE();
       case AiDslPackage.BASICTYPE: return createBASICTYPE();
-      case AiDslPackage.WORKFLOW_UI_DEFINITION: return createWorkflowUIDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -420,18 +419,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     BASICTYPEImpl basictype = new BASICTYPEImpl();
     return basictype;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WorkflowUIDefinition createWorkflowUIDefinition()
-  {
-    WorkflowUIDefinitionImpl workflowUIDefinition = new WorkflowUIDefinitionImpl();
-    return workflowUIDefinition;
   }
 
   /**

@@ -774,7 +774,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0(),
+            					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0(),
             					current);
             			
 

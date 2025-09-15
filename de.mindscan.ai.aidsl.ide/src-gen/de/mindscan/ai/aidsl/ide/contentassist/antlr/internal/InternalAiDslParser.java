@@ -4087,13 +4087,13 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:1303:1: ( () )
             // InternalAiDsl.g:1304:2: ()
             {
-             before(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0()); 
+             before(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0()); 
             // InternalAiDsl.g:1305:2: ()
             // InternalAiDsl.g:1305:3: 
             {
             }
 
-             after(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0()); 
+             after(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0()); 
 
             }
 

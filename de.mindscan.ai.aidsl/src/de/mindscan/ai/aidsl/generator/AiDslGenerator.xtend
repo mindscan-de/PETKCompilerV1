@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition
 
 /**
  * Generates code from your model files on save.
@@ -278,17 +279,21 @@ class AiDslGenerator extends AbstractGenerator {
 		// calculate entry point
 		// this must be done on the compiled DAG
 		
+		// compile entrypoint
 		val statement = workflowDefinition.statements.toArray()
 		val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
 		val entrypointname = firststatement.llmtask.name
 		
-		// compile entrypoint
 		// compile inputfields
+		val workflowinputdefinition = workflowDefinition.input as WorkflowInputDefinition
+		val inputfields = newHashMap()
+		// TODO: calculate the input field definitions 
+		// TODO: extend the DSL
+		
+		
 		val executionMap = newHashMap(
 			'entry'-> entrypointname,
-			// TODO: calculate the input field definitions 
-			// TODO: extend the DSL
-			'inputfields' -> newHashMap() )
+			'inputfields' -> inputfields )
 		return executionMap
 	}
 	

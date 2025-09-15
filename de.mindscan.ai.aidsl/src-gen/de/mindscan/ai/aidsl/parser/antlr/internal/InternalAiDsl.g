@@ -305,7 +305,7 @@ ruleWorkflowInputDefinition returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0(),
+					grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0(),
 					$current);
 			}
 		)

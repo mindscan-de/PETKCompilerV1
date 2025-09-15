@@ -17,7 +17,10 @@
     <genClasses ecoreClass="AiDsl.ecore#//ImportDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//ImportDeclaration/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//WorkflowInputDefinition"/>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowInputDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowInputDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowInputDefinition/uiElements"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIElement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIElement/datatype"/>
@@ -107,10 +110,6 @@
     <genClasses ecoreClass="AiDsl.ecore#//ELEMENTTYPE"/>
     <genClasses ecoreClass="AiDsl.ecore#//BASICTYPE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
-    </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//WorkflowUIDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowUIDefinition/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowUIDefinition/uiElements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

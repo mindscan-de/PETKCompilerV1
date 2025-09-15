@@ -1301,9 +1301,9 @@ rule__WorkflowInputDefinition__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0()); }
+	{ before(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0()); }
 	()
-	{ after(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowUIDefinitionAction_0()); }
+	{ after(grammarAccess.getWorkflowInputDefinitionAccess().getWorkflowInputDefinitionAction_0()); }
 )
 ;
 finally {

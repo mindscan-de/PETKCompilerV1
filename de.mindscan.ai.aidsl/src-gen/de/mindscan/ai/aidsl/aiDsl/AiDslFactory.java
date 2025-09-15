@@ -267,15 +267,6 @@ public interface AiDslFactory extends EFactory
   BASICTYPE createBASICTYPE();
 
   /**
-   * Returns a new object of class '<em>Workflow UI Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Workflow UI Definition</em>'.
-   * @generated
-   */
-  WorkflowUIDefinition createWorkflowUIDefinition();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -158,7 +158,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class WorkflowInputDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowInputDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cWorkflowUIDefinitionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cWorkflowInputDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDatainputKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
@@ -169,19 +169,19 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//// should we reference the workflow or the oher way around?
 		//WorkflowInputDefinition:
-		//    {WorkflowUIDefinition} 'datainput' name=ID '{'
+		//    {WorkflowInputDefinition} 'datainput' name=ID '{'
 		//        (uiElements+=WorkflowUIElement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WorkflowUIDefinition} 'datainput' name=ID '{'
+		//{WorkflowInputDefinition} 'datainput' name=ID '{'
 		//    (uiElements+=WorkflowUIElement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{WorkflowUIDefinition}
-		public Action getWorkflowUIDefinitionAction_0() { return cWorkflowUIDefinitionAction_0; }
+		//{WorkflowInputDefinition}
+		public Action getWorkflowInputDefinitionAction_0() { return cWorkflowInputDefinitionAction_0; }
 		
 		//'datainput'
 		public Keyword getDatainputKeyword_1() { return cDatainputKeyword_1; }
@@ -1548,7 +1548,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//// should we reference the workflow or the oher way around?
 	//WorkflowInputDefinition:
-	//    {WorkflowUIDefinition} 'datainput' name=ID '{'
+	//    {WorkflowInputDefinition} 'datainput' name=ID '{'
 	//        (uiElements+=WorkflowUIElement)*
 	//    '}'
 	//;

@@ -28,7 +28,7 @@ ImportDeclaration:
 
 // should we reference the workflow or the oher way around?
 WorkflowInputDefinition:
-	{WorkflowUIDefinition} 'datainput' name=ID '{'
+	{WorkflowInputDefinition} 'datainput' name=ID '{'
 		(uiElements+=WorkflowUIElement)*
 	'}'
 ;

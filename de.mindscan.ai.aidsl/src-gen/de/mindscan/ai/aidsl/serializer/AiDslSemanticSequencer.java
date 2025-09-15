@@ -27,7 +27,7 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
 import de.mindscan.ai.aidsl.services.AiDslGrammarAccess;
@@ -122,8 +122,8 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
 				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
 				return; 
-			case AiDslPackage.WORKFLOW_UI_DEFINITION:
-				sequence_WorkflowInputDefinition(context, (WorkflowUIDefinition) semanticObject); 
+			case AiDslPackage.WORKFLOW_INPUT_DEFINITION:
+				sequence_WorkflowInputDefinition(context, (WorkflowInputDefinition) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_UI_ELEMENT:
 				sequence_WorkflowUIElement(context, (WorkflowUIElement) semanticObject); 
@@ -526,13 +526,13 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     WorkflowInputDefinition returns WorkflowUIDefinition
+	 *     WorkflowInputDefinition returns WorkflowInputDefinition
 	 *
 	 * Constraint:
 	 *     (name=ID uiElements+=WorkflowUIElement*)
 	 * </pre>
 	 */
-	protected void sequence_WorkflowInputDefinition(ISerializationContext context, WorkflowUIDefinition semanticObject) {
+	protected void sequence_WorkflowInputDefinition(ISerializationContext context, WorkflowInputDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

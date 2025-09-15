@@ -28,7 +28,6 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowUIDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
 
@@ -237,13 +236,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   private EClass basictypeEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass workflowUIDefinitionEClass = null;
-
-  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -403,6 +395,28 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EClass getWorkflowInputDefinition()
   {
     return workflowInputDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowInputDefinition_Name()
+  {
+    return (EAttribute)workflowInputDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowInputDefinition_UiElements()
+  {
+    return (EReference)workflowInputDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1170,39 +1184,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EClass getWorkflowUIDefinition()
-  {
-    return workflowUIDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getWorkflowUIDefinition_Name()
-  {
-    return (EAttribute)workflowUIDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getWorkflowUIDefinition_UiElements()
-  {
-    return (EReference)workflowUIDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -1240,6 +1221,8 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEAttribute(importDeclarationEClass, IMPORT_DECLARATION__IMPORTED_NAMESPACE);
 
     workflowInputDefinitionEClass = createEClass(WORKFLOW_INPUT_DEFINITION);
+    createEAttribute(workflowInputDefinitionEClass, WORKFLOW_INPUT_DEFINITION__NAME);
+    createEReference(workflowInputDefinitionEClass, WORKFLOW_INPUT_DEFINITION__UI_ELEMENTS);
 
     workflowUIElementEClass = createEClass(WORKFLOW_UI_ELEMENT);
     createEAttribute(workflowUIElementEClass, WORKFLOW_UI_ELEMENT__NAME);
@@ -1332,10 +1315,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     basictypeEClass = createEClass(BASICTYPE);
     createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
-
-    workflowUIDefinitionEClass = createEClass(WORKFLOW_UI_DEFINITION);
-    createEAttribute(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__NAME);
-    createEReference(workflowUIDefinitionEClass, WORKFLOW_UI_DEFINITION__UI_ELEMENTS);
   }
 
   /**
@@ -1372,7 +1351,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     basictypeEClass.getESuperTypes().add(this.getELEMENTTYPE());
-    workflowUIDefinitionEClass.getESuperTypes().add(this.getWorkflowInputDefinition());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1387,6 +1365,8 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEAttribute(getImportDeclaration_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowInputDefinitionEClass, WorkflowInputDefinition.class, "WorkflowInputDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowInputDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowInputDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowInputDefinition_UiElements(), this.getWorkflowUIElement(), null, "uiElements", null, 0, -1, WorkflowInputDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowUIElementEClass, WorkflowUIElement.class, "WorkflowUIElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowUIElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1479,10 +1459,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(workflowUIDefinitionEClass, WorkflowUIDefinition.class, "WorkflowUIDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWorkflowUIDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWorkflowUIDefinition_UiElements(), this.getWorkflowUIElement(), null, "uiElements", null, 0, -1, WorkflowUIDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
