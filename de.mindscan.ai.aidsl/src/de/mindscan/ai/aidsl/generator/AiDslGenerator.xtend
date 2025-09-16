@@ -55,7 +55,7 @@ class AiDslGenerator extends AbstractGenerator {
 		// TODO: extend the input maps
 		val nodedataMap = getCompiledNodedataMap(workflowDefinition)
 		val edgedataMap = getCompiledEdgeDataMap(workflowDefinition)
-		val datadictionaryMap = resource.getCompiledDataDictionaryMap(workflowDefinition)
+		val datadictionaryMap = getCompiledDataDictionaryMap(workflowDefinition)
 		
 
 		// build workflow definition
@@ -85,17 +85,14 @@ class AiDslGenerator extends AbstractGenerator {
 		// then build the data structure and write it to json file.
 	}
 	
-	protected def HashMap<String, Serializable> getCompiledDataDictionaryMap(Resource resource, WorkflowDefinition workflowDefinition) {
+	protected def HashMap<String, Serializable> getCompiledDataDictionaryMap(WorkflowDefinition workflowDefinition) {
 		val result = newLinkedHashMap()
 		
-		val alldatadictionary = resource.allContents.toIterable.filter(WorkflowDataDictionaryDefinition)
-		
-		for(datadictionary:alldatadictionary) {
-			for(datadictionaryelement : datadictionary.dataDictionaryElements) {
-				val map = comileDataDictionaryElement(datadictionaryelement)
-				
-				result.put(datadictionaryelement.name, map)				
-			}
+		val datadictionary = workflowDefinition.datadictionary
+		for(datadictionaryelement : datadictionary.dataDictionaryElements) {
+			val map = comileDataDictionaryElement(datadictionaryelement)
+			
+			result.put(datadictionaryelement.name, map)				
 		}
 		
 		return result
