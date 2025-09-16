@@ -513,9 +513,20 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EAttribute getWorkflowDataDictionaryDefinition_Name()
+  {
+    return (EAttribute)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getWorkflowDataDictionaryDefinition_DataDictionaryElements()
   {
-    return (EReference)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1234,6 +1245,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEAttribute(workflowUIElementMapEClass, WORKFLOW_UI_ELEMENT_MAP__UITYPE);
 
     workflowDataDictionaryDefinitionEClass = createEClass(WORKFLOW_DATA_DICTIONARY_DEFINITION);
+    createEAttribute(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME);
     createEReference(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS);
 
     workflowDataDictionaryElementEClass = createEClass(WORKFLOW_DATA_DICTIONARY_ELEMENT);
@@ -1378,6 +1390,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEAttribute(getWorkflowUIElementMap_Uitype(), ecorePackage.getEString(), "uitype", null, 0, 1, WorkflowUIElementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDataDictionaryDefinitionEClass, WorkflowDataDictionaryDefinition.class, "WorkflowDataDictionaryDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowDataDictionaryDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDataDictionaryDefinition_DataDictionaryElements(), this.getWorkflowDataDictionaryElement(), null, "dataDictionaryElements", null, 0, -1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDataDictionaryElementEClass, WorkflowDataDictionaryElement.class, "WorkflowDataDictionaryElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

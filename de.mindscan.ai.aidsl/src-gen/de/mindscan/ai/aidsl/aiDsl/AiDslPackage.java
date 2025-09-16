@@ -290,13 +290,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DATA_DICTIONARY_DEFINITION = 6;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Data Dictionary Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS = 0;
+  int WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Workflow Data Dictionary Definition</em>' class.
@@ -305,7 +314,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_DATA_DICTIONARY_DEFINITION_FEATURE_COUNT = 1;
+  int WORKFLOW_DATA_DICTIONARY_DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl <em>Workflow Data Dictionary Element</em>}' class.
@@ -1251,6 +1260,17 @@ public interface AiDslPackage extends EPackage
   EClass getWorkflowDataDictionaryDefinition();
 
   /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getName()
+   * @see #getWorkflowDataDictionaryDefinition()
+   * @generated
+   */
+  EAttribute getWorkflowDataDictionaryDefinition_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements <em>Data Dictionary Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2089,6 +2109,14 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EClass WORKFLOW_DATA_DICTIONARY_DEFINITION = eINSTANCE.getWorkflowDataDictionaryDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME = eINSTANCE.getWorkflowDataDictionaryDefinition_Name();
 
     /**
      * The meta object literal for the '<em><b>Data Dictionary Elements</b></em>' containment reference list feature.

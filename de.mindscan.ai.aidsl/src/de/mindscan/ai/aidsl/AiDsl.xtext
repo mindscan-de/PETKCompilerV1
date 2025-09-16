@@ -52,7 +52,7 @@ WorkflowUIElementMap:
 // ---------------------------------------
 
 WorkflowDataDictionaryDefinition:
-	{WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+	'datadictionary' name=ID '{'
 		(dataDictionaryElements+=WorkflowDataDictionaryElement)*
 	'}'
 ;

@@ -297,8 +297,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class WorkflowDataDictionaryDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cWorkflowDataDictionaryDefinitionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDatadictionaryKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDatadictionaryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cDataDictionaryElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0 = (RuleCall)cDataDictionaryElementsAssignment_3.eContents().get(0);
@@ -311,22 +312,25 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		////
 		//// ---------------------------------------
 		//WorkflowDataDictionaryDefinition:
-		//    {WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+		//    'datadictionary' name=ID '{'
 		//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+		//'datadictionary' name=ID '{'
 		//    (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{WorkflowDataDictionaryDefinition}
-		public Action getWorkflowDataDictionaryDefinitionAction_0() { return cWorkflowDataDictionaryDefinitionAction_0; }
-		
 		//'datadictionary'
-		public Keyword getDatadictionaryKeyword_1() { return cDatadictionaryKeyword_1; }
+		public Keyword getDatadictionaryKeyword_0() { return cDatadictionaryKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -1588,7 +1592,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	////
 	//// ---------------------------------------
 	//WorkflowDataDictionaryDefinition:
-	//    {WorkflowDataDictionaryDefinition} 'datadictionary' '{'
+	//    'datadictionary' name=ID '{'
 	//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
 	//    '}'
 	//;
