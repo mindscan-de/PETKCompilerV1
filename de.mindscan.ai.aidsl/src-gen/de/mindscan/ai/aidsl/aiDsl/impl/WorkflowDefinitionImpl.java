@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getInput <em>Input</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getDatadictionary <em>Datadictionary</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -70,6 +72,16 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected WorkflowInputDefinition input;
+
+  /**
+   * The cached value of the '{@link #getDatadictionary() <em>Datadictionary</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatadictionary()
+   * @generated
+   * @ordered
+   */
+  protected WorkflowDataDictionaryDefinition datadictionary;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -178,6 +190,51 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
+  public WorkflowDataDictionaryDefinition getDatadictionary()
+  {
+    if (datadictionary != null && datadictionary.eIsProxy())
+    {
+      InternalEObject oldDatadictionary = (InternalEObject)datadictionary;
+      datadictionary = (WorkflowDataDictionaryDefinition)eResolveProxy(oldDatadictionary);
+      if (datadictionary != oldDatadictionary)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY, oldDatadictionary, datadictionary));
+      }
+    }
+    return datadictionary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WorkflowDataDictionaryDefinition basicGetDatadictionary()
+  {
+    return datadictionary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDatadictionary(WorkflowDataDictionaryDefinition newDatadictionary)
+  {
+    WorkflowDataDictionaryDefinition oldDatadictionary = datadictionary;
+    datadictionary = newDatadictionary;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY, oldDatadictionary, datadictionary));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<WorkflowDefinitionApplyLLMTaskStatement> getStatements()
   {
     if (statements == null)
@@ -218,6 +275,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
         if (resolve) return getInput();
         return basicGetInput();
+      case AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY:
+        if (resolve) return getDatadictionary();
+        return basicGetDatadictionary();
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         return getStatements();
     }
@@ -240,6 +300,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
         return;
       case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
         setInput((WorkflowInputDefinition)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY:
+        setDatadictionary((WorkflowDataDictionaryDefinition)newValue);
         return;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         getStatements().clear();
@@ -265,6 +328,9 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
         setInput((WorkflowInputDefinition)null);
         return;
+      case AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY:
+        setDatadictionary((WorkflowDataDictionaryDefinition)null);
+        return;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         getStatements().clear();
         return;
@@ -286,6 +352,8 @@ public class WorkflowDefinitionImpl extends MinimalEObjectImpl.Container impleme
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.WORKFLOW_DEFINITION__INPUT:
         return input != null;
+      case AiDslPackage.WORKFLOW_DEFINITION__DATADICTIONARY:
+        return datadictionary != null;
       case AiDslPackage.WORKFLOW_DEFINITION__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }

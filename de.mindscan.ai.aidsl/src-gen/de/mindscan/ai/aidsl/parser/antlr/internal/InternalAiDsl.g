@@ -1858,20 +1858,37 @@ ruleWorkflowDefinition returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=')'
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_4());
-		}
-		otherlv_5='{'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowDefinitionAccess().getCommaKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowDefinitionRule());
+					}
 				}
-				lv_statements_6_0=ruleWorkflowDefinitionApplyLLMTaskStatement
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getWorkflowDefinitionAccess().getDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6=')'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getWorkflowDefinitionAccess().getRightParenthesisKeyword_6());
+		}
+		otherlv_7='{'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getWorkflowDefinitionAccess().getLeftCurlyBracketKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_8_0());
+				}
+				lv_statements_8_0=ruleWorkflowDefinitionApplyLLMTaskStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorkflowDefinitionRule());
@@ -1879,15 +1896,15 @@ ruleWorkflowDefinition returns [EObject current=null]
 					add(
 						$current,
 						"statements",
-						lv_statements_6_0,
+						lv_statements_8_0,
 						"de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_9, grammarAccess.getWorkflowDefinitionAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;

@@ -918,13 +918,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION__INPUT = 1;
 
   /**
+   * The feature id for the '<em><b>Datadictionary</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_DEFINITION__DATADICTIONARY = 2;
+
+  /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION__STATEMENTS = 2;
+  int WORKFLOW_DEFINITION__STATEMENTS = 3;
 
   /**
    * The number of structural features of the '<em>Workflow Definition</em>' class.
@@ -933,7 +942,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_DEFINITION_FEATURE_COUNT = 3;
+  int WORKFLOW_DEFINITION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
@@ -1816,6 +1825,17 @@ public interface AiDslPackage extends EPackage
   EReference getWorkflowDefinition_Input();
 
   /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getDatadictionary <em>Datadictionary</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Datadictionary</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getDatadictionary()
+   * @see #getWorkflowDefinition()
+   * @generated
+   */
+  EReference getWorkflowDefinition_Datadictionary();
+
+  /**
    * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements <em>Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2557,6 +2577,14 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference WORKFLOW_DEFINITION__INPUT = eINSTANCE.getWorkflowDefinition_Input();
+
+    /**
+     * The meta object literal for the '<em><b>Datadictionary</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_DEFINITION__DATADICTIONARY = eINSTANCE.getWorkflowDefinition_Datadictionary();
 
     /**
      * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.

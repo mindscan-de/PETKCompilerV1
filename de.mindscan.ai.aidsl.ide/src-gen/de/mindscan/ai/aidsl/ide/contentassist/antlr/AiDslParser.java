@@ -122,7 +122,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLlmVariableAssignmentAccess().getTemplateAssignment_2(), "rule__LlmVariableAssignment__TemplateAssignment_2");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDefinitionAccess().getInputAssignment_3(), "rule__WorkflowDefinition__InputAssignment_3");
-			builder.put(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_6(), "rule__WorkflowDefinition__StatementsAssignment_6");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getDatadictionaryAssignment_5(), "rule__WorkflowDefinition__DatadictionaryAssignment_5");
+			builder.put(grammarAccess.getWorkflowDefinitionAccess().getStatementsAssignment_8(), "rule__WorkflowDefinition__StatementsAssignment_8");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskAssignment_0(), "rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsAssignment_3_2(), "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2");
 			builder.put(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameAssignment_0(), "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0");

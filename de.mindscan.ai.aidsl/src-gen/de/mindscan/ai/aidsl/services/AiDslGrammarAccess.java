@@ -1132,23 +1132,27 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cInputAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cInputWorkflowInputDefinitionCrossReference_3_0 = (CrossReference)cInputAssignment_3.eContents().get(0);
 		private final RuleCall cInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1 = (RuleCall)cInputWorkflowInputDefinitionCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cStatementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0 = (RuleCall)cStatementsAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDatadictionaryAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0 = (CrossReference)cDatadictionaryAssignment_5.eContents().get(0);
+		private final RuleCall cDatadictionaryWorkflowDataDictionaryDefinitionIDTerminalRuleCall_5_0_1 = (RuleCall)cDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cStatementsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_8_0 = (RuleCall)cStatementsAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//// ---------------------------------------
 		//// workflows
 		//// ---------------------------------------
 		//WorkflowDefinition:
-		//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
+		//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ',' datadictionary=[WorkflowDataDictionaryDefinition] ')' '{'
 		//        (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
+		//'workflow' name=ID '(' input=[WorkflowInputDefinition] ',' datadictionary=[WorkflowDataDictionaryDefinition] ')' '{'
 		//    (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -1174,20 +1178,32 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ID
 		public RuleCall getInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1() { return cInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1; }
 		
+		//','
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//datadictionary=[WorkflowDataDictionaryDefinition]
+		public Assignment getDatadictionaryAssignment_5() { return cDatadictionaryAssignment_5; }
+		
+		//[WorkflowDataDictionaryDefinition]
+		public CrossReference getDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0() { return cDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getDatadictionaryWorkflowDataDictionaryDefinitionIDTerminalRuleCall_5_0_1() { return cDatadictionaryWorkflowDataDictionaryDefinitionIDTerminalRuleCall_5_0_1; }
+		
 		//')'
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
 		
 		//(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
-		public Assignment getStatementsAssignment_6() { return cStatementsAssignment_6; }
+		public Assignment getStatementsAssignment_8() { return cStatementsAssignment_8; }
 		
 		//WorkflowDefinitionApplyLLMTaskStatement
-		public RuleCall getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0() { return cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_6_0; }
+		public RuleCall getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_8_0() { return cStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_8_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class WorkflowDefinitionApplyLLMTaskStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
@@ -1842,7 +1858,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// workflows
 	//// ---------------------------------------
 	//WorkflowDefinition:
-	//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
+	//    'workflow' name=ID '(' input=[WorkflowInputDefinition] ',' datadictionary=[WorkflowDataDictionaryDefinition] ')' '{'
 	//        (statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	//    '}'
 	//;

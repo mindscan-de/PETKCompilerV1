@@ -515,7 +515,12 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDefinition returns WorkflowDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID input=[WorkflowInputDefinition|ID] statements+=WorkflowDefinitionApplyLLMTaskStatement*)
+	 *     (
+	 *         name=ID 
+	 *         input=[WorkflowInputDefinition|ID] 
+	 *         datadictionary=[WorkflowDataDictionaryDefinition|ID] 
+	 *         statements+=WorkflowDefinitionApplyLLMTaskStatement*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinition(ISerializationContext context, WorkflowDefinition semanticObject) {

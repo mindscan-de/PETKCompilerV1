@@ -176,7 +176,7 @@ LlmVariableAssignment:
 // ---------------------------------------
 
 WorkflowDefinition:
-	'workflow' name=ID '(' input=[WorkflowInputDefinition] ')' '{'
+	'workflow' name=ID '(' input=[WorkflowInputDefinition] ',' datadictionary=[WorkflowDataDictionaryDefinition] ')' '{'
 		(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	'}'
 ;

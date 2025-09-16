@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getName <em>Name</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getInput <em>Input</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getDatadictionary <em>Datadictionary</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -70,6 +71,28 @@ public interface WorkflowDefinition extends EObject
    * @generated
    */
   void setInput(WorkflowInputDefinition value);
+
+  /**
+   * Returns the value of the '<em><b>Datadictionary</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Datadictionary</em>' reference.
+   * @see #setDatadictionary(WorkflowDataDictionaryDefinition)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDefinition_Datadictionary()
+   * @model
+   * @generated
+   */
+  WorkflowDataDictionaryDefinition getDatadictionary();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition#getDatadictionary <em>Datadictionary</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Datadictionary</em>' reference.
+   * @see #getDatadictionary()
+   * @generated
+   */
+  void setDatadictionary(WorkflowDataDictionaryDefinition value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

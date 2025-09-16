@@ -1085,9 +1085,20 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EReference getWorkflowDefinition_Statements()
+  public EReference getWorkflowDefinition_Datadictionary()
   {
     return (EReference)workflowDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowDefinition_Statements()
+  {
+    return (EReference)workflowDefinitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1313,6 +1324,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
     createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
     createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__INPUT);
+    createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__DATADICTIONARY);
     createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__STATEMENTS);
 
     workflowDefinitionApplyLLMTaskStatementEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT);
@@ -1458,6 +1470,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDefinition_Input(), this.getWorkflowInputDefinition(), null, "input", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowDefinition_Datadictionary(), this.getWorkflowDataDictionaryDefinition(), null, "datadictionary", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDefinition_Statements(), this.getWorkflowDefinitionApplyLLMTaskStatement(), null, "statements", null, 0, -1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDefinitionApplyLLMTaskStatementEClass, WorkflowDefinitionApplyLLMTaskStatement.class, "WorkflowDefinitionApplyLLMTaskStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
