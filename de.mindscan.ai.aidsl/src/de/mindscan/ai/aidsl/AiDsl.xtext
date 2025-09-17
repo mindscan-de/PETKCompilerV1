@@ -75,6 +75,8 @@ WorkflowDataDictionaryElement:
 DatadictionaryKeyValuePair:
 	// basically key value stuff.
 	key=ID ':' value=(
+		// TODO: Numbers
+		// Maps, which can extend other maps - also make it able to build nested structures
 		DataDictionaryBooleanValue|
 		DataDictionaryStringValue|
 		DataDictionaryNullValue
