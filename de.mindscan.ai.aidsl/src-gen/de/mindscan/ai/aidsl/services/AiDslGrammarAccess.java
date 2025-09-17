@@ -383,7 +383,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//WorkflowDataDictionaryElement:
 		//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-		//        // can be a map or a list or a direct value
+		//        // can be a map or a list or a direct value e.g. a String, a number, boolean, null
+		//        // basicalls this here is a Map
+		//        // We can call this a data dictionary experssion...
 		//        '{'
 		//            (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//        '}'
@@ -391,7 +393,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-		//    // can be a map or a list or a direct value
+		//    // can be a map or a list or a direct value e.g. a String, a number, boolean, null
+		//    // basicalls this here is a Map
+		//    // We can call this a data dictionary experssion...
 		//    '{'
 		//        (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//    '}'
@@ -421,7 +425,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ID
 		public RuleCall getExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1() { return cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1; }
 		
-		//// can be a map or a list or a direct value
+		//// can be a map or a list or a direct value e.g. a String, a number, boolean, null
+		//// basicalls this here is a Map
+		//// We can call this a data dictionary experssion...
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
@@ -1645,7 +1651,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//WorkflowDataDictionaryElement:
 	//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-	//        // can be a map or a list or a direct value
+	//        // can be a map or a list or a direct value e.g. a String, a number, boolean, null
+	//        // basicalls this here is a Map
+	//        // We can call this a data dictionary experssion...
 	//        '{'
 	//            (keyValuePairs+=DatadictionaryKeyValuePair)*
 	//        '}'
