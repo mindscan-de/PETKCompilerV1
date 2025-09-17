@@ -41,6 +41,8 @@ WorkflowUIElementMap:
 	'ui' '{'
 		'label' label=STRING
 		'uitype' uitype=STRING
+		// TODO basically an array of strings 
+		('options' options=STRING)?
 	'}'
 ;
 

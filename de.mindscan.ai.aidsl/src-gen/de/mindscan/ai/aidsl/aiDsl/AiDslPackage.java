@@ -271,13 +271,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT_MAP__UITYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Options</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_ELEMENT_MAP__OPTIONS = 2;
+
+  /**
    * The number of structural features of the '<em>Workflow UI Element Map</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 2;
+  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.
@@ -1259,6 +1268,17 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowUIElementMap_Uitype();
 
   /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Options</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions()
+   * @see #getWorkflowUIElementMap()
+   * @generated
+   */
+  EAttribute getWorkflowUIElementMap_Options();
+
+  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition <em>Workflow Data Dictionary Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2119,6 +2139,14 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_UI_ELEMENT_MAP__UITYPE = eINSTANCE.getWorkflowUIElementMap_Uitype();
+
+    /**
+     * The meta object literal for the '<em><b>Options</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_UI_ELEMENT_MAP__OPTIONS = eINSTANCE.getWorkflowUIElementMap_Options();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.

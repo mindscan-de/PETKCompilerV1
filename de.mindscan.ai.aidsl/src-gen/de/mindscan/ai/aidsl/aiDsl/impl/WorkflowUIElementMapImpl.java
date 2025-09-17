@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getUitype <em>Uitype</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowUIElementMapImpl#getOptions <em>Options</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +69,26 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String uitype = UITYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOptions() <em>Options</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOptions()
+   * @generated
+   * @ordered
+   */
+  protected static final String OPTIONS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOptions() <em>Options</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOptions()
+   * @generated
+   * @ordered
+   */
+  protected String options = OPTIONS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,31 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
+  public String getOptions()
+  {
+    return options;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setOptions(String newOptions)
+  {
+    String oldOptions = options;
+    options = newOptions;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS, oldOptions, options));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +200,8 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return getLabel();
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         return getUitype();
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
+        return getOptions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -173,6 +221,9 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         setUitype((String)newValue);
+        return;
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
+        setOptions((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +245,9 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         setUitype(UITYPE_EDEFAULT);
         return;
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
+        setOptions(OPTIONS_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +266,8 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__UITYPE:
         return UITYPE_EDEFAULT == null ? uitype != null : !UITYPE_EDEFAULT.equals(uitype);
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
+        return OPTIONS_EDEFAULT == null ? options != null : !OPTIONS_EDEFAULT.equals(options);
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +287,8 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
     result.append(label);
     result.append(", uitype: ");
     result.append(uitype);
+    result.append(", options: ");
+    result.append(options);
     result.append(')');
     return result.toString();
   }

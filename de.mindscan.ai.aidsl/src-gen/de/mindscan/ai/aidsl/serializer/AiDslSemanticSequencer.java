@@ -548,20 +548,11 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowUIElementMap returns WorkflowUIElementMap
 	 *
 	 * Constraint:
-	 *     (label=STRING uitype=STRING)
+	 *     (label=STRING uitype=STRING options=STRING?)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowUIElementMap(ISerializationContext context, WorkflowUIElementMap semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__LABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__LABEL));
-			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__UITYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.WORKFLOW_UI_ELEMENT_MAP__UITYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWorkflowUIElementMapAccess().getLabelSTRINGTerminalRuleCall_3_0(), semanticObject.getLabel());
-		feeder.accept(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0(), semanticObject.getUitype());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

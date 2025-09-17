@@ -1694,6 +1694,7 @@ rule__WorkflowUIElementMap__Group__6
 	}
 :
 	rule__WorkflowUIElementMap__Group__6__Impl
+	rule__WorkflowUIElementMap__Group__7
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1705,9 +1706,89 @@ rule__WorkflowUIElementMap__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); }
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6()); }
+	(rule__WorkflowUIElementMap__Group_6__0)?
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__WorkflowUIElementMap__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); }
 	'}'
-	{ after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6()); }
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__WorkflowUIElementMap__Group_6__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__WorkflowUIElementMap__Group_6__0__Impl
+	rule__WorkflowUIElementMap__Group_6__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__Group_6__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_6_0()); }
+	'options'
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_6_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__Group_6__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__WorkflowUIElementMap__Group_6__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__Group_6__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_1()); }
+	(rule__WorkflowUIElementMap__OptionsAssignment_6_1)
+	{ after(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_1()); }
 )
 ;
 finally {
@@ -4697,6 +4778,21 @@ rule__WorkflowUIElementMap__UitypeAssignment_5
 		{ before(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); }
 		RULE_STRING
 		{ after(grammarAccess.getWorkflowUIElementMapAccess().getUitypeSTRINGTerminalRuleCall_5_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__WorkflowUIElementMap__OptionsAssignment_6_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_1_0()); }
 	)
 ;
 finally {

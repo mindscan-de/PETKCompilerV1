@@ -502,9 +502,33 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='}'
+		(
+			otherlv_6='options'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_6_0());
+			}
+			(
+				(
+					lv_options_7_0=RULE_STRING
+					{
+						newLeafNode(lv_options_7_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"options",
+							lv_options_7_0,
+							"de.mindscan.ai.aidsl.AiDsl.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

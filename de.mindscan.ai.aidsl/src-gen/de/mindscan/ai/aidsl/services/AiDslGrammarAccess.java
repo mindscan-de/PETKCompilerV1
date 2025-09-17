@@ -251,12 +251,18 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cUitypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cUitypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cUitypeSTRINGTerminalRuleCall_5_0 = (RuleCall)cUitypeAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cOptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cOptionsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cOptionsAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WorkflowUIElementMap:
 		//    'ui' '{'
 		//        'label' label=STRING
 		//        'uitype' uitype=STRING
+		//        // TODO basically an array of strings
+		//        ('options' options=STRING)?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -264,6 +270,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'ui' '{'
 		//    'label' label=STRING
 		//    'uitype' uitype=STRING
+		//    // TODO basically an array of strings
+		//    ('options' options=STRING)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -291,8 +299,21 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//STRING
 		public RuleCall getUitypeSTRINGTerminalRuleCall_5_0() { return cUitypeSTRINGTerminalRuleCall_5_0; }
 		
+		//// TODO basically an array of strings
+		//('options' options=STRING)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'options'
+		public Keyword getOptionsKeyword_6_0() { return cOptionsKeyword_6_0; }
+		
+		//options=STRING
+		public Assignment getOptionsAssignment_6_1() { return cOptionsAssignment_6_1; }
+		
+		//STRING
+		public RuleCall getOptionsSTRINGTerminalRuleCall_6_1_0() { return cOptionsSTRINGTerminalRuleCall_6_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class WorkflowDataDictionaryDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
@@ -1591,6 +1612,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    'ui' '{'
 	//        'label' label=STRING
 	//        'uitype' uitype=STRING
+	//        // TODO basically an array of strings
+	//        ('options' options=STRING)?
 	//    '}'
 	//;
 	public WorkflowUIElementMapElements getWorkflowUIElementMapAccess() {
