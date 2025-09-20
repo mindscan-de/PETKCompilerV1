@@ -485,6 +485,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        DataDictionaryBooleanValue|
 		//        DataDictionaryStringValue|
 		//        DataDictionaryNullValue
+		//        //|
+		//        //DataDictionaryMapValue
 		//    )
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -496,6 +498,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    DataDictionaryBooleanValue|
 		//    DataDictionaryStringValue|
 		//    DataDictionaryNullValue
+		//    //|
+		//    //DataDictionaryMapValue
 		//)
 		public Group getGroup() { return cGroup; }
 		
@@ -515,6 +519,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//       DataDictionaryBooleanValue|
 		//       DataDictionaryStringValue|
 		//       DataDictionaryNullValue
+		//       //|
+		//       //DataDictionaryMapValue
 		//   )
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
@@ -524,6 +530,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        DataDictionaryBooleanValue|
 		//        DataDictionaryStringValue|
 		//        DataDictionaryNullValue
+		//        //|
+		//        //DataDictionaryMapValue
 		//    )
 		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
 		
@@ -597,6 +605,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cElementsVMNodeEleemntsParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
+		////DataDictionaryMapValue:
+		////    '{'
+		////        (keyValuePairs+=DatadictionaryKeyValuePair)*
+		////    '}'
+		////;
 		//// ---------------------------------------
 		//// VMNode stuff
 		//// ---------------------------------------
@@ -1709,6 +1722,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        DataDictionaryBooleanValue|
 	//        DataDictionaryStringValue|
 	//        DataDictionaryNullValue
+	//        //|
+	//        //DataDictionaryMapValue
 	//    )
 	//;
 	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
@@ -1752,6 +1767,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDataDictionaryNullValueAccess().getRule();
 	}
 	
+	////DataDictionaryMapValue:
+	////    '{'
+	////        (keyValuePairs+=DatadictionaryKeyValuePair)*
+	////    '}'
+	////;
 	//// ---------------------------------------
 	//// VMNode stuff
 	//// ---------------------------------------

@@ -60,7 +60,7 @@ WorkflowDataDictionaryDefinition:
 ;
 
 WorkflowDataDictionaryElement:
-	
+ 
 	"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
 		// can be a map or a list or a direct value e.g. a String, a number, boolean, null
 		// basicalls this here is a Map
@@ -68,6 +68,7 @@ WorkflowDataDictionaryElement:
 		'{' 
 			(keyValuePairs+=DatadictionaryKeyValuePair)*
 		'}'
+		
 ;
 
 // TODO: we want alsoo integers, maps, lists
@@ -80,6 +81,8 @@ DatadictionaryKeyValuePair:
 		DataDictionaryBooleanValue|
 		DataDictionaryStringValue|
 		DataDictionaryNullValue
+		//|
+		//DataDictionaryMapValue
 	)
 ;
 
@@ -92,6 +95,12 @@ DataDictionaryStringValue:
 DataDictionaryNullValue:
 	'null'
 ;
+
+//DataDictionaryMapValue:
+//	'{'
+//		(keyValuePairs+=DatadictionaryKeyValuePair)*
+//	'}'
+//;
 
 
 
