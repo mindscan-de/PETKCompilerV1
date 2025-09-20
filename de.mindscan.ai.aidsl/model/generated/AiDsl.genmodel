@@ -33,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryDefinition/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryDefinition/dataDictionaryElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryDefinition/keyValuePairs"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/name"/>
@@ -41,8 +41,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryElement/keyValuePairs"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//DatadictionaryKeyValuePair">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DatadictionaryKeyValuePair/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DatadictionaryKeyValuePair/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DatadictionaryKeyValuePair/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DatadictionaryKeyValuePair/extends"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DatadictionaryKeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryValue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryArrayValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryArrayValue/values"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryMapValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DataDictionaryMapValue/keyValuePairs"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/nodetype"/>
@@ -114,5 +122,8 @@
     <genClasses ecoreClass="AiDsl.ecore#//BASICTYPE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryBooleanValue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryStringValue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryNullValue"/>
   </genPackages>
 </genmodel:GenModel>

@@ -55,7 +55,7 @@ WorkflowUIElementMap:
 
 WorkflowDataDictionaryDefinition:
 	'datadictionary' name=ID '{'
-		(dataDictionaryElements+=WorkflowDataDictionaryElement)*
+		(keyValuePairs+=DatadictionaryKeyValuePair)*
 	'}'
 ;
 
@@ -75,16 +75,29 @@ WorkflowDataDictionaryElement:
 
 DatadictionaryKeyValuePair:
 	// basically key value stuff.
-	key=ID ':' value=(
-		// TODO: Numbers
-		// Maps, which can extend other maps - also make it able to build nested structures
-		DataDictionaryBooleanValue|
-		DataDictionaryStringValue|
-		DataDictionaryNullValue
-		//|
-		//DataDictionaryMapValue
-	)
+	name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
+
 ;
+
+DataDictionaryValue:
+		{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+		{DataDictionaryStringValue} DataDictionaryStringValue|
+		{DataDictionaryNullValue} DataDictionaryNullValue|
+		DataDictionaryArrayValue|
+		DataDictionaryMapValue
+;
+
+DataDictionaryArrayValue:
+	 {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+;
+
+DataDictionaryMapValue:
+	 {DataDictionaryMapValue} 
+	 '{' 
+	 	 (keyValuePairs+=DatadictionaryKeyValuePair)* 
+	 '}'
+;
+
 
 DataDictionaryBooleanValue:
 	'true'|'false'
@@ -95,14 +108,6 @@ DataDictionaryStringValue:
 DataDictionaryNullValue:
 	'null'
 ;
-
-//DataDictionaryMapValue:
-//	'{'
-//		(keyValuePairs+=DatadictionaryKeyValuePair)*
-//	'}'
-//;
-
-
 
 // ---------------------------------------
 // VMNode stuff
@@ -230,7 +235,7 @@ ELEMENTTYPE:
 ;
 
 BASICTYPE:
-	typename=('string'|'int'|'boolean'|'jsonstring')
+	typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

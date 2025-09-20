@@ -7,6 +7,11 @@ import com.google.inject.Inject;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
 import de.mindscan.ai.aidsl.aiDsl.BASICTYPE;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue;
 import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
@@ -61,6 +66,21 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.BASICTYPE:
 				sequence_BASICTYPE(context, (BASICTYPE) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_ARRAY_VALUE:
+				sequence_DataDictionaryArrayValue(context, (DataDictionaryArrayValue) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_BOOLEAN_VALUE:
+				sequence_DataDictionaryValue(context, (DataDictionaryBooleanValue) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_MAP_VALUE:
+				sequence_DataDictionaryMapValue(context, (DataDictionaryMapValue) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_NULL_VALUE:
+				sequence_DataDictionaryValue(context, (DataDictionaryNullValue) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_STRING_VALUE:
+				sequence_DataDictionaryValue(context, (DataDictionaryStringValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR:
 				sequence_DatadictionaryKeyValuePair(context, (DatadictionaryKeyValuePair) semanticObject); 
@@ -163,7 +183,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     BASICTYPE returns BASICTYPE
 	 *
 	 * Constraint:
-	 *     (typename='string' | typename='int' | typename='boolean' | typename='jsonstring')
+	 *     (typename='string' | typename='int' | typename='boolean' | typename='jsonstring' | typename='upload')
 	 * </pre>
 	 */
 	protected void sequence_BASICTYPE(ISerializationContext context, BASICTYPE semanticObject) {
@@ -174,10 +194,82 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryArrayValue
+	 *     DataDictionaryArrayValue returns DataDictionaryArrayValue
+	 *
+	 * Constraint:
+	 *     (values+=STRING values+=STRING*)?
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryArrayValue(ISerializationContext context, DataDictionaryArrayValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryMapValue
+	 *     DataDictionaryMapValue returns DataDictionaryMapValue
+	 *
+	 * Constraint:
+	 *     keyValuePairs+=DatadictionaryKeyValuePair*
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryMapValue(ISerializationContext context, DataDictionaryMapValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryBooleanValue
+	 *
+	 * Constraint:
+	 *     {DataDictionaryBooleanValue}
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryBooleanValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryNullValue
+	 *
+	 * Constraint:
+	 *     {DataDictionaryNullValue}
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryNullValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryStringValue
+	 *
+	 * Constraint:
+	 *     {DataDictionaryStringValue}
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryStringValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     DatadictionaryKeyValuePair returns DatadictionaryKeyValuePair
 	 *
 	 * Constraint:
-	 *     (key=ID (value=DataDictionaryBooleanValue | value=DataDictionaryStringValue | value=DataDictionaryNullValue))
+	 *     (name=ID extends=[DatadictionaryKeyValuePair|ID]? value=DataDictionaryValue)
 	 * </pre>
 	 */
 	protected void sequence_DatadictionaryKeyValuePair(ISerializationContext context, DatadictionaryKeyValuePair semanticObject) {
@@ -450,7 +542,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowDataDictionaryDefinition returns WorkflowDataDictionaryDefinition
 	 *
 	 * Constraint:
-	 *     (name=ID dataDictionaryElements+=WorkflowDataDictionaryElement*)
+	 *     (name=ID keyValuePairs+=DatadictionaryKeyValuePair*)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryDefinition(ISerializationContext context, WorkflowDataDictionaryDefinition semanticObject) {

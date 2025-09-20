@@ -74,6 +74,9 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION: return createWorkflowDataDictionaryDefinition();
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT: return createWorkflowDataDictionaryElement();
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR: return createDatadictionaryKeyValuePair();
+      case AiDslPackage.DATA_DICTIONARY_VALUE: return createDataDictionaryValue();
+      case AiDslPackage.DATA_DICTIONARY_ARRAY_VALUE: return createDataDictionaryArrayValue();
+      case AiDslPackage.DATA_DICTIONARY_MAP_VALUE: return createDataDictionaryMapValue();
       case AiDslPackage.VM_NODE_DEFINITION: return createVMNodeDefinition();
       case AiDslPackage.VM_NODE_ELEEMNTS: return createVMNodeEleemnts();
       case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
@@ -92,6 +95,9 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
       case AiDslPackage.ELEMENTTYPE: return createELEMENTTYPE();
       case AiDslPackage.BASICTYPE: return createBASICTYPE();
+      case AiDslPackage.DATA_DICTIONARY_BOOLEAN_VALUE: return createDataDictionaryBooleanValue();
+      case AiDslPackage.DATA_DICTIONARY_STRING_VALUE: return createDataDictionaryStringValue();
+      case AiDslPackage.DATA_DICTIONARY_NULL_VALUE: return createDataDictionaryNullValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -203,6 +209,42 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     DatadictionaryKeyValuePairImpl datadictionaryKeyValuePair = new DatadictionaryKeyValuePairImpl();
     return datadictionaryKeyValuePair;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryValue createDataDictionaryValue()
+  {
+    DataDictionaryValueImpl dataDictionaryValue = new DataDictionaryValueImpl();
+    return dataDictionaryValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryArrayValue createDataDictionaryArrayValue()
+  {
+    DataDictionaryArrayValueImpl dataDictionaryArrayValue = new DataDictionaryArrayValueImpl();
+    return dataDictionaryArrayValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryMapValue createDataDictionaryMapValue()
+  {
+    DataDictionaryMapValueImpl dataDictionaryMapValue = new DataDictionaryMapValueImpl();
+    return dataDictionaryMapValue;
   }
 
   /**
@@ -419,6 +461,42 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     BASICTYPEImpl basictype = new BASICTYPEImpl();
     return basictype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryBooleanValue createDataDictionaryBooleanValue()
+  {
+    DataDictionaryBooleanValueImpl dataDictionaryBooleanValue = new DataDictionaryBooleanValueImpl();
+    return dataDictionaryBooleanValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryStringValue createDataDictionaryStringValue()
+  {
+    DataDictionaryStringValueImpl dataDictionaryStringValue = new DataDictionaryStringValueImpl();
+    return dataDictionaryStringValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryNullValue createDataDictionaryNullValue()
+  {
+    DataDictionaryNullValueImpl dataDictionaryNullValue = new DataDictionaryNullValueImpl();
+    return dataDictionaryNullValue;
   }
 
   /**

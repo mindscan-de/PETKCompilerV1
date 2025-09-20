@@ -346,8 +346,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cDataDictionaryElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0 = (RuleCall)cDataDictionaryElementsAssignment_3.eContents().get(0);
+		private final Assignment cKeyValuePairsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_3_0 = (RuleCall)cKeyValuePairsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//// ---------------------------------------
@@ -358,13 +358,13 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//// ---------------------------------------
 		//WorkflowDataDictionaryDefinition:
 		//    'datadictionary' name=ID '{'
-		//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
+		//        (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'datadictionary' name=ID '{'
-		//    (dataDictionaryElements+=WorkflowDataDictionaryElement)*
+		//    (keyValuePairs+=DatadictionaryKeyValuePair)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -380,11 +380,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(dataDictionaryElements+=WorkflowDataDictionaryElement)*
-		public Assignment getDataDictionaryElementsAssignment_3() { return cDataDictionaryElementsAssignment_3; }
+		//(keyValuePairs+=DatadictionaryKeyValuePair)*
+		public Assignment getKeyValuePairsAssignment_3() { return cKeyValuePairsAssignment_3; }
 		
-		//WorkflowDataDictionaryElement
-		public RuleCall getDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0() { return cDataDictionaryElementsWorkflowDataDictionaryElementParserRuleCall_3_0; }
+		//DatadictionaryKeyValuePair
+		public RuleCall getKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_3_0() { return cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -467,84 +467,212 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class DatadictionaryKeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DatadictionaryKeyValuePair");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
-		private final RuleCall cValueDataDictionaryBooleanValueParserRuleCall_2_0_0 = (RuleCall)cValueAlternatives_2_0.eContents().get(0);
-		private final RuleCall cValueDataDictionaryStringValueParserRuleCall_2_0_1 = (RuleCall)cValueAlternatives_2_0.eContents().get(1);
-		private final RuleCall cValueDataDictionaryNullValueParserRuleCall_2_0_2 = (RuleCall)cValueAlternatives_2_0.eContents().get(2);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cExtendsKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cExtendsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cExtendsDatadictionaryKeyValuePairCrossReference_1_1_0 = (CrossReference)cExtendsAssignment_1_1.eContents().get(0);
+		private final RuleCall cExtendsDatadictionaryKeyValuePairIDTerminalRuleCall_1_1_0_1 = (RuleCall)cExtendsDatadictionaryKeyValuePairCrossReference_1_1_0.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cValueDataDictionaryValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//// TODO: we want alsoo integers, maps, lists
 		//DatadictionaryKeyValuePair:
 		//    // basically key value stuff.
-		//    key=ID ':' value=(
-		//        // TODO: Numbers
-		//        // Maps, which can extend other maps - also make it able to build nested structures
-		//        DataDictionaryBooleanValue|
-		//        DataDictionaryStringValue|
-		//        DataDictionaryNullValue
-		//        //|
-		//        //DataDictionaryMapValue
-		//    )
+		//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// basically key value stuff.
-		//key=ID ':' value=(
-		//    // TODO: Numbers
-		//    // Maps, which can extend other maps - also make it able to build nested structures
-		//    DataDictionaryBooleanValue|
-		//    DataDictionaryStringValue|
-		//    DataDictionaryNullValue
-		//    //|
-		//    //DataDictionaryMapValue
-		//)
+		//name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 		public Group getGroup() { return cGroup; }
 		
 		//// basically key value stuff.
-		//key=ID
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
-		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//('extends' extends=[DatadictionaryKeyValuePair])?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'extends'
+		public Keyword getExtendsKeyword_1_0() { return cExtendsKeyword_1_0; }
+		
+		//extends=[DatadictionaryKeyValuePair]
+		public Assignment getExtendsAssignment_1_1() { return cExtendsAssignment_1_1; }
+		
+		//[DatadictionaryKeyValuePair]
+		public CrossReference getExtendsDatadictionaryKeyValuePairCrossReference_1_1_0() { return cExtendsDatadictionaryKeyValuePairCrossReference_1_1_0; }
+		
+		//ID
+		public RuleCall getExtendsDatadictionaryKeyValuePairIDTerminalRuleCall_1_1_0_1() { return cExtendsDatadictionaryKeyValuePairIDTerminalRuleCall_1_1_0_1; }
 		
 		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//value=(
-		//       // TODO: Numbers
-		//       // Maps, which can extend other maps - also make it able to build nested structures
-		//       DataDictionaryBooleanValue|
-		//       DataDictionaryStringValue|
-		//       DataDictionaryNullValue
-		//       //|
-		//       //DataDictionaryMapValue
-		//   )
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		//value=DataDictionaryValue
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
 		
-		//(
-		//        // TODO: Numbers
-		//        // Maps, which can extend other maps - also make it able to build nested structures
-		//        DataDictionaryBooleanValue|
-		//        DataDictionaryStringValue|
-		//        DataDictionaryNullValue
-		//        //|
-		//        //DataDictionaryMapValue
-		//    )
-		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+		//DataDictionaryValue
+		public RuleCall getValueDataDictionaryValueParserRuleCall_3_0() { return cValueDataDictionaryValueParserRuleCall_3_0; }
+	}
+	public class DataDictionaryValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cDataDictionaryBooleanValueAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final RuleCall cDataDictionaryBooleanValueParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDataDictionaryStringValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cDataDictionaryStringValueParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cDataDictionaryNullValueAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final RuleCall cDataDictionaryNullValueParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cDataDictionaryArrayValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDataDictionaryMapValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//// TODO: Numbers
-		//// Maps, which can extend other maps - also make it able to build nested structures
+		//DataDictionaryValue:
+		//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+		//        {DataDictionaryStringValue} DataDictionaryStringValue|
+		//        {DataDictionaryNullValue} DataDictionaryNullValue|
+		//        DataDictionaryArrayValue|
+		//        DataDictionaryMapValue
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+		//{DataDictionaryStringValue} DataDictionaryStringValue|
+		//{DataDictionaryNullValue} DataDictionaryNullValue|
+		//DataDictionaryArrayValue|
+		//DataDictionaryMapValue
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{DataDictionaryBooleanValue} DataDictionaryBooleanValue
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{DataDictionaryBooleanValue}
+		public Action getDataDictionaryBooleanValueAction_0_0() { return cDataDictionaryBooleanValueAction_0_0; }
+		
 		//DataDictionaryBooleanValue
-		public RuleCall getValueDataDictionaryBooleanValueParserRuleCall_2_0_0() { return cValueDataDictionaryBooleanValueParserRuleCall_2_0_0; }
+		public RuleCall getDataDictionaryBooleanValueParserRuleCall_0_1() { return cDataDictionaryBooleanValueParserRuleCall_0_1; }
+		
+		//{DataDictionaryStringValue} DataDictionaryStringValue
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{DataDictionaryStringValue}
+		public Action getDataDictionaryStringValueAction_1_0() { return cDataDictionaryStringValueAction_1_0; }
 		
 		//DataDictionaryStringValue
-		public RuleCall getValueDataDictionaryStringValueParserRuleCall_2_0_1() { return cValueDataDictionaryStringValueParserRuleCall_2_0_1; }
+		public RuleCall getDataDictionaryStringValueParserRuleCall_1_1() { return cDataDictionaryStringValueParserRuleCall_1_1; }
+		
+		//{DataDictionaryNullValue} DataDictionaryNullValue
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{DataDictionaryNullValue}
+		public Action getDataDictionaryNullValueAction_2_0() { return cDataDictionaryNullValueAction_2_0; }
 		
 		//DataDictionaryNullValue
-		public RuleCall getValueDataDictionaryNullValueParserRuleCall_2_0_2() { return cValueDataDictionaryNullValueParserRuleCall_2_0_2; }
+		public RuleCall getDataDictionaryNullValueParserRuleCall_2_1() { return cDataDictionaryNullValueParserRuleCall_2_1; }
+		
+		//DataDictionaryArrayValue
+		public RuleCall getDataDictionaryArrayValueParserRuleCall_3() { return cDataDictionaryArrayValueParserRuleCall_3; }
+		
+		//DataDictionaryMapValue
+		public RuleCall getDataDictionaryMapValueParserRuleCall_4() { return cDataDictionaryMapValueParserRuleCall_4; }
+	}
+	public class DataDictionaryArrayValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryArrayValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryArrayValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cValuesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValuesAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_2_1_1_0 = (RuleCall)cValuesAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DataDictionaryArrayValue:
+		//     {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+		public Group getGroup() { return cGroup; }
+		
+		//{DataDictionaryArrayValue}
+		public Action getDataDictionaryArrayValueAction_0() { return cDataDictionaryArrayValueAction_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//(values+=STRING (',' values+=STRING)*  )?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//values+=STRING
+		public Assignment getValuesAssignment_2_0() { return cValuesAssignment_2_0; }
+		
+		//STRING
+		public RuleCall getValuesSTRINGTerminalRuleCall_2_0_0() { return cValuesSTRINGTerminalRuleCall_2_0_0; }
+		
+		//(',' values+=STRING)*
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
+		
+		//values+=STRING
+		public Assignment getValuesAssignment_2_1_1() { return cValuesAssignment_2_1_1; }
+		
+		//STRING
+		public RuleCall getValuesSTRINGTerminalRuleCall_2_1_1_0() { return cValuesSTRINGTerminalRuleCall_2_1_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+	public class DataDictionaryMapValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryMapValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryMapValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cKeyValuePairsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_2_0 = (RuleCall)cKeyValuePairsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//DataDictionaryMapValue:
+		//     {DataDictionaryMapValue}
+		//     '{'
+		//          (keyValuePairs+=DatadictionaryKeyValuePair)*
+		//     '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DataDictionaryMapValue}
+		//'{'
+		//     (keyValuePairs+=DatadictionaryKeyValuePair)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{DataDictionaryMapValue}
+		public Action getDataDictionaryMapValueAction_0() { return cDataDictionaryMapValueAction_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//(keyValuePairs+=DatadictionaryKeyValuePair)*
+		public Assignment getKeyValuePairsAssignment_2() { return cKeyValuePairsAssignment_2; }
+		
+		//DatadictionaryKeyValuePair
+		public RuleCall getKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_2_0() { return cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class DataDictionaryBooleanValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryBooleanValue");
@@ -605,11 +733,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cElementsVMNodeEleemntsParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		////DataDictionaryMapValue:
-		////    '{'
-		////        (keyValuePairs+=DatadictionaryKeyValuePair)*
-		////    '}'
-		////;
 		//// ---------------------------------------
 		//// VMNode stuff
 		//// ---------------------------------------
@@ -1460,16 +1583,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cTypenameIntKeyword_0_1 = (Keyword)cTypenameAlternatives_0.eContents().get(1);
 		private final Keyword cTypenameBooleanKeyword_0_2 = (Keyword)cTypenameAlternatives_0.eContents().get(2);
 		private final Keyword cTypenameJsonstringKeyword_0_3 = (Keyword)cTypenameAlternatives_0.eContents().get(3);
+		private final Keyword cTypenameUploadKeyword_0_4 = (Keyword)cTypenameAlternatives_0.eContents().get(4);
 		
 		//BASICTYPE:
-		//    typename=('string'|'int'|'boolean'|'jsonstring')
+		//    typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//typename=('string'|'int'|'boolean'|'jsonstring')
+		//typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
 		public Assignment getTypenameAssignment() { return cTypenameAssignment; }
 		
-		//('string'|'int'|'boolean'|'jsonstring')
+		//('string'|'int'|'boolean'|'jsonstring'|'upload')
 		public Alternatives getTypenameAlternatives_0() { return cTypenameAlternatives_0; }
 		
 		//'string'
@@ -1483,6 +1607,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//'jsonstring'
 		public Keyword getTypenameJsonstringKeyword_0_3() { return cTypenameJsonstringKeyword_0_3; }
+		
+		//'upload'
+		public Keyword getTypenameUploadKeyword_0_4() { return cTypenameUploadKeyword_0_4; }
 	}
 	
 	
@@ -1495,6 +1622,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
 	private final WorkflowDataDictionaryElementElements pWorkflowDataDictionaryElement;
 	private final DatadictionaryKeyValuePairElements pDatadictionaryKeyValuePair;
+	private final DataDictionaryValueElements pDataDictionaryValue;
+	private final DataDictionaryArrayValueElements pDataDictionaryArrayValue;
+	private final DataDictionaryMapValueElements pDataDictionaryMapValue;
 	private final DataDictionaryBooleanValueElements pDataDictionaryBooleanValue;
 	private final DataDictionaryStringValueElements pDataDictionaryStringValue;
 	private final DataDictionaryNullValueElements pDataDictionaryNullValue;
@@ -1540,6 +1670,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
 		this.pWorkflowDataDictionaryElement = new WorkflowDataDictionaryElementElements();
 		this.pDatadictionaryKeyValuePair = new DatadictionaryKeyValuePairElements();
+		this.pDataDictionaryValue = new DataDictionaryValueElements();
+		this.pDataDictionaryArrayValue = new DataDictionaryArrayValueElements();
+		this.pDataDictionaryMapValue = new DataDictionaryMapValueElements();
 		this.pDataDictionaryBooleanValue = new DataDictionaryBooleanValueElements();
 		this.pDataDictionaryStringValue = new DataDictionaryStringValueElements();
 		this.pDataDictionaryNullValue = new DataDictionaryNullValueElements();
@@ -1685,7 +1818,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// ---------------------------------------
 	//WorkflowDataDictionaryDefinition:
 	//    'datadictionary' name=ID '{'
-	//        (dataDictionaryElements+=WorkflowDataDictionaryElement)*
+	//        (keyValuePairs+=DatadictionaryKeyValuePair)*
 	//    '}'
 	//;
 	public WorkflowDataDictionaryDefinitionElements getWorkflowDataDictionaryDefinitionAccess() {
@@ -1716,15 +1849,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// TODO: we want alsoo integers, maps, lists
 	//DatadictionaryKeyValuePair:
 	//    // basically key value stuff.
-	//    key=ID ':' value=(
-	//        // TODO: Numbers
-	//        // Maps, which can extend other maps - also make it able to build nested structures
-	//        DataDictionaryBooleanValue|
-	//        DataDictionaryStringValue|
-	//        DataDictionaryNullValue
-	//        //|
-	//        //DataDictionaryMapValue
-	//    )
+	//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 	//;
 	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
 		return pDatadictionaryKeyValuePair;
@@ -1732,6 +1857,46 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getDatadictionaryKeyValuePairRule() {
 		return getDatadictionaryKeyValuePairAccess().getRule();
+	}
+	
+	//DataDictionaryValue:
+	//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+	//        {DataDictionaryStringValue} DataDictionaryStringValue|
+	//        {DataDictionaryNullValue} DataDictionaryNullValue|
+	//        DataDictionaryArrayValue|
+	//        DataDictionaryMapValue
+	//;
+	public DataDictionaryValueElements getDataDictionaryValueAccess() {
+		return pDataDictionaryValue;
+	}
+	
+	public ParserRule getDataDictionaryValueRule() {
+		return getDataDictionaryValueAccess().getRule();
+	}
+	
+	//DataDictionaryArrayValue:
+	//     {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+	//;
+	public DataDictionaryArrayValueElements getDataDictionaryArrayValueAccess() {
+		return pDataDictionaryArrayValue;
+	}
+	
+	public ParserRule getDataDictionaryArrayValueRule() {
+		return getDataDictionaryArrayValueAccess().getRule();
+	}
+	
+	//DataDictionaryMapValue:
+	//     {DataDictionaryMapValue}
+	//     '{'
+	//          (keyValuePairs+=DatadictionaryKeyValuePair)*
+	//     '}'
+	//;
+	public DataDictionaryMapValueElements getDataDictionaryMapValueAccess() {
+		return pDataDictionaryMapValue;
+	}
+	
+	public ParserRule getDataDictionaryMapValueRule() {
+		return getDataDictionaryMapValueAccess().getRule();
 	}
 	
 	//DataDictionaryBooleanValue:
@@ -1767,11 +1932,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDataDictionaryNullValueAccess().getRule();
 	}
 	
-	////DataDictionaryMapValue:
-	////    '{'
-	////        (keyValuePairs+=DatadictionaryKeyValuePair)*
-	////    '}'
-	////;
 	//// ---------------------------------------
 	//// VMNode stuff
 	//// ---------------------------------------
@@ -2022,7 +2182,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//BASICTYPE:
-	//    typename=('string'|'int'|'boolean'|'jsonstring')
+	//    typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
 	//;
 	public BASICTYPEElements getBASICTYPEAccess() {
 		return pBASICTYPE;

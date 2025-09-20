@@ -121,6 +121,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createDatadictionaryKeyValuePairAdapter();
       }
       @Override
+      public Adapter caseDataDictionaryValue(DataDictionaryValue object)
+      {
+        return createDataDictionaryValueAdapter();
+      }
+      @Override
+      public Adapter caseDataDictionaryArrayValue(DataDictionaryArrayValue object)
+      {
+        return createDataDictionaryArrayValueAdapter();
+      }
+      @Override
+      public Adapter caseDataDictionaryMapValue(DataDictionaryMapValue object)
+      {
+        return createDataDictionaryMapValueAdapter();
+      }
+      @Override
       public Adapter caseVMNodeDefinition(VMNodeDefinition object)
       {
         return createVMNodeDefinitionAdapter();
@@ -209,6 +224,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBASICTYPE(BASICTYPE object)
       {
         return createBASICTYPEAdapter();
+      }
+      @Override
+      public Adapter caseDataDictionaryBooleanValue(DataDictionaryBooleanValue object)
+      {
+        return createDataDictionaryBooleanValueAdapter();
+      }
+      @Override
+      public Adapter caseDataDictionaryStringValue(DataDictionaryStringValue object)
+      {
+        return createDataDictionaryStringValueAdapter();
+      }
+      @Override
+      public Adapter caseDataDictionaryNullValue(DataDictionaryNullValue object)
+      {
+        return createDataDictionaryNullValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -363,6 +393,51 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDatadictionaryKeyValuePairAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue <em>Data Dictionary Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue
+   * @generated
+   */
+  public Adapter createDataDictionaryValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue <em>Data Dictionary Array Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue
+   * @generated
+   */
+  public Adapter createDataDictionaryArrayValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue <em>Data Dictionary Map Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
+   * @generated
+   */
+  public Adapter createDataDictionaryMapValueAdapter()
   {
     return null;
   }
@@ -633,6 +708,51 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBASICTYPEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue <em>Data Dictionary Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
+   * @generated
+   */
+  public Adapter createDataDictionaryBooleanValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue <em>Data Dictionary String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
+   * @generated
+   */
+  public Adapter createDataDictionaryStringValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue <em>Data Dictionary Null Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
+   * @generated
+   */
+  public Adapter createDataDictionaryNullValueAdapter()
   {
     return null;
   }

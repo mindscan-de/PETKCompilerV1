@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getDataDictionaryElements <em>Data Dictionary Elements</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition#getKeyValuePairs <em>Key Value Pairs</em>}</li>
  * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition()
@@ -49,15 +49,15 @@ public interface WorkflowDataDictionaryDefinition extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Data Dictionary Elements</b></em>' containment reference list.
-   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement}.
+   * Returns the value of the '<em><b>Key Value Pairs</b></em>' containment reference list.
+   * The list contents are of type {@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Data Dictionary Elements</em>' containment reference list.
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition_DataDictionaryElements()
+   * @return the value of the '<em>Key Value Pairs</em>' containment reference list.
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowDataDictionaryDefinition_KeyValuePairs()
    * @model containment="true"
    * @generated
    */
-  EList<WorkflowDataDictionaryElement> getDataDictionaryElements();
+  EList<DatadictionaryKeyValuePair> getKeyValuePairs();
 
 } // WorkflowDataDictionaryDefinition

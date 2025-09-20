@@ -4,11 +4,14 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,7 +24,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl#getExtends <em>Extends</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -30,44 +34,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container implements DatadictionaryKeyValuePair
 {
   /**
-   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKey()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String KEY_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getKey()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String key = KEY_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExtends()
+   * @generated
+   * @ordered
+   */
+  protected DatadictionaryKeyValuePair extends_;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected DataDictionaryValue value;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,9 +100,9 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
    * @generated
    */
   @Override
-  public String getKey()
+  public String getName()
   {
-    return key;
+    return name;
   }
 
   /**
@@ -107,12 +111,12 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
    * @generated
    */
   @Override
-  public void setKey(String newKey)
+  public void setName(String newName)
   {
-    String oldKey = key;
-    key = newKey;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__KEY, oldKey, key));
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__NAME, oldName, name));
   }
 
   /**
@@ -121,7 +125,52 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
    * @generated
    */
   @Override
-  public String getValue()
+  public DatadictionaryKeyValuePair getExtends()
+  {
+    if (extends_ != null && extends_.eIsProxy())
+    {
+      InternalEObject oldExtends = (InternalEObject)extends_;
+      extends_ = (DatadictionaryKeyValuePair)eResolveProxy(oldExtends);
+      if (extends_ != oldExtends)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS, oldExtends, extends_));
+      }
+    }
+    return extends_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DatadictionaryKeyValuePair basicGetExtends()
+  {
+    return extends_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExtends(DatadictionaryKeyValuePair newExtends)
+  {
+    DatadictionaryKeyValuePair oldExtends = extends_;
+    extends_ = newExtends;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS, oldExtends, extends_));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryValue getValue()
   {
     return value;
   }
@@ -131,13 +180,54 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setValue(String newValue)
+  public NotificationChain basicSetValue(DataDictionaryValue newValue, NotificationChain msgs)
   {
-    String oldValue = value;
+    DataDictionaryValue oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(DataDictionaryValue newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE, newValue, newValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE:
+        return basicSetValue(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -150,8 +240,11 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
   {
     switch (featureID)
     {
-      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__KEY:
-        return getKey();
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__NAME:
+        return getName();
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS:
+        if (resolve) return getExtends();
+        return basicGetExtends();
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE:
         return getValue();
     }
@@ -168,11 +261,14 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
   {
     switch (featureID)
     {
-      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__KEY:
-        setKey((String)newValue);
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__NAME:
+        setName((String)newValue);
+        return;
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS:
+        setExtends((DatadictionaryKeyValuePair)newValue);
         return;
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE:
-        setValue((String)newValue);
+        setValue((DataDictionaryValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +284,14 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
   {
     switch (featureID)
     {
-      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__KEY:
-        setKey(KEY_EDEFAULT);
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS:
+        setExtends((DatadictionaryKeyValuePair)null);
         return;
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE:
-        setValue(VALUE_EDEFAULT);
+        setValue((DataDictionaryValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +307,12 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
   {
     switch (featureID)
     {
-      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__KEY:
-        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS:
+        return extends_ != null;
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -227,10 +328,8 @@ public class DatadictionaryKeyValuePairImpl extends MinimalEObjectImpl.Container
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (key: ");
-    result.append(key);
-    result.append(", value: ");
-    result.append(value);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

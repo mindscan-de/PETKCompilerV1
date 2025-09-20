@@ -35,8 +35,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowDataDictionaryDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataDictionaryElements"
-        upperBound="-1" eType="#//WorkflowDataDictionaryElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePairs" upperBound="-1"
+        eType="#//DatadictionaryKeyValuePair" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowDataDictionaryElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -45,8 +45,19 @@
         eType="#//DatadictionaryKeyValuePair" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DatadictionaryKeyValuePair">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//DatadictionaryKeyValuePair"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DataDictionaryValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryArrayValue" eSuperTypes="#//DataDictionaryValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryMapValue" eSuperTypes="#//DataDictionaryValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePairs" upperBound="-1"
+        eType="#//DatadictionaryKeyValuePair" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodetype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -130,4 +141,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BASICTYPE" eSuperTypes="#//ELEMENTTYPE">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryBooleanValue" eSuperTypes="#//DataDictionaryValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryStringValue" eSuperTypes="#//DataDictionaryValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryNullValue" eSuperTypes="#//DataDictionaryValue"/>
 </ecore:EPackage>

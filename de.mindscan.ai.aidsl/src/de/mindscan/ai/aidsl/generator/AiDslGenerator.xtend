@@ -9,7 +9,6 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
@@ -89,11 +88,11 @@ class AiDslGenerator extends AbstractGenerator {
 		val result = newLinkedHashMap()
 		
 		val datadictionary = workflowDefinition.datadictionary
-		for(datadictionaryelement : datadictionary.dataDictionaryElements) {
-			val map = comileDataDictionaryElement(datadictionaryelement)
-			
-			result.put(datadictionaryelement.name, map)				
-		}
+//		for(datadictionaryelement : datadictionary.dataDictionaryElements) {
+//			val map = comileDataDictionaryElement(datadictionaryelement)
+//			
+//			result.put(datadictionaryelement.name, map)				
+//		}
 		
 		return result
 	}
@@ -108,7 +107,7 @@ class AiDslGenerator extends AbstractGenerator {
 		// TODO: extract the string values, because the string includes the leading and tailing values
 		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
 			
-			map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
+			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
 		}
 		return map
 	}

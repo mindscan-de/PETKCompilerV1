@@ -6,6 +6,12 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 import de.mindscan.ai.aidsl.aiDsl.AiDslFactory;
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.AnnotationInterfaceReference;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
@@ -108,6 +114,27 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass datadictionaryKeyValuePairEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryArrayValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryMapValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -234,6 +261,27 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass basictypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryBooleanValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryStringValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDictionaryNullValueEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -535,7 +583,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EReference getWorkflowDataDictionaryDefinition_DataDictionaryElements()
+  public EReference getWorkflowDataDictionaryDefinition_KeyValuePairs()
   {
     return (EReference)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(1);
   }
@@ -601,7 +649,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getDatadictionaryKeyValuePair_Key()
+  public EAttribute getDatadictionaryKeyValuePair_Name()
   {
     return (EAttribute)datadictionaryKeyValuePairEClass.getEStructuralFeatures().get(0);
   }
@@ -612,9 +660,75 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getDatadictionaryKeyValuePair_Value()
+  public EReference getDatadictionaryKeyValuePair_Extends()
   {
-    return (EAttribute)datadictionaryKeyValuePairEClass.getEStructuralFeatures().get(1);
+    return (EReference)datadictionaryKeyValuePairEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDatadictionaryKeyValuePair_Value()
+  {
+    return (EReference)datadictionaryKeyValuePairEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryValue()
+  {
+    return dataDictionaryValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryArrayValue()
+  {
+    return dataDictionaryArrayValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDataDictionaryArrayValue_Values()
+  {
+    return (EAttribute)dataDictionaryArrayValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryMapValue()
+  {
+    return dataDictionaryMapValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDataDictionaryMapValue_KeyValuePairs()
+  {
+    return (EReference)dataDictionaryMapValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1217,6 +1331,39 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getDataDictionaryBooleanValue()
+  {
+    return dataDictionaryBooleanValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryStringValue()
+  {
+    return dataDictionaryStringValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryNullValue()
+  {
+    return dataDictionaryNullValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -1269,7 +1416,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     workflowDataDictionaryDefinitionEClass = createEClass(WORKFLOW_DATA_DICTIONARY_DEFINITION);
     createEAttribute(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME);
-    createEReference(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS);
+    createEReference(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS);
 
     workflowDataDictionaryElementEClass = createEClass(WORKFLOW_DATA_DICTIONARY_ELEMENT);
     createEAttribute(workflowDataDictionaryElementEClass, WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME);
@@ -1277,8 +1424,17 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(workflowDataDictionaryElementEClass, WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY_VALUE_PAIRS);
 
     datadictionaryKeyValuePairEClass = createEClass(DATADICTIONARY_KEY_VALUE_PAIR);
-    createEAttribute(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__KEY);
-    createEAttribute(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__VALUE);
+    createEAttribute(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__NAME);
+    createEReference(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS);
+    createEReference(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__VALUE);
+
+    dataDictionaryValueEClass = createEClass(DATA_DICTIONARY_VALUE);
+
+    dataDictionaryArrayValueEClass = createEClass(DATA_DICTIONARY_ARRAY_VALUE);
+    createEAttribute(dataDictionaryArrayValueEClass, DATA_DICTIONARY_ARRAY_VALUE__VALUES);
+
+    dataDictionaryMapValueEClass = createEClass(DATA_DICTIONARY_MAP_VALUE);
+    createEReference(dataDictionaryMapValueEClass, DATA_DICTIONARY_MAP_VALUE__KEY_VALUE_PAIRS);
 
     vmNodeDefinitionEClass = createEClass(VM_NODE_DEFINITION);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NODETYPE);
@@ -1351,6 +1507,12 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     basictypeEClass = createEClass(BASICTYPE);
     createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
+
+    dataDictionaryBooleanValueEClass = createEClass(DATA_DICTIONARY_BOOLEAN_VALUE);
+
+    dataDictionaryStringValueEClass = createEClass(DATA_DICTIONARY_STRING_VALUE);
+
+    dataDictionaryNullValueEClass = createEClass(DATA_DICTIONARY_NULL_VALUE);
   }
 
   /**
@@ -1382,11 +1544,16 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    dataDictionaryArrayValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
+    dataDictionaryMapValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
     vmNodeOpCodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     basictypeEClass.getESuperTypes().add(this.getELEMENTTYPE());
+    dataDictionaryBooleanValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
+    dataDictionaryStringValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
+    dataDictionaryNullValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1416,7 +1583,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(workflowDataDictionaryDefinitionEClass, WorkflowDataDictionaryDefinition.class, "WorkflowDataDictionaryDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDataDictionaryDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWorkflowDataDictionaryDefinition_DataDictionaryElements(), this.getWorkflowDataDictionaryElement(), null, "dataDictionaryElements", null, 0, -1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowDataDictionaryDefinition_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDataDictionaryElementEClass, WorkflowDataDictionaryElement.class, "WorkflowDataDictionaryElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDataDictionaryElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1424,8 +1591,17 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getWorkflowDataDictionaryElement_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, WorkflowDataDictionaryElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(datadictionaryKeyValuePairEClass, DatadictionaryKeyValuePair.class, "DatadictionaryKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDatadictionaryKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatadictionaryKeyValuePair_Value(), ecorePackage.getEString(), "value", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatadictionaryKeyValuePair_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDatadictionaryKeyValuePair_Extends(), this.getDatadictionaryKeyValuePair(), null, "extends", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDatadictionaryKeyValuePair_Value(), this.getDataDictionaryValue(), null, "value", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataDictionaryValueEClass, DataDictionaryValue.class, "DataDictionaryValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dataDictionaryArrayValueEClass, DataDictionaryArrayValue.class, "DataDictionaryArrayValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataDictionaryArrayValue_Values(), ecorePackage.getEString(), "values", null, 0, -1, DataDictionaryArrayValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataDictionaryMapValueEClass, DataDictionaryMapValue.class, "DataDictionaryMapValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataDictionaryMapValue_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, DataDictionaryMapValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vmNodeDefinitionEClass, VMNodeDefinition.class, "VMNodeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeDefinition_Nodetype(), ecorePackage.getEString(), "nodetype", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1498,6 +1674,12 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataDictionaryBooleanValueEClass, DataDictionaryBooleanValue.class, "DataDictionaryBooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dataDictionaryStringValueEClass, DataDictionaryStringValue.class, "DataDictionaryStringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(dataDictionaryNullValueEClass, DataDictionaryNullValue.class, "DataDictionaryNullValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

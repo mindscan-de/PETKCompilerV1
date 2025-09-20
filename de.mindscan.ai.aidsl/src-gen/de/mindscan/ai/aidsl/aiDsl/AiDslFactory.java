@@ -105,6 +105,33 @@ public interface AiDslFactory extends EFactory
   DatadictionaryKeyValuePair createDatadictionaryKeyValuePair();
 
   /**
+   * Returns a new object of class '<em>Data Dictionary Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Value</em>'.
+   * @generated
+   */
+  DataDictionaryValue createDataDictionaryValue();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary Array Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Array Value</em>'.
+   * @generated
+   */
+  DataDictionaryArrayValue createDataDictionaryArrayValue();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary Map Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Map Value</em>'.
+   * @generated
+   */
+  DataDictionaryMapValue createDataDictionaryMapValue();
+
+  /**
    * Returns a new object of class '<em>VM Node Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -265,6 +292,33 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   BASICTYPE createBASICTYPE();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary Boolean Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Boolean Value</em>'.
+   * @generated
+   */
+  DataDictionaryBooleanValue createDataDictionaryBooleanValue();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary String Value</em>'.
+   * @generated
+   */
+  DataDictionaryStringValue createDataDictionaryStringValue();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary Null Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Null Value</em>'.
+   * @generated
+   */
+  DataDictionaryNullValue createDataDictionaryNullValue();
 
   /**
    * Returns the package supported by this factory.

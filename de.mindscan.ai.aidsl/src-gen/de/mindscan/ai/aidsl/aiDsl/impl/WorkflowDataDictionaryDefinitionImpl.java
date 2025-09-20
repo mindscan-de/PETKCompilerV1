@@ -4,8 +4,8 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 
 import java.util.Collection;
 
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl#getDataDictionaryElements <em>Data Dictionary Elements</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl#getKeyValuePairs <em>Key Value Pairs</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +60,14 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDataDictionaryElements() <em>Data Dictionary Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getKeyValuePairs() <em>Key Value Pairs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDataDictionaryElements()
+   * @see #getKeyValuePairs()
    * @generated
    * @ordered
    */
-  protected EList<WorkflowDataDictionaryElement> dataDictionaryElements;
+  protected EList<DatadictionaryKeyValuePair> keyValuePairs;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,13 +121,13 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
    * @generated
    */
   @Override
-  public EList<WorkflowDataDictionaryElement> getDataDictionaryElements()
+  public EList<DatadictionaryKeyValuePair> getKeyValuePairs()
   {
-    if (dataDictionaryElements == null)
+    if (keyValuePairs == null)
     {
-      dataDictionaryElements = new EObjectContainmentEList<WorkflowDataDictionaryElement>(WorkflowDataDictionaryElement.class, this, AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS);
+      keyValuePairs = new EObjectContainmentEList<DatadictionaryKeyValuePair>(DatadictionaryKeyValuePair.class, this, AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS);
     }
-    return dataDictionaryElements;
+    return keyValuePairs;
   }
 
   /**
@@ -140,8 +140,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
   {
     switch (featureID)
     {
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        return ((InternalEList<?>)getDataDictionaryElements()).basicRemove(otherEnd, msgs);
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS:
+        return ((InternalEList<?>)getKeyValuePairs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -158,8 +158,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
     {
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME:
         return getName();
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        return getDataDictionaryElements();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS:
+        return getKeyValuePairs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,9 +178,9 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        getDataDictionaryElements().clear();
-        getDataDictionaryElements().addAll((Collection<? extends WorkflowDataDictionaryElement>)newValue);
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS:
+        getKeyValuePairs().clear();
+        getKeyValuePairs().addAll((Collection<? extends DatadictionaryKeyValuePair>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,8 +199,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        getDataDictionaryElements().clear();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS:
+        getKeyValuePairs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -218,8 +218,8 @@ public class WorkflowDataDictionaryDefinitionImpl extends MinimalEObjectImpl.Con
     {
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__DATA_DICTIONARY_ELEMENTS:
-        return dataDictionaryElements != null && !dataDictionaryElements.isEmpty();
+      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS:
+        return keyValuePairs != null && !keyValuePairs.isEmpty();
     }
     return super.eIsSet(featureID);
   }

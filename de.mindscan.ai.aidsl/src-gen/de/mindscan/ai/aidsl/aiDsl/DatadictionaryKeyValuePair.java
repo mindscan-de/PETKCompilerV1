@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getKey <em>Key</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getName <em>Name</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getExtends <em>Extends</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -25,47 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface DatadictionaryKeyValuePair extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Key</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' attribute.
-   * @see #setKey(String)
-   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDatadictionaryKeyValuePair_Key()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDatadictionaryKeyValuePair_Name()
    * @model
    * @generated
    */
-  String getKey();
+  String getName();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getKey <em>Key</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key</em>' attribute.
-   * @see #getKey()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setKey(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Extends</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
+   * @return the value of the '<em>Extends</em>' reference.
+   * @see #setExtends(DatadictionaryKeyValuePair)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDatadictionaryKeyValuePair_Extends()
+   * @model
+   * @generated
+   */
+  DatadictionaryKeyValuePair getExtends();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getExtends <em>Extends</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Extends</em>' reference.
+   * @see #getExtends()
+   * @generated
+   */
+  void setExtends(DatadictionaryKeyValuePair value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(DataDictionaryValue)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDatadictionaryKeyValuePair_Value()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getValue();
+  DataDictionaryValue getValue();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
+   * @param value the new value of the '<em>Value</em>' containment reference.
    * @see #getValue()
    * @generated
    */
-  void setValue(String value);
+  void setValue(DataDictionaryValue value);
 
 } // DatadictionaryKeyValuePair
