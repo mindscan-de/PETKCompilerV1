@@ -253,8 +253,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cUitypeSTRINGTerminalRuleCall_5_0 = (RuleCall)cUitypeAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cOptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cOptionsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cOptionsAssignment_6_1.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cOptionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_2_0 = (RuleCall)cOptionsAssignment_6_2.eContents().get(0);
+		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
+		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
+		private final Assignment cOptionsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_3_1_0 = (RuleCall)cOptionsAssignment_6_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//WorkflowUIElementMap:
@@ -262,7 +268,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        'label' label=STRING
 		//        'uitype' uitype=STRING
 		//        // TODO basically an array of strings
-		//        ('options' options=STRING)?
+		//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -271,7 +277,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    'label' label=STRING
 		//    'uitype' uitype=STRING
 		//    // TODO basically an array of strings
-		//    ('options' options=STRING)?
+		//    ('options' '[' options+=STRING(',' options+=STRING) ']')?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -300,17 +306,35 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public RuleCall getUitypeSTRINGTerminalRuleCall_5_0() { return cUitypeSTRINGTerminalRuleCall_5_0; }
 		
 		//// TODO basically an array of strings
-		//('options' options=STRING)?
+		//('options' '[' options+=STRING(',' options+=STRING) ']')?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'options'
 		public Keyword getOptionsKeyword_6_0() { return cOptionsKeyword_6_0; }
 		
-		//options=STRING
-		public Assignment getOptionsAssignment_6_1() { return cOptionsAssignment_6_1; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_6_1() { return cLeftSquareBracketKeyword_6_1; }
+		
+		//options+=STRING
+		public Assignment getOptionsAssignment_6_2() { return cOptionsAssignment_6_2; }
 		
 		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_6_1_0() { return cOptionsSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getOptionsSTRINGTerminalRuleCall_6_2_0() { return cOptionsSTRINGTerminalRuleCall_6_2_0; }
+		
+		//(',' options+=STRING)
+		public Group getGroup_6_3() { return cGroup_6_3; }
+		
+		//','
+		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
+		
+		//options+=STRING
+		public Assignment getOptionsAssignment_6_3_1() { return cOptionsAssignment_6_3_1; }
+		
+		//STRING
+		public RuleCall getOptionsSTRINGTerminalRuleCall_6_3_1_0() { return cOptionsSTRINGTerminalRuleCall_6_3_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_6_4() { return cRightSquareBracketKeyword_6_4; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -456,6 +480,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//DatadictionaryKeyValuePair:
 		//    // basically key value stuff.
 		//    key=ID ':' value=(
+		//        // TODO: Numbers
+		//        // Maps, which can extend other maps - also make it able to build nested structures
 		//        DataDictionaryBooleanValue|
 		//        DataDictionaryStringValue|
 		//        DataDictionaryNullValue
@@ -465,6 +491,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//// basically key value stuff.
 		//key=ID ':' value=(
+		//    // TODO: Numbers
+		//    // Maps, which can extend other maps - also make it able to build nested structures
 		//    DataDictionaryBooleanValue|
 		//    DataDictionaryStringValue|
 		//    DataDictionaryNullValue
@@ -482,6 +510,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
 		//value=(
+		//       // TODO: Numbers
+		//       // Maps, which can extend other maps - also make it able to build nested structures
 		//       DataDictionaryBooleanValue|
 		//       DataDictionaryStringValue|
 		//       DataDictionaryNullValue
@@ -489,12 +519,16 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//(
+		//        // TODO: Numbers
+		//        // Maps, which can extend other maps - also make it able to build nested structures
 		//        DataDictionaryBooleanValue|
 		//        DataDictionaryStringValue|
 		//        DataDictionaryNullValue
 		//    )
 		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
 		
+		//// TODO: Numbers
+		//// Maps, which can extend other maps - also make it able to build nested structures
 		//DataDictionaryBooleanValue
 		public RuleCall getValueDataDictionaryBooleanValueParserRuleCall_2_0_0() { return cValueDataDictionaryBooleanValueParserRuleCall_2_0_0; }
 		
@@ -1619,7 +1653,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        'label' label=STRING
 	//        'uitype' uitype=STRING
 	//        // TODO basically an array of strings
-	//        ('options' options=STRING)?
+	//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
 	//    '}'
 	//;
 	public WorkflowUIElementMapElements getWorkflowUIElementMapAccess() {
@@ -1670,6 +1704,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//DatadictionaryKeyValuePair:
 	//    // basically key value stuff.
 	//    key=ID ':' value=(
+	//        // TODO: Numbers
+	//        // Maps, which can extend other maps - also make it able to build nested structures
 	//        DataDictionaryBooleanValue|
 	//        DataDictionaryStringValue|
 	//        DataDictionaryNullValue

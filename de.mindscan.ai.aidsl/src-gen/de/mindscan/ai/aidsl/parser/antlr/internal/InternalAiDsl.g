@@ -507,28 +507,60 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 			{
 				newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_6_0());
 			}
+			otherlv_7='['
+			{
+				newLeafNode(otherlv_7, grammarAccess.getWorkflowUIElementMapAccess().getLeftSquareBracketKeyword_6_1());
+			}
 			(
 				(
-					lv_options_7_0=RULE_STRING
+					lv_options_8_0=RULE_STRING
 					{
-						newLeafNode(lv_options_7_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_1_0());
+						newLeafNode(lv_options_8_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_2_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
 						}
-						setWithLastConsumed(
+						addWithLastConsumed(
 							$current,
 							"options",
-							lv_options_7_0,
+							lv_options_8_0,
 							"de.mindscan.ai.aidsl.AiDsl.STRING");
 					}
 				)
 			)
+			(
+				otherlv_9=','
+				{
+					newLeafNode(otherlv_9, grammarAccess.getWorkflowUIElementMapAccess().getCommaKeyword_6_3_0());
+				}
+				(
+					(
+						lv_options_10_0=RULE_STRING
+						{
+							newLeafNode(lv_options_10_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_3_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"options",
+								lv_options_10_0,
+								"de.mindscan.ai.aidsl.AiDsl.STRING");
+						}
+					)
+				)
+			)
+			otherlv_11=']'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getWorkflowUIElementMapAccess().getRightSquareBracketKeyword_6_4());
+			}
 		)?
-		otherlv_8='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_12, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

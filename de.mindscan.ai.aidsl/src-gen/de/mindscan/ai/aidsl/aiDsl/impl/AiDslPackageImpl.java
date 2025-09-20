@@ -1412,7 +1412,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(workflowUIElementMapEClass, WorkflowUIElementMap.class, "WorkflowUIElementMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowUIElementMap_Label(), ecorePackage.getEString(), "label", null, 0, 1, WorkflowUIElementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWorkflowUIElementMap_Uitype(), ecorePackage.getEString(), "uitype", null, 0, 1, WorkflowUIElementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWorkflowUIElementMap_Options(), ecorePackage.getEString(), "options", null, 0, 1, WorkflowUIElementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowUIElementMap_Options(), ecorePackage.getEString(), "options", null, 0, -1, WorkflowUIElementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDataDictionaryDefinitionEClass, WorkflowDataDictionaryDefinition.class, "WorkflowDataDictionaryDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDataDictionaryDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

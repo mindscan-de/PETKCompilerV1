@@ -3,6 +3,8 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -70,25 +72,15 @@ public interface WorkflowUIElementMap extends EObject
   void setUitype(String value);
 
   /**
-   * Returns the value of the '<em><b>Options</b></em>' attribute.
+   * Returns the value of the '<em><b>Options</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Options</em>' attribute.
-   * @see #setOptions(String)
+   * @return the value of the '<em>Options</em>' attribute list.
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElementMap_Options()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  String getOptions();
-
-  /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Options</em>' attribute.
-   * @see #getOptions()
-   * @generated
-   */
-  void setOptions(String value);
+  EList<String> getOptions();
 
 } // WorkflowUIElementMap

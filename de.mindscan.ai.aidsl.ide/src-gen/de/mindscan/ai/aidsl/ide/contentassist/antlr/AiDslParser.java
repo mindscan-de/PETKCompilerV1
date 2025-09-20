@@ -47,6 +47,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getGroup(), "rule__WorkflowUIElement__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup(), "rule__WorkflowUIElementMap__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6(), "rule__WorkflowUIElementMap__Group_6__0");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6_3(), "rule__WorkflowUIElementMap__Group_6_3__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup(), "rule__WorkflowDataDictionaryElement__Group__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup_2(), "rule__WorkflowDataDictionaryElement__Group_2__0");
@@ -86,7 +87,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3(), "rule__WorkflowUIElement__UielementAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3(), "rule__WorkflowUIElementMap__LabelAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5(), "rule__WorkflowUIElementMap__UitypeAssignment_5");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_1(), "rule__WorkflowUIElementMap__OptionsAssignment_6_1");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_2(), "rule__WorkflowUIElementMap__OptionsAssignment_6_2");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_3_1(), "rule__WorkflowUIElementMap__OptionsAssignment_6_3_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getDataDictionaryElementsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__DataDictionaryElementsAssignment_3");
 			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryElement__NameAssignment_1");

@@ -271,7 +271,7 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT_MAP__UITYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Options</b></em>' attribute.
+   * The feature id for the '<em><b>Options</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1268,10 +1268,10 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowUIElementMap_Uitype();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
+   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Options</em>'.
+   * @return the meta object for the attribute list '<em>Options</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions()
    * @see #getWorkflowUIElementMap()
    * @generated
@@ -2141,7 +2141,7 @@ public interface AiDslPackage extends EPackage
     EAttribute WORKFLOW_UI_ELEMENT_MAP__UITYPE = eINSTANCE.getWorkflowUIElementMap_Uitype();
 
     /**
-     * The meta object literal for the '<em><b>Options</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Options</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
