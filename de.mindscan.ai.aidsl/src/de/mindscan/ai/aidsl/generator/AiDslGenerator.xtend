@@ -9,7 +9,6 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
@@ -97,20 +96,20 @@ class AiDslGenerator extends AbstractGenerator {
 		return result
 	}
 	
-	protected def HashMap<String, String> comileDataDictionaryElement(WorkflowDataDictionaryElement datadictionaryelement) {
-		var map=newHashMap()
-		
-		if(datadictionaryelement.extends !== null) {
-			map = comileDataDictionaryElement(datadictionaryelement.extends)
-		}
-		
-		// TODO: extract the string values, because the string includes the leading and tailing values
-		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
-			
-			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
-		}
-		return map
-	}
+//	protected def HashMap<String, String> comileDataDictionaryElement(WorkflowDataDictionaryElement datadictionaryelement) {
+//		var map=newHashMap()
+//		
+//		if(datadictionaryelement.extends !== null) {
+//			map = comileDataDictionaryElement(datadictionaryelement.extends)
+//		}
+//		
+//		// TODO: extract the string values, because the string includes the leading and tailing values
+//		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
+//			
+//			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
+//		}
+//		return map
+//	}
 	
 	protected def String prepareStringForExport(String stringValue) {
 		if(stringValue === null) {

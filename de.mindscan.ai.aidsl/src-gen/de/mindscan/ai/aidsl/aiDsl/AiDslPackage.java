@@ -326,52 +326,6 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DATA_DICTIONARY_DEFINITION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl <em>Workflow Data Dictionary Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDataDictionaryElement()
-   * @generated
-   */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT = 7;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Extends</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT__EXTENDS = 1;
-
-  /**
-   * The feature id for the '<em><b>Key Value Pairs</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY_VALUE_PAIRS = 2;
-
-  /**
-   * The number of structural features of the '<em>Workflow Data Dictionary Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WORKFLOW_DATA_DICTIONARY_ELEMENT_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl <em>Datadictionary Key Value Pair</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -379,7 +333,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDatadictionaryKeyValuePair()
    * @generated
    */
-  int DATADICTIONARY_KEY_VALUE_PAIR = 8;
+  int DATADICTIONARY_KEY_VALUE_PAIR = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -425,7 +379,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryValue()
    * @generated
    */
-  int DATA_DICTIONARY_VALUE = 9;
+  int DATA_DICTIONARY_VALUE = 8;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Value</em>' class.
@@ -444,7 +398,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryArrayValue()
    * @generated
    */
-  int DATA_DICTIONARY_ARRAY_VALUE = 10;
+  int DATA_DICTIONARY_ARRAY_VALUE = 9;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -472,7 +426,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryMapValue()
    * @generated
    */
-  int DATA_DICTIONARY_MAP_VALUE = 11;
+  int DATA_DICTIONARY_MAP_VALUE = 10;
 
   /**
    * The feature id for the '<em><b>Key Value Pairs</b></em>' containment reference list.
@@ -500,7 +454,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 12;
+  int VM_NODE_DEFINITION = 11;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -546,7 +500,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 13;
+  int VM_NODE_ELEEMNTS = 12;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -565,7 +519,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 14;
+  int VM_NODE_OP_CODE_ELEMENT = 13;
 
   /**
    * The feature id for the '<em><b>Opcode</b></em>' attribute.
@@ -593,7 +547,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 15;
+  int VM_NODE_OUT_ELEMENTS = 14;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -621,7 +575,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 16;
+  int VM_NODE_IN_ELEMENTS = 15;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -649,7 +603,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
    * @generated
    */
-  int VM_NODE_FIELD_ELEMENTS = 17;
+  int VM_NODE_FIELD_ELEMENTS = 16;
 
   /**
    * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
@@ -677,7 +631,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 18;
+  int VM_NODE_OUT_ELEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -732,7 +686,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 19;
+  int VM_NODE_IN_ELEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -769,7 +723,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_FIELD_ELEMENT = 20;
+  int VM_FIELD_ELEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -824,7 +778,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_FIELD_ELEMENT = 21;
+  int VM_OVERRIDE_FIELD_ELEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -879,7 +833,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 22;
+  int LLM_TASK_DEFINITION = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -925,7 +879,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 23;
+  int ANNOTATION_INTERFACE_REFERENCE = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -953,7 +907,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 24;
+  int LLM_VARIABLE_ASSIGNMENT = 23;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -990,7 +944,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 25;
+  int WORKFLOW_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1045,7 +999,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 26;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 25;
 
   /**
    * The feature id for the '<em><b>Llmtask</b></em>' reference.
@@ -1082,7 +1036,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 27;
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 26;
 
   /**
    * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
@@ -1119,7 +1073,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
    * @generated
    */
-  int ELEMENTTYPE = 28;
+  int ELEMENTTYPE = 27;
 
   /**
    * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
@@ -1138,7 +1092,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
    * @generated
    */
-  int BASICTYPE = 29;
+  int BASICTYPE = 28;
 
   /**
    * The feature id for the '<em><b>Typename</b></em>' attribute.
@@ -1166,7 +1120,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
    * @generated
    */
-  int DATA_DICTIONARY_BOOLEAN_VALUE = 30;
+  int DATA_DICTIONARY_BOOLEAN_VALUE = 29;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Boolean Value</em>' class.
@@ -1185,7 +1139,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
    * @generated
    */
-  int DATA_DICTIONARY_STRING_VALUE = 31;
+  int DATA_DICTIONARY_STRING_VALUE = 30;
 
   /**
    * The number of structural features of the '<em>Data Dictionary String Value</em>' class.
@@ -1204,7 +1158,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
    * @generated
    */
-  int DATA_DICTIONARY_NULL_VALUE = 32;
+  int DATA_DICTIONARY_NULL_VALUE = 31;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Null Value</em>' class.
@@ -1450,49 +1404,6 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getWorkflowDataDictionaryDefinition_KeyValuePairs();
-
-  /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement <em>Workflow Data Dictionary Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Workflow Data Dictionary Element</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement
-   * @generated
-   */
-  EClass getWorkflowDataDictionaryElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getName()
-   * @see #getWorkflowDataDictionaryElement()
-   * @generated
-   */
-  EAttribute getWorkflowDataDictionaryElement_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends <em>Extends</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Extends</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getExtends()
-   * @see #getWorkflowDataDictionaryElement()
-   * @generated
-   */
-  EReference getWorkflowDataDictionaryElement_Extends();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKeyValuePairs <em>Key Value Pairs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Key Value Pairs</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement#getKeyValuePairs()
-   * @see #getWorkflowDataDictionaryElement()
-   * @generated
-   */
-  EReference getWorkflowDataDictionaryElement_KeyValuePairs();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair <em>Datadictionary Key Value Pair</em>}'.
@@ -2407,40 +2318,6 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS = eINSTANCE.getWorkflowDataDictionaryDefinition_KeyValuePairs();
-
-    /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl <em>Workflow Data Dictionary Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryElementImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDataDictionaryElement()
-     * @generated
-     */
-    EClass WORKFLOW_DATA_DICTIONARY_ELEMENT = eINSTANCE.getWorkflowDataDictionaryElement();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME = eINSTANCE.getWorkflowDataDictionaryElement_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Extends</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WORKFLOW_DATA_DICTIONARY_ELEMENT__EXTENDS = eINSTANCE.getWorkflowDataDictionaryElement_Extends();
-
-    /**
-     * The meta object literal for the '<em><b>Key Value Pairs</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY_VALUE_PAIRS = eINSTANCE.getWorkflowDataDictionaryElement_KeyValuePairs();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DatadictionaryKeyValuePairImpl <em>Datadictionary Key Value Pair</em>}' class.

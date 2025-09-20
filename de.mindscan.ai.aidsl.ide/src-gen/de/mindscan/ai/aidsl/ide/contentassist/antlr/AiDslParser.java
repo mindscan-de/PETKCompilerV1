@@ -49,8 +49,6 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6(), "rule__WorkflowUIElementMap__Group_6__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6_3(), "rule__WorkflowUIElementMap__Group_6_3__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
-			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup(), "rule__WorkflowDataDictionaryElement__Group__0");
-			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getGroup_2(), "rule__WorkflowDataDictionaryElement__Group_2__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup(), "rule__DatadictionaryKeyValuePair__Group__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup_1(), "rule__DatadictionaryKeyValuePair__Group_1__0");
 			builder.put(grammarAccess.getDataDictionaryValueAccess().getGroup_0(), "rule__DataDictionaryValue__Group_0__0");
@@ -99,9 +97,6 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_3_1(), "rule__WorkflowUIElementMap__OptionsAssignment_6_3_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getKeyValuePairsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__KeyValuePairsAssignment_3");
-			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryElement__NameAssignment_1");
-			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getExtendsAssignment_2_1(), "rule__WorkflowDataDictionaryElement__ExtendsAssignment_2_1");
-			builder.put(grammarAccess.getWorkflowDataDictionaryElementAccess().getKeyValuePairsAssignment_4(), "rule__WorkflowDataDictionaryElement__KeyValuePairsAssignment_4");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getNameAssignment_0(), "rule__DatadictionaryKeyValuePair__NameAssignment_0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getExtendsAssignment_1_1(), "rule__DatadictionaryKeyValuePair__ExtendsAssignment_1_1");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueAssignment_3(), "rule__DatadictionaryKeyValuePair__ValueAssignment_3");

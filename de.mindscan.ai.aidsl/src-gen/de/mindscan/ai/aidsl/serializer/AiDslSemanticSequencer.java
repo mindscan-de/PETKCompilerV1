@@ -28,7 +28,6 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
@@ -129,9 +128,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION:
 				sequence_WorkflowDataDictionaryDefinition(context, (WorkflowDataDictionaryDefinition) semanticObject); 
-				return; 
-			case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT:
-				sequence_WorkflowDataDictionaryElement(context, (WorkflowDataDictionaryElement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION:
 				sequence_WorkflowDefinition(context, (WorkflowDefinition) semanticObject); 
@@ -546,20 +542,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDataDictionaryDefinition(ISerializationContext context, WorkflowDataDictionaryDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     WorkflowDataDictionaryElement returns WorkflowDataDictionaryElement
-	 *
-	 * Constraint:
-	 *     (name=ID extends=[WorkflowDataDictionaryElement|ID]? keyValuePairs+=DatadictionaryKeyValuePair*)
-	 * </pre>
-	 */
-	protected void sequence_WorkflowDataDictionaryElement(ISerializationContext context, WorkflowDataDictionaryElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

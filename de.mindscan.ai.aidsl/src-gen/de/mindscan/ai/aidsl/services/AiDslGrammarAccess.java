@@ -389,81 +389,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-	public class WorkflowDataDictionaryElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryElement");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDataKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cExtendsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0 = (CrossReference)cExtendsAssignment_2_1.eContents().get(0);
-		private final RuleCall cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1 = (RuleCall)cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cKeyValuePairsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0 = (RuleCall)cKeyValuePairsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//WorkflowDataDictionaryElement:
-		//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-		//        // can be a map or a list or a direct value e.g. a String, a number, boolean, null
-		//        // basicalls this here is a Map
-		//        // We can call this a data dictionary experssion...
-		//        '{'
-		//            (keyValuePairs+=DatadictionaryKeyValuePair)*
-		//        '}'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-		//    // can be a map or a list or a direct value e.g. a String, a number, boolean, null
-		//    // basicalls this here is a Map
-		//    // We can call this a data dictionary experssion...
-		//    '{'
-		//        (keyValuePairs+=DatadictionaryKeyValuePair)*
-		//    '}'
-		public Group getGroup() { return cGroup; }
-		
-		//"data"
-		public Keyword getDataKeyword_0() { return cDataKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//('extends' extends=[WorkflowDataDictionaryElement])?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'extends'
-		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
-		
-		//extends=[WorkflowDataDictionaryElement]
-		public Assignment getExtendsAssignment_2_1() { return cExtendsAssignment_2_1; }
-		
-		//[WorkflowDataDictionaryElement]
-		public CrossReference getExtendsWorkflowDataDictionaryElementCrossReference_2_1_0() { return cExtendsWorkflowDataDictionaryElementCrossReference_2_1_0; }
-		
-		//ID
-		public RuleCall getExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1() { return cExtendsWorkflowDataDictionaryElementIDTerminalRuleCall_2_1_0_1; }
-		
-		//// can be a map or a list or a direct value e.g. a String, a number, boolean, null
-		//// basicalls this here is a Map
-		//// We can call this a data dictionary experssion...
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//(keyValuePairs+=DatadictionaryKeyValuePair)*
-		public Assignment getKeyValuePairsAssignment_4() { return cKeyValuePairsAssignment_4; }
-		
-		//DatadictionaryKeyValuePair
-		public RuleCall getKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0() { return cKeyValuePairsDatadictionaryKeyValuePairParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
 	public class DatadictionaryKeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DatadictionaryKeyValuePair");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -478,18 +403,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueDataDictionaryValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
-		//// TODO: we want alsoo integers, maps, lists
 		//DatadictionaryKeyValuePair:
-		//    // basically key value stuff.
 		//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// basically key value stuff.
 		//name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 		public Group getGroup() { return cGroup; }
 		
-		//// basically key value stuff.
 		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
@@ -535,6 +456,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDataDictionaryArrayValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cDataDictionaryMapValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
+		//// TODO: we want also integers/numbers
 		//DataDictionaryValue:
 		//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 		//        {DataDictionaryStringValue} DataDictionaryStringValue|
@@ -599,11 +521,13 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//DataDictionaryArrayValue:
-		//     {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+		//     {DataDictionaryArrayValue}
+		//     '[' (values+=STRING (',' values+=STRING)*)? ']'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+		//{DataDictionaryArrayValue}
+		//'[' (values+=STRING (',' values+=STRING)*)? ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{DataDictionaryArrayValue}
@@ -612,7 +536,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//(values+=STRING (',' values+=STRING)*  )?
+		//(values+=STRING (',' values+=STRING)*)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//values+=STRING
@@ -647,16 +571,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//DataDictionaryMapValue:
 		//     {DataDictionaryMapValue}
-		//     '{'
-		//          (keyValuePairs+=DatadictionaryKeyValuePair)*
-		//     '}'
+		//     '{' (keyValuePairs+=DatadictionaryKeyValuePair)* '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DataDictionaryMapValue}
-		//'{'
-		//     (keyValuePairs+=DatadictionaryKeyValuePair)*
-		//'}'
+		//'{' (keyValuePairs+=DatadictionaryKeyValuePair)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{DataDictionaryMapValue}
@@ -1620,7 +1540,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final WorkflowUIElementElements pWorkflowUIElement;
 	private final WorkflowUIElementMapElements pWorkflowUIElementMap;
 	private final WorkflowDataDictionaryDefinitionElements pWorkflowDataDictionaryDefinition;
-	private final WorkflowDataDictionaryElementElements pWorkflowDataDictionaryElement;
 	private final DatadictionaryKeyValuePairElements pDatadictionaryKeyValuePair;
 	private final DataDictionaryValueElements pDataDictionaryValue;
 	private final DataDictionaryArrayValueElements pDataDictionaryArrayValue;
@@ -1668,7 +1587,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pWorkflowUIElement = new WorkflowUIElementElements();
 		this.pWorkflowUIElementMap = new WorkflowUIElementMapElements();
 		this.pWorkflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionElements();
-		this.pWorkflowDataDictionaryElement = new WorkflowDataDictionaryElementElements();
 		this.pDatadictionaryKeyValuePair = new DatadictionaryKeyValuePairElements();
 		this.pDataDictionaryValue = new DataDictionaryValueElements();
 		this.pDataDictionaryArrayValue = new DataDictionaryArrayValueElements();
@@ -1829,26 +1747,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getWorkflowDataDictionaryDefinitionAccess().getRule();
 	}
 	
-	//WorkflowDataDictionaryElement:
-	//    "data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-	//        // can be a map or a list or a direct value e.g. a String, a number, boolean, null
-	//        // basicalls this here is a Map
-	//        // We can call this a data dictionary experssion...
-	//        '{'
-	//            (keyValuePairs+=DatadictionaryKeyValuePair)*
-	//        '}'
-	//;
-	public WorkflowDataDictionaryElementElements getWorkflowDataDictionaryElementAccess() {
-		return pWorkflowDataDictionaryElement;
-	}
-	
-	public ParserRule getWorkflowDataDictionaryElementRule() {
-		return getWorkflowDataDictionaryElementAccess().getRule();
-	}
-	
-	//// TODO: we want alsoo integers, maps, lists
 	//DatadictionaryKeyValuePair:
-	//    // basically key value stuff.
 	//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 	//;
 	public DatadictionaryKeyValuePairElements getDatadictionaryKeyValuePairAccess() {
@@ -1859,6 +1758,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDatadictionaryKeyValuePairAccess().getRule();
 	}
 	
+	//// TODO: we want also integers/numbers
 	//DataDictionaryValue:
 	//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 	//        {DataDictionaryStringValue} DataDictionaryStringValue|
@@ -1875,7 +1775,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DataDictionaryArrayValue:
-	//     {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+	//     {DataDictionaryArrayValue}
+	//     '[' (values+=STRING (',' values+=STRING)*)? ']'
 	//;
 	public DataDictionaryArrayValueElements getDataDictionaryArrayValueAccess() {
 		return pDataDictionaryArrayValue;
@@ -1887,9 +1788,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//DataDictionaryMapValue:
 	//     {DataDictionaryMapValue}
-	//     '{'
-	//          (keyValuePairs+=DatadictionaryKeyValuePair)*
-	//     '}'
+	//     '{' (keyValuePairs+=DatadictionaryKeyValuePair)* '}'
 	//;
 	public DataDictionaryMapValueElements getDataDictionaryMapValueAccess() {
 		return pDataDictionaryMapValue;

@@ -35,11 +35,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryDefinition/keyValuePairs"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//WorkflowDataDictionaryElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDataDictionaryElement/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryElement/extends"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDataDictionaryElement/keyValuePairs"/>
-    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//DatadictionaryKeyValuePair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DatadictionaryKeyValuePair/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DatadictionaryKeyValuePair/extends"/>

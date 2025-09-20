@@ -72,7 +72,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_UI_ELEMENT: return createWorkflowUIElement();
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP: return createWorkflowUIElementMap();
       case AiDslPackage.WORKFLOW_DATA_DICTIONARY_DEFINITION: return createWorkflowDataDictionaryDefinition();
-      case AiDslPackage.WORKFLOW_DATA_DICTIONARY_ELEMENT: return createWorkflowDataDictionaryElement();
       case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR: return createDatadictionaryKeyValuePair();
       case AiDslPackage.DATA_DICTIONARY_VALUE: return createDataDictionaryValue();
       case AiDslPackage.DATA_DICTIONARY_ARRAY_VALUE: return createDataDictionaryArrayValue();
@@ -185,18 +184,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     WorkflowDataDictionaryDefinitionImpl workflowDataDictionaryDefinition = new WorkflowDataDictionaryDefinitionImpl();
     return workflowDataDictionaryDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WorkflowDataDictionaryElement createWorkflowDataDictionaryElement()
-  {
-    WorkflowDataDictionaryElementImpl workflowDataDictionaryElement = new WorkflowDataDictionaryElementImpl();
-    return workflowDataDictionaryElement;
   }
 
   /**

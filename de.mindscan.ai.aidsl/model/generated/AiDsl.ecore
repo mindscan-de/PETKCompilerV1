@@ -38,12 +38,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePairs" upperBound="-1"
         eType="#//DatadictionaryKeyValuePair" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkflowDataDictionaryElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//WorkflowDataDictionaryElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyValuePairs" upperBound="-1"
-        eType="#//DatadictionaryKeyValuePair" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DatadictionaryKeyValuePair">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//DatadictionaryKeyValuePair"/>

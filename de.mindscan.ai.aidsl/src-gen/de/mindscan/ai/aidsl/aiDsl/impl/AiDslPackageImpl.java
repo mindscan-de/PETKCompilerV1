@@ -29,7 +29,6 @@ import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElements;
 import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
@@ -100,13 +99,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass workflowDataDictionaryDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass workflowDataDictionaryElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -586,50 +578,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EReference getWorkflowDataDictionaryDefinition_KeyValuePairs()
   {
     return (EReference)workflowDataDictionaryDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getWorkflowDataDictionaryElement()
-  {
-    return workflowDataDictionaryElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getWorkflowDataDictionaryElement_Name()
-  {
-    return (EAttribute)workflowDataDictionaryElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getWorkflowDataDictionaryElement_Extends()
-  {
-    return (EReference)workflowDataDictionaryElementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getWorkflowDataDictionaryElement_KeyValuePairs()
-  {
-    return (EReference)workflowDataDictionaryElementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1418,11 +1366,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEAttribute(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__NAME);
     createEReference(workflowDataDictionaryDefinitionEClass, WORKFLOW_DATA_DICTIONARY_DEFINITION__KEY_VALUE_PAIRS);
 
-    workflowDataDictionaryElementEClass = createEClass(WORKFLOW_DATA_DICTIONARY_ELEMENT);
-    createEAttribute(workflowDataDictionaryElementEClass, WORKFLOW_DATA_DICTIONARY_ELEMENT__NAME);
-    createEReference(workflowDataDictionaryElementEClass, WORKFLOW_DATA_DICTIONARY_ELEMENT__EXTENDS);
-    createEReference(workflowDataDictionaryElementEClass, WORKFLOW_DATA_DICTIONARY_ELEMENT__KEY_VALUE_PAIRS);
-
     datadictionaryKeyValuePairEClass = createEClass(DATADICTIONARY_KEY_VALUE_PAIR);
     createEAttribute(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__NAME);
     createEReference(datadictionaryKeyValuePairEClass, DATADICTIONARY_KEY_VALUE_PAIR__EXTENDS);
@@ -1584,11 +1527,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(workflowDataDictionaryDefinitionEClass, WorkflowDataDictionaryDefinition.class, "WorkflowDataDictionaryDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDataDictionaryDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDataDictionaryDefinition_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, WorkflowDataDictionaryDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(workflowDataDictionaryElementEClass, WorkflowDataDictionaryElement.class, "WorkflowDataDictionaryElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWorkflowDataDictionaryElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDataDictionaryElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWorkflowDataDictionaryElement_Extends(), this.getWorkflowDataDictionaryElement(), null, "extends", null, 0, 1, WorkflowDataDictionaryElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWorkflowDataDictionaryElement_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, WorkflowDataDictionaryElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(datadictionaryKeyValuePairEClass, DatadictionaryKeyValuePair.class, "DatadictionaryKeyValuePair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatadictionaryKeyValuePair_Name(), ecorePackage.getEString(), "name", null, 0, 1, DatadictionaryKeyValuePair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

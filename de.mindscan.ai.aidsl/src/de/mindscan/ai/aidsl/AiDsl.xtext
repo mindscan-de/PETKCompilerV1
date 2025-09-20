@@ -59,26 +59,11 @@ WorkflowDataDictionaryDefinition:
 	'}'
 ;
 
-WorkflowDataDictionaryElement:
- 
-	"data" name=ID ('extends' extends=[WorkflowDataDictionaryElement])?
-		// can be a map or a list or a direct value e.g. a String, a number, boolean, null
-		// basicalls this here is a Map
-		// We can call this a data dictionary experssion...
-		'{' 
-			(keyValuePairs+=DatadictionaryKeyValuePair)*
-		'}'
-		
-;
-
-// TODO: we want alsoo integers, maps, lists
-
 DatadictionaryKeyValuePair:
-	// basically key value stuff.
 	name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
-
 ;
 
+// TODO: we want also integers/numbers
 DataDictionaryValue:
 		{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 		{DataDictionaryStringValue} DataDictionaryStringValue|
@@ -88,14 +73,13 @@ DataDictionaryValue:
 ;
 
 DataDictionaryArrayValue:
-	 {DataDictionaryArrayValue} '[' (values+=STRING (',' values+=STRING)*  )? ']'
+	 {DataDictionaryArrayValue} 
+	 '[' (values+=STRING (',' values+=STRING)*)? ']'
 ;
 
 DataDictionaryMapValue:
-	 {DataDictionaryMapValue} 
-	 '{' 
-	 	 (keyValuePairs+=DatadictionaryKeyValuePair)* 
-	 '}'
+	 {DataDictionaryMapValue}  
+	 '{' (keyValuePairs+=DatadictionaryKeyValuePair)* '}'
 ;
 
 
