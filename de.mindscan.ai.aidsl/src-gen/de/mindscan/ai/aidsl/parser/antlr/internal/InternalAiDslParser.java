@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAiDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'datainput'", "'{'", "'}'", "':'", "'ui'", "'label'", "'uitype'", "'options'", "'['", "','", "']'", "'datadictionary'", "'extends'", "'true'", "'false'", "'null'", "'vmnode'", "'super'", "'overlay'", "'opcode'", "'out'", "'in'", "'fields'", "'as'", "'require'", "'optional'", "'default'", "'override'", "':='", "'llmtask'", "'('", "')'", "'implements'", "'@'", "'workflow'", "'=>'", "';'", "'.'", "'.*'", "'string'", "'int'", "'boolean'", "'jsonstring'", "'upload'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'datainput'", "'{'", "'}'", "':'", "'ui'", "'label'", "'uitype'", "'options'", "'['", "','", "']'", "'datadictionary'", "'extends'", "'true'", "'false'", "'null'", "'vmnode'", "'super'", "'overlay'", "'opcode'", "'out'", "'in'", "'fields'", "'as'", "'require'", "'optional'", "'default'", "'override'", "':='", "'llmtask'", "'('", "')'", "'implements'", "'@'", "'workflow'", "'=>'", "';'", "'.'", "'.*'", "'string'", "'int'", "'boolean'", "'byte'", "'jsonstring'", "'upload'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -34,6 +34,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__56=56;
     public static final int T__13=13;
+    public static final int T__57=57;
     public static final int T__14=14;
     public static final int T__51=51;
     public static final int T__52=52;
@@ -5773,10 +5774,12 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleELEMENTTYPE"
-    // InternalAiDsl.g:2306:1: ruleELEMENTTYPE returns [EObject current=null] : this_BASICTYPE_0= ruleBASICTYPE ;
+    // InternalAiDsl.g:2306:1: ruleELEMENTTYPE returns [EObject current=null] : (this_BASICTYPE_0= ruleBASICTYPE ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )? ) ;
     public final EObject ruleELEMENTTYPE() throws RecognitionException {
         EObject current = null;
 
+        Token lv_isArray_1_0=null;
+        Token otherlv_2=null;
         EObject this_BASICTYPE_0 = null;
 
 
@@ -5784,21 +5787,70 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAiDsl.g:2312:2: (this_BASICTYPE_0= ruleBASICTYPE )
-            // InternalAiDsl.g:2313:2: this_BASICTYPE_0= ruleBASICTYPE
+            // InternalAiDsl.g:2312:2: ( (this_BASICTYPE_0= ruleBASICTYPE ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )? ) )
+            // InternalAiDsl.g:2313:2: (this_BASICTYPE_0= ruleBASICTYPE ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )? )
+            {
+            // InternalAiDsl.g:2313:2: (this_BASICTYPE_0= ruleBASICTYPE ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )? )
+            // InternalAiDsl.g:2314:3: this_BASICTYPE_0= ruleBASICTYPE ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )?
             {
 
-            		newCompositeNode(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall());
-            	
-            pushFollow(FOLLOW_2);
+            			newCompositeNode(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall_0());
+            		
+            pushFollow(FOLLOW_40);
             this_BASICTYPE_0=ruleBASICTYPE();
 
             state._fsp--;
 
 
-            		current = this_BASICTYPE_0;
-            		afterParserOrEnumRuleCall();
-            	
+            			current = this_BASICTYPE_0;
+            			afterParserOrEnumRuleCall();
+            		
+            // InternalAiDsl.g:2322:3: ( ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']' )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
+
+            if ( (LA36_0==21) ) {
+                alt36=1;
+            }
+            switch (alt36) {
+                case 1 :
+                    // InternalAiDsl.g:2323:4: ( (lv_isArray_1_0= '[' ) ) otherlv_2= ']'
+                    {
+                    // InternalAiDsl.g:2323:4: ( (lv_isArray_1_0= '[' ) )
+                    // InternalAiDsl.g:2324:5: (lv_isArray_1_0= '[' )
+                    {
+                    // InternalAiDsl.g:2324:5: (lv_isArray_1_0= '[' )
+                    // InternalAiDsl.g:2325:6: lv_isArray_1_0= '['
+                    {
+                    lv_isArray_1_0=(Token)match(input,21,FOLLOW_17); 
+
+                    						newLeafNode(lv_isArray_1_0, grammarAccess.getELEMENTTYPEAccess().getIsArrayLeftSquareBracketKeyword_1_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getELEMENTTYPERule());
+                    						}
+                    						setWithLastConsumed(current, "isArray", lv_isArray_1_0 != null, "[");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_2=(Token)match(input,23,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getELEMENTTYPEAccess().getRightSquareBracketKeyword_1_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
 
             }
 
@@ -5819,7 +5871,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBASICTYPE"
-    // InternalAiDsl.g:2324:1: entryRuleBASICTYPE returns [EObject current=null] : iv_ruleBASICTYPE= ruleBASICTYPE EOF ;
+    // InternalAiDsl.g:2346:1: entryRuleBASICTYPE returns [EObject current=null] : iv_ruleBASICTYPE= ruleBASICTYPE EOF ;
     public final EObject entryRuleBASICTYPE() throws RecognitionException {
         EObject current = null;
 
@@ -5827,8 +5879,8 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAiDsl.g:2324:50: (iv_ruleBASICTYPE= ruleBASICTYPE EOF )
-            // InternalAiDsl.g:2325:2: iv_ruleBASICTYPE= ruleBASICTYPE EOF
+            // InternalAiDsl.g:2346:50: (iv_ruleBASICTYPE= ruleBASICTYPE EOF )
+            // InternalAiDsl.g:2347:2: iv_ruleBASICTYPE= ruleBASICTYPE EOF
             {
              newCompositeNode(grammarAccess.getBASICTYPERule()); 
             pushFollow(FOLLOW_1);
@@ -5855,7 +5907,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBASICTYPE"
-    // InternalAiDsl.g:2331:1: ruleBASICTYPE returns [EObject current=null] : ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) ) ) ;
+    // InternalAiDsl.g:2353:1: ruleBASICTYPE returns [EObject current=null] : ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) ) ) ;
     public final EObject ruleBASICTYPE() throws RecognitionException {
         EObject current = null;
 
@@ -5864,58 +5916,64 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
         Token lv_typename_0_3=null;
         Token lv_typename_0_4=null;
         Token lv_typename_0_5=null;
+        Token lv_typename_0_6=null;
 
 
         	enterRule();
 
         try {
-            // InternalAiDsl.g:2337:2: ( ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) ) ) )
-            // InternalAiDsl.g:2338:2: ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) ) )
+            // InternalAiDsl.g:2359:2: ( ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) ) ) )
+            // InternalAiDsl.g:2360:2: ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) ) )
             {
-            // InternalAiDsl.g:2338:2: ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) ) )
-            // InternalAiDsl.g:2339:3: ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) )
+            // InternalAiDsl.g:2360:2: ( ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) ) )
+            // InternalAiDsl.g:2361:3: ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) )
             {
-            // InternalAiDsl.g:2339:3: ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' ) )
-            // InternalAiDsl.g:2340:4: (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' )
+            // InternalAiDsl.g:2361:3: ( (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' ) )
+            // InternalAiDsl.g:2362:4: (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' )
             {
-            // InternalAiDsl.g:2340:4: (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'jsonstring' | lv_typename_0_5= 'upload' )
-            int alt36=5;
+            // InternalAiDsl.g:2362:4: (lv_typename_0_1= 'string' | lv_typename_0_2= 'int' | lv_typename_0_3= 'boolean' | lv_typename_0_4= 'byte' | lv_typename_0_5= 'jsonstring' | lv_typename_0_6= 'upload' )
+            int alt37=6;
             switch ( input.LA(1) ) {
             case 52:
                 {
-                alt36=1;
+                alt37=1;
                 }
                 break;
             case 53:
                 {
-                alt36=2;
+                alt37=2;
                 }
                 break;
             case 54:
                 {
-                alt36=3;
+                alt37=3;
                 }
                 break;
             case 55:
                 {
-                alt36=4;
+                alt37=4;
                 }
                 break;
             case 56:
                 {
-                alt36=5;
+                alt37=5;
+                }
+                break;
+            case 57:
+                {
+                alt37=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
-                    // InternalAiDsl.g:2341:5: lv_typename_0_1= 'string'
+                    // InternalAiDsl.g:2363:5: lv_typename_0_1= 'string'
                     {
                     lv_typename_0_1=(Token)match(input,52,FOLLOW_2); 
 
@@ -5931,7 +5989,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalAiDsl.g:2352:5: lv_typename_0_2= 'int'
+                    // InternalAiDsl.g:2374:5: lv_typename_0_2= 'int'
                     {
                     lv_typename_0_2=(Token)match(input,53,FOLLOW_2); 
 
@@ -5947,7 +6005,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalAiDsl.g:2363:5: lv_typename_0_3= 'boolean'
+                    // InternalAiDsl.g:2385:5: lv_typename_0_3= 'boolean'
                     {
                     lv_typename_0_3=(Token)match(input,54,FOLLOW_2); 
 
@@ -5963,11 +6021,11 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalAiDsl.g:2374:5: lv_typename_0_4= 'jsonstring'
+                    // InternalAiDsl.g:2396:5: lv_typename_0_4= 'byte'
                     {
                     lv_typename_0_4=(Token)match(input,55,FOLLOW_2); 
 
-                    					newLeafNode(lv_typename_0_4, grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_3());
+                    					newLeafNode(lv_typename_0_4, grammarAccess.getBASICTYPEAccess().getTypenameByteKeyword_0_3());
                     				
 
                     					if (current==null) {
@@ -5979,17 +6037,33 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalAiDsl.g:2385:5: lv_typename_0_5= 'upload'
+                    // InternalAiDsl.g:2407:5: lv_typename_0_5= 'jsonstring'
                     {
                     lv_typename_0_5=(Token)match(input,56,FOLLOW_2); 
 
-                    					newLeafNode(lv_typename_0_5, grammarAccess.getBASICTYPEAccess().getTypenameUploadKeyword_0_4());
+                    					newLeafNode(lv_typename_0_5, grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_4());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getBASICTYPERule());
                     					}
                     					setWithLastConsumed(current, "typename", lv_typename_0_5, null);
+                    				
+
+                    }
+                    break;
+                case 6 :
+                    // InternalAiDsl.g:2418:5: lv_typename_0_6= 'upload'
+                    {
+                    lv_typename_0_6=(Token)match(input,57,FOLLOW_2); 
+
+                    					newLeafNode(lv_typename_0_6, grammarAccess.getBASICTYPEAccess().getTypenameUploadKeyword_0_5());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getBASICTYPERule());
+                    					}
+                    					setWithLastConsumed(current, "typename", lv_typename_0_6, null);
                     				
 
                     }
@@ -6034,7 +6108,7 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008010L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x01F0000000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x03F0000000000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
@@ -6065,5 +6139,6 @@ public class InternalAiDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0002000000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0008000000000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000200002L});
 
 }

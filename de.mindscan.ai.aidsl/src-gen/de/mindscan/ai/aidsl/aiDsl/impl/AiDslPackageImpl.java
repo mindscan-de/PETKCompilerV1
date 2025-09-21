@@ -1268,9 +1268,20 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getBASICTYPE_Typename()
+  public EAttribute getBASICTYPE_IsArray()
   {
     return (EAttribute)basictypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBASICTYPE_Typename()
+  {
+    return (EAttribute)basictypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1449,6 +1460,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     elementtypeEClass = createEClass(ELEMENTTYPE);
 
     basictypeEClass = createEClass(BASICTYPE);
+    createEAttribute(basictypeEClass, BASICTYPE__IS_ARRAY);
     createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
 
     dataDictionaryBooleanValueEClass = createEClass(DATA_DICTIONARY_BOOLEAN_VALUE);
@@ -1611,6 +1623,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(elementtypeEClass, de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE.class, "ELEMENTTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBASICTYPE_IsArray(), ecorePackage.getEBoolean(), "isArray", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataDictionaryBooleanValueEClass, DataDictionaryBooleanValue.class, "DataDictionaryBooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

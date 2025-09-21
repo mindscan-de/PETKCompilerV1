@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl#isIsArray <em>Is Array</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.impl.BASICTYPEImpl#getTypename <em>Typename</em>}</li>
  * </ul>
  *
@@ -27,6 +28,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
 {
+  /**
+   * The default value of the '{@link #isIsArray() <em>Is Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsArray()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ARRAY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsArray() <em>Is Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsArray()
+   * @generated
+   * @ordered
+   */
+  protected boolean isArray = IS_ARRAY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getTypename() <em>Typename</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +95,31 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
    * @generated
    */
   @Override
+  public boolean isIsArray()
+  {
+    return isArray;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsArray(boolean newIsArray)
+  {
+    boolean oldIsArray = isArray;
+    isArray = newIsArray;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.BASICTYPE__IS_ARRAY, oldIsArray, isArray));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getTypename()
   {
     return typename;
@@ -103,6 +149,8 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
   {
     switch (featureID)
     {
+      case AiDslPackage.BASICTYPE__IS_ARRAY:
+        return isIsArray();
       case AiDslPackage.BASICTYPE__TYPENAME:
         return getTypename();
     }
@@ -119,6 +167,9 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
   {
     switch (featureID)
     {
+      case AiDslPackage.BASICTYPE__IS_ARRAY:
+        setIsArray((Boolean)newValue);
+        return;
       case AiDslPackage.BASICTYPE__TYPENAME:
         setTypename((String)newValue);
         return;
@@ -136,6 +187,9 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
   {
     switch (featureID)
     {
+      case AiDslPackage.BASICTYPE__IS_ARRAY:
+        setIsArray(IS_ARRAY_EDEFAULT);
+        return;
       case AiDslPackage.BASICTYPE__TYPENAME:
         setTypename(TYPENAME_EDEFAULT);
         return;
@@ -153,6 +207,8 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
   {
     switch (featureID)
     {
+      case AiDslPackage.BASICTYPE__IS_ARRAY:
+        return isArray != IS_ARRAY_EDEFAULT;
       case AiDslPackage.BASICTYPE__TYPENAME:
         return TYPENAME_EDEFAULT == null ? typename != null : !TYPENAME_EDEFAULT.equals(typename);
     }
@@ -170,7 +226,9 @@ public class BASICTYPEImpl extends ELEMENTTYPEImpl implements BASICTYPE
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typename: ");
+    result.append(" (isArray: ");
+    result.append(isArray);
+    result.append(", typename: ");
     result.append(typename);
     result.append(')');
     return result.toString();

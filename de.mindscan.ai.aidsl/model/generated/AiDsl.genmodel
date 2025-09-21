@@ -115,6 +115,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//ELEMENTTYPE"/>
     <genClasses ecoreClass="AiDsl.ecore#//BASICTYPE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/isArray"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryBooleanValue"/>

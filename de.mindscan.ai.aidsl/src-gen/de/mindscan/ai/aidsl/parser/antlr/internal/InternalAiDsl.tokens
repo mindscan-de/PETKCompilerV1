@@ -12,6 +12,7 @@
 ']'=23
 'as'=36
 'boolean'=54
+'byte'=55
 'datadictionary'=24
 'datainput'=13
 'default'=39
@@ -22,7 +23,7 @@
 'import'=12
 'in'=34
 'int'=53
-'jsonstring'=55
+'jsonstring'=56
 'label'=18
 'llmtask'=42
 'null'=28
@@ -39,7 +40,7 @@
 'true'=26
 'ui'=17
 'uitype'=19
-'upload'=56
+'upload'=57
 'vmnode'=29
 'workflow'=47
 '{'=14
@@ -97,3 +98,4 @@ T__53=53
 T__54=54
 T__55=55
 T__56=56
+T__57=57

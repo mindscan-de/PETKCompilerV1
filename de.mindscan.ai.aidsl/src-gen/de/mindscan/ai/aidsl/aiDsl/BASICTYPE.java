@@ -13,6 +13,7 @@ package de.mindscan.ai.aidsl.aiDsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#isIsArray <em>Is Array</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#getTypename <em>Typename</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package de.mindscan.ai.aidsl.aiDsl;
  */
 public interface BASICTYPE extends ELEMENTTYPE
 {
+  /**
+   * Returns the value of the '<em><b>Is Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Array</em>' attribute.
+   * @see #setIsArray(boolean)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getBASICTYPE_IsArray()
+   * @model
+   * @generated
+   */
+  boolean isIsArray();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#isIsArray <em>Is Array</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Array</em>' attribute.
+   * @see #isIsArray()
+   * @generated
+   */
+  void setIsArray(boolean value);
+
   /**
    * Returns the value of the '<em><b>Typename</b></em>' attribute.
    * <!-- begin-user-doc -->

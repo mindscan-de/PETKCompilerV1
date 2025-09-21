@@ -1095,13 +1095,22 @@ public interface AiDslPackage extends EPackage
   int BASICTYPE = 28;
 
   /**
+   * The feature id for the '<em><b>Is Array</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASICTYPE__IS_ARRAY = ELEMENTTYPE_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Typename</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASICTYPE__TYPENAME = ELEMENTTYPE_FEATURE_COUNT + 0;
+  int BASICTYPE__TYPENAME = ELEMENTTYPE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>BASICTYPE</em>' class.
@@ -1110,7 +1119,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 1;
+  int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
@@ -2066,6 +2075,17 @@ public interface AiDslPackage extends EPackage
   EClass getBASICTYPE();
 
   /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#isIsArray <em>Is Array</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Array</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.BASICTYPE#isIsArray()
+   * @see #getBASICTYPE()
+   * @generated
+   */
+  EAttribute getBASICTYPE_IsArray();
+
+  /**
    * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.BASICTYPE#getTypename <em>Typename</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2858,6 +2878,14 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EClass BASICTYPE = eINSTANCE.getBASICTYPE();
+
+    /**
+     * The meta object literal for the '<em><b>Is Array</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASICTYPE__IS_ARRAY = eINSTANCE.getBASICTYPE_IsArray();
 
     /**
      * The meta object literal for the '<em><b>Typename</b></em>' attribute feature.

@@ -1485,15 +1485,35 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class ELEMENTTYPEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
-		private final RuleCall cBASICTYPEParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cBASICTYPEParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cIsArrayAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cIsArrayLeftSquareBracketKeyword_1_0_0 = (Keyword)cIsArrayAssignment_1_0.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//ELEMENTTYPE:
-		//    BASICTYPE
+		//    BASICTYPE (isArray?='[' ']')?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//BASICTYPE (isArray?='[' ']')?
+		public Group getGroup() { return cGroup; }
+		
 		//BASICTYPE
-		public RuleCall getBASICTYPEParserRuleCall() { return cBASICTYPEParserRuleCall; }
+		public RuleCall getBASICTYPEParserRuleCall_0() { return cBASICTYPEParserRuleCall_0; }
+		
+		//(isArray?='[' ']')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//isArray?='['
+		public Assignment getIsArrayAssignment_1_0() { return cIsArrayAssignment_1_0; }
+		
+		//'['
+		public Keyword getIsArrayLeftSquareBracketKeyword_1_0_0() { return cIsArrayLeftSquareBracketKeyword_1_0_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_1_1() { return cRightSquareBracketKeyword_1_1; }
 	}
 	public class BASICTYPEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.BASICTYPE");
@@ -1502,18 +1522,20 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cTypenameStringKeyword_0_0 = (Keyword)cTypenameAlternatives_0.eContents().get(0);
 		private final Keyword cTypenameIntKeyword_0_1 = (Keyword)cTypenameAlternatives_0.eContents().get(1);
 		private final Keyword cTypenameBooleanKeyword_0_2 = (Keyword)cTypenameAlternatives_0.eContents().get(2);
-		private final Keyword cTypenameJsonstringKeyword_0_3 = (Keyword)cTypenameAlternatives_0.eContents().get(3);
-		private final Keyword cTypenameUploadKeyword_0_4 = (Keyword)cTypenameAlternatives_0.eContents().get(4);
+		private final Keyword cTypenameByteKeyword_0_3 = (Keyword)cTypenameAlternatives_0.eContents().get(3);
+		private final Keyword cTypenameJsonstringKeyword_0_4 = (Keyword)cTypenameAlternatives_0.eContents().get(4);
+		private final Keyword cTypenameUploadKeyword_0_5 = (Keyword)cTypenameAlternatives_0.eContents().get(5);
 		
+		//// ALSO TODO: map, json, maybe upload should be some kind of object type
 		//BASICTYPE:
-		//    typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
+		//    typename=('string'|'int'|'boolean'|'byte'|'jsonstring'|'upload')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
+		//typename=('string'|'int'|'boolean'|'byte'|'jsonstring'|'upload')
 		public Assignment getTypenameAssignment() { return cTypenameAssignment; }
 		
-		//('string'|'int'|'boolean'|'jsonstring'|'upload')
+		//('string'|'int'|'boolean'|'byte'|'jsonstring'|'upload')
 		public Alternatives getTypenameAlternatives_0() { return cTypenameAlternatives_0; }
 		
 		//'string'
@@ -1525,11 +1547,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'boolean'
 		public Keyword getTypenameBooleanKeyword_0_2() { return cTypenameBooleanKeyword_0_2; }
 		
+		//'byte'
+		public Keyword getTypenameByteKeyword_0_3() { return cTypenameByteKeyword_0_3; }
+		
 		//'jsonstring'
-		public Keyword getTypenameJsonstringKeyword_0_3() { return cTypenameJsonstringKeyword_0_3; }
+		public Keyword getTypenameJsonstringKeyword_0_4() { return cTypenameJsonstringKeyword_0_4; }
 		
 		//'upload'
-		public Keyword getTypenameUploadKeyword_0_4() { return cTypenameUploadKeyword_0_4; }
+		public Keyword getTypenameUploadKeyword_0_5() { return cTypenameUploadKeyword_0_5; }
 	}
 	
 	
@@ -2070,7 +2095,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//ELEMENTTYPE:
-	//    BASICTYPE
+	//    BASICTYPE (isArray?='[' ']')?
 	//;
 	public ELEMENTTYPEElements getELEMENTTYPEAccess() {
 		return pELEMENTTYPE;
@@ -2080,8 +2105,9 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getELEMENTTYPEAccess().getRule();
 	}
 	
+	//// ALSO TODO: map, json, maybe upload should be some kind of object type
 	//BASICTYPE:
-	//    typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
+	//    typename=('string'|'int'|'boolean'|'byte'|'jsonstring'|'upload')
 	//;
 	public BASICTYPEElements getBASICTYPEAccess() {
 		return pBASICTYPE;

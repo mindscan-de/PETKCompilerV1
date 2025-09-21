@@ -215,11 +215,12 @@ QualifiedNameWithWildcard:
 
 
 ELEMENTTYPE:
-	BASICTYPE
+	BASICTYPE (isArray?='[' ']')?
 ;
 
+// ALSO TODO: map, json, maybe upload should be some kind of object type
 BASICTYPE:
-	typename=('string'|'int'|'boolean'|'jsonstring'|'upload')
+	typename=('string'|'int'|'boolean'|'byte'|'jsonstring'|'upload')
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

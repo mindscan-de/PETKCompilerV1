@@ -133,6 +133,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ELEMENTTYPE"/>
   <eClassifiers xsi:type="ecore:EClass" name="BASICTYPE" eSuperTypes="#//ELEMENTTYPE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataDictionaryBooleanValue" eSuperTypes="#//DataDictionaryValue"/>

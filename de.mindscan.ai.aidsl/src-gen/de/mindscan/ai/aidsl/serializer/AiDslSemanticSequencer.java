@@ -64,8 +64,15 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_AnnotationInterfaceReference(context, (AnnotationInterfaceReference) semanticObject); 
 				return; 
 			case AiDslPackage.BASICTYPE:
-				sequence_BASICTYPE(context, (BASICTYPE) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getBASICTYPERule()) {
+					sequence_BASICTYPE(context, (BASICTYPE) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getELEMENTTYPERule()) {
+					sequence_BASICTYPE_ELEMENTTYPE(context, (BASICTYPE) semanticObject); 
+					return; 
+				}
+				else break;
 			case AiDslPackage.DATA_DICTIONARY_ARRAY_VALUE:
 				sequence_DataDictionaryArrayValue(context, (DataDictionaryArrayValue) semanticObject); 
 				return; 
@@ -175,14 +182,44 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ELEMENTTYPE returns BASICTYPE
 	 *     BASICTYPE returns BASICTYPE
 	 *
 	 * Constraint:
-	 *     (typename='string' | typename='int' | typename='boolean' | typename='jsonstring' | typename='upload')
+	 *     (
+	 *         typename='string' | 
+	 *         typename='int' | 
+	 *         typename='boolean' | 
+	 *         typename='byte' | 
+	 *         typename='jsonstring' | 
+	 *         typename='upload'
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_BASICTYPE(ISerializationContext context, BASICTYPE semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ELEMENTTYPE returns BASICTYPE
+	 *
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             typename='string' | 
+	 *             typename='int' | 
+	 *             typename='boolean' | 
+	 *             typename='byte' | 
+	 *             typename='jsonstring' | 
+	 *             typename='upload'
+	 *         ) 
+	 *         isArray?='['?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BASICTYPE_ELEMENTTYPE(ISerializationContext context, BASICTYPE semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

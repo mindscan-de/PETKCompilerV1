@@ -2310,14 +2310,36 @@ ruleELEMENTTYPE returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall());
-	}
-	this_BASICTYPE_0=ruleBASICTYPE
-	{
-		$current = $this_BASICTYPE_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		{
+			newCompositeNode(grammarAccess.getELEMENTTYPEAccess().getBASICTYPEParserRuleCall_0());
+		}
+		this_BASICTYPE_0=ruleBASICTYPE
+		{
+			$current = $this_BASICTYPE_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				(
+					lv_isArray_1_0='['
+					{
+						newLeafNode(lv_isArray_1_0, grammarAccess.getELEMENTTYPEAccess().getIsArrayLeftSquareBracketKeyword_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getELEMENTTYPERule());
+						}
+						setWithLastConsumed($current, "isArray", lv_isArray_1_0 != null, "[");
+					}
+				)
+			)
+			otherlv_2=']'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getELEMENTTYPEAccess().getRightSquareBracketKeyword_1_1());
+			}
+		)?
+	)
 ;
 
 // Entry rule entryRuleBASICTYPE
@@ -2371,9 +2393,9 @@ ruleBASICTYPE returns [EObject current=null]
 					setWithLastConsumed($current, "typename", lv_typename_0_3, null);
 				}
 				    |
-				lv_typename_0_4='jsonstring'
+				lv_typename_0_4='byte'
 				{
-					newLeafNode(lv_typename_0_4, grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_3());
+					newLeafNode(lv_typename_0_4, grammarAccess.getBASICTYPEAccess().getTypenameByteKeyword_0_3());
 				}
 				{
 					if ($current==null) {
@@ -2382,15 +2404,26 @@ ruleBASICTYPE returns [EObject current=null]
 					setWithLastConsumed($current, "typename", lv_typename_0_4, null);
 				}
 				    |
-				lv_typename_0_5='upload'
+				lv_typename_0_5='jsonstring'
 				{
-					newLeafNode(lv_typename_0_5, grammarAccess.getBASICTYPEAccess().getTypenameUploadKeyword_0_4());
+					newLeafNode(lv_typename_0_5, grammarAccess.getBASICTYPEAccess().getTypenameJsonstringKeyword_0_4());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getBASICTYPERule());
 					}
 					setWithLastConsumed($current, "typename", lv_typename_0_5, null);
+				}
+				    |
+				lv_typename_0_6='upload'
+				{
+					newLeafNode(lv_typename_0_6, grammarAccess.getBASICTYPEAccess().getTypenameUploadKeyword_0_5());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBASICTYPERule());
+					}
+					setWithLastConsumed($current, "typename", lv_typename_0_6, null);
 				}
 			)
 		)
