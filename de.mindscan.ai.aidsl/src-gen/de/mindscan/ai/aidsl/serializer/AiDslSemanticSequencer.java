@@ -517,7 +517,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMNodeOutElement returns VMNodeOutElement
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?)
+	 *     (name=QualifiedName type=ELEMENTTYPE (hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?)
 	 * </pre>
 	 */
 	protected void sequence_VMNodeOutElement(ISerializationContext context, VMNodeOutElement semanticObject) {

@@ -93,25 +93,25 @@ public interface VMNodeOutElement extends EObject
   void setHasrequire(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Inputreference</b></em>' attribute.
+   * Returns the value of the '<em><b>Inputreference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Inputreference</em>' attribute.
-   * @see #setInputreference(String)
+   * @return the value of the '<em>Inputreference</em>' reference.
+   * @see #setInputreference(VMNodeInElement)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMNodeOutElement_Inputreference()
    * @model
    * @generated
    */
-  String getInputreference();
+  VMNodeInElement getInputreference();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inputreference</em>' attribute.
+   * @param value the new value of the '<em>Inputreference</em>' reference.
    * @see #getInputreference()
    * @generated
    */
-  void setInputreference(String value);
+  void setInputreference(VMNodeInElement value);
 
 } // VMNodeOutElement

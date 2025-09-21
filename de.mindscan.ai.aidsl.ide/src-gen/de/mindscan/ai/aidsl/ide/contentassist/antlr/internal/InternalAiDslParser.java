@@ -17328,25 +17328,33 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMNodeOutElement__InputreferenceAssignment_3_1"
-    // InternalAiDsl.g:5763:1: rule__VMNodeOutElement__InputreferenceAssignment_3_1 : ( ruleQualifiedName ) ;
+    // InternalAiDsl.g:5763:1: rule__VMNodeOutElement__InputreferenceAssignment_3_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__VMNodeOutElement__InputreferenceAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5767:1: ( ( ruleQualifiedName ) )
-            // InternalAiDsl.g:5768:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:5767:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalAiDsl.g:5768:2: ( ( ruleQualifiedName ) )
             {
-            // InternalAiDsl.g:5768:2: ( ruleQualifiedName )
-            // InternalAiDsl.g:5769:3: ruleQualifiedName
+            // InternalAiDsl.g:5768:2: ( ( ruleQualifiedName ) )
+            // InternalAiDsl.g:5769:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0()); 
+             before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementCrossReference_3_1_0()); 
+            // InternalAiDsl.g:5770:3: ( ruleQualifiedName )
+            // InternalAiDsl.g:5771:4: ruleQualifiedName
+            {
+             before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0()); 
+             after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementCrossReference_3_1_0()); 
 
             }
 
@@ -17369,21 +17377,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMNodeInElement__PolicyAssignment_0"
-    // InternalAiDsl.g:5778:1: rule__VMNodeInElement__PolicyAssignment_0 : ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) ) ;
+    // InternalAiDsl.g:5782:1: rule__VMNodeInElement__PolicyAssignment_0 : ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) ) ;
     public final void rule__VMNodeInElement__PolicyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5782:1: ( ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) ) )
-            // InternalAiDsl.g:5783:2: ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) )
+            // InternalAiDsl.g:5786:1: ( ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) ) )
+            // InternalAiDsl.g:5787:2: ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) )
             {
-            // InternalAiDsl.g:5783:2: ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) )
-            // InternalAiDsl.g:5784:3: ( rule__VMNodeInElement__PolicyAlternatives_0_0 )
+            // InternalAiDsl.g:5787:2: ( ( rule__VMNodeInElement__PolicyAlternatives_0_0 ) )
+            // InternalAiDsl.g:5788:3: ( rule__VMNodeInElement__PolicyAlternatives_0_0 )
             {
              before(grammarAccess.getVMNodeInElementAccess().getPolicyAlternatives_0_0()); 
-            // InternalAiDsl.g:5785:3: ( rule__VMNodeInElement__PolicyAlternatives_0_0 )
-            // InternalAiDsl.g:5785:4: rule__VMNodeInElement__PolicyAlternatives_0_0
+            // InternalAiDsl.g:5789:3: ( rule__VMNodeInElement__PolicyAlternatives_0_0 )
+            // InternalAiDsl.g:5789:4: rule__VMNodeInElement__PolicyAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__VMNodeInElement__PolicyAlternatives_0_0();
@@ -17416,17 +17424,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMNodeInElement__NameAssignment_1"
-    // InternalAiDsl.g:5793:1: rule__VMNodeInElement__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // InternalAiDsl.g:5797:1: rule__VMNodeInElement__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__VMNodeInElement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5797:1: ( ( ruleQualifiedName ) )
-            // InternalAiDsl.g:5798:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:5801:1: ( ( ruleQualifiedName ) )
+            // InternalAiDsl.g:5802:2: ( ruleQualifiedName )
             {
-            // InternalAiDsl.g:5798:2: ( ruleQualifiedName )
-            // InternalAiDsl.g:5799:3: ruleQualifiedName
+            // InternalAiDsl.g:5802:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:5803:3: ruleQualifiedName
             {
              before(grammarAccess.getVMNodeInElementAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17457,21 +17465,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMFieldElement__PolicyAssignment_0"
-    // InternalAiDsl.g:5808:1: rule__VMFieldElement__PolicyAssignment_0 : ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) ) ;
+    // InternalAiDsl.g:5812:1: rule__VMFieldElement__PolicyAssignment_0 : ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) ) ;
     public final void rule__VMFieldElement__PolicyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5812:1: ( ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) ) )
-            // InternalAiDsl.g:5813:2: ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) )
+            // InternalAiDsl.g:5816:1: ( ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) ) )
+            // InternalAiDsl.g:5817:2: ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) )
             {
-            // InternalAiDsl.g:5813:2: ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) )
-            // InternalAiDsl.g:5814:3: ( rule__VMFieldElement__PolicyAlternatives_0_0 )
+            // InternalAiDsl.g:5817:2: ( ( rule__VMFieldElement__PolicyAlternatives_0_0 ) )
+            // InternalAiDsl.g:5818:3: ( rule__VMFieldElement__PolicyAlternatives_0_0 )
             {
              before(grammarAccess.getVMFieldElementAccess().getPolicyAlternatives_0_0()); 
-            // InternalAiDsl.g:5815:3: ( rule__VMFieldElement__PolicyAlternatives_0_0 )
-            // InternalAiDsl.g:5815:4: rule__VMFieldElement__PolicyAlternatives_0_0
+            // InternalAiDsl.g:5819:3: ( rule__VMFieldElement__PolicyAlternatives_0_0 )
+            // InternalAiDsl.g:5819:4: rule__VMFieldElement__PolicyAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__VMFieldElement__PolicyAlternatives_0_0();
@@ -17504,17 +17512,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMFieldElement__TypeAssignment_1"
-    // InternalAiDsl.g:5823:1: rule__VMFieldElement__TypeAssignment_1 : ( ruleELEMENTTYPE ) ;
+    // InternalAiDsl.g:5827:1: rule__VMFieldElement__TypeAssignment_1 : ( ruleELEMENTTYPE ) ;
     public final void rule__VMFieldElement__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5827:1: ( ( ruleELEMENTTYPE ) )
-            // InternalAiDsl.g:5828:2: ( ruleELEMENTTYPE )
+            // InternalAiDsl.g:5831:1: ( ( ruleELEMENTTYPE ) )
+            // InternalAiDsl.g:5832:2: ( ruleELEMENTTYPE )
             {
-            // InternalAiDsl.g:5828:2: ( ruleELEMENTTYPE )
-            // InternalAiDsl.g:5829:3: ruleELEMENTTYPE
+            // InternalAiDsl.g:5832:2: ( ruleELEMENTTYPE )
+            // InternalAiDsl.g:5833:3: ruleELEMENTTYPE
             {
              before(grammarAccess.getVMFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17545,17 +17553,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMFieldElement__NameAssignment_2"
-    // InternalAiDsl.g:5838:1: rule__VMFieldElement__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalAiDsl.g:5842:1: rule__VMFieldElement__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__VMFieldElement__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5842:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:5843:2: ( RULE_ID )
+            // InternalAiDsl.g:5846:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:5847:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:5843:2: ( RULE_ID )
-            // InternalAiDsl.g:5844:3: RULE_ID
+            // InternalAiDsl.g:5847:2: ( RULE_ID )
+            // InternalAiDsl.g:5848:3: RULE_ID
             {
              before(grammarAccess.getVMFieldElementAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17582,17 +17590,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMFieldElement__DefaultvalueAssignment_3_1"
-    // InternalAiDsl.g:5853:1: rule__VMFieldElement__DefaultvalueAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:5857:1: rule__VMFieldElement__DefaultvalueAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__VMFieldElement__DefaultvalueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5857:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:5858:2: ( RULE_STRING )
+            // InternalAiDsl.g:5861:1: ( ( RULE_STRING ) )
+            // InternalAiDsl.g:5862:2: ( RULE_STRING )
             {
-            // InternalAiDsl.g:5858:2: ( RULE_STRING )
-            // InternalAiDsl.g:5859:3: RULE_STRING
+            // InternalAiDsl.g:5862:2: ( RULE_STRING )
+            // InternalAiDsl.g:5863:3: RULE_STRING
             {
              before(grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17619,21 +17627,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMOverrideFieldElement__PolicyAssignment_0"
-    // InternalAiDsl.g:5868:1: rule__VMOverrideFieldElement__PolicyAssignment_0 : ( ( 'override' ) ) ;
+    // InternalAiDsl.g:5872:1: rule__VMOverrideFieldElement__PolicyAssignment_0 : ( ( 'override' ) ) ;
     public final void rule__VMOverrideFieldElement__PolicyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5872:1: ( ( ( 'override' ) ) )
-            // InternalAiDsl.g:5873:2: ( ( 'override' ) )
+            // InternalAiDsl.g:5876:1: ( ( ( 'override' ) ) )
+            // InternalAiDsl.g:5877:2: ( ( 'override' ) )
             {
-            // InternalAiDsl.g:5873:2: ( ( 'override' ) )
-            // InternalAiDsl.g:5874:3: ( 'override' )
+            // InternalAiDsl.g:5877:2: ( ( 'override' ) )
+            // InternalAiDsl.g:5878:3: ( 'override' )
             {
              before(grammarAccess.getVMOverrideFieldElementAccess().getPolicyOverrideKeyword_0_0()); 
-            // InternalAiDsl.g:5875:3: ( 'override' )
-            // InternalAiDsl.g:5876:4: 'override'
+            // InternalAiDsl.g:5879:3: ( 'override' )
+            // InternalAiDsl.g:5880:4: 'override'
             {
              before(grammarAccess.getVMOverrideFieldElementAccess().getPolicyOverrideKeyword_0_0()); 
             match(input,57,FOLLOW_2); 
@@ -17664,17 +17672,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMOverrideFieldElement__TypeAssignment_1"
-    // InternalAiDsl.g:5887:1: rule__VMOverrideFieldElement__TypeAssignment_1 : ( ruleELEMENTTYPE ) ;
+    // InternalAiDsl.g:5891:1: rule__VMOverrideFieldElement__TypeAssignment_1 : ( ruleELEMENTTYPE ) ;
     public final void rule__VMOverrideFieldElement__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5891:1: ( ( ruleELEMENTTYPE ) )
-            // InternalAiDsl.g:5892:2: ( ruleELEMENTTYPE )
+            // InternalAiDsl.g:5895:1: ( ( ruleELEMENTTYPE ) )
+            // InternalAiDsl.g:5896:2: ( ruleELEMENTTYPE )
             {
-            // InternalAiDsl.g:5892:2: ( ruleELEMENTTYPE )
-            // InternalAiDsl.g:5893:3: ruleELEMENTTYPE
+            // InternalAiDsl.g:5896:2: ( ruleELEMENTTYPE )
+            // InternalAiDsl.g:5897:3: ruleELEMENTTYPE
             {
              before(grammarAccess.getVMOverrideFieldElementAccess().getTypeELEMENTTYPEParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17705,17 +17713,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMOverrideFieldElement__NameAssignment_2"
-    // InternalAiDsl.g:5902:1: rule__VMOverrideFieldElement__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalAiDsl.g:5906:1: rule__VMOverrideFieldElement__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__VMOverrideFieldElement__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5906:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:5907:2: ( RULE_ID )
+            // InternalAiDsl.g:5910:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:5911:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:5907:2: ( RULE_ID )
-            // InternalAiDsl.g:5908:3: RULE_ID
+            // InternalAiDsl.g:5911:2: ( RULE_ID )
+            // InternalAiDsl.g:5912:3: RULE_ID
             {
              before(grammarAccess.getVMOverrideFieldElementAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17742,17 +17750,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMOverrideFieldElement__DefaultvalueAssignment_4"
-    // InternalAiDsl.g:5917:1: rule__VMOverrideFieldElement__DefaultvalueAssignment_4 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:5921:1: rule__VMOverrideFieldElement__DefaultvalueAssignment_4 : ( RULE_STRING ) ;
     public final void rule__VMOverrideFieldElement__DefaultvalueAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5921:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:5922:2: ( RULE_STRING )
+            // InternalAiDsl.g:5925:1: ( ( RULE_STRING ) )
+            // InternalAiDsl.g:5926:2: ( RULE_STRING )
             {
-            // InternalAiDsl.g:5922:2: ( RULE_STRING )
-            // InternalAiDsl.g:5923:3: RULE_STRING
+            // InternalAiDsl.g:5926:2: ( RULE_STRING )
+            // InternalAiDsl.g:5927:3: RULE_STRING
             {
              before(grammarAccess.getVMOverrideFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -17779,17 +17787,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmTaskDefinition__NameAssignment_1"
-    // InternalAiDsl.g:5932:1: rule__LlmTaskDefinition__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAiDsl.g:5936:1: rule__LlmTaskDefinition__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__LlmTaskDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5936:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:5937:2: ( RULE_ID )
+            // InternalAiDsl.g:5940:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:5941:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:5937:2: ( RULE_ID )
-            // InternalAiDsl.g:5938:3: RULE_ID
+            // InternalAiDsl.g:5941:2: ( RULE_ID )
+            // InternalAiDsl.g:5942:3: RULE_ID
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17816,17 +17824,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1"
-    // InternalAiDsl.g:5947:1: rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1 : ( ruleAnnotationInterfaceReference ) ;
+    // InternalAiDsl.g:5951:1: rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1 : ( ruleAnnotationInterfaceReference ) ;
     public final void rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5951:1: ( ( ruleAnnotationInterfaceReference ) )
-            // InternalAiDsl.g:5952:2: ( ruleAnnotationInterfaceReference )
+            // InternalAiDsl.g:5955:1: ( ( ruleAnnotationInterfaceReference ) )
+            // InternalAiDsl.g:5956:2: ( ruleAnnotationInterfaceReference )
             {
-            // InternalAiDsl.g:5952:2: ( ruleAnnotationInterfaceReference )
-            // InternalAiDsl.g:5953:3: ruleAnnotationInterfaceReference
+            // InternalAiDsl.g:5956:2: ( ruleAnnotationInterfaceReference )
+            // InternalAiDsl.g:5957:3: ruleAnnotationInterfaceReference
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17857,17 +17865,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1"
-    // InternalAiDsl.g:5962:1: rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1 : ( ruleAnnotationInterfaceReference ) ;
+    // InternalAiDsl.g:5966:1: rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1 : ( ruleAnnotationInterfaceReference ) ;
     public final void rule__LlmTaskDefinition__Annotation_interfacesAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5966:1: ( ( ruleAnnotationInterfaceReference ) )
-            // InternalAiDsl.g:5967:2: ( ruleAnnotationInterfaceReference )
+            // InternalAiDsl.g:5970:1: ( ( ruleAnnotationInterfaceReference ) )
+            // InternalAiDsl.g:5971:2: ( ruleAnnotationInterfaceReference )
             {
-            // InternalAiDsl.g:5967:2: ( ruleAnnotationInterfaceReference )
-            // InternalAiDsl.g:5968:3: ruleAnnotationInterfaceReference
+            // InternalAiDsl.g:5971:2: ( ruleAnnotationInterfaceReference )
+            // InternalAiDsl.g:5972:3: ruleAnnotationInterfaceReference
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getAnnotation_interfacesAnnotationInterfaceReferenceParserRuleCall_4_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17898,17 +17906,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmTaskDefinition__AssignmentsAssignment_6"
-    // InternalAiDsl.g:5977:1: rule__LlmTaskDefinition__AssignmentsAssignment_6 : ( ruleLlmVariableAssignment ) ;
+    // InternalAiDsl.g:5981:1: rule__LlmTaskDefinition__AssignmentsAssignment_6 : ( ruleLlmVariableAssignment ) ;
     public final void rule__LlmTaskDefinition__AssignmentsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5981:1: ( ( ruleLlmVariableAssignment ) )
-            // InternalAiDsl.g:5982:2: ( ruleLlmVariableAssignment )
+            // InternalAiDsl.g:5985:1: ( ( ruleLlmVariableAssignment ) )
+            // InternalAiDsl.g:5986:2: ( ruleLlmVariableAssignment )
             {
-            // InternalAiDsl.g:5982:2: ( ruleLlmVariableAssignment )
-            // InternalAiDsl.g:5983:3: ruleLlmVariableAssignment
+            // InternalAiDsl.g:5986:2: ( ruleLlmVariableAssignment )
+            // InternalAiDsl.g:5987:3: ruleLlmVariableAssignment
             {
              before(grammarAccess.getLlmTaskDefinitionAccess().getAssignmentsLlmVariableAssignmentParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -17939,21 +17947,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AnnotationInterfaceReference__NameAssignment_1"
-    // InternalAiDsl.g:5992:1: rule__AnnotationInterfaceReference__NameAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalAiDsl.g:5996:1: rule__AnnotationInterfaceReference__NameAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__AnnotationInterfaceReference__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5996:1: ( ( ( RULE_ID ) ) )
-            // InternalAiDsl.g:5997:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6000:1: ( ( ( RULE_ID ) ) )
+            // InternalAiDsl.g:6001:2: ( ( RULE_ID ) )
             {
-            // InternalAiDsl.g:5997:2: ( ( RULE_ID ) )
-            // InternalAiDsl.g:5998:3: ( RULE_ID )
+            // InternalAiDsl.g:6001:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6002:3: ( RULE_ID )
             {
              before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionCrossReference_1_0()); 
-            // InternalAiDsl.g:5999:3: ( RULE_ID )
-            // InternalAiDsl.g:6000:4: RULE_ID
+            // InternalAiDsl.g:6003:3: ( RULE_ID )
+            // InternalAiDsl.g:6004:4: RULE_ID
             {
              before(grammarAccess.getAnnotationInterfaceReferenceAccess().getNameVMNodeDefinitionIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17984,17 +17992,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__VariablenameAssignment_0"
-    // InternalAiDsl.g:6011:1: rule__LlmVariableAssignment__VariablenameAssignment_0 : ( RULE_ID ) ;
+    // InternalAiDsl.g:6015:1: rule__LlmVariableAssignment__VariablenameAssignment_0 : ( RULE_ID ) ;
     public final void rule__LlmVariableAssignment__VariablenameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6015:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:6016:2: ( RULE_ID )
+            // InternalAiDsl.g:6019:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6020:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:6016:2: ( RULE_ID )
-            // InternalAiDsl.g:6017:3: RULE_ID
+            // InternalAiDsl.g:6020:2: ( RULE_ID )
+            // InternalAiDsl.g:6021:3: RULE_ID
             {
              before(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18021,17 +18029,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__TemplateAssignment_2"
-    // InternalAiDsl.g:6026:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:6030:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
     public final void rule__LlmVariableAssignment__TemplateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6030:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:6031:2: ( RULE_STRING )
+            // InternalAiDsl.g:6034:1: ( ( RULE_STRING ) )
+            // InternalAiDsl.g:6035:2: ( RULE_STRING )
             {
-            // InternalAiDsl.g:6031:2: ( RULE_STRING )
-            // InternalAiDsl.g:6032:3: RULE_STRING
+            // InternalAiDsl.g:6035:2: ( RULE_STRING )
+            // InternalAiDsl.g:6036:3: RULE_STRING
             {
              before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18058,17 +18066,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinition__NameAssignment_1"
-    // InternalAiDsl.g:6041:1: rule__WorkflowDefinition__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAiDsl.g:6045:1: rule__WorkflowDefinition__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__WorkflowDefinition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6045:1: ( ( RULE_ID ) )
-            // InternalAiDsl.g:6046:2: ( RULE_ID )
+            // InternalAiDsl.g:6049:1: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6050:2: ( RULE_ID )
             {
-            // InternalAiDsl.g:6046:2: ( RULE_ID )
-            // InternalAiDsl.g:6047:3: RULE_ID
+            // InternalAiDsl.g:6050:2: ( RULE_ID )
+            // InternalAiDsl.g:6051:3: RULE_ID
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18095,21 +18103,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinition__InputAssignment_3"
-    // InternalAiDsl.g:6056:1: rule__WorkflowDefinition__InputAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalAiDsl.g:6060:1: rule__WorkflowDefinition__InputAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__WorkflowDefinition__InputAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6060:1: ( ( ( RULE_ID ) ) )
-            // InternalAiDsl.g:6061:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6064:1: ( ( ( RULE_ID ) ) )
+            // InternalAiDsl.g:6065:2: ( ( RULE_ID ) )
             {
-            // InternalAiDsl.g:6061:2: ( ( RULE_ID ) )
-            // InternalAiDsl.g:6062:3: ( RULE_ID )
+            // InternalAiDsl.g:6065:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6066:3: ( RULE_ID )
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getInputWorkflowInputDefinitionCrossReference_3_0()); 
-            // InternalAiDsl.g:6063:3: ( RULE_ID )
-            // InternalAiDsl.g:6064:4: RULE_ID
+            // InternalAiDsl.g:6067:3: ( RULE_ID )
+            // InternalAiDsl.g:6068:4: RULE_ID
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getInputWorkflowInputDefinitionIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18140,21 +18148,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinition__DatadictionaryAssignment_5"
-    // InternalAiDsl.g:6075:1: rule__WorkflowDefinition__DatadictionaryAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalAiDsl.g:6079:1: rule__WorkflowDefinition__DatadictionaryAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__WorkflowDefinition__DatadictionaryAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6079:1: ( ( ( RULE_ID ) ) )
-            // InternalAiDsl.g:6080:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6083:1: ( ( ( RULE_ID ) ) )
+            // InternalAiDsl.g:6084:2: ( ( RULE_ID ) )
             {
-            // InternalAiDsl.g:6080:2: ( ( RULE_ID ) )
-            // InternalAiDsl.g:6081:3: ( RULE_ID )
+            // InternalAiDsl.g:6084:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6085:3: ( RULE_ID )
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getDatadictionaryWorkflowDataDictionaryDefinitionCrossReference_5_0()); 
-            // InternalAiDsl.g:6082:3: ( RULE_ID )
-            // InternalAiDsl.g:6083:4: RULE_ID
+            // InternalAiDsl.g:6086:3: ( RULE_ID )
+            // InternalAiDsl.g:6087:4: RULE_ID
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getDatadictionaryWorkflowDataDictionaryDefinitionIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18185,17 +18193,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinition__StatementsAssignment_8"
-    // InternalAiDsl.g:6094:1: rule__WorkflowDefinition__StatementsAssignment_8 : ( ruleWorkflowDefinitionApplyLLMTaskStatement ) ;
+    // InternalAiDsl.g:6098:1: rule__WorkflowDefinition__StatementsAssignment_8 : ( ruleWorkflowDefinitionApplyLLMTaskStatement ) ;
     public final void rule__WorkflowDefinition__StatementsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6098:1: ( ( ruleWorkflowDefinitionApplyLLMTaskStatement ) )
-            // InternalAiDsl.g:6099:2: ( ruleWorkflowDefinitionApplyLLMTaskStatement )
+            // InternalAiDsl.g:6102:1: ( ( ruleWorkflowDefinitionApplyLLMTaskStatement ) )
+            // InternalAiDsl.g:6103:2: ( ruleWorkflowDefinitionApplyLLMTaskStatement )
             {
-            // InternalAiDsl.g:6099:2: ( ruleWorkflowDefinitionApplyLLMTaskStatement )
-            // InternalAiDsl.g:6100:3: ruleWorkflowDefinitionApplyLLMTaskStatement
+            // InternalAiDsl.g:6103:2: ( ruleWorkflowDefinitionApplyLLMTaskStatement )
+            // InternalAiDsl.g:6104:3: ruleWorkflowDefinitionApplyLLMTaskStatement
             {
              before(grammarAccess.getWorkflowDefinitionAccess().getStatementsWorkflowDefinitionApplyLLMTaskStatementParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -18226,21 +18234,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0"
-    // InternalAiDsl.g:6109:1: rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalAiDsl.g:6113:1: rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__WorkflowDefinitionApplyLLMTaskStatement__LlmtaskAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6113:1: ( ( ( RULE_ID ) ) )
-            // InternalAiDsl.g:6114:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6117:1: ( ( ( RULE_ID ) ) )
+            // InternalAiDsl.g:6118:2: ( ( RULE_ID ) )
             {
-            // InternalAiDsl.g:6114:2: ( ( RULE_ID ) )
-            // InternalAiDsl.g:6115:3: ( RULE_ID )
+            // InternalAiDsl.g:6118:2: ( ( RULE_ID ) )
+            // InternalAiDsl.g:6119:3: ( RULE_ID )
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskLlmTaskDefinitionCrossReference_0_0()); 
-            // InternalAiDsl.g:6116:3: ( RULE_ID )
-            // InternalAiDsl.g:6117:4: RULE_ID
+            // InternalAiDsl.g:6120:3: ( RULE_ID )
+            // InternalAiDsl.g:6121:4: RULE_ID
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLlmtaskLlmTaskDefinitionIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18271,17 +18279,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2"
-    // InternalAiDsl.g:6128:1: rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2 : ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment ) ;
+    // InternalAiDsl.g:6132:1: rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2 : ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment ) ;
     public final void rule__WorkflowDefinitionApplyLLMTaskStatement__NoderesultassigmentsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6132:1: ( ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment ) )
-            // InternalAiDsl.g:6133:2: ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment )
+            // InternalAiDsl.g:6136:1: ( ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment ) )
+            // InternalAiDsl.g:6137:2: ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment )
             {
-            // InternalAiDsl.g:6133:2: ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment )
-            // InternalAiDsl.g:6134:3: ruleWorkflowDefinitionApplyLLMNodeResultAssignment
+            // InternalAiDsl.g:6137:2: ( ruleWorkflowDefinitionApplyLLMNodeResultAssignment )
+            // InternalAiDsl.g:6138:3: ruleWorkflowDefinitionApplyLLMNodeResultAssignment
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getNoderesultassigmentsWorkflowDefinitionApplyLLMNodeResultAssignmentParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -18312,17 +18320,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0"
-    // InternalAiDsl.g:6143:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 : ( ruleQualifiedName ) ;
+    // InternalAiDsl.g:6147:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0 : ( ruleQualifiedName ) ;
     public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__EnvironmentresultnameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6147:1: ( ( ruleQualifiedName ) )
-            // InternalAiDsl.g:6148:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:6151:1: ( ( ruleQualifiedName ) )
+            // InternalAiDsl.g:6152:2: ( ruleQualifiedName )
             {
-            // InternalAiDsl.g:6148:2: ( ruleQualifiedName )
-            // InternalAiDsl.g:6149:3: ruleQualifiedName
+            // InternalAiDsl.g:6152:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:6153:3: ruleQualifiedName
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getEnvironmentresultnameQualifiedNameParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -18353,17 +18361,17 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2"
-    // InternalAiDsl.g:6158:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalAiDsl.g:6162:1: rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__WorkflowDefinitionApplyLLMNodeResultAssignment__NoderesultnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6162:1: ( ( ruleQualifiedName ) )
-            // InternalAiDsl.g:6163:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:6166:1: ( ( ruleQualifiedName ) )
+            // InternalAiDsl.g:6167:2: ( ruleQualifiedName )
             {
-            // InternalAiDsl.g:6163:2: ( ruleQualifiedName )
-            // InternalAiDsl.g:6164:3: ruleQualifiedName
+            // InternalAiDsl.g:6167:2: ( ruleQualifiedName )
+            // InternalAiDsl.g:6168:3: ruleQualifiedName
             {
              before(grammarAccess.getWorkflowDefinitionApplyLLMNodeResultAssignmentAccess().getNoderesultnameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -18394,21 +18402,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ELEMENTTYPE__IsArrayAssignment_1_0"
-    // InternalAiDsl.g:6173:1: rule__ELEMENTTYPE__IsArrayAssignment_1_0 : ( ( '[' ) ) ;
+    // InternalAiDsl.g:6177:1: rule__ELEMENTTYPE__IsArrayAssignment_1_0 : ( ( '[' ) ) ;
     public final void rule__ELEMENTTYPE__IsArrayAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6177:1: ( ( ( '[' ) ) )
-            // InternalAiDsl.g:6178:2: ( ( '[' ) )
+            // InternalAiDsl.g:6181:1: ( ( ( '[' ) ) )
+            // InternalAiDsl.g:6182:2: ( ( '[' ) )
             {
-            // InternalAiDsl.g:6178:2: ( ( '[' ) )
-            // InternalAiDsl.g:6179:3: ( '[' )
+            // InternalAiDsl.g:6182:2: ( ( '[' ) )
+            // InternalAiDsl.g:6183:3: ( '[' )
             {
              before(grammarAccess.getELEMENTTYPEAccess().getIsArrayLeftSquareBracketKeyword_1_0_0()); 
-            // InternalAiDsl.g:6180:3: ( '[' )
-            // InternalAiDsl.g:6181:4: '['
+            // InternalAiDsl.g:6184:3: ( '[' )
+            // InternalAiDsl.g:6185:4: '['
             {
              before(grammarAccess.getELEMENTTYPEAccess().getIsArrayLeftSquareBracketKeyword_1_0_0()); 
             match(input,34,FOLLOW_2); 
@@ -18439,21 +18447,21 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BASICTYPE__TypenameAssignment"
-    // InternalAiDsl.g:6192:1: rule__BASICTYPE__TypenameAssignment : ( ( rule__BASICTYPE__TypenameAlternatives_0 ) ) ;
+    // InternalAiDsl.g:6196:1: rule__BASICTYPE__TypenameAssignment : ( ( rule__BASICTYPE__TypenameAlternatives_0 ) ) ;
     public final void rule__BASICTYPE__TypenameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6196:1: ( ( ( rule__BASICTYPE__TypenameAlternatives_0 ) ) )
-            // InternalAiDsl.g:6197:2: ( ( rule__BASICTYPE__TypenameAlternatives_0 ) )
+            // InternalAiDsl.g:6200:1: ( ( ( rule__BASICTYPE__TypenameAlternatives_0 ) ) )
+            // InternalAiDsl.g:6201:2: ( ( rule__BASICTYPE__TypenameAlternatives_0 ) )
             {
-            // InternalAiDsl.g:6197:2: ( ( rule__BASICTYPE__TypenameAlternatives_0 ) )
-            // InternalAiDsl.g:6198:3: ( rule__BASICTYPE__TypenameAlternatives_0 )
+            // InternalAiDsl.g:6201:2: ( ( rule__BASICTYPE__TypenameAlternatives_0 ) )
+            // InternalAiDsl.g:6202:3: ( rule__BASICTYPE__TypenameAlternatives_0 )
             {
              before(grammarAccess.getBASICTYPEAccess().getTypenameAlternatives_0()); 
-            // InternalAiDsl.g:6199:3: ( rule__BASICTYPE__TypenameAlternatives_0 )
-            // InternalAiDsl.g:6199:4: rule__BASICTYPE__TypenameAlternatives_0
+            // InternalAiDsl.g:6203:3: ( rule__BASICTYPE__TypenameAlternatives_0 )
+            // InternalAiDsl.g:6203:4: rule__BASICTYPE__TypenameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__BASICTYPE__TypenameAlternatives_0();

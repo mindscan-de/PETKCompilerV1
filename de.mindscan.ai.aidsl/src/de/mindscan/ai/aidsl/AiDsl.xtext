@@ -138,7 +138,7 @@ VMNodeFieldElements:
 ;
 
 VMNodeOutElement:
-	name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
+	name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?
 ;
 
 VMNodeInElement:

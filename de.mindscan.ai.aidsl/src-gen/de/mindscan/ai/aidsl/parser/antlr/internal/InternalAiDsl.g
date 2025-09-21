@@ -1461,18 +1461,15 @@ ruleVMNodeOutElement returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0());
-					}
-					lv_inputreference_4_0=ruleQualifiedName
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getVMNodeOutElementRule());
+							$current = createModelElement(grammarAccess.getVMNodeOutElementRule());
 						}
-						set(
-							$current,
-							"inputreference",
-							lv_inputreference_4_0,
-							"de.mindscan.ai.aidsl.AiDsl.QualifiedName");
+					}
+					{
+						newCompositeNode(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementCrossReference_3_1_0());
+					}
+					ruleQualifiedName
+					{
 						afterParserOrEnumRuleCall();
 					}
 				)

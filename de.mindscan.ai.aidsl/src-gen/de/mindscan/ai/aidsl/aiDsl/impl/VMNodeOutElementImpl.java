@@ -5,6 +5,7 @@ package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
 import de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE;
+import de.mindscan.ai.aidsl.aiDsl.VMNodeInElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,24 +86,14 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
   protected boolean hasrequire = HASREQUIRE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getInputreference() <em>Inputreference</em>}' attribute.
+   * The cached value of the '{@link #getInputreference() <em>Inputreference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInputreference()
    * @generated
    * @ordered
    */
-  protected static final String INPUTREFERENCE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getInputreference() <em>Inputreference</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInputreference()
-   * @generated
-   * @ordered
-   */
-  protected String inputreference = INPUTREFERENCE_EDEFAULT;
+  protected VMNodeInElement inputreference;
 
   /**
    * <!-- begin-user-doc -->
@@ -231,7 +222,27 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public String getInputreference()
+  public VMNodeInElement getInputreference()
+  {
+    if (inputreference != null && inputreference.eIsProxy())
+    {
+      InternalEObject oldInputreference = (InternalEObject)inputreference;
+      inputreference = (VMNodeInElement)eResolveProxy(oldInputreference);
+      if (inputreference != oldInputreference)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE, oldInputreference, inputreference));
+      }
+    }
+    return inputreference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VMNodeInElement basicGetInputreference()
   {
     return inputreference;
   }
@@ -242,9 +253,9 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public void setInputreference(String newInputreference)
+  public void setInputreference(VMNodeInElement newInputreference)
   {
-    String oldInputreference = inputreference;
+    VMNodeInElement oldInputreference = inputreference;
     inputreference = newInputreference;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE, oldInputreference, inputreference));
@@ -283,7 +294,8 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
       case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
         return isHasrequire();
       case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
-        return getInputreference();
+        if (resolve) return getInputreference();
+        return basicGetInputreference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -308,7 +320,7 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
         setHasrequire((Boolean)newValue);
         return;
       case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
-        setInputreference((String)newValue);
+        setInputreference((VMNodeInElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -334,7 +346,7 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
         setHasrequire(HASREQUIRE_EDEFAULT);
         return;
       case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
-        setInputreference(INPUTREFERENCE_EDEFAULT);
+        setInputreference((VMNodeInElement)null);
         return;
     }
     super.eUnset(featureID);
@@ -357,7 +369,7 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
       case AiDslPackage.VM_NODE_OUT_ELEMENT__HASREQUIRE:
         return hasrequire != HASREQUIRE_EDEFAULT;
       case AiDslPackage.VM_NODE_OUT_ELEMENT__INPUTREFERENCE:
-        return INPUTREFERENCE_EDEFAULT == null ? inputreference != null : !INPUTREFERENCE_EDEFAULT.equals(inputreference);
+        return inputreference != null;
     }
     return super.eIsSet(featureID);
   }
@@ -377,8 +389,6 @@ public class VMNodeOutElementImpl extends MinimalEObjectImpl.Container implement
     result.append(name);
     result.append(", hasrequire: ");
     result.append(hasrequire);
-    result.append(", inputreference: ");
-    result.append(inputreference);
     result.append(')');
     return result.toString();
   }

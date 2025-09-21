@@ -80,7 +80,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasrequire" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputreference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputreference" eType="#//VMNodeInElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VMNodeInElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

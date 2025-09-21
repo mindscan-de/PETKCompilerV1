@@ -5766,9 +5766,13 @@ rule__VMNodeOutElement__InputreferenceAssignment_3_1
 	}
 :
 	(
-		{ before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0()); }
-		ruleQualifiedName
-		{ after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceQualifiedNameParserRuleCall_3_1_0()); }
+		{ before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementCrossReference_3_1_0()); }
+		(
+			{ before(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1()); }
+		)
+		{ after(grammarAccess.getVMNodeOutElementAccess().getInputreferenceVMNodeInElementCrossReference_3_1_0()); }
 	)
 ;
 finally {

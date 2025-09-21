@@ -905,14 +905,15 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cHasrequireAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final Keyword cHasrequireRequireKeyword_3_0_0 = (Keyword)cHasrequireAssignment_3_0.eContents().get(0);
 		private final Assignment cInputreferenceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cInputreferenceQualifiedNameParserRuleCall_3_1_0 = (RuleCall)cInputreferenceAssignment_3_1.eContents().get(0);
+		private final CrossReference cInputreferenceVMNodeInElementCrossReference_3_1_0 = (CrossReference)cInputreferenceAssignment_3_1.eContents().get(0);
+		private final RuleCall cInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cInputreferenceVMNodeInElementCrossReference_3_1_0.eContents().get(1);
 		
 		//VMNodeOutElement:
-		//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
+		//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
+		//name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?
 		public Group getGroup() { return cGroup; }
 		
 		//name=QualifiedName
@@ -930,7 +931,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ELEMENTTYPE
 		public RuleCall getTypeELEMENTTYPEParserRuleCall_2_0() { return cTypeELEMENTTYPEParserRuleCall_2_0; }
 		
-		//(hasrequire?='require' inputreference=QualifiedName)?
+		//(hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//hasrequire?='require'
@@ -939,11 +940,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'require'
 		public Keyword getHasrequireRequireKeyword_3_0_0() { return cHasrequireRequireKeyword_3_0_0; }
 		
-		//inputreference=QualifiedName
+		//inputreference=[VMNodeInElement|QualifiedName]
 		public Assignment getInputreferenceAssignment_3_1() { return cInputreferenceAssignment_3_1; }
 		
+		//[VMNodeInElement|QualifiedName]
+		public CrossReference getInputreferenceVMNodeInElementCrossReference_3_1_0() { return cInputreferenceVMNodeInElementCrossReference_3_1_0; }
+		
 		//QualifiedName
-		public RuleCall getInputreferenceQualifiedNameParserRuleCall_3_1_0() { return cInputreferenceQualifiedNameParserRuleCall_3_1_0; }
+		public RuleCall getInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1() { return cInputreferenceVMNodeInElementQualifiedNameParserRuleCall_3_1_0_1; }
 	}
 	public class VMNodeInElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeInElement");
@@ -1941,7 +1945,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMNodeOutElement:
-	//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=QualifiedName)?
+	//    name=QualifiedName 'as' type=ELEMENTTYPE (hasrequire?='require' inputreference=[VMNodeInElement|QualifiedName])?
 	//;
 	public VMNodeOutElementElements getVMNodeOutElementAccess() {
 		return pVMNodeOutElement;

@@ -661,7 +661,7 @@ public interface AiDslPackage extends EPackage
   int VM_NODE_OUT_ELEMENT__HASREQUIRE = 2;
 
   /**
-   * The feature id for the '<em><b>Inputreference</b></em>' attribute.
+   * The feature id for the '<em><b>Inputreference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1690,15 +1690,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMNodeOutElement_Hasrequire();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}'.
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference <em>Inputreference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Inputreference</em>'.
+   * @return the meta object for the reference '<em>Inputreference</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.VMNodeOutElement#getInputreference()
    * @see #getVMNodeOutElement()
    * @generated
    */
-  EAttribute getVMNodeOutElement_Inputreference();
+  EReference getVMNodeOutElement_Inputreference();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeInElement <em>VM Node In Element</em>}'.
@@ -2570,12 +2570,12 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_NODE_OUT_ELEMENT__HASREQUIRE = eINSTANCE.getVMNodeOutElement_Hasrequire();
 
     /**
-     * The meta object literal for the '<em><b>Inputreference</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Inputreference</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_NODE_OUT_ELEMENT__INPUTREFERENCE = eINSTANCE.getVMNodeOutElement_Inputreference();
+    EReference VM_NODE_OUT_ELEMENT__INPUTREFERENCE = eINSTANCE.getVMNodeOutElement_Inputreference();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeInElementImpl <em>VM Node In Element</em>}' class.

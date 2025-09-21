@@ -872,9 +872,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getVMNodeOutElement_Inputreference()
+  public EReference getVMNodeOutElement_Inputreference()
   {
-    return (EAttribute)vmNodeOutElementEClass.getEStructuralFeatures().get(3);
+    return (EReference)vmNodeOutElementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1413,7 +1413,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__NAME);
     createEReference(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__TYPE);
     createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__HASREQUIRE);
-    createEAttribute(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__INPUTREFERENCE);
+    createEReference(vmNodeOutElementEClass, VM_NODE_OUT_ELEMENT__INPUTREFERENCE);
 
     vmNodeInElementEClass = createEClass(VM_NODE_IN_ELEMENT);
     createEAttribute(vmNodeInElementEClass, VM_NODE_IN_ELEMENT__POLICY);
@@ -1576,7 +1576,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEAttribute(getVMNodeOutElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVMNodeOutElement_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVMNodeOutElement_Hasrequire(), ecorePackage.getEBoolean(), "hasrequire", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVMNodeOutElement_Inputreference(), ecorePackage.getEString(), "inputreference", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVMNodeOutElement_Inputreference(), this.getVMNodeInElement(), null, "inputreference", null, 0, 1, VMNodeOutElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vmNodeInElementEClass, VMNodeInElement.class, "VMNodeInElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeInElement_Policy(), ecorePackage.getEString(), "policy", null, 0, 1, VMNodeInElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
