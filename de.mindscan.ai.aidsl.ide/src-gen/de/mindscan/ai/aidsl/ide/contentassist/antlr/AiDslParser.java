@@ -47,7 +47,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getGroup(), "rule__WorkflowUIElement__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup(), "rule__WorkflowUIElementMap__Group__0");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6(), "rule__WorkflowUIElementMap__Group_6__0");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_6_3(), "rule__WorkflowUIElementMap__Group_6_3__0");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_7(), "rule__WorkflowUIElementMap__Group_7__0");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getGroup_7_3(), "rule__WorkflowUIElementMap__Group_7_3__0");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup(), "rule__DatadictionaryKeyValuePair__Group__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup_1(), "rule__DatadictionaryKeyValuePair__Group_1__0");
@@ -95,8 +96,9 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowUIElementAccess().getUielementAssignment_3(), "rule__WorkflowUIElement__UielementAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getLabelAssignment_3(), "rule__WorkflowUIElementMap__LabelAssignment_3");
 			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getUitypeAssignment_5(), "rule__WorkflowUIElementMap__UitypeAssignment_5");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_2(), "rule__WorkflowUIElementMap__OptionsAssignment_6_2");
-			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_6_3_1(), "rule__WorkflowUIElementMap__OptionsAssignment_6_3_1");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getDefaultvalueAssignment_6_1(), "rule__WorkflowUIElementMap__DefaultvalueAssignment_6_1");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_7_2(), "rule__WorkflowUIElementMap__OptionsAssignment_7_2");
+			builder.put(grammarAccess.getWorkflowUIElementMapAccess().getOptionsAssignment_7_3_1(), "rule__WorkflowUIElementMap__OptionsAssignment_7_3_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getNameAssignment_1(), "rule__WorkflowDataDictionaryDefinition__NameAssignment_1");
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getKeyValuePairsAssignment_3(), "rule__WorkflowDataDictionaryDefinition__KeyValuePairsAssignment_3");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getNameAssignment_0(), "rule__DatadictionaryKeyValuePair__NameAssignment_0");

@@ -503,19 +503,44 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_6='options'
+			otherlv_6='default'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_6_0());
-			}
-			otherlv_7='['
-			{
-				newLeafNode(otherlv_7, grammarAccess.getWorkflowUIElementMapAccess().getLeftSquareBracketKeyword_6_1());
+				newLeafNode(otherlv_6, grammarAccess.getWorkflowUIElementMapAccess().getDefaultKeyword_6_0());
 			}
 			(
 				(
-					lv_options_8_0=RULE_STRING
 					{
-						newLeafNode(lv_options_8_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getWorkflowUIElementMapAccess().getDefaultvalueDataDictionaryValueParserRuleCall_6_1_0());
+					}
+					lv_defaultvalue_7_0=ruleDataDictionaryValue
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWorkflowUIElementMapRule());
+						}
+						set(
+							$current,
+							"defaultvalue",
+							lv_defaultvalue_7_0,
+							"de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_8='options'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_7_0());
+			}
+			otherlv_9='['
+			{
+				newLeafNode(otherlv_9, grammarAccess.getWorkflowUIElementMapAccess().getLeftSquareBracketKeyword_7_1());
+			}
+			(
+				(
+					lv_options_10_0=RULE_STRING
+					{
+						newLeafNode(lv_options_10_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_7_2_0());
 					}
 					{
 						if ($current==null) {
@@ -524,21 +549,21 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"options",
-							lv_options_8_0,
+							lv_options_10_0,
 							"de.mindscan.ai.aidsl.AiDsl.STRING");
 					}
 				)
 			)
 			(
-				otherlv_9=','
+				otherlv_11=','
 				{
-					newLeafNode(otherlv_9, grammarAccess.getWorkflowUIElementMapAccess().getCommaKeyword_6_3_0());
+					newLeafNode(otherlv_11, grammarAccess.getWorkflowUIElementMapAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
-						lv_options_10_0=RULE_STRING
+						lv_options_12_0=RULE_STRING
 						{
-							newLeafNode(lv_options_10_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_6_3_1_0());
+							newLeafNode(lv_options_12_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_7_3_1_0());
 						}
 						{
 							if ($current==null) {
@@ -547,20 +572,20 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 							addWithLastConsumed(
 								$current,
 								"options",
-								lv_options_10_0,
+								lv_options_12_0,
 								"de.mindscan.ai.aidsl.AiDsl.STRING");
 						}
 					)
 				)
 			)
-			otherlv_11=']'
+			otherlv_13=']'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getWorkflowUIElementMapAccess().getRightSquareBracketKeyword_6_4());
+				newLeafNode(otherlv_13, grammarAccess.getWorkflowUIElementMapAccess().getRightSquareBracketKeyword_7_4());
 			}
 		)?
-		otherlv_12='}'
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_14, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;

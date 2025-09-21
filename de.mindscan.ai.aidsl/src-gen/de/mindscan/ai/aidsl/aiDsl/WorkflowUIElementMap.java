@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getLabel <em>Label</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getUitype <em>Uitype</em>}</li>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDefaultvalue <em>Defaultvalue</em>}</li>
  *   <li>{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}</li>
  * </ul>
  *
@@ -70,6 +71,28 @@ public interface WorkflowUIElementMap extends EObject
    * @generated
    */
   void setUitype(String value);
+
+  /**
+   * Returns the value of the '<em><b>Defaultvalue</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Defaultvalue</em>' containment reference.
+   * @see #setDefaultvalue(DataDictionaryValue)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElementMap_Defaultvalue()
+   * @model containment="true"
+   * @generated
+   */
+  DataDictionaryValue getDefaultvalue();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDefaultvalue <em>Defaultvalue</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Defaultvalue</em>' containment reference.
+   * @see #getDefaultvalue()
+   * @generated
+   */
+  void setDefaultvalue(DataDictionaryValue value);
 
   /**
    * Returns the value of the '<em><b>Options</b></em>' attribute list.

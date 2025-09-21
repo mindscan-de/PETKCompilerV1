@@ -271,13 +271,22 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT_MAP__UITYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Defaultvalue</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE = 2;
+
+  /**
    * The feature id for the '<em><b>Options</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT_MAP__OPTIONS = 2;
+  int WORKFLOW_UI_ELEMENT_MAP__OPTIONS = 3;
 
   /**
    * The number of structural features of the '<em>Workflow UI Element Map</em>' class.
@@ -286,7 +295,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 3;
+  int WORKFLOW_UI_ELEMENT_MAP_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.
@@ -1372,6 +1381,17 @@ public interface AiDslPackage extends EPackage
   EAttribute getWorkflowUIElementMap_Uitype();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDefaultvalue <em>Defaultvalue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Defaultvalue</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getDefaultvalue()
+   * @see #getWorkflowUIElementMap()
+   * @generated
+   */
+  EReference getWorkflowUIElementMap_Defaultvalue();
+
+  /**
    * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2304,6 +2324,14 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute WORKFLOW_UI_ELEMENT_MAP__UITYPE = eINSTANCE.getWorkflowUIElementMap_Uitype();
+
+    /**
+     * The meta object literal for the '<em><b>Defaultvalue</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE = eINSTANCE.getWorkflowUIElementMap_Defaultvalue();
 
     /**
      * The meta object literal for the '<em><b>Options</b></em>' attribute list feature.

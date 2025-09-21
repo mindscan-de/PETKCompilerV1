@@ -252,22 +252,29 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cUitypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cUitypeSTRINGTerminalRuleCall_5_0 = (RuleCall)cUitypeAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cOptionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_2_0 = (RuleCall)cOptionsAssignment_6_2.eContents().get(0);
-		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
-		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cOptionsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_6_3_1_0 = (RuleCall)cOptionsAssignment_6_3_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cDefaultKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cDefaultvalueAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cDefaultvalueDataDictionaryValueParserRuleCall_6_1_0 = (RuleCall)cDefaultvalueAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cOptionsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cOptionsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cOptionsAssignment_7_2.eContents().get(0);
+		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
+		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
+		private final Assignment cOptionsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_7_3_1_0 = (RuleCall)cOptionsAssignment_7_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//WorkflowUIElementMap:
 		//    'ui' '{'
 		//        'label' label=STRING
 		//        'uitype' uitype=STRING
+		//        // optional default value...
+		//        ('default' defaultvalue=DataDictionaryValue )?
 		//        // TODO basically an array of strings
+		//        // TODO,  ?DataDictionaryValue?
 		//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
 		//    '}'
 		//;
@@ -276,7 +283,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'ui' '{'
 		//    'label' label=STRING
 		//    'uitype' uitype=STRING
+		//    // optional default value...
+		//    ('default' defaultvalue=DataDictionaryValue )?
 		//    // TODO basically an array of strings
+		//    // TODO,  ?DataDictionaryValue?
 		//    ('options' '[' options+=STRING(',' options+=STRING) ']')?
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -305,39 +315,53 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//STRING
 		public RuleCall getUitypeSTRINGTerminalRuleCall_5_0() { return cUitypeSTRINGTerminalRuleCall_5_0; }
 		
-		//// TODO basically an array of strings
-		//('options' '[' options+=STRING(',' options+=STRING) ']')?
+		//// optional default value...
+		//('default' defaultvalue=DataDictionaryValue )?
 		public Group getGroup_6() { return cGroup_6; }
 		
+		//'default'
+		public Keyword getDefaultKeyword_6_0() { return cDefaultKeyword_6_0; }
+		
+		//defaultvalue=DataDictionaryValue
+		public Assignment getDefaultvalueAssignment_6_1() { return cDefaultvalueAssignment_6_1; }
+		
+		//DataDictionaryValue
+		public RuleCall getDefaultvalueDataDictionaryValueParserRuleCall_6_1_0() { return cDefaultvalueDataDictionaryValueParserRuleCall_6_1_0; }
+		
+		//// TODO basically an array of strings
+		//// TODO,  ?DataDictionaryValue?
+		//('options' '[' options+=STRING(',' options+=STRING) ']')?
+		public Group getGroup_7() { return cGroup_7; }
+		
 		//'options'
-		public Keyword getOptionsKeyword_6_0() { return cOptionsKeyword_6_0; }
+		public Keyword getOptionsKeyword_7_0() { return cOptionsKeyword_7_0; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_6_1() { return cLeftSquareBracketKeyword_6_1; }
+		public Keyword getLeftSquareBracketKeyword_7_1() { return cLeftSquareBracketKeyword_7_1; }
 		
 		//options+=STRING
-		public Assignment getOptionsAssignment_6_2() { return cOptionsAssignment_6_2; }
+		public Assignment getOptionsAssignment_7_2() { return cOptionsAssignment_7_2; }
 		
 		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_6_2_0() { return cOptionsSTRINGTerminalRuleCall_6_2_0; }
+		public RuleCall getOptionsSTRINGTerminalRuleCall_7_2_0() { return cOptionsSTRINGTerminalRuleCall_7_2_0; }
 		
 		//(',' options+=STRING)
-		public Group getGroup_6_3() { return cGroup_6_3; }
+		public Group getGroup_7_3() { return cGroup_7_3; }
 		
 		//','
-		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
+		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
 		
 		//options+=STRING
-		public Assignment getOptionsAssignment_6_3_1() { return cOptionsAssignment_6_3_1; }
+		public Assignment getOptionsAssignment_7_3_1() { return cOptionsAssignment_7_3_1; }
 		
 		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_6_3_1_0() { return cOptionsSTRINGTerminalRuleCall_6_3_1_0; }
+		public RuleCall getOptionsSTRINGTerminalRuleCall_7_3_1_0() { return cOptionsSTRINGTerminalRuleCall_7_3_1_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_6_4() { return cRightSquareBracketKeyword_6_4; }
+		public Keyword getRightSquareBracketKeyword_7_4() { return cRightSquareBracketKeyword_7_4; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class WorkflowDataDictionaryDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDataDictionaryDefinition");
@@ -456,12 +480,15 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDataDictionaryArrayValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cDataDictionaryMapValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//// TODO: we want also integers/numbers
+		//// TODO: we want also integers/numbers/floats
 		//DataDictionaryValue:
 		//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 		//        {DataDictionaryStringValue} DataDictionaryStringValue|
 		//        {DataDictionaryNullValue} DataDictionaryNullValue|
+		//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//        // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		//        DataDictionaryArrayValue|
+		//        // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		//        DataDictionaryMapValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -469,7 +496,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 		//{DataDictionaryStringValue} DataDictionaryStringValue|
 		//{DataDictionaryNullValue} DataDictionaryNullValue|
+		//// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		//DataDictionaryArrayValue|
+		//// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		//DataDictionaryMapValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
@@ -500,9 +530,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//DataDictionaryNullValue
 		public RuleCall getDataDictionaryNullValueParserRuleCall_2_1() { return cDataDictionaryNullValueParserRuleCall_2_1; }
 		
+		//// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		//DataDictionaryArrayValue
 		public RuleCall getDataDictionaryArrayValueParserRuleCall_3() { return cDataDictionaryArrayValueParserRuleCall_3; }
 		
+		//// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		//DataDictionaryMapValue
 		public RuleCall getDataDictionaryMapValueParserRuleCall_4() { return cDataDictionaryMapValueParserRuleCall_4; }
 	}
@@ -1745,7 +1778,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    'ui' '{'
 	//        'label' label=STRING
 	//        'uitype' uitype=STRING
+	//        // optional default value...
+	//        ('default' defaultvalue=DataDictionaryValue )?
 	//        // TODO basically an array of strings
+	//        // TODO,  ?DataDictionaryValue?
 	//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
 	//    '}'
 	//;
@@ -1787,12 +1823,15 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDatadictionaryKeyValuePairAccess().getRule();
 	}
 	
-	//// TODO: we want also integers/numbers
+	//// TODO: we want also integers/numbers/floats
 	//DataDictionaryValue:
 	//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 	//        {DataDictionaryStringValue} DataDictionaryStringValue|
 	//        {DataDictionaryNullValue} DataDictionaryNullValue|
+	//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+	//        // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 	//        DataDictionaryArrayValue|
+	//        // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 	//        DataDictionaryMapValue
 	//;
 	public DataDictionaryValueElements getDataDictionaryValueAccess() {

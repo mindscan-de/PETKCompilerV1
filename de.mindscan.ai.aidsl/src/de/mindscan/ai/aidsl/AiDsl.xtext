@@ -41,7 +41,10 @@ WorkflowUIElementMap:
 	'ui' '{'
 		'label' label=STRING
 		'uitype' uitype=STRING
-		// TODO basically an array of strings 
+		// optional default value...
+		('default' defaultvalue=DataDictionaryValue )?
+		// TODO basically an array of strings
+		// TODO,  ?DataDictionaryValue?
 		('options' '[' options+=STRING(',' options+=STRING) ']')?
 	'}'
 ;
@@ -63,12 +66,15 @@ DatadictionaryKeyValuePair:
 	name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 ;
 
-// TODO: we want also integers/numbers
+// TODO: we want also integers/numbers/floats
 DataDictionaryValue:
 		{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
 		{DataDictionaryStringValue} DataDictionaryStringValue|
 		{DataDictionaryNullValue} DataDictionaryNullValue|
+		// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		DataDictionaryArrayValue|
+		// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		DataDictionaryMapValue
 ;
 

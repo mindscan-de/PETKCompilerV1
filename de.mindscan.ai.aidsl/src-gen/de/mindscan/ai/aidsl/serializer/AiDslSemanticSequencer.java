@@ -659,7 +659,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     WorkflowUIElementMap returns WorkflowUIElementMap
 	 *
 	 * Constraint:
-	 *     (label=STRING uitype=STRING (options+=STRING options+=STRING)?)
+	 *     (label=STRING uitype=STRING defaultvalue=DataDictionaryValue? (options+=STRING options+=STRING)?)
 	 * </pre>
 	 */
 	protected void sequence_WorkflowUIElementMap(ISerializationContext context, WorkflowUIElementMap semanticObject) {
