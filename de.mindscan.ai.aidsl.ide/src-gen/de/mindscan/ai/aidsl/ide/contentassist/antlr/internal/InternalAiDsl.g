@@ -5860,9 +5860,9 @@ rule__VMFieldElement__DefaultvalueAssignment_3_1
 	}
 :
 	(
-		{ before(grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); }
+		{ before(grammarAccess.getVMFieldElementAccess().getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0()); }
+		ruleDataDictionaryValue
+		{ after(grammarAccess.getVMFieldElementAccess().getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0()); }
 	)
 ;
 finally {

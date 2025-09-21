@@ -999,14 +999,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cDefaultKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cDefaultvalueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDefaultvalueAssignment_3_1.eContents().get(0);
+		private final RuleCall cDefaultvalueDataDictionaryValueParserRuleCall_3_1_0 = (RuleCall)cDefaultvalueAssignment_3_1.eContents().get(0);
 		
 		//VMFieldElement:
-		//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
+		//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=DataDictionaryValue)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
+		//policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=DataDictionaryValue)?
 		public Group getGroup() { return cGroup; }
 		
 		//policy=('require'|'optional')
@@ -1033,17 +1033,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//('default' defaultvalue=(STRING))?
+		//('default' defaultvalue=DataDictionaryValue)?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'default'
 		public Keyword getDefaultKeyword_3_0() { return cDefaultKeyword_3_0; }
 		
-		//defaultvalue=(STRING)
+		//defaultvalue=DataDictionaryValue
 		public Assignment getDefaultvalueAssignment_3_1() { return cDefaultvalueAssignment_3_1; }
 		
-		//(STRING)
-		public RuleCall getDefaultvalueSTRINGTerminalRuleCall_3_1_0() { return cDefaultvalueSTRINGTerminalRuleCall_3_1_0; }
+		//DataDictionaryValue
+		public RuleCall getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0() { return cDefaultvalueDataDictionaryValueParserRuleCall_3_1_0; }
 	}
 	public class VMOverrideFieldElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMOverrideFieldElement");
@@ -1967,7 +1967,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMFieldElement:
-	//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
+	//    policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=DataDictionaryValue)?
 	//;
 	public VMFieldElementElements getVMFieldElementAccess() {
 		return pVMFieldElement;

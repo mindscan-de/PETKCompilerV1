@@ -1630,19 +1630,20 @@ ruleVMFieldElement returns [EObject current=null]
 			}
 			(
 				(
-					lv_defaultvalue_4_0=RULE_STRING
 					{
-						newLeafNode(lv_defaultvalue_4_0, grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getVMFieldElementAccess().getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0());
 					}
+					lv_defaultvalue_4_0=ruleDataDictionaryValue
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getVMFieldElementRule());
+							$current = createModelElementForParent(grammarAccess.getVMFieldElementRule());
 						}
-						setWithLastConsumed(
+						set(
 							$current,
 							"defaultvalue",
 							lv_defaultvalue_4_0,
-							"de.mindscan.ai.aidsl.AiDsl.STRING");
+							"de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)

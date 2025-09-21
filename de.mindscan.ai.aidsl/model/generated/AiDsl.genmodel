@@ -79,7 +79,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/policy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMFieldElement/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMFieldElement/defaultvalue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//VMFieldElement/defaultvalue"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMOverrideFieldElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMOverrideFieldElement/policy"/>

@@ -146,7 +146,7 @@ VMNodeInElement:
 ;
 
 VMFieldElement:
-	policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=(STRING))?
+	policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=DataDictionaryValue)?
 ;
 
 VMOverrideFieldElement:

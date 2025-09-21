@@ -753,7 +753,7 @@ public interface AiDslPackage extends EPackage
   int VM_FIELD_ELEMENT__NAME = 2;
 
   /**
-   * The feature id for the '<em><b>Defaultvalue</b></em>' attribute.
+   * The feature id for the '<em><b>Defaultvalue</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1776,15 +1776,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getVMFieldElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Defaultvalue</em>'.
+   * @return the meta object for the containment reference '<em>Defaultvalue</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue()
    * @see #getVMFieldElement()
    * @generated
    */
-  EAttribute getVMFieldElement_Defaultvalue();
+  EReference getVMFieldElement_Defaultvalue();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement <em>VM Override Field Element</em>}'.
@@ -2638,12 +2638,12 @@ public interface AiDslPackage extends EPackage
     EAttribute VM_FIELD_ELEMENT__NAME = eINSTANCE.getVMFieldElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Defaultvalue</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Defaultvalue</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VM_FIELD_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMFieldElement_Defaultvalue();
+    EReference VM_FIELD_ELEMENT__DEFAULTVALUE = eINSTANCE.getVMFieldElement_Defaultvalue();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMOverrideFieldElementImpl <em>VM Override Field Element</em>}' class.

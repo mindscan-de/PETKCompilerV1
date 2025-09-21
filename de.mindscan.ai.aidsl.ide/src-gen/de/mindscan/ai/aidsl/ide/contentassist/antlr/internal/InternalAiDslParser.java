@@ -11440,7 +11440,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:3740:1: ( rule__VMFieldElement__Group_3__0__Impl rule__VMFieldElement__Group_3__1 )
             // InternalAiDsl.g:3741:2: rule__VMFieldElement__Group_3__0__Impl rule__VMFieldElement__Group_3__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_21);
             rule__VMFieldElement__Group_3__0__Impl();
 
             state._fsp--;
@@ -17590,21 +17590,25 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VMFieldElement__DefaultvalueAssignment_3_1"
-    // InternalAiDsl.g:5857:1: rule__VMFieldElement__DefaultvalueAssignment_3_1 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:5857:1: rule__VMFieldElement__DefaultvalueAssignment_3_1 : ( ruleDataDictionaryValue ) ;
     public final void rule__VMFieldElement__DefaultvalueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:5861:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:5862:2: ( RULE_STRING )
+            // InternalAiDsl.g:5861:1: ( ( ruleDataDictionaryValue ) )
+            // InternalAiDsl.g:5862:2: ( ruleDataDictionaryValue )
             {
-            // InternalAiDsl.g:5862:2: ( RULE_STRING )
-            // InternalAiDsl.g:5863:3: RULE_STRING
+            // InternalAiDsl.g:5862:2: ( ruleDataDictionaryValue )
+            // InternalAiDsl.g:5863:3: ruleDataDictionaryValue
             {
-             before(grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getVMFieldElementAccess().getDefaultvalueSTRINGTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getVMFieldElementAccess().getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleDataDictionaryValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getVMFieldElementAccess().getDefaultvalueDataDictionaryValueParserRuleCall_3_1_0()); 
 
             }
 

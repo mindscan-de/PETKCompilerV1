@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 
@@ -85,24 +86,14 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDefaultvalue() <em>Defaultvalue</em>}' attribute.
+   * The cached value of the '{@link #getDefaultvalue() <em>Defaultvalue</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDefaultvalue()
    * @generated
    * @ordered
    */
-  protected static final String DEFAULTVALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDefaultvalue() <em>Defaultvalue</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefaultvalue()
-   * @generated
-   * @ordered
-   */
-  protected String defaultvalue = DEFAULTVALUE_EDEFAULT;
+  protected DataDictionaryValue defaultvalue;
 
   /**
    * <!-- begin-user-doc -->
@@ -231,7 +222,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getDefaultvalue()
+  public DataDictionaryValue getDefaultvalue()
   {
     return defaultvalue;
   }
@@ -241,13 +232,38 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDefaultvalue(String newDefaultvalue)
+  public NotificationChain basicSetDefaultvalue(DataDictionaryValue newDefaultvalue, NotificationChain msgs)
   {
-    String oldDefaultvalue = defaultvalue;
+    DataDictionaryValue oldDefaultvalue = defaultvalue;
     defaultvalue = newDefaultvalue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, oldDefaultvalue, defaultvalue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, oldDefaultvalue, newDefaultvalue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDefaultvalue(DataDictionaryValue newDefaultvalue)
+  {
+    if (newDefaultvalue != defaultvalue)
+    {
+      NotificationChain msgs = null;
+      if (defaultvalue != null)
+        msgs = ((InternalEObject)defaultvalue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, null, msgs);
+      if (newDefaultvalue != null)
+        msgs = ((InternalEObject)newDefaultvalue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, null, msgs);
+      msgs = basicSetDefaultvalue(newDefaultvalue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE, newDefaultvalue, newDefaultvalue));
   }
 
   /**
@@ -262,6 +278,8 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
     {
       case AiDslPackage.VM_FIELD_ELEMENT__TYPE:
         return basicSetType(null, msgs);
+      case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
+        return basicSetDefaultvalue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -308,7 +326,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
         setName((String)newValue);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
-        setDefaultvalue((String)newValue);
+        setDefaultvalue((DataDictionaryValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -334,7 +352,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
         setName(NAME_EDEFAULT);
         return;
       case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
-        setDefaultvalue(DEFAULTVALUE_EDEFAULT);
+        setDefaultvalue((DataDictionaryValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -357,7 +375,7 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
       case AiDslPackage.VM_FIELD_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AiDslPackage.VM_FIELD_ELEMENT__DEFAULTVALUE:
-        return DEFAULTVALUE_EDEFAULT == null ? defaultvalue != null : !DEFAULTVALUE_EDEFAULT.equals(defaultvalue);
+        return defaultvalue != null;
     }
     return super.eIsSet(featureID);
   }
@@ -377,8 +395,6 @@ public class VMFieldElementImpl extends MinimalEObjectImpl.Container implements 
     result.append(policy);
     result.append(", name: ");
     result.append(name);
-    result.append(", defaultvalue: ");
-    result.append(defaultvalue);
     result.append(')');
     return result.toString();
   }

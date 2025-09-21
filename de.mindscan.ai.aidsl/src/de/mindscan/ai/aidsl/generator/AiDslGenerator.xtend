@@ -259,10 +259,11 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		for(fieldElement : elements.fieldELements) {
 			switch fieldElement {
+				// TODO REDO the data dictionary default values..
 				// TODO: extract the string values, because the string includes the leading and tailing values
-				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
+//				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
 				// TODO: extract the string values, because the string includes the leading and tailing values
-				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
+//				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
 			}
 		}
 		

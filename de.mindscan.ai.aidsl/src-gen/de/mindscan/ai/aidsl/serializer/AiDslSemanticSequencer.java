@@ -424,7 +424,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     VMFieldElement returns VMFieldElement
 	 *
 	 * Constraint:
-	 *     ((policy='require' | policy='optional') type=ELEMENTTYPE name=ID defaultvalue=STRING?)
+	 *     ((policy='require' | policy='optional') type=ELEMENTTYPE name=ID defaultvalue=DataDictionaryValue?)
 	 * </pre>
 	 */
 	protected void sequence_VMFieldElement(ISerializationContext context, VMFieldElement semanticObject) {

@@ -93,25 +93,25 @@ public interface VMFieldElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Defaultvalue</b></em>' attribute.
+   * Returns the value of the '<em><b>Defaultvalue</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Defaultvalue</em>' attribute.
-   * @see #setDefaultvalue(String)
+   * @return the value of the '<em>Defaultvalue</em>' containment reference.
+   * @see #setDefaultvalue(DataDictionaryValue)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getVMFieldElement_Defaultvalue()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDefaultvalue();
+  DataDictionaryValue getDefaultvalue();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.VMFieldElement#getDefaultvalue <em>Defaultvalue</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Defaultvalue</em>' attribute.
+   * @param value the new value of the '<em>Defaultvalue</em>' containment reference.
    * @see #getDefaultvalue()
    * @generated
    */
-  void setDefaultvalue(String value);
+  void setDefaultvalue(DataDictionaryValue value);
 
 } // VMFieldElement
