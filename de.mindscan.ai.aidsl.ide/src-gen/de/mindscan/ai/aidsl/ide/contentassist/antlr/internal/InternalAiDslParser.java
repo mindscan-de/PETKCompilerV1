@@ -13738,7 +13738,7 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
             // InternalAiDsl.g:4496:1: ( rule__LlmVariableAssignment__Group__1__Impl rule__LlmVariableAssignment__Group__2 )
             // InternalAiDsl.g:4497:2: rule__LlmVariableAssignment__Group__1__Impl rule__LlmVariableAssignment__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_17);
             rule__LlmVariableAssignment__Group__1__Impl();
 
             state._fsp--;
@@ -18676,21 +18676,25 @@ public class InternalAiDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LlmVariableAssignment__TemplateAssignment_2"
-    // InternalAiDsl.g:6244:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( RULE_STRING ) ;
+    // InternalAiDsl.g:6244:1: rule__LlmVariableAssignment__TemplateAssignment_2 : ( ruleDataDictionaryValue ) ;
     public final void rule__LlmVariableAssignment__TemplateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAiDsl.g:6248:1: ( ( RULE_STRING ) )
-            // InternalAiDsl.g:6249:2: ( RULE_STRING )
+            // InternalAiDsl.g:6248:1: ( ( ruleDataDictionaryValue ) )
+            // InternalAiDsl.g:6249:2: ( ruleDataDictionaryValue )
             {
-            // InternalAiDsl.g:6249:2: ( RULE_STRING )
-            // InternalAiDsl.g:6250:3: RULE_STRING
+            // InternalAiDsl.g:6249:2: ( ruleDataDictionaryValue )
+            // InternalAiDsl.g:6250:3: ruleDataDictionaryValue
             {
-             before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleDataDictionaryValue();
+
+            state._fsp--;
+
+             after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0()); 
 
             }
 

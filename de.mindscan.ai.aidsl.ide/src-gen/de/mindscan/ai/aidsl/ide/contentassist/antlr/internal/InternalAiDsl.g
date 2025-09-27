@@ -6247,9 +6247,9 @@ rule__LlmVariableAssignment__TemplateAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0()); }
+		ruleDataDictionaryValue
+		{ after(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0()); }
 	)
 ;
 finally {

@@ -122,7 +122,7 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		switch valueOfDataDictionaryValue {
 			DataDictionaryBooleanValue: return valueOfDataDictionaryValue.compileBooleanValue()
-			DataDictionaryStringValue: return valueOfDataDictionaryValue.compileStringValue()
+			DataDictionaryStringValue: return valueOfDataDictionaryValue.compileStringValue.prepareStringForExport()
 			DataDictionaryNullValue: return null
 		}
 		
@@ -176,11 +176,6 @@ class AiDslGenerator extends AbstractGenerator {
 		return Boolean.parseBoolean( value.value )
 	}
 
-	def HashMap compileMapValue(DataDictionaryMapValue value) {
-		return {}
-	}
-
-	
 	protected def String prepareStringForExport(String stringValue) {
 		if(stringValue === null) {
 			return stringValue
@@ -275,7 +270,16 @@ class AiDslGenerator extends AbstractGenerator {
 			// TODO, preprocess the template string.
 			// look at the prefix first \r\n\t, all other \r\n\t must be replaced as "\n", such that the  
 			// TODO: extract the string values, because the string includes the leading and tailing values
-			compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template.prepareStringForExport)
+			if(variableAssigment.template instanceof DataDictionaryStringValue) {
+				// TODO: we have issues with utf-8 coded files - the UTF-8 is wrapped multiple times....
+				val theTemplate = variableAssigment.template as DataDictionaryStringValue
+				compiledStatementMap.put(variableAssigment.variablename, theTemplate.compileStringValue())
+			} else
+			{
+				compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template.comileDataDictionaryElement())
+			}
+			
+			
 		}
 		
 		// TODO: extra_stopwords
@@ -333,7 +337,7 @@ class AiDslGenerator extends AbstractGenerator {
 				// TODO: extract the string values, because the string includes the leading and tailing values
 				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.comileDataDictionaryElement() )
 				// TODO: extract the string values, because the string includes the leading and tailing values
-				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
+				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport() )
 			}
 		}
 		

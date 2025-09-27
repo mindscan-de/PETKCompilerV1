@@ -1143,11 +1143,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefaultvalueAssignment_4.eContents().get(0);
 		
 		//VMOverrideFieldElement:
-		//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
+		//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
+		//policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//policy=('override')
@@ -1171,10 +1171,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':='
 		public Keyword getColonEqualsSignKeyword_3() { return cColonEqualsSignKeyword_3; }
 		
-		//defaultvalue=(STRING)
+		//defaultvalue=STRING
 		public Assignment getDefaultvalueAssignment_4() { return cDefaultvalueAssignment_4; }
 		
-		//(STRING)
+		//STRING
 		public RuleCall getDefaultvalueSTRINGTerminalRuleCall_4_0() { return cDefaultvalueSTRINGTerminalRuleCall_4_0; }
 	}
 	public class LlmTaskDefinitionElements extends AbstractParserRuleElementFinder {
@@ -1302,14 +1302,14 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cVariablenameIDTerminalRuleCall_0_0 = (RuleCall)cVariablenameAssignment_0.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTemplateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTemplateSTRINGTerminalRuleCall_2_0 = (RuleCall)cTemplateAssignment_2.eContents().get(0);
+		private final RuleCall cTemplateDataDictionaryValueParserRuleCall_2_0 = (RuleCall)cTemplateAssignment_2.eContents().get(0);
 		
 		//LlmVariableAssignment:
-		//    variablename=ID ':=' template=STRING
+		//    variablename=ID ':=' template=DataDictionaryValue
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//variablename=ID ':=' template=STRING
+		//variablename=ID ':=' template=DataDictionaryValue
 		public Group getGroup() { return cGroup; }
 		
 		//variablename=ID
@@ -1321,11 +1321,11 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':='
 		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
 		
-		//template=STRING
+		//template=DataDictionaryValue
 		public Assignment getTemplateAssignment_2() { return cTemplateAssignment_2; }
 		
-		//STRING
-		public RuleCall getTemplateSTRINGTerminalRuleCall_2_0() { return cTemplateSTRINGTerminalRuleCall_2_0; }
+		//DataDictionaryValue
+		public RuleCall getTemplateDataDictionaryValueParserRuleCall_2_0() { return cTemplateDataDictionaryValueParserRuleCall_2_0; }
 	}
 	public class WorkflowDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinition");
@@ -2072,7 +2072,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//VMOverrideFieldElement:
-	//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
+	//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 	//;
 	public VMOverrideFieldElementElements getVMOverrideFieldElementAccess() {
 		return pVMOverrideFieldElement;
@@ -2113,7 +2113,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//LlmVariableAssignment:
-	//    variablename=ID ':=' template=STRING
+	//    variablename=ID ':=' template=DataDictionaryValue
 	//;
 	public LlmVariableAssignmentElements getLlmVariableAssignmentAccess() {
 		return pLlmVariableAssignment;

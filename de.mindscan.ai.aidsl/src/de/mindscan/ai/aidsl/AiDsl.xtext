@@ -161,7 +161,7 @@ VMFieldElement:
 ;
 
 VMOverrideFieldElement:
-	policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=(STRING)
+	policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 ;
 
 // ---------------------------------------
@@ -182,7 +182,7 @@ AnnotationInterfaceReference hidden ():
 ;
 
 LlmVariableAssignment:
-	variablename=ID ':=' template=STRING
+	variablename=ID ':=' template=DataDictionaryValue
 ;
 
 

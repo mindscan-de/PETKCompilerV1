@@ -1021,7 +1021,7 @@ public interface AiDslPackage extends EPackage
   int LLM_VARIABLE_ASSIGNMENT__VARIABLENAME = 0;
 
   /**
-   * The feature id for the '<em><b>Template</b></em>' attribute.
+   * The feature id for the '<em><b>Template</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2056,15 +2056,15 @@ public interface AiDslPackage extends EPackage
   EAttribute getLlmVariableAssignment_Variablename();
 
   /**
-   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate <em>Template</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate <em>Template</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Template</em>'.
+   * @return the meta object for the containment reference '<em>Template</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate()
    * @see #getLlmVariableAssignment()
    * @generated
    */
-  EAttribute getLlmVariableAssignment_Template();
+  EReference getLlmVariableAssignment_Template();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition <em>Workflow Definition</em>}'.
@@ -2928,12 +2928,12 @@ public interface AiDslPackage extends EPackage
     EAttribute LLM_VARIABLE_ASSIGNMENT__VARIABLENAME = eINSTANCE.getLlmVariableAssignment_Variablename();
 
     /**
-     * The meta object literal for the '<em><b>Template</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Template</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LLM_VARIABLE_ASSIGNMENT__TEMPLATE = eINSTANCE.getLlmVariableAssignment_Template();
+    EReference LLM_VARIABLE_ASSIGNMENT__TEMPLATE = eINSTANCE.getLlmVariableAssignment_Template();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionImpl <em>Workflow Definition</em>}' class.

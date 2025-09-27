@@ -388,7 +388,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LlmVariableAssignment returns LlmVariableAssignment
 	 *
 	 * Constraint:
-	 *     (variablename=ID template=STRING)
+	 *     (variablename=ID template=DataDictionaryValue)
 	 * </pre>
 	 */
 	protected void sequence_LlmVariableAssignment(ISerializationContext context, LlmVariableAssignment semanticObject) {
@@ -400,7 +400,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLlmVariableAssignmentAccess().getVariablenameIDTerminalRuleCall_0_0(), semanticObject.getVariablename());
-		feeder.accept(grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0(), semanticObject.getTemplate());
+		feeder.accept(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0(), semanticObject.getTemplate());
 		feeder.finish();
 	}
 	

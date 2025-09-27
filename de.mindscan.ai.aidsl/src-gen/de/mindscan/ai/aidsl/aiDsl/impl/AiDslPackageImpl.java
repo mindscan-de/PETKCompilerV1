@@ -1202,9 +1202,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EAttribute getLlmVariableAssignment_Template()
+  public EReference getLlmVariableAssignment_Template()
   {
-    return (EAttribute)llmVariableAssignmentEClass.getEStructuralFeatures().get(1);
+    return (EReference)llmVariableAssignmentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1507,7 +1507,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     llmVariableAssignmentEClass = createEClass(LLM_VARIABLE_ASSIGNMENT);
     createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__VARIABLENAME);
-    createEAttribute(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__TEMPLATE);
+    createEReference(llmVariableAssignmentEClass, LLM_VARIABLE_ASSIGNMENT__TEMPLATE);
 
     workflowDefinitionEClass = createEClass(WORKFLOW_DEFINITION);
     createEAttribute(workflowDefinitionEClass, WORKFLOW_DEFINITION__NAME);
@@ -1670,7 +1670,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(llmVariableAssignmentEClass, LlmVariableAssignment.class, "LlmVariableAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLlmVariableAssignment_Variablename(), ecorePackage.getEString(), "variablename", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLlmVariableAssignment_Template(), ecorePackage.getEString(), "template", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLlmVariableAssignment_Template(), this.getDataDictionaryValue(), null, "template", null, 0, 1, LlmVariableAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(workflowDefinitionEClass, WorkflowDefinition.class, "WorkflowDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWorkflowDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

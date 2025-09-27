@@ -4,11 +4,14 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -50,24 +53,14 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
   protected String variablename = VARIABLENAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTemplate() <em>Template</em>}' attribute.
+   * The cached value of the '{@link #getTemplate() <em>Template</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTemplate()
    * @generated
    * @ordered
    */
-  protected static final String TEMPLATE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTemplate() <em>Template</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTemplate()
-   * @generated
-   * @ordered
-   */
-  protected String template = TEMPLATE_EDEFAULT;
+  protected DataDictionaryValue template;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +114,7 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getTemplate()
+  public DataDictionaryValue getTemplate()
   {
     return template;
   }
@@ -131,13 +124,54 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setTemplate(String newTemplate)
+  public NotificationChain basicSetTemplate(DataDictionaryValue newTemplate, NotificationChain msgs)
   {
-    String oldTemplate = template;
+    DataDictionaryValue oldTemplate = template;
     template = newTemplate;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE, oldTemplate, template));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE, oldTemplate, newTemplate);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTemplate(DataDictionaryValue newTemplate)
+  {
+    if (newTemplate != template)
+    {
+      NotificationChain msgs = null;
+      if (template != null)
+        msgs = ((InternalEObject)template).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE, null, msgs);
+      if (newTemplate != null)
+        msgs = ((InternalEObject)newTemplate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE, null, msgs);
+      msgs = basicSetTemplate(newTemplate, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE, newTemplate, newTemplate));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE:
+        return basicSetTemplate(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -172,7 +206,7 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
         setVariablename((String)newValue);
         return;
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE:
-        setTemplate((String)newValue);
+        setTemplate((DataDictionaryValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,7 +226,7 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
         setVariablename(VARIABLENAME_EDEFAULT);
         return;
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE:
-        setTemplate(TEMPLATE_EDEFAULT);
+        setTemplate((DataDictionaryValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -211,7 +245,7 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT__VARIABLENAME:
         return VARIABLENAME_EDEFAULT == null ? variablename != null : !VARIABLENAME_EDEFAULT.equals(variablename);
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT__TEMPLATE:
-        return TEMPLATE_EDEFAULT == null ? template != null : !TEMPLATE_EDEFAULT.equals(template);
+        return template != null;
     }
     return super.eIsSet(featureID);
   }
@@ -229,8 +263,6 @@ public class LlmVariableAssignmentImpl extends MinimalEObjectImpl.Container impl
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (variablename: ");
     result.append(variablename);
-    result.append(", template: ");
-    result.append(template);
     result.append(')');
     return result.toString();
   }

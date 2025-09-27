@@ -109,7 +109,7 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//LlmVariableAssignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/variablename"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//LlmVariableAssignment/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//LlmVariableAssignment/template"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowDefinition/name"/>

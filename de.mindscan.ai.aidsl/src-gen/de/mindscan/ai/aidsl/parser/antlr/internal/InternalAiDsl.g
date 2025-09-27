@@ -2064,19 +2064,20 @@ ruleLlmVariableAssignment returns [EObject current=null]
 		}
 		(
 			(
-				lv_template_2_0=RULE_STRING
 				{
-					newLeafNode(lv_template_2_0, grammarAccess.getLlmVariableAssignmentAccess().getTemplateSTRINGTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getLlmVariableAssignmentAccess().getTemplateDataDictionaryValueParserRuleCall_2_0());
 				}
+				lv_template_2_0=ruleDataDictionaryValue
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLlmVariableAssignmentRule());
+						$current = createModelElementForParent(grammarAccess.getLlmVariableAssignmentRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"template",
 						lv_template_2_0,
-						"de.mindscan.ai.aidsl.AiDsl.STRING");
+						"de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

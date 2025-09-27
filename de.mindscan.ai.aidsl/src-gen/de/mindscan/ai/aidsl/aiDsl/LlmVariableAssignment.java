@@ -47,25 +47,25 @@ public interface LlmVariableAssignment extends EObject
   void setVariablename(String value);
 
   /**
-   * Returns the value of the '<em><b>Template</b></em>' attribute.
+   * Returns the value of the '<em><b>Template</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Template</em>' attribute.
-   * @see #setTemplate(String)
+   * @return the value of the '<em>Template</em>' containment reference.
+   * @see #setTemplate(DataDictionaryValue)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getLlmVariableAssignment_Template()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getTemplate();
+  DataDictionaryValue getTemplate();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate <em>Template</em>}' attribute.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment#getTemplate <em>Template</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Template</em>' attribute.
+   * @param value the new value of the '<em>Template</em>' containment reference.
    * @see #getTemplate()
    * @generated
    */
-  void setTemplate(String value);
+  void setTemplate(DataDictionaryValue value);
 
 } // LlmVariableAssignment
