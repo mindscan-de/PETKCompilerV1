@@ -3,30 +3,26 @@
  */
 package de.mindscan.ai.aidsl.generator
 
-import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair
+import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
+import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
 import java.io.Serializable
 import java.util.HashMap
+import java.util.LinkedHashMap
+import java.util.Map
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
-import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
-import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
-import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
-import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
-import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
-
-
-import java.util.Map
-import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
-import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
-import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
-import de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
-import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue
-import java.util.LinkedHashMap
 
 /**
  * Generates code from your model files on save.
@@ -95,6 +91,8 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		val datadictionary = workflowDefinition.datadictionary
 		for(datadictionarykvpair : datadictionary.keyValuePairs) {
+			// TODO: if it has the extends on, we mist compile the refernced map first, then merge...
+			
 			val map = comileDataDictionaryElement(datadictionarykvpair.value)
 			
 			result.put(datadictionarykvpair.name, map)				
@@ -103,8 +101,7 @@ class AiDslGenerator extends AbstractGenerator {
 		return result
 	}
 	
-	protected def  comileDataDictionaryElement(DataDictionaryValue datadictionaryvalue) {
-		var map=newHashMap()
+	protected def Object comileDataDictionaryElement(DataDictionaryValue datadictionaryvalue) {
 		
 		val valueOfDataDictionaryValue = datadictionaryvalue.value
 		
@@ -112,8 +109,27 @@ class AiDslGenerator extends AbstractGenerator {
 			DataDictionaryBooleanValue: return valueOfDataDictionaryValue.compileBooleanValue()
 			DataDictionaryStringValue: return valueOfDataDictionaryValue.compileStringValue()
 			DataDictionaryNullValue: return null
-//			DataDictionaryMapValue: {}
+		}
+		
+		
+		switch valueOfDataDictionaryValue {
+//			DataDictionaryMapValue: return valueOfDataDictionaryValue.compileMapValue{}
 //			DataDictionaryArrayValue: {}
+		}
+		
+		// TODO: handle the extends operation again...
+		
+		if(valueOfDataDictionaryValue instanceof DataDictionaryMapValue) {
+			val map = new LinkedHashMap<String,Object>()
+			
+			for(keyvaluepair:valueOfDataDictionaryValue.keyValuePairs) {
+				// TODO: if it has the extends on, we mist compile the refernced map first, then merge...
+				val thelocalvalue = keyvaluepair.value
+				
+				map.put(keyvaluepair.name, thelocalvalue.comileDataDictionaryElement())
+			}
+			
+			return map
 		}
 
 //		if(datadictionaryelement.extends !== null) {
@@ -126,8 +142,8 @@ class AiDslGenerator extends AbstractGenerator {
 //			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
 //		}
 		
-		
-		return map
+		// var map=newHashMap()
+		return null
 	}
 	
 	def String compileStringValue(DataDictionaryStringValue value) {
@@ -140,6 +156,9 @@ class AiDslGenerator extends AbstractGenerator {
 		return Boolean.parseBoolean( value.value )
 	}
 
+	def HashMap compileMapValue(DataDictionaryMapValue value) {
+		return {}
+	}
 
 	
 	protected def String prepareStringForExport(String stringValue) {
