@@ -9,9 +9,11 @@ import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue
+import de.mindscan.ai.aidsl.aiDsl.VMFieldElement
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
 import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
+import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
@@ -112,6 +114,9 @@ class AiDslGenerator extends AbstractGenerator {
 	}
 	
 	protected def Object comileDataDictionaryElement(DataDictionaryValue datadictionaryvalue) {
+		if(datadictionaryvalue === null) {
+			return null
+		}
 		
 		val valueOfDataDictionaryValue = datadictionaryvalue.value
 		
@@ -123,18 +128,12 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		
 		switch valueOfDataDictionaryValue {
-//			DataDictionaryMapValue: return valueOfDataDictionaryValue.compileMapValue{}
 //			DataDictionaryArrayValue: {}
 		}
 		
-		// TODO: handle the extends operation again...
-		
 		if(valueOfDataDictionaryValue instanceof DataDictionaryMapValue) {
-			
 			val result = new LinkedHashMap<String,Object>()
-			
 			for(keyvaluepair:valueOfDataDictionaryValue.keyValuePairs) {
-				// TODO: if it has the extends on, we must compile the refernced map first, then merge...
 				if(keyvaluepair.extends !== null) {
 					val compiledvalue=comileDataDictionaryElement(keyvaluepair.extends.value) as LinkedHashMap
 					val map = comileDataDictionaryElement(keyvaluepair.value) as LinkedHashMap
@@ -332,9 +331,9 @@ class AiDslGenerator extends AbstractGenerator {
 			switch fieldElement {
 				// TODO REDO the data dictionary default values..
 				// TODO: extract the string values, because the string includes the leading and tailing values
-//				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
+				VMFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.comileDataDictionaryElement() )
 				// TODO: extract the string values, because the string includes the leading and tailing values
-//				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
+				VMOverrideFieldElement: result.put(fieldElement.name, fieldElement.defaultvalue.prepareStringForExport )
 			}
 		}
 		
