@@ -133,6 +133,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dataDictionaryBooleanValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass vmNodeDefinitionEClass = null;
 
   /**
@@ -253,13 +260,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass basictypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass dataDictionaryBooleanValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -688,6 +688,28 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EReference getDataDictionaryMapValue_KeyValuePairs()
   {
     return (EReference)dataDictionaryMapValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataDictionaryBooleanValue()
+  {
+    return dataDictionaryBooleanValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDataDictionaryBooleanValue_Value()
+  {
+    return (EAttribute)dataDictionaryBooleanValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1301,17 +1323,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
-  public EClass getDataDictionaryBooleanValue()
-  {
-    return dataDictionaryBooleanValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getDataDictionaryStringValue()
   {
     return dataDictionaryStringValueEClass;
@@ -1402,6 +1413,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     dataDictionaryMapValueEClass = createEClass(DATA_DICTIONARY_MAP_VALUE);
     createEReference(dataDictionaryMapValueEClass, DATA_DICTIONARY_MAP_VALUE__KEY_VALUE_PAIRS);
 
+    dataDictionaryBooleanValueEClass = createEClass(DATA_DICTIONARY_BOOLEAN_VALUE);
+    createEAttribute(dataDictionaryBooleanValueEClass, DATA_DICTIONARY_BOOLEAN_VALUE__VALUE);
+
     vmNodeDefinitionEClass = createEClass(VM_NODE_DEFINITION);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NODETYPE);
     createEAttribute(vmNodeDefinitionEClass, VM_NODE_DEFINITION__NAME);
@@ -1475,8 +1489,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEAttribute(basictypeEClass, BASICTYPE__IS_ARRAY);
     createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
 
-    dataDictionaryBooleanValueEClass = createEClass(DATA_DICTIONARY_BOOLEAN_VALUE);
-
     dataDictionaryStringValueEClass = createEClass(DATA_DICTIONARY_STRING_VALUE);
 
     dataDictionaryNullValueEClass = createEClass(DATA_DICTIONARY_NULL_VALUE);
@@ -1513,12 +1525,12 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     // Add supertypes to classes
     dataDictionaryArrayValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
     dataDictionaryMapValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
+    dataDictionaryBooleanValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
     vmNodeOpCodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     basictypeEClass.getESuperTypes().add(this.getELEMENTTYPE());
-    dataDictionaryBooleanValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
     dataDictionaryStringValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
     dataDictionaryNullValueEClass.getESuperTypes().add(this.getDataDictionaryValue());
 
@@ -1565,6 +1577,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
 
     initEClass(dataDictionaryMapValueEClass, DataDictionaryMapValue.class, "DataDictionaryMapValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDataDictionaryMapValue_KeyValuePairs(), this.getDatadictionaryKeyValuePair(), null, "keyValuePairs", null, 0, -1, DataDictionaryMapValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataDictionaryBooleanValueEClass, DataDictionaryBooleanValue.class, "DataDictionaryBooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataDictionaryBooleanValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataDictionaryBooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vmNodeDefinitionEClass, VMNodeDefinition.class, "VMNodeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVMNodeDefinition_Nodetype(), ecorePackage.getEString(), "nodetype", null, 0, 1, VMNodeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1638,8 +1653,6 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBASICTYPE_IsArray(), ecorePackage.getEBoolean(), "isArray", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dataDictionaryBooleanValueEClass, DataDictionaryBooleanValue.class, "DataDictionaryBooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dataDictionaryStringValueEClass, DataDictionaryStringValue.class, "DataDictionaryStringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

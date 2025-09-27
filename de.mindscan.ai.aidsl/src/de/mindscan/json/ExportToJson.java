@@ -27,7 +27,7 @@ public class ExportToJson {
 	
 	// weired xtend sh*t what i don't want do deal with right now
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public String asJsonString(LinkedHashMap<String, HashMap<String, ? extends Serializable>> map) {
+	public String asJsonString(LinkedHashMap<String, HashMap<String, ?>> map) {
 		StringBuilder sb = new StringBuilder();
 
 		HashMap untypedHashMap = new LinkedHashMap(map);
@@ -35,6 +35,17 @@ public class ExportToJson {
 		
 		return sb.toString();
 	}
+	
+//	@SuppressWarnings({ "unchecked", "rawtypes" })
+//	public String asJsonString(LinkedHashMap<String, ?> map) {
+//		StringBuilder sb = new StringBuilder();
+//
+//		HashMap untypedHashMap = new LinkedHashMap(map);
+//		writeMapToJson(sb, untypedHashMap);
+//		
+//		return sb.toString();
+//	}
+	
 
 	@SuppressWarnings("unchecked")
 	private void writeMapToJson(StringBuilder sb, Map<String, Object> map) {

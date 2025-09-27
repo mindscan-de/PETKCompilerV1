@@ -753,22 +753,14 @@ ruleDataDictionaryValue returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getDataDictionaryValueAccess().getDataDictionaryBooleanValueAction_0_0(),
-						$current);
-				}
-			)
-			{
-				newCompositeNode(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryBooleanValueParserRuleCall_0_1());
-			}
-			ruleDataDictionaryBooleanValue
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)
+		{
+			newCompositeNode(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryBooleanValueParserRuleCall_0());
+		}
+		this_DataDictionaryBooleanValue_0=ruleDataDictionaryBooleanValue
+		{
+			$current = $this_DataDictionaryBooleanValue_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
 		(
 			(
@@ -807,18 +799,18 @@ ruleDataDictionaryValue returns [EObject current=null]
 		{
 			newCompositeNode(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryArrayValueParserRuleCall_3());
 		}
-		this_DataDictionaryArrayValue_6=ruleDataDictionaryArrayValue
+		this_DataDictionaryArrayValue_5=ruleDataDictionaryArrayValue
 		{
-			$current = $this_DataDictionaryArrayValue_6.current;
+			$current = $this_DataDictionaryArrayValue_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
 			newCompositeNode(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryMapValueParserRuleCall_4());
 		}
-		this_DataDictionaryMapValue_7=ruleDataDictionaryMapValue
+		this_DataDictionaryMapValue_6=ruleDataDictionaryMapValue
 		{
-			$current = $this_DataDictionaryMapValue_7.current;
+			$current = $this_DataDictionaryMapValue_6.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -956,14 +948,14 @@ ruleDataDictionaryMapValue returns [EObject current=null]
 ;
 
 // Entry rule entryRuleDataDictionaryBooleanValue
-entryRuleDataDictionaryBooleanValue returns [String current=null]:
+entryRuleDataDictionaryBooleanValue returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDataDictionaryBooleanValueRule()); }
 	iv_ruleDataDictionaryBooleanValue=ruleDataDictionaryBooleanValue
-	{ $current=$iv_ruleDataDictionaryBooleanValue.current.getText(); }
+	{ $current=$iv_ruleDataDictionaryBooleanValue.current; }
 	EOF;
 
 // Rule DataDictionaryBooleanValue
-ruleDataDictionaryBooleanValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleDataDictionaryBooleanValue returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -971,17 +963,34 @@ ruleDataDictionaryBooleanValue returns [AntlrDatatypeRuleToken current=new Antlr
 	leaveRule();
 }:
 	(
-		kw='true'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDataDictionaryBooleanValueAccess().getTrueKeyword_0());
-		}
+		(
+			(
+				lv_value_0_0='true'
+				{
+					newLeafNode(lv_value_0_0, grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataDictionaryBooleanValueRule());
+					}
+					setWithLastConsumed($current, "value", lv_value_0_0, "true");
+				}
+			)
+		)
 		    |
-		kw='false'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1());
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getDataDictionaryBooleanValueAccess().getDataDictionaryBooleanValueAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_2='false'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1_1());
+			}
+		)
 	)
 ;
 

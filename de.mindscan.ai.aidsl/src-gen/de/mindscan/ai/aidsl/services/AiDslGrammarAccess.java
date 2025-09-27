@@ -468,9 +468,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class DataDictionaryValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cDataDictionaryBooleanValueAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final RuleCall cDataDictionaryBooleanValueParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cDataDictionaryBooleanValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cDataDictionaryStringValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final RuleCall cDataDictionaryStringValueParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
@@ -482,7 +480,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//// TODO: we want also integers/numbers/floats
 		//DataDictionaryValue:
-		//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+		//        DataDictionaryBooleanValue|
 		//        {DataDictionaryStringValue} DataDictionaryStringValue|
 		//        {DataDictionaryNullValue} DataDictionaryNullValue|
 		//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
@@ -493,7 +491,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+		//DataDictionaryBooleanValue|
 		//{DataDictionaryStringValue} DataDictionaryStringValue|
 		//{DataDictionaryNullValue} DataDictionaryNullValue|
 		//// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
@@ -503,14 +501,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//DataDictionaryMapValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{DataDictionaryBooleanValue} DataDictionaryBooleanValue
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{DataDictionaryBooleanValue}
-		public Action getDataDictionaryBooleanValueAction_0_0() { return cDataDictionaryBooleanValueAction_0_0; }
-		
 		//DataDictionaryBooleanValue
-		public RuleCall getDataDictionaryBooleanValueParserRuleCall_0_1() { return cDataDictionaryBooleanValueParserRuleCall_0_1; }
+		public RuleCall getDataDictionaryBooleanValueParserRuleCall_0() { return cDataDictionaryBooleanValueParserRuleCall_0; }
 		
 		//{DataDictionaryStringValue} DataDictionaryStringValue
 		public Group getGroup_1() { return cGroup_1; }
@@ -630,22 +622,34 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class DataDictionaryBooleanValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryBooleanValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cValueTrueKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cDataDictionaryBooleanValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cFalseKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//DataDictionaryBooleanValue:
-		//    'true'|'false'
+		//    value = 'true'|{DataDictionaryBooleanValue} 'false'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'true'|'false'
+		//value = 'true'|{DataDictionaryBooleanValue} 'false'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//value = 'true'
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		
 		//'true'
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
+		
+		//{DataDictionaryBooleanValue} 'false'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{DataDictionaryBooleanValue}
+		public Action getDataDictionaryBooleanValueAction_1_0() { return cDataDictionaryBooleanValueAction_1_0; }
 		
 		//'false'
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+		public Keyword getFalseKeyword_1_1() { return cFalseKeyword_1_1; }
 	}
 	public class DataDictionaryStringValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryStringValue");
@@ -1825,7 +1829,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//// TODO: we want also integers/numbers/floats
 	//DataDictionaryValue:
-	//        {DataDictionaryBooleanValue} DataDictionaryBooleanValue|
+	//        DataDictionaryBooleanValue|
 	//        {DataDictionaryStringValue} DataDictionaryStringValue|
 	//        {DataDictionaryNullValue} DataDictionaryNullValue|
 	//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
@@ -1867,7 +1871,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DataDictionaryBooleanValue:
-	//    'true'|'false'
+	//    value = 'true'|{DataDictionaryBooleanValue} 'false'
 	//;
 	public DataDictionaryBooleanValueElements getDataDictionaryBooleanValueAccess() {
 		return pDataDictionaryBooleanValue;

@@ -456,6 +456,34 @@ public interface AiDslPackage extends EPackage
   int DATA_DICTIONARY_MAP_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
+   * @generated
+   */
+  int DATA_DICTIONARY_BOOLEAN_VALUE = 11;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_BOOLEAN_VALUE__VALUE = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Data Dictionary Boolean Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_BOOLEAN_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -463,7 +491,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 11;
+  int VM_NODE_DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -509,7 +537,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 12;
+  int VM_NODE_ELEEMNTS = 13;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -528,7 +556,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 13;
+  int VM_NODE_OP_CODE_ELEMENT = 14;
 
   /**
    * The feature id for the '<em><b>Opcode</b></em>' attribute.
@@ -556,7 +584,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 14;
+  int VM_NODE_OUT_ELEMENTS = 15;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -584,7 +612,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 15;
+  int VM_NODE_IN_ELEMENTS = 16;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -612,7 +640,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
    * @generated
    */
-  int VM_NODE_FIELD_ELEMENTS = 16;
+  int VM_NODE_FIELD_ELEMENTS = 17;
 
   /**
    * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
@@ -640,7 +668,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 17;
+  int VM_NODE_OUT_ELEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -695,7 +723,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 18;
+  int VM_NODE_IN_ELEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -732,7 +760,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_FIELD_ELEMENT = 19;
+  int VM_FIELD_ELEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -787,7 +815,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_FIELD_ELEMENT = 20;
+  int VM_OVERRIDE_FIELD_ELEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -842,7 +870,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 21;
+  int LLM_TASK_DEFINITION = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -888,7 +916,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 22;
+  int ANNOTATION_INTERFACE_REFERENCE = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -916,7 +944,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 23;
+  int LLM_VARIABLE_ASSIGNMENT = 24;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -953,7 +981,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 24;
+  int WORKFLOW_DEFINITION = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1008,7 +1036,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 25;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 26;
 
   /**
    * The feature id for the '<em><b>Llmtask</b></em>' reference.
@@ -1045,7 +1073,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 26;
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 27;
 
   /**
    * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
@@ -1082,7 +1110,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
    * @generated
    */
-  int ELEMENTTYPE = 27;
+  int ELEMENTTYPE = 28;
 
   /**
    * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
@@ -1101,7 +1129,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
    * @generated
    */
-  int BASICTYPE = 28;
+  int BASICTYPE = 29;
 
   /**
    * The feature id for the '<em><b>Is Array</b></em>' attribute.
@@ -1129,25 +1157,6 @@ public interface AiDslPackage extends EPackage
    * @ordered
    */
   int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
-   * @generated
-   */
-  int DATA_DICTIONARY_BOOLEAN_VALUE = 29;
-
-  /**
-   * The number of structural features of the '<em>Data Dictionary Boolean Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_DICTIONARY_BOOLEAN_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.
@@ -1528,6 +1537,27 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getDataDictionaryMapValue_KeyValuePairs();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue <em>Data Dictionary Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Dictionary Boolean Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
+   * @generated
+   */
+  EClass getDataDictionaryBooleanValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue#getValue()
+   * @see #getDataDictionaryBooleanValue()
+   * @generated
+   */
+  EAttribute getDataDictionaryBooleanValue_Value();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition <em>VM Node Definition</em>}'.
@@ -2117,16 +2147,6 @@ public interface AiDslPackage extends EPackage
   EAttribute getBASICTYPE_Typename();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue <em>Data Dictionary Boolean Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Dictionary Boolean Value</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
-   * @generated
-   */
-  EClass getDataDictionaryBooleanValue();
-
-  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue <em>Data Dictionary String Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2446,6 +2466,24 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference DATA_DICTIONARY_MAP_VALUE__KEY_VALUE_PAIRS = eINSTANCE.getDataDictionaryMapValue_KeyValuePairs();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
+     * @generated
+     */
+    EClass DATA_DICTIONARY_BOOLEAN_VALUE = eINSTANCE.getDataDictionaryBooleanValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DICTIONARY_BOOLEAN_VALUE__VALUE = eINSTANCE.getDataDictionaryBooleanValue_Value();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -2922,16 +2960,6 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute BASICTYPE__TYPENAME = eINSTANCE.getBASICTYPE_Typename();
-
-    /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
-     * @generated
-     */
-    EClass DATA_DICTIONARY_BOOLEAN_VALUE = eINSTANCE.getDataDictionaryBooleanValue();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.

@@ -131,6 +131,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createDataDictionaryMapValueAdapter();
       }
       @Override
+      public Adapter caseDataDictionaryBooleanValue(DataDictionaryBooleanValue object)
+      {
+        return createDataDictionaryBooleanValueAdapter();
+      }
+      @Override
       public Adapter caseVMNodeDefinition(VMNodeDefinition object)
       {
         return createVMNodeDefinitionAdapter();
@@ -219,11 +224,6 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBASICTYPE(BASICTYPE object)
       {
         return createBASICTYPEAdapter();
-      }
-      @Override
-      public Adapter caseDataDictionaryBooleanValue(DataDictionaryBooleanValue object)
-      {
-        return createDataDictionaryBooleanValueAdapter();
       }
       @Override
       public Adapter caseDataDictionaryStringValue(DataDictionaryStringValue object)
@@ -418,6 +418,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataDictionaryMapValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue <em>Data Dictionary Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
+   * @generated
+   */
+  public Adapter createDataDictionaryBooleanValueAdapter()
   {
     return null;
   }
@@ -688,21 +703,6 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBASICTYPEAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue <em>Data Dictionary Boolean Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
-   * @generated
-   */
-  public Adapter createDataDictionaryBooleanValueAdapter()
   {
     return null;
   }

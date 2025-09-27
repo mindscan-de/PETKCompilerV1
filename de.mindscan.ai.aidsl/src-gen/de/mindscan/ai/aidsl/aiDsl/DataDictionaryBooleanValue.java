@@ -9,6 +9,12 @@ package de.mindscan.ai.aidsl.aiDsl;
  * A representation of the model object '<em><b>Data Dictionary Boolean Value</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue#getValue <em>Value</em>}</li>
+ * </ul>
  *
  * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDataDictionaryBooleanValue()
  * @model
@@ -16,4 +22,26 @@ package de.mindscan.ai.aidsl.aiDsl;
  */
 public interface DataDictionaryBooleanValue extends DataDictionaryValue
 {
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getDataDictionaryBooleanValue_Value()
+   * @model
+   * @generated
+   */
+  String getValue();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue#getValue <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(String value);
+
 } // DataDictionaryBooleanValue

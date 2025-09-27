@@ -68,8 +68,8 @@ DatadictionaryKeyValuePair:
 
 // TODO: we want also integers/numbers/floats
 DataDictionaryValue:
-		{DataDictionaryBooleanValue} DataDictionaryBooleanValue|
-		{DataDictionaryStringValue} DataDictionaryStringValue|
+		DataDictionaryBooleanValue|
+		DataDictionaryStringValue|
 		{DataDictionaryNullValue} DataDictionaryNullValue|
 		// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
 		// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
@@ -88,13 +88,14 @@ DataDictionaryMapValue:
 	 '{' (keyValuePairs+=DatadictionaryKeyValuePair)* '}'
 ;
 
-
 DataDictionaryBooleanValue:
-	'true'|'false'
+	{DataDictionaryBooleanValue} value = ('true'|'false')
 ;
+
 DataDictionaryStringValue:
-	STRING
+	{DataDictionaryStringValue} value = STRING
 ;
+
 DataDictionaryNullValue:
 	'null'
 ;

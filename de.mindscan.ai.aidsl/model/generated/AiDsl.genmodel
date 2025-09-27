@@ -48,6 +48,9 @@
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryMapValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DataDictionaryMapValue/keyValuePairs"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryBooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryBooleanValue/value"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/nodetype"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/name"/>
@@ -119,7 +122,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/isArray"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryBooleanValue"/>
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryStringValue"/>
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryNullValue"/>
   </genPackages>

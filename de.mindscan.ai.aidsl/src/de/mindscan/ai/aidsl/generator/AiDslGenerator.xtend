@@ -3,22 +3,30 @@
  */
 package de.mindscan.ai.aidsl.generator
 
-import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
-import de.mindscan.ai.aidsl.aiDsl.VMFieldElement
-import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
-import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
-import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
-import de.mindscan.ai.aidsl.aiDsl.VMOverrideFieldElement
+import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
-import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
 import java.io.Serializable
 import java.util.HashMap
-import java.util.Map
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
+import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition
+import de.mindscan.ai.aidsl.aiDsl.VMNodeOpCodeElement
+import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements
+import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
+
+
+import java.util.Map
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
+import de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue
+import java.util.LinkedHashMap
 
 /**
  * Generates code from your model files on save.
@@ -57,13 +65,12 @@ class AiDslGenerator extends AbstractGenerator {
 		
 
 		// build workflow definition
-		val fullyCompiledWorkflowMap = newLinkedHashMap(
-			'__metadata' -> metadataMap,
-			'execute' -> executionMap,
-			'nodedata' -> nodedataMap,
-			'edgedata' -> edgedataMap,
-			'json_data_dictionary' -> datadictionaryMap			
-		)
+		val fullyCompiledWorkflowMap = new LinkedHashMap<String,HashMap<String,?>>()
+		fullyCompiledWorkflowMap.put('__metadata',metadataMap)
+		fullyCompiledWorkflowMap.put('execute',executionMap)
+		fullyCompiledWorkflowMap.put('nodedata', nodedataMap)
+		fullyCompiledWorkflowMap.put('edgedata', edgedataMap)
+		fullyCompiledWorkflowMap.put('json_data_dictionary', datadictionaryMap)
 		
 		// export workflow definition
 		val export = new ExportToJson()
@@ -83,33 +90,52 @@ class AiDslGenerator extends AbstractGenerator {
 		// then build the data structure and write it to json file.
 	}
 	
-	protected def HashMap<String, Serializable> getCompiledDataDictionaryMap(WorkflowDefinition workflowDefinition) {
-		val result = newLinkedHashMap()
+	protected def HashMap<String, Object> getCompiledDataDictionaryMap(WorkflowDefinition workflowDefinition) {
+		val result = new  LinkedHashMap<String,Object>()
 		
 		val datadictionary = workflowDefinition.datadictionary
-//		for(datadictionaryelement : datadictionary.dataDictionaryElements) {
-//			val map = comileDataDictionaryElement(datadictionaryelement)
-//			
-//			result.put(datadictionaryelement.name, map)				
-//		}
+		for(datadictionarykvpair : datadictionary.keyValuePairs) {
+			val map = comileDataDictionaryElement(datadictionarykvpair.value)
+			
+			result.put(datadictionarykvpair.name, map)				
+		}
 		
 		return result
 	}
 	
-//	protected def HashMap<String, String> comileDataDictionaryElement(WorkflowDataDictionaryElement datadictionaryelement) {
-//		var map=newHashMap()
-//		
+	protected def  comileDataDictionaryElement(DataDictionaryValue datadictionaryvalue) {
+		var map=newHashMap()
+		
+		switch datadictionaryvalue {
+			DataDictionaryBooleanValue: return datadictionaryvalue.compileBooleanValue()
+			DataDictionaryStringValue: return datadictionaryvalue.toString()
+			DataDictionaryNullValue: return null
+			DataDictionaryMapValue: {}
+//				
+//			DataDictionaryArrayValue: {}
+		}
+
 //		if(datadictionaryelement.extends !== null) {
 //			map = comileDataDictionaryElement(datadictionaryelement.extends)
 //		}
 //		
 //		// TODO: extract the string values, because the string includes the leading and tailing values
-//		for(keyvaluepair:datadictionaryelement.keyValuePairs) {
+//		for(keyvaluepair:datadictionarykvpair.value) {
 //			
 //			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
 //		}
-//		return map
-//	}
+		
+		
+		return map
+	}
+	
+	
+	def Boolean compileBooleanValue(DataDictionaryBooleanValue value) {
+		
+		return Boolean.parseBoolean( value.value )
+	}
+
+
 	
 	protected def String prepareStringForExport(String stringValue) {
 		if(stringValue === null) {

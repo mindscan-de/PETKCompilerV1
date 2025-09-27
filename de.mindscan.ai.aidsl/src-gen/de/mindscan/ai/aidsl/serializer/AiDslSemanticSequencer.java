@@ -77,7 +77,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_DataDictionaryArrayValue(context, (DataDictionaryArrayValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATA_DICTIONARY_BOOLEAN_VALUE:
-				sequence_DataDictionaryValue(context, (DataDictionaryBooleanValue) semanticObject); 
+				sequence_DataDictionaryBooleanValue(context, (DataDictionaryBooleanValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATA_DICTIONARY_MAP_VALUE:
 				sequence_DataDictionaryMapValue(context, (DataDictionaryMapValue) semanticObject); 
@@ -242,6 +242,21 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryBooleanValue
+	 *     DataDictionaryBooleanValue returns DataDictionaryBooleanValue
+	 *
+	 * Constraint:
+	 *     value='true'?
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryBooleanValue(ISerializationContext context, DataDictionaryBooleanValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     DataDictionaryValue returns DataDictionaryMapValue
 	 *     DataDictionaryMapValue returns DataDictionaryMapValue
 	 *
@@ -250,20 +265,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_DataDictionaryMapValue(ISerializationContext context, DataDictionaryMapValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryBooleanValue
-	 *
-	 * Constraint:
-	 *     {DataDictionaryBooleanValue}
-	 * </pre>
-	 */
-	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryBooleanValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

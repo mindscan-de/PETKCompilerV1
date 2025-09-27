@@ -76,6 +76,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.DATA_DICTIONARY_VALUE: return createDataDictionaryValue();
       case AiDslPackage.DATA_DICTIONARY_ARRAY_VALUE: return createDataDictionaryArrayValue();
       case AiDslPackage.DATA_DICTIONARY_MAP_VALUE: return createDataDictionaryMapValue();
+      case AiDslPackage.DATA_DICTIONARY_BOOLEAN_VALUE: return createDataDictionaryBooleanValue();
       case AiDslPackage.VM_NODE_DEFINITION: return createVMNodeDefinition();
       case AiDslPackage.VM_NODE_ELEEMNTS: return createVMNodeEleemnts();
       case AiDslPackage.VM_NODE_OP_CODE_ELEMENT: return createVMNodeOpCodeElement();
@@ -94,7 +95,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
       case AiDslPackage.ELEMENTTYPE: return createELEMENTTYPE();
       case AiDslPackage.BASICTYPE: return createBASICTYPE();
-      case AiDslPackage.DATA_DICTIONARY_BOOLEAN_VALUE: return createDataDictionaryBooleanValue();
       case AiDslPackage.DATA_DICTIONARY_STRING_VALUE: return createDataDictionaryStringValue();
       case AiDslPackage.DATA_DICTIONARY_NULL_VALUE: return createDataDictionaryNullValue();
       default:
@@ -232,6 +232,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     DataDictionaryMapValueImpl dataDictionaryMapValue = new DataDictionaryMapValueImpl();
     return dataDictionaryMapValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataDictionaryBooleanValue createDataDictionaryBooleanValue()
+  {
+    DataDictionaryBooleanValueImpl dataDictionaryBooleanValue = new DataDictionaryBooleanValueImpl();
+    return dataDictionaryBooleanValue;
   }
 
   /**
@@ -448,18 +460,6 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     BASICTYPEImpl basictype = new BASICTYPEImpl();
     return basictype;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DataDictionaryBooleanValue createDataDictionaryBooleanValue()
-  {
-    DataDictionaryBooleanValueImpl dataDictionaryBooleanValue = new DataDictionaryBooleanValueImpl();
-    return dataDictionaryBooleanValue;
   }
 
   /**

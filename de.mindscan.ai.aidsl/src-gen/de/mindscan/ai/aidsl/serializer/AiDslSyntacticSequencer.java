@@ -31,24 +31,11 @@ public class AiDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getDataDictionaryBooleanValueRule())
-			return getDataDictionaryBooleanValueToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getDataDictionaryNullValueRule())
+		if (ruleCall.getRule() == grammarAccess.getDataDictionaryNullValueRule())
 			return getDataDictionaryNullValueToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getDataDictionaryStringValueRule())
 			return getDataDictionaryStringValueToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * DataDictionaryBooleanValue:
-	 * 	'true'|'false'
-	 * ;
-	 */
-	protected String getDataDictionaryBooleanValueToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "true";
 	}
 	
 	/**
