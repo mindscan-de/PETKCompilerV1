@@ -128,6 +128,7 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		
 		switch valueOfDataDictionaryValue {
+// 			TODO: we need to compile Arrays next			
 //			DataDictionaryArrayValue: {}
 		}
 		
@@ -152,17 +153,6 @@ class AiDslGenerator extends AbstractGenerator {
 			return result
 		}
 
-//		if(datadictionaryelement.extends !== null) {
-//			map = comileDataDictionaryElement(datadictionaryelement.extends)
-//		}
-//		
-//		// TODO: extract the string values, because the string includes the leading and tailing values
-//		for(keyvaluepair:datadictionarykvpair.value) {
-//			
-//			// map.put(keyvaluepair.key, keyvaluepair.value.prepareStringForExport )
-//		}
-		
-		// var map=newHashMap()
 		return null
 	}
 	
