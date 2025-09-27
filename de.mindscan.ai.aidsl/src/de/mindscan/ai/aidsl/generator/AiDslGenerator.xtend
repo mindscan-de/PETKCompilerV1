@@ -91,11 +91,19 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		val datadictionary = workflowDefinition.datadictionary
 		for(datadictionarykvpair : datadictionary.keyValuePairs) {
-			// TODO: if it has the extends on, we mist compile the refernced map first, then merge...
+			if(datadictionarykvpair.extends !== null) {
+				val compiledvalue=comileDataDictionaryElement(datadictionarykvpair.extends.value) as LinkedHashMap
+				val map = comileDataDictionaryElement(datadictionarykvpair.value) as LinkedHashMap
+
+				compiledvalue.putAll(map)
+				
+				result.put(datadictionarykvpair.name, compiledvalue)
+			} else
+			{
+				val map = comileDataDictionaryElement(datadictionarykvpair.value)
+				result.put(datadictionarykvpair.name, map)				
+			}
 			
-			val map = comileDataDictionaryElement(datadictionarykvpair.value)
-			
-			result.put(datadictionarykvpair.name, map)				
 		}
 		
 		return result
@@ -123,7 +131,7 @@ class AiDslGenerator extends AbstractGenerator {
 			val map = new LinkedHashMap<String,Object>()
 			
 			for(keyvaluepair:valueOfDataDictionaryValue.keyValuePairs) {
-				// TODO: if it has the extends on, we mist compile the refernced map first, then merge...
+				// TODO: if it has the extends on, we must compile the refernced map first, then merge...
 				val thelocalvalue = keyvaluepair.value
 				
 				map.put(keyvaluepair.name, thelocalvalue.comileDataDictionaryElement())
