@@ -68,14 +68,18 @@ DatadictionaryKeyValuePair:
 
 // TODO: we want also integers/numbers/floats
 DataDictionaryValue:
-		DataDictionaryBooleanValue|
-		DataDictionaryStringValue|
-		{DataDictionaryNullValue} DataDictionaryNullValue|
-		// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
-		// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
-		DataDictionaryArrayValue|
-		// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
-		DataDictionaryMapValue
+	{DataDictionaryValue}
+		value = 
+			(
+				DataDictionaryBooleanValue|
+				DataDictionaryNullValue|
+				DataDictionaryStringValue|
+				// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+				// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
+				DataDictionaryArrayValue|
+				// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
+				DataDictionaryMapValue
+			)
 ;
 
 DataDictionaryArrayValue:
@@ -97,7 +101,7 @@ DataDictionaryStringValue:
 ;
 
 DataDictionaryNullValue:
-	'null'
+	{DataDictionaryNullValue} value = 'null'
 ;
 
 // ---------------------------------------

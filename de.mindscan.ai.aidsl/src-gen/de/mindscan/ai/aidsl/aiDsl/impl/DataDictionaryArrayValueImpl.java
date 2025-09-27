@@ -12,6 +12,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -27,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class DataDictionaryArrayValueImpl extends DataDictionaryValueImpl implements DataDictionaryArrayValue
+public class DataDictionaryArrayValueImpl extends MinimalEObjectImpl.Container implements DataDictionaryArrayValue
 {
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.

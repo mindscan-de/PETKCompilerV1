@@ -41,7 +41,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DatadictionaryKeyValuePair/extends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DatadictionaryKeyValuePair/value"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryValue"/>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//DataDictionaryValue/value"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryArrayValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryArrayValue/values"/>
     </genClasses>
@@ -50,6 +52,12 @@
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryBooleanValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryBooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryStringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryStringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryNullValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//DataDictionaryNullValue/value"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//VMNodeDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//VMNodeDefinition/nodetype"/>
@@ -122,7 +130,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/isArray"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
-    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryStringValue"/>
-    <genClasses ecoreClass="AiDsl.ecore#//DataDictionaryNullValue"/>
   </genPackages>
 </genmodel:GenModel>

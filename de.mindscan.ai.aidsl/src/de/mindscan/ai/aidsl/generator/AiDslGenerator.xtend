@@ -106,12 +106,13 @@ class AiDslGenerator extends AbstractGenerator {
 	protected def  comileDataDictionaryElement(DataDictionaryValue datadictionaryvalue) {
 		var map=newHashMap()
 		
-		switch datadictionaryvalue {
-			DataDictionaryBooleanValue: return datadictionaryvalue.compileBooleanValue()
-			DataDictionaryStringValue: return datadictionaryvalue.toString()
+		val valueOfDataDictionaryValue = datadictionaryvalue.value
+		
+		switch valueOfDataDictionaryValue {
+			DataDictionaryBooleanValue: return valueOfDataDictionaryValue.compileBooleanValue()
+			DataDictionaryStringValue: return valueOfDataDictionaryValue.compileStringValue()
 			DataDictionaryNullValue: return null
-			DataDictionaryMapValue: {}
-//				
+//			DataDictionaryMapValue: {}
 //			DataDictionaryArrayValue: {}
 		}
 
@@ -129,9 +130,13 @@ class AiDslGenerator extends AbstractGenerator {
 		return map
 	}
 	
+	def String compileStringValue(DataDictionaryStringValue value) {
+		// The StringValue has a value (String)
+		return value.value
+	}	
 	
 	def Boolean compileBooleanValue(DataDictionaryBooleanValue value) {
-		
+		// The BooleanValue has a value (String)
 		return Boolean.parseBoolean( value.value )
 	}
 

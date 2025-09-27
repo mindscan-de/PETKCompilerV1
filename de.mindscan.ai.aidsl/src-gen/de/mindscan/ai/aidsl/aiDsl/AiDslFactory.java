@@ -132,6 +132,24 @@ public interface AiDslFactory extends EFactory
   DataDictionaryBooleanValue createDataDictionaryBooleanValue();
 
   /**
+   * Returns a new object of class '<em>Data Dictionary String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary String Value</em>'.
+   * @generated
+   */
+  DataDictionaryStringValue createDataDictionaryStringValue();
+
+  /**
+   * Returns a new object of class '<em>Data Dictionary Null Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Dictionary Null Value</em>'.
+   * @generated
+   */
+  DataDictionaryNullValue createDataDictionaryNullValue();
+
+  /**
    * Returns a new object of class '<em>VM Node Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -292,24 +310,6 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   BASICTYPE createBASICTYPE();
-
-  /**
-   * Returns a new object of class '<em>Data Dictionary String Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Dictionary String Value</em>'.
-   * @generated
-   */
-  DataDictionaryStringValue createDataDictionaryStringValue();
-
-  /**
-   * Returns a new object of class '<em>Data Dictionary Null Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Dictionary Null Value</em>'.
-   * @generated
-   */
-  DataDictionaryNullValue createDataDictionaryNullValue();
 
   /**
    * Returns the package supported by this factory.

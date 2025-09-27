@@ -140,7 +140,6 @@ public class AiDslSwitch<T> extends Switch<T>
       {
         DataDictionaryArrayValue dataDictionaryArrayValue = (DataDictionaryArrayValue)theEObject;
         T result = caseDataDictionaryArrayValue(dataDictionaryArrayValue);
-        if (result == null) result = caseDataDictionaryValue(dataDictionaryArrayValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -148,7 +147,6 @@ public class AiDslSwitch<T> extends Switch<T>
       {
         DataDictionaryMapValue dataDictionaryMapValue = (DataDictionaryMapValue)theEObject;
         T result = caseDataDictionaryMapValue(dataDictionaryMapValue);
-        if (result == null) result = caseDataDictionaryValue(dataDictionaryMapValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,7 +154,20 @@ public class AiDslSwitch<T> extends Switch<T>
       {
         DataDictionaryBooleanValue dataDictionaryBooleanValue = (DataDictionaryBooleanValue)theEObject;
         T result = caseDataDictionaryBooleanValue(dataDictionaryBooleanValue);
-        if (result == null) result = caseDataDictionaryValue(dataDictionaryBooleanValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.DATA_DICTIONARY_STRING_VALUE:
+      {
+        DataDictionaryStringValue dataDictionaryStringValue = (DataDictionaryStringValue)theEObject;
+        T result = caseDataDictionaryStringValue(dataDictionaryStringValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.DATA_DICTIONARY_NULL_VALUE:
+      {
+        DataDictionaryNullValue dataDictionaryNullValue = (DataDictionaryNullValue)theEObject;
+        T result = caseDataDictionaryNullValue(dataDictionaryNullValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -288,22 +299,6 @@ public class AiDslSwitch<T> extends Switch<T>
         BASICTYPE basictype = (BASICTYPE)theEObject;
         T result = caseBASICTYPE(basictype);
         if (result == null) result = caseELEMENTTYPE(basictype);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AiDslPackage.DATA_DICTIONARY_STRING_VALUE:
-      {
-        DataDictionaryStringValue dataDictionaryStringValue = (DataDictionaryStringValue)theEObject;
-        T result = caseDataDictionaryStringValue(dataDictionaryStringValue);
-        if (result == null) result = caseDataDictionaryValue(dataDictionaryStringValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AiDslPackage.DATA_DICTIONARY_NULL_VALUE:
-      {
-        DataDictionaryNullValue dataDictionaryNullValue = (DataDictionaryNullValue)theEObject;
-        T result = caseDataDictionaryNullValue(dataDictionaryNullValue);
-        if (result == null) result = caseDataDictionaryValue(dataDictionaryNullValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -499,6 +494,38 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataDictionaryBooleanValue(DataDictionaryBooleanValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Dictionary String Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Dictionary String Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataDictionaryStringValue(DataDictionaryStringValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Dictionary Null Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Dictionary Null Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataDictionaryNullValue(DataDictionaryNullValue object)
   {
     return null;
   }
@@ -787,38 +814,6 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBASICTYPE(BASICTYPE object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Dictionary String Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Dictionary String Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataDictionaryStringValue(DataDictionaryStringValue object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Dictionary Null Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Dictionary Null Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataDictionaryNullValue(DataDictionaryNullValue object)
   {
     return null;
   }

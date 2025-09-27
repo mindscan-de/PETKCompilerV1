@@ -12,6 +12,7 @@ import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue;
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue;
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue;
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.DatadictionaryKeyValuePair;
 import de.mindscan.ai.aidsl.aiDsl.ImportDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
@@ -83,10 +84,13 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_DataDictionaryMapValue(context, (DataDictionaryMapValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATA_DICTIONARY_NULL_VALUE:
-				sequence_DataDictionaryValue(context, (DataDictionaryNullValue) semanticObject); 
+				sequence_DataDictionaryNullValue(context, (DataDictionaryNullValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATA_DICTIONARY_STRING_VALUE:
-				sequence_DataDictionaryValue(context, (DataDictionaryStringValue) semanticObject); 
+				sequence_DataDictionaryStringValue(context, (DataDictionaryStringValue) semanticObject); 
+				return; 
+			case AiDslPackage.DATA_DICTIONARY_VALUE:
+				sequence_DataDictionaryValue(context, (DataDictionaryValue) semanticObject); 
 				return; 
 			case AiDslPackage.DATADICTIONARY_KEY_VALUE_PAIR:
 				sequence_DatadictionaryKeyValuePair(context, (DatadictionaryKeyValuePair) semanticObject); 
@@ -227,7 +231,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryArrayValue
 	 *     DataDictionaryArrayValue returns DataDictionaryArrayValue
 	 *
 	 * Constraint:
@@ -242,11 +245,10 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryBooleanValue
 	 *     DataDictionaryBooleanValue returns DataDictionaryBooleanValue
 	 *
 	 * Constraint:
-	 *     value='true'?
+	 *     (value='true' | value='false')
 	 * </pre>
 	 */
 	protected void sequence_DataDictionaryBooleanValue(ISerializationContext context, DataDictionaryBooleanValue semanticObject) {
@@ -257,7 +259,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryMapValue
 	 *     DataDictionaryMapValue returns DataDictionaryMapValue
 	 *
 	 * Constraint:
@@ -272,27 +273,59 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryNullValue
+	 *     DataDictionaryNullValue returns DataDictionaryNullValue
 	 *
 	 * Constraint:
-	 *     {DataDictionaryNullValue}
+	 *     value='null'
 	 * </pre>
 	 */
-	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryNullValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_DataDictionaryNullValue(ISerializationContext context, DataDictionaryNullValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATA_DICTIONARY_NULL_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATA_DICTIONARY_NULL_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDataDictionaryNullValueAccess().getValueNullKeyword_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     DataDictionaryValue returns DataDictionaryStringValue
+	 *     DataDictionaryStringValue returns DataDictionaryStringValue
 	 *
 	 * Constraint:
-	 *     {DataDictionaryStringValue}
+	 *     value=STRING
 	 * </pre>
 	 */
-	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryStringValue semanticObject) {
+	protected void sequence_DataDictionaryStringValue(ISerializationContext context, DataDictionaryStringValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.DATA_DICTIONARY_STRING_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.DATA_DICTIONARY_STRING_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDataDictionaryStringValueAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     DataDictionaryValue returns DataDictionaryValue
+	 *
+	 * Constraint:
+	 *     (
+	 *         value=DataDictionaryBooleanValue | 
+	 *         value=DataDictionaryNullValue | 
+	 *         value=DataDictionaryStringValue | 
+	 *         value=DataDictionaryArrayValue | 
+	 *         value=DataDictionaryMapValue
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_DataDictionaryValue(ISerializationContext context, DataDictionaryValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

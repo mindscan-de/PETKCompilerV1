@@ -3,6 +3,7 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package de.mindscan.ai.aidsl.aiDsl;
  * @model
  * @generated
  */
-public interface DataDictionaryBooleanValue extends DataDictionaryValue
+public interface DataDictionaryBooleanValue extends EObject
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

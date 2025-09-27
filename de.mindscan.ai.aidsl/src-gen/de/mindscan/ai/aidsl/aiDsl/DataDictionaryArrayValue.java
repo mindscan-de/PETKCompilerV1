@@ -5,6 +5,8 @@ package de.mindscan.ai.aidsl.aiDsl;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Data Dictionary Array Value</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DataDictionaryArrayValue extends DataDictionaryValue
+public interface DataDictionaryArrayValue extends EObject
 {
   /**
    * Returns the value of the '<em><b>Values</b></em>' attribute list.

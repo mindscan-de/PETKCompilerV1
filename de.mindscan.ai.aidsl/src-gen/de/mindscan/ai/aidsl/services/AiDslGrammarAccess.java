@@ -467,69 +467,92 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class DataDictionaryValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDataDictionaryBooleanValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cDataDictionaryStringValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final RuleCall cDataDictionaryStringValueParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cDataDictionaryNullValueAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final RuleCall cDataDictionaryNullValueParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final RuleCall cDataDictionaryArrayValueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cDataDictionaryMapValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cValueAlternatives_1_0 = (Alternatives)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cValueDataDictionaryBooleanValueParserRuleCall_1_0_0 = (RuleCall)cValueAlternatives_1_0.eContents().get(0);
+		private final RuleCall cValueDataDictionaryNullValueParserRuleCall_1_0_1 = (RuleCall)cValueAlternatives_1_0.eContents().get(1);
+		private final RuleCall cValueDataDictionaryStringValueParserRuleCall_1_0_2 = (RuleCall)cValueAlternatives_1_0.eContents().get(2);
+		private final RuleCall cValueDataDictionaryArrayValueParserRuleCall_1_0_3 = (RuleCall)cValueAlternatives_1_0.eContents().get(3);
+		private final RuleCall cValueDataDictionaryMapValueParserRuleCall_1_0_4 = (RuleCall)cValueAlternatives_1_0.eContents().get(4);
 		
 		//// TODO: we want also integers/numbers/floats
 		//DataDictionaryValue:
+		//    {DataDictionaryValue}
+		//        value =
+		//            (
+		//                DataDictionaryBooleanValue|
+		//                DataDictionaryNullValue|
+		//                DataDictionaryStringValue|
+		//                // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//                // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
+		//                DataDictionaryArrayValue|
+		//                // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
+		//                DataDictionaryMapValue
+		//            )
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DataDictionaryValue}
+		//    value =
+		//        (
+		//            DataDictionaryBooleanValue|
+		//            DataDictionaryNullValue|
+		//            DataDictionaryStringValue|
+		//            // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//            // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
+		//            DataDictionaryArrayValue|
+		//            // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
+		//            DataDictionaryMapValue
+		//        )
+		public Group getGroup() { return cGroup; }
+		
+		//{DataDictionaryValue}
+		public Action getDataDictionaryValueAction_0() { return cDataDictionaryValueAction_0; }
+		
+		//value =
+		//    (
 		//        DataDictionaryBooleanValue|
-		//        {DataDictionaryStringValue} DataDictionaryStringValue|
-		//        {DataDictionaryNullValue} DataDictionaryNullValue|
+		//        DataDictionaryNullValue|
+		//        DataDictionaryStringValue|
 		//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
 		//        // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		//        DataDictionaryArrayValue|
 		//        // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		//        DataDictionaryMapValue
-		//;
-		@Override public ParserRule getRule() { return rule; }
+		//    )
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
-		//DataDictionaryBooleanValue|
-		//{DataDictionaryStringValue} DataDictionaryStringValue|
-		//{DataDictionaryNullValue} DataDictionaryNullValue|
-		//// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
-		//// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
-		//DataDictionaryArrayValue|
-		//// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
-		//DataDictionaryMapValue
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//(
+		//    DataDictionaryBooleanValue|
+		//    DataDictionaryNullValue|
+		//    DataDictionaryStringValue|
+		//    // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+		//    // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
+		//    DataDictionaryArrayValue|
+		//    // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
+		//    DataDictionaryMapValue
+		//)
+		public Alternatives getValueAlternatives_1_0() { return cValueAlternatives_1_0; }
 		
 		//DataDictionaryBooleanValue
-		public RuleCall getDataDictionaryBooleanValueParserRuleCall_0() { return cDataDictionaryBooleanValueParserRuleCall_0; }
-		
-		//{DataDictionaryStringValue} DataDictionaryStringValue
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{DataDictionaryStringValue}
-		public Action getDataDictionaryStringValueAction_1_0() { return cDataDictionaryStringValueAction_1_0; }
-		
-		//DataDictionaryStringValue
-		public RuleCall getDataDictionaryStringValueParserRuleCall_1_1() { return cDataDictionaryStringValueParserRuleCall_1_1; }
-		
-		//{DataDictionaryNullValue} DataDictionaryNullValue
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//{DataDictionaryNullValue}
-		public Action getDataDictionaryNullValueAction_2_0() { return cDataDictionaryNullValueAction_2_0; }
+		public RuleCall getValueDataDictionaryBooleanValueParserRuleCall_1_0_0() { return cValueDataDictionaryBooleanValueParserRuleCall_1_0_0; }
 		
 		//DataDictionaryNullValue
-		public RuleCall getDataDictionaryNullValueParserRuleCall_2_1() { return cDataDictionaryNullValueParserRuleCall_2_1; }
+		public RuleCall getValueDataDictionaryNullValueParserRuleCall_1_0_1() { return cValueDataDictionaryNullValueParserRuleCall_1_0_1; }
+		
+		//DataDictionaryStringValue
+		public RuleCall getValueDataDictionaryStringValueParserRuleCall_1_0_2() { return cValueDataDictionaryStringValueParserRuleCall_1_0_2; }
 		
 		//// eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
 		//// klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
 		//DataDictionaryArrayValue
-		public RuleCall getDataDictionaryArrayValueParserRuleCall_3() { return cDataDictionaryArrayValueParserRuleCall_3; }
+		public RuleCall getValueDataDictionaryArrayValueParserRuleCall_1_0_3() { return cValueDataDictionaryArrayValueParserRuleCall_1_0_3; }
 		
 		//// bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
 		//DataDictionaryMapValue
-		public RuleCall getDataDictionaryMapValueParserRuleCall_4() { return cDataDictionaryMapValueParserRuleCall_4; }
+		public RuleCall getValueDataDictionaryMapValueParserRuleCall_1_0_4() { return cValueDataDictionaryMapValueParserRuleCall_1_0_4; }
 	}
 	public class DataDictionaryArrayValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryArrayValue");
@@ -621,59 +644,83 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class DataDictionaryBooleanValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryBooleanValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cValueTrueKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cDataDictionaryBooleanValueAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cFalseKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryBooleanValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cValueAlternatives_1_0 = (Alternatives)cValueAssignment_1.eContents().get(0);
+		private final Keyword cValueTrueKeyword_1_0_0 = (Keyword)cValueAlternatives_1_0.eContents().get(0);
+		private final Keyword cValueFalseKeyword_1_0_1 = (Keyword)cValueAlternatives_1_0.eContents().get(1);
 		
 		//DataDictionaryBooleanValue:
-		//    value = 'true'|{DataDictionaryBooleanValue} 'false'
+		//    {DataDictionaryBooleanValue} value = ('true'|'false')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value = 'true'|{DataDictionaryBooleanValue} 'false'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//value = 'true'
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
-		
-		//'true'
-		public Keyword getValueTrueKeyword_0_0() { return cValueTrueKeyword_0_0; }
-		
-		//{DataDictionaryBooleanValue} 'false'
-		public Group getGroup_1() { return cGroup_1; }
+		//{DataDictionaryBooleanValue} value = ('true'|'false')
+		public Group getGroup() { return cGroup; }
 		
 		//{DataDictionaryBooleanValue}
-		public Action getDataDictionaryBooleanValueAction_1_0() { return cDataDictionaryBooleanValueAction_1_0; }
+		public Action getDataDictionaryBooleanValueAction_0() { return cDataDictionaryBooleanValueAction_0; }
+		
+		//value = ('true'|'false')
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		
+		//('true'|'false')
+		public Alternatives getValueAlternatives_1_0() { return cValueAlternatives_1_0; }
+		
+		//'true'
+		public Keyword getValueTrueKeyword_1_0_0() { return cValueTrueKeyword_1_0_0; }
 		
 		//'false'
-		public Keyword getFalseKeyword_1_1() { return cFalseKeyword_1_1; }
+		public Keyword getValueFalseKeyword_1_0_1() { return cValueFalseKeyword_1_0_1; }
 	}
 	public class DataDictionaryStringValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryStringValue");
-		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryStringValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//DataDictionaryStringValue:
-		//    STRING
+		//    {DataDictionaryStringValue} value = STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{DataDictionaryStringValue} value = STRING
+		public Group getGroup() { return cGroup; }
+		
+		//{DataDictionaryStringValue}
+		public Action getDataDictionaryStringValueAction_0() { return cDataDictionaryStringValueAction_0; }
+		
+		//value = STRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 	}
 	public class DataDictionaryNullValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.DataDictionaryNullValue");
-		private final Keyword cNullKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDataDictionaryNullValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cValueNullKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
 		
 		//DataDictionaryNullValue:
-		//    'null'
+		//    {DataDictionaryNullValue} value = 'null'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{DataDictionaryNullValue} value = 'null'
+		public Group getGroup() { return cGroup; }
+		
+		//{DataDictionaryNullValue}
+		public Action getDataDictionaryNullValueAction_0() { return cDataDictionaryNullValueAction_0; }
+		
+		//value = 'null'
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		
 		//'null'
-		public Keyword getNullKeyword() { return cNullKeyword; }
+		public Keyword getValueNullKeyword_1_0() { return cValueNullKeyword_1_0; }
 	}
 	public class VMNodeDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
@@ -1829,14 +1876,18 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//// TODO: we want also integers/numbers/floats
 	//DataDictionaryValue:
-	//        DataDictionaryBooleanValue|
-	//        {DataDictionaryStringValue} DataDictionaryStringValue|
-	//        {DataDictionaryNullValue} DataDictionaryNullValue|
-	//        // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
-	//        // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
-	//        DataDictionaryArrayValue|
-	//        // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
-	//        DataDictionaryMapValue
+	//    {DataDictionaryValue}
+	//        value =
+	//            (
+	//                DataDictionaryBooleanValue|
+	//                DataDictionaryNullValue|
+	//                DataDictionaryStringValue|
+	//                // eigentlich sollten nur diese extendbar sein, aber das kann man auch über den parser ast
+	//                // klären, statt über die grammar. array extands heisst, dass die liste verlängert wird / --> append operation
+	//                DataDictionaryArrayValue|
+	//                // bei einer map bedeutet extends, dass die werte, die im extends stehen die globalen werte ggf überschreiben. / --> merge operation
+	//                DataDictionaryMapValue
+	//            )
 	//;
 	public DataDictionaryValueElements getDataDictionaryValueAccess() {
 		return pDataDictionaryValue;
@@ -1871,7 +1922,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DataDictionaryBooleanValue:
-	//    value = 'true'|{DataDictionaryBooleanValue} 'false'
+	//    {DataDictionaryBooleanValue} value = ('true'|'false')
 	//;
 	public DataDictionaryBooleanValueElements getDataDictionaryBooleanValueAccess() {
 		return pDataDictionaryBooleanValue;
@@ -1882,7 +1933,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DataDictionaryStringValue:
-	//    STRING
+	//    {DataDictionaryStringValue} value = STRING
 	//;
 	public DataDictionaryStringValueElements getDataDictionaryStringValueAccess() {
 		return pDataDictionaryStringValue;
@@ -1893,7 +1944,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//DataDictionaryNullValue:
-	//    'null'
+	//    {DataDictionaryNullValue} value = 'null'
 	//;
 	public DataDictionaryNullValueElements getDataDictionaryNullValueAccess() {
 		return pDataDictionaryNullValue;

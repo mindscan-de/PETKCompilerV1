@@ -32,8 +32,8 @@ public class AiDslParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AiDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getModelAccess().getDefinitionsAlternatives_2_0(), "rule__Model__DefinitionsAlternatives_2_0");
-			builder.put(grammarAccess.getDataDictionaryValueAccess().getAlternatives(), "rule__DataDictionaryValue__Alternatives");
-			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getAlternatives(), "rule__DataDictionaryBooleanValue__Alternatives");
+			builder.put(grammarAccess.getDataDictionaryValueAccess().getValueAlternatives_1_0(), "rule__DataDictionaryValue__ValueAlternatives_1_0");
+			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAlternatives_1_0(), "rule__DataDictionaryBooleanValue__ValueAlternatives_1_0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAlternatives_1_0(), "rule__VMNodeDefinition__NodetypeAlternatives_1_0");
 			builder.put(grammarAccess.getVMNodeEleemntsAccess().getAlternatives(), "rule__VMNodeEleemnts__Alternatives");
 			builder.put(grammarAccess.getVMNodeFieldElementsAccess().getFieldELementsAlternatives_3_0(), "rule__VMNodeFieldElements__FieldELementsAlternatives_3_0");
@@ -52,13 +52,14 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWorkflowDataDictionaryDefinitionAccess().getGroup(), "rule__WorkflowDataDictionaryDefinition__Group__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup(), "rule__DatadictionaryKeyValuePair__Group__0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getGroup_1(), "rule__DatadictionaryKeyValuePair__Group_1__0");
-			builder.put(grammarAccess.getDataDictionaryValueAccess().getGroup_1(), "rule__DataDictionaryValue__Group_1__0");
-			builder.put(grammarAccess.getDataDictionaryValueAccess().getGroup_2(), "rule__DataDictionaryValue__Group_2__0");
+			builder.put(grammarAccess.getDataDictionaryValueAccess().getGroup(), "rule__DataDictionaryValue__Group__0");
 			builder.put(grammarAccess.getDataDictionaryArrayValueAccess().getGroup(), "rule__DataDictionaryArrayValue__Group__0");
 			builder.put(grammarAccess.getDataDictionaryArrayValueAccess().getGroup_2(), "rule__DataDictionaryArrayValue__Group_2__0");
 			builder.put(grammarAccess.getDataDictionaryArrayValueAccess().getGroup_2_1(), "rule__DataDictionaryArrayValue__Group_2_1__0");
 			builder.put(grammarAccess.getDataDictionaryMapValueAccess().getGroup(), "rule__DataDictionaryMapValue__Group__0");
-			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup_1(), "rule__DataDictionaryBooleanValue__Group_1__0");
+			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup(), "rule__DataDictionaryBooleanValue__Group__0");
+			builder.put(grammarAccess.getDataDictionaryStringValueAccess().getGroup(), "rule__DataDictionaryStringValue__Group__0");
+			builder.put(grammarAccess.getDataDictionaryNullValueAccess().getGroup(), "rule__DataDictionaryNullValue__Group__0");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getGroup(), "rule__VMNodeDefinition__Group__0");
 			builder.put(grammarAccess.getVMNodeOpCodeElementAccess().getGroup(), "rule__VMNodeOpCodeElement__Group__0");
 			builder.put(grammarAccess.getVMNodeOutElementsAccess().getGroup(), "rule__VMNodeOutElements__Group__0");
@@ -104,10 +105,13 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getNameAssignment_0(), "rule__DatadictionaryKeyValuePair__NameAssignment_0");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getExtendsAssignment_1_1(), "rule__DatadictionaryKeyValuePair__ExtendsAssignment_1_1");
 			builder.put(grammarAccess.getDatadictionaryKeyValuePairAccess().getValueAssignment_3(), "rule__DatadictionaryKeyValuePair__ValueAssignment_3");
+			builder.put(grammarAccess.getDataDictionaryValueAccess().getValueAssignment_1(), "rule__DataDictionaryValue__ValueAssignment_1");
 			builder.put(grammarAccess.getDataDictionaryArrayValueAccess().getValuesAssignment_2_0(), "rule__DataDictionaryArrayValue__ValuesAssignment_2_0");
 			builder.put(grammarAccess.getDataDictionaryArrayValueAccess().getValuesAssignment_2_1_1(), "rule__DataDictionaryArrayValue__ValuesAssignment_2_1_1");
 			builder.put(grammarAccess.getDataDictionaryMapValueAccess().getKeyValuePairsAssignment_2(), "rule__DataDictionaryMapValue__KeyValuePairsAssignment_2");
-			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_0(), "rule__DataDictionaryBooleanValue__ValueAssignment_0");
+			builder.put(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_1(), "rule__DataDictionaryBooleanValue__ValueAssignment_1");
+			builder.put(grammarAccess.getDataDictionaryStringValueAccess().getValueAssignment_1(), "rule__DataDictionaryStringValue__ValueAssignment_1");
+			builder.put(grammarAccess.getDataDictionaryNullValueAccess().getValueAssignment_1(), "rule__DataDictionaryNullValue__ValueAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNodetypeAssignment_1(), "rule__VMNodeDefinition__NodetypeAssignment_1");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getNameAssignment_2(), "rule__VMNodeDefinition__NameAssignment_2");
 			builder.put(grammarAccess.getVMNodeDefinitionAccess().getElementsAssignment_4(), "rule__VMNodeDefinition__ElementsAssignment_4");

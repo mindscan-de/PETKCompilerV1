@@ -265,9 +265,9 @@ ruleDataDictionaryValue
 	}
 	:
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getAlternatives()); }
-		(rule__DataDictionaryValue__Alternatives)
-		{ after(grammarAccess.getDataDictionaryValueAccess().getAlternatives()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getGroup()); }
+		(rule__DataDictionaryValue__Group__0)
+		{ after(grammarAccess.getDataDictionaryValueAccess().getGroup()); }
 	)
 ;
 finally {
@@ -340,9 +340,9 @@ ruleDataDictionaryBooleanValue
 	}
 	:
 	(
-		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getAlternatives()); }
-		(rule__DataDictionaryBooleanValue__Alternatives)
-		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getAlternatives()); }
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup()); }
+		(rule__DataDictionaryBooleanValue__Group__0)
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup()); }
 	)
 ;
 finally {
@@ -365,9 +365,9 @@ ruleDataDictionaryStringValue
 	}
 	:
 	(
-		{ before(grammarAccess.getDataDictionaryStringValueAccess().getSTRINGTerminalRuleCall()); }
-		RULE_STRING
-		{ after(grammarAccess.getDataDictionaryStringValueAccess().getSTRINGTerminalRuleCall()); }
+		{ before(grammarAccess.getDataDictionaryStringValueAccess().getGroup()); }
+		(rule__DataDictionaryStringValue__Group__0)
+		{ after(grammarAccess.getDataDictionaryStringValueAccess().getGroup()); }
 	)
 ;
 finally {
@@ -390,9 +390,9 @@ ruleDataDictionaryNullValue
 	}
 	:
 	(
-		{ before(grammarAccess.getDataDictionaryNullValueAccess().getNullKeyword()); }
-		'null'
-		{ after(grammarAccess.getDataDictionaryNullValueAccess().getNullKeyword()); }
+		{ before(grammarAccess.getDataDictionaryNullValueAccess().getGroup()); }
+		(rule__DataDictionaryNullValue__Group__0)
+		{ after(grammarAccess.getDataDictionaryNullValueAccess().getGroup()); }
 	)
 ;
 finally {
@@ -946,60 +946,60 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryValue__Alternatives
+rule__DataDictionaryValue__ValueAlternatives_1_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryBooleanValueParserRuleCall_0()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryBooleanValueParserRuleCall_1_0_0()); }
 		ruleDataDictionaryBooleanValue
-		{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryBooleanValueParserRuleCall_0()); }
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryBooleanValueParserRuleCall_1_0_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getGroup_1()); }
-		(rule__DataDictionaryValue__Group_1__0)
-		{ after(grammarAccess.getDataDictionaryValueAccess().getGroup_1()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryNullValueParserRuleCall_1_0_1()); }
+		ruleDataDictionaryNullValue
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryNullValueParserRuleCall_1_0_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getGroup_2()); }
-		(rule__DataDictionaryValue__Group_2__0)
-		{ after(grammarAccess.getDataDictionaryValueAccess().getGroup_2()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryStringValueParserRuleCall_1_0_2()); }
+		ruleDataDictionaryStringValue
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryStringValueParserRuleCall_1_0_2()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryArrayValueParserRuleCall_3()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryArrayValueParserRuleCall_1_0_3()); }
 		ruleDataDictionaryArrayValue
-		{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryArrayValueParserRuleCall_3()); }
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryArrayValueParserRuleCall_1_0_3()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryMapValueParserRuleCall_4()); }
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryMapValueParserRuleCall_1_0_4()); }
 		ruleDataDictionaryMapValue
-		{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryMapValueParserRuleCall_4()); }
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueDataDictionaryMapValueParserRuleCall_1_0_4()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryBooleanValue__Alternatives
+rule__DataDictionaryBooleanValue__ValueAlternatives_1_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_0()); }
-		(rule__DataDictionaryBooleanValue__ValueAssignment_0)
-		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_0()); }
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_1_0_0()); }
+		'true'
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_1_0_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup_1()); }
-		(rule__DataDictionaryBooleanValue__Group_1__0)
-		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getGroup_1()); }
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueFalseKeyword_1_0_1()); }
+		'false'
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueFalseKeyword_1_0_1()); }
 	)
 ;
 finally {
@@ -2383,107 +2383,53 @@ finally {
 }
 
 
-rule__DataDictionaryValue__Group_1__0
+rule__DataDictionaryValue__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__DataDictionaryValue__Group_1__0__Impl
-	rule__DataDictionaryValue__Group_1__1
+	rule__DataDictionaryValue__Group__0__Impl
+	rule__DataDictionaryValue__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryValue__Group_1__0__Impl
+rule__DataDictionaryValue__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryStringValueAction_1_0()); }
+	{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryValueAction_0()); }
 	()
-	{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryStringValueAction_1_0()); }
+	{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryValueAction_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryValue__Group_1__1
+rule__DataDictionaryValue__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__DataDictionaryValue__Group_1__1__Impl
+	rule__DataDictionaryValue__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryValue__Group_1__1__Impl
+rule__DataDictionaryValue__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryStringValueParserRuleCall_1_1()); }
-	ruleDataDictionaryStringValue
-	{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryStringValueParserRuleCall_1_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__DataDictionaryValue__Group_2__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__DataDictionaryValue__Group_2__0__Impl
-	rule__DataDictionaryValue__Group_2__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__DataDictionaryValue__Group_2__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryNullValueAction_2_0()); }
-	()
-	{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryNullValueAction_2_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__DataDictionaryValue__Group_2__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__DataDictionaryValue__Group_2__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__DataDictionaryValue__Group_2__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryNullValueParserRuleCall_2_1()); }
-	ruleDataDictionaryNullValue
-	{ after(grammarAccess.getDataDictionaryValueAccess().getDataDictionaryNullValueParserRuleCall_2_1()); }
+	{ before(grammarAccess.getDataDictionaryValueAccess().getValueAssignment_1()); }
+	(rule__DataDictionaryValue__ValueAssignment_1)
+	{ after(grammarAccess.getDataDictionaryValueAccess().getValueAssignment_1()); }
 )
 ;
 finally {
@@ -2815,53 +2761,161 @@ finally {
 }
 
 
-rule__DataDictionaryBooleanValue__Group_1__0
+rule__DataDictionaryBooleanValue__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__DataDictionaryBooleanValue__Group_1__0__Impl
-	rule__DataDictionaryBooleanValue__Group_1__1
+	rule__DataDictionaryBooleanValue__Group__0__Impl
+	rule__DataDictionaryBooleanValue__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryBooleanValue__Group_1__0__Impl
+rule__DataDictionaryBooleanValue__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getDataDictionaryBooleanValueAction_1_0()); }
+	{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getDataDictionaryBooleanValueAction_0()); }
 	()
-	{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getDataDictionaryBooleanValueAction_1_0()); }
+	{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getDataDictionaryBooleanValueAction_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryBooleanValue__Group_1__1
+rule__DataDictionaryBooleanValue__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__DataDictionaryBooleanValue__Group_1__1__Impl
+	rule__DataDictionaryBooleanValue__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryBooleanValue__Group_1__1__Impl
+rule__DataDictionaryBooleanValue__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1_1()); }
-	'false'
-	{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getFalseKeyword_1_1()); }
+	{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_1()); }
+	(rule__DataDictionaryBooleanValue__ValueAssignment_1)
+	{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__DataDictionaryStringValue__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__DataDictionaryStringValue__Group__0__Impl
+	rule__DataDictionaryStringValue__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryStringValue__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getDataDictionaryStringValueAccess().getDataDictionaryStringValueAction_0()); }
+	()
+	{ after(grammarAccess.getDataDictionaryStringValueAccess().getDataDictionaryStringValueAction_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryStringValue__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__DataDictionaryStringValue__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryStringValue__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getDataDictionaryStringValueAccess().getValueAssignment_1()); }
+	(rule__DataDictionaryStringValue__ValueAssignment_1)
+	{ after(grammarAccess.getDataDictionaryStringValueAccess().getValueAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__DataDictionaryNullValue__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__DataDictionaryNullValue__Group__0__Impl
+	rule__DataDictionaryNullValue__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryNullValue__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getDataDictionaryNullValueAccess().getDataDictionaryNullValueAction_0()); }
+	()
+	{ after(grammarAccess.getDataDictionaryNullValueAccess().getDataDictionaryNullValueAction_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryNullValue__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__DataDictionaryNullValue__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryNullValue__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getDataDictionaryNullValueAccess().getValueAssignment_1()); }
+	(rule__DataDictionaryNullValue__ValueAssignment_1)
+	{ after(grammarAccess.getDataDictionaryNullValueAccess().getValueAssignment_1()); }
 )
 ;
 finally {
@@ -5657,6 +5711,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__DataDictionaryValue__ValueAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDataDictionaryValueAccess().getValueAlternatives_1_0()); }
+		(rule__DataDictionaryValue__ValueAlternatives_1_0)
+		{ after(grammarAccess.getDataDictionaryValueAccess().getValueAlternatives_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__DataDictionaryArrayValue__ValuesAssignment_2_0
 	@init {
 		int stackSize = keepStackSize();
@@ -5702,19 +5771,49 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DataDictionaryBooleanValue__ValueAssignment_0
+rule__DataDictionaryBooleanValue__ValueAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_0_0()); }
+		{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAlternatives_1_0()); }
+		(rule__DataDictionaryBooleanValue__ValueAlternatives_1_0)
+		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueAlternatives_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryStringValue__ValueAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDataDictionaryStringValueAccess().getValueSTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getDataDictionaryStringValueAccess().getValueSTRINGTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DataDictionaryNullValue__ValueAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDataDictionaryNullValueAccess().getValueNullKeyword_1_0()); }
 		(
-			{ before(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_0_0()); }
-			'true'
-			{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_0_0()); }
+			{ before(grammarAccess.getDataDictionaryNullValueAccess().getValueNullKeyword_1_0()); }
+			'null'
+			{ after(grammarAccess.getDataDictionaryNullValueAccess().getValueNullKeyword_1_0()); }
 		)
-		{ after(grammarAccess.getDataDictionaryBooleanValueAccess().getValueTrueKeyword_0_0()); }
+		{ after(grammarAccess.getDataDictionaryNullValueAccess().getValueNullKeyword_1_0()); }
 	)
 ;
 finally {

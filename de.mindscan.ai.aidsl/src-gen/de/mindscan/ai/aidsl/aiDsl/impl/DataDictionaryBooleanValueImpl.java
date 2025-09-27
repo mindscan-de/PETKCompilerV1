@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class DataDictionaryBooleanValueImpl extends DataDictionaryValueImpl implements DataDictionaryBooleanValue
+public class DataDictionaryBooleanValueImpl extends MinimalEObjectImpl.Container implements DataDictionaryBooleanValue
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

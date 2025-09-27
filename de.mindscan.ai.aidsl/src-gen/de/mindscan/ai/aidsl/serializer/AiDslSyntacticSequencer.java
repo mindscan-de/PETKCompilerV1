@@ -31,34 +31,9 @@ public class AiDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getDataDictionaryNullValueRule())
-			return getDataDictionaryNullValueToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getDataDictionaryStringValueRule())
-			return getDataDictionaryStringValueToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * DataDictionaryNullValue:
-	 * 	'null'
-	 * ;
-	 */
-	protected String getDataDictionaryNullValueToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "null";
-	}
-	
-	/**
-	 * DataDictionaryStringValue:
-	 * 	STRING
-	 * ;
-	 */
-	protected String getDataDictionaryStringValueToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

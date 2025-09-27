@@ -391,13 +391,22 @@ public interface AiDslPackage extends EPackage
   int DATA_DICTIONARY_VALUE = 8;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_VALUE__VALUE = 0;
+
+  /**
    * The number of structural features of the '<em>Data Dictionary Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_VALUE_FEATURE_COUNT = 0;
+  int DATA_DICTIONARY_VALUE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryArrayValueImpl <em>Data Dictionary Array Value</em>}' class.
@@ -416,7 +425,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_ARRAY_VALUE__VALUES = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
+  int DATA_DICTIONARY_ARRAY_VALUE__VALUES = 0;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Array Value</em>' class.
@@ -425,7 +434,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_ARRAY_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 1;
+  int DATA_DICTIONARY_ARRAY_VALUE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryMapValueImpl <em>Data Dictionary Map Value</em>}' class.
@@ -444,7 +453,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_MAP_VALUE__KEY_VALUE_PAIRS = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
+  int DATA_DICTIONARY_MAP_VALUE__KEY_VALUE_PAIRS = 0;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Map Value</em>' class.
@@ -453,7 +462,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_MAP_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 1;
+  int DATA_DICTIONARY_MAP_VALUE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryBooleanValueImpl <em>Data Dictionary Boolean Value</em>}' class.
@@ -472,7 +481,7 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_BOOLEAN_VALUE__VALUE = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
+  int DATA_DICTIONARY_BOOLEAN_VALUE__VALUE = 0;
 
   /**
    * The number of structural features of the '<em>Data Dictionary Boolean Value</em>' class.
@@ -481,7 +490,63 @@ public interface AiDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_DICTIONARY_BOOLEAN_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 1;
+  int DATA_DICTIONARY_BOOLEAN_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
+   * @generated
+   */
+  int DATA_DICTIONARY_STRING_VALUE = 12;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_STRING_VALUE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Data Dictionary String Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_STRING_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl <em>Data Dictionary Null Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
+   * @generated
+   */
+  int DATA_DICTIONARY_NULL_VALUE = 13;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_NULL_VALUE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Data Dictionary Null Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DICTIONARY_NULL_VALUE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -491,7 +556,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 12;
+  int VM_NODE_DEFINITION = 14;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -537,7 +602,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 13;
+  int VM_NODE_ELEEMNTS = 15;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -556,7 +621,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 14;
+  int VM_NODE_OP_CODE_ELEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Opcode</b></em>' attribute.
@@ -584,7 +649,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 15;
+  int VM_NODE_OUT_ELEMENTS = 17;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -612,7 +677,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 16;
+  int VM_NODE_IN_ELEMENTS = 18;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -640,7 +705,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
    * @generated
    */
-  int VM_NODE_FIELD_ELEMENTS = 17;
+  int VM_NODE_FIELD_ELEMENTS = 19;
 
   /**
    * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
@@ -668,7 +733,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 18;
+  int VM_NODE_OUT_ELEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -723,7 +788,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 19;
+  int VM_NODE_IN_ELEMENT = 21;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -760,7 +825,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_FIELD_ELEMENT = 20;
+  int VM_FIELD_ELEMENT = 22;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -815,7 +880,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_FIELD_ELEMENT = 21;
+  int VM_OVERRIDE_FIELD_ELEMENT = 23;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -870,7 +935,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 22;
+  int LLM_TASK_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -916,7 +981,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 23;
+  int ANNOTATION_INTERFACE_REFERENCE = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -944,7 +1009,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 24;
+  int LLM_VARIABLE_ASSIGNMENT = 26;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -981,7 +1046,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 25;
+  int WORKFLOW_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1036,7 +1101,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 26;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Llmtask</b></em>' reference.
@@ -1073,7 +1138,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 27;
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 29;
 
   /**
    * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
@@ -1110,7 +1175,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
    * @generated
    */
-  int ELEMENTTYPE = 28;
+  int ELEMENTTYPE = 30;
 
   /**
    * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
@@ -1129,7 +1194,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
    * @generated
    */
-  int BASICTYPE = 29;
+  int BASICTYPE = 31;
 
   /**
    * The feature id for the '<em><b>Is Array</b></em>' attribute.
@@ -1157,44 +1222,6 @@ public interface AiDslPackage extends EPackage
    * @ordered
    */
   int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
-   * @generated
-   */
-  int DATA_DICTIONARY_STRING_VALUE = 30;
-
-  /**
-   * The number of structural features of the '<em>Data Dictionary String Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_DICTIONARY_STRING_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl <em>Data Dictionary Null Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl
-   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
-   * @generated
-   */
-  int DATA_DICTIONARY_NULL_VALUE = 31;
-
-  /**
-   * The number of structural features of the '<em>Data Dictionary Null Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_DICTIONARY_NULL_VALUE_FEATURE_COUNT = DATA_DICTIONARY_VALUE_FEATURE_COUNT + 0;
 
 
   /**
@@ -1497,6 +1524,17 @@ public interface AiDslPackage extends EPackage
   EClass getDataDictionaryValue();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue#getValue()
+   * @see #getDataDictionaryValue()
+   * @generated
+   */
+  EReference getDataDictionaryValue_Value();
+
+  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue <em>Data Dictionary Array Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1558,6 +1596,48 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EAttribute getDataDictionaryBooleanValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue <em>Data Dictionary String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Dictionary String Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
+   * @generated
+   */
+  EClass getDataDictionaryStringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue#getValue()
+   * @see #getDataDictionaryStringValue()
+   * @generated
+   */
+  EAttribute getDataDictionaryStringValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue <em>Data Dictionary Null Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Dictionary Null Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
+   * @generated
+   */
+  EClass getDataDictionaryNullValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue#getValue()
+   * @see #getDataDictionaryNullValue()
+   * @generated
+   */
+  EAttribute getDataDictionaryNullValue_Value();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition <em>VM Node Definition</em>}'.
@@ -2147,26 +2227,6 @@ public interface AiDslPackage extends EPackage
   EAttribute getBASICTYPE_Typename();
 
   /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue <em>Data Dictionary String Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Dictionary String Value</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryStringValue
-   * @generated
-   */
-  EClass getDataDictionaryStringValue();
-
-  /**
-   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue <em>Data Dictionary Null Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Dictionary Null Value</em>'.
-   * @see de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
-   * @generated
-   */
-  EClass getDataDictionaryNullValue();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2432,6 +2492,14 @@ public interface AiDslPackage extends EPackage
     EClass DATA_DICTIONARY_VALUE = eINSTANCE.getDataDictionaryValue();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_DICTIONARY_VALUE__VALUE = eINSTANCE.getDataDictionaryValue_Value();
+
+    /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryArrayValueImpl <em>Data Dictionary Array Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2484,6 +2552,42 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute DATA_DICTIONARY_BOOLEAN_VALUE__VALUE = eINSTANCE.getDataDictionaryBooleanValue_Value();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
+     * @generated
+     */
+    EClass DATA_DICTIONARY_STRING_VALUE = eINSTANCE.getDataDictionaryStringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DICTIONARY_STRING_VALUE__VALUE = eINSTANCE.getDataDictionaryStringValue_Value();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl <em>Data Dictionary Null Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
+     * @generated
+     */
+    EClass DATA_DICTIONARY_NULL_VALUE = eINSTANCE.getDataDictionaryNullValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DICTIONARY_NULL_VALUE__VALUE = eINSTANCE.getDataDictionaryNullValue_Value();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.VMNodeDefinitionImpl <em>VM Node Definition</em>}' class.
@@ -2960,26 +3064,6 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute BASICTYPE__TYPENAME = eINSTANCE.getBASICTYPE_Typename();
-
-    /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl <em>Data Dictionary String Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryStringValueImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
-     * @generated
-     */
-    EClass DATA_DICTIONARY_STRING_VALUE = eINSTANCE.getDataDictionaryStringValue();
-
-    /**
-     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl <em>Data Dictionary Null Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.DataDictionaryNullValueImpl
-     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
-     * @generated
-     */
-    EClass DATA_DICTIONARY_NULL_VALUE = eINSTANCE.getDataDictionaryNullValue();
 
   }
 
