@@ -354,6 +354,7 @@ class AiDslGenerator extends AbstractGenerator {
 			val uilabel = inputelement.uielement.label
 			val uitype = inputelement.uielement.uitype
 			
+			// TODO compile the options if available
 			val inputinfo = newLinkedHashMap(
 				'__uitype'->uitype, 
 				'__datatype'->inputfielddatatype.typename,
