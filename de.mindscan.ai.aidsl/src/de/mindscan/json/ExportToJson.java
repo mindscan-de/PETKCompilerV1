@@ -154,6 +154,7 @@ public class ExportToJson {
 	private void writeStringValueUTF8(StringBuilder builder, String valueToEscape) {
 		builder.append('"');
 		
+		// TODO: probably we need to fix this...
 		byte[] bytes = valueToEscape.getBytes(StandardCharsets.UTF_8);
 				
 		for (int i = 0; i < bytes.length; i++) {
