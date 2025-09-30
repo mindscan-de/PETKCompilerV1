@@ -1,6 +1,5 @@
 package de.mindscan.json;
 
-import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -31,7 +30,7 @@ public class ExportToJson {
 		StringBuilder sb = new StringBuilder();
 
 		HashMap untypedHashMap = new LinkedHashMap(map);
-		writeMapToJson(sb, untypedHashMap);
+		writeMapToJson(sb, untypedHashMap,0);
 		
 		return sb.toString();
 	}
@@ -48,8 +47,11 @@ public class ExportToJson {
 	
 
 	@SuppressWarnings("unchecked")
-	private void writeMapToJson(StringBuilder sb, Map<String, Object> map) {
+	private void writeMapToJson(StringBuilder sb, Map<String, Object> map, int indent) {
 		sb.append(BEGIN_OBJECT);
+		int currentIndent = indent+1;
+		// TODO: DO the indent...
+		appendIndent(sb,currentIndent);
 
 		if (map != null && map.size()>0) {
 			boolean isFirst = true;
@@ -59,6 +61,8 @@ public class ExportToJson {
 				
 				if(!isFirst) {
 					sb.append(VALUE_SEPARATOR);
+					// TODO: do the indent
+					appendIndent(sb,currentIndent);
 				}
 				isFirst = false;
 				
@@ -74,9 +78,9 @@ public class ExportToJson {
 					} else if(value instanceof String) {
 						writeStringValueUTF8(sb, (String)value);
 					} else if(value instanceof Map) {
-						writeMapToJson(sb, (Map<String,Object>)value);
+						writeMapToJson(sb, (Map<String,Object>)value, currentIndent);
 					} else if(value instanceof List) {
-						writeListToJson(sb, (List<Object>)value);
+						writeListToJson(sb, (List<Object>)value, currentIndent);
 					} else if(isArray(value))
 					{
 						// probably an array of some primitive....
@@ -92,11 +96,19 @@ public class ExportToJson {
 			sb.append("\n");
 		}
 		
+		appendIndent(sb,indent);
 		sb.append(END_OBJECT);
 	}
 
+	private void appendIndent(StringBuilder sb, int currentIndent) {
+		for(int i=0;i<currentIndent;i++) {
+			sb.append("  ");
+		}
+		
+	}
+
 	@SuppressWarnings("unchecked")
-	private void writeListToJson(StringBuilder sb, List<Object> list) {
+	private void writeListToJson(StringBuilder sb, List<Object> list, int indent) {
 		sb.append(BEGIN_ARRAY);
 		
 		if(list!=null && list.size()>0) {
@@ -118,9 +130,9 @@ public class ExportToJson {
 					} else if(value instanceof String) {
 						writeStringValueUTF8(sb, (String)value);
 					} else if(value instanceof Map) {
-						writeMapToJson(sb, (Map<String,Object>)value);
+						writeMapToJson(sb, (Map<String,Object>)value,indent);
 					} else if(value instanceof List) {
-						writeListToJson(sb, (List<Object>)value);
+						writeListToJson(sb, (List<Object>)value,indent);
 					} else if(isArray(value))
 					{
 						// probably an array of some primitive....
