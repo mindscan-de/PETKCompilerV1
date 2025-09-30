@@ -257,14 +257,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDefaultvalueDataDictionaryValueParserRuleCall_6_1_0 = (RuleCall)cDefaultvalueAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cOptionsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cOptionsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_7_2_0 = (RuleCall)cOptionsAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cOptionsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_7_3_1_0 = (RuleCall)cOptionsAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
+		private final Assignment cOptionsAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cOptionsDataDictionaryArrayValueParserRuleCall_7_1_0 = (RuleCall)cOptionsAssignment_7_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//WorkflowUIElementMap:
@@ -275,7 +269,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        ('default' defaultvalue=DataDictionaryValue )?
 		//        // TODO basically an array of strings
 		//        // TODO,  ?DataDictionaryValue?
-		//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
+		//        ('options' options=DataDictionaryArrayValue)?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -287,7 +281,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    ('default' defaultvalue=DataDictionaryValue )?
 		//    // TODO basically an array of strings
 		//    // TODO,  ?DataDictionaryValue?
-		//    ('options' '[' options+=STRING(',' options+=STRING) ']')?
+		//    ('options' options=DataDictionaryArrayValue)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -330,35 +324,17 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//// TODO basically an array of strings
 		//// TODO,  ?DataDictionaryValue?
-		//('options' '[' options+=STRING(',' options+=STRING) ']')?
+		//('options' options=DataDictionaryArrayValue)?
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//'options'
 		public Keyword getOptionsKeyword_7_0() { return cOptionsKeyword_7_0; }
 		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_7_1() { return cLeftSquareBracketKeyword_7_1; }
+		//options=DataDictionaryArrayValue
+		public Assignment getOptionsAssignment_7_1() { return cOptionsAssignment_7_1; }
 		
-		//options+=STRING
-		public Assignment getOptionsAssignment_7_2() { return cOptionsAssignment_7_2; }
-		
-		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_7_2_0() { return cOptionsSTRINGTerminalRuleCall_7_2_0; }
-		
-		//(',' options+=STRING)
-		public Group getGroup_7_3() { return cGroup_7_3; }
-		
-		//','
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-		
-		//options+=STRING
-		public Assignment getOptionsAssignment_7_3_1() { return cOptionsAssignment_7_3_1; }
-		
-		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_7_3_1_0() { return cOptionsSTRINGTerminalRuleCall_7_3_1_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_7_4() { return cRightSquareBracketKeyword_7_4; }
+		//DataDictionaryArrayValue
+		public RuleCall getOptionsDataDictionaryArrayValueParserRuleCall_7_1_0() { return cOptionsDataDictionaryArrayValueParserRuleCall_7_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -1833,7 +1809,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        ('default' defaultvalue=DataDictionaryValue )?
 	//        // TODO basically an array of strings
 	//        // TODO,  ?DataDictionaryValue?
-	//        ('options' '[' options+=STRING(',' options+=STRING) ']')?
+	//        ('options' options=DataDictionaryArrayValue)?
 	//    '}'
 	//;
 	public WorkflowUIElementMapElements getWorkflowUIElementMapAccess() {

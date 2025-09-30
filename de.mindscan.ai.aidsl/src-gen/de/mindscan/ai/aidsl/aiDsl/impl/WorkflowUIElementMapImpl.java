@@ -4,23 +4,18 @@
 package de.mindscan.ai.aidsl.aiDsl.impl;
 
 import de.mindscan.ai.aidsl.aiDsl.AiDslPackage;
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue;
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryValue;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,14 +86,14 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
   protected DataDictionaryValue defaultvalue;
 
   /**
-   * The cached value of the '{@link #getOptions() <em>Options</em>}' attribute list.
+   * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOptions()
    * @generated
    * @ordered
    */
-  protected EList<String> options;
+  protected DataDictionaryArrayValue options;
 
   /**
    * <!-- begin-user-doc -->
@@ -227,13 +222,48 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * @generated
    */
   @Override
-  public EList<String> getOptions()
+  public DataDictionaryArrayValue getOptions()
   {
-    if (options == null)
-    {
-      options = new EDataTypeEList<String>(String.class, this, AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS);
-    }
     return options;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOptions(DataDictionaryArrayValue newOptions, NotificationChain msgs)
+  {
+    DataDictionaryArrayValue oldOptions = options;
+    options = newOptions;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS, oldOptions, newOptions);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setOptions(DataDictionaryArrayValue newOptions)
+  {
+    if (newOptions != options)
+    {
+      NotificationChain msgs = null;
+      if (options != null)
+        msgs = ((InternalEObject)options).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS, null, msgs);
+      if (newOptions != null)
+        msgs = ((InternalEObject)newOptions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS, null, msgs);
+      msgs = basicSetOptions(newOptions, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS, newOptions, newOptions));
   }
 
   /**
@@ -248,6 +278,8 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
     {
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE:
         return basicSetDefaultvalue(null, msgs);
+      case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
+        return basicSetOptions(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -279,7 +311,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -295,8 +326,7 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         setDefaultvalue((DataDictionaryValue)newValue);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
-        getOptions().clear();
-        getOptions().addAll((Collection<? extends String>)newValue);
+        setOptions((DataDictionaryArrayValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -322,7 +352,7 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
         setDefaultvalue((DataDictionaryValue)null);
         return;
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
-        getOptions().clear();
+        setOptions((DataDictionaryArrayValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -345,7 +375,7 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE:
         return defaultvalue != null;
       case AiDslPackage.WORKFLOW_UI_ELEMENT_MAP__OPTIONS:
-        return options != null && !options.isEmpty();
+        return options != null;
     }
     return super.eIsSet(featureID);
   }
@@ -365,8 +395,6 @@ public class WorkflowUIElementMapImpl extends MinimalEObjectImpl.Container imple
     result.append(label);
     result.append(", uitype: ");
     result.append(uitype);
-    result.append(", options: ");
-    result.append(options);
     result.append(')');
     return result.toString();
   }

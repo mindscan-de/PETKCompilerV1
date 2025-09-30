@@ -1,6 +1,6 @@
 '('=43
 ')'=44
-','=23
+','=25
 '.'=50
 '.*'=51
 ':'=16
@@ -8,15 +8,15 @@
 ';'=49
 '=>'=48
 '@'=46
-'['=22
-']'=24
+'['=24
+']'=26
 'as'=37
 'boolean'=54
 'byte'=55
-'datadictionary'=25
+'datadictionary'=22
 'datainput'=13
 'default'=20
-'extends'=26
+'extends'=23
 'false'=28
 'fields'=36
 'implements'=45

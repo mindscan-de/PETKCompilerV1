@@ -361,12 +361,11 @@ class AiDslGenerator extends AbstractGenerator {
 
 			// compile the options			
 			val options = inputelement.uielement.options
-			if( options !== null && options.length >0) {
+			if( options !== null && options.values !==null && options.values.length>0) {
 				val theOptions = newArrayList()
-				for(option:options) {
+				for(option:options.values) {
 					theOptions.add(option)
 				}
-				
 				inputinfo.put('options', theOptions)
 			}
 			

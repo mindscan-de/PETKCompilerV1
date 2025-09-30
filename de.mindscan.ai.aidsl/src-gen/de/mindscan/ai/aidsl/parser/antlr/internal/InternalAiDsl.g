@@ -532,60 +532,29 @@ ruleWorkflowUIElementMap returns [EObject current=null]
 			{
 				newLeafNode(otherlv_8, grammarAccess.getWorkflowUIElementMapAccess().getOptionsKeyword_7_0());
 			}
-			otherlv_9='['
-			{
-				newLeafNode(otherlv_9, grammarAccess.getWorkflowUIElementMapAccess().getLeftSquareBracketKeyword_7_1());
-			}
 			(
 				(
-					lv_options_10_0=RULE_STRING
 					{
-						newLeafNode(lv_options_10_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getWorkflowUIElementMapAccess().getOptionsDataDictionaryArrayValueParserRuleCall_7_1_0());
 					}
+					lv_options_9_0=ruleDataDictionaryArrayValue
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
+							$current = createModelElementForParent(grammarAccess.getWorkflowUIElementMapRule());
 						}
-						addWithLastConsumed(
+						set(
 							$current,
 							"options",
-							lv_options_10_0,
-							"de.mindscan.ai.aidsl.AiDsl.STRING");
+							lv_options_9_0,
+							"de.mindscan.ai.aidsl.AiDsl.DataDictionaryArrayValue");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_11=','
-				{
-					newLeafNode(otherlv_11, grammarAccess.getWorkflowUIElementMapAccess().getCommaKeyword_7_3_0());
-				}
-				(
-					(
-						lv_options_12_0=RULE_STRING
-						{
-							newLeafNode(lv_options_12_0, grammarAccess.getWorkflowUIElementMapAccess().getOptionsSTRINGTerminalRuleCall_7_3_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getWorkflowUIElementMapRule());
-							}
-							addWithLastConsumed(
-								$current,
-								"options",
-								lv_options_12_0,
-								"de.mindscan.ai.aidsl.AiDsl.STRING");
-						}
-					)
-				)
-			)
-			otherlv_13=']'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getWorkflowUIElementMapAccess().getRightSquareBracketKeyword_7_4());
-			}
 		)?
-		otherlv_14='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getWorkflowUIElementMapAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;

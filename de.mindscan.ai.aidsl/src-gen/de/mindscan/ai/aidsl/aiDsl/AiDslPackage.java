@@ -280,7 +280,7 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE = 2;
 
   /**
-   * The feature id for the '<em><b>Options</b></em>' attribute list.
+   * The feature id for the '<em><b>Options</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1428,15 +1428,15 @@ public interface AiDslPackage extends EPackage
   EReference getWorkflowUIElementMap_Defaultvalue();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Options</em>'.
+   * @return the meta object for the containment reference '<em>Options</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions()
    * @see #getWorkflowUIElementMap()
    * @generated
    */
-  EAttribute getWorkflowUIElementMap_Options();
+  EReference getWorkflowUIElementMap_Options();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition <em>Workflow Data Dictionary Definition</em>}'.
@@ -2414,12 +2414,12 @@ public interface AiDslPackage extends EPackage
     EReference WORKFLOW_UI_ELEMENT_MAP__DEFAULTVALUE = eINSTANCE.getWorkflowUIElementMap_Defaultvalue();
 
     /**
-     * The meta object literal for the '<em><b>Options</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Options</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORKFLOW_UI_ELEMENT_MAP__OPTIONS = eINSTANCE.getWorkflowUIElementMap_Options();
+    EReference WORKFLOW_UI_ELEMENT_MAP__OPTIONS = eINSTANCE.getWorkflowUIElementMap_Options();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDataDictionaryDefinitionImpl <em>Workflow Data Dictionary Definition</em>}' class.

@@ -45,7 +45,7 @@ WorkflowUIElementMap:
 		('default' defaultvalue=DataDictionaryValue )?
 		// TODO basically an array of strings
 		// TODO,  ?DataDictionaryValue?
-		('options' '[' options+=STRING(',' options+=STRING) ']')?
+		('options' options=DataDictionaryArrayValue)?
 	'}'
 ;
 

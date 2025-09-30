@@ -3,8 +3,6 @@
  */
 package de.mindscan.ai.aidsl.aiDsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -95,15 +93,25 @@ public interface WorkflowUIElementMap extends EObject
   void setDefaultvalue(DataDictionaryValue value);
 
   /**
-   * Returns the value of the '<em><b>Options</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Options</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Options</em>' attribute list.
+   * @return the value of the '<em>Options</em>' containment reference.
+   * @see #setOptions(DataDictionaryArrayValue)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getWorkflowUIElementMap_Options()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getOptions();
+  DataDictionaryArrayValue getOptions();
+
+  /**
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap#getOptions <em>Options</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Options</em>' containment reference.
+   * @see #getOptions()
+   * @generated
+   */
+  void setOptions(DataDictionaryArrayValue value);
 
 } // WorkflowUIElementMap
