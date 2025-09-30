@@ -35,17 +35,6 @@ public class ExportToJson {
 		return sb.toString();
 	}
 	
-//	@SuppressWarnings({ "unchecked", "rawtypes" })
-//	public String asJsonString(LinkedHashMap<String, ?> map) {
-//		StringBuilder sb = new StringBuilder();
-//
-//		HashMap untypedHashMap = new LinkedHashMap(map);
-//		writeMapToJson(sb, untypedHashMap);
-//		
-//		return sb.toString();
-//	}
-	
-
 	@SuppressWarnings("unchecked")
 	private void writeMapToJson(StringBuilder sb, Map<String, Object> map, int indent) {
 		sb.append(BEGIN_OBJECT);
