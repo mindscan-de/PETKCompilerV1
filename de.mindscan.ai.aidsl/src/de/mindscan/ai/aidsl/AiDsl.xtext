@@ -82,6 +82,7 @@ DataDictionaryValue:
 			)
 ;
 
+// TODO: rework to support also non string data values in an array
 DataDictionaryArrayValue:
 	 {DataDictionaryArrayValue} 
 	 '[' (values+=STRING (',' values+=STRING)*)? ']'
@@ -160,6 +161,7 @@ VMFieldElement:
 	policy=('require'|'optional') type=ELEMENTTYPE name=ID ('default' defaultvalue=DataDictionaryValue)?
 ;
 
+// TODO rework to non string overrides
 VMOverrideFieldElement:
 	policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 ;
