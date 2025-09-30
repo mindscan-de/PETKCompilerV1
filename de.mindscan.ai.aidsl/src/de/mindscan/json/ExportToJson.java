@@ -22,8 +22,6 @@ public class ExportToJson {
 			'8','9','A','B', //
 			'C','D','E','F' };
 	
-
-	
 	// weired xtend sh*t what i don't want do deal with right now
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String asJsonString(LinkedHashMap<String, HashMap<String, ?>> map) {
@@ -39,7 +37,6 @@ public class ExportToJson {
 	private void writeMapToJson(StringBuilder sb, Map<String, Object> map, int indent) {
 		sb.append(BEGIN_OBJECT);
 		int currentIndent = indent+1;
-		// TODO: DO the indent...
 		appendIndent(sb,currentIndent);
 
 		if (map != null && map.size()>0) {
@@ -50,7 +47,6 @@ public class ExportToJson {
 				
 				if(!isFirst) {
 					sb.append(VALUE_SEPARATOR);
-					// TODO: do the indent
 					appendIndent(sb,currentIndent);
 				}
 				isFirst = false;
