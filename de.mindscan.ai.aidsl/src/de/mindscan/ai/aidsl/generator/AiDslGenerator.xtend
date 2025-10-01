@@ -4,6 +4,7 @@
 package de.mindscan.ai.aidsl.generator
 
 import de.mindscan.ai.aidsl.aiDsl.BASICTYPE
+import de.mindscan.ai.aidsl.aiDsl.DataDictionaryArrayValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryBooleanValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryMapValue
 import de.mindscan.ai.aidsl.aiDsl.DataDictionaryNullValue
@@ -18,6 +19,7 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement
 import de.mindscan.json.ExportToJson
 import java.io.Serializable
+import java.util.ArrayList
 import java.util.HashMap
 import java.util.LinkedHashMap
 import java.util.Map
@@ -143,10 +145,27 @@ class AiDslGenerator extends AbstractGenerator {
 					compiledvalue.putAll(map)
 					
 					result.put(keyvaluepair.name, compiledvalue)
-				} else
-				{
+				} 
+				else {
 					val thelocalvalue = keyvaluepair.value
 					result.put(keyvaluepair.name, thelocalvalue.comileDataDictionaryElement())
+				}
+			}
+			
+			return result
+		}
+		
+		if(valueOfDataDictionaryValue instanceof DataDictionaryArrayValue) {
+			val result = new ArrayList<Object>()
+			
+			for(uncompiledvalue : valueOfDataDictionaryValue.values) {
+				if(false) {
+					// uncompiledvalue.extends !== null
+					// WELL WE WILL DO THIS LATER....
+				}
+				else {
+					val thelocalvalue = uncompiledvalue
+					result.add(thelocalvalue)
 				}
 			}
 			
@@ -268,12 +287,7 @@ class AiDslGenerator extends AbstractGenerator {
 			{
 				compiledStatementMap.put(variableAssigment.variablename, variableAssigment.template.comileDataDictionaryElement())
 			}
-			
-			
 		}
-		
-		// TODO: extra_stopwords
-		compiledStatementMap.put("extra_stopwords", newLinkedList)
 		
 		// TODO: inputs
 		compiledStatementMap.put("inputs", newLinkedList)
