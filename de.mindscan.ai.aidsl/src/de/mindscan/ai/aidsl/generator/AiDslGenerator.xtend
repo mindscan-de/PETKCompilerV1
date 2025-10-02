@@ -28,6 +28,18 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
+
+/**
+ * DISCLAIMER: 
+ * 
+ * This code looks horrible, but for now, i only need this code to do some
+ * 'straight' forward things. Later i wil stransition to a model-2-model
+ * transformation and a more sophisticated code generator, which may steer
+ * a stack machine based calculation. The current approach is not feasible
+ * enough if we go for more complex grammar constructs in the workflow.
+ * 
+ */
+
 /**
  * Generates code from your model files on save.
  * 
