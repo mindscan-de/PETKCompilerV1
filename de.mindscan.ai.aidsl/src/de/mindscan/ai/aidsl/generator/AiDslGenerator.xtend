@@ -355,8 +355,6 @@ class AiDslGenerator extends AbstractGenerator {
 		
 		// compile entrypoint
 		val statement = workflowDefinition.statements.toArray()
-		val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
-		val entrypointname = firststatement.llmtask.name
 		
 		// compile inputfields
 		val workflowinputdefinition = workflowDefinition.input
@@ -386,11 +384,24 @@ class AiDslGenerator extends AbstractGenerator {
 			inputfields.put(inputfieldname, inputinfo)
 		}
 		
+		if(statement.length>0) {
+			val firststatement = statement.get(0) as WorkflowDefinitionApplyLLMTaskStatement
+ 
+			val executionMap = newHashMap(
+				'entry'-> firststatement.llmtask.name,
+				'inputfields' -> inputfields )
+				
+			return executionMap
+		}	
+		else {
+			val executionMap = newHashMap(
+				'entry'-> null as String,
+				'inputfields' -> inputfields )
+				
+			return executionMap
+		}
+
 		
-		val executionMap = newHashMap(
-			'entry'-> entrypointname,
-			'inputfields' -> inputfields )
-		return executionMap
 	}
 	
 	protected def HashMap<String, String> getCompiledMetadataMap(WorkflowDefinition workflowDefinition) {
