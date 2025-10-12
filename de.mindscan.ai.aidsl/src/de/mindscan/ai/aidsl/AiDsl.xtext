@@ -41,11 +41,10 @@ WorkflowUIElementMap:
 	'ui' '{'
 		'label' label=STRING
 		'uitype' uitype=STRING
-		// optional default value...
-		('default' defaultvalue=DataDictionaryValue )?
-		// TODO basically an array of strings
-		// TODO,  ?DataDictionaryValue?
-		('options' options=DataDictionaryArrayValue)?
+		// optional default value
+		( 'default' defaultvalue=DataDictionaryValue )?
+		// optional options value
+		( 'options' options=DataDictionaryArrayValue )?
 	'}'
 ;
 
@@ -62,6 +61,7 @@ WorkflowDataDictionaryDefinition:
 	'}'
 ;
 
+// Actually the name, should also allow for a simple string value ? Maybe not now...
 DatadictionaryKeyValuePair:
 	name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 ;
@@ -198,6 +198,25 @@ WorkflowDefinition:
 		(statements+=WorkflowDefinitionApplyLLMTaskStatement)*
 	'}'
 ;
+
+
+// We will start with a more general approach here, basically we need a DSL able to work with statements and expressions,
+// also then the code generator needs to be redone.
+// We want to support IF, ELSE, and FOR statements.
+// continue, break, etc.
+WorkflowIfStatement:
+	'if' '(' condition = 'condition' ')' 
+	'{'
+	'}'
+	( elsePresent?='else' '{' 
+		
+		'}' )?
+;
+
+WorkflowForStatement:
+	'for'
+;
+
 
 WorkflowDefinitionApplyLLMTaskStatement:
 	llmtask=[LlmTaskDefinition] '(' ')' 
