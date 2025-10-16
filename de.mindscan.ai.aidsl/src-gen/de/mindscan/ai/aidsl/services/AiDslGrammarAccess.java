@@ -37,6 +37,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cDefinitionsWorkflowInputDefinitionParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
 		private final RuleCall cDefinitionsLlmTaskDefinitionParserRuleCall_2_0_3 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(3);
 		private final RuleCall cDefinitionsVMNodeDefinitionParserRuleCall_2_0_4 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(4);
+		private final RuleCall cDefinitionsWorkflowFunctionsDefinitionParserRuleCall_2_0_5 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(5);
 		
 		//Model:
 		//    (package_declaration=PackageDeclaration)?
@@ -46,7 +47,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        WorkflowDataDictionaryDefinition|
 		//        WorkflowInputDefinition|
 		//        LlmTaskDefinition|
-		//        VMNodeDefinition
+		//        VMNodeDefinition|
+		//        // This rule is a way to build the new grammar, such that we
+		//        // transition to a more complex grammar.
+		//        WorkflowFunctionsDefinition
 		//    )*
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -58,7 +62,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    WorkflowDataDictionaryDefinition|
 		//    WorkflowInputDefinition|
 		//    LlmTaskDefinition|
-		//    VMNodeDefinition
+		//    VMNodeDefinition|
+		//    // This rule is a way to build the new grammar, such that we
+		//    // transition to a more complex grammar.
+		//    WorkflowFunctionsDefinition
 		//)*
 		public Group getGroup() { return cGroup; }
 		
@@ -79,7 +86,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    WorkflowDataDictionaryDefinition|
 		//    WorkflowInputDefinition|
 		//    LlmTaskDefinition|
-		//    VMNodeDefinition
+		//    VMNodeDefinition|
+		//    // This rule is a way to build the new grammar, such that we
+		//    // transition to a more complex grammar.
+		//    WorkflowFunctionsDefinition
 		//)*
 		public Assignment getDefinitionsAssignment_2() { return cDefinitionsAssignment_2; }
 		
@@ -88,7 +98,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//       WorkflowDataDictionaryDefinition|
 		//       WorkflowInputDefinition|
 		//       LlmTaskDefinition|
-		//       VMNodeDefinition
+		//       VMNodeDefinition|
+		//       // This rule is a way to build the new grammar, such that we
+		//       // transition to a more complex grammar.
+		//       WorkflowFunctionsDefinition
 		//   )
 		public Alternatives getDefinitionsAlternatives_2_0() { return cDefinitionsAlternatives_2_0; }
 		
@@ -106,6 +119,689 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//VMNodeDefinition
 		public RuleCall getDefinitionsVMNodeDefinitionParserRuleCall_2_0_4() { return cDefinitionsVMNodeDefinitionParserRuleCall_2_0_4; }
+		
+		//// This rule is a way to build the new grammar, such that we
+		//// transition to a more complex grammar.
+		//WorkflowFunctionsDefinition
+		public RuleCall getDefinitionsWorkflowFunctionsDefinitionParserRuleCall_2_0_5() { return cDefinitionsWorkflowFunctionsDefinitionParserRuleCall_2_0_5; }
+	}
+	public class WorkflowFunctionsDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowFunctionsDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSimpleaidslKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMembersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMembersSAIMemberParserRuleCall_3_0 = (RuleCall)cMembersAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//WorkflowFunctionsDefinition:
+		//    'simpleaidsl' name=ID '{'
+		//        members += SAIMember*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'simpleaidsl' name=ID '{'
+		//    members += SAIMember*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'simpleaidsl'
+		public Keyword getSimpleaidslKeyword_0() { return cSimpleaidslKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//members += SAIMember*
+		public Assignment getMembersAssignment_3() { return cMembersAssignment_3; }
+		
+		//SAIMember
+		public RuleCall getMembersSAIMemberParserRuleCall_3_0() { return cMembersSAIMemberParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class SAIMemberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIMember");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSAIFieldParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSAIMethodParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SAIMember:
+		//    SAIField|SAIMethod
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAIField|SAIMethod
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SAIField
+		public RuleCall getSAIFieldParserRuleCall_0() { return cSAIFieldParserRuleCall_0; }
+		
+		//SAIMethod
+		public RuleCall getSAIMethodParserRuleCall_1() { return cSAIMethodParserRuleCall_1; }
+	}
+	public class SAIFieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIField");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSAITypedDeclarationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//SAIField:
+		//    SAITypedDeclaration ';'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAITypedDeclaration ';'
+		public Group getGroup() { return cGroup; }
+		
+		//SAITypedDeclaration
+		public RuleCall getSAITypedDeclarationParserRuleCall_0() { return cSAITypedDeclarationParserRuleCall_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+	}
+	public class SAIMethodElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIMethod");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSAITypedDeclarationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cParamsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cParamsSAIParameterParserRuleCall_2_0_0 = (RuleCall)cParamsAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cParamsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cParamsSAIParameterParserRuleCall_2_1_1_0 = (RuleCall)cParamsAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cBodyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cBodySAIBlockParserRuleCall_4_0 = (RuleCall)cBodyAssignment_4.eContents().get(0);
+		
+		//SAIMethod:
+		//    SAITypedDeclaration '(' (params+=SAIParameter (',' params+=SAIParameter))? ')'
+		//    body=SAIBlock
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAITypedDeclaration '(' (params+=SAIParameter (',' params+=SAIParameter))? ')'
+		//body=SAIBlock
+		public Group getGroup() { return cGroup; }
+		
+		//SAITypedDeclaration
+		public RuleCall getSAITypedDeclarationParserRuleCall_0() { return cSAITypedDeclarationParserRuleCall_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//(params+=SAIParameter (',' params+=SAIParameter))?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//params+=SAIParameter
+		public Assignment getParamsAssignment_2_0() { return cParamsAssignment_2_0; }
+		
+		//SAIParameter
+		public RuleCall getParamsSAIParameterParserRuleCall_2_0_0() { return cParamsSAIParameterParserRuleCall_2_0_0; }
+		
+		//(',' params+=SAIParameter)
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
+		
+		//params+=SAIParameter
+		public Assignment getParamsAssignment_2_1_1() { return cParamsAssignment_2_1_1; }
+		
+		//SAIParameter
+		public RuleCall getParamsSAIParameterParserRuleCall_2_1_1_0() { return cParamsSAIParameterParserRuleCall_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//body=SAIBlock
+		public Assignment getBodyAssignment_4() { return cBodyAssignment_4; }
+		
+		//SAIBlock
+		public RuleCall getBodySAIBlockParserRuleCall_4_0() { return cBodySAIBlockParserRuleCall_4_0; }
+	}
+	public class SAIParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIParameter");
+		private final RuleCall cSAITypedDeclarationParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//SAIParameter:
+		//    SAITypedDeclaration
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAITypedDeclaration
+		public RuleCall getSAITypedDeclarationParserRuleCall() { return cSAITypedDeclarationParserRuleCall; }
+	}
+	public class SAIBlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIBlock");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSAIBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cStatementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStatementsSAIStatementParserRuleCall_2_0 = (RuleCall)cStatementsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//SAIBlock:
+		//    {SAIBlock}
+		//    '{'
+		//        statements+=SAIStatement*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SAIBlock}
+		//'{'
+		//    statements+=SAIStatement*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{SAIBlock}
+		public Action getSAIBlockAction_0() { return cSAIBlockAction_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//statements+=SAIStatement*
+		public Assignment getStatementsAssignment_2() { return cStatementsAssignment_2; }
+		
+		//SAIStatement
+		public RuleCall getStatementsSAIStatementParserRuleCall_2_0() { return cStatementsSAIStatementParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class SAIStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIStatement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSAIVariableDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSAIReturnParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSAIExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSAIIfStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		//SAIStatement:
+		//    SAIVariableDeclaration|
+		//    SAIReturn|
+		//    SAIExpression|
+		//    SAIIfStatement
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAIVariableDeclaration|
+		//SAIReturn|
+		//SAIExpression|
+		//SAIIfStatement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SAIVariableDeclaration
+		public RuleCall getSAIVariableDeclarationParserRuleCall_0() { return cSAIVariableDeclarationParserRuleCall_0; }
+		
+		//SAIReturn
+		public RuleCall getSAIReturnParserRuleCall_1() { return cSAIReturnParserRuleCall_1; }
+		
+		//SAIExpression
+		public RuleCall getSAIExpressionParserRuleCall_2() { return cSAIExpressionParserRuleCall_2; }
+		
+		//SAIIfStatement
+		public RuleCall getSAIIfStatementParserRuleCall_3() { return cSAIIfStatementParserRuleCall_3; }
+	}
+	public class SAIVariableDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIVariableDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSAITypedDeclarationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionSAIExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		
+		//SAIVariableDeclaration:
+		//    SAITypedDeclaration ':=' expression=SAIExpression
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAITypedDeclaration ':=' expression=SAIExpression
+		public Group getGroup() { return cGroup; }
+		
+		//SAITypedDeclaration
+		public RuleCall getSAITypedDeclarationParserRuleCall_0() { return cSAITypedDeclarationParserRuleCall_0; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
+		
+		//expression=SAIExpression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		
+		//SAIExpression
+		public RuleCall getExpressionSAIExpressionParserRuleCall_2_0() { return cExpressionSAIExpressionParserRuleCall_2_0; }
+	}
+	public class SAIReturnElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIReturn");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReturnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionSAIExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//SAIReturn:
+		//    'return' expression=SAIExpression ';'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'return' expression=SAIExpression ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'return'
+		public Keyword getReturnKeyword_0() { return cReturnKeyword_0; }
+		
+		//expression=SAIExpression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+		
+		//SAIExpression
+		public RuleCall getExpressionSAIExpressionParserRuleCall_1_0() { return cExpressionSAIExpressionParserRuleCall_1_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+	public class SAIIfStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIIfStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionSAIExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cThenblockAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cThenblockSAIIfBlockParserRuleCall_4_0 = (RuleCall)cThenblockAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cElseKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cElseBlockAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cElseBlockSAIIfBlockParserRuleCall_5_1_0 = (RuleCall)cElseBlockAssignment_5_1.eContents().get(0);
+		
+		//SAIIfStatement:
+		//    'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
+		//    (=> 'else' elseBlock=SAIIfBlock )?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
+		//(=> 'else' elseBlock=SAIIfBlock )?
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//expression=SAIExpression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		
+		//SAIExpression
+		public RuleCall getExpressionSAIExpressionParserRuleCall_2_0() { return cExpressionSAIExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//thenblock=SAIIfBlock
+		public Assignment getThenblockAssignment_4() { return cThenblockAssignment_4; }
+		
+		//SAIIfBlock
+		public RuleCall getThenblockSAIIfBlockParserRuleCall_4_0() { return cThenblockSAIIfBlockParserRuleCall_4_0; }
+		
+		//(=> 'else' elseBlock=SAIIfBlock )?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//=> 'else'
+		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
+		
+		//elseBlock=SAIIfBlock
+		public Assignment getElseBlockAssignment_5_1() { return cElseBlockAssignment_5_1; }
+		
+		//SAIIfBlock
+		public RuleCall getElseBlockSAIIfBlockParserRuleCall_5_1_0() { return cElseBlockSAIIfBlockParserRuleCall_5_1_0; }
+	}
+	public class SAIIfBlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIIfBlock");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cStatementsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cStatementsSAIStatementParserRuleCall_0_0 = (RuleCall)cStatementsAssignment_0.eContents().get(0);
+		private final RuleCall cSAIBlockParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SAIIfBlock:
+		//    statements +=SAIStatement|
+		//    SAIBlock
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//statements +=SAIStatement|
+		//SAIBlock
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//statements +=SAIStatement
+		public Assignment getStatementsAssignment_0() { return cStatementsAssignment_0; }
+		
+		//SAIStatement
+		public RuleCall getStatementsSAIStatementParserRuleCall_0_0() { return cStatementsSAIStatementParserRuleCall_0_0; }
+		
+		//SAIBlock
+		public RuleCall getSAIBlockParserRuleCall_1() { return cSAIBlockParserRuleCall_1; }
+	}
+	public class SAITypedDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAITypedDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cTypeELEMENTTYPECrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
+		private final RuleCall cTypeELEMENTTYPEIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeELEMENTTYPECrossReference_0_0.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//fragment SAITypedDeclaration *:
+		//    type=[ELEMENTTYPE] name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//type=[ELEMENTTYPE] name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//type=[ELEMENTTYPE]
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		
+		//[ELEMENTTYPE]
+		public CrossReference getTypeELEMENTTYPECrossReference_0_0() { return cTypeELEMENTTYPECrossReference_0_0; }
+		
+		//ID
+		public RuleCall getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1() { return cTypeELEMENTTYPEIDTerminalRuleCall_0_0_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class SAIExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+		private final RuleCall cSAIAssignmentParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//SAIExpression:
+		//    SAIAssignment
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAIAssignment
+		public RuleCall getSAIAssignmentParserRuleCall() { return cSAIAssignmentParserRuleCall; }
+	}
+	public class SAIAssignmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAIAssignment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSAISelectionExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cSAIAssignmentLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightSAIExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//SAIAssignment returns SAIExpression:
+		//    SAISelectionExpression
+		//    ({SAIAssignment.left=current} ':=' right=SAIExpression )?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAISelectionExpression
+		//({SAIAssignment.left=current} ':=' right=SAIExpression )?
+		public Group getGroup() { return cGroup; }
+		
+		//SAISelectionExpression
+		public RuleCall getSAISelectionExpressionParserRuleCall_0() { return cSAISelectionExpressionParserRuleCall_0; }
+		
+		//({SAIAssignment.left=current} ':=' right=SAIExpression )?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{SAIAssignment.left=current}
+		public Action getSAIAssignmentLeftAction_1_0() { return cSAIAssignmentLeftAction_1_0; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_1_1() { return cColonEqualsSignKeyword_1_1; }
+		
+		//right=SAIExpression
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		
+		//SAIExpression
+		public RuleCall getRightSAIExpressionParserRuleCall_1_2_0() { return cRightSAIExpressionParserRuleCall_1_2_0; }
+	}
+	public class SAISelectionExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAISelectionExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSAITerminalExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cSAIMemberSelectionReceiverAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cMemberAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final CrossReference cMemberSAIMemberCrossReference_1_2_0 = (CrossReference)cMemberAssignment_1_2.eContents().get(0);
+		private final RuleCall cMemberSAIMemberIDTerminalRuleCall_1_2_0_1 = (RuleCall)cMemberSAIMemberCrossReference_1_2_0.eContents().get(1);
+		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
+		private final Assignment cMethodinvocationAssignment_1_3_0 = (Assignment)cGroup_1_3.eContents().get(0);
+		private final Keyword cMethodinvocationLeftParenthesisKeyword_1_3_0_0 = (Keyword)cMethodinvocationAssignment_1_3_0.eContents().get(0);
+		private final Group cGroup_1_3_1 = (Group)cGroup_1_3.eContents().get(1);
+		private final Assignment cArgsAssignment_1_3_1_0 = (Assignment)cGroup_1_3_1.eContents().get(0);
+		private final RuleCall cArgsSAIExpressionParserRuleCall_1_3_1_0_0 = (RuleCall)cArgsAssignment_1_3_1_0.eContents().get(0);
+		private final Group cGroup_1_3_1_1 = (Group)cGroup_1_3_1.eContents().get(1);
+		private final Keyword cCommaKeyword_1_3_1_1_0 = (Keyword)cGroup_1_3_1_1.eContents().get(0);
+		private final Assignment cArgsAssignment_1_3_1_1_1 = (Assignment)cGroup_1_3_1_1.eContents().get(1);
+		private final RuleCall cArgsSAIExpressionParserRuleCall_1_3_1_1_1_0 = (RuleCall)cArgsAssignment_1_3_1_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_3_2 = (Keyword)cGroup_1_3.eContents().get(2);
+		
+		//SAISelectionExpression returns SAIExpression:
+		//    SAITerminalExpression
+		//    (
+		//        {SAIMemberSelection.receiver=current} '.'
+		//        member=[SAIMember]
+		//        (
+		//            methodinvocation?='('
+		//                (args+=SAIExpression (',' args+=SAIExpression)*)?
+		//            ')'
+		//        )?
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SAITerminalExpression
+		//(
+		//    {SAIMemberSelection.receiver=current} '.'
+		//    member=[SAIMember]
+		//    (
+		//        methodinvocation?='('
+		//            (args+=SAIExpression (',' args+=SAIExpression)*)?
+		//        ')'
+		//    )?
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//SAITerminalExpression
+		public RuleCall getSAITerminalExpressionParserRuleCall_0() { return cSAITerminalExpressionParserRuleCall_0; }
+		
+		//(
+		//    {SAIMemberSelection.receiver=current} '.'
+		//    member=[SAIMember]
+		//    (
+		//        methodinvocation?='('
+		//            (args+=SAIExpression (',' args+=SAIExpression)*)?
+		//        ')'
+		//    )?
+		//)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{SAIMemberSelection.receiver=current}
+		public Action getSAIMemberSelectionReceiverAction_1_0() { return cSAIMemberSelectionReceiverAction_1_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_1() { return cFullStopKeyword_1_1; }
+		
+		//member=[SAIMember]
+		public Assignment getMemberAssignment_1_2() { return cMemberAssignment_1_2; }
+		
+		//[SAIMember]
+		public CrossReference getMemberSAIMemberCrossReference_1_2_0() { return cMemberSAIMemberCrossReference_1_2_0; }
+		
+		//ID
+		public RuleCall getMemberSAIMemberIDTerminalRuleCall_1_2_0_1() { return cMemberSAIMemberIDTerminalRuleCall_1_2_0_1; }
+		
+		//(
+		//    methodinvocation?='('
+		//        (args+=SAIExpression (',' args+=SAIExpression)*)?
+		//    ')'
+		//)?
+		public Group getGroup_1_3() { return cGroup_1_3; }
+		
+		//methodinvocation?='('
+		public Assignment getMethodinvocationAssignment_1_3_0() { return cMethodinvocationAssignment_1_3_0; }
+		
+		//'('
+		public Keyword getMethodinvocationLeftParenthesisKeyword_1_3_0_0() { return cMethodinvocationLeftParenthesisKeyword_1_3_0_0; }
+		
+		//(args+=SAIExpression (',' args+=SAIExpression)*)?
+		public Group getGroup_1_3_1() { return cGroup_1_3_1; }
+		
+		//args+=SAIExpression
+		public Assignment getArgsAssignment_1_3_1_0() { return cArgsAssignment_1_3_1_0; }
+		
+		//SAIExpression
+		public RuleCall getArgsSAIExpressionParserRuleCall_1_3_1_0_0() { return cArgsSAIExpressionParserRuleCall_1_3_1_0_0; }
+		
+		//(',' args+=SAIExpression)*
+		public Group getGroup_1_3_1_1() { return cGroup_1_3_1_1; }
+		
+		//','
+		public Keyword getCommaKeyword_1_3_1_1_0() { return cCommaKeyword_1_3_1_1_0; }
+		
+		//args+=SAIExpression
+		public Assignment getArgsAssignment_1_3_1_1_1() { return cArgsAssignment_1_3_1_1_1; }
+		
+		//SAIExpression
+		public RuleCall getArgsSAIExpressionParserRuleCall_1_3_1_1_1_0() { return cArgsSAIExpressionParserRuleCall_1_3_1_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_3_2() { return cRightParenthesisKeyword_1_3_2; }
+	}
+	public class SAITerminalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAITerminalExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cSAIStringConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cSAIIntConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cSAIBoolConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Alternatives cValueAlternatives_2_1_0 = (Alternatives)cValueAssignment_2_1.eContents().get(0);
+		private final Keyword cValueTrueKeyword_2_1_0_0 = (Keyword)cValueAlternatives_2_1_0.eContents().get(0);
+		private final Keyword cValueFalseKeyword_2_1_0_1 = (Keyword)cValueAlternatives_2_1_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cSAINullAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cNullKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cSAIExpressionParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		
+		//SAITerminalExpression returns SAIExpression:
+		//    {SAIStringConstant} value=STRING |
+		//    {SAIIntConstant} value=INT |
+		//    {SAIBoolConstant} value=('true'|'false') |
+		//    {SAINull} 'null' |
+		//    // TODO the references to worfklows and such...
+		//    // TODO: the reference to members and such...
+		//    '(' SAIExpression ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SAIStringConstant} value=STRING |
+		//{SAIIntConstant} value=INT |
+		//{SAIBoolConstant} value=('true'|'false') |
+		//{SAINull} 'null' |
+		//// TODO the references to worfklows and such...
+		//// TODO: the reference to members and such...
+		//'(' SAIExpression ')'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{SAIStringConstant} value=STRING
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{SAIStringConstant}
+		public Action getSAIStringConstantAction_0_0() { return cSAIStringConstantAction_0_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0_1_0() { return cValueSTRINGTerminalRuleCall_0_1_0; }
+		
+		//{SAIIntConstant} value=INT
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{SAIIntConstant}
+		public Action getSAIIntConstantAction_1_0() { return cSAIIntConstantAction_1_0; }
+		
+		//value=INT
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
+		
+		//{SAIBoolConstant} value=('true'|'false')
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{SAIBoolConstant}
+		public Action getSAIBoolConstantAction_2_0() { return cSAIBoolConstantAction_2_0; }
+		
+		//value=('true'|'false')
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		
+		//('true'|'false')
+		public Alternatives getValueAlternatives_2_1_0() { return cValueAlternatives_2_1_0; }
+		
+		//'true'
+		public Keyword getValueTrueKeyword_2_1_0_0() { return cValueTrueKeyword_2_1_0_0; }
+		
+		//'false'
+		public Keyword getValueFalseKeyword_2_1_0_1() { return cValueFalseKeyword_2_1_0_1; }
+		
+		//{SAINull} 'null'
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//{SAINull}
+		public Action getSAINullAction_3_0() { return cSAINullAction_3_0; }
+		
+		//'null'
+		public Keyword getNullKeyword_3_1() { return cNullKeyword_3_1; }
+		
+		//// TODO the references to worfklows and such...
+		//// TODO: the reference to members and such...
+		//'(' SAIExpression ')'
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//// TODO the references to worfklows and such...
+		//// TODO: the reference to members and such...
+		//'('
+		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
+		
+		//SAIExpression
+		public RuleCall getSAIExpressionParserRuleCall_4_1() { return cSAIExpressionParserRuleCall_4_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
 	}
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.PackageDeclaration");
@@ -265,11 +961,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    'ui' '{'
 		//        'label' label=STRING
 		//        'uitype' uitype=STRING
-		//        // optional default value...
-		//        ('default' defaultvalue=DataDictionaryValue )?
-		//        // TODO basically an array of strings
-		//        // TODO,  ?DataDictionaryValue?
-		//        ('options' options=DataDictionaryArrayValue)?
+		//        // optional default value
+		//        ( 'default' defaultvalue=DataDictionaryValue )?
+		//        // optional options value
+		//        ( 'options' options=DataDictionaryArrayValue )?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -277,11 +972,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'ui' '{'
 		//    'label' label=STRING
 		//    'uitype' uitype=STRING
-		//    // optional default value...
-		//    ('default' defaultvalue=DataDictionaryValue )?
-		//    // TODO basically an array of strings
-		//    // TODO,  ?DataDictionaryValue?
-		//    ('options' options=DataDictionaryArrayValue)?
+		//    // optional default value
+		//    ( 'default' defaultvalue=DataDictionaryValue )?
+		//    // optional options value
+		//    ( 'options' options=DataDictionaryArrayValue )?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -309,8 +1003,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//STRING
 		public RuleCall getUitypeSTRINGTerminalRuleCall_5_0() { return cUitypeSTRINGTerminalRuleCall_5_0; }
 		
-		//// optional default value...
-		//('default' defaultvalue=DataDictionaryValue )?
+		//// optional default value
+		//( 'default' defaultvalue=DataDictionaryValue )?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'default'
@@ -322,9 +1016,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//DataDictionaryValue
 		public RuleCall getDefaultvalueDataDictionaryValueParserRuleCall_6_1_0() { return cDefaultvalueDataDictionaryValueParserRuleCall_6_1_0; }
 		
-		//// TODO basically an array of strings
-		//// TODO,  ?DataDictionaryValue?
-		//('options' options=DataDictionaryArrayValue)?
+		//// optional options value
+		//( 'options' options=DataDictionaryArrayValue )?
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//'options'
@@ -403,6 +1096,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueDataDictionaryValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
+		//// Actually the name, should also allow for a simple string value ? Maybe not now...
 		//DatadictionaryKeyValuePair:
 		//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 		//;
@@ -544,6 +1238,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cValuesSTRINGTerminalRuleCall_2_1_1_0 = (RuleCall)cValuesAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
+		//// TODO: rework to support also non string data values in an array
 		//DataDictionaryArrayValue:
 		//     {DataDictionaryArrayValue}
 		//     '[' (values+=STRING (',' values+=STRING)*)? ']'
@@ -1118,6 +1813,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cDefaultvalueAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cDefaultvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cDefaultvalueAssignment_4.eContents().get(0);
 		
+		//// TODO rework to non string overrides
 		//VMOverrideFieldElement:
 		//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 		//;
@@ -1386,6 +2082,91 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
+	public class WorkflowIfStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowIfStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cConditionConditionKeyword_2_0 = (Keyword)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cElsePresentAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final Keyword cElsePresentElseKeyword_6_0_0 = (Keyword)cElsePresentAssignment_6_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		
+		//// We will start with a more general approach here, basically we need a DSL able to work with statements and expressions,
+		//// also then the code generator needs to be redone.
+		//// We want to support IF, ELSE, and FOR statements.
+		//// continue, break, etc.
+		//WorkflowIfStatement:
+		//    'if' '(' condition = 'condition' ')'
+		//    '{'
+		//    '}'
+		//    ( elsePresent?='else' '{'
+		//        '}' )?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' '(' condition = 'condition' ')'
+		//'{'
+		//'}'
+		//( elsePresent?='else' '{'
+		//    '}' )?
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//condition = 'condition'
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		
+		//'condition'
+		public Keyword getConditionConditionKeyword_2_0() { return cConditionConditionKeyword_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		
+		//( elsePresent?='else' '{'
+		//    '}' )?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//elsePresent?='else'
+		public Assignment getElsePresentAssignment_6_0() { return cElsePresentAssignment_6_0; }
+		
+		//'else'
+		public Keyword getElsePresentElseKeyword_6_0_0() { return cElsePresentElseKeyword_6_0_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6_2() { return cRightCurlyBracketKeyword_6_2; }
+	}
+	public class WorkflowForStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowForStatement");
+		private final Keyword cForKeyword = (Keyword)rule.eContents().get(1);
+		
+		//WorkflowForStatement:
+		//    'for'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'for'
+		public Keyword getForKeyword() { return cForKeyword; }
+	}
 	public class WorkflowDefinitionApplyLLMTaskStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.WorkflowDefinitionApplyLLMTaskStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1623,6 +2404,22 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	
 	private final ModelElements pModel;
+	private final WorkflowFunctionsDefinitionElements pWorkflowFunctionsDefinition;
+	private final SAIMemberElements pSAIMember;
+	private final SAIFieldElements pSAIField;
+	private final SAIMethodElements pSAIMethod;
+	private final SAIParameterElements pSAIParameter;
+	private final SAIBlockElements pSAIBlock;
+	private final SAIStatementElements pSAIStatement;
+	private final SAIVariableDeclarationElements pSAIVariableDeclaration;
+	private final SAIReturnElements pSAIReturn;
+	private final SAIIfStatementElements pSAIIfStatement;
+	private final SAIIfBlockElements pSAIIfBlock;
+	private final SAITypedDeclarationElements pSAITypedDeclaration;
+	private final SAIExpressionElements pSAIExpression;
+	private final SAIAssignmentElements pSAIAssignment;
+	private final SAISelectionExpressionElements pSAISelectionExpression;
+	private final SAITerminalExpressionElements pSAITerminalExpression;
 	private final PackageDeclarationElements pPackageDeclaration;
 	private final ImportDeclarationElements pImportDeclaration;
 	private final WorkflowInputDefinitionElements pWorkflowInputDefinition;
@@ -1650,6 +2447,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final AnnotationInterfaceReferenceElements pAnnotationInterfaceReference;
 	private final LlmVariableAssignmentElements pLlmVariableAssignment;
 	private final WorkflowDefinitionElements pWorkflowDefinition;
+	private final WorkflowIfStatementElements pWorkflowIfStatement;
+	private final WorkflowForStatementElements pWorkflowForStatement;
 	private final WorkflowDefinitionApplyLLMTaskStatementElements pWorkflowDefinitionApplyLLMTaskStatement;
 	private final WorkflowDefinitionApplyLLMNodeResultAssignmentElements pWorkflowDefinitionApplyLLMNodeResultAssignment;
 	private final QualifiedNameElements pQualifiedName;
@@ -1670,6 +2469,22 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public AiDslGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.pModel = new ModelElements();
+		this.pWorkflowFunctionsDefinition = new WorkflowFunctionsDefinitionElements();
+		this.pSAIMember = new SAIMemberElements();
+		this.pSAIField = new SAIFieldElements();
+		this.pSAIMethod = new SAIMethodElements();
+		this.pSAIParameter = new SAIParameterElements();
+		this.pSAIBlock = new SAIBlockElements();
+		this.pSAIStatement = new SAIStatementElements();
+		this.pSAIVariableDeclaration = new SAIVariableDeclarationElements();
+		this.pSAIReturn = new SAIReturnElements();
+		this.pSAIIfStatement = new SAIIfStatementElements();
+		this.pSAIIfBlock = new SAIIfBlockElements();
+		this.pSAITypedDeclaration = new SAITypedDeclarationElements();
+		this.pSAIExpression = new SAIExpressionElements();
+		this.pSAIAssignment = new SAIAssignmentElements();
+		this.pSAISelectionExpression = new SAISelectionExpressionElements();
+		this.pSAITerminalExpression = new SAITerminalExpressionElements();
 		this.pPackageDeclaration = new PackageDeclarationElements();
 		this.pImportDeclaration = new ImportDeclarationElements();
 		this.pWorkflowInputDefinition = new WorkflowInputDefinitionElements();
@@ -1697,6 +2512,8 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pAnnotationInterfaceReference = new AnnotationInterfaceReferenceElements();
 		this.pLlmVariableAssignment = new LlmVariableAssignmentElements();
 		this.pWorkflowDefinition = new WorkflowDefinitionElements();
+		this.pWorkflowIfStatement = new WorkflowIfStatementElements();
+		this.pWorkflowForStatement = new WorkflowForStatementElements();
 		this.pWorkflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementElements();
 		this.pWorkflowDefinitionApplyLLMNodeResultAssignment = new WorkflowDefinitionApplyLLMNodeResultAssignmentElements();
 		this.pQualifiedName = new QualifiedNameElements();
@@ -1743,7 +2560,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        WorkflowDataDictionaryDefinition|
 	//        WorkflowInputDefinition|
 	//        LlmTaskDefinition|
-	//        VMNodeDefinition
+	//        VMNodeDefinition|
+	//        // This rule is a way to build the new grammar, such that we
+	//        // transition to a more complex grammar.
+	//        WorkflowFunctionsDefinition
 	//    )*
 	//;
 	public ModelElements getModelAccess() {
@@ -1752,6 +2572,209 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//WorkflowFunctionsDefinition:
+	//    'simpleaidsl' name=ID '{'
+	//        members += SAIMember*
+	//    '}'
+	//;
+	public WorkflowFunctionsDefinitionElements getWorkflowFunctionsDefinitionAccess() {
+		return pWorkflowFunctionsDefinition;
+	}
+	
+	public ParserRule getWorkflowFunctionsDefinitionRule() {
+		return getWorkflowFunctionsDefinitionAccess().getRule();
+	}
+	
+	//SAIMember:
+	//    SAIField|SAIMethod
+	//;
+	public SAIMemberElements getSAIMemberAccess() {
+		return pSAIMember;
+	}
+	
+	public ParserRule getSAIMemberRule() {
+		return getSAIMemberAccess().getRule();
+	}
+	
+	//SAIField:
+	//    SAITypedDeclaration ';'
+	//;
+	public SAIFieldElements getSAIFieldAccess() {
+		return pSAIField;
+	}
+	
+	public ParserRule getSAIFieldRule() {
+		return getSAIFieldAccess().getRule();
+	}
+	
+	//SAIMethod:
+	//    SAITypedDeclaration '(' (params+=SAIParameter (',' params+=SAIParameter))? ')'
+	//    body=SAIBlock
+	//;
+	public SAIMethodElements getSAIMethodAccess() {
+		return pSAIMethod;
+	}
+	
+	public ParserRule getSAIMethodRule() {
+		return getSAIMethodAccess().getRule();
+	}
+	
+	//SAIParameter:
+	//    SAITypedDeclaration
+	//;
+	public SAIParameterElements getSAIParameterAccess() {
+		return pSAIParameter;
+	}
+	
+	public ParserRule getSAIParameterRule() {
+		return getSAIParameterAccess().getRule();
+	}
+	
+	//SAIBlock:
+	//    {SAIBlock}
+	//    '{'
+	//        statements+=SAIStatement*
+	//    '}'
+	//;
+	public SAIBlockElements getSAIBlockAccess() {
+		return pSAIBlock;
+	}
+	
+	public ParserRule getSAIBlockRule() {
+		return getSAIBlockAccess().getRule();
+	}
+	
+	//SAIStatement:
+	//    SAIVariableDeclaration|
+	//    SAIReturn|
+	//    SAIExpression|
+	//    SAIIfStatement
+	//;
+	public SAIStatementElements getSAIStatementAccess() {
+		return pSAIStatement;
+	}
+	
+	public ParserRule getSAIStatementRule() {
+		return getSAIStatementAccess().getRule();
+	}
+	
+	//SAIVariableDeclaration:
+	//    SAITypedDeclaration ':=' expression=SAIExpression
+	//;
+	public SAIVariableDeclarationElements getSAIVariableDeclarationAccess() {
+		return pSAIVariableDeclaration;
+	}
+	
+	public ParserRule getSAIVariableDeclarationRule() {
+		return getSAIVariableDeclarationAccess().getRule();
+	}
+	
+	//SAIReturn:
+	//    'return' expression=SAIExpression ';'
+	//;
+	public SAIReturnElements getSAIReturnAccess() {
+		return pSAIReturn;
+	}
+	
+	public ParserRule getSAIReturnRule() {
+		return getSAIReturnAccess().getRule();
+	}
+	
+	//SAIIfStatement:
+	//    'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
+	//    (=> 'else' elseBlock=SAIIfBlock )?
+	//;
+	public SAIIfStatementElements getSAIIfStatementAccess() {
+		return pSAIIfStatement;
+	}
+	
+	public ParserRule getSAIIfStatementRule() {
+		return getSAIIfStatementAccess().getRule();
+	}
+	
+	//SAIIfBlock:
+	//    statements +=SAIStatement|
+	//    SAIBlock
+	//;
+	public SAIIfBlockElements getSAIIfBlockAccess() {
+		return pSAIIfBlock;
+	}
+	
+	public ParserRule getSAIIfBlockRule() {
+		return getSAIIfBlockAccess().getRule();
+	}
+	
+	//fragment SAITypedDeclaration *:
+	//    type=[ELEMENTTYPE] name=ID
+	//;
+	public SAITypedDeclarationElements getSAITypedDeclarationAccess() {
+		return pSAITypedDeclaration;
+	}
+	
+	public ParserRule getSAITypedDeclarationRule() {
+		return getSAITypedDeclarationAccess().getRule();
+	}
+	
+	//SAIExpression:
+	//    SAIAssignment
+	//;
+	public SAIExpressionElements getSAIExpressionAccess() {
+		return pSAIExpression;
+	}
+	
+	public ParserRule getSAIExpressionRule() {
+		return getSAIExpressionAccess().getRule();
+	}
+	
+	//SAIAssignment returns SAIExpression:
+	//    SAISelectionExpression
+	//    ({SAIAssignment.left=current} ':=' right=SAIExpression )?
+	//;
+	public SAIAssignmentElements getSAIAssignmentAccess() {
+		return pSAIAssignment;
+	}
+	
+	public ParserRule getSAIAssignmentRule() {
+		return getSAIAssignmentAccess().getRule();
+	}
+	
+	//SAISelectionExpression returns SAIExpression:
+	//    SAITerminalExpression
+	//    (
+	//        {SAIMemberSelection.receiver=current} '.'
+	//        member=[SAIMember]
+	//        (
+	//            methodinvocation?='('
+	//                (args+=SAIExpression (',' args+=SAIExpression)*)?
+	//            ')'
+	//        )?
+	//    )*
+	//;
+	public SAISelectionExpressionElements getSAISelectionExpressionAccess() {
+		return pSAISelectionExpression;
+	}
+	
+	public ParserRule getSAISelectionExpressionRule() {
+		return getSAISelectionExpressionAccess().getRule();
+	}
+	
+	//SAITerminalExpression returns SAIExpression:
+	//    {SAIStringConstant} value=STRING |
+	//    {SAIIntConstant} value=INT |
+	//    {SAIBoolConstant} value=('true'|'false') |
+	//    {SAINull} 'null' |
+	//    // TODO the references to worfklows and such...
+	//    // TODO: the reference to members and such...
+	//    '(' SAIExpression ')'
+	//;
+	public SAITerminalExpressionElements getSAITerminalExpressionAccess() {
+		return pSAITerminalExpression;
+	}
+	
+	public ParserRule getSAITerminalExpressionRule() {
+		return getSAITerminalExpressionAccess().getRule();
 	}
 	
 	//PackageDeclaration:
@@ -1805,11 +2828,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    'ui' '{'
 	//        'label' label=STRING
 	//        'uitype' uitype=STRING
-	//        // optional default value...
-	//        ('default' defaultvalue=DataDictionaryValue )?
-	//        // TODO basically an array of strings
-	//        // TODO,  ?DataDictionaryValue?
-	//        ('options' options=DataDictionaryArrayValue)?
+	//        // optional default value
+	//        ( 'default' defaultvalue=DataDictionaryValue )?
+	//        // optional options value
+	//        ( 'options' options=DataDictionaryArrayValue )?
 	//    '}'
 	//;
 	public WorkflowUIElementMapElements getWorkflowUIElementMapAccess() {
@@ -1839,6 +2861,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getWorkflowDataDictionaryDefinitionAccess().getRule();
 	}
 	
+	//// Actually the name, should also allow for a simple string value ? Maybe not now...
 	//DatadictionaryKeyValuePair:
 	//    name=ID ('extends' extends=[DatadictionaryKeyValuePair])? ':' value=DataDictionaryValue
 	//;
@@ -1873,6 +2896,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDataDictionaryValueAccess().getRule();
 	}
 	
+	//// TODO: rework to support also non string data values in an array
 	//DataDictionaryArrayValue:
 	//     {DataDictionaryArrayValue}
 	//     '[' (values+=STRING (',' values+=STRING)*)? ']'
@@ -2047,6 +3071,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getVMFieldElementAccess().getRule();
 	}
 	
+	//// TODO rework to non string overrides
 	//VMOverrideFieldElement:
 	//    policy=('override') type=ELEMENTTYPE name=ID ':=' defaultvalue=STRING
 	//;
@@ -2113,6 +3138,36 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getWorkflowDefinitionRule() {
 		return getWorkflowDefinitionAccess().getRule();
+	}
+	
+	//// We will start with a more general approach here, basically we need a DSL able to work with statements and expressions,
+	//// also then the code generator needs to be redone.
+	//// We want to support IF, ELSE, and FOR statements.
+	//// continue, break, etc.
+	//WorkflowIfStatement:
+	//    'if' '(' condition = 'condition' ')'
+	//    '{'
+	//    '}'
+	//    ( elsePresent?='else' '{'
+	//        '}' )?
+	//;
+	public WorkflowIfStatementElements getWorkflowIfStatementAccess() {
+		return pWorkflowIfStatement;
+	}
+	
+	public ParserRule getWorkflowIfStatementRule() {
+		return getWorkflowIfStatementAccess().getRule();
+	}
+	
+	//WorkflowForStatement:
+	//    'for'
+	//;
+	public WorkflowForStatementElements getWorkflowForStatementAccess() {
+		return pWorkflowForStatement;
+	}
+	
+	public ParserRule getWorkflowForStatementRule() {
+		return getWorkflowForStatementAccess().getRule();
 	}
 	
 	//WorkflowDefinitionApplyLLMTaskStatement:

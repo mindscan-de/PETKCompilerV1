@@ -81,6 +81,66 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseWorkflowFunctionsDefinition(WorkflowFunctionsDefinition object)
+      {
+        return createWorkflowFunctionsDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseSAIMember(SAIMember object)
+      {
+        return createSAIMemberAdapter();
+      }
+      @Override
+      public Adapter caseSAIField(SAIField object)
+      {
+        return createSAIFieldAdapter();
+      }
+      @Override
+      public Adapter caseSAIMethod(SAIMethod object)
+      {
+        return createSAIMethodAdapter();
+      }
+      @Override
+      public Adapter caseSAIParameter(SAIParameter object)
+      {
+        return createSAIParameterAdapter();
+      }
+      @Override
+      public Adapter caseSAIBlock(SAIBlock object)
+      {
+        return createSAIBlockAdapter();
+      }
+      @Override
+      public Adapter caseSAIStatement(SAIStatement object)
+      {
+        return createSAIStatementAdapter();
+      }
+      @Override
+      public Adapter caseSAIVariableDeclaration(SAIVariableDeclaration object)
+      {
+        return createSAIVariableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseSAIReturn(SAIReturn object)
+      {
+        return createSAIReturnAdapter();
+      }
+      @Override
+      public Adapter caseSAIIfStatement(SAIIfStatement object)
+      {
+        return createSAIIfStatementAdapter();
+      }
+      @Override
+      public Adapter caseSAIIfBlock(SAIIfBlock object)
+      {
+        return createSAIIfBlockAdapter();
+      }
+      @Override
+      public Adapter caseSAIExpression(SAIExpression object)
+      {
+        return createSAIExpressionAdapter();
+      }
+      @Override
       public Adapter casePackageDeclaration(PackageDeclaration object)
       {
         return createPackageDeclarationAdapter();
@@ -216,6 +276,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createWorkflowDefinitionAdapter();
       }
       @Override
+      public Adapter caseWorkflowIfStatement(WorkflowIfStatement object)
+      {
+        return createWorkflowIfStatementAdapter();
+      }
+      @Override
       public Adapter caseWorkflowDefinitionApplyLLMTaskStatement(WorkflowDefinitionApplyLLMTaskStatement object)
       {
         return createWorkflowDefinitionApplyLLMTaskStatementAdapter();
@@ -234,6 +299,36 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBASICTYPE(BASICTYPE object)
       {
         return createBASICTYPEAdapter();
+      }
+      @Override
+      public Adapter caseSAIAssignment(SAIAssignment object)
+      {
+        return createSAIAssignmentAdapter();
+      }
+      @Override
+      public Adapter caseSAIMemberSelection(SAIMemberSelection object)
+      {
+        return createSAIMemberSelectionAdapter();
+      }
+      @Override
+      public Adapter caseSAIStringConstant(SAIStringConstant object)
+      {
+        return createSAIStringConstantAdapter();
+      }
+      @Override
+      public Adapter caseSAIIntConstant(SAIIntConstant object)
+      {
+        return createSAIIntConstantAdapter();
+      }
+      @Override
+      public Adapter caseSAIBoolConstant(SAIBoolConstant object)
+      {
+        return createSAIBoolConstantAdapter();
+      }
+      @Override
+      public Adapter caseSAINull(SAINull object)
+      {
+        return createSAINullAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -268,6 +363,186 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition <em>Workflow Functions Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition
+   * @generated
+   */
+  public Adapter createWorkflowFunctionsDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember <em>SAI Member</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMember
+   * @generated
+   */
+  public Adapter createSAIMemberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIField <em>SAI Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIField
+   * @generated
+   */
+  public Adapter createSAIFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMethod <em>SAI Method</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMethod
+   * @generated
+   */
+  public Adapter createSAIMethodAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter <em>SAI Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIParameter
+   * @generated
+   */
+  public Adapter createSAIParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIBlock <em>SAI Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIBlock
+   * @generated
+   */
+  public Adapter createSAIBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIStatement <em>SAI Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIStatement
+   * @generated
+   */
+  public Adapter createSAIStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration <em>SAI Variable Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration
+   * @generated
+   */
+  public Adapter createSAIVariableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIReturn <em>SAI Return</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIReturn
+   * @generated
+   */
+  public Adapter createSAIReturnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfStatement <em>SAI If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfStatement
+   * @generated
+   */
+  public Adapter createSAIIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfBlock <em>SAI If Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfBlock
+   * @generated
+   */
+  public Adapter createSAIIfBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIExpression <em>SAI Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIExpression
+   * @generated
+   */
+  public Adapter createSAIExpressionAdapter()
   {
     return null;
   }
@@ -678,6 +953,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement <em>Workflow If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement
+   * @generated
+   */
+  public Adapter createWorkflowIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement <em>Workflow Definition Apply LLM Task Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -733,6 +1023,96 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBASICTYPEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIAssignment <em>SAI Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIAssignment
+   * @generated
+   */
+  public Adapter createSAIAssignmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection <em>SAI Member Selection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection
+   * @generated
+   */
+  public Adapter createSAIMemberSelectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIStringConstant <em>SAI String Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIStringConstant
+   * @generated
+   */
+  public Adapter createSAIStringConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIntConstant <em>SAI Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIntConstant
+   * @generated
+   */
+  public Adapter createSAIIntConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant <em>SAI Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant
+   * @generated
+   */
+  public Adapter createSAIBoolConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAINull <em>SAI Null</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAINull
+   * @generated
+   */
+  public Adapter createSAINullAdapter()
   {
     return null;
   }

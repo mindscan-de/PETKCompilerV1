@@ -196,9 +196,1035 @@ ruleModel returns [EObject current=null]
 							"de.mindscan.ai.aidsl.AiDsl.VMNodeDefinition");
 						afterParserOrEnumRuleCall();
 					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getDefinitionsWorkflowFunctionsDefinitionParserRuleCall_2_0_5());
+					}
+					lv_definitions_2_6=ruleWorkflowFunctionsDefinition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"definitions",
+							lv_definitions_2_6,
+							"de.mindscan.ai.aidsl.AiDsl.WorkflowFunctionsDefinition");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleWorkflowFunctionsDefinition
+entryRuleWorkflowFunctionsDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorkflowFunctionsDefinitionRule()); }
+	iv_ruleWorkflowFunctionsDefinition=ruleWorkflowFunctionsDefinition
+	{ $current=$iv_ruleWorkflowFunctionsDefinition.current; }
+	EOF;
+
+// Rule WorkflowFunctionsDefinition
+ruleWorkflowFunctionsDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='simpleaidsl'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWorkflowFunctionsDefinitionAccess().getSimpleaidslKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getWorkflowFunctionsDefinitionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getWorkflowFunctionsDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorkflowFunctionsDefinitionAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWorkflowFunctionsDefinitionAccess().getMembersSAIMemberParserRuleCall_3_0());
+				}
+				lv_members_3_0=ruleSAIMember
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWorkflowFunctionsDefinitionRule());
+					}
+					add(
+						$current,
+						"members",
+						lv_members_3_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIMember");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getWorkflowFunctionsDefinitionAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleSAIMember
+entryRuleSAIMember returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIMemberRule()); }
+	iv_ruleSAIMember=ruleSAIMember
+	{ $current=$iv_ruleSAIMember.current; }
+	EOF;
+
+// Rule SAIMember
+ruleSAIMember returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSAIMemberAccess().getSAIFieldParserRuleCall_0());
+		}
+		this_SAIField_0=ruleSAIField
+		{
+			$current = $this_SAIField_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIMemberAccess().getSAIMethodParserRuleCall_1());
+		}
+		this_SAIMethod_1=ruleSAIMethod
+		{
+			$current = $this_SAIMethod_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSAIField
+entryRuleSAIField returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIFieldRule()); }
+	iv_ruleSAIField=ruleSAIField
+	{ $current=$iv_ruleSAIField.current; }
+	EOF;
+
+// Rule SAIField
+ruleSAIField returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			if ($current==null) {
+				$current = createModelElement(grammarAccess.getSAIFieldRule());
+			}
+			newCompositeNode(grammarAccess.getSAIFieldAccess().getSAITypedDeclarationParserRuleCall_0());
+		}
+		this_SAITypedDeclaration_0=ruleSAITypedDeclaration[$current]
+		{
+			$current = $this_SAITypedDeclaration_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		otherlv_1=';'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSAIFieldAccess().getSemicolonKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleSAIMethod
+entryRuleSAIMethod returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIMethodRule()); }
+	iv_ruleSAIMethod=ruleSAIMethod
+	{ $current=$iv_ruleSAIMethod.current; }
+	EOF;
+
+// Rule SAIMethod
+ruleSAIMethod returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			if ($current==null) {
+				$current = createModelElement(grammarAccess.getSAIMethodRule());
+			}
+			newCompositeNode(grammarAccess.getSAIMethodAccess().getSAITypedDeclarationParserRuleCall_0());
+		}
+		this_SAITypedDeclaration_0=ruleSAITypedDeclaration[$current]
+		{
+			$current = $this_SAITypedDeclaration_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSAIMethodAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSAIMethodAccess().getParamsSAIParameterParserRuleCall_2_0_0());
+					}
+					lv_params_2_0=ruleSAIParameter
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSAIMethodRule());
+						}
+						add(
+							$current,
+							"params",
+							lv_params_2_0,
+							"de.mindscan.ai.aidsl.AiDsl.SAIParameter");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_3=','
+				{
+					newLeafNode(otherlv_3, grammarAccess.getSAIMethodAccess().getCommaKeyword_2_1_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSAIMethodAccess().getParamsSAIParameterParserRuleCall_2_1_1_0());
+						}
+						lv_params_4_0=ruleSAIParameter
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSAIMethodRule());
+							}
+							add(
+								$current,
+								"params",
+								lv_params_4_0,
+								"de.mindscan.ai.aidsl.AiDsl.SAIParameter");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)
+		)?
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSAIMethodAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIMethodAccess().getBodySAIBlockParserRuleCall_4_0());
+				}
+				lv_body_6_0=ruleSAIBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIMethodRule());
+					}
+					set(
+						$current,
+						"body",
+						lv_body_6_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSAIParameter
+entryRuleSAIParameter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIParameterRule()); }
+	iv_ruleSAIParameter=ruleSAIParameter
+	{ $current=$iv_ruleSAIParameter.current; }
+	EOF;
+
+// Rule SAIParameter
+ruleSAIParameter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		if ($current==null) {
+			$current = createModelElement(grammarAccess.getSAIParameterRule());
+		}
+		newCompositeNode(grammarAccess.getSAIParameterAccess().getSAITypedDeclarationParserRuleCall());
+	}
+	this_SAITypedDeclaration_0=ruleSAITypedDeclaration[$current]
+	{
+		$current = $this_SAITypedDeclaration_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleSAIBlock
+entryRuleSAIBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIBlockRule()); }
+	iv_ruleSAIBlock=ruleSAIBlock
+	{ $current=$iv_ruleSAIBlock.current; }
+	EOF;
+
+// Rule SAIBlock
+ruleSAIBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSAIBlockAccess().getSAIBlockAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSAIBlockAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIBlockAccess().getStatementsSAIStatementParserRuleCall_2_0());
+				}
+				lv_statements_2_0=ruleSAIStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIBlockRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSAIBlockAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleSAIStatement
+entryRuleSAIStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIStatementRule()); }
+	iv_ruleSAIStatement=ruleSAIStatement
+	{ $current=$iv_ruleSAIStatement.current; }
+	EOF;
+
+// Rule SAIStatement
+ruleSAIStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSAIStatementAccess().getSAIVariableDeclarationParserRuleCall_0());
+		}
+		this_SAIVariableDeclaration_0=ruleSAIVariableDeclaration
+		{
+			$current = $this_SAIVariableDeclaration_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIStatementAccess().getSAIReturnParserRuleCall_1());
+		}
+		this_SAIReturn_1=ruleSAIReturn
+		{
+			$current = $this_SAIReturn_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIStatementAccess().getSAIExpressionParserRuleCall_2());
+		}
+		this_SAIExpression_2=ruleSAIExpression
+		{
+			$current = $this_SAIExpression_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIStatementAccess().getSAIIfStatementParserRuleCall_3());
+		}
+		this_SAIIfStatement_3=ruleSAIIfStatement
+		{
+			$current = $this_SAIIfStatement_3.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSAIVariableDeclaration
+entryRuleSAIVariableDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIVariableDeclarationRule()); }
+	iv_ruleSAIVariableDeclaration=ruleSAIVariableDeclaration
+	{ $current=$iv_ruleSAIVariableDeclaration.current; }
+	EOF;
+
+// Rule SAIVariableDeclaration
+ruleSAIVariableDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			if ($current==null) {
+				$current = createModelElement(grammarAccess.getSAIVariableDeclarationRule());
+			}
+			newCompositeNode(grammarAccess.getSAIVariableDeclarationAccess().getSAITypedDeclarationParserRuleCall_0());
+		}
+		this_SAITypedDeclaration_0=ruleSAITypedDeclaration[$current]
+		{
+			$current = $this_SAITypedDeclaration_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		otherlv_1=':='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSAIVariableDeclarationAccess().getColonEqualsSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIVariableDeclarationAccess().getExpressionSAIExpressionParserRuleCall_2_0());
+				}
+				lv_expression_2_0=ruleSAIExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIVariableDeclarationRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSAIReturn
+entryRuleSAIReturn returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIReturnRule()); }
+	iv_ruleSAIReturn=ruleSAIReturn
+	{ $current=$iv_ruleSAIReturn.current; }
+	EOF;
+
+// Rule SAIReturn
+ruleSAIReturn returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='return'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSAIReturnAccess().getReturnKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIReturnAccess().getExpressionSAIExpressionParserRuleCall_1_0());
+				}
+				lv_expression_1_0=ruleSAIExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIReturnRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=';'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSAIReturnAccess().getSemicolonKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleSAIIfStatement
+entryRuleSAIIfStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIIfStatementRule()); }
+	iv_ruleSAIIfStatement=ruleSAIIfStatement
+	{ $current=$iv_ruleSAIIfStatement.current; }
+	EOF;
+
+// Rule SAIIfStatement
+ruleSAIIfStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='if'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSAIIfStatementAccess().getIfKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSAIIfStatementAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIIfStatementAccess().getExpressionSAIExpressionParserRuleCall_2_0());
+				}
+				lv_expression_2_0=ruleSAIExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIIfStatementRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_2_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSAIIfStatementAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIIfStatementAccess().getThenblockSAIIfBlockParserRuleCall_4_0());
+				}
+				lv_thenblock_4_0=ruleSAIIfBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIIfStatementRule());
+					}
+					set(
+						$current,
+						"thenblock",
+						lv_thenblock_4_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIIfBlock");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				('else')=>
+				otherlv_5='else'
+				{
+					newLeafNode(otherlv_5, grammarAccess.getSAIIfStatementAccess().getElseKeyword_5_0());
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSAIIfStatementAccess().getElseBlockSAIIfBlockParserRuleCall_5_1_0());
+					}
+					lv_elseBlock_6_0=ruleSAIIfBlock
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSAIIfStatementRule());
+						}
+						set(
+							$current,
+							"elseBlock",
+							lv_elseBlock_6_0,
+							"de.mindscan.ai.aidsl.AiDsl.SAIIfBlock");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleSAIIfBlock
+entryRuleSAIIfBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIIfBlockRule()); }
+	iv_ruleSAIIfBlock=ruleSAIIfBlock
+	{ $current=$iv_ruleSAIIfBlock.current; }
+	EOF;
+
+// Rule SAIIfBlock
+ruleSAIIfBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSAIIfBlockAccess().getStatementsSAIStatementParserRuleCall_0_0());
+				}
+				lv_statements_0_0=ruleSAIStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAIIfBlockRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_0_0,
+						"de.mindscan.ai.aidsl.AiDsl.SAIStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIIfBlockAccess().getSAIBlockParserRuleCall_1());
+		}
+		this_SAIBlock_1=ruleSAIBlock
+		{
+			$current = $this_SAIBlock_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+
+// Rule SAITypedDeclaration
+ruleSAITypedDeclaration[EObject in_current]  returns [EObject current=in_current]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSAITypedDeclarationRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPECrossReference_0_0());
+				}
+			)
+		)
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSAITypedDeclarationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.mindscan.ai.aidsl.AiDsl.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSAIExpression
+entryRuleSAIExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIExpressionRule()); }
+	iv_ruleSAIExpression=ruleSAIExpression
+	{ $current=$iv_ruleSAIExpression.current; }
+	EOF;
+
+// Rule SAIExpression
+ruleSAIExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getSAIExpressionAccess().getSAIAssignmentParserRuleCall());
+	}
+	this_SAIAssignment_0=ruleSAIAssignment
+	{
+		$current = $this_SAIAssignment_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleSAIAssignment
+entryRuleSAIAssignment returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIAssignmentRule()); }
+	iv_ruleSAIAssignment=ruleSAIAssignment
+	{ $current=$iv_ruleSAIAssignment.current; }
+	EOF;
+
+// Rule SAIAssignment
+ruleSAIAssignment returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSAIAssignmentAccess().getSAISelectionExpressionParserRuleCall_0());
+		}
+		this_SAISelectionExpression_0=ruleSAISelectionExpression
+		{
+			$current = $this_SAISelectionExpression_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					$current = forceCreateModelElementAndSet(
+						grammarAccess.getSAIAssignmentAccess().getSAIAssignmentLeftAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_2=':='
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSAIAssignmentAccess().getColonEqualsSignKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getSAIAssignmentAccess().getRightSAIExpressionParserRuleCall_1_2_0());
+					}
+					lv_right_3_0=ruleSAIExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSAIAssignmentRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleSAISelectionExpression
+entryRuleSAISelectionExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAISelectionExpressionRule()); }
+	iv_ruleSAISelectionExpression=ruleSAISelectionExpression
+	{ $current=$iv_ruleSAISelectionExpression.current; }
+	EOF;
+
+// Rule SAISelectionExpression
+ruleSAISelectionExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSAISelectionExpressionAccess().getSAITerminalExpressionParserRuleCall_0());
+		}
+		this_SAITerminalExpression_0=ruleSAITerminalExpression
+		{
+			$current = $this_SAITerminalExpression_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					$current = forceCreateModelElementAndSet(
+						grammarAccess.getSAISelectionExpressionAccess().getSAIMemberSelectionReceiverAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_2='.'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSAISelectionExpressionAccess().getFullStopKeyword_1_1());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSAISelectionExpressionRule());
+						}
+					}
+					otherlv_3=RULE_ID
+					{
+						newLeafNode(otherlv_3, grammarAccess.getSAISelectionExpressionAccess().getMemberSAIMemberCrossReference_1_2_0());
+					}
+				)
+			)
+			(
+				(
+					(
+						lv_methodinvocation_4_0='('
+						{
+							newLeafNode(lv_methodinvocation_4_0, grammarAccess.getSAISelectionExpressionAccess().getMethodinvocationLeftParenthesisKeyword_1_3_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getSAISelectionExpressionRule());
+							}
+							setWithLastConsumed($current, "methodinvocation", lv_methodinvocation_4_0 != null, "(");
+						}
+					)
+				)
+				(
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getSAISelectionExpressionAccess().getArgsSAIExpressionParserRuleCall_1_3_1_0_0());
+							}
+							lv_args_5_0=ruleSAIExpression
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getSAISelectionExpressionRule());
+								}
+								add(
+									$current,
+									"args",
+									lv_args_5_0,
+									"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						otherlv_6=','
+						{
+							newLeafNode(otherlv_6, grammarAccess.getSAISelectionExpressionAccess().getCommaKeyword_1_3_1_1_0());
+						}
+						(
+							(
+								{
+									newCompositeNode(grammarAccess.getSAISelectionExpressionAccess().getArgsSAIExpressionParserRuleCall_1_3_1_1_1_0());
+								}
+								lv_args_7_0=ruleSAIExpression
+								{
+									if ($current==null) {
+										$current = createModelElementForParent(grammarAccess.getSAISelectionExpressionRule());
+									}
+									add(
+										$current,
+										"args",
+										lv_args_7_0,
+										"de.mindscan.ai.aidsl.AiDsl.SAIExpression");
+									afterParserOrEnumRuleCall();
+								}
+							)
+						)
+					)*
+				)?
+				otherlv_8=')'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getSAISelectionExpressionAccess().getRightParenthesisKeyword_1_3_2());
+				}
+			)?
+		)*
+	)
+;
+
+// Entry rule entryRuleSAITerminalExpression
+entryRuleSAITerminalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAITerminalExpressionRule()); }
+	iv_ruleSAITerminalExpression=ruleSAITerminalExpression
+	{ $current=$iv_ruleSAITerminalExpression.current; }
+	EOF;
+
+// Rule SAITerminalExpression
+ruleSAITerminalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSAITerminalExpressionAccess().getSAIStringConstantAction_0_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_value_1_0=RULE_STRING
+					{
+						newLeafNode(lv_value_1_0, grammarAccess.getSAITerminalExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSAITerminalExpressionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_1_0,
+							"de.mindscan.ai.aidsl.AiDsl.STRING");
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSAITerminalExpressionAccess().getSAIIntConstantAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_value_3_0=RULE_INT
+					{
+						newLeafNode(lv_value_3_0, grammarAccess.getSAITerminalExpressionAccess().getValueINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSAITerminalExpressionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_3_0,
+							"de.mindscan.ai.aidsl.AiDsl.INT");
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSAITerminalExpressionAccess().getSAIBoolConstantAction_2_0(),
+						$current);
+				}
+			)
+			(
+				(
+					(
+						lv_value_5_1='true'
+						{
+							newLeafNode(lv_value_5_1, grammarAccess.getSAITerminalExpressionAccess().getValueTrueKeyword_2_1_0_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getSAITerminalExpressionRule());
+							}
+							setWithLastConsumed($current, "value", lv_value_5_1, null);
+						}
+						    |
+						lv_value_5_2='false'
+						{
+							newLeafNode(lv_value_5_2, grammarAccess.getSAITerminalExpressionAccess().getValueFalseKeyword_2_1_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getSAITerminalExpressionRule());
+							}
+							setWithLastConsumed($current, "value", lv_value_5_2, null);
+						}
+					)
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSAITerminalExpressionAccess().getSAINullAction_3_0(),
+						$current);
+				}
+			)
+			otherlv_7='null'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getSAITerminalExpressionAccess().getNullKeyword_3_1());
+			}
+		)
+		    |
+		(
+			otherlv_8='('
+			{
+				newLeafNode(otherlv_8, grammarAccess.getSAITerminalExpressionAccess().getLeftParenthesisKeyword_4_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getSAITerminalExpressionAccess().getSAIExpressionParserRuleCall_4_1());
+			}
+			this_SAIExpression_9=ruleSAIExpression
+			{
+				$current = $this_SAIExpression_9.current;
+				afterParserOrEnumRuleCall();
+			}
+			otherlv_10=')'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getSAITerminalExpressionAccess().getRightParenthesisKeyword_4_2());
+			}
+		)
 	)
 ;
 

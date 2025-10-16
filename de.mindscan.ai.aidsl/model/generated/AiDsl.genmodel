@@ -11,6 +11,42 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/import_declarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//Model/definitions"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowFunctionsDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowFunctionsDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowFunctionsDefinition/members"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMember/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIMember/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIField"/>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIMethod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMethod/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMethod/body"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIParameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIBlock"/>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIStatement"/>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIVariableDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIVariableDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIVariableDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIVariableDeclaration/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIReturn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIReturn/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIIfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfStatement/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfStatement/thenblock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfStatement/elseBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIIfBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfBlock/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIExpression"/>
     <genClasses ecoreClass="AiDsl.ecore#//PackageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//PackageDeclaration/name"/>
     </genClasses>
@@ -117,6 +153,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinition/datadictionary"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinition/statements"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//WorkflowIfStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowIfStatement/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//WorkflowIfStatement/elsePresent"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement/llmtask"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowDefinitionApplyLLMTaskStatement/noderesultassigments"/>
@@ -130,5 +170,25 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/isArray"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//BASICTYPE/typename"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIAssignment/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIAssignment/right"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIMemberSelection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMemberSelection/receiver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMemberSelection/member"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIMemberSelection/methodinvocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMemberSelection/args"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIStringConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIStringConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIIntConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIIntConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIBoolConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIBoolConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAINull"/>
   </genPackages>
 </genmodel:GenModel>

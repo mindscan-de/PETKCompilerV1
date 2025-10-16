@@ -14,9 +14,105 @@ Model:
 		WorkflowDataDictionaryDefinition|
 		WorkflowInputDefinition|
 		LlmTaskDefinition|
-		VMNodeDefinition
+		VMNodeDefinition|
+		// This rule is a way to build the new grammar, such that we
+		// transition to a more complex grammar. 
+		WorkflowFunctionsDefinition
 	)*
 ;
+
+WorkflowFunctionsDefinition:
+	'simpleaidsl' name=ID '{'
+		members += SAIMember*
+	'}'
+;
+
+SAIMember:
+	SAIField|SAIMethod
+;
+
+SAIField:
+	SAITypedDeclaration ';'
+;
+
+SAIMethod:
+	SAITypedDeclaration '(' (params+=SAIParameter (',' params+=SAIParameter))? ')' 
+	body=SAIBlock
+;
+
+SAIParameter:
+	SAITypedDeclaration
+;
+
+SAIBlock:
+	{SAIBlock}
+	'{'
+		statements+=SAIStatement*
+	'}'
+;
+
+SAIStatement:
+	SAIVariableDeclaration|
+	SAIReturn|
+	SAIExpression|
+	SAIIfStatement
+;
+
+SAIVariableDeclaration:
+	SAITypedDeclaration ':=' expression=SAIExpression
+;
+
+SAIReturn:
+	'return' expression=SAIExpression ';'
+;
+
+
+SAIIfStatement:
+	'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
+	(=> 'else' elseBlock=SAIIfBlock )?
+;
+
+SAIIfBlock:
+	statements +=SAIStatement|
+	SAIBlock
+;
+
+fragment SAITypedDeclaration *:
+	type=[ELEMENTTYPE] name=ID
+;
+
+SAIExpression:
+	SAIAssignment
+;
+
+SAIAssignment returns SAIExpression:
+	SAISelectionExpression
+	({SAIAssignment.left=current} ':=' right=SAIExpression )?
+;
+
+SAISelectionExpression returns SAIExpression:
+	SAITerminalExpression
+	(
+		{SAIMemberSelection.receiver=current} '.'
+		member=[SAIMember]
+		( 
+			methodinvocation?='('
+				(args+=SAIExpression (',' args+=SAIExpression)*)?
+			')'	
+		)?
+	)*
+;
+
+SAITerminalExpression returns SAIExpression:
+	{SAIStringConstant} value=STRING |
+	{SAIIntConstant} value=INT | 
+	{SAIBoolConstant} value=('true'|'false') |
+	{SAINull} 'null' |
+	// TODO the references to worfklows and such...
+	// TODO: the reference to members and such...
+	'(' SAIExpression ')'
+;
+
 
 PackageDeclaration:
 	'package' name=QualifiedName

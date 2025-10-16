@@ -80,6 +80,97 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_FUNCTIONS_DEFINITION:
+      {
+        WorkflowFunctionsDefinition workflowFunctionsDefinition = (WorkflowFunctionsDefinition)theEObject;
+        T result = caseWorkflowFunctionsDefinition(workflowFunctionsDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_MEMBER:
+      {
+        SAIMember saiMember = (SAIMember)theEObject;
+        T result = caseSAIMember(saiMember);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_FIELD:
+      {
+        SAIField saiField = (SAIField)theEObject;
+        T result = caseSAIField(saiField);
+        if (result == null) result = caseSAIMember(saiField);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_METHOD:
+      {
+        SAIMethod saiMethod = (SAIMethod)theEObject;
+        T result = caseSAIMethod(saiMethod);
+        if (result == null) result = caseSAIMember(saiMethod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_PARAMETER:
+      {
+        SAIParameter saiParameter = (SAIParameter)theEObject;
+        T result = caseSAIParameter(saiParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_BLOCK:
+      {
+        SAIBlock saiBlock = (SAIBlock)theEObject;
+        T result = caseSAIBlock(saiBlock);
+        if (result == null) result = caseSAIIfBlock(saiBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_STATEMENT:
+      {
+        SAIStatement saiStatement = (SAIStatement)theEObject;
+        T result = caseSAIStatement(saiStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_VARIABLE_DECLARATION:
+      {
+        SAIVariableDeclaration saiVariableDeclaration = (SAIVariableDeclaration)theEObject;
+        T result = caseSAIVariableDeclaration(saiVariableDeclaration);
+        if (result == null) result = caseSAIStatement(saiVariableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_RETURN:
+      {
+        SAIReturn saiReturn = (SAIReturn)theEObject;
+        T result = caseSAIReturn(saiReturn);
+        if (result == null) result = caseSAIStatement(saiReturn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_IF_STATEMENT:
+      {
+        SAIIfStatement saiIfStatement = (SAIIfStatement)theEObject;
+        T result = caseSAIIfStatement(saiIfStatement);
+        if (result == null) result = caseSAIStatement(saiIfStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_IF_BLOCK:
+      {
+        SAIIfBlock saiIfBlock = (SAIIfBlock)theEObject;
+        T result = caseSAIIfBlock(saiIfBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_EXPRESSION:
+      {
+        SAIExpression saiExpression = (SAIExpression)theEObject;
+        T result = caseSAIExpression(saiExpression);
+        if (result == null) result = caseSAIStatement(saiExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.PACKAGE_DECLARATION:
       {
         PackageDeclaration packageDeclaration = (PackageDeclaration)theEObject;
@@ -273,6 +364,13 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.WORKFLOW_IF_STATEMENT:
+      {
+        WorkflowIfStatement workflowIfStatement = (WorkflowIfStatement)theEObject;
+        T result = caseWorkflowIfStatement(workflowIfStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
       {
         WorkflowDefinitionApplyLLMTaskStatement workflowDefinitionApplyLLMTaskStatement = (WorkflowDefinitionApplyLLMTaskStatement)theEObject;
@@ -302,6 +400,60 @@ public class AiDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AiDslPackage.SAI_ASSIGNMENT:
+      {
+        SAIAssignment saiAssignment = (SAIAssignment)theEObject;
+        T result = caseSAIAssignment(saiAssignment);
+        if (result == null) result = caseSAIExpression(saiAssignment);
+        if (result == null) result = caseSAIStatement(saiAssignment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_MEMBER_SELECTION:
+      {
+        SAIMemberSelection saiMemberSelection = (SAIMemberSelection)theEObject;
+        T result = caseSAIMemberSelection(saiMemberSelection);
+        if (result == null) result = caseSAIExpression(saiMemberSelection);
+        if (result == null) result = caseSAIStatement(saiMemberSelection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_STRING_CONSTANT:
+      {
+        SAIStringConstant saiStringConstant = (SAIStringConstant)theEObject;
+        T result = caseSAIStringConstant(saiStringConstant);
+        if (result == null) result = caseSAIExpression(saiStringConstant);
+        if (result == null) result = caseSAIStatement(saiStringConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_INT_CONSTANT:
+      {
+        SAIIntConstant saiIntConstant = (SAIIntConstant)theEObject;
+        T result = caseSAIIntConstant(saiIntConstant);
+        if (result == null) result = caseSAIExpression(saiIntConstant);
+        if (result == null) result = caseSAIStatement(saiIntConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_BOOL_CONSTANT:
+      {
+        SAIBoolConstant saiBoolConstant = (SAIBoolConstant)theEObject;
+        T result = caseSAIBoolConstant(saiBoolConstant);
+        if (result == null) result = caseSAIExpression(saiBoolConstant);
+        if (result == null) result = caseSAIStatement(saiBoolConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AiDslPackage.SAI_NULL:
+      {
+        SAINull saiNull = (SAINull)theEObject;
+        T result = caseSAINull(saiNull);
+        if (result == null) result = caseSAIExpression(saiNull);
+        if (result == null) result = caseSAIStatement(saiNull);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -318,6 +470,198 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow Functions Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow Functions Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowFunctionsDefinition(WorkflowFunctionsDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Member</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Member</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIMember(SAIMember object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIField(SAIField object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIMethod(SAIMethod object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIParameter(SAIParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIBlock(SAIBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIStatement(SAIStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Variable Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIVariableDeclaration(SAIVariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Return</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Return</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIReturn(SAIReturn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIIfStatement(SAIIfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI If Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI If Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIIfBlock(SAIIfBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIExpression(SAIExpression object)
   {
     return null;
   }
@@ -755,6 +1099,22 @@ public class AiDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Workflow If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workflow If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkflowIfStatement(WorkflowIfStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Workflow Definition Apply LLM Task Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -814,6 +1174,102 @@ public class AiDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBASICTYPE(BASICTYPE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Assignment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIAssignment(SAIAssignment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Member Selection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Member Selection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIMemberSelection(SAIMemberSelection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI String Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIStringConstant(SAIStringConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Int Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIIntConstant(SAIIntConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Bool Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAIBoolConstant(SAIBoolConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAI Null</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAI Null</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAINull(SAINull object)
   {
     return null;
   }

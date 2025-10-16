@@ -33,6 +33,114 @@ public interface AiDslFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Workflow Functions Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow Functions Definition</em>'.
+   * @generated
+   */
+  WorkflowFunctionsDefinition createWorkflowFunctionsDefinition();
+
+  /**
+   * Returns a new object of class '<em>SAI Member</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Member</em>'.
+   * @generated
+   */
+  SAIMember createSAIMember();
+
+  /**
+   * Returns a new object of class '<em>SAI Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Field</em>'.
+   * @generated
+   */
+  SAIField createSAIField();
+
+  /**
+   * Returns a new object of class '<em>SAI Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Method</em>'.
+   * @generated
+   */
+  SAIMethod createSAIMethod();
+
+  /**
+   * Returns a new object of class '<em>SAI Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Parameter</em>'.
+   * @generated
+   */
+  SAIParameter createSAIParameter();
+
+  /**
+   * Returns a new object of class '<em>SAI Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Block</em>'.
+   * @generated
+   */
+  SAIBlock createSAIBlock();
+
+  /**
+   * Returns a new object of class '<em>SAI Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Statement</em>'.
+   * @generated
+   */
+  SAIStatement createSAIStatement();
+
+  /**
+   * Returns a new object of class '<em>SAI Variable Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Variable Declaration</em>'.
+   * @generated
+   */
+  SAIVariableDeclaration createSAIVariableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>SAI Return</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Return</em>'.
+   * @generated
+   */
+  SAIReturn createSAIReturn();
+
+  /**
+   * Returns a new object of class '<em>SAI If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI If Statement</em>'.
+   * @generated
+   */
+  SAIIfStatement createSAIIfStatement();
+
+  /**
+   * Returns a new object of class '<em>SAI If Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI If Block</em>'.
+   * @generated
+   */
+  SAIIfBlock createSAIIfBlock();
+
+  /**
+   * Returns a new object of class '<em>SAI Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Expression</em>'.
+   * @generated
+   */
+  SAIExpression createSAIExpression();
+
+  /**
    * Returns a new object of class '<em>Package Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -276,6 +384,15 @@ public interface AiDslFactory extends EFactory
   WorkflowDefinition createWorkflowDefinition();
 
   /**
+   * Returns a new object of class '<em>Workflow If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workflow If Statement</em>'.
+   * @generated
+   */
+  WorkflowIfStatement createWorkflowIfStatement();
+
+  /**
    * Returns a new object of class '<em>Workflow Definition Apply LLM Task Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -310,6 +427,60 @@ public interface AiDslFactory extends EFactory
    * @generated
    */
   BASICTYPE createBASICTYPE();
+
+  /**
+   * Returns a new object of class '<em>SAI Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Assignment</em>'.
+   * @generated
+   */
+  SAIAssignment createSAIAssignment();
+
+  /**
+   * Returns a new object of class '<em>SAI Member Selection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Member Selection</em>'.
+   * @generated
+   */
+  SAIMemberSelection createSAIMemberSelection();
+
+  /**
+   * Returns a new object of class '<em>SAI String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI String Constant</em>'.
+   * @generated
+   */
+  SAIStringConstant createSAIStringConstant();
+
+  /**
+   * Returns a new object of class '<em>SAI Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Int Constant</em>'.
+   * @generated
+   */
+  SAIIntConstant createSAIIntConstant();
+
+  /**
+   * Returns a new object of class '<em>SAI Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Bool Constant</em>'.
+   * @generated
+   */
+  SAIBoolConstant createSAIBoolConstant();
+
+  /**
+   * Returns a new object of class '<em>SAI Null</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Null</em>'.
+   * @generated
+   */
+  SAINull createSAINull();
 
   /**
    * Returns the package supported by this factory.

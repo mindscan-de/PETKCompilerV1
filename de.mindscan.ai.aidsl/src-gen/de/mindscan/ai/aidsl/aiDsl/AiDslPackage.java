@@ -104,6 +104,423 @@ public interface AiDslPackage extends EPackage
   int MODEL_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowFunctionsDefinitionImpl <em>Workflow Functions Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowFunctionsDefinitionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowFunctionsDefinition()
+   * @generated
+   */
+  int WORKFLOW_FUNCTIONS_DEFINITION = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_FUNCTIONS_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Members</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_FUNCTIONS_DEFINITION__MEMBERS = 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow Functions Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_FUNCTIONS_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberImpl <em>SAI Member</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMember()
+   * @generated
+   */
+  int SAI_MEMBER = 2;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>SAI Member</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIFieldImpl <em>SAI Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIFieldImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIField()
+   * @generated
+   */
+  int SAI_FIELD = 3;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_FIELD__TYPE = SAI_MEMBER__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_FIELD__NAME = SAI_MEMBER__NAME;
+
+  /**
+   * The number of structural features of the '<em>SAI Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_FIELD_FEATURE_COUNT = SAI_MEMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMethodImpl <em>SAI Method</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMethodImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMethod()
+   * @generated
+   */
+  int SAI_METHOD = 4;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_METHOD__TYPE = SAI_MEMBER__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_METHOD__NAME = SAI_MEMBER__NAME;
+
+  /**
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_METHOD__PARAMS = SAI_MEMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_METHOD__BODY = SAI_MEMBER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>SAI Method</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_METHOD_FEATURE_COUNT = SAI_MEMBER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIParameterImpl <em>SAI Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIParameterImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIParameter()
+   * @generated
+   */
+  int SAI_PARAMETER = 5;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_PARAMETER__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_PARAMETER__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>SAI Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_PARAMETER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIfBlockImpl <em>SAI If Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIfBlockImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIfBlock()
+   * @generated
+   */
+  int SAI_IF_BLOCK = 11;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_BLOCK__STATEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>SAI If Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIBlockImpl <em>SAI Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIBlockImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIBlock()
+   * @generated
+   */
+  int SAI_BLOCK = 6;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_BLOCK__STATEMENTS = SAI_IF_BLOCK__STATEMENTS;
+
+  /**
+   * The number of structural features of the '<em>SAI Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_BLOCK_FEATURE_COUNT = SAI_IF_BLOCK_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIStatementImpl <em>SAI Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIStatementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIStatement()
+   * @generated
+   */
+  int SAI_STATEMENT = 7;
+
+  /**
+   * The number of structural features of the '<em>SAI Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_STATEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIVariableDeclarationImpl <em>SAI Variable Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIVariableDeclarationImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIVariableDeclaration()
+   * @generated
+   */
+  int SAI_VARIABLE_DECLARATION = 8;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_VARIABLE_DECLARATION__TYPE = SAI_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_VARIABLE_DECLARATION__NAME = SAI_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_VARIABLE_DECLARATION__EXPRESSION = SAI_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>SAI Variable Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_VARIABLE_DECLARATION_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIReturnImpl <em>SAI Return</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIReturnImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIReturn()
+   * @generated
+   */
+  int SAI_RETURN = 9;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_RETURN__EXPRESSION = SAI_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SAI Return</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_RETURN_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIfStatementImpl <em>SAI If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIfStatementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIfStatement()
+   * @generated
+   */
+  int SAI_IF_STATEMENT = 10;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_STATEMENT__EXPRESSION = SAI_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Thenblock</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_STATEMENT__THENBLOCK = SAI_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Else Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_STATEMENT__ELSE_BLOCK = SAI_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>SAI If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_IF_STATEMENT_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIExpressionImpl <em>SAI Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIExpressionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIExpression()
+   * @generated
+   */
+  int SAI_EXPRESSION = 12;
+
+  /**
+   * The number of structural features of the '<em>SAI Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_EXPRESSION_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,7 +528,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getPackageDeclaration()
    * @generated
    */
-  int PACKAGE_DECLARATION = 1;
+  int PACKAGE_DECLARATION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -139,7 +556,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getImportDeclaration()
    * @generated
    */
-  int IMPORT_DECLARATION = 2;
+  int IMPORT_DECLARATION = 14;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -167,7 +584,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowInputDefinition()
    * @generated
    */
-  int WORKFLOW_INPUT_DEFINITION = 3;
+  int WORKFLOW_INPUT_DEFINITION = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,7 +621,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIElement()
    * @generated
    */
-  int WORKFLOW_UI_ELEMENT = 4;
+  int WORKFLOW_UI_ELEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +667,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIElementMap()
    * @generated
    */
-  int WORKFLOW_UI_ELEMENT_MAP = 5;
+  int WORKFLOW_UI_ELEMENT_MAP = 17;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -305,7 +722,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDataDictionaryDefinition()
    * @generated
    */
-  int WORKFLOW_DATA_DICTIONARY_DEFINITION = 6;
+  int WORKFLOW_DATA_DICTIONARY_DEFINITION = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -342,7 +759,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDatadictionaryKeyValuePair()
    * @generated
    */
-  int DATADICTIONARY_KEY_VALUE_PAIR = 7;
+  int DATADICTIONARY_KEY_VALUE_PAIR = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -388,7 +805,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryValue()
    * @generated
    */
-  int DATA_DICTIONARY_VALUE = 8;
+  int DATA_DICTIONARY_VALUE = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -416,7 +833,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryArrayValue()
    * @generated
    */
-  int DATA_DICTIONARY_ARRAY_VALUE = 9;
+  int DATA_DICTIONARY_ARRAY_VALUE = 21;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -444,7 +861,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryMapValue()
    * @generated
    */
-  int DATA_DICTIONARY_MAP_VALUE = 10;
+  int DATA_DICTIONARY_MAP_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Key Value Pairs</b></em>' containment reference list.
@@ -472,7 +889,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
    * @generated
    */
-  int DATA_DICTIONARY_BOOLEAN_VALUE = 11;
+  int DATA_DICTIONARY_BOOLEAN_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -500,7 +917,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
    * @generated
    */
-  int DATA_DICTIONARY_STRING_VALUE = 12;
+  int DATA_DICTIONARY_STRING_VALUE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -528,7 +945,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
    * @generated
    */
-  int DATA_DICTIONARY_NULL_VALUE = 13;
+  int DATA_DICTIONARY_NULL_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -556,7 +973,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 14;
+  int VM_NODE_DEFINITION = 26;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -602,7 +1019,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 15;
+  int VM_NODE_ELEEMNTS = 27;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -621,7 +1038,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 16;
+  int VM_NODE_OP_CODE_ELEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Opcode</b></em>' attribute.
@@ -649,7 +1066,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 17;
+  int VM_NODE_OUT_ELEMENTS = 29;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -677,7 +1094,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 18;
+  int VM_NODE_IN_ELEMENTS = 30;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -705,7 +1122,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
    * @generated
    */
-  int VM_NODE_FIELD_ELEMENTS = 19;
+  int VM_NODE_FIELD_ELEMENTS = 31;
 
   /**
    * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
@@ -733,7 +1150,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 20;
+  int VM_NODE_OUT_ELEMENT = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -788,7 +1205,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 21;
+  int VM_NODE_IN_ELEMENT = 33;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -825,7 +1242,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_FIELD_ELEMENT = 22;
+  int VM_FIELD_ELEMENT = 34;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -880,7 +1297,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_FIELD_ELEMENT = 23;
+  int VM_OVERRIDE_FIELD_ELEMENT = 35;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -935,7 +1352,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 24;
+  int LLM_TASK_DEFINITION = 36;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -981,7 +1398,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 25;
+  int ANNOTATION_INTERFACE_REFERENCE = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1009,7 +1426,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 26;
+  int LLM_VARIABLE_ASSIGNMENT = 38;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -1046,7 +1463,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 27;
+  int WORKFLOW_DEFINITION = 39;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1094,6 +1511,43 @@ public interface AiDslPackage extends EPackage
   int WORKFLOW_DEFINITION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowIfStatementImpl <em>Workflow If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowIfStatementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowIfStatement()
+   * @generated
+   */
+  int WORKFLOW_IF_STATEMENT = 40;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_IF_STATEMENT__CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Else Present</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_IF_STATEMENT__ELSE_PRESENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Workflow If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKFLOW_IF_STATEMENT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1101,7 +1555,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 28;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 41;
 
   /**
    * The feature id for the '<em><b>Llmtask</b></em>' reference.
@@ -1138,7 +1592,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 29;
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 42;
 
   /**
    * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
@@ -1175,7 +1629,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
    * @generated
    */
-  int ELEMENTTYPE = 30;
+  int ELEMENTTYPE = 43;
 
   /**
    * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
@@ -1194,7 +1648,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
    * @generated
    */
-  int BASICTYPE = 31;
+  int BASICTYPE = 44;
 
   /**
    * The feature id for the '<em><b>Is Array</b></em>' attribute.
@@ -1222,6 +1676,201 @@ public interface AiDslPackage extends EPackage
    * @ordered
    */
   int BASICTYPE_FEATURE_COUNT = ELEMENTTYPE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIAssignmentImpl <em>SAI Assignment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIAssignmentImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIAssignment()
+   * @generated
+   */
+  int SAI_ASSIGNMENT = 45;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_ASSIGNMENT__LEFT = SAI_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_ASSIGNMENT__RIGHT = SAI_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>SAI Assignment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_ASSIGNMENT_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberSelectionImpl <em>SAI Member Selection</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberSelectionImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMemberSelection()
+   * @generated
+   */
+  int SAI_MEMBER_SELECTION = 46;
+
+  /**
+   * The feature id for the '<em><b>Receiver</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_SELECTION__RECEIVER = SAI_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Member</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_SELECTION__MEMBER = SAI_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Methodinvocation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_SELECTION__METHODINVOCATION = SAI_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_SELECTION__ARGS = SAI_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>SAI Member Selection</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_MEMBER_SELECTION_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIStringConstantImpl <em>SAI String Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIStringConstantImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIStringConstant()
+   * @generated
+   */
+  int SAI_STRING_CONSTANT = 47;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_STRING_CONSTANT__VALUE = SAI_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SAI String Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_STRING_CONSTANT_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIntConstantImpl <em>SAI Int Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIntConstantImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIntConstant()
+   * @generated
+   */
+  int SAI_INT_CONSTANT = 48;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_INT_CONSTANT__VALUE = SAI_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SAI Int Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_INT_CONSTANT_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIBoolConstantImpl <em>SAI Bool Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIBoolConstantImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIBoolConstant()
+   * @generated
+   */
+  int SAI_BOOL_CONSTANT = 49;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_BOOL_CONSTANT__VALUE = SAI_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SAI Bool Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_BOOL_CONSTANT_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAINullImpl <em>SAI Null</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAINullImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAINull()
+   * @generated
+   */
+  int SAI_NULL = 50;
+
+  /**
+   * The number of structural features of the '<em>SAI Null</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_NULL_FEATURE_COUNT = SAI_EXPRESSION_FEATURE_COUNT + 0;
 
 
   /**
@@ -1266,6 +1915,302 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getModel_Definitions();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition <em>Workflow Functions Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow Functions Definition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition
+   * @generated
+   */
+  EClass getWorkflowFunctionsDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition#getName()
+   * @see #getWorkflowFunctionsDefinition()
+   * @generated
+   */
+  EAttribute getWorkflowFunctionsDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition#getMembers <em>Members</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Members</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition#getMembers()
+   * @see #getWorkflowFunctionsDefinition()
+   * @generated
+   */
+  EReference getWorkflowFunctionsDefinition_Members();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember <em>SAI Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Member</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMember
+   * @generated
+   */
+  EClass getSAIMember();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMember#getType()
+   * @see #getSAIMember()
+   * @generated
+   */
+  EReference getSAIMember_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMember#getName()
+   * @see #getSAIMember()
+   * @generated
+   */
+  EAttribute getSAIMember_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIField <em>SAI Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Field</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIField
+   * @generated
+   */
+  EClass getSAIField();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMethod <em>SAI Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Method</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMethod
+   * @generated
+   */
+  EClass getSAIMethod();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.SAIMethod#getParams <em>Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMethod#getParams()
+   * @see #getSAIMethod()
+   * @generated
+   */
+  EReference getSAIMethod_Params();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMethod#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMethod#getBody()
+   * @see #getSAIMethod()
+   * @generated
+   */
+  EReference getSAIMethod_Body();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter <em>SAI Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Parameter</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIParameter
+   * @generated
+   */
+  EClass getSAIParameter();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType()
+   * @see #getSAIParameter()
+   * @generated
+   */
+  EReference getSAIParameter_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIParameter#getName()
+   * @see #getSAIParameter()
+   * @generated
+   */
+  EAttribute getSAIParameter_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIBlock <em>SAI Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Block</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIBlock
+   * @generated
+   */
+  EClass getSAIBlock();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIStatement <em>SAI Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Statement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIStatement
+   * @generated
+   */
+  EClass getSAIStatement();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration <em>SAI Variable Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Variable Declaration</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration
+   * @generated
+   */
+  EClass getSAIVariableDeclaration();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getType()
+   * @see #getSAIVariableDeclaration()
+   * @generated
+   */
+  EReference getSAIVariableDeclaration_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getName()
+   * @see #getSAIVariableDeclaration()
+   * @generated
+   */
+  EAttribute getSAIVariableDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getExpression()
+   * @see #getSAIVariableDeclaration()
+   * @generated
+   */
+  EReference getSAIVariableDeclaration_Expression();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIReturn <em>SAI Return</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Return</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIReturn
+   * @generated
+   */
+  EClass getSAIReturn();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIReturn#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIReturn#getExpression()
+   * @see #getSAIReturn()
+   * @generated
+   */
+  EReference getSAIReturn_Expression();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfStatement <em>SAI If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI If Statement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfStatement
+   * @generated
+   */
+  EClass getSAIIfStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getExpression()
+   * @see #getSAIIfStatement()
+   * @generated
+   */
+  EReference getSAIIfStatement_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getThenblock <em>Thenblock</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Thenblock</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getThenblock()
+   * @see #getSAIIfStatement()
+   * @generated
+   */
+  EReference getSAIIfStatement_Thenblock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getElseBlock <em>Else Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Else Block</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfStatement#getElseBlock()
+   * @see #getSAIIfStatement()
+   * @generated
+   */
+  EReference getSAIIfStatement_ElseBlock();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfBlock <em>SAI If Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI If Block</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfBlock
+   * @generated
+   */
+  EClass getSAIIfBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfBlock#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIfBlock#getStatements()
+   * @see #getSAIIfBlock()
+   * @generated
+   */
+  EReference getSAIIfBlock_Statements();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIExpression <em>SAI Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Expression</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIExpression
+   * @generated
+   */
+  EClass getSAIExpression();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.PackageDeclaration <em>Package Declaration</em>}'.
@@ -2121,6 +3066,38 @@ public interface AiDslPackage extends EPackage
   EReference getWorkflowDefinition_Statements();
 
   /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement <em>Workflow If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workflow If Statement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement
+   * @generated
+   */
+  EClass getWorkflowIfStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement#getCondition()
+   * @see #getWorkflowIfStatement()
+   * @generated
+   */
+  EAttribute getWorkflowIfStatement_Condition();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement#isElsePresent <em>Else Present</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Else Present</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement#isElsePresent()
+   * @see #getWorkflowIfStatement()
+   * @generated
+   */
+  EAttribute getWorkflowIfStatement_ElsePresent();
+
+  /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement <em>Workflow Definition Apply LLM Task Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2227,6 +3204,165 @@ public interface AiDslPackage extends EPackage
   EAttribute getBASICTYPE_Typename();
 
   /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIAssignment <em>SAI Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Assignment</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIAssignment
+   * @generated
+   */
+  EClass getSAIAssignment();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIAssignment#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIAssignment#getLeft()
+   * @see #getSAIAssignment()
+   * @generated
+   */
+  EReference getSAIAssignment_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIAssignment#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIAssignment#getRight()
+   * @see #getSAIAssignment()
+   * @generated
+   */
+  EReference getSAIAssignment_Right();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection <em>SAI Member Selection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Member Selection</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection
+   * @generated
+   */
+  EClass getSAIMemberSelection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getReceiver <em>Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Receiver</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getReceiver()
+   * @see #getSAIMemberSelection()
+   * @generated
+   */
+  EReference getSAIMemberSelection_Receiver();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getMember <em>Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Member</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getMember()
+   * @see #getSAIMemberSelection()
+   * @generated
+   */
+  EReference getSAIMemberSelection_Member();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#isMethodinvocation <em>Methodinvocation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Methodinvocation</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#isMethodinvocation()
+   * @see #getSAIMemberSelection()
+   * @generated
+   */
+  EAttribute getSAIMemberSelection_Methodinvocation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Args</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection#getArgs()
+   * @see #getSAIMemberSelection()
+   * @generated
+   */
+  EReference getSAIMemberSelection_Args();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIStringConstant <em>SAI String Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI String Constant</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIStringConstant
+   * @generated
+   */
+  EClass getSAIStringConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIStringConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIStringConstant#getValue()
+   * @see #getSAIStringConstant()
+   * @generated
+   */
+  EAttribute getSAIStringConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIntConstant <em>SAI Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Int Constant</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIntConstant
+   * @generated
+   */
+  EClass getSAIIntConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIIntConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIIntConstant#getValue()
+   * @see #getSAIIntConstant()
+   * @generated
+   */
+  EAttribute getSAIIntConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant <em>SAI Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Bool Constant</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant
+   * @generated
+   */
+  EClass getSAIBoolConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant#getValue()
+   * @see #getSAIBoolConstant()
+   * @generated
+   */
+  EAttribute getSAIBoolConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAINull <em>SAI Null</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Null</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAINull
+   * @generated
+   */
+  EClass getSAINull();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2282,6 +3418,254 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference MODEL__DEFINITIONS = eINSTANCE.getModel_Definitions();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowFunctionsDefinitionImpl <em>Workflow Functions Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowFunctionsDefinitionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowFunctionsDefinition()
+     * @generated
+     */
+    EClass WORKFLOW_FUNCTIONS_DEFINITION = eINSTANCE.getWorkflowFunctionsDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_FUNCTIONS_DEFINITION__NAME = eINSTANCE.getWorkflowFunctionsDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Members</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORKFLOW_FUNCTIONS_DEFINITION__MEMBERS = eINSTANCE.getWorkflowFunctionsDefinition_Members();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberImpl <em>SAI Member</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMember()
+     * @generated
+     */
+    EClass SAI_MEMBER = eINSTANCE.getSAIMember();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_MEMBER__TYPE = eINSTANCE.getSAIMember_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_MEMBER__NAME = eINSTANCE.getSAIMember_Name();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIFieldImpl <em>SAI Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIFieldImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIField()
+     * @generated
+     */
+    EClass SAI_FIELD = eINSTANCE.getSAIField();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMethodImpl <em>SAI Method</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMethodImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMethod()
+     * @generated
+     */
+    EClass SAI_METHOD = eINSTANCE.getSAIMethod();
+
+    /**
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_METHOD__PARAMS = eINSTANCE.getSAIMethod_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_METHOD__BODY = eINSTANCE.getSAIMethod_Body();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIParameterImpl <em>SAI Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIParameterImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIParameter()
+     * @generated
+     */
+    EClass SAI_PARAMETER = eINSTANCE.getSAIParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_PARAMETER__TYPE = eINSTANCE.getSAIParameter_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_PARAMETER__NAME = eINSTANCE.getSAIParameter_Name();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIBlockImpl <em>SAI Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIBlockImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIBlock()
+     * @generated
+     */
+    EClass SAI_BLOCK = eINSTANCE.getSAIBlock();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIStatementImpl <em>SAI Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIStatementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIStatement()
+     * @generated
+     */
+    EClass SAI_STATEMENT = eINSTANCE.getSAIStatement();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIVariableDeclarationImpl <em>SAI Variable Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIVariableDeclarationImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIVariableDeclaration()
+     * @generated
+     */
+    EClass SAI_VARIABLE_DECLARATION = eINSTANCE.getSAIVariableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_VARIABLE_DECLARATION__TYPE = eINSTANCE.getSAIVariableDeclaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_VARIABLE_DECLARATION__NAME = eINSTANCE.getSAIVariableDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_VARIABLE_DECLARATION__EXPRESSION = eINSTANCE.getSAIVariableDeclaration_Expression();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIReturnImpl <em>SAI Return</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIReturnImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIReturn()
+     * @generated
+     */
+    EClass SAI_RETURN = eINSTANCE.getSAIReturn();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_RETURN__EXPRESSION = eINSTANCE.getSAIReturn_Expression();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIfStatementImpl <em>SAI If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIfStatementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIfStatement()
+     * @generated
+     */
+    EClass SAI_IF_STATEMENT = eINSTANCE.getSAIIfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_IF_STATEMENT__EXPRESSION = eINSTANCE.getSAIIfStatement_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Thenblock</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_IF_STATEMENT__THENBLOCK = eINSTANCE.getSAIIfStatement_Thenblock();
+
+    /**
+     * The meta object literal for the '<em><b>Else Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_IF_STATEMENT__ELSE_BLOCK = eINSTANCE.getSAIIfStatement_ElseBlock();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIfBlockImpl <em>SAI If Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIfBlockImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIfBlock()
+     * @generated
+     */
+    EClass SAI_IF_BLOCK = eINSTANCE.getSAIIfBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_IF_BLOCK__STATEMENTS = eINSTANCE.getSAIIfBlock_Statements();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIExpressionImpl <em>SAI Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIExpressionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIExpression()
+     * @generated
+     */
+    EClass SAI_EXPRESSION = eINSTANCE.getSAIExpression();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.PackageDeclarationImpl <em>Package Declaration</em>}' class.
@@ -2978,6 +4362,32 @@ public interface AiDslPackage extends EPackage
     EReference WORKFLOW_DEFINITION__STATEMENTS = eINSTANCE.getWorkflowDefinition_Statements();
 
     /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowIfStatementImpl <em>Workflow If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.WorkflowIfStatementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowIfStatement()
+     * @generated
+     */
+    EClass WORKFLOW_IF_STATEMENT = eINSTANCE.getWorkflowIfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_IF_STATEMENT__CONDITION = eINSTANCE.getWorkflowIfStatement_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Else Present</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORKFLOW_IF_STATEMENT__ELSE_PRESENT = eINSTANCE.getWorkflowIfStatement_ElsePresent();
+
+    /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.WorkflowDefinitionApplyLLMTaskStatementImpl <em>Workflow Definition Apply LLM Task Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3064,6 +4474,138 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EAttribute BASICTYPE__TYPENAME = eINSTANCE.getBASICTYPE_Typename();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIAssignmentImpl <em>SAI Assignment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIAssignmentImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIAssignment()
+     * @generated
+     */
+    EClass SAI_ASSIGNMENT = eINSTANCE.getSAIAssignment();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_ASSIGNMENT__LEFT = eINSTANCE.getSAIAssignment_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_ASSIGNMENT__RIGHT = eINSTANCE.getSAIAssignment_Right();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberSelectionImpl <em>SAI Member Selection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIMemberSelectionImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMemberSelection()
+     * @generated
+     */
+    EClass SAI_MEMBER_SELECTION = eINSTANCE.getSAIMemberSelection();
+
+    /**
+     * The meta object literal for the '<em><b>Receiver</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_MEMBER_SELECTION__RECEIVER = eINSTANCE.getSAIMemberSelection_Receiver();
+
+    /**
+     * The meta object literal for the '<em><b>Member</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_MEMBER_SELECTION__MEMBER = eINSTANCE.getSAIMemberSelection_Member();
+
+    /**
+     * The meta object literal for the '<em><b>Methodinvocation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_MEMBER_SELECTION__METHODINVOCATION = eINSTANCE.getSAIMemberSelection_Methodinvocation();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_MEMBER_SELECTION__ARGS = eINSTANCE.getSAIMemberSelection_Args();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIStringConstantImpl <em>SAI String Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIStringConstantImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIStringConstant()
+     * @generated
+     */
+    EClass SAI_STRING_CONSTANT = eINSTANCE.getSAIStringConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_STRING_CONSTANT__VALUE = eINSTANCE.getSAIStringConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIntConstantImpl <em>SAI Int Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIIntConstantImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIntConstant()
+     * @generated
+     */
+    EClass SAI_INT_CONSTANT = eINSTANCE.getSAIIntConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_INT_CONSTANT__VALUE = eINSTANCE.getSAIIntConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIBoolConstantImpl <em>SAI Bool Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIBoolConstantImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIBoolConstant()
+     * @generated
+     */
+    EClass SAI_BOOL_CONSTANT = eINSTANCE.getSAIBoolConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SAI_BOOL_CONSTANT__VALUE = eINSTANCE.getSAIBoolConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAINullImpl <em>SAI Null</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAINullImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAINull()
+     * @generated
+     */
+    EClass SAI_NULL = eINSTANCE.getSAINull();
 
   }
 

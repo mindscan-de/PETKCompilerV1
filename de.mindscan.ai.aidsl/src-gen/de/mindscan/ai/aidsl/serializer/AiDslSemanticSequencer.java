@@ -19,6 +19,20 @@ import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.SAIAssignment;
+import de.mindscan.ai.aidsl.aiDsl.SAIBlock;
+import de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIField;
+import de.mindscan.ai.aidsl.aiDsl.SAIIfBlock;
+import de.mindscan.ai.aidsl.aiDsl.SAIIfStatement;
+import de.mindscan.ai.aidsl.aiDsl.SAIIntConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection;
+import de.mindscan.ai.aidsl.aiDsl.SAIMethod;
+import de.mindscan.ai.aidsl.aiDsl.SAINull;
+import de.mindscan.ai.aidsl.aiDsl.SAIParameter;
+import de.mindscan.ai.aidsl.aiDsl.SAIReturn;
+import de.mindscan.ai.aidsl.aiDsl.SAIStringConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements;
@@ -32,6 +46,8 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
@@ -110,6 +126,48 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AiDslPackage.PACKAGE_DECLARATION:
 				sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
 				return; 
+			case AiDslPackage.SAI_ASSIGNMENT:
+				sequence_SAIAssignment(context, (SAIAssignment) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_BLOCK:
+				sequence_SAIBlock(context, (SAIBlock) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_BOOL_CONSTANT:
+				sequence_SAITerminalExpression(context, (SAIBoolConstant) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_FIELD:
+				sequence_SAITypedDeclaration(context, (SAIField) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_IF_BLOCK:
+				sequence_SAIIfBlock(context, (SAIIfBlock) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_IF_STATEMENT:
+				sequence_SAIIfStatement(context, (SAIIfStatement) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_INT_CONSTANT:
+				sequence_SAITerminalExpression(context, (SAIIntConstant) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_MEMBER_SELECTION:
+				sequence_SAISelectionExpression(context, (SAIMemberSelection) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_METHOD:
+				sequence_SAIMethod_SAITypedDeclaration(context, (SAIMethod) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_NULL:
+				sequence_SAITerminalExpression(context, (SAINull) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_PARAMETER:
+				sequence_SAITypedDeclaration(context, (SAIParameter) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_RETURN:
+				sequence_SAIReturn(context, (SAIReturn) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_STRING_CONSTANT:
+				sequence_SAITerminalExpression(context, (SAIStringConstant) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_VARIABLE_DECLARATION:
+				sequence_SAITypedDeclaration_SAIVariableDeclaration(context, (SAIVariableDeclaration) semanticObject); 
+				return; 
 			case AiDslPackage.VM_FIELD_ELEMENT:
 				sequence_VMFieldElement(context, (VMFieldElement) semanticObject); 
 				return; 
@@ -148,6 +206,12 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT:
 				sequence_WorkflowDefinitionApplyLLMTaskStatement(context, (WorkflowDefinitionApplyLLMTaskStatement) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_FUNCTIONS_DEFINITION:
+				sequence_WorkflowFunctionsDefinition(context, (WorkflowFunctionsDefinition) semanticObject); 
+				return; 
+			case AiDslPackage.WORKFLOW_IF_STATEMENT:
+				sequence_WorkflowIfStatement(context, (WorkflowIfStatement) semanticObject); 
 				return; 
 			case AiDslPackage.WORKFLOW_INPUT_DEFINITION:
 				sequence_WorkflowInputDefinition(context, (WorkflowInputDefinition) semanticObject); 
@@ -420,7 +484,8 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 definitions+=WorkflowDataDictionaryDefinition | 
 	 *                 definitions+=WorkflowInputDefinition | 
 	 *                 definitions+=LlmTaskDefinition | 
-	 *                 definitions+=VMNodeDefinition
+	 *                 definitions+=VMNodeDefinition | 
+	 *                 definitions+=WorkflowFunctionsDefinition
 	 *             )+
 	 *         ) | 
 	 *         import_declarations+=ImportDeclaration+
@@ -448,6 +513,305 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIAssignment
+	 *     SAIExpression returns SAIAssignment
+	 *     SAIAssignment returns SAIAssignment
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAIAssignment
+	 *     SAISelectionExpression returns SAIAssignment
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIAssignment
+	 *     SAITerminalExpression returns SAIAssignment
+	 *
+	 * Constraint:
+	 *     (left=SAIAssignment_SAIAssignment_1_0 right=SAIExpression)
+	 * </pre>
+	 */
+	protected void sequence_SAIAssignment(ISerializationContext context, SAIAssignment semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_ASSIGNMENT__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_ASSIGNMENT__LEFT));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_ASSIGNMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_ASSIGNMENT__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAIAssignmentAccess().getSAIAssignmentLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getSAIAssignmentAccess().getRightSAIExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIBlock returns SAIBlock
+	 *     SAIIfBlock returns SAIBlock
+	 *
+	 * Constraint:
+	 *     statements+=SAIStatement*
+	 * </pre>
+	 */
+	protected void sequence_SAIBlock(ISerializationContext context, SAIBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIIfBlock returns SAIIfBlock
+	 *
+	 * Constraint:
+	 *     statements+=SAIStatement
+	 * </pre>
+	 */
+	protected void sequence_SAIIfBlock(ISerializationContext context, SAIIfBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIIfStatement
+	 *     SAIIfStatement returns SAIIfStatement
+	 *
+	 * Constraint:
+	 *     (expression=SAIExpression thenblock=SAIIfBlock elseBlock=SAIIfBlock?)
+	 * </pre>
+	 */
+	protected void sequence_SAIIfStatement(ISerializationContext context, SAIIfStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIMember returns SAIMethod
+	 *     SAIMethod returns SAIMethod
+	 *
+	 * Constraint:
+	 *     (type=[ELEMENTTYPE|ID] name=ID (params+=SAIParameter params+=SAIParameter)? body=SAIBlock)
+	 * </pre>
+	 */
+	protected void sequence_SAIMethod_SAITypedDeclaration(ISerializationContext context, SAIMethod semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIReturn
+	 *     SAIReturn returns SAIReturn
+	 *
+	 * Constraint:
+	 *     expression=SAIExpression
+	 * </pre>
+	 */
+	protected void sequence_SAIReturn(ISerializationContext context, SAIReturn semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_RETURN__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_RETURN__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAIReturnAccess().getExpressionSAIExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIMemberSelection
+	 *     SAIExpression returns SAIMemberSelection
+	 *     SAIAssignment returns SAIMemberSelection
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAIMemberSelection
+	 *     SAISelectionExpression returns SAIMemberSelection
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIMemberSelection
+	 *     SAITerminalExpression returns SAIMemberSelection
+	 *
+	 * Constraint:
+	 *     (
+	 *         receiver=SAISelectionExpression_SAIMemberSelection_1_0 
+	 *         member=[SAIMember|ID] 
+	 *         (methodinvocation?='(' (args+=SAIExpression args+=SAIExpression*)?)?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_SAISelectionExpression(ISerializationContext context, SAIMemberSelection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIBoolConstant
+	 *     SAIExpression returns SAIBoolConstant
+	 *     SAIAssignment returns SAIBoolConstant
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAIBoolConstant
+	 *     SAISelectionExpression returns SAIBoolConstant
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIBoolConstant
+	 *     SAITerminalExpression returns SAIBoolConstant
+	 *
+	 * Constraint:
+	 *     (value='true' | value='false')
+	 * </pre>
+	 */
+	protected void sequence_SAITerminalExpression(ISerializationContext context, SAIBoolConstant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIIntConstant
+	 *     SAIExpression returns SAIIntConstant
+	 *     SAIAssignment returns SAIIntConstant
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAIIntConstant
+	 *     SAISelectionExpression returns SAIIntConstant
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIIntConstant
+	 *     SAITerminalExpression returns SAIIntConstant
+	 *
+	 * Constraint:
+	 *     value=INT
+	 * </pre>
+	 */
+	protected void sequence_SAITerminalExpression(ISerializationContext context, SAIIntConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_INT_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_INT_CONSTANT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAITerminalExpressionAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAINull
+	 *     SAIExpression returns SAINull
+	 *     SAIAssignment returns SAINull
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAINull
+	 *     SAISelectionExpression returns SAINull
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAINull
+	 *     SAITerminalExpression returns SAINull
+	 *
+	 * Constraint:
+	 *     {SAINull}
+	 * </pre>
+	 */
+	protected void sequence_SAITerminalExpression(ISerializationContext context, SAINull semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIStringConstant
+	 *     SAIExpression returns SAIStringConstant
+	 *     SAIAssignment returns SAIStringConstant
+	 *     SAIAssignment.SAIAssignment_1_0 returns SAIStringConstant
+	 *     SAISelectionExpression returns SAIStringConstant
+	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIStringConstant
+	 *     SAITerminalExpression returns SAIStringConstant
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 * </pre>
+	 */
+	protected void sequence_SAITerminalExpression(ISerializationContext context, SAIStringConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_STRING_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_STRING_CONSTANT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAITerminalExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIMember returns SAIField
+	 *     SAIField returns SAIField
+	 *
+	 * Constraint:
+	 *     (type=[ELEMENTTYPE|ID] name=ID)
+	 * </pre>
+	 */
+	protected void sequence_SAITypedDeclaration(ISerializationContext context, SAIField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_MEMBER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__TYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_MEMBER__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIParameter returns SAIParameter
+	 *
+	 * Constraint:
+	 *     (type=[ELEMENTTYPE|ID] name=ID)
+	 * </pre>
+	 */
+	protected void sequence_SAITypedDeclaration(ISerializationContext context, SAIParameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_MEMBER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__TYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_MEMBER__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIVariableDeclaration
+	 *     SAIVariableDeclaration returns SAIVariableDeclaration
+	 *
+	 * Constraint:
+	 *     (type=[ELEMENTTYPE|ID] name=ID expression=SAIExpression)
+	 * </pre>
+	 */
+	protected void sequence_SAITypedDeclaration_SAIVariableDeclaration(ISerializationContext context, SAIVariableDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__TYPE));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSAIVariableDeclarationAccess().getExpressionSAIExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -669,6 +1033,34 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_WorkflowDefinition(ISerializationContext context, WorkflowDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowFunctionsDefinition returns WorkflowFunctionsDefinition
+	 *
+	 * Constraint:
+	 *     (name=ID members+=SAIMember*)
+	 * </pre>
+	 */
+	protected void sequence_WorkflowFunctionsDefinition(ISerializationContext context, WorkflowFunctionsDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     WorkflowIfStatement returns WorkflowIfStatement
+	 *
+	 * Constraint:
+	 *     (condition='condition' elsePresent?='else'?)
+	 * </pre>
+	 */
+	protected void sequence_WorkflowIfStatement(ISerializationContext context, WorkflowIfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

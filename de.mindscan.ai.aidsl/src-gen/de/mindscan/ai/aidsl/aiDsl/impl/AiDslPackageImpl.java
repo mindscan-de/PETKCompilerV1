@@ -18,6 +18,23 @@ import de.mindscan.ai.aidsl.aiDsl.LlmTaskDefinition;
 import de.mindscan.ai.aidsl.aiDsl.LlmVariableAssignment;
 import de.mindscan.ai.aidsl.aiDsl.Model;
 import de.mindscan.ai.aidsl.aiDsl.PackageDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.SAIAssignment;
+import de.mindscan.ai.aidsl.aiDsl.SAIBlock;
+import de.mindscan.ai.aidsl.aiDsl.SAIBoolConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIExpression;
+import de.mindscan.ai.aidsl.aiDsl.SAIField;
+import de.mindscan.ai.aidsl.aiDsl.SAIIfBlock;
+import de.mindscan.ai.aidsl.aiDsl.SAIIfStatement;
+import de.mindscan.ai.aidsl.aiDsl.SAIIntConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIMember;
+import de.mindscan.ai.aidsl.aiDsl.SAIMemberSelection;
+import de.mindscan.ai.aidsl.aiDsl.SAIMethod;
+import de.mindscan.ai.aidsl.aiDsl.SAINull;
+import de.mindscan.ai.aidsl.aiDsl.SAIParameter;
+import de.mindscan.ai.aidsl.aiDsl.SAIReturn;
+import de.mindscan.ai.aidsl.aiDsl.SAIStatement;
+import de.mindscan.ai.aidsl.aiDsl.SAIStringConstant;
+import de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeEleemnts;
@@ -32,6 +49,8 @@ import de.mindscan.ai.aidsl.aiDsl.WorkflowDataDictionaryDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMNodeResultAssignment;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowDefinitionApplyLLMTaskStatement;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowFunctionsDefinition;
+import de.mindscan.ai.aidsl.aiDsl.WorkflowIfStatement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowInputDefinition;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElement;
 import de.mindscan.ai.aidsl.aiDsl.WorkflowUIElementMap;
@@ -57,6 +76,90 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workflowFunctionsDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiMemberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiMethodEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiVariableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiReturnEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiIfStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiIfBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -252,6 +355,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass workflowIfStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass workflowDefinitionApplyLLMTaskStatementEClass = null;
 
   /**
@@ -274,6 +384,48 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass basictypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiAssignmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiMemberSelectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiStringConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiIntConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiBoolConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiNullEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -380,6 +532,314 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EReference getModel_Definitions()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWorkflowFunctionsDefinition()
+  {
+    return workflowFunctionsDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowFunctionsDefinition_Name()
+  {
+    return (EAttribute)workflowFunctionsDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWorkflowFunctionsDefinition_Members()
+  {
+    return (EReference)workflowFunctionsDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIMember()
+  {
+    return saiMemberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMember_Type()
+  {
+    return (EReference)saiMemberEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIMember_Name()
+  {
+    return (EAttribute)saiMemberEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIField()
+  {
+    return saiFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIMethod()
+  {
+    return saiMethodEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMethod_Params()
+  {
+    return (EReference)saiMethodEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMethod_Body()
+  {
+    return (EReference)saiMethodEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIParameter()
+  {
+    return saiParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIParameter_Type()
+  {
+    return (EReference)saiParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIParameter_Name()
+  {
+    return (EAttribute)saiParameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIBlock()
+  {
+    return saiBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIStatement()
+  {
+    return saiStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIVariableDeclaration()
+  {
+    return saiVariableDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIVariableDeclaration_Type()
+  {
+    return (EReference)saiVariableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIVariableDeclaration_Name()
+  {
+    return (EAttribute)saiVariableDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIVariableDeclaration_Expression()
+  {
+    return (EReference)saiVariableDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIReturn()
+  {
+    return saiReturnEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIReturn_Expression()
+  {
+    return (EReference)saiReturnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIIfStatement()
+  {
+    return saiIfStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIIfStatement_Expression()
+  {
+    return (EReference)saiIfStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIIfStatement_Thenblock()
+  {
+    return (EReference)saiIfStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIIfStatement_ElseBlock()
+  {
+    return (EReference)saiIfStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIIfBlock()
+  {
+    return saiIfBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIIfBlock_Statements()
+  {
+    return (EReference)saiIfBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIExpression()
+  {
+    return saiExpressionEClass;
   }
 
   /**
@@ -1268,6 +1728,39 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getWorkflowIfStatement()
+  {
+    return workflowIfStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowIfStatement_Condition()
+  {
+    return (EAttribute)workflowIfStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWorkflowIfStatement_ElsePresent()
+  {
+    return (EAttribute)workflowIfStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getWorkflowDefinitionApplyLLMTaskStatement()
   {
     return workflowDefinitionApplyLLMTaskStatementEClass;
@@ -1378,6 +1871,171 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   @Override
+  public EClass getSAIAssignment()
+  {
+    return saiAssignmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIAssignment_Left()
+  {
+    return (EReference)saiAssignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIAssignment_Right()
+  {
+    return (EReference)saiAssignmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIMemberSelection()
+  {
+    return saiMemberSelectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMemberSelection_Receiver()
+  {
+    return (EReference)saiMemberSelectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMemberSelection_Member()
+  {
+    return (EReference)saiMemberSelectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIMemberSelection_Methodinvocation()
+  {
+    return (EAttribute)saiMemberSelectionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIMemberSelection_Args()
+  {
+    return (EReference)saiMemberSelectionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIStringConstant()
+  {
+    return saiStringConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIStringConstant_Value()
+  {
+    return (EAttribute)saiStringConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIIntConstant()
+  {
+    return saiIntConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIIntConstant_Value()
+  {
+    return (EAttribute)saiIntConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIBoolConstant()
+  {
+    return saiBoolConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSAIBoolConstant_Value()
+  {
+    return (EAttribute)saiBoolConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAINull()
+  {
+    return saiNullEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AiDslFactory getAiDslFactory()
   {
     return (AiDslFactory)getEFactoryInstance();
@@ -1407,6 +2065,46 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(modelEClass, MODEL__PACKAGE_DECLARATION);
     createEReference(modelEClass, MODEL__IMPORT_DECLARATIONS);
     createEReference(modelEClass, MODEL__DEFINITIONS);
+
+    workflowFunctionsDefinitionEClass = createEClass(WORKFLOW_FUNCTIONS_DEFINITION);
+    createEAttribute(workflowFunctionsDefinitionEClass, WORKFLOW_FUNCTIONS_DEFINITION__NAME);
+    createEReference(workflowFunctionsDefinitionEClass, WORKFLOW_FUNCTIONS_DEFINITION__MEMBERS);
+
+    saiMemberEClass = createEClass(SAI_MEMBER);
+    createEReference(saiMemberEClass, SAI_MEMBER__TYPE);
+    createEAttribute(saiMemberEClass, SAI_MEMBER__NAME);
+
+    saiFieldEClass = createEClass(SAI_FIELD);
+
+    saiMethodEClass = createEClass(SAI_METHOD);
+    createEReference(saiMethodEClass, SAI_METHOD__PARAMS);
+    createEReference(saiMethodEClass, SAI_METHOD__BODY);
+
+    saiParameterEClass = createEClass(SAI_PARAMETER);
+    createEReference(saiParameterEClass, SAI_PARAMETER__TYPE);
+    createEAttribute(saiParameterEClass, SAI_PARAMETER__NAME);
+
+    saiBlockEClass = createEClass(SAI_BLOCK);
+
+    saiStatementEClass = createEClass(SAI_STATEMENT);
+
+    saiVariableDeclarationEClass = createEClass(SAI_VARIABLE_DECLARATION);
+    createEReference(saiVariableDeclarationEClass, SAI_VARIABLE_DECLARATION__TYPE);
+    createEAttribute(saiVariableDeclarationEClass, SAI_VARIABLE_DECLARATION__NAME);
+    createEReference(saiVariableDeclarationEClass, SAI_VARIABLE_DECLARATION__EXPRESSION);
+
+    saiReturnEClass = createEClass(SAI_RETURN);
+    createEReference(saiReturnEClass, SAI_RETURN__EXPRESSION);
+
+    saiIfStatementEClass = createEClass(SAI_IF_STATEMENT);
+    createEReference(saiIfStatementEClass, SAI_IF_STATEMENT__EXPRESSION);
+    createEReference(saiIfStatementEClass, SAI_IF_STATEMENT__THENBLOCK);
+    createEReference(saiIfStatementEClass, SAI_IF_STATEMENT__ELSE_BLOCK);
+
+    saiIfBlockEClass = createEClass(SAI_IF_BLOCK);
+    createEReference(saiIfBlockEClass, SAI_IF_BLOCK__STATEMENTS);
+
+    saiExpressionEClass = createEClass(SAI_EXPRESSION);
 
     packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
     createEAttribute(packageDeclarationEClass, PACKAGE_DECLARATION__NAME);
@@ -1515,6 +2213,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__DATADICTIONARY);
     createEReference(workflowDefinitionEClass, WORKFLOW_DEFINITION__STATEMENTS);
 
+    workflowIfStatementEClass = createEClass(WORKFLOW_IF_STATEMENT);
+    createEAttribute(workflowIfStatementEClass, WORKFLOW_IF_STATEMENT__CONDITION);
+    createEAttribute(workflowIfStatementEClass, WORKFLOW_IF_STATEMENT__ELSE_PRESENT);
+
     workflowDefinitionApplyLLMTaskStatementEClass = createEClass(WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT);
     createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__LLMTASK);
     createEReference(workflowDefinitionApplyLLMTaskStatementEClass, WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT__NODERESULTASSIGMENTS);
@@ -1528,6 +2230,27 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     basictypeEClass = createEClass(BASICTYPE);
     createEAttribute(basictypeEClass, BASICTYPE__IS_ARRAY);
     createEAttribute(basictypeEClass, BASICTYPE__TYPENAME);
+
+    saiAssignmentEClass = createEClass(SAI_ASSIGNMENT);
+    createEReference(saiAssignmentEClass, SAI_ASSIGNMENT__LEFT);
+    createEReference(saiAssignmentEClass, SAI_ASSIGNMENT__RIGHT);
+
+    saiMemberSelectionEClass = createEClass(SAI_MEMBER_SELECTION);
+    createEReference(saiMemberSelectionEClass, SAI_MEMBER_SELECTION__RECEIVER);
+    createEReference(saiMemberSelectionEClass, SAI_MEMBER_SELECTION__MEMBER);
+    createEAttribute(saiMemberSelectionEClass, SAI_MEMBER_SELECTION__METHODINVOCATION);
+    createEReference(saiMemberSelectionEClass, SAI_MEMBER_SELECTION__ARGS);
+
+    saiStringConstantEClass = createEClass(SAI_STRING_CONSTANT);
+    createEAttribute(saiStringConstantEClass, SAI_STRING_CONSTANT__VALUE);
+
+    saiIntConstantEClass = createEClass(SAI_INT_CONSTANT);
+    createEAttribute(saiIntConstantEClass, SAI_INT_CONSTANT__VALUE);
+
+    saiBoolConstantEClass = createEClass(SAI_BOOL_CONSTANT);
+    createEAttribute(saiBoolConstantEClass, SAI_BOOL_CONSTANT__VALUE);
+
+    saiNullEClass = createEClass(SAI_NULL);
   }
 
   /**
@@ -1559,17 +2282,70 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    saiFieldEClass.getESuperTypes().add(this.getSAIMember());
+    saiMethodEClass.getESuperTypes().add(this.getSAIMember());
+    saiBlockEClass.getESuperTypes().add(this.getSAIIfBlock());
+    saiVariableDeclarationEClass.getESuperTypes().add(this.getSAIStatement());
+    saiReturnEClass.getESuperTypes().add(this.getSAIStatement());
+    saiIfStatementEClass.getESuperTypes().add(this.getSAIStatement());
+    saiExpressionEClass.getESuperTypes().add(this.getSAIStatement());
     vmNodeOpCodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeInElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeFieldElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     basictypeEClass.getESuperTypes().add(this.getELEMENTTYPE());
+    saiAssignmentEClass.getESuperTypes().add(this.getSAIExpression());
+    saiMemberSelectionEClass.getESuperTypes().add(this.getSAIExpression());
+    saiStringConstantEClass.getESuperTypes().add(this.getSAIExpression());
+    saiIntConstantEClass.getESuperTypes().add(this.getSAIExpression());
+    saiBoolConstantEClass.getESuperTypes().add(this.getSAIExpression());
+    saiNullEClass.getESuperTypes().add(this.getSAIExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Package_declaration(), this.getPackageDeclaration(), null, "package_declaration", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Import_declarations(), this.getImportDeclaration(), null, "import_declarations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Definitions(), ecorePackage.getEObject(), null, "definitions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(workflowFunctionsDefinitionEClass, WorkflowFunctionsDefinition.class, "WorkflowFunctionsDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowFunctionsDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkflowFunctionsDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWorkflowFunctionsDefinition_Members(), this.getSAIMember(), null, "members", null, 0, -1, WorkflowFunctionsDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiMemberEClass, SAIMember.class, "SAIMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIMember_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSAIMember_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiFieldEClass, SAIField.class, "SAIField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(saiMethodEClass, SAIMethod.class, "SAIMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIMethod_Params(), this.getSAIParameter(), null, "params", null, 0, -1, SAIMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIMethod_Body(), this.getSAIBlock(), null, "body", null, 0, 1, SAIMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiParameterEClass, SAIParameter.class, "SAIParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIParameter_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSAIParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiBlockEClass, SAIBlock.class, "SAIBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(saiStatementEClass, SAIStatement.class, "SAIStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(saiVariableDeclarationEClass, SAIVariableDeclaration.class, "SAIVariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIVariableDeclaration_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSAIVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIVariableDeclaration_Expression(), this.getSAIExpression(), null, "expression", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiReturnEClass, SAIReturn.class, "SAIReturn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIReturn_Expression(), this.getSAIExpression(), null, "expression", null, 0, 1, SAIReturn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiIfStatementEClass, SAIIfStatement.class, "SAIIfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIIfStatement_Expression(), this.getSAIExpression(), null, "expression", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIIfStatement_Thenblock(), this.getSAIIfBlock(), null, "thenblock", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIIfStatement_ElseBlock(), this.getSAIIfBlock(), null, "elseBlock", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiIfBlockEClass, SAIIfBlock.class, "SAIIfBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIIfBlock_Statements(), this.getSAIStatement(), null, "statements", null, 0, -1, SAIIfBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiExpressionEClass, SAIExpression.class, "SAIExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackageDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1678,6 +2454,10 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getWorkflowDefinition_Datadictionary(), this.getWorkflowDataDictionaryDefinition(), null, "datadictionary", null, 0, 1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDefinition_Statements(), this.getWorkflowDefinitionApplyLLMTaskStatement(), null, "statements", null, 0, -1, WorkflowDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(workflowIfStatementEClass, WorkflowIfStatement.class, "WorkflowIfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWorkflowIfStatement_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, WorkflowIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWorkflowIfStatement_ElsePresent(), ecorePackage.getEBoolean(), "elsePresent", null, 0, 1, WorkflowIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(workflowDefinitionApplyLLMTaskStatementEClass, WorkflowDefinitionApplyLLMTaskStatement.class, "WorkflowDefinitionApplyLLMTaskStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Llmtask(), this.getLlmTaskDefinition(), null, "llmtask", null, 0, 1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWorkflowDefinitionApplyLLMTaskStatement_Noderesultassigments(), this.getWorkflowDefinitionApplyLLMNodeResultAssignment(), null, "noderesultassigments", null, 0, -1, WorkflowDefinitionApplyLLMTaskStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1691,6 +2471,27 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(basictypeEClass, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, "BASICTYPE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBASICTYPE_IsArray(), ecorePackage.getEBoolean(), "isArray", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBASICTYPE_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, de.mindscan.ai.aidsl.aiDsl.BASICTYPE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiAssignmentEClass, SAIAssignment.class, "SAIAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIAssignment_Left(), this.getSAIExpression(), null, "left", null, 0, 1, SAIAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIAssignment_Right(), this.getSAIExpression(), null, "right", null, 0, 1, SAIAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiMemberSelectionEClass, SAIMemberSelection.class, "SAIMemberSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIMemberSelection_Receiver(), this.getSAIExpression(), null, "receiver", null, 0, 1, SAIMemberSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIMemberSelection_Member(), this.getSAIMember(), null, "member", null, 0, 1, SAIMemberSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSAIMemberSelection_Methodinvocation(), ecorePackage.getEBoolean(), "methodinvocation", null, 0, 1, SAIMemberSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIMemberSelection_Args(), this.getSAIExpression(), null, "args", null, 0, -1, SAIMemberSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiStringConstantEClass, SAIStringConstant.class, "SAIStringConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSAIStringConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, SAIStringConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiIntConstantEClass, SAIIntConstant.class, "SAIIntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSAIIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, SAIIntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiBoolConstantEClass, SAIBoolConstant.class, "SAIBoolConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSAIBoolConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, SAIBoolConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiNullEClass, SAINull.class, "SAINull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

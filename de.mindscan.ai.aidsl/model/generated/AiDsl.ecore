@@ -9,6 +9,51 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowFunctionsDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//SAIMember" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIField" eSuperTypes="#//SAIMember"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIMethod" eSuperTypes="#//SAIMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//SAIParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//SAIBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIBlock" eSuperTypes="#//SAIIfBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIVariableDeclaration" eSuperTypes="#//SAIStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//SAIExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIReturn" eSuperTypes="#//SAIStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//SAIExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIIfStatement" eSuperTypes="#//SAIStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//SAIExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thenblock" eType="#//SAIIfBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//SAIIfBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIIfBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//SAIStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIExpression" eSuperTypes="#//SAIStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PackageDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -137,6 +182,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//WorkflowDefinitionApplyLLMTaskStatement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowIfStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elsePresent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkflowDefinitionApplyLLMTaskStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="llmtask" eType="#//LlmTaskDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="noderesultassigments" upperBound="-1"
@@ -152,4 +201,28 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIAssignment" eSuperTypes="#//SAIExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//SAIExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SAIExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIMemberSelection" eSuperTypes="#//SAIExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//SAIExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="#//SAIMember"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodinvocation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//SAIExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIStringConstant" eSuperTypes="#//SAIExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIIntConstant" eSuperTypes="#//SAIExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIBoolConstant" eSuperTypes="#//SAIExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAINull" eSuperTypes="#//SAIExpression"/>
 </ecore:EPackage>

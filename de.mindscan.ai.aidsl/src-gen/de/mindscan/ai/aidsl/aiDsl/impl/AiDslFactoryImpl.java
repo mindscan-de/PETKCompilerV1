@@ -66,6 +66,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
     switch (eClass.getClassifierID())
     {
       case AiDslPackage.MODEL: return createModel();
+      case AiDslPackage.WORKFLOW_FUNCTIONS_DEFINITION: return createWorkflowFunctionsDefinition();
+      case AiDslPackage.SAI_MEMBER: return createSAIMember();
+      case AiDslPackage.SAI_FIELD: return createSAIField();
+      case AiDslPackage.SAI_METHOD: return createSAIMethod();
+      case AiDslPackage.SAI_PARAMETER: return createSAIParameter();
+      case AiDslPackage.SAI_BLOCK: return createSAIBlock();
+      case AiDslPackage.SAI_STATEMENT: return createSAIStatement();
+      case AiDslPackage.SAI_VARIABLE_DECLARATION: return createSAIVariableDeclaration();
+      case AiDslPackage.SAI_RETURN: return createSAIReturn();
+      case AiDslPackage.SAI_IF_STATEMENT: return createSAIIfStatement();
+      case AiDslPackage.SAI_IF_BLOCK: return createSAIIfBlock();
+      case AiDslPackage.SAI_EXPRESSION: return createSAIExpression();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case AiDslPackage.IMPORT_DECLARATION: return createImportDeclaration();
       case AiDslPackage.WORKFLOW_INPUT_DEFINITION: return createWorkflowInputDefinition();
@@ -93,10 +105,17 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.ANNOTATION_INTERFACE_REFERENCE: return createAnnotationInterfaceReference();
       case AiDslPackage.LLM_VARIABLE_ASSIGNMENT: return createLlmVariableAssignment();
       case AiDslPackage.WORKFLOW_DEFINITION: return createWorkflowDefinition();
+      case AiDslPackage.WORKFLOW_IF_STATEMENT: return createWorkflowIfStatement();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT: return createWorkflowDefinitionApplyLLMTaskStatement();
       case AiDslPackage.WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT: return createWorkflowDefinitionApplyLLMNodeResultAssignment();
       case AiDslPackage.ELEMENTTYPE: return createELEMENTTYPE();
       case AiDslPackage.BASICTYPE: return createBASICTYPE();
+      case AiDslPackage.SAI_ASSIGNMENT: return createSAIAssignment();
+      case AiDslPackage.SAI_MEMBER_SELECTION: return createSAIMemberSelection();
+      case AiDslPackage.SAI_STRING_CONSTANT: return createSAIStringConstant();
+      case AiDslPackage.SAI_INT_CONSTANT: return createSAIIntConstant();
+      case AiDslPackage.SAI_BOOL_CONSTANT: return createSAIBoolConstant();
+      case AiDslPackage.SAI_NULL: return createSAINull();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -112,6 +131,150 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WorkflowFunctionsDefinition createWorkflowFunctionsDefinition()
+  {
+    WorkflowFunctionsDefinitionImpl workflowFunctionsDefinition = new WorkflowFunctionsDefinitionImpl();
+    return workflowFunctionsDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIMember createSAIMember()
+  {
+    SAIMemberImpl saiMember = new SAIMemberImpl();
+    return saiMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIField createSAIField()
+  {
+    SAIFieldImpl saiField = new SAIFieldImpl();
+    return saiField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIMethod createSAIMethod()
+  {
+    SAIMethodImpl saiMethod = new SAIMethodImpl();
+    return saiMethod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIParameter createSAIParameter()
+  {
+    SAIParameterImpl saiParameter = new SAIParameterImpl();
+    return saiParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIBlock createSAIBlock()
+  {
+    SAIBlockImpl saiBlock = new SAIBlockImpl();
+    return saiBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIStatement createSAIStatement()
+  {
+    SAIStatementImpl saiStatement = new SAIStatementImpl();
+    return saiStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIVariableDeclaration createSAIVariableDeclaration()
+  {
+    SAIVariableDeclarationImpl saiVariableDeclaration = new SAIVariableDeclarationImpl();
+    return saiVariableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIReturn createSAIReturn()
+  {
+    SAIReturnImpl saiReturn = new SAIReturnImpl();
+    return saiReturn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIIfStatement createSAIIfStatement()
+  {
+    SAIIfStatementImpl saiIfStatement = new SAIIfStatementImpl();
+    return saiIfStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIIfBlock createSAIIfBlock()
+  {
+    SAIIfBlockImpl saiIfBlock = new SAIIfBlockImpl();
+    return saiIfBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIExpression createSAIExpression()
+  {
+    SAIExpressionImpl saiExpression = new SAIExpressionImpl();
+    return saiExpression;
   }
 
   /**
@@ -444,6 +607,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
    * @generated
    */
   @Override
+  public WorkflowIfStatement createWorkflowIfStatement()
+  {
+    WorkflowIfStatementImpl workflowIfStatement = new WorkflowIfStatementImpl();
+    return workflowIfStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public WorkflowDefinitionApplyLLMTaskStatement createWorkflowDefinitionApplyLLMTaskStatement()
   {
     WorkflowDefinitionApplyLLMTaskStatementImpl workflowDefinitionApplyLLMTaskStatement = new WorkflowDefinitionApplyLLMTaskStatementImpl();
@@ -484,6 +659,78 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     BASICTYPEImpl basictype = new BASICTYPEImpl();
     return basictype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIAssignment createSAIAssignment()
+  {
+    SAIAssignmentImpl saiAssignment = new SAIAssignmentImpl();
+    return saiAssignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIMemberSelection createSAIMemberSelection()
+  {
+    SAIMemberSelectionImpl saiMemberSelection = new SAIMemberSelectionImpl();
+    return saiMemberSelection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIStringConstant createSAIStringConstant()
+  {
+    SAIStringConstantImpl saiStringConstant = new SAIStringConstantImpl();
+    return saiStringConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIIntConstant createSAIIntConstant()
+  {
+    SAIIntConstantImpl saiIntConstant = new SAIIntConstantImpl();
+    return saiIntConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIBoolConstant createSAIBoolConstant()
+  {
+    SAIBoolConstantImpl saiBoolConstant = new SAIBoolConstantImpl();
+    return saiBoolConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAINull createSAINull()
+  {
+    SAINullImpl saiNull = new SAINullImpl();
+    return saiNull;
   }
 
   /**
