@@ -711,29 +711,22 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cSAINullAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Keyword cNullKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final RuleCall cSAIExpressionParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//SAITerminalExpression returns SAIExpression:
 		//    {SAIStringConstant} value=STRING |
 		//    {SAIIntConstant} value=INT |
 		//    {SAIBoolConstant} value=('true'|'false') |
-		//    {SAINull} 'null' |
+		//    {SAINull} 'null' // |
 		//    // TODO the references to worfklows and such...
 		//    // TODO: the reference to members and such...
-		//    '(' SAIExpression ')'
+		//    // '(' SAIExpression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{SAIStringConstant} value=STRING |
 		//{SAIIntConstant} value=INT |
 		//{SAIBoolConstant} value=('true'|'false') |
-		//{SAINull} 'null' |
-		//// TODO the references to worfklows and such...
-		//// TODO: the reference to members and such...
-		//'(' SAIExpression ')'
+		//{SAINull} 'null'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{SAIStringConstant} value=STRING
@@ -786,22 +779,6 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//'null'
 		public Keyword getNullKeyword_3_1() { return cNullKeyword_3_1; }
-		
-		//// TODO the references to worfklows and such...
-		//// TODO: the reference to members and such...
-		//'(' SAIExpression ')'
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//// TODO the references to worfklows and such...
-		//// TODO: the reference to members and such...
-		//'('
-		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
-		
-		//SAIExpression
-		public RuleCall getSAIExpressionParserRuleCall_4_1() { return cSAIExpressionParserRuleCall_4_1; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
 	}
 	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.PackageDeclaration");
@@ -2764,10 +2741,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    {SAIStringConstant} value=STRING |
 	//    {SAIIntConstant} value=INT |
 	//    {SAIBoolConstant} value=('true'|'false') |
-	//    {SAINull} 'null' |
+	//    {SAINull} 'null' // |
 	//    // TODO the references to worfklows and such...
 	//    // TODO: the reference to members and such...
-	//    '(' SAIExpression ')'
+	//    // '(' SAIExpression ')'
 	//;
 	public SAITerminalExpressionElements getSAITerminalExpressionAccess() {
 		return pSAITerminalExpression;

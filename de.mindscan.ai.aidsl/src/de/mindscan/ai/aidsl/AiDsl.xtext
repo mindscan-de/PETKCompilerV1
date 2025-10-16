@@ -107,10 +107,10 @@ SAITerminalExpression returns SAIExpression:
 	{SAIStringConstant} value=STRING |
 	{SAIIntConstant} value=INT | 
 	{SAIBoolConstant} value=('true'|'false') |
-	{SAINull} 'null' |
+	{SAINull} 'null' // |
 	// TODO the references to worfklows and such...
 	// TODO: the reference to members and such...
-	'(' SAIExpression ')'
+	// '(' SAIExpression ')'
 ;
 
 

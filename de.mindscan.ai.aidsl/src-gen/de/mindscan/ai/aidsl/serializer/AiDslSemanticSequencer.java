@@ -523,10 +523,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIStatement returns SAIAssignment
 	 *     SAIExpression returns SAIAssignment
 	 *     SAIAssignment returns SAIAssignment
-	 *     SAIAssignment.SAIAssignment_1_0 returns SAIAssignment
-	 *     SAISelectionExpression returns SAIAssignment
-	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIAssignment
-	 *     SAITerminalExpression returns SAIAssignment
 	 *
 	 * Constraint:
 	 *     (left=SAIAssignment_SAIAssignment_1_0 right=SAIExpression)
@@ -635,7 +631,6 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIAssignment.SAIAssignment_1_0 returns SAIMemberSelection
 	 *     SAISelectionExpression returns SAIMemberSelection
 	 *     SAISelectionExpression.SAIMemberSelection_1_0 returns SAIMemberSelection
-	 *     SAITerminalExpression returns SAIMemberSelection
 	 *
 	 * Constraint:
 	 *     (

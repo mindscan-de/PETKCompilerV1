@@ -21,15 +21,11 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AiDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AiDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_SAITerminalExpression_LeftParenthesisKeyword_4_0_a;
-	protected AbstractElementAlias match_SAITerminalExpression_LeftParenthesisKeyword_4_0_p;
 	protected AbstractElementAlias match_WorkflowDefinitionApplyLLMTaskStatement___EqualsSignGreaterThanSignKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AiDslGrammarAccess) access;
-		match_SAITerminalExpression_LeftParenthesisKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getSAITerminalExpressionAccess().getLeftParenthesisKeyword_4_0());
-		match_SAITerminalExpression_LeftParenthesisKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getSAITerminalExpressionAccess().getLeftParenthesisKeyword_4_0());
 		match_WorkflowDefinitionApplyLLMTaskStatement___EqualsSignGreaterThanSignKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getEqualsSignGreaterThanSignKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getLeftCurlyBracketKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getWorkflowDefinitionApplyLLMTaskStatementAccess().getRightCurlyBracketKeyword_3_3()));
 	}
 	
@@ -45,51 +41,12 @@ public class AiDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_SAITerminalExpression_LeftParenthesisKeyword_4_0_a.equals(syntax))
-				emit_SAITerminalExpression_LeftParenthesisKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SAITerminalExpression_LeftParenthesisKeyword_4_0_p.equals(syntax))
-				emit_SAITerminalExpression_LeftParenthesisKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_WorkflowDefinitionApplyLLMTaskStatement___EqualsSignGreaterThanSignKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q.equals(syntax))
+			if (match_WorkflowDefinitionApplyLLMTaskStatement___EqualsSignGreaterThanSignKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q.equals(syntax))
 				emit_WorkflowDefinitionApplyLLMTaskStatement___EqualsSignGreaterThanSignKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     '('*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'null' (rule start)
-	 *     (rule start) (ambiguity) value='false'
-	 *     (rule start) (ambiguity) value='true'
-	 *     (rule start) (ambiguity) value=INT
-	 *     (rule start) (ambiguity) value=STRING
-	 *     (rule start) (ambiguity) {SAIAssignment.left=}
-	 *     (rule start) (ambiguity) {SAIMemberSelection.receiver=}
-	 
-	 * </pre>
-	 */
-	protected void emit_SAITerminalExpression_LeftParenthesisKeyword_4_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     '('+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) {SAIAssignment.left=}
-	 *     (rule start) (ambiguity) {SAIMemberSelection.receiver=}
-	 
-	 * </pre>
-	 */
-	protected void emit_SAITerminalExpression_LeftParenthesisKeyword_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:

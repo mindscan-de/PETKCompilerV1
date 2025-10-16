@@ -1206,25 +1206,6 @@ ruleSAITerminalExpression returns [EObject current=null]
 				newLeafNode(otherlv_7, grammarAccess.getSAITerminalExpressionAccess().getNullKeyword_3_1());
 			}
 		)
-		    |
-		(
-			otherlv_8='('
-			{
-				newLeafNode(otherlv_8, grammarAccess.getSAITerminalExpressionAccess().getLeftParenthesisKeyword_4_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getSAITerminalExpressionAccess().getSAIExpressionParserRuleCall_4_1());
-			}
-			this_SAIExpression_9=ruleSAIExpression
-			{
-				$current = $this_SAIExpression_9.current;
-				afterParserOrEnumRuleCall();
-			}
-			otherlv_10=')'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getSAITerminalExpressionAccess().getRightParenthesisKeyword_4_2());
-			}
-		)
 	)
 ;
 
