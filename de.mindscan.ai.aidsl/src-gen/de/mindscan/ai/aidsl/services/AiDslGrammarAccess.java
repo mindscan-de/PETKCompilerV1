@@ -428,12 +428,12 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//SAIIfStatement:
 		//    'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
-		//    (=> 'else' elseBlock=SAIIfBlock )?
+		//    (=>'else' elseBlock=SAIIfBlock )?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
-		//(=> 'else' elseBlock=SAIIfBlock )?
+		//(=>'else' elseBlock=SAIIfBlock )?
 		public Group getGroup() { return cGroup; }
 		
 		//'if'
@@ -457,10 +457,10 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//SAIIfBlock
 		public RuleCall getThenblockSAIIfBlockParserRuleCall_4_0() { return cThenblockSAIIfBlockParserRuleCall_4_0; }
 		
-		//(=> 'else' elseBlock=SAIIfBlock )?
+		//(=>'else' elseBlock=SAIIfBlock )?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//=> 'else'
+		//=>'else'
 		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
 		
 		//elseBlock=SAIIfBlock
@@ -499,27 +499,23 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.mindscan.ai.aidsl.AiDsl.SAITypedDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(0);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cTypeELEMENTTYPECrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
-		private final RuleCall cTypeELEMENTTYPEIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeELEMENTTYPECrossReference_0_0.eContents().get(1);
+		private final RuleCall cTypeELEMENTTYPEParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//fragment SAITypedDeclaration *:
-		//    type=[ELEMENTTYPE] name=ID
+		//    type=ELEMENTTYPE name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=[ELEMENTTYPE] name=ID
+		//type=ELEMENTTYPE name=ID
 		public Group getGroup() { return cGroup; }
 		
-		//type=[ELEMENTTYPE]
+		//type=ELEMENTTYPE
 		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
-		//[ELEMENTTYPE]
-		public CrossReference getTypeELEMENTTYPECrossReference_0_0() { return cTypeELEMENTTYPECrossReference_0_0; }
-		
-		//ID
-		public RuleCall getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1() { return cTypeELEMENTTYPEIDTerminalRuleCall_0_0_1; }
+		//ELEMENTTYPE
+		public RuleCall getTypeELEMENTTYPEParserRuleCall_0_0() { return cTypeELEMENTTYPEParserRuleCall_0_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -2661,7 +2657,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//SAIIfStatement:
 	//    'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
-	//    (=> 'else' elseBlock=SAIIfBlock )?
+	//    (=>'else' elseBlock=SAIIfBlock )?
 	//;
 	public SAIIfStatementElements getSAIIfStatementAccess() {
 		return pSAIIfStatement;
@@ -2684,7 +2680,7 @@ public class AiDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//fragment SAITypedDeclaration *:
-	//    type=[ELEMENTTYPE] name=ID
+	//    type=ELEMENTTYPE name=ID
 	//;
 	public SAITypedDeclarationElements getSAITypedDeclarationAccess() {
 		return pSAITypedDeclaration;

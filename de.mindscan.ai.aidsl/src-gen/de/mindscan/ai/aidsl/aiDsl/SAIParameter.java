@@ -25,22 +25,22 @@ import org.eclipse.emf.ecore.EObject;
 public interface SAIParameter extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
+   * @return the value of the '<em>Type</em>' containment reference.
    * @see #setType(ELEMENTTYPE)
    * @see de.mindscan.ai.aidsl.aiDsl.AiDslPackage#getSAIParameter_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
   ELEMENTTYPE getType();
 
   /**
-   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */

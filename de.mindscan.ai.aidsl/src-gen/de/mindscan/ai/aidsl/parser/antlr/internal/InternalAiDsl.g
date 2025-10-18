@@ -850,13 +850,19 @@ ruleSAITypedDeclaration[EObject in_current]  returns [EObject current=in_current
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSAITypedDeclarationRule());
-					}
+					newCompositeNode(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0());
 				}
-				otherlv_0=RULE_ID
+				lv_type_0_0=ruleELEMENTTYPE
 				{
-					newLeafNode(otherlv_0, grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPECrossReference_0_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSAITypedDeclarationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_0_0,
+						"de.mindscan.ai.aidsl.AiDsl.ELEMENTTYPE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

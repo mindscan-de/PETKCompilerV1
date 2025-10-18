@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIVariableDeclaration
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
@@ -102,16 +102,6 @@ public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIV
   @Override
   public ELEMENTTYPE getType()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (ELEMENTTYPE)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, oldType, type));
-      }
-    }
     return type;
   }
 
@@ -120,9 +110,16 @@ public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIV
    * <!-- end-user-doc -->
    * @generated
    */
-  public ELEMENTTYPE basicGetType()
+  public NotificationChain basicSetType(ELEMENTTYPE newType, NotificationChain msgs)
   {
-    return type;
+    ELEMENTTYPE oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -133,10 +130,18 @@ public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIV
   @Override
   public void setType(ELEMENTTYPE newType)
   {
-    ELEMENTTYPE oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, oldType, type));
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE, newType, newType));
   }
 
   /**
@@ -224,6 +229,8 @@ public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIV
   {
     switch (featureID)
     {
+      case AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE:
+        return basicSetType(null, msgs);
       case AiDslPackage.SAI_VARIABLE_DECLARATION__EXPRESSION:
         return basicSetExpression(null, msgs);
     }
@@ -241,8 +248,7 @@ public class SAIVariableDeclarationImpl extends SAIStatementImpl implements SAIV
     switch (featureID)
     {
       case AiDslPackage.SAI_VARIABLE_DECLARATION__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case AiDslPackage.SAI_VARIABLE_DECLARATION__NAME:
         return getName();
       case AiDslPackage.SAI_VARIABLE_DECLARATION__EXPRESSION:

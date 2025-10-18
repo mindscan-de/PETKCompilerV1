@@ -151,7 +151,7 @@ public interface AiDslPackage extends EPackage
   int SAI_MEMBER = 2;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -188,7 +188,7 @@ public interface AiDslPackage extends EPackage
   int SAI_FIELD = 3;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -225,7 +225,7 @@ public interface AiDslPackage extends EPackage
   int SAI_METHOD = 4;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -280,7 +280,7 @@ public interface AiDslPackage extends EPackage
   int SAI_PARAMETER = 5;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -392,7 +392,7 @@ public interface AiDslPackage extends EPackage
   int SAI_VARIABLE_DECLARATION = 8;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1959,10 +1959,10 @@ public interface AiDslPackage extends EPackage
   EClass getSAIMember();
 
   /**
-   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIMember#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.SAIMember#getType()
    * @see #getSAIMember()
    * @generated
@@ -2033,10 +2033,10 @@ public interface AiDslPackage extends EPackage
   EClass getSAIParameter();
 
   /**
-   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.SAIParameter#getType()
    * @see #getSAIParameter()
    * @generated
@@ -2085,10 +2085,10 @@ public interface AiDslPackage extends EPackage
   EClass getSAIVariableDeclaration();
 
   /**
-   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration#getType()
    * @see #getSAIVariableDeclaration()
    * @generated
@@ -3456,7 +3456,7 @@ public interface AiDslPackage extends EPackage
     EClass SAI_MEMBER = eINSTANCE.getSAIMember();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3518,7 +3518,7 @@ public interface AiDslPackage extends EPackage
     EClass SAI_PARAMETER = eINSTANCE.getSAIParameter();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3564,7 +3564,7 @@ public interface AiDslPackage extends EPackage
     EClass SAI_VARIABLE_DECLARATION = eINSTANCE.getSAIVariableDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

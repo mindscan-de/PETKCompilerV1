@@ -8,6 +8,7 @@ import de.mindscan.ai.aidsl.aiDsl.ELEMENTTYPE;
 import de.mindscan.ai.aidsl.aiDsl.SAIParameter;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class SAIParameterImpl extends MinimalEObjectImpl.Container implements SAIParameter
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
@@ -90,16 +91,6 @@ public class SAIParameterImpl extends MinimalEObjectImpl.Container implements SA
   @Override
   public ELEMENTTYPE getType()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (ELEMENTTYPE)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AiDslPackage.SAI_PARAMETER__TYPE, oldType, type));
-      }
-    }
     return type;
   }
 
@@ -108,9 +99,16 @@ public class SAIParameterImpl extends MinimalEObjectImpl.Container implements SA
    * <!-- end-user-doc -->
    * @generated
    */
-  public ELEMENTTYPE basicGetType()
+  public NotificationChain basicSetType(ELEMENTTYPE newType, NotificationChain msgs)
   {
-    return type;
+    ELEMENTTYPE oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_PARAMETER__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -121,10 +119,18 @@ public class SAIParameterImpl extends MinimalEObjectImpl.Container implements SA
   @Override
   public void setType(ELEMENTTYPE newType)
   {
-    ELEMENTTYPE oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_PARAMETER__TYPE, oldType, type));
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.SAI_PARAMETER__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AiDslPackage.SAI_PARAMETER__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AiDslPackage.SAI_PARAMETER__TYPE, newType, newType));
   }
 
   /**
@@ -158,13 +164,28 @@ public class SAIParameterImpl extends MinimalEObjectImpl.Container implements SA
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AiDslPackage.SAI_PARAMETER__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AiDslPackage.SAI_PARAMETER__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+        return getType();
       case AiDslPackage.SAI_PARAMETER__NAME:
         return getName();
     }

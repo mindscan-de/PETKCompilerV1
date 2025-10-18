@@ -16,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//WorkflowFunctionsDefinition/members"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//SAIMember">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMember/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMember/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIMember/name"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//SAIField"/>
@@ -25,13 +25,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIMethod/body"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//SAIParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIParameter/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIParameter/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIParameter/name"/>
     </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//SAIBlock"/>
     <genClasses ecoreClass="AiDsl.ecore#//SAIStatement"/>
     <genClasses ecoreClass="AiDsl.ecore#//SAIVariableDeclaration">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIVariableDeclaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIVariableDeclaration/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiDsl.ecore#//SAIVariableDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIVariableDeclaration/expression"/>
     </genClasses>

@@ -69,7 +69,7 @@ SAIReturn:
 
 SAIIfStatement:
 	'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
-	(=> 'else' elseBlock=SAIIfBlock )?
+	(=>'else' elseBlock=SAIIfBlock )?
 ;
 
 SAIIfBlock:
@@ -78,7 +78,7 @@ SAIIfBlock:
 ;
 
 fragment SAITypedDeclaration *:
-	type=[ELEMENTTYPE] name=ID
+	type=ELEMENTTYPE name=ID
 ;
 
 SAIExpression:

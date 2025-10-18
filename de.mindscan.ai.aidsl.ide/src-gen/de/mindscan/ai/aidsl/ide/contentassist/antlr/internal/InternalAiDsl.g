@@ -7705,13 +7705,9 @@ rule__SAITypedDeclaration__TypeAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPECrossReference_0_0()); }
-		(
-			{ before(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1()); }
-		)
-		{ after(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPECrossReference_0_0()); }
+		{ before(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0()); }
+		ruleELEMENTTYPE
+		{ after(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0()); }
 	)
 ;
 finally {

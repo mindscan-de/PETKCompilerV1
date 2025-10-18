@@ -2312,7 +2312,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getWorkflowFunctionsDefinition_Members(), this.getSAIMember(), null, "members", null, 0, -1, WorkflowFunctionsDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(saiMemberEClass, SAIMember.class, "SAIMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSAIMember_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIMember_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSAIMember_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(saiFieldEClass, SAIField.class, "SAIField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2322,7 +2322,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getSAIMethod_Body(), this.getSAIBlock(), null, "body", null, 0, 1, SAIMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(saiParameterEClass, SAIParameter.class, "SAIParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSAIParameter_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIParameter_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSAIParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(saiBlockEClass, SAIBlock.class, "SAIBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2330,7 +2330,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEClass(saiStatementEClass, SAIStatement.class, "SAIStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(saiVariableDeclarationEClass, SAIVariableDeclaration.class, "SAIVariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSAIVariableDeclaration_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSAIVariableDeclaration_Type(), this.getELEMENTTYPE(), null, "type", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSAIVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSAIVariableDeclaration_Expression(), this.getSAIExpression(), null, "expression", null, 0, 1, SAIVariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

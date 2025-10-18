@@ -15,7 +15,8 @@
         eType="#//SAIMember" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SAIMember">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SAIField" eSuperTypes="#//SAIMember"/>
@@ -26,13 +27,15 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SAIParameter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SAIBlock" eSuperTypes="#//SAIIfBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="SAIStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SAIVariableDeclaration" eSuperTypes="#//SAIStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ELEMENTTYPE"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//SAIExpression"
         containment="true"/>

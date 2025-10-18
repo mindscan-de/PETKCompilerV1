@@ -593,7 +593,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIMethod returns SAIMethod
 	 *
 	 * Constraint:
-	 *     (type=[ELEMENTTYPE|ID] name=ID (params+=SAIParameter params+=SAIParameter)? body=SAIBlock)
+	 *     (type=ELEMENTTYPE name=ID (params+=SAIParameter params+=SAIParameter)? body=SAIBlock)
 	 * </pre>
 	 */
 	protected void sequence_SAIMethod_SAITypedDeclaration(ISerializationContext context, SAIMethod semanticObject) {
@@ -744,7 +744,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIField returns SAIField
 	 *
 	 * Constraint:
-	 *     (type=[ELEMENTTYPE|ID] name=ID)
+	 *     (type=ELEMENTTYPE name=ID)
 	 * </pre>
 	 */
 	protected void sequence_SAITypedDeclaration(ISerializationContext context, SAIField semanticObject) {
@@ -755,7 +755,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_MEMBER__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
@@ -767,7 +767,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIParameter returns SAIParameter
 	 *
 	 * Constraint:
-	 *     (type=[ELEMENTTYPE|ID] name=ID)
+	 *     (type=ELEMENTTYPE name=ID)
 	 * </pre>
 	 */
 	protected void sequence_SAITypedDeclaration(ISerializationContext context, SAIParameter semanticObject) {
@@ -778,7 +778,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_MEMBER__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_MEMBER__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
@@ -791,7 +791,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SAIVariableDeclaration returns SAIVariableDeclaration
 	 *
 	 * Constraint:
-	 *     (type=[ELEMENTTYPE|ID] name=ID expression=SAIExpression)
+	 *     (type=ELEMENTTYPE name=ID expression=SAIExpression)
 	 * </pre>
 	 */
 	protected void sequence_SAITypedDeclaration_SAIVariableDeclaration(ISerializationContext context, SAIVariableDeclaration semanticObject) {
@@ -804,7 +804,7 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEIDTerminalRuleCall_0_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_VARIABLE_DECLARATION__TYPE, false));
+		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSAIVariableDeclarationAccess().getExpressionSAIExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
