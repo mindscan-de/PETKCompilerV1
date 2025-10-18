@@ -76,6 +76,7 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
       case AiDslPackage.SAI_VARIABLE_DECLARATION: return createSAIVariableDeclaration();
       case AiDslPackage.SAI_RETURN: return createSAIReturn();
       case AiDslPackage.SAI_IF_STATEMENT: return createSAIIfStatement();
+      case AiDslPackage.SAI_WORKFLOW_RUN_STATEMENT: return createSAIWorkflowRunStatement();
       case AiDslPackage.SAI_IF_BLOCK: return createSAIIfBlock();
       case AiDslPackage.SAI_EXPRESSION: return createSAIExpression();
       case AiDslPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
@@ -251,6 +252,18 @@ public class AiDslFactoryImpl extends EFactoryImpl implements AiDslFactory
   {
     SAIIfStatementImpl saiIfStatement = new SAIIfStatementImpl();
     return saiIfStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAIWorkflowRunStatement createSAIWorkflowRunStatement()
+  {
+    SAIWorkflowRunStatementImpl saiWorkflowRunStatement = new SAIWorkflowRunStatementImpl();
+    return saiWorkflowRunStatement;
   }
 
   /**

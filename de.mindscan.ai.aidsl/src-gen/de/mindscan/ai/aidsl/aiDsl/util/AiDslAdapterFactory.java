@@ -131,6 +131,11 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
         return createSAIIfStatementAdapter();
       }
       @Override
+      public Adapter caseSAIWorkflowRunStatement(SAIWorkflowRunStatement object)
+      {
+        return createSAIWorkflowRunStatementAdapter();
+      }
+      @Override
       public Adapter caseSAIIfBlock(SAIIfBlock object)
       {
         return createSAIIfBlockAdapter();
@@ -513,6 +518,21 @@ public class AiDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSAIIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement <em>SAI Workflow Run Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement
+   * @generated
+   */
+  public Adapter createSAIWorkflowRunStatementAdapter()
   {
     return null;
   }

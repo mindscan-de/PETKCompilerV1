@@ -43,6 +43,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfStatement/thenblock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfStatement/elseBlock"/>
     </genClasses>
+    <genClasses ecoreClass="AiDsl.ecore#//SAIWorkflowRunStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIWorkflowRunStatement/task"/>
+    </genClasses>
     <genClasses ecoreClass="AiDsl.ecore#//SAIIfBlock">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiDsl.ecore#//SAIIfBlock/statements"/>
     </genClasses>

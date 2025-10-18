@@ -52,6 +52,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="#//SAIIfBlock"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAIWorkflowRunStatement" eSuperTypes="#//SAIStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="task" eType="#//LlmTaskDefinition"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SAIIfBlock">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//SAIStatement" containment="true"/>

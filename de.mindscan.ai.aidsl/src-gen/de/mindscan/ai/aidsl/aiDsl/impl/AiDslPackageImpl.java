@@ -35,6 +35,7 @@ import de.mindscan.ai.aidsl.aiDsl.SAIReturn;
 import de.mindscan.ai.aidsl.aiDsl.SAIStatement;
 import de.mindscan.ai.aidsl.aiDsl.SAIStringConstant;
 import de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeEleemnts;
@@ -146,6 +147,13 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
    * @generated
    */
   private EClass saiIfStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass saiWorkflowRunStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -807,6 +815,28 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
   public EReference getSAIIfStatement_ElseBlock()
   {
     return (EReference)saiIfStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSAIWorkflowRunStatement()
+  {
+    return saiWorkflowRunStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSAIWorkflowRunStatement_Task()
+  {
+    return (EReference)saiWorkflowRunStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2101,6 +2131,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     createEReference(saiIfStatementEClass, SAI_IF_STATEMENT__THENBLOCK);
     createEReference(saiIfStatementEClass, SAI_IF_STATEMENT__ELSE_BLOCK);
 
+    saiWorkflowRunStatementEClass = createEClass(SAI_WORKFLOW_RUN_STATEMENT);
+    createEReference(saiWorkflowRunStatementEClass, SAI_WORKFLOW_RUN_STATEMENT__TASK);
+
     saiIfBlockEClass = createEClass(SAI_IF_BLOCK);
     createEReference(saiIfBlockEClass, SAI_IF_BLOCK__STATEMENTS);
 
@@ -2288,6 +2321,7 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     saiVariableDeclarationEClass.getESuperTypes().add(this.getSAIStatement());
     saiReturnEClass.getESuperTypes().add(this.getSAIStatement());
     saiIfStatementEClass.getESuperTypes().add(this.getSAIStatement());
+    saiWorkflowRunStatementEClass.getESuperTypes().add(this.getSAIStatement());
     saiExpressionEClass.getESuperTypes().add(this.getSAIStatement());
     vmNodeOpCodeElementEClass.getESuperTypes().add(this.getVMNodeEleemnts());
     vmNodeOutElementsEClass.getESuperTypes().add(this.getVMNodeEleemnts());
@@ -2341,6 +2375,9 @@ public class AiDslPackageImpl extends EPackageImpl implements AiDslPackage
     initEReference(getSAIIfStatement_Expression(), this.getSAIExpression(), null, "expression", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSAIIfStatement_Thenblock(), this.getSAIIfBlock(), null, "thenblock", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSAIIfStatement_ElseBlock(), this.getSAIIfBlock(), null, "elseBlock", null, 0, 1, SAIIfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(saiWorkflowRunStatementEClass, SAIWorkflowRunStatement.class, "SAIWorkflowRunStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSAIWorkflowRunStatement_Task(), this.getLlmTaskDefinition(), null, "task", null, 0, 1, SAIWorkflowRunStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(saiIfBlockEClass, SAIIfBlock.class, "SAIIfBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSAIIfBlock_Statements(), this.getSAIStatement(), null, "statements", null, 0, -1, SAIIfBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

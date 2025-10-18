@@ -56,6 +56,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSAIReturnAccess().getGroup(), "rule__SAIReturn__Group__0");
 			builder.put(grammarAccess.getSAIIfStatementAccess().getGroup(), "rule__SAIIfStatement__Group__0");
 			builder.put(grammarAccess.getSAIIfStatementAccess().getGroup_5(), "rule__SAIIfStatement__Group_5__0");
+			builder.put(grammarAccess.getSAIWorkflowRunStatementAccess().getGroup(), "rule__SAIWorkflowRunStatement__Group__0");
 			builder.put(grammarAccess.getSAITypedDeclarationAccess().getGroup(), "rule__SAITypedDeclaration__Group__0");
 			builder.put(grammarAccess.getSAIAssignmentAccess().getGroup(), "rule__SAIAssignment__Group__0");
 			builder.put(grammarAccess.getSAIAssignmentAccess().getGroup_1(), "rule__SAIAssignment__Group_1__0");
@@ -127,6 +128,7 @@ public class AiDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSAIIfStatementAccess().getExpressionAssignment_2(), "rule__SAIIfStatement__ExpressionAssignment_2");
 			builder.put(grammarAccess.getSAIIfStatementAccess().getThenblockAssignment_4(), "rule__SAIIfStatement__ThenblockAssignment_4");
 			builder.put(grammarAccess.getSAIIfStatementAccess().getElseBlockAssignment_5_1(), "rule__SAIIfStatement__ElseBlockAssignment_5_1");
+			builder.put(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskAssignment_1(), "rule__SAIWorkflowRunStatement__TaskAssignment_1");
 			builder.put(grammarAccess.getSAIIfBlockAccess().getStatementsAssignment_0(), "rule__SAIIfBlock__StatementsAssignment_0");
 			builder.put(grammarAccess.getSAITypedDeclarationAccess().getTypeAssignment_0(), "rule__SAITypedDeclaration__TypeAssignment_0");
 			builder.put(grammarAccess.getSAITypedDeclarationAccess().getNameAssignment_1(), "rule__SAITypedDeclaration__NameAssignment_1");

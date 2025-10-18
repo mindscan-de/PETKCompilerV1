@@ -591,6 +591,15 @@ ruleSAIStatement returns [EObject current=null]
 			$current = $this_SAIIfStatement_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSAIStatementAccess().getSAIWorkflowRunStatementParserRuleCall_4());
+		}
+		this_SAIWorkflowRunStatement_4=ruleSAIWorkflowRunStatement
+		{
+			$current = $this_SAIWorkflowRunStatement_4.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -787,6 +796,46 @@ ruleSAIIfStatement returns [EObject current=null]
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleSAIWorkflowRunStatement
+entryRuleSAIWorkflowRunStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSAIWorkflowRunStatementRule()); }
+	iv_ruleSAIWorkflowRunStatement=ruleSAIWorkflowRunStatement
+	{ $current=$iv_ruleSAIWorkflowRunStatement.current; }
+	EOF;
+
+// Rule SAIWorkflowRunStatement
+ruleSAIWorkflowRunStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='runtask'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSAIWorkflowRunStatementAccess().getRuntaskKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSAIWorkflowRunStatementRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionCrossReference_1_0());
+				}
+			)
+		)
+		otherlv_2=';'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSAIWorkflowRunStatementAccess().getSemicolonKeyword_2());
+		}
 	)
 ;
 

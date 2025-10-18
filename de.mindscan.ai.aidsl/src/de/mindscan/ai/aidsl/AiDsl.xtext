@@ -55,7 +55,8 @@ SAIStatement:
 	SAIVariableDeclaration|
 	SAIReturn|
 	SAIExpression|
-	SAIIfStatement
+	SAIIfStatement|
+	SAIWorkflowRunStatement
 ;
 
 SAIVariableDeclaration:
@@ -70,6 +71,10 @@ SAIReturn:
 SAIIfStatement:
 	'if' '(' expression=SAIExpression ')' thenblock=SAIIfBlock
 	(=>'else' elseBlock=SAIIfBlock )?
+;
+
+SAIWorkflowRunStatement:
+	'runtask' task=[LlmTaskDefinition] ';'
 ;
 
 SAIIfBlock:

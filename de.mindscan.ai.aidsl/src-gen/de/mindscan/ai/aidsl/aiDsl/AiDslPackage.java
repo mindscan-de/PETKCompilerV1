@@ -314,7 +314,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIfBlock()
    * @generated
    */
-  int SAI_IF_BLOCK = 11;
+  int SAI_IF_BLOCK = 12;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -502,6 +502,34 @@ public interface AiDslPackage extends EPackage
   int SAI_IF_STATEMENT_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIWorkflowRunStatementImpl <em>SAI Workflow Run Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIWorkflowRunStatementImpl
+   * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIWorkflowRunStatement()
+   * @generated
+   */
+  int SAI_WORKFLOW_RUN_STATEMENT = 11;
+
+  /**
+   * The feature id for the '<em><b>Task</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_WORKFLOW_RUN_STATEMENT__TASK = SAI_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>SAI Workflow Run Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAI_WORKFLOW_RUN_STATEMENT_FEATURE_COUNT = SAI_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIExpressionImpl <em>SAI Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -509,7 +537,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIExpression()
    * @generated
    */
-  int SAI_EXPRESSION = 12;
+  int SAI_EXPRESSION = 13;
 
   /**
    * The number of structural features of the '<em>SAI Expression</em>' class.
@@ -528,7 +556,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getPackageDeclaration()
    * @generated
    */
-  int PACKAGE_DECLARATION = 13;
+  int PACKAGE_DECLARATION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -556,7 +584,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getImportDeclaration()
    * @generated
    */
-  int IMPORT_DECLARATION = 14;
+  int IMPORT_DECLARATION = 15;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -584,7 +612,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowInputDefinition()
    * @generated
    */
-  int WORKFLOW_INPUT_DEFINITION = 15;
+  int WORKFLOW_INPUT_DEFINITION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -621,7 +649,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIElement()
    * @generated
    */
-  int WORKFLOW_UI_ELEMENT = 16;
+  int WORKFLOW_UI_ELEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -667,7 +695,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowUIElementMap()
    * @generated
    */
-  int WORKFLOW_UI_ELEMENT_MAP = 17;
+  int WORKFLOW_UI_ELEMENT_MAP = 18;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -722,7 +750,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDataDictionaryDefinition()
    * @generated
    */
-  int WORKFLOW_DATA_DICTIONARY_DEFINITION = 18;
+  int WORKFLOW_DATA_DICTIONARY_DEFINITION = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -759,7 +787,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDatadictionaryKeyValuePair()
    * @generated
    */
-  int DATADICTIONARY_KEY_VALUE_PAIR = 19;
+  int DATADICTIONARY_KEY_VALUE_PAIR = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -805,7 +833,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryValue()
    * @generated
    */
-  int DATA_DICTIONARY_VALUE = 20;
+  int DATA_DICTIONARY_VALUE = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -833,7 +861,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryArrayValue()
    * @generated
    */
-  int DATA_DICTIONARY_ARRAY_VALUE = 21;
+  int DATA_DICTIONARY_ARRAY_VALUE = 22;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -861,7 +889,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryMapValue()
    * @generated
    */
-  int DATA_DICTIONARY_MAP_VALUE = 22;
+  int DATA_DICTIONARY_MAP_VALUE = 23;
 
   /**
    * The feature id for the '<em><b>Key Value Pairs</b></em>' containment reference list.
@@ -889,7 +917,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryBooleanValue()
    * @generated
    */
-  int DATA_DICTIONARY_BOOLEAN_VALUE = 23;
+  int DATA_DICTIONARY_BOOLEAN_VALUE = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -917,7 +945,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryStringValue()
    * @generated
    */
-  int DATA_DICTIONARY_STRING_VALUE = 24;
+  int DATA_DICTIONARY_STRING_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -945,7 +973,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getDataDictionaryNullValue()
    * @generated
    */
-  int DATA_DICTIONARY_NULL_VALUE = 25;
+  int DATA_DICTIONARY_NULL_VALUE = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -973,7 +1001,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeDefinition()
    * @generated
    */
-  int VM_NODE_DEFINITION = 26;
+  int VM_NODE_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Nodetype</b></em>' attribute.
@@ -1019,7 +1047,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeEleemnts()
    * @generated
    */
-  int VM_NODE_ELEEMNTS = 27;
+  int VM_NODE_ELEEMNTS = 28;
 
   /**
    * The number of structural features of the '<em>VM Node Eleemnts</em>' class.
@@ -1038,7 +1066,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOpCodeElement()
    * @generated
    */
-  int VM_NODE_OP_CODE_ELEMENT = 28;
+  int VM_NODE_OP_CODE_ELEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Opcode</b></em>' attribute.
@@ -1066,7 +1094,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElements()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENTS = 29;
+  int VM_NODE_OUT_ELEMENTS = 30;
 
   /**
    * The feature id for the '<em><b>Out Elements</b></em>' containment reference list.
@@ -1094,7 +1122,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElements()
    * @generated
    */
-  int VM_NODE_IN_ELEMENTS = 30;
+  int VM_NODE_IN_ELEMENTS = 31;
 
   /**
    * The feature id for the '<em><b>In Elements</b></em>' containment reference list.
@@ -1122,7 +1150,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeFieldElements()
    * @generated
    */
-  int VM_NODE_FIELD_ELEMENTS = 31;
+  int VM_NODE_FIELD_ELEMENTS = 32;
 
   /**
    * The feature id for the '<em><b>Field ELements</b></em>' containment reference list.
@@ -1150,7 +1178,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeOutElement()
    * @generated
    */
-  int VM_NODE_OUT_ELEMENT = 32;
+  int VM_NODE_OUT_ELEMENT = 33;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1205,7 +1233,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMNodeInElement()
    * @generated
    */
-  int VM_NODE_IN_ELEMENT = 33;
+  int VM_NODE_IN_ELEMENT = 34;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -1242,7 +1270,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMFieldElement()
    * @generated
    */
-  int VM_FIELD_ELEMENT = 34;
+  int VM_FIELD_ELEMENT = 35;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -1297,7 +1325,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getVMOverrideFieldElement()
    * @generated
    */
-  int VM_OVERRIDE_FIELD_ELEMENT = 35;
+  int VM_OVERRIDE_FIELD_ELEMENT = 36;
 
   /**
    * The feature id for the '<em><b>Policy</b></em>' attribute.
@@ -1352,7 +1380,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmTaskDefinition()
    * @generated
    */
-  int LLM_TASK_DEFINITION = 36;
+  int LLM_TASK_DEFINITION = 37;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1398,7 +1426,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getAnnotationInterfaceReference()
    * @generated
    */
-  int ANNOTATION_INTERFACE_REFERENCE = 37;
+  int ANNOTATION_INTERFACE_REFERENCE = 38;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -1426,7 +1454,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getLlmVariableAssignment()
    * @generated
    */
-  int LLM_VARIABLE_ASSIGNMENT = 38;
+  int LLM_VARIABLE_ASSIGNMENT = 39;
 
   /**
    * The feature id for the '<em><b>Variablename</b></em>' attribute.
@@ -1463,7 +1491,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinition()
    * @generated
    */
-  int WORKFLOW_DEFINITION = 39;
+  int WORKFLOW_DEFINITION = 40;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1518,7 +1546,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowIfStatement()
    * @generated
    */
-  int WORKFLOW_IF_STATEMENT = 40;
+  int WORKFLOW_IF_STATEMENT = 41;
 
   /**
    * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -1555,7 +1583,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMTaskStatement()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 41;
+  int WORKFLOW_DEFINITION_APPLY_LLM_TASK_STATEMENT = 42;
 
   /**
    * The feature id for the '<em><b>Llmtask</b></em>' reference.
@@ -1592,7 +1620,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getWorkflowDefinitionApplyLLMNodeResultAssignment()
    * @generated
    */
-  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 42;
+  int WORKFLOW_DEFINITION_APPLY_LLM_NODE_RESULT_ASSIGNMENT = 43;
 
   /**
    * The feature id for the '<em><b>Environmentresultname</b></em>' attribute.
@@ -1629,7 +1657,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getELEMENTTYPE()
    * @generated
    */
-  int ELEMENTTYPE = 43;
+  int ELEMENTTYPE = 44;
 
   /**
    * The number of structural features of the '<em>ELEMENTTYPE</em>' class.
@@ -1648,7 +1676,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getBASICTYPE()
    * @generated
    */
-  int BASICTYPE = 44;
+  int BASICTYPE = 45;
 
   /**
    * The feature id for the '<em><b>Is Array</b></em>' attribute.
@@ -1685,7 +1713,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIAssignment()
    * @generated
    */
-  int SAI_ASSIGNMENT = 45;
+  int SAI_ASSIGNMENT = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1722,7 +1750,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIMemberSelection()
    * @generated
    */
-  int SAI_MEMBER_SELECTION = 46;
+  int SAI_MEMBER_SELECTION = 47;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' containment reference.
@@ -1777,7 +1805,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIStringConstant()
    * @generated
    */
-  int SAI_STRING_CONSTANT = 47;
+  int SAI_STRING_CONSTANT = 48;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1805,7 +1833,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIIntConstant()
    * @generated
    */
-  int SAI_INT_CONSTANT = 48;
+  int SAI_INT_CONSTANT = 49;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1833,7 +1861,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIBoolConstant()
    * @generated
    */
-  int SAI_BOOL_CONSTANT = 49;
+  int SAI_BOOL_CONSTANT = 50;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1861,7 +1889,7 @@ public interface AiDslPackage extends EPackage
    * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAINull()
    * @generated
    */
-  int SAI_NULL = 50;
+  int SAI_NULL = 51;
 
   /**
    * The number of structural features of the '<em>SAI Null</em>' class.
@@ -2180,6 +2208,27 @@ public interface AiDslPackage extends EPackage
    * @generated
    */
   EReference getSAIIfStatement_ElseBlock();
+
+  /**
+   * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement <em>SAI Workflow Run Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAI Workflow Run Statement</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement
+   * @generated
+   */
+  EClass getSAIWorkflowRunStatement();
+
+  /**
+   * Returns the meta object for the reference '{@link de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement#getTask <em>Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Task</em>'.
+   * @see de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement#getTask()
+   * @see #getSAIWorkflowRunStatement()
+   * @generated
+   */
+  EReference getSAIWorkflowRunStatement_Task();
 
   /**
    * Returns the meta object for class '{@link de.mindscan.ai.aidsl.aiDsl.SAIIfBlock <em>SAI If Block</em>}'.
@@ -3638,6 +3687,24 @@ public interface AiDslPackage extends EPackage
      * @generated
      */
     EReference SAI_IF_STATEMENT__ELSE_BLOCK = eINSTANCE.getSAIIfStatement_ElseBlock();
+
+    /**
+     * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIWorkflowRunStatementImpl <em>SAI Workflow Run Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.SAIWorkflowRunStatementImpl
+     * @see de.mindscan.ai.aidsl.aiDsl.impl.AiDslPackageImpl#getSAIWorkflowRunStatement()
+     * @generated
+     */
+    EClass SAI_WORKFLOW_RUN_STATEMENT = eINSTANCE.getSAIWorkflowRunStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Task</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SAI_WORKFLOW_RUN_STATEMENT__TASK = eINSTANCE.getSAIWorkflowRunStatement_Task();
 
     /**
      * The meta object literal for the '{@link de.mindscan.ai.aidsl.aiDsl.impl.SAIIfBlockImpl <em>SAI If Block</em>}' class.

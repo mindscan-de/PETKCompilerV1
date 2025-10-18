@@ -123,6 +123,15 @@ public interface AiDslFactory extends EFactory
   SAIIfStatement createSAIIfStatement();
 
   /**
+   * Returns a new object of class '<em>SAI Workflow Run Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAI Workflow Run Statement</em>'.
+   * @generated
+   */
+  SAIWorkflowRunStatement createSAIWorkflowRunStatement();
+
+  /**
    * Returns a new object of class '<em>SAI If Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

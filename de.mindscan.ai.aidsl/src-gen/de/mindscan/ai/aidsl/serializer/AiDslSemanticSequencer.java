@@ -33,6 +33,7 @@ import de.mindscan.ai.aidsl.aiDsl.SAIParameter;
 import de.mindscan.ai.aidsl.aiDsl.SAIReturn;
 import de.mindscan.ai.aidsl.aiDsl.SAIStringConstant;
 import de.mindscan.ai.aidsl.aiDsl.SAIVariableDeclaration;
+import de.mindscan.ai.aidsl.aiDsl.SAIWorkflowRunStatement;
 import de.mindscan.ai.aidsl.aiDsl.VMFieldElement;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeDefinition;
 import de.mindscan.ai.aidsl.aiDsl.VMNodeFieldElements;
@@ -167,6 +168,9 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case AiDslPackage.SAI_VARIABLE_DECLARATION:
 				sequence_SAITypedDeclaration_SAIVariableDeclaration(context, (SAIVariableDeclaration) semanticObject); 
+				return; 
+			case AiDslPackage.SAI_WORKFLOW_RUN_STATEMENT:
+				sequence_SAIWorkflowRunStatement(context, (SAIWorkflowRunStatement) semanticObject); 
 				return; 
 			case AiDslPackage.VM_FIELD_ELEMENT:
 				sequence_VMFieldElement(context, (VMFieldElement) semanticObject); 
@@ -807,6 +811,27 @@ public class AiDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getTypeELEMENTTYPEParserRuleCall_0_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getSAITypedDeclarationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSAIVariableDeclarationAccess().getExpressionSAIExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAIStatement returns SAIWorkflowRunStatement
+	 *     SAIWorkflowRunStatement returns SAIWorkflowRunStatement
+	 *
+	 * Constraint:
+	 *     task=[LlmTaskDefinition|ID]
+	 * </pre>
+	 */
+	protected void sequence_SAIWorkflowRunStatement(ISerializationContext context, SAIWorkflowRunStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AiDslPackage.Literals.SAI_WORKFLOW_RUN_STATEMENT__TASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AiDslPackage.Literals.SAI_WORKFLOW_RUN_STATEMENT__TASK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(AiDslPackage.Literals.SAI_WORKFLOW_RUN_STATEMENT__TASK, false));
 		feeder.finish();
 	}
 	

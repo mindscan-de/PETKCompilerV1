@@ -325,6 +325,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleSAIWorkflowRunStatement
+entryRuleSAIWorkflowRunStatement
+:
+{ before(grammarAccess.getSAIWorkflowRunStatementRule()); }
+	 ruleSAIWorkflowRunStatement
+{ after(grammarAccess.getSAIWorkflowRunStatementRule()); } 
+	 EOF 
+;
+
+// Rule SAIWorkflowRunStatement
+ruleSAIWorkflowRunStatement 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getGroup()); }
+		(rule__SAIWorkflowRunStatement__Group__0)
+		{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleSAIIfBlock
 entryRuleSAIIfBlock
 :
@@ -1393,6 +1418,12 @@ rule__SAIStatement__Alternatives
 		{ before(grammarAccess.getSAIStatementAccess().getSAIIfStatementParserRuleCall_3()); }
 		ruleSAIIfStatement
 		{ after(grammarAccess.getSAIStatementAccess().getSAIIfStatementParserRuleCall_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getSAIStatementAccess().getSAIWorkflowRunStatementParserRuleCall_4()); }
+		ruleSAIWorkflowRunStatement
+		{ after(grammarAccess.getSAIStatementAccess().getSAIWorkflowRunStatementParserRuleCall_4()); }
 	)
 ;
 finally {
@@ -2688,6 +2719,87 @@ rule__SAIIfStatement__Group_5__1__Impl
 	{ before(grammarAccess.getSAIIfStatementAccess().getElseBlockAssignment_5_1()); }
 	(rule__SAIIfStatement__ElseBlockAssignment_5_1)
 	{ after(grammarAccess.getSAIIfStatementAccess().getElseBlockAssignment_5_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__SAIWorkflowRunStatement__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SAIWorkflowRunStatement__Group__0__Impl
+	rule__SAIWorkflowRunStatement__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getRuntaskKeyword_0()); }
+	'runtask'
+	{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getRuntaskKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SAIWorkflowRunStatement__Group__1__Impl
+	rule__SAIWorkflowRunStatement__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskAssignment_1()); }
+	(rule__SAIWorkflowRunStatement__TaskAssignment_1)
+	{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SAIWorkflowRunStatement__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getSemicolonKeyword_2()); }
+	';'
+	{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getSemicolonKeyword_2()); }
 )
 ;
 finally {
@@ -7678,6 +7790,25 @@ rule__SAIIfStatement__ElseBlockAssignment_5_1
 		{ before(grammarAccess.getSAIIfStatementAccess().getElseBlockSAIIfBlockParserRuleCall_5_1_0()); }
 		ruleSAIIfBlock
 		{ after(grammarAccess.getSAIIfStatementAccess().getElseBlockSAIIfBlockParserRuleCall_5_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SAIWorkflowRunStatement__TaskAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionIDTerminalRuleCall_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionIDTerminalRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getSAIWorkflowRunStatementAccess().getTaskLlmTaskDefinitionCrossReference_1_0()); }
 	)
 ;
 finally {
